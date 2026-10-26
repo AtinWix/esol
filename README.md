@@ -74,7 +74,6 @@ Word documents:
 ## teacher
 - [ESOL Writing – Placement Test – AI Level Marker](teacher/writing-placement-ai-level-marker.html) – Uses Claude live: the AI part only works in the Claude version.
 - [ESOL Lesson Ideas](teacher/esol-lesson-ideas.html) – Uses Claude live: the AI part only works in the Claude version.
-- [ESOL Materials Catalogue (Claude links)](teacher/materials-catalogue-claude-links.html)
 
 Word documents:
 - [Claude for ESOL prep – prompt bank handout](teacher/docs/claude-for-esol-prep-prompt-bank-handout.docx) (.docx)
