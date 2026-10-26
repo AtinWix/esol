@@ -11,6 +11,12 @@ Each level has three strands: Reading, Writing, Speaking & Listening. Pages mark
 - [ESOL Speaking – Task 2 Talk Builder (E1–L2)](all-levels/speaking-task2-talk-builder.html)
 - [ESOL All Levels – Classroom Tool – A–D / 1–4 Vote Card](all-levels/classroom-tool-vote-card.html)
 
+Word documents:
+- [Exam prep lesson plans 4–13: overview](all-levels/docs/exam-prep-lesson-plans-4-13__1-overview.docx) (.docx)
+- [Exam prep lesson plans 4–13: E3 Reading](all-levels/docs/exam-prep-lesson-plans-4-13__2-e3-reading.docx) (.docx)
+- [Exam prep lesson plans 4–13: E2 Speaking & Listening](all-levels/docs/exam-prep-lesson-plans-4-13__3-e2-sl.docx) (.docx)
+- [Exam prep lesson plans 4–13: E1 Speaking & Listening](all-levels/docs/exam-prep-lesson-plans-4-13__4-e1-sl.docx) (.docx)
+
 ## e1/speaking-listening
 - [E1 & E2 Speaking – Task 1 Talk About You – Put It in Order](e1/speaking-listening/task1-talk-about-you-put-it-in-order.html)
 - [E1 & E2 Speaking – Task 2 Short Talk – Put It in Order](e1/speaking-listening/task2-short-talk-put-it-in-order.html)
@@ -19,6 +25,12 @@ Each level has three strands: Reading, Writing, Speaking & Listening. Pages mark
 - [E1 Speaking – Task 3 In the Kitchen – Drag Match](e1/speaking-listening/task3-in-the-kitchen-drag-match.html)
 - [E1 Speaking – Task 3 Describe the Picture – Pair Practice](e1/speaking-listening/task3-describe-the-picture-pair-practice.html)
 - [E1 & E2 Listening – Task 4 – Put It in Order](e1/speaking-listening/task4-listening-put-it-in-order.html)
+
+Word documents:
+- [Task 3 In the Kitchen – questions and answers](e1/speaking-listening/docs/task3-in-the-kitchen-questions-and-answers.docx) (.docx)
+- [Quiet tasks – mixed skills worksheet](e1/speaking-listening/docs/quiet-tasks-mixed-skills-worksheet.docx) (.docx)
+- [Task 3 Describe the photo – model scripts](e1/speaking-listening/docs/task3-describe-the-photo-model-scripts.docx) (.docx)
+- [Task 4 Listening – recording transcripts (teacher)](e1/speaking-listening/docs/task4-listening-recording-transcripts-teacher.docx) (.docx)
 
 ## e1/writing
 - [E1 Writing – Describe the Picture – Practice with Feedback](e1/writing/describe-the-picture-practice-with-feedback.html) – Uses Claude live: the AI part only works in the Claude version.
@@ -29,6 +41,11 @@ Each level has three strands: Reading, Writing, Speaking & Listening. Pages mark
 - [E2 Past Simple – Speaking Tasks 1 & 2 – Projector Lesson 2](e2/speaking-listening/past-simple-tasks1-2-projector-lesson-2.html)
 - [E2 Past Simple – Speaking Tasks 1 & 2 – Interactive Practice 2](e2/speaking-listening/past-simple-tasks1-2-interactive-practice-2.html)
 - [E2 Comparatives – Speaking Task 3 Two Pictures – Projector Lesson](e2/speaking-listening/comparatives-task3-two-pictures-projector-lesson.html)
+
+Word documents:
+- [Past simple Tasks 1–2 – worksheets](e2/speaking-listening/docs/past-simple-tasks1-2-worksheets.docx) (.docx)
+- [ESB exam prep, all tasks – student handouts](e2/speaking-listening/docs/esb-exam-prep-all-tasks-student-handouts.docx) (.docx)
+- [ESB exam prep, all tasks – lesson plan and answers](e2/speaking-listening/docs/esb-exam-prep-all-tasks-lesson-plan-and-answers.docx) (.docx)
 
 ## e3/reading
 - [E3 Reading – ESB Exam Skills – Interactive Quiz](e3/reading/wk01-esb-exam-skills-interactive-quiz.html)
@@ -41,6 +58,14 @@ Each level has three strands: Reading, Writing, Speaking & Listening. Pages mark
 - [E3 Reading – ESB Mock Exam – Set O](e3/reading/wk08-esb-mock-exam-set-o.html)
 - [E3 Reading Skills – Hackney Bugle](e3/reading/wk17-reading-skills-hackney-bugle.html)
 
+Word documents:
+- [Wk 1 Exam question types – sort activity](e3/reading/docs/wk01-exam-question-types-sort-activity.docx) (.docx)
+- [Wk 1 Exam question words – reference sheet](e3/reading/docs/wk01-exam-question-words-reference-sheet.docx) (.docx)
+- [Wk 4 Student Services email](e3/reading/docs/wk04-student-services-email.docx) (.docx)
+- [Wk 4 Text types – reference sheet](e3/reading/docs/wk04-text-types-reference-sheet.docx) (.docx)
+- [Wk 5 Fruit vocabulary and alphabetical order – worksheet](e3/reading/docs/wk05-fruit-vocabulary-alphabetical-order-worksheet.docx) (.docx)
+- [Wk 7 Graffiti warning poster – lesson and worksheet](e3/reading/docs/wk07-graffiti-warning-poster-lesson-and-worksheet.docx) (.docx)
+
 ## games
 - [Grammar Blast](games/grammar-blast.html)
 - [Verb Catcher](games/verb-catcher.html)
@@ -50,3 +75,9 @@ Each level has three strands: Reading, Writing, Speaking & Listening. Pages mark
 - [ESOL Writing – Placement Test – AI Level Marker](teacher/writing-placement-ai-level-marker.html) – Uses Claude live: the AI part only works in the Claude version.
 - [ESOL Lesson Ideas](teacher/esol-lesson-ideas.html) – Uses Claude live: the AI part only works in the Claude version.
 - [ESOL Materials Catalogue (Claude links)](teacher/materials-catalogue-claude-links.html)
+
+Word documents:
+- [Claude for ESOL prep – prompt bank handout](teacher/docs/claude-for-esol-prep-prompt-bank-handout.docx) (.docx)
+- [How to use Claude: easy steps (learner guide)](teacher/docs/using-claude-easy-steps-learner-guide.docx) (.docx)
+- [Claude for ESOL prep – 70-minute session plan (trainer)](teacher/docs/claude-for-esol-prep-session-plan-trainer.docx) (.docx)
+- [Claude for ESOL prep – project instructions](teacher/docs/claude-for-esol-prep-project-instructions.docx) (.docx)
