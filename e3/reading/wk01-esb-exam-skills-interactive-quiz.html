@@ -1,0 +1,298 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>E3 Reading – ESB Exam Skills – Interactive Quiz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Lexend:wght@500;700&display=swap">
+<style>
+/* Layout: one question card per screen, exam-paper "text box" for reading extracts, big tap targets */
+:root{
+  --bg:#f3f5f8; --card:#ffffff; --fg:#17202e; --muted:#5b6678; --line:#d7dde6;
+  --ink:#1f4fa3; --ink-soft:#e5ecf9; --good:#1d7a46; --good-bg:#e3f4ea; --bad:#b3261e; --bad-bg:#fbe7e5;
+  --paper:#fffdf6; --paper-line:#e6dfc8;
+  --display:"Lexend", "Atkinson Hyperlegible", Arial, sans-serif;
+  --body:"Atkinson Hyperlegible", Verdana, Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#11161f; --card:#1a212d; --fg:#e8edf5; --muted:#9aa6b8; --line:#2e3848;
+  --ink:#8db2ff; --ink-soft:#22304a; --good:#6fd39b; --good-bg:#16362a; --bad:#ff8f86; --bad-bg:#3d1d1b;
+  --paper:#202836; --paper-line:#364154; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#11161f; --card:#1a212d; --fg:#e8edf5; --muted:#9aa6b8; --line:#2e3848;
+  --ink:#8db2ff; --ink-soft:#22304a; --good:#6fd39b; --good-bg:#16362a; --bad:#ff8f86; --bad-bg:#3d1d1b;
+  --paper:#202836; --paper-line:#364154; color-scheme:dark}
+html,body{height:100%}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:18px;line-height:1.5}
+.wrap{max-width:760px;margin:0 auto;padding-inline:16px;padding-block:20px 40px;display:flex;flex-direction:column;gap:16px;min-height:100%;box-sizing:border-box}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{font-family:var(--display);font-weight:700;font-size:1em;color:var(--ink);letter-spacing:.01em}
+.meta{font-size:.9em;color:var(--muted);font-variant-numeric:tabular-nums}
+.bar{height:6px;background:var(--line);border-radius:3px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--ink);width:0;transition:width .25s}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px 22px;display:flex;flex-direction:column;gap:18px}
+.sec{font-size:.8em;text-transform:uppercase;letter-spacing:.08em;color:var(--ink);font-weight:700}
+h1,h2{font-family:var(--display);margin:0;text-wrap:balance;line-height:1.25}
+h1{font-size:2em}
+h2{font-size:1.45em;font-weight:600}
+.txt{background:var(--paper);border:1px solid var(--paper-line);border-left:4px solid var(--paper-line);padding:14px 16px;border-radius:6px;font-size:1.05em;white-space:pre-line}
+.txt .lbl{display:block;font-size:.75em;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:6px;white-space:normal}
+.opts{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.opt{display:flex;align-items:center;gap:14px;width:100%;text-align:left;font:inherit;font-size:1.1em;color:var(--fg);background:var(--card);border:2px solid var(--line);border-radius:10px;padding:12px 14px;cursor:pointer}
+.opt:hover{border-color:var(--ink)}
+.opt:focus-visible,.btn:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.let{flex:none;width:1.75em;height:1.75em;font-size:.95em;border-radius:50%;border:2px solid var(--ink);color:var(--ink);display:grid;place-items:center;font-family:var(--display);font-weight:700}
+.opt.right{border-color:var(--good);background:var(--good-bg)}
+.opt.right .let{background:var(--good);border-color:var(--good);color:var(--card)}
+.opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+.opt.wrong .let{border-color:var(--bad);color:var(--bad)}
+.opt[disabled]{cursor:default}
+.fb{border-radius:10px;padding:12px 14px;font-size:1em}
+.fb.ok{background:var(--good-bg);color:var(--fg);border:1px solid var(--good)}
+.fb.no{background:var(--bad-bg);color:var(--fg);border:1px solid var(--bad)}
+.fb b{font-family:var(--display)}
+.nav{display:flex;gap:10px;justify-content:space-between;flex-wrap:wrap}
+.btn{font:inherit;font-family:var(--display);font-weight:600;font-size:1em;padding:12px 20px;border-radius:10px;border:2px solid var(--ink);background:var(--card);color:var(--ink);cursor:pointer}
+.btn.primary{background:var(--ink);color:var(--card)}
+.btn[disabled]{opacity:.35;cursor:default}
+.secs{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.secs button{font:inherit;text-align:left;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--ink-soft);color:var(--fg);cursor:pointer}
+.secs button b{display:block;font-family:var(--display);color:var(--ink)}
+.secs button span{font-size:.85em;color:var(--muted)}
+.big{font-family:var(--display);font-size:3em;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
+p{margin:0}
+.hint{color:var(--muted);font-size:.9em}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-family:var(--display);font-weight:600}
+.field input{font:inherit;font-size:1.3em;padding:12px 14px;border:2px solid var(--line);border-radius:10px;background:var(--card);color:var(--fg)}
+.field input:focus{outline:3px solid var(--ink);outline-offset:1px;border-color:var(--ink)}
+.err{color:var(--bad);font-size:.95em}
+.splash{position:relative;overflow:hidden;text-align:center;align-items:center;padding-block:40px;background:var(--ink-soft);border-color:var(--ink)}
+.splash .who{font-family:var(--display);font-weight:700;font-size:clamp(2em,8vw,3.6em);line-height:1.1;color:var(--fg);word-break:break-word;position:relative}
+.splash .pct{font-family:var(--display);font-weight:700;font-size:clamp(5em,26vw,9.5em);line-height:1;color:var(--ink);font-variant-numeric:tabular-nums;position:relative}
+.splash .msg{font-family:var(--display);font-size:1.4em;font-weight:600;position:relative}
+.splash .sub{color:var(--muted);position:relative}
+.splash .secs{width:100%;text-align:left;position:relative}
+.conf{position:absolute;inset:0;pointer-events:none}
+.conf i{position:absolute;top:-20px;width:10px;height:16px;border-radius:2px;opacity:.9;animation:fall 3.2s ease-in forwards}
+@keyframes fall{to{transform:translateY(900px) rotate(540deg);opacity:0}}
+@media (max-width:480px){h1{font-size:1.6em}h2{font-size:1.25em}.card{padding:20px 16px}}
+@media (prefers-reduced-motion:reduce){.bar i{transition:none}.conf{display:none}}
+
+html,body{margin:0}
+/* ---- 16:9 classroom screens: full width, two columns per question, text scales with the screen ---- */
+.topr{display:flex;align-items:center;gap:12px}
+.fs{font:inherit;font-family:var(--display);font-weight:600;font-size:.8em;padding:6px 12px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.qL,.qR{display:contents}
+@media (min-width:1000px){
+  body{font-size:clamp(18px, 0.9vw + 8px, 30px)}
+  .wrap{max-width:none;padding-inline:clamp(16px,2vw,40px);padding-block:12px 16px;gap:10px}
+  .card{padding:clamp(18px,1.8vw,36px)}
+  .card:has(> .qL){display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:clamp(24px,3vw,64px);align-items:start}
+  .qL,.qR{display:flex;flex-direction:column;gap:16px;min-width:0}
+  .qL .reading{max-height:58vh;overflow:auto}
+  .card > .reading.cols{display:block;column-count:2;column-gap:clamp(24px,3vw,64px)}
+  .card > .reading.cols > *{break-inside:avoid;margin:0 0 .7em}
+  .wrap > .hint{display:none}
+}
+</style>
+
+<div class="wrap">
+  <div class="top">
+    <div class="brand">Entry 3 Reading · Exam practice</div>
+    <div class="topr"><div class="meta" id="meta"></div><button type="button" class="fs" id="fs" hidden>⛶ Full screen</button></div>
+  </div>
+  <div class="bar"><i id="bar"></i></div>
+  <main class="card" id="card" aria-live="polite"></main>
+  <div class="nav">
+    <button class="btn" id="prev" type="button">← Back</button>
+    <button class="btn primary" id="next" type="button">Next →</button>
+  </div>
+  <p class="hint">Tip: use the ← → keys, or press A, B, C, D to answer.</p>
+</div>
+
+<script>
+const Q = [
+ // KNOW THE EXAM
+ {s:"Know the exam", q:"How long is the reading exam?", o:["30 minutes","45 minutes","60 minutes","90 minutes"], a:2, w:"You have 60 minutes (1 hour). That is about 3 minutes for each question."},
+ {s:"Know the exam", q:"How many reading texts (tasks) are in the exam?", o:["1","2","3","4"], a:2, w:"There are 3 tasks. Each task has its own text."},
+ {s:"Know the exam", q:"How many questions are there in total?", o:["7","14","21","30"], a:2, w:"There are 21 questions: 7 questions for each task."},
+ {s:"Know the exam", q:"What should you write with?", o:["A pencil","A red pen","A blue or black pen","Any colour"], a:2, w:"Blue or black ink only. Do not use a pencil."},
+ {s:"Know the exam", q:"Can you use a dictionary in the exam?", o:["Yes, a paper one","Yes, on your phone","No","Only for difficult words"], a:2, w:"No dictionary. Use the other words in the sentence to help you guess the meaning."},
+ {s:"Know the exam", q:"Do you have to answer the questions in order (1, 2, 3…)?", o:["Yes, always","No, you can answer in any order","Only in Task 1","Only in Task 3"], a:1, w:"You can answer in any order. Start with the easy ones."},
+ {s:"Know the exam", q:"Every task has the same types of question. How many alphabetical order questions will you see?", o:["One","Two","Three","Seven"], a:2, w:"Three: one in each task (questions 7, 14 and 21). If you get one wrong, you have two more chances."},
+ // INSTRUCTIONS
+ {s:"Exam instructions", q:"The question says: “Circle the letter of the correct answer.” What do you do?", o:["Draw a circle round A, B, C or D","Tick the answer","Write the answer in words","Underline the word in the text"], a:0, w:"Draw a circle round ONE letter. If you circle two letters, you get no mark."},
+ {s:"Exam instructions", q:"The question says: “Tick (✓) the correct box. True / False.” Which mark do you use?", o:["✗","✓","O","—"], a:1, w:"Put a tick ✓ in ONE box: True or False."},
+ {s:"Exam instructions", q:"The question says: “Write 2 reasons.” You only write one. What happens?", o:["You get the mark","You get half a mark","You get no mark — you need two","The teacher helps you"], a:2, w:"You must have two correct answers to get the mark. Always write two."},
+ {s:"Exam instructions", q:"You see some words and an empty table. The question says: “Write the words in alphabetical order.” What do you do?", o:["Copy the words in the same order","Write the words from A to Z in the table","Write the words from Z to A","Circle the first word"], a:1, w:"Write all the words in the table, in order from A to Z."},
+ {s:"Exam instructions", q:"You can’t answer a question. What is the best thing to do?", o:["Leave the exam","Go to the next question and come back later","Write “I don’t know”","Stop and wait"], a:1, w:"Move on and come back at the end. Always write something — a guess can get a mark."},
+ {s:"Exam instructions", q:"You finish with 10 minutes left. What should you do?", o:["Close the paper and sleep","Check every answer","Change all your answers","Talk to your friend"], a:1, w:"Check your answers. Did you write two reasons? Did you circle only one letter?"},
+ // ALPHABETICAL ORDER
+ {s:"Alphabetical order", q:"Which word comes FIRST in alphabetical order?", t:"bread   apple   milk   sugar", o:["bread","apple","milk","sugar"], a:1, w:"a comes before b, m and s. So apple is first."},
+ {s:"Alphabetical order", q:"Which list is in the correct alphabetical order?", o:["train, bus, car, walk","bus, car, train, walk","car, bus, walk, train","walk, train, car, bus"], a:1, w:"b – c – t – w."},
+ {s:"Alphabetical order", q:"These words all start with f. Which word comes FIRST?", t:"fresh   flavour   fruit   fast", o:["fresh","flavour","fruit","fast"], a:3, w:"Look at the SECOND letter: fa – fl – fr – fr. a comes first, so fast is first."},
+ {s:"Alphabetical order", q:"Put these words in order. Which word is FIRST?", t:"film   music   podcast   fare", o:["film","music","podcast","fare"], a:3, w:"fare and film both start with f. Second letter: a comes before i. So fare is first."},
+ {s:"Alphabetical order", q:"Use the same words. Which word is THIRD?", t:"film   music   podcast   fare", o:["film","music","fare","podcast"], a:1, w:"fare, film, music, podcast. Music is third."},
+ {s:"Alphabetical order", q:"Which list is in the correct alphabetical order?", o:["salad, sauce, season, smooth","sauce, salad, smooth, season","season, salad, sauce, smooth","smooth, season, sauce, salad"], a:0, w:"Second letters: sa – sa – se – sm. Then salad (l) before sauce (u)."},
+ {s:"Alphabetical order", q:"Which word comes AFTER “arranged” in a dictionary?", o:["apply","attend","accounts","advert"], a:1, w:"Look at the second letter: ac – ad – ap – ar – at. Only attend comes after arranged."},
+ {s:"Alphabetical order", q:"Which word comes LAST in alphabetical order?", t:"cheap   city   cost   cake", o:["cheap","city","cost","cake"], a:2, w:"ca – ch – ci – co. o is last, so cost is last."},
+ {s:"Alphabetical order", q:"Which list of names is in alphabetical order?", o:["Byrnes, Khan, Seymour, Turner","Khan, Byrnes, Turner, Seymour","Byrnes, Seymour, Khan, Turner","Turner, Seymour, Khan, Byrnes"], a:0, w:"B – K – S – T."},
+ // PURPOSE
+ {s:"Purpose of a text", q:"What does this text do?", t:"Mangoes came from India. Now they grow in many countries. They are green before they are ripe.", o:["warns","invites","informs","advertises"], a:2, w:"It gives facts. It informs."},
+ {s:"Purpose of a text", q:"What does this text do?", t:"SALE! Half price on all shoes this weekend. Visit Bright Shoes on the High Street!", o:["reports","advertises","advises","warns"], a:1, w:"It wants you to buy something. It advertises."},
+ {s:"Purpose of a text", q:"What does this sign do?", t:"DANGER! Do not touch. Wet paint.", o:["warns","invites","informs","reports"], a:0, w:"It tells you about something dangerous. It warns."},
+ {s:"Purpose of a text", q:"What does this text do?", t:"You should drink water every day. Try to sleep for eight hours.", o:["advertises","warns","advises","reports"], a:2, w:"“You should…” and “Try to…” give advice. It advises."},
+ {s:"Purpose of a text", q:"What does this text do?", t:"Last night a fire started in a shop on Mare Street. Nobody was hurt. Firefighters arrived in ten minutes.", o:["invites","advertises","advises","reports"], a:3, w:"It tells you what happened, like a newspaper. It reports."},
+ {s:"Purpose of a text", q:"What is the purpose of this letter?", t:"Dear Sir\nI would like to apply for the job of cook in your café. I have three years’ experience and I can start next month.\nYours faithfully\nMaria Lopez", o:["to complain","to apply for a job","to offer a job","to cancel an interview"], a:1, w:"Maria wants the job. She is applying for a job."},
+ // WHO / WHAT IS IT?
+ {s:"Who or what?", q:"Who is “She”?", t:"Sara and her brother went to the market. She bought some apples.", o:["Sara’s brother","the market","Sara","the apples"], a:2, w:"“She” is a woman. Sara is the only woman."},
+ {s:"Who or what?", q:"What is “it”?", t:"The company moved to Leeds because it wanted cheaper offices.", o:["Leeds","the company","the offices","the move"], a:1, w:"Who wanted cheaper offices? The company."},
+ {s:"Who or what?", q:"Who are “They”?", t:"Many students take the bus to college. They say it is cheaper than the train.", o:["the buses","the students","the trains","the drivers"], a:1, w:"Who says it is cheaper? The students. Buses and trains can’t talk!"},
+ {s:"Who or what?", q:"Who is “I”?", t:"Dear Mr Patel\nThank you for your email. I can meet you on Friday at 2pm.\nBest wishes\nLaura Green (Manager)", o:["Mr Patel","Laura Green","the email","a friend"], a:1, w:"“I” is the person who wrote the email. Look at the name at the end: Laura Green."},
+ // WORD MEANING
+ {s:"Word meaning", q:"What does “exhausting” mean?", t:"The journey to work takes three hours. It is exhausting.", o:["very tiring","very short","very exciting","very cheap"], a:0, w:"Three hours is a long time. You feel very tired."},
+ {s:"Word meaning", q:"What does “similar” mean?", t:"I worked as a postman. I want to find a similar job.", o:["completely different","almost the same","very well paid","new"], a:1, w:"Similar = almost the same. Watch out — the exam may say it means “completely different”. That is false."},
+ {s:"Word meaning", q:"What does “ripe” mean?", t:"The mango is green. It is not ripe yet. Wait two more days.", o:["ready to eat","small and hard","expensive","old and bad"], a:0, w:"You wait for it, so it is not ready yet. Ripe = ready to eat."},
+ {s:"Word meaning", q:"What does “confirm” mean?", t:"Please email Debbie to confirm you will come to the interview.", o:["cancel it","change the time","say yes, you will definitely come","forget about it"], a:2, w:"Confirm = say that something is definitely happening."},
+ {s:"Word meaning", q:"What does “annoying” mean?", t:"People talk loudly on their phones on the train. This is annoying for other travellers.", o:["makes people feel happy","makes people feel cross","makes people feel tired","makes people feel safe"], a:1, w:"Loud phones make people cross. Annoying = it makes you a little angry."},
+ {s:"Word meaning", q:"What does “questionnaire” mean?", o:["one question","a list of questions","a list of answers","one answer"], a:1, w:"A questionnaire is a list of questions. People answer it to give information."},
+ // TEXT FEATURES
+ {s:"Text features", q:"Why do writers use bullet points ( • )?", o:["to show formal language","to give a list","to show the answers","to say goodbye"], a:1, w:"Bullet points give a list of short points."},
+ {s:"Text features", q:"A text starts “Dear Sir” and ends “Yours sincerely”. What is it?", o:["a letter","an advert","a website","a recipe"], a:0, w:"Dear… and Yours sincerely… are used in letters and emails."},
+ {s:"Text features", q:"A text has “www.fruitfix.com” at the top. Where is it from?", o:["a newspaper","a website","a letter","a text message"], a:1, w:"www… and .com show a website."},
+ {s:"Text features", q:"An email ends “James Turner (Manager)”. What does “(Manager)” tell you?", o:["James’s job","James’s surname","where James lives","James’s age"], a:0, w:"The word in brackets is his job."},
+ {s:"Text features", q:"What does the big heading at the top of a text tell you?", o:["the writer’s name","the topic","the date","the price"], a:1, w:"The heading tells you what the text is about."},
+ // TRUE OR FALSE
+ {s:"True or false?", q:"Is this sentence true or false? “Travellers are happy with the train fares.”", t:"Travellers on the East Coast feel the train fares are too high.", o:["True","False"], a:1, w:"“Too high” means they are NOT happy. The words are different but the meaning is clear: false."},
+ {s:"True or false?", q:"Is this sentence true or false? “The text is about growing mangoes.”", t:"Mangoes are tasty and healthy. Wash them in cold water. Cut them into three pieces and enjoy them in salads and desserts.", o:["True","False"], a:1, w:"The text is about eating and preparing mangoes, not growing them. Read the whole text before you decide."},
+ {s:"True or false?", q:"Is this sentence true or false? “Ali has worked as a postman before.”", t:"I worked as a postman in 2017, so I have experience in this type of work.", o:["True","False"], a:0, w:"He worked as a postman in 2017. True."}
+];
+
+// Fixed (seeded) shuffle so correct letters are spread out but the same every time the class opens it
+Q.forEach((x,n)=>{
+  if(x.o.length<3) return;
+  let seed=(n+7)*9301, idx=x.o.map((_,k)=>k);
+  for(let j=idx.length-1;j>0;j--){seed=(seed*9301+49297)%233280;const r=Math.floor(seed/233280*(j+1));[idx[j],idx[r]]=[idx[r],idx[j]];}
+  x.o=idx.map(k=>x.o[k]); x.a=idx.indexOf(x.a);
+});
+const sections = [...new Set(Q.map(x=>x.s))];
+const L = ["A","B","C","D"];
+let i = -1;                // -1 = start screen, Q.length = results
+let student = "";
+const ans = new Array(Q.length).fill(null);
+
+const card = document.getElementById("card"), meta = document.getElementById("meta"),
+      bar = document.getElementById("bar"), prev = document.getElementById("prev"), next = document.getElementById("next");
+
+function esc(s){return s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
+
+function render(){ draw(); fit(); }
+function draw(){
+  const score = ans.filter((v,k)=>v===Q[k].a).length, done = ans.filter(v=>v!==null).length;
+  meta.textContent = i<0 ? `${Q.length} questions` : `${student} · Score ${score} / ${done}`;
+  bar.style.width = (i<0?0:Math.min(i+1,Q.length)/Q.length*100)+"%";
+  prev.disabled = i<0;
+  next.textContent = i<0 ? "Start →" : i>=Q.length-1 ? (i>=Q.length?"Start again":"Finish →") : "Next →";
+
+  if(i<0){
+    card.innerHTML = `<div class="sec">Get ready</div><h1>Entry 3 Reading: practice questions</h1>
+      <div class="field"><label for="sname">Write your name</label>
+        <input id="sname" type="text" autocomplete="off" maxlength="40" value="${esc(student)}" placeholder="Your name"></div>
+      <p class="err" id="err" hidden>Please write your name first.</p>
+      <p>Choose one answer for each question. You will see if you are right straight away.</p>
+      <div class="secs">${sections.map(s=>{const n=Q.filter(x=>x.s===s).length;return `<button type="button" data-s="${esc(s)}"><b>${esc(s)}</b><span>${n} questions</span></button>`}).join("")}</div>`;
+    const inp = document.getElementById("sname");
+    inp.oninput=()=>{student=inp.value.trim(); document.getElementById("err").hidden=true};
+    inp.onkeydown=e=>{ if(e.key==="Enter") next.click(); };
+    card.querySelectorAll("[data-s]").forEach(b=>b.onclick=()=>{ if(!needName()) {i=Q.findIndex(x=>x.s===b.dataset.s);render()} });
+    return;
+  }
+  if(i>=Q.length){
+    const bySec = sections.map(s=>{const ks=Q.map((x,k)=>x.s===s?k:-1).filter(k=>k>=0);return [s,ks.filter(k=>ans[k]===Q[k].a).length,ks.length]});
+    const pct = done ? Math.round(score/done*100) : 0;
+    const msg = pct>=80 ? "Excellent! You are ready for the exam." : pct>=60 ? "Well done! A little more practice." : pct>=40 ? "Good try! Keep practising." : "Keep going! Practise the sections again.";
+    const cols = ["var(--ink)","var(--good)","#f2b632","#e8613c","#9b5de5"];
+    const conf = pct>=60 ? Array.from({length:60},(_,n)=>`<i style="left:${(n*37)%100}%;background:${cols[n%5]};animation-delay:${(n%12)*0.12}s"></i>`).join("") : "";
+    card.classList.add("splash");
+    card.innerHTML = `<div class="conf">${conf}</div>
+      <div class="sec" style="position:relative">Finished</div>
+      <div class="who">${esc(student)}</div>
+      <div class="pct">${pct}%</div>
+      <div class="msg">${msg}</div>
+      <p class="sub">${score} correct out of ${done} questions answered${done<Q.length?` (${Q.length} in total)`:""}</p>
+      <div class="secs">${bySec.map(([s,g,n])=>`<button type="button" data-s="${esc(s)}"><b>${esc(s)}</b><span>${g} / ${n} correct</span></button>`).join("")}</div>
+      <p class="hint" style="position:relative">Tap a section to practise it again.</p>`;
+    card.querySelectorAll("[data-s]").forEach(b=>b.onclick=()=>{i=Q.findIndex(x=>x.s===b.dataset.s);render()});
+    return;
+  }
+  card.classList.remove("splash");
+  const x = Q[i], picked = ans[i];
+  card.innerHTML = `<div class="qL"><div class="sec">${esc(x.s)} · Question ${i+1} of ${Q.length}</div>
+    ${x.t?`<div class="txt"><span class="lbl">Read the text</span>${esc(x.t)}</div>`:""}
+    <h2>${esc(x.q)}</h2></div><div class="qR">
+    <ul class="opts">${x.o.map((o,k)=>{
+      let cls="opt"; if(picked!==null){ if(k===x.a) cls+=" right"; else if(k===picked) cls+=" wrong"; }
+      return `<li><button type="button" class="${cls}" data-k="${k}" ${picked!==null?"disabled":""}><span class="let">${L[k]}</span><span>${esc(o)}</span></button></li>`}).join("")}</ul>
+    ${picked!==null?`<div class="fb ${picked===x.a?"ok":"no"}"><b>${picked===x.a?"Correct!":"Not quite — the answer is "+L[x.a]+"."}</b> ${esc(x.w)}</div>`:""}</div>`;
+  card.querySelectorAll("[data-k]").forEach(b=>b.onclick=()=>choose(+b.dataset.k));
+}
+function needName(){
+  if(student) return false;
+  const e=document.getElementById("err"); if(e) e.hidden=false;
+  const inp=document.getElementById("sname"); if(inp) inp.focus();
+  return true;
+}
+function choose(k){ if(i<0||i>=Q.length||ans[i]!==null||k>=Q[i].o.length) return; ans[i]=k; render(); }
+next.onclick=()=>{
+  if(i<0 && needName()) return;
+  if(i>=Q.length){ans.fill(null); student=""; i=-1;} else i++;
+  render();
+};
+prev.onclick=()=>{ if(i>=0){ i = i>=Q.length ? Q.length-1 : i-1; render(); } };
+document.addEventListener("keydown",e=>{
+  if(e.target.closest("input,textarea")) return;
+  if(i<0 && /^[a-d]$/i.test(e.key)) return;
+  if(e.key==="ArrowRight") next.click();
+  else if(e.key==="ArrowLeft") prev.click();
+  else { const k=L.indexOf(e.key.toUpperCase()); if(k>=0) choose(k); }
+});
+
+/* ---- full-screen button + fit-to-screen on wide displays ---- */
+const fsBtn=document.getElementById("fs"), wrapEl=document.querySelector(".wrap");
+try{ if(document.fullscreenEnabled && window.matchMedia("(min-width:700px)").matches) fsBtn.hidden=false; }catch(e){}
+fsBtn.onclick=async()=>{ try{ if(document.fullscreenElement) await document.exitFullscreen(); else await document.documentElement.requestFullscreen(); }catch(e){ fsBtn.hidden=true; } };
+document.addEventListener("fullscreenchange",()=>{ fsBtn.textContent=document.fullscreenElement?"✕ Exit full screen":"⛶ Full screen"; setTimeout(fit,150); });
+function fit(){
+  wrapEl.style.fontSize="";
+  if(window.innerWidth<1000) return;
+  // start big (good for a projector) and shrink only until nothing needs scrolling
+  let fs=Math.max(18, Math.min(44, window.innerWidth*0.0175, window.innerHeight*0.034));
+  wrapEl.style.fontSize=fs+"px";
+  while(document.documentElement.scrollHeight>window.innerHeight+1 && fs>14){ fs-=0.5; wrapEl.style.fontSize=fs+"px"; }
+}
+let fitT=0; window.addEventListener("resize",()=>{clearTimeout(fitT);fitT=setTimeout(fit,120)});
+
+render();
+</script>
+
+<div class="atin-logo" aria-label="Made by Atin">
+<svg viewBox="104 28 172 134" width="64" height="50" role="img" aria-hidden="true">
+<text x="139" y="112" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="72" fill="currentColor">A</text>
+<rect x="177" y="83" width="24" height="6" rx="1" fill="currentColor"/>
+<path d="M216 66 L216 106 A25 7 0 0 0 266 106 L266 66" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+<ellipse cx="241" cy="66" rx="25" ry="7" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="216" y1="80" x2="266" y2="80" stroke="currentColor" stroke-width="1.5"/>
+<line x1="216" y1="94" x2="266" y2="94" stroke="currentColor" stroke-width="1.5"/>
+<ellipse cx="241" cy="47" rx="23" ry="5" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="114" y1="128" x2="266" y2="128" stroke="currentColor" stroke-width="1"/>
+<text x="190" y="152" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" letter-spacing="2" fill="currentColor">made by Atin</text>
+</svg>
+</div>
+<script>(function(){var l=document.querySelector(".atin-logo"),t=document.querySelector(".nav");if(l&&t){var nx=t.querySelector("#next");if(nx&&nx.parentNode===t)t.insertBefore(l,nx);else t.appendChild(l);}})();</script>
+<style>
+.atin-logo{position:static;flex:none;color:#1F3A5F;background:rgba(255,255,255,.92);border:1px solid #C9D3DF;border-radius:8px;padding:3px 5px;line-height:0;pointer-events:none}
+.atin-logo svg{display:block}
+@media print{.atin-logo{background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+.nav>.atin-logo{align-self:center;padding:2px 4px}
+.nav>.atin-logo svg{width:50px;height:39px}
+</style>
+
+</body></html>

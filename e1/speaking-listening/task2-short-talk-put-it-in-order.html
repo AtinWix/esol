@@ -1,0 +1,622 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+
+
+<title>E1 &amp; E2 Speaking – Task 2 Short Talk – Put It in Order</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Lexend:wght@500;700&display=swap">
+<style>
+/* Layout: one round per screen — photo note, fixed first line, then a draggable list of dialogue strips */
+:root{
+  --bg:#f3f5f8; --card:#ffffff; --fg:#17202e; --muted:#5b6678; --line:#d7dde6;
+  --ink:#1f4fa3; --ink-soft:#e5ecf9; --good:#1d7a46; --good-bg:#e3f4ea; --bad:#b3261e; --bad-bg:#fbe7e5;
+  --exam:#6a4bb5; --exam-soft:#efe9fb; --paper:#fffdf6; --paper-line:#e6dfc8;
+  --display:"Lexend", "Atkinson Hyperlegible", Arial, sans-serif;
+  --body:"Atkinson Hyperlegible", Verdana, Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#11161f; --card:#1a212d; --fg:#e8edf5; --muted:#9aa6b8; --line:#2e3848;
+  --ink:#8db2ff; --ink-soft:#22304a; --good:#6fd39b; --good-bg:#16362a; --bad:#ff8f86; --bad-bg:#3d1d1b;
+  --exam:#c3a9ff; --exam-soft:#2b2343; --paper:#202836; --paper-line:#364154; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#11161f; --card:#1a212d; --fg:#e8edf5; --muted:#9aa6b8; --line:#2e3848;
+  --ink:#8db2ff; --ink-soft:#22304a; --good:#6fd39b; --good-bg:#16362a; --bad:#ff8f86; --bad-bg:#3d1d1b;
+  --exam:#c3a9ff; --exam-soft:#2b2343; --paper:#202836; --paper-line:#364154; color-scheme:dark}
+html,body{height:100%}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:clamp(17px, 0.85vw + 9px, 28px);line-height:1.45}
+.wrap{max-width:1500px;margin:0 auto;padding-inline:clamp(16px,2.5vw,48px);padding-block:clamp(16px,2vw,32px) 40px;display:flex;flex-direction:column;gap:16px;min-height:100%;box-sizing:border-box}
+.start{max-width:52em}
+.fs{font:inherit;font-family:var(--display);font-weight:600;font-size:.85em;padding:6px 12px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.topr{display:flex;align-items:center;gap:12px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{font-family:var(--display);font-weight:700;font-size:1em;color:var(--ink)}
+.meta{font-size:.9em;color:var(--muted);font-variant-numeric:tabular-nums}
+.bar{height:6px;background:var(--line);border-radius:3px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--ink);width:0;transition:width .25s}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px 22px;display:flex;flex-direction:column;gap:16px}
+.sec{font-size:.8em;text-transform:uppercase;letter-spacing:.08em;color:var(--ink);font-weight:700;position:relative}
+h1,h2{font-family:var(--display);margin:0;text-wrap:balance;line-height:1.25}
+h1{font-size:2em} h2{font-size:1.35em;font-weight:600}
+p{margin:0}
+.photo{background:var(--paper);border:1px solid var(--paper-line);border-radius:8px;padding:12px 14px;font-size:1em}
+.photo b{font-family:var(--display)}
+.list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.strip{display:flex;align-items:center;gap:10px;background:var(--card);border:2px solid var(--line);border-radius:10px;padding:8px 8px 8px 6px;position:relative;user-select:none;-webkit-user-select:none}
+.strip.fixed{background:var(--ink-soft);border-style:dashed}
+.strip.placeholder{opacity:.35;border-style:dashed;border-color:var(--ink)}
+.strip.ghost{position:fixed;z-index:50;pointer-events:none;box-shadow:0 10px 28px rgba(0,0,0,.22);border-color:var(--ink);margin:0;box-sizing:border-box}
+.strip.right{border-color:var(--good);background:var(--good-bg)}
+.strip.wrong{border-color:var(--bad);background:var(--bad-bg)}
+.handle{flex:none;width:1.8em;align-self:stretch;display:grid;place-items:center;color:var(--muted);cursor:grab;touch-action:none;font-size:1.3em;border-radius:6px}
+.handle:active{cursor:grabbing}
+.fixed .handle{cursor:default;visibility:hidden}
+.num{flex:none;width:1.4em;text-align:right;font-family:var(--display);font-weight:700;color:var(--muted);font-variant-numeric:tabular-nums}
+.body{flex:1;min-width:0}
+.who{display:inline-block;font-family:var(--display);font-weight:700;font-size:.78em;padding:1px 8px;border-radius:999px;margin-bottom:2px}
+.who.ex{background:var(--exam-soft);color:var(--exam)}
+.who.ln{background:var(--ink-soft);color:var(--ink)}
+.who.ln2{background:var(--good-bg);color:var(--good)}
+.txt{display:block;font-size:1.02em}
+.arrows{flex:none;display:flex;flex-direction:column;gap:4px}
+.arrows button{font:inherit;font-size:.8em;width:1.9em;height:1.5em;border-radius:6px;border:1px solid var(--line);background:var(--card);color:var(--fg);cursor:pointer;line-height:1}
+.arrows button[disabled]{opacity:.3;cursor:default}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.btn{font:inherit;font-family:var(--display);font-weight:600;font-size:1em;padding:12px 20px;border-radius:10px;border:2px solid var(--ink);background:var(--card);color:var(--ink);cursor:pointer}
+.btn.primary{background:var(--ink);color:var(--card)}
+.btn[disabled]{opacity:.35;cursor:default}
+.btn:focus-visible,.arrows button:focus-visible,.handle:focus-visible,.lvl button:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.nav{display:flex;gap:10px;justify-content:space-between;flex-wrap:wrap}
+.fb{border-radius:10px;padding:12px 14px}
+.fb.ok{background:var(--good-bg);border:1px solid var(--good)}
+.fb.no{background:var(--bad-bg);border:1px solid var(--bad)}
+.fb b{font-family:var(--display)}
+.lvl{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.lvl button{font:inherit;font-family:var(--display);font-weight:700;font-size:1.4em;padding:14px;border-radius:12px;border:2px solid var(--line);background:var(--card);color:var(--fg);cursor:pointer}
+.lvl button span{display:block;font-family:var(--body);font-weight:400;font-size:.9em;color:var(--muted)}
+.lvl button[aria-pressed="true"]{border-color:var(--ink);background:var(--ink-soft);color:var(--ink)}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label,.flabel{font-family:var(--display);font-weight:600}
+.field input{font:inherit;font-size:1.3em;padding:12px 14px;border:2px solid var(--line);border-radius:10px;background:var(--card);color:var(--fg)}
+.field input:focus{outline:3px solid var(--ink);outline-offset:1px;border-color:var(--ink)}
+.err{color:var(--bad);font-size:.95em}
+.hint{color:var(--muted);font-size:.9em}
+.secs{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;position:relative}
+.secs button{font:inherit;text-align:left;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--ink-soft);color:var(--fg);cursor:pointer}
+.secs button b{display:block;font-family:var(--display);color:var(--ink)}
+.secs button span{font-size:.85em;color:var(--muted)}
+.splash{position:relative;overflow:hidden;text-align:center;align-items:center;padding-block:40px;background:var(--ink-soft);border-color:var(--ink)}
+.splash .name{font-family:var(--display);font-weight:700;font-size:clamp(2em,8vw,3.6em);line-height:1.1;word-break:break-word;position:relative}
+.splash .pct{font-family:var(--display);font-weight:700;font-size:clamp(5em,26vw,9.5em);line-height:1;color:var(--ink);font-variant-numeric:tabular-nums;position:relative}
+.splash .msg{font-family:var(--display);font-size:1.4em;font-weight:600;position:relative}
+.splash .sub{color:var(--muted);position:relative}
+.splash .secs{width:100%;text-align:left}
+.conf{position:absolute;inset:0;pointer-events:none}
+.conf i{position:absolute;top:-20px;width:10px;height:16px;border-radius:2px;opacity:.9;animation:fall 3.2s ease-in forwards}
+@keyframes fall{to{transform:translateY(900px) rotate(540deg);opacity:0}}
+html,body{margin:0}
+/* transcript overlay (Task 4): full-screen, large text for reading aloud */
+.overlay{position:fixed;inset:0;z-index:100;background:var(--bg);overflow:auto;padding:clamp(16px,3vw,48px);padding-top:calc(clamp(16px,3vw,48px) + env(safe-area-inset-top,0px));box-sizing:border-box}
+.overlay .sheet{max-width:60em;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+.overlay .tline{display:flex;gap:.6em;align-items:baseline;font-size:1.15em;line-height:1.5}
+.overlay .tline .who{flex:none;display:inline-block;min-width:7.5em;text-align:center}
+.overlay .head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+/* round layout: phone = info, list, actions stacked; wide screen = info + actions in a strip on top, list in 2 columns below */
+.layout{display:flex;flex-direction:column;gap:16px}
+.side{display:contents}
+.info{order:1;display:flex;flex-direction:column;gap:12px}
+.lists{order:2;min-width:0}
+.actions{order:3;display:flex;flex-direction:column;gap:12px}
+@media (min-width:1000px){
+  .side{display:grid;grid-template-columns:1fr minmax(260px,30%);gap:clamp(16px,2vw,32px);align-items:start}
+  .info,.actions,.lists{order:0}
+  .info{gap:8px}
+  .list{display:grid;grid-template-columns:1fr 1fr;grid-auto-flow:column;grid-template-rows:repeat(var(--rows),auto);column-gap:clamp(16px,2vw,32px);row-gap:6px}
+  .strip{padding:4px 8px 4px 4px}
+  .card{padding:clamp(12px,1.2vw,24px);gap:12px}
+  .wrap.fit{max-width:none;padding-inline:clamp(12px,1.2vw,24px);padding-block:12px;gap:10px}
+  /* save height: speaker label on the same line as the words, arrows side by side */
+  .who{display:inline;margin-right:.45em;padding:0 .5em}
+  .txt{display:inline}
+  .arrows{flex-direction:row}
+  .info .hint{display:none}
+  .info h2{font-size:1.15em}
+}
+@media (max-width:480px){h1{font-size:1.6em}.card{padding:18px 12px}.txt{font-size:.98em}}
+@media (prefers-reduced-motion:reduce){.bar i,.strip.shift{transition:none}.conf{display:none}}
+</style>
+
+<div class="wrap">
+  <div class="top">
+    <div class="brand" id="brand">Task 2: A short talk · Put it in order</div>
+    <div class="topr"><div class="meta" id="meta"></div><button type="button" class="fs" id="fs" hidden>⛶ Full screen</button></div>
+  </div>
+  <div class="bar"><i id="bar"></i></div>
+  <main class="card" id="card" aria-live="polite"></main>
+  <div class="nav">
+    <button class="btn" id="prev" type="button">← Back</button>
+    <button class="btn primary" id="next" type="button">Next →</button>
+  </div>
+</div>
+
+<script>
+const E="Examiner";
+const CFG = {"brand": "Task 2: A short talk", "task": "Speaking exam · Task 2", "h1": "A short talk: put the talk and questions in order", "tip": "look for First, Then, After that, In the evening — and questions that use a word from the line before."};
+const ROUNDS = {
+ "e1": [
+  {
+   "title": "Amina's talk",
+   "label": "The topic",
+   "photo": "My favourite day of the week. Amina talks. Then Hassan asks her 2 questions.",
+   "lines": [
+    [
+     E,
+     "Amina, please talk about your favourite day of the week. You have one minute to think."
+    ],
+    [
+     "Amina",
+     "OK, I'm ready. My favourite day is Saturday."
+    ],
+    [
+     "Amina",
+     "I like Saturday because I don't go to college. I get up at nine o'clock."
+    ],
+    [
+     "Amina",
+     "First, I have breakfast with my children. We eat eggs and bread."
+    ],
+    [
+     "Amina",
+     "After breakfast, we go to Ridley Road Market. We buy fruit and vegetables."
+    ],
+    [
+     "Amina",
+     "In the afternoon, I cook a big lunch and my friends come to my house."
+    ],
+    [
+     "Amina",
+     "In the evening, we watch a film together. That's why I love Saturday."
+    ],
+    [
+     E,
+     "Thank you, Amina. Hassan, please ask Amina two questions."
+    ],
+    [
+     "Hassan",
+     "Amina, what films do you like watching?"
+    ],
+    [
+     "Amina",
+     "I like funny films. My children like cartoons."
+    ],
+    [
+     "Hassan",
+     "Do your children watch cartoons every day?"
+    ],
+    [
+     "Amina",
+     "No, only at the weekend. On weekdays they do their homework."
+    ],
+    [
+     E,
+     "Amina, do you help your children with their homework?"
+    ],
+    [
+     "Amina",
+     "Yes, I help them with English. They help me too!"
+    ]
+   ]
+  },
+  {
+   "title": "Hassan's talk",
+   "label": "The topic",
+   "photo": "How I come to college. Hassan talks. Then Amina asks him 2 questions.",
+   "lines": [
+    [
+     E,
+     "Now, Hassan, please talk about how you come to college. You have one minute to think."
+    ],
+    [
+     "Hassan",
+     "I'm ready. I come to college by bus every day."
+    ],
+    [
+     "Hassan",
+     "First, I leave my house at half past eight."
+    ],
+    [
+     "Hassan",
+     "Then I walk to the bus stop. It takes five minutes."
+    ],
+    [
+     "Hassan",
+     "I take the number 38 bus. The bus is often very full."
+    ],
+    [
+     "Hassan",
+     "I get off the bus near the college and I buy a coffee."
+    ],
+    [
+     "Hassan",
+     "I arrive at college at nine o'clock. I am never late!"
+    ],
+    [
+     E,
+     "Thank you, Hassan. Amina, please ask Hassan two questions."
+    ],
+    [
+     "Amina",
+     "Hassan, is the bus expensive?"
+    ],
+    [
+     "Hassan",
+     "No, it's not expensive. But I don't like it when the bus is full."
+    ],
+    [
+     "Amina",
+     "What do you do when the bus is full?"
+    ],
+    [
+     "Hassan",
+     "I wait for the next bus, or I walk to college."
+    ],
+    [
+     E,
+     "How long does it take to walk?"
+    ],
+    [
+     "Hassan",
+     "It takes about thirty minutes. It is good exercise."
+    ]
+   ]
+  }
+ ],
+ "e2": [
+  {
+   "title": "Amina's talk",
+   "label": "The topic",
+   "photo": "A special day in my life. Amina talks for about 2 minutes. Then Hassan asks her 2 questions.",
+   "lines": [
+    [
+     E,
+     "Amina, I'd like you to talk about a special day in your life. You have one minute to think."
+    ],
+    [
+     "Amina",
+     "OK. I'm going to talk about the day my son was born."
+    ],
+    [
+     "Amina",
+     "It was a cold morning in January, five years ago. I was at home with my husband."
+    ],
+    [
+     "Amina",
+     "Suddenly I felt a pain, so my husband called a taxi and we went to Homerton Hospital."
+    ],
+    [
+     "Amina",
+     "We waited for a long time, but the nurses were very kind to me."
+    ],
+    [
+     "Amina",
+     "At four o'clock in the afternoon, my son was born. He was very small and he had a lot of black hair."
+    ],
+    [
+     "Amina",
+     "In the evening, my mother came to the hospital. She cried because she was so happy."
+    ],
+    [
+     "Amina",
+     "That was the best day of my life. Every year we have a big party on his birthday."
+    ],
+    [
+     E,
+     "Thank you, Amina. Hassan, please ask Amina two questions."
+    ],
+    [
+     "Hassan",
+     "What did you do at his last birthday party?"
+    ],
+    [
+     "Amina",
+     "We had a party at home. I made a chocolate cake and all his friends came."
+    ],
+    [
+     "Hassan",
+     "Was it difficult to make the cake?"
+    ],
+    [
+     "Amina",
+     "No, it was easy. My mother taught me how to make it."
+    ],
+    [
+     E,
+     "Amina, does your mother live near you?"
+    ],
+    [
+     "Amina",
+     "Yes, she lives in Dalston, so she visits us every week."
+    ]
+   ]
+  },
+  {
+   "title": "Hassan's talk",
+   "label": "The topic",
+   "photo": "My favourite place in London. Hassan talks for about 2 minutes. Then Amina asks him 2 questions.",
+   "lines": [
+    [
+     E,
+     "Thank you. Hassan, please talk about your favourite place in London. You have one minute to think."
+    ],
+    [
+     "Hassan",
+     "My favourite place in London is Hampstead Heath. It is a very big park in north London."
+    ],
+    [
+     "Hassan",
+     "I first went there two years ago with my friend from college."
+    ],
+    [
+     "Hassan",
+     "We took the Overground train from Hackney, and the journey took about twenty minutes."
+    ],
+    [
+     "Hassan",
+     "When we arrived, we walked up Parliament Hill. From the top, you can see all of London."
+    ],
+    [
+     "Hassan",
+     "It is so quiet up there, much quieter than Hackney, and the air feels cleaner."
+    ],
+    [
+     "Hassan",
+     "Now I go there every month. In summer I sometimes swim in the ponds."
+    ],
+    [
+     E,
+     "Thank you, Hassan. Amina, please ask Hassan two questions."
+    ],
+    [
+     "Amina",
+     "Isn't the water in the ponds very cold?"
+    ],
+    [
+     "Hassan",
+     "Yes, it is colder than a swimming pool, but I like it. I always feel great afterwards."
+    ],
+    [
+     "Amina",
+     "Is it expensive to swim there?"
+    ],
+    [
+     "Hassan",
+     "No, it's quite cheap. You only pay a few pounds."
+    ],
+    [
+     E,
+     "Hassan, would you like to take your family there?"
+    ],
+    [
+     "Hassan",
+     "Yes, I'd like to take my brother there next summer. He loves walking."
+    ]
+   ]
+  }
+ ]
+};
+const LNAME={e1:"Entry 1",e2:"Entry 2"};
+let level="", student="", i=-1, R=[];   // R: per-round state {order:[], first:null, checks:0, shown:false}
+
+function shuffleNotSorted(n){
+  let a; do{ a=[...Array(n).keys()]; for(let j=n-1;j>0;j--){const r=Math.floor(Math.random()*(j+1));[a[j],a[r]]=[a[r],a[j]];} }
+  while(n>1 && a.every((v,k)=>v===k));
+  return a;
+}
+function setup(){ R=ROUNDS[level].map(r=>({order:shuffleNotSorted(r.lines.length-1).map(k=>k+1), first:null, checks:0, shown:false, marks:null})); }
+
+const card=document.getElementById("card"),meta=document.getElementById("meta"),bar=document.getElementById("bar"),
+      prev=document.getElementById("prev"),next=document.getElementById("next"),brand=document.getElementById("brand");
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
+function totals(){let g=0,t=0;R.forEach((r,k)=>{if(r.first!==null){g+=r.first;t+=ROUNDS[level][k].lines.length-1}});return [g,t]}
+
+function render(){ draw(); fit(); }
+function draw(){
+  document.querySelectorAll(".strip.ghost").forEach(g=>g.remove());
+  const rounds=level?ROUNDS[level]:[], [g,t]=totals();
+  brand.textContent = level?`${LNAME[level]} · ${CFG.brand} · Put it in order`:`${CFG.brand} · Put it in order`;
+  meta.textContent = i<0?"Entry 1 and Entry 2":`${student}${t?` · ${g} / ${t} in place`:""}`;
+  bar.style.width=(i<0?0:Math.min(i+1,rounds.length)/Math.max(rounds.length,1)*100)+"%";
+  prev.disabled=i<0;
+  next.textContent = i<0?"Start →": i>=rounds.length?"Start again": i===rounds.length-1?"Finish →":"Next →";
+  card.classList.toggle("splash", level && i>=rounds.length);
+
+  if(i<0){
+    card.innerHTML=`<div class="start" style="display:flex;flex-direction:column;gap:16px"><div class="sec">${CFG.task}</div><h1>${CFG.h1}</h1>
+      <div class="field"><label for="sname">Write your name</label>
+        <input id="sname" type="text" autocomplete="off" maxlength="40" value="${esc(student)}" placeholder="Your name"></div>
+      <div><p class="flabel" style="margin-bottom:6px">Choose your level</p>
+        <div class="lvl">${Object.entries(LNAME).map(([k,n])=>`<button type="button" data-l="${k}" aria-pressed="${level===k}">${k.toUpperCase()}<span>${n}</span></button>`).join("")}</div></div>
+      <p class="err" id="err" hidden></p>
+      <p>Read the lines. Drag them with <b>⠿</b> (or use the <b>↑ ↓</b> buttons) to put the conversation in order. The first line is done for you.</p>
+      <p class="hint">Tip: ${CFG.tip}</p></div>`;
+    const inp=document.getElementById("sname");
+    inp.oninput=()=>{student=inp.value.trim();document.getElementById("err").hidden=true};
+    inp.onkeydown=e=>{if(e.key==="Enter")next.click()};
+    card.querySelectorAll("[data-l]").forEach(b=>b.onclick=()=>{level=b.dataset.l;setup();render()});
+    return;
+  }
+  if(i>=rounds.length){ splash(g,t); return; }
+
+  const rd=rounds[i], st=R[i], movable=rd.lines.length-1;
+  const spk=[...new Set(rd.lines.map(l=>l[0]).filter(s=>s!==E))];
+  const strip=(idx,pos,fixed)=>{const [sp,tx]=rd.lines[idx];
+    let cls="strip"+(fixed?" fixed":""); if(st.marks&&!fixed) cls+=st.marks[pos]?" right":" wrong";
+    return `<li class="${cls}" data-idx="${idx}">
+      <span class="handle" ${fixed?"":`tabindex="-1" aria-hidden="true"`}>⠿</span>
+      <span class="num">${fixed?1:pos+2}</span>
+      <span class="body"><span class="who ${sp===E?"ex":(spk.indexOf(sp)%2?"ln2":"ln")}">${esc(sp)}</span><span class="txt">${esc(tx)}</span></span>
+      ${fixed?"":`<span class="arrows"><button type="button" data-up="${pos}" aria-label="Move up" ${pos===0||st.shown?"disabled":""}>↑</button><button type="button" data-dn="${pos}" aria-label="Move down" ${pos===movable-1||st.shown?"disabled":""}>↓</button></span>`}
+    </li>`;};
+  const right=st.marks?st.marks.filter(Boolean).length:0;
+  card.innerHTML=`<div class="layout">
+    <div class="side">
+      <div class="info"><div class="sec">${LNAME[level]} · Part ${i+1} of ${rounds.length} · ${esc(rd.title)}</div>
+        <h2>Put the conversation in order.</h2>
+        ${rd.photo?`<div class="photo"><b>${esc(rd.label||"The situation")}:</b> ${esc(rd.photo)}</div>`:""}
+        ${(rd.transcript||rd.ref!==undefined)?`<div class="row"><button type="button" class="btn" id="tx">📄 Show the recording</button></div>`:""}
+        <p class="hint">Drag ⠿ or use ↑ ↓. Every question uses a word from the line before it.</p></div>
+      <div class="actions"><div class="row"><button type="button" class="btn primary" id="check" ${st.shown?"disabled":""}>Check my order</button>
+        ${st.checks&&!st.shown?`<button type="button" class="btn" id="show">Show the answer</button>`:""}</div>
+        ${st.marks?`<div class="fb ${right===movable?"ok":"no"}">${right===movable?"<b>Perfect!</b> Every line is in the right place.":st.shown?"<b>Here is the correct order.</b> Read it again — see how each question uses a word from the line before.":`<b>${right} of ${movable} lines are in the right place.</b> Move the red lines and check again.`}${st.first!==null?` <span class="hint">First try: ${st.first} / ${movable}</span>`:""}</div>`:""}</div>
+    </div>
+    <div class="lists"><ol class="list" id="list" style="--rows:${Math.ceil(rd.lines.length/2)}">${strip(0,-1,true)}${st.order.map((idx,pos)=>strip(idx,pos,false)).join("")}</ol></div>
+  </div>`;
+  const list=document.getElementById("list");
+  list.querySelectorAll("[data-up]").forEach(b=>b.onclick=()=>move(+b.dataset.up,+b.dataset.up-1,"up"));
+  list.querySelectorAll("[data-dn]").forEach(b=>b.onclick=()=>move(+b.dataset.dn,+b.dataset.dn+1,"dn"));
+  if(!st.shown) list.querySelectorAll(".strip .handle").forEach(h=>h.addEventListener("pointerdown",startDrag));
+  document.getElementById("check").onclick=check;
+  const txb=document.getElementById("tx"); if(txb) txb.onclick=()=>showTranscript(rd.transcript?rd:rounds[rd.ref]);
+  const sh=document.getElementById("show"); if(sh) sh.onclick=()=>{st.order=rd.lines.slice(1).map((_,k)=>k+1);st.shown=true;st.marks=st.order.map(()=>true);render()};
+}
+
+/* Transcript overlay: the recording in the correct order, for the teacher to read aloud */
+function showTranscript(src){
+  closeTranscript();
+  const spk=[...new Set(src.lines.map(l=>l[0]).filter(s=>s!==E))];
+  const ov=document.createElement("div"); ov.className="overlay"; ov.id="overlay";
+  ov.setAttribute("role","dialog"); ov.setAttribute("aria-label","The recording");
+  ov.innerHTML=`<div class="sheet"><div class="head"><div><div class="sec">The recording · transcript</div><h2>${esc(src.photo||"")}</h2></div>
+    <button type="button" class="btn primary" id="txclose">✕ Close</button></div>
+    ${src.lines.map(([sp,tx])=>`<div class="tline"><span class="who ${sp===E?"ex":(spk.indexOf(sp)%2?"ln2":"ln")}">${esc(sp)}</span><span>${esc(tx)}</span></div>`).join("")}
+    <p class="hint">Read it aloud twice, like the exam. Then close it and put the lines in order.</p></div>`;
+  document.body.appendChild(ov);
+  document.getElementById("txclose").onclick=closeTranscript;
+  document.getElementById("txclose").focus();
+}
+function closeTranscript(){ document.getElementById("overlay")?.remove(); document.getElementById("tx")?.focus(); }
+document.addEventListener("keydown",e=>{ if(e.key==="Escape") closeTranscript(); });
+/* On wide screens, shrink the text a little until the whole round fits without scrolling */
+const wrapEl=document.querySelector(".wrap");
+function fit(){
+  wrapEl.style.fontSize="";
+  const roundOn = document.getElementById("list") && window.innerWidth>=1000;
+  wrapEl.classList.toggle("fit", !!roundOn);
+  if(!roundOn) return;
+  let fs=Math.max(16, Math.min(40, window.innerWidth*0.0165, window.innerHeight*0.032));   // start big, then shrink to fit
+  wrapEl.style.fontSize=fs+"px";
+  const tooTall=()=>document.documentElement.scrollHeight > window.innerHeight+1;
+  while(tooTall() && fs>13){ fs-=0.5; wrapEl.style.fontSize=fs+"px"; }
+}
+let fitT=0; window.addEventListener("resize",()=>{clearTimeout(fitT);fitT=setTimeout(fit,120)});
+document.addEventListener("fullscreenchange",()=>setTimeout(fit,150));
+function move(from,to,focus){
+  const st=R[i]; if(st.shown||to<0||to>=st.order.length) return;
+  const [x]=st.order.splice(from,1); st.order.splice(to,0,x); st.marks=null; render();
+  const b=document.querySelector(`[data-${focus}="${to}"]`)||document.querySelector(`[data-${focus==="up"?"dn":"up"}="${to}"]`); b?.focus();
+}
+function check(){
+  const st=R[i]; st.marks=st.order.map((idx,pos)=>idx===pos+1); st.checks++;
+  if(st.first===null) st.first=st.marks.filter(Boolean).length;
+  render();
+}
+
+/* ---- pointer drag (mouse + touch), works in one column or two ---- */
+let drag=null;
+function startDrag(e){
+  if(e.button!==undefined&&e.button!==0) return;
+  e.preventDefault();
+  if(drag) finishDrag();                       // never two drags at once
+  const li=e.currentTarget.closest(".strip"), list=li.parentElement, r=li.getBoundingClientRect();
+  const ghost=li.cloneNode(true); ghost.classList.add("ghost"); ghost.classList.remove("right","wrong");
+  Object.assign(ghost.style,{left:r.left+"px",top:r.top+"px",width:r.width+"px"});
+  document.body.appendChild(ghost);
+  li.classList.add("placeholder");
+  drag={li,list,ghost,dx:e.clientX-r.left,dy:e.clientY-r.top,x:e.clientX,y:e.clientY,id:e.pointerId,raf:0,moved:false};
+  // listen on the window: moving the line in the page drops pointer capture, so events must not depend on the handle
+  window.addEventListener("pointermove",onMove);
+  window.addEventListener("pointerup",onUp);
+  window.addEventListener("pointercancel",onUp);
+  drag.raf=requestAnimationFrame(autoScroll);
+}
+function place(){
+  const d=drag; d.ghost.style.left=(d.x-d.dx)+"px"; d.ghost.style.top=(d.y-d.dy)+"px";
+  const el=document.elementFromPoint(d.x,d.y), t=el&&el.closest(".strip");
+  if(!t||t===d.li||t.parentElement!==d.list){ if(t===d.li) d.last=null; return; }
+  if(t===d.last) return;                      // already moved for this line: wait until the pointer leaves it
+  if(t.classList.contains("fixed")){ t.after(d.li); d.last=t; return; }
+  const r=t.getBoundingClientRect(), kids=[...d.list.children], before=kids.indexOf(d.li)>kids.indexOf(t);
+  // moving up the sequence: go before the target; moving down: go after it (only once past its middle)
+  if(before){ if(d.y<r.top+r.height*0.6){ t.before(d.li); d.last=t; } }
+  else { if(d.y>r.top+r.height*0.4){ t.after(d.li); d.last=t; } }
+}
+function onMove(e){ if(!drag||e.pointerId!==drag.id) return; drag.x=e.clientX; drag.y=e.clientY; place(); }
+function autoScroll(){
+  if(!drag) return; const y=drag.y, h=window.innerHeight, edge=70;
+  if(y<edge) window.scrollBy(0,-Math.ceil((edge-y)/5)); else if(y>h-edge) window.scrollBy(0,Math.ceil((y-(h-edge))/5));
+  place(); drag.raf=requestAnimationFrame(autoScroll);
+}
+function onUp(e){ if(drag && e.pointerId===drag.id) finishDrag(); }
+function finishDrag(){
+  if(!drag) return; const d=drag; drag=null; cancelAnimationFrame(d.raf);
+  window.removeEventListener("pointermove",onMove); window.removeEventListener("pointerup",onUp); window.removeEventListener("pointercancel",onUp);
+  document.querySelectorAll(".strip.ghost").forEach(g=>g.remove());
+  d.li.classList.remove("placeholder");
+  const st=R[i], neu=[...d.list.querySelectorAll(".strip:not(.fixed)")].map(el=>+el.dataset.idx);
+  if(neu.join()!==st.order.join()){ st.order=neu; st.marks=null; }
+  render();
+}
+
+function splash(g,t){
+  const pct=t?Math.round(g/t*100):0;
+  const msg=pct>=80?"Excellent! You really understand the conversation.":pct>=60?"Well done! Great work.":pct>=40?"Good try! Keep practising.":"Keep going! Try again.";
+  const cols=["var(--ink)","var(--good)","#f2b632","#e8613c","#9b5de5"];
+  const conf=pct>=60?Array.from({length:60},(_,n)=>`<i style="left:${(n*37)%100}%;background:${cols[n%5]};animation-delay:${(n%12)*0.12}s"></i>`).join(""):"";
+  card.innerHTML=`<div class="conf">${conf}</div><div class="sec">Finished · ${LNAME[level]}</div>
+    <div class="name">${esc(student)}</div><div class="pct">${pct}%</div><div class="msg">${msg}</div>
+    <p class="sub">${g} of ${t} lines in the right place on your first try</p>
+    <div class="secs">${ROUNDS[level].map((r,k)=>`<button type="button" data-go="${k}"><b>${esc(r.title)}</b><span>${R[k].first!==null?`${R[k].first} / ${r.lines.length-1} first try`:"Not checked"}</span></button>`).join("")}</div>
+    <p class="hint" style="position:relative">Tap a part to look at it again.</p>`;
+  card.querySelectorAll("[data-go]").forEach(b=>b.onclick=()=>{i=+b.dataset.go;render()});
+}
+
+function ready(){
+  const e=document.getElementById("err");
+  if(!student){e.textContent="Please write your name first.";e.hidden=false;document.getElementById("sname").focus();return false}
+  if(!level){e.textContent="Please choose Entry 1 or Entry 2.";e.hidden=false;return false}
+  return true;
+}
+const fsBtn=document.getElementById("fs");
+try{ if(document.fullscreenEnabled && window.matchMedia("(min-width:700px)").matches) fsBtn.hidden=false; }catch(e){}
+fsBtn.onclick=async()=>{
+  try{ if(document.fullscreenElement) await document.exitFullscreen(); else await document.documentElement.requestFullscreen(); }
+  catch(e){ fsBtn.hidden=true; }
+};
+document.addEventListener("fullscreenchange",()=>{fsBtn.textContent=document.fullscreenElement?"✕ Exit full screen":"⛶ Full screen"});
+next.onclick=()=>{
+  if(i<0&&!ready()) return;
+  if(level&&i>=ROUNDS[level].length){student="";level="";R=[];i=-1} else i++;
+  render(); window.scrollTo(0,0);
+};
+prev.onclick=()=>{ if(i>=0){ const n=ROUNDS[level].length; i=i>=n?n-1:i-1; render(); window.scrollTo(0,0); } };
+render();
+</script>
+
+<div class="atin-logo" aria-label="Made by Atin">
+<svg viewBox="104 28 172 134" width="64" height="50" role="img" aria-hidden="true">
+<text x="139" y="112" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="72" fill="currentColor">A</text>
+<rect x="177" y="83" width="24" height="6" rx="1" fill="currentColor"/>
+<path d="M216 66 L216 106 A25 7 0 0 0 266 106 L266 66" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+<ellipse cx="241" cy="66" rx="25" ry="7" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="216" y1="80" x2="266" y2="80" stroke="currentColor" stroke-width="1.5"/>
+<line x1="216" y1="94" x2="266" y2="94" stroke="currentColor" stroke-width="1.5"/>
+<ellipse cx="241" cy="47" rx="23" ry="5" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="114" y1="128" x2="266" y2="128" stroke="currentColor" stroke-width="1"/>
+<text x="190" y="152" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" letter-spacing="2" fill="currentColor">made by Atin</text>
+</svg>
+</div>
+<style>
+.atin-logo{position:fixed;left:calc(6px + env(safe-area-inset-left,0px));bottom:calc(6px + env(safe-area-inset-bottom,0px));z-index:2147483000;pointer-events:none;color:#1F3A5F;background:rgba(255,255,255,.92);border:1px solid #C9D3DF;border-radius:8px;padding:3px 5px;line-height:0}
+.atin-logo svg{display:block}
+@media print{.atin-logo{position:fixed;left:auto;right:6mm;bottom:5mm;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+
+</body></html>

@@ -1,0 +1,207 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>ESOL All Levels – Classroom Tool – A–D / 1–4 Vote Card</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@500;800&display=swap">
+<style>
+/* Layout: one screen. Picker = 2 rows of 4 big tiles; tapping one fills the whole screen with that answer. */
+:root {
+  color-scheme: dark;
+  --ground: #15171d;
+  --ink: #f4f5f7;
+  --muted: #9aa0ad;
+  --a: #e23d3d;
+  --b: #2f6fe0;
+  --c: #f2b707;
+  --d: #1fa35b;
+  --n: #f4f5f7;
+  --n-ink: #15171d;
+  --font: "Lexend", "Verdana", "Arial", sans-serif;
+}
+html, body { height: 100%; }
+body {
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--font);
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  -webkit-user-select: none;
+  overflow: hidden;
+}
+.picker {
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-inline: 16px;
+  padding-block: 16px;
+}
+.picker h1 {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--muted);
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+.group { flex: 1; display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(2, 1fr); gap: 12px; min-height: 0; }
+@media (min-aspect-ratio: 1/1) {
+  .group { grid-template-columns: repeat(4, 1fr); grid-template-rows: 1fr; }
+}
+.tile {
+  border: 0;
+  border-radius: 18px;
+  font-family: var(--font);
+  font-weight: 800;
+  font-size: clamp(2.6rem, 12vmin, 7rem);
+  line-height: 1;
+  cursor: pointer;
+  color: #fff;
+  min-height: 0;
+  transition: transform .08s ease;
+}
+.tile:active { transform: scale(0.96); }
+.tile:focus-visible { outline: 4px solid var(--ink); outline-offset: 3px; }
+.tile.num { background: var(--n); color: var(--n-ink); }
+.t-A { background: var(--a); }
+.t-B { background: var(--b); }
+.t-C { background: var(--c); color: #1d1600; }
+.t-D { background: var(--d); }
+
+.show {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 5;
+}
+.show .big {
+  font-weight: 800;
+  font-size: 88vmin;
+  line-height: 1;
+  color: #fff;
+}
+.show.s-C .big, .show.s-num .big { color: #15171d; }
+.show.s-A { background: var(--a); }
+.show.s-B { background: var(--b); }
+.show.s-C { background: var(--c); }
+.show.s-D { background: var(--d); }
+.show.s-num { background: var(--n); }
+.hint {
+  position: absolute;
+  bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+  left: 0; right: 0;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 500;
+  opacity: 0.55;
+  color: inherit;
+}
+.show.s-A, .show.s-B, .show.s-D { color: #fff; }
+.show.s-C, .show.s-num { color: #15171d; }
+@media (prefers-reduced-motion: reduce) { .tile { transition: none; } }
+</style>
+
+<main class="picker" id="picker">
+  <h1>Tap your answer</h1>
+  <div class="group" role="group" aria-label="Letters">
+    <button class="tile t-A" id="btn-A" data-v="A">A</button>
+    <button class="tile t-B" id="btn-B" data-v="B">B</button>
+    <button class="tile t-C" id="btn-C" data-v="C">C</button>
+    <button class="tile t-D" id="btn-D" data-v="D">D</button>
+  </div>
+  <div class="group" role="group" aria-label="Numbers">
+    <button class="tile num" id="btn-1" data-v="1">1</button>
+    <button class="tile num" id="btn-2" data-v="2">2</button>
+    <button class="tile num" id="btn-3" data-v="3">3</button>
+    <button class="tile num" id="btn-4" data-v="4">4</button>
+  </div>
+</main>
+
+<div class="show" id="show" hidden role="button" tabindex="0" aria-label="Tap to change answer">
+  <span class="big" id="big"></span>
+  <span class="hint">Tap to change</span>
+</div>
+
+<script>
+(function () {
+  var picker = document.getElementById('picker');
+  var show = document.getElementById('show');
+  var big = document.getElementById('big');
+  var lock = null;
+
+  function keepAwake() {
+    try {
+      if (navigator.wakeLock && navigator.wakeLock.request) {
+        navigator.wakeLock.request('screen').then(function (l) { lock = l; }).catch(function () {});
+      }
+    } catch (e) {}
+  }
+  function goFull() {
+    try {
+      var el = document.documentElement;
+      var fn = el.requestFullscreen || el.webkitRequestFullscreen;
+      if (fn && !document.fullscreenElement) {
+        var p = fn.call(el);
+        if (p && p.catch) p.catch(function () {});
+      }
+    } catch (e) {}
+  }
+
+  function display(v) {
+    big.textContent = v;
+    show.className = 'show ' + (/[A-D]/.test(v) ? 's-' + v : 's-num');
+    show.hidden = false;
+    picker.hidden = true;
+    goFull();
+    keepAwake();
+    show.focus();
+  }
+  function back() {
+    show.hidden = true;
+    picker.hidden = false;
+  }
+
+  document.querySelectorAll('.tile').forEach(function (b) {
+    b.addEventListener('click', function () { display(b.dataset.v); });
+  });
+  show.addEventListener('click', back);
+  show.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' || e.key === ' ' || e.key === 'Escape') { e.preventDefault(); back(); }
+  });
+  document.addEventListener('keydown', function (e) {
+    if (!show.hidden) return;
+    var k = e.key.toUpperCase();
+    if (/^[A-D1-4]$/.test(k)) display(k);
+  });
+  document.addEventListener('visibilitychange', function () {
+    if (document.visibilityState === 'visible' && !show.hidden) keepAwake();
+  });
+})();
+</script>
+
+<div class="atin-logo" aria-label="Made by Atin">
+<svg viewBox="104 28 172 134" width="64" height="50" role="img" aria-hidden="true">
+<text x="139" y="112" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="72" fill="currentColor">A</text>
+<rect x="177" y="83" width="24" height="6" rx="1" fill="currentColor"/>
+<path d="M216 66 L216 106 A25 7 0 0 0 266 106 L266 66" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+<ellipse cx="241" cy="66" rx="25" ry="7" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="216" y1="80" x2="266" y2="80" stroke="currentColor" stroke-width="1.5"/>
+<line x1="216" y1="94" x2="266" y2="94" stroke="currentColor" stroke-width="1.5"/>
+<ellipse cx="241" cy="47" rx="23" ry="5" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="114" y1="128" x2="266" y2="128" stroke="currentColor" stroke-width="1"/>
+<text x="190" y="152" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" letter-spacing="2" fill="currentColor">made by Atin</text>
+</svg>
+</div>
+<script>(function(){var l=document.querySelector(".atin-logo"),t=document.querySelector("#picker");if(l&&t){var nx=t.querySelector("#next");if(nx&&nx.parentNode===t)t.insertBefore(l,nx);else t.appendChild(l);}})();</script>
+<style>
+.atin-logo{position:static;flex:none;color:#1F3A5F;background:rgba(255,255,255,.92);border:1px solid #C9D3DF;border-radius:8px;padding:3px 5px;line-height:0;pointer-events:none}
+.atin-logo svg{display:block}
+@media print{.atin-logo{background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+#picker>.atin-logo{align-self:center;margin-top:2px}
+#picker>.atin-logo svg{width:50px;height:39px}
+</style>
+
+</body></html>

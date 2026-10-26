@@ -1,0 +1,1204 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>ESOL Speaking – Task 2 Talk Builder (E1–L2)</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Lexend:wght@500;600;700&display=swap">
+<style>
+/* Layout: classroom-projector app — header (logo, level, activity nav), one full-screen panel per activity; stacks and scrolls on phones */
+:root{
+  --bg:#EEF4F3; --surface:#FFFFFF; --ink:#12313A; --muted:#567077; --line:#D3E0DE;
+  --accent:#0E7C7B; --accent-ink:#FFFFFF; --mark:#FFE27A; --err:#C93C31; --err-bg:#FDECEA;
+  --ok:#1C7F46; --ok-bg:#E5F5EB; --chip:#E1EEEC;
+  --e1:#2E7DD1; --e2:#7A55C9; --e3:#0E7C7B; --l1:#C7652A; --l2:#B23A62;
+  --t1:#2E7DD1; --t2:#C7652A; --t3:#7A55C9; --t4:#1C7F46;
+  --display:"Lexend", "Segoe UI", Arial, sans-serif;
+  --body:"Atkinson Hyperlegible", Verdana, Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E191C; --surface:#162428; --ink:#E4EFED; --muted:#93AAAE; --line:#2A3C40;
+  --accent:#3DBDB9; --accent-ink:#06201F; --mark:#6B5A12; --err:#FF7B6F; --err-bg:#3A1E1B;
+  --ok:#5BD08C; --ok-bg:#16301F; --chip:#1F3236;
+  --e1:#6FB0F5; --e2:#AE90F0; --e3:#3DBDB9; --l1:#F0975E; --l2:#EE7BA2;
+  --t1:#6FB0F5; --t2:#F0975E; --t3:#AE90F0; --t4:#5BD08C; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E191C; --surface:#162428; --ink:#E4EFED; --muted:#93AAAE; --line:#2A3C40;
+  --accent:#3DBDB9; --accent-ink:#06201F; --mark:#6B5A12; --err:#FF7B6F; --err-bg:#3A1E1B;
+  --ok:#5BD08C; --ok-bg:#16301F; --chip:#1F3236;
+  --e1:#6FB0F5; --e2:#AE90F0; --e3:#3DBDB9; --l1:#F0975E; --l2:#EE7BA2;
+  --t1:#6FB0F5; --t2:#F0975E; --t3:#AE90F0; --t4:#5BD08C; color-scheme:dark}
+
+html,body{height:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:clamp(15px,1.55vh,19px);line-height:1.45}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+button,input,textarea,select{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+
+.app{height:100%;display:flex;flex-direction:column;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:10px;gap:10px}
+header{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.brand{display:flex;flex-direction:column;min-width:0}
+.brand small{font-family:var(--display);font-size:.72em;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.brand h1{font-family:var(--display);font-weight:700;font-size:1.35em;margin:0;text-wrap:balance}
+.lvbadge{font-family:var(--display);font-weight:700;color:#fff;background:var(--lv,var(--accent));border:0;border-radius:10px;padding:6px 12px;font-size:1em}
+.lvbadge span{font-weight:500;opacity:.85;font-size:.8em;margin-left:6px}
+.nav{display:flex;gap:6px;margin-left:auto;flex-wrap:wrap}
+.logo{height:clamp(50px,7vh,76px);width:auto;background:#fff;border-radius:10px;padding:3px 6px;border:1px solid var(--line)}
+
+main{flex:1;min-height:0}
+.panel{height:100%;display:grid;gap:12px;min-height:0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 18px;min-width:0;min-height:0;display:flex;flex-direction:column;gap:10px}
+.card h2{font-family:var(--display);font-size:1.05em;margin:0;font-weight:600}
+.card h3{font-family:var(--display);font-size:.95em;margin:0;font-weight:600;color:var(--accent)}
+.howto{color:var(--muted);margin:0}
+.scroll{overflow:auto;min-height:0}
+.btns{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.btn{border:2px solid var(--line);background:var(--surface);border-radius:10px;padding:7px 14px;font-family:var(--display);font-weight:600;font-size:.88em}
+.btn:hover{border-color:var(--accent)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn.ghost{border-color:transparent;background:transparent;color:var(--muted);text-decoration:underline;padding-inline:6px}
+.btn.small{padding:3px 9px;font-size:.8em}
+.spacer{flex:1}
+.pill{font-family:var(--display);font-size:.78em;font-weight:600;background:var(--chip);border-radius:999px;padding:3px 10px;color:var(--ink)}
+.fb{font-size:.9em;min-height:1.3em;margin:0}
+.fb.ok{color:var(--ok)} .fb.bad{color:var(--err)}
+.two{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+details.ex{font-size:.85em;color:var(--muted)} details.ex summary{cursor:pointer;color:var(--accent);font-weight:700}
+.timerbox{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.timer{font-family:var(--display);font-weight:700;font-variant-numeric:tabular-nums;font-size:1.3em;min-width:3.6em;text-align:center}
+.timer small{display:block;font-size:.5em;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.timer.end{color:var(--err)}
+.timer.big{font-size:2.6em}
+
+/* Level picker */
+#p_levels{grid-template-rows:auto minmax(0,1fr) auto}
+.levels{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;align-content:start}
+.lv{display:flex;flex-direction:column;gap:10px;text-align:left;background:var(--surface);border:2px solid var(--line);border-top:10px solid var(--c);border-radius:14px;padding:14px 16px;min-width:0}
+.lv:hover,.lv:focus-visible{border-color:var(--c)}
+.lv .big{font-family:var(--display);font-weight:700;font-size:2.4em;line-height:1;color:var(--c)}
+.lv .cefr{font-family:var(--display);font-size:.8em;color:var(--muted);font-weight:600}
+.lv dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:4px 10px;font-size:.88em}
+.lv dt{color:var(--muted)} .lv dd{margin:0;font-weight:700}
+.lv .go{margin-top:6px;font-family:var(--display);font-weight:700;color:var(--c)}
+.src{font-size:.8em;color:var(--muted);margin:0}
+
+/* Hub */
+#p_hub{grid-template-rows:auto minmax(0,1fr)}
+.hub{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;align-content:start}
+.tile{display:flex;flex-direction:column;gap:6px;text-align:left;background:var(--surface);border:2px solid var(--line);border-left:8px solid var(--tc);border-radius:14px;padding:12px 14px;min-width:0;position:relative}
+.tile:hover,.tile:focus-visible{border-color:var(--tc)}
+.tile .grp{font-family:var(--display);font-size:.68em;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--tc)}
+.tile .tt{font-family:var(--display);font-weight:700;font-size:1.1em}
+.tile .td{color:var(--muted);font-size:.9em}
+.tile .done{position:absolute;top:10px;right:12px;color:var(--ok);font-weight:700;font-family:var(--display);font-size:.85em}
+
+/* Mistakes */
+#p_mist{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr)}
+.talk{font-size:1.08em;line-height:1.75}
+.talk.long{font-size:1em;line-height:1.62}
+.talk.huge{font-size:1.3em;line-height:1.8}
+.talk p{margin:0 0 .6em}
+.talk .sec{display:none;font-family:var(--display);font-size:.62em;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-right:6px;vertical-align:2px}
+.talk.answers .sec{display:inline}
+.w{cursor:pointer;border-radius:4px;padding:0 1px;transition:background .15s}
+.w:hover{background:var(--chip)}
+.w.nope{animation:nope .45s;background:var(--err-bg)}
+@keyframes nope{0%,100%{transform:none}25%{transform:translateX(-3px)}75%{transform:translateX(3px)}}
+.e.found{background:var(--mark);border-radius:4px;padding:0 3px}
+.e.fixed,.talk.answers .e{background:var(--ok-bg);color:var(--ok);font-weight:700;border-radius:4px;padding:0 3px}
+.counter{font-family:var(--display);font-weight:700;color:var(--accent)}
+.toast{min-height:1.4em;color:var(--muted);font-size:.9em}
+.slots{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;align-content:start}
+.slot{border:2px dashed var(--line);border-radius:10px;padding:8px 10px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.slot .n{font-family:var(--display);font-size:.75em;color:var(--muted);font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.slot.found{border-style:solid;border-color:var(--mark)}
+.slot.ok{border-style:solid;border-color:var(--ok);background:var(--ok-bg)}
+.slot .wrong{color:var(--err);text-decoration:line-through;font-weight:700}
+.slot .row{display:flex;gap:6px}
+.slot input,.inp{flex:1;min-width:0;border:2px solid var(--line);border-radius:8px;padding:4px 8px;background:var(--bg)}
+.slot input.bad,.inp.bad{border-color:var(--err);background:var(--err-bg)}
+.inp.good{border-color:var(--ok);background:var(--ok-bg)}
+.slot .why{font-size:.82em;color:var(--ok)}
+.slot .right{color:var(--ok);font-weight:700}
+.mini{border:0;background:var(--accent);color:var(--accent-ink);border-radius:8px;padding:4px 10px;font-family:var(--display);font-weight:600;font-size:.85em}
+
+/* Order */
+.olist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.olist li{display:flex;gap:10px;align-items:flex-start;border:2px solid var(--line);border-radius:12px;padding:8px 10px;background:var(--surface)}
+.olist li.ok{border-color:var(--ok);background:var(--ok-bg)}
+.olist li.bad{border-color:var(--err)}
+.olist .num{font-family:var(--display);font-weight:700;color:var(--accent);min-width:1.4em}
+.olist .txt{flex:1;min-width:0}
+.olist .lab{display:block;font-family:var(--display);font-size:.68em;letter-spacing:.08em;text-transform:uppercase;color:var(--ok);font-weight:700}
+.olist .mv{display:flex;flex-direction:column;gap:4px}
+.olist .mv button{border:2px solid var(--line);background:var(--bg);border-radius:8px;width:2em;height:1.7em;line-height:1;font-weight:700}
+
+/* Linking gaps */
+.gaptext{font-size:1.06em;line-height:2}
+.gaptext p{margin:0 0 .5em}
+.gaptext select{border:2px solid var(--accent);border-radius:8px;background:var(--bg);padding:1px 4px;font-weight:700}
+.gaptext select.ok{border-color:var(--ok);background:var(--ok-bg);color:var(--ok)}
+.gaptext select.bad{border-color:var(--err);background:var(--err-bg)}
+.bank{display:flex;gap:6px;flex-wrap:wrap}
+
+/* Upgrade / generic rows */
+.rows{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;align-content:start}
+.rowcard{border:1px solid var(--line);border-radius:12px;padding:10px 12px;display:flex;flex-direction:column;gap:6px;min-width:0;background:var(--surface)}
+.rowcard.ok{border-color:var(--ok);background:var(--ok-bg)}
+.plain{font-size:1.05em;font-weight:700}
+.instr{color:var(--accent);font-weight:700;font-size:.9em}
+
+/* Partner questions */
+.pqrow{border:1px solid var(--line);border-radius:12px;padding:8px 10px;display:flex;flex-direction:column;gap:6px}
+.pqrow.ok{border-color:var(--ok);background:var(--ok-bg)}
+.pqrow .qq{font-weight:700;font-size:1.05em}
+.choices{display:flex;gap:6px;flex-wrap:wrap}
+.choice{border:2px solid var(--line);background:var(--bg);border-radius:999px;padding:3px 10px;font-size:.82em;font-weight:700}
+.choice.sel-ok{border-color:var(--ok);background:var(--ok);color:#fff}
+.choice.sel-bad{border-color:var(--err);color:var(--err);text-decoration:line-through}
+.jum{border:1px solid var(--line);border-radius:12px;padding:8px 10px;display:flex;flex-direction:column;gap:8px}
+.jum.ok{border-color:var(--ok);background:var(--ok-bg)}
+.built{min-height:2.2em;border-bottom:2px dashed var(--line);padding:4px 0;font-weight:700;font-size:1.05em}
+.chunks{display:flex;gap:6px;flex-wrap:wrap}
+.chunk{border:2px solid var(--accent);background:var(--surface);border-radius:8px;padding:3px 10px;font-weight:700}
+.chunk:disabled{opacity:.25}
+
+/* Notes */
+.topicbig{font-family:var(--display);font-weight:700;font-size:1.6em;text-wrap:balance}
+.notesarea,#full,.bigarea{flex:1;min-height:8em;border:2px solid var(--line);border-radius:12px;padding:12px 14px;background:var(--bg);resize:none;line-height:1.6;font-size:1.05em;width:100%}
+.notesarea:focus,#full:focus,.bigarea:focus{border-color:var(--accent);outline:none}
+.mindmap{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.mindmap div{border:2px dashed var(--line);border-radius:10px;padding:8px;font-family:var(--display);font-weight:600;color:var(--accent);text-align:center}
+
+/* Plan / write */
+#p_plan{grid-template-rows:auto minmax(0,1fr)}
+.topics{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.topic{border:2px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 16px;font-family:var(--display);font-weight:600}
+.topic[aria-pressed="true"]{border-color:var(--accent);background:var(--chip);color:var(--accent)}
+.qgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;align-content:start}
+.q{display:flex;flex-direction:column;gap:5px;border:1px solid var(--line);border-radius:12px;padding:10px 12px;background:var(--surface);min-width:0}
+.q .tag{font-family:var(--display);font-size:.7em;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:700}
+.q label{font-weight:700}
+.q textarea{border:2px solid var(--line);border-radius:8px;padding:6px 8px;background:var(--bg);resize:vertical;min-height:3.2em;width:100%}
+.q textarea:focus{border-color:var(--accent);outline:none}
+#p_write{grid-template-columns:minmax(0,.85fr) minmax(0,1.4fr)}
+.plan{display:flex;flex-direction:column;gap:6px}
+.plan .item{border-left:4px solid var(--chip);padding:2px 0 2px 10px}
+.plan .item .tag{font-family:var(--display);font-size:.68em;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:700;display:block}
+.plan .empty{color:var(--muted);font-style:italic}
+.check{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 12px;font-size:.9em}
+.check li{display:flex;gap:6px;align-items:baseline;color:var(--muted)}
+.check li::before{content:"○";font-weight:700}
+.check li.done{color:var(--ok)} .check li.done::before{content:"✓"}
+.examrow{display:flex;gap:8px;align-items:center;flex-wrap:wrap;background:var(--chip);border-radius:10px;padding:8px 10px}
+.examrow .topicnow{font-family:var(--display);font-weight:700}
+.namebox{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.namebox input{border:2px solid var(--line);border-radius:8px;padding:5px 10px;background:var(--bg);min-width:0;flex:1;max-width:320px}
+.meter{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:.9em}
+.bar{flex:1;min-width:120px;height:10px;border-radius:99px;background:var(--surface);position:relative;overflow:hidden;border:1px solid var(--line)}
+.bar i{position:absolute;inset:0 auto 0 0;background:var(--accent);border-radius:99px;transition:width .2s}
+.bar .zone{position:absolute;top:0;bottom:0;background:var(--ok);opacity:.25}
+
+/* Discussion */
+.phr{display:flex;gap:8px;align-items:center;flex-wrap:wrap;border-bottom:1px solid var(--line);padding:5px 0}
+.phr span{flex:1;min-width:10em;font-weight:700}
+.phr select{border:2px solid var(--line);border-radius:8px;background:var(--bg);padding:2px 6px}
+.phr select.ok{border-color:var(--ok);background:var(--ok-bg)} .phr select.bad{border-color:var(--err);background:var(--err-bg)}
+.prompt{font-family:var(--display);font-weight:700;font-size:1.7em;text-wrap:balance;line-height:1.25}
+.cats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;font-size:.88em}
+.cats div{background:var(--chip);border-radius:10px;padding:8px 10px}
+.cats b{display:block;font-family:var(--display);color:var(--accent);font-size:.85em}
+
+/* Peer */
+.crit{display:flex;gap:8px;align-items:center;flex-wrap:wrap;border-bottom:1px solid var(--line);padding:6px 0}
+.crit span{flex:1;min-width:12em}
+.rate{display:flex;gap:4px}
+.rate button{border:2px solid var(--line);background:var(--bg);border-radius:8px;padding:2px 9px;font-weight:700;font-size:.82em}
+.rate button[aria-pressed="true"][data-v="0"]{background:var(--err);border-color:var(--err);color:#fff}
+.rate button[aria-pressed="true"][data-v="1"]{background:var(--mark);border-color:var(--mark);color:#12313A}
+.rate button[aria-pressed="true"][data-v="2"]{background:var(--ok);border-color:var(--ok);color:#fff}
+.score{font-family:var(--display);font-weight:700;font-size:2.2em;color:var(--accent)}
+.qcount{display:flex;gap:6px;align-items:center}
+.qcount button{width:2em;height:2em;border-radius:50%;border:2px solid var(--line);background:var(--bg);font-weight:700}
+.qcount button[aria-pressed="true"]{background:var(--ok);border-color:var(--ok);color:#fff}
+
+/* Game */
+#p_game{grid-template-columns:minmax(0,1fr) minmax(220px,.32fr)}
+.teams{display:flex;flex-direction:column;gap:10px}
+.team{border:3px solid var(--line);border-radius:14px;padding:10px 14px;display:flex;align-items:center;gap:10px;background:var(--surface)}
+.team .tn{font-family:var(--display);font-weight:700;font-size:1.1em;color:var(--tc)}
+.team .ts{margin-left:auto;font-family:var(--display);font-weight:700;font-size:2em;font-variant-numeric:tabular-nums}
+.team.turn{border-color:var(--tc);box-shadow:0 0 0 4px var(--chip)}
+.gamebar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;background:var(--chip);border-radius:10px;padding:8px 12px;font-weight:700}
+
+@media (max-width:900px){
+  html,body{height:auto}
+  .app,.panel{height:auto}
+  #p_mist,#p_write,#p_game,.two{grid-template-columns:1fr}
+  .levels,.hub{grid-template-columns:1fr 1fr}
+  .qgrid,.slots,.check,.rows,.cats{grid-template-columns:1fr}
+  .nav{margin-left:0;width:100%}
+}
+@media (max-width:480px){.levels,.hub{grid-template-columns:1fr}}
+@media (min-width:901px) and (max-width:1250px){.qgrid{grid-template-columns:repeat(2,minmax(0,1fr))}.levels,.hub{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div class="app">
+  <header>
+    <img class="logo" src="data:image/png;base64,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" alt="A-tin logo: made by Atin">
+    <div class="brand">
+      <small>ESB ESOL Skills for Life · Speaking &amp; Listening · Task 2</small>
+      <h1 id="h1">My Talk</h1>
+    </div>
+    <button class="lvbadge" id="lvBadge" data-go="levels" hidden title="Change level"></button>
+    <nav class="nav" id="nav" hidden>
+      <button class="btn" data-go="hub">☰ All activities</button>
+      <button class="btn primary" id="nextAct">Next activity →</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- LEVELS -->
+    <section class="panel" id="p_levels">
+      <div class="card"><h2 style="font-size:1.5em">Choose your level</h2><p class="howto">Click your level. You will see 11 activities to get ready for the talk in your speaking exam.</p></div>
+      <div class="levels scroll" id="levels"></div>
+      <p class="src">Timings from the ESB ESOL Skills for Life Speaking &amp; Listening specifications (Entry 1 – Level 2). Word counts are a guide for practice, not an exam rule.</p>
+    </section>
+
+    <!-- HUB -->
+    <section class="panel" id="p_hub" hidden>
+      <div class="card"><div class="btns"><h2 id="hubTitle"></h2><span class="spacer"></span><span class="pill" id="hubInfo"></span></div><p class="howto">Do the activities in order, or choose one. A ✓ shows the ones you have finished.</p></div>
+      <div class="hub scroll" id="hub"></div>
+    </section>
+
+    <!-- 1 MISTAKES -->
+    <section class="panel" id="p_mist" hidden>
+      <div class="card">
+        <div class="btns"><h2 id="mTitle"></h2><span class="spacer"></span><span class="counter" id="count"></span></div>
+        <p class="howto" id="mHow"></p>
+        <div class="talk scroll" id="talk"></div>
+        <div class="toast" id="toast" aria-live="polite"></div>
+        <div class="btns">
+          <button class="btn" id="showAns">Show the correct talk</button>
+          <button class="btn ghost" id="reset1">Start again</button>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Write the correct words</h2>
+        <p class="howto">When you find a mistake, it appears here. Write the correct word or words.</p>
+        <div class="slots scroll" id="slots"></div>
+      </div>
+    </section>
+
+    <!-- 2 ORDER -->
+    <section class="panel two" id="p_order" hidden>
+      <div class="card">
+        <h2>Put the talk in order</h2>
+        <p class="howto">The parts of the talk are mixed up. Use ▲ and ▼ to move them. Then click <b>Check</b>.</p>
+        <ol class="olist scroll" id="olist"></ol>
+      </div>
+      <div class="card">
+        <h2>How a good talk is organised</h2>
+        <div id="orderTips" class="scroll"></div>
+        <p class="fb" id="orderFb" aria-live="polite"></p>
+        <div class="btns"><button class="btn primary" id="orderCheck">Check</button><button class="btn ghost" id="orderShuffle">Mix again</button></div>
+      </div>
+    </section>
+
+    <!-- 3 LINKING -->
+    <section class="panel" id="p_link" hidden style="grid-template-columns:minmax(0,1.6fr) minmax(0,.8fr)">
+      <div class="card">
+        <h2>Choose the linking words</h2>
+        <p class="howto">Choose the best word for each gap. Capital letters don't matter.</p>
+        <div class="gaptext scroll" id="gaptext"></div>
+      </div>
+      <div class="card">
+        <h2>Word bank</h2>
+        <div class="bank" id="bank"></div>
+        <div id="linkTips" class="howto"></div>
+        <p class="fb" id="linkFb" aria-live="polite"></p>
+        <div class="btns"><button class="btn primary" id="linkCheck">Check</button><button class="btn ghost" id="linkReset">Clear</button></div>
+      </div>
+    </section>
+
+    <!-- 4 UPGRADE -->
+    <section class="panel" id="p_upg" hidden style="grid-template-rows:auto minmax(0,1fr)">
+      <div class="card"><h2>Upgrade your sentences</h2><p class="howto" id="upgHow"></p></div>
+      <div class="rows scroll" id="upgRows"></div>
+    </section>
+
+    <!-- 5 PARTNER QUESTIONS -->
+    <section class="panel two" id="p_pq" hidden>
+      <div class="card">
+        <h2>A. Is it a good question?</h2>
+        <p class="howto" id="pqHow"></p>
+        <details class="ex" id="pqTalk"><summary>Read the talk again</summary><div id="pqTalkText"></div></details>
+        <div class="scroll" id="pqList" style="display:flex;flex-direction:column;gap:8px"></div>
+      </div>
+      <div class="card">
+        <h2>B. Put the words in order</h2>
+        <p class="howto">Click the words to make a question. Click <b>Clear</b> to start again.</p>
+        <div class="scroll" id="jumList" style="display:flex;flex-direction:column;gap:10px"></div>
+      </div>
+    </section>
+
+    <!-- 6 NOTES -->
+    <section class="panel two" id="p_notes" hidden>
+      <div class="card">
+        <div class="btns"><span class="howto" id="notesLabel">Your topic</span><span class="spacer"></span><button class="btn ghost" id="notesNew">New topic</button></div>
+        <div class="topicbig" id="notesTopic"></div>
+        <div class="timerbox" id="notesTimer"></div>
+        <textarea class="notesarea" id="notesArea" spellcheck="false" placeholder="key words only…"></textarea>
+        <p class="fb" id="notesFb" aria-live="polite"></p>
+      </div>
+      <div class="card">
+        <h2>How to make quick notes</h2>
+        <ul class="howto" id="notesTips" style="margin:0;padding-left:1.2em"></ul>
+        <h3>Use a mind map</h3>
+        <div class="mindmap" id="mindmap"></div>
+        <details class="ex"><summary>Example notes for the model talk</summary><p id="notesEx" style="margin:.4em 0 0;font-size:1.1em;color:var(--ink)"></p></details>
+      </div>
+    </section>
+
+    <!-- 7 PLAN -->
+    <section class="panel" id="p_plan" hidden>
+      <div class="card"><div class="topics" id="topics"></div><p class="howto" id="planHow"></p></div>
+      <div class="qgrid scroll" id="qgrid"></div>
+    </section>
+
+    <!-- 8 WRITE -->
+    <section class="panel" id="p_write" hidden>
+      <div class="card">
+        <h2>Your plan</h2>
+        <div class="plan scroll" id="plan"></div>
+        <h2>Check your talk</h2>
+        <ul class="check" id="check"></ul>
+      </div>
+      <div class="card">
+        <div class="examrow" id="examrow"></div>
+        <div class="namebox"><label for="sname"><b>Name</b></label><input id="sname" autocomplete="off"></div>
+        <p class="howto" id="writeHow"></p>
+        <textarea id="full" spellcheck="false"></textarea>
+        <div class="meter">
+          <span><b id="wc">0</b> words</span>
+          <div class="bar" aria-hidden="true"><span class="zone" id="zone"></span><i id="wbar" style="width:0"></i></div>
+          <span id="wmsg" class="howto"></span>
+        </div>
+        <div class="btns">
+          <button class="btn primary" id="copy">Copy my talk</button>
+          <span class="howto" id="copyMsg">Paste it in the class Team, General channel.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9 DISCUSSION -->
+    <section class="panel two" id="p_disc" hidden>
+      <div class="card">
+        <h2>A. What does each phrase do?</h2>
+        <p class="howto">Choose the job of each phrase. Then click <b>Check</b>.</p>
+        <div class="scroll" id="phrList"></div>
+        <p class="fb" id="phrFb" aria-live="polite"></p>
+        <div class="btns"><button class="btn primary" id="phrCheck">Check</button></div>
+      </div>
+      <div class="card">
+        <div class="btns"><h2>B. Discuss with your partner</h2><span class="spacer"></span><button class="btn ghost" id="discNew">New question</button></div>
+        <p class="howto" id="discHow"></p>
+        <div class="prompt" id="discPrompt"></div>
+        <div class="timerbox" id="discTimer"></div>
+        <div class="cats" id="discCats"></div>
+      </div>
+    </section>
+
+    <!-- 10 PEER -->
+    <section class="panel two" id="p_peer" hidden>
+      <div class="card">
+        <div class="namebox"><label for="peerName"><b>Speaker</b></label><input id="peerName" autocomplete="off" placeholder="Your partner's name"><span class="spacer"></span><button class="btn ghost" id="peerReset">New speaker</button></div>
+        <p class="howto">Listen to your partner. Tap one button for each line: <b>✗ Not yet</b>, <b>~ OK</b> or <b>✓ Great</b>.</p>
+        <div class="scroll" id="critList"></div>
+      </div>
+      <div class="card">
+        <h2>Timer</h2>
+        <div class="timerbox" id="peerTimer"></div>
+        <h2 id="qcTitle">Questions asked</h2>
+        <div class="qcount" id="qcount"></div>
+        <h2>Score</h2>
+        <div class="score" id="peerScore">0</div>
+        <label for="peerTip"><b>One thing to do better next time</b></label>
+        <textarea class="bigarea" id="peerTip" style="min-height:4em"></textarea>
+        <div class="btns"><button class="btn primary" id="peerCopy">Copy feedback</button><span class="howto" id="peerMsg"></span></div>
+      </div>
+    </section>
+
+    <!-- 11 GAME -->
+    <section class="panel" id="p_game" hidden>
+      <div class="card">
+        <div class="gamebar" id="gamebar" aria-live="polite"></div>
+        <div class="talk huge scroll" id="gtalk"></div>
+      </div>
+      <div class="card">
+        <h2>Teams</h2>
+        <div class="btns" id="teamCount"></div>
+        <div class="teams" id="teams"></div>
+        <p class="howto">Each team clicks one word. A mistake wins 1 point. Say the correction for 1 more point. A wrong click passes the turn.</p>
+        <div class="btns"><button class="btn ghost" id="gameReset">New game</button></div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script>
+(function(){
+const LEVELS = {
+E1:{name:"Entry 1",cefr:"A1",colour:"--e1",talkSec:60,think:60,prepared:false,partnerQ:2,words:[60,100],
+  info:{Talk:"about 1 minute",Think:"up to 1 minute",Topic:"given by the assessor",Partner:"asks 2 questions"},
+  title:"My weekend",speaker:"Yonas",
+  talk:[
+   ["Introduction","Hello. My name is Yonas. I want to talk about my weekend."],
+   ["Saturday","On Saturday I get up at nine o'clock. I {has|have|I have (not I has)} breakfast with my friend Sami. We {is|are|we are (not we is)} from the same country. Then we go to Ridley Road Market. I buy {three apple|three apples|Plural: three apples} and some bread."],
+   ["Sunday","{In|On|Days: on Sunday} Sunday I go to the park. The park is big and green. I like {walk|walking|I like + -ing|to walk} there. In the evening my friend {cook|cooks|he / she + s} dinner. We eat together."],
+   ["Finish","I like my weekend because I can relax. I {no like|don't like|Negative: I don't like|do not like;dont like} Monday mornings! Thank you."]
+  ],
+  topics:{
+   "My weekend":[
+    ["Start","What is your topic?","I want to talk about…","I want to talk about my weekend."],
+    ["Saturday","What do you do on Saturday?","On Saturday I…","On Saturday I get up at nine o'clock. I go to the market."],
+    ["Sunday","What do you do on Sunday? Who with?","On Sunday I… with…","On Sunday I go to the park with my friend."],
+    ["Like","Do you like your weekend? Why?","I like… because…","I like my weekend because I can relax."],
+    ["Finish","What don't you like? Say thank you.","I don't like… Thank you.","I don't like Monday mornings! Thank you."],
+    ["Partner","Your partner asks you a question. Write the question and your answer.","Question: …? Answer: …","Question: What do you buy at the market? Answer: I buy fruit and bread."]],
+   "My home":[
+    ["Start","What is your topic?","I want to talk about…","I want to talk about my home."],
+    ["Where","Where do you live? Who do you live with?","I live in… I live with… / I live alone.","I live in Hackney. I live with my brother."],
+    ["Room","What is in your room?","There is… There are…","There is a bed, a table and a small window."],
+    ["Every day","What do you do at home?","At home I…","At home I cook, watch TV and call my family."],
+    ["Like","Do you like your home? Why?","I like… because… / I don't like… because…","I like my room because it is warm, but it is small."],
+    ["Partner","Your partner asks you a question. Write the question and your answer.","Question: …? Answer: …","Question: Is your room big? Answer: No, it is small."]],
+   "My favourite food":[
+    ["Start","What is your topic?","I want to talk about…","I want to talk about my favourite food."],
+    ["Food","What is your favourite food? Where is it from?","My favourite food is… It is from…","My favourite food is injera. It is from Ethiopia."],
+    ["When","When do you eat it? Who with?","I eat it on… with…","I eat it on Sunday with my friends."],
+    ["Shop","Where do you buy the food?","I buy… at…","I buy the food at a shop in Dalston."],
+    ["Like","Why do you like it?","I like it because…","I like it because it is tasty."],
+    ["Partner","Your partner asks you a question. Write the question and your answer.","Question: …? Answer: …","Question: Can you cook it? Answer: Yes, I can."]]
+  },
+  exam:["Your weekend","Your home","Your favourite food","Your family or friends","Your day","Your town","Your English class","Your favourite colour or clothes"],
+  checks:[
+   ["Start: I want to talk about…",t=>/talk about|my \w+ is/i.test(t)],
+   ["Present simple (I go, I like, I have)",t=>/\bI (go|like|have|live|eat|buy|get|watch|cook|play|study|am|can)\b/i.test(t)],
+   ["and / but",t=>/\b(and|but)\b/i.test(t)],
+   ["A reason: because",t=>/\bbecause\b/i.test(t)],
+   ["Finish: Thank you",t=>/thank you/i.test(t)]]
+},
+E2:{name:"Entry 2",cefr:"A2",colour:"--e2",talkSec:120,think:60,prepared:false,partnerQ:2,words:[150,200],
+  info:{Talk:"2 minutes",Think:"1 minute",Topic:"given by the assessor",Partner:"asks 2 questions"},
+  title:"My favourite food",speaker:"Leila",
+  talk:[
+   ["Introduction","Hello, everyone. Today I am going to talk about my favourite food. It is rice with chicken. It is a famous dish from my country."],
+   ["Past","When I was a child, my mother {cook|cooked|Past simple: cook → cooked|used to cook} it every Friday. The whole family sat together and we talked and laughed. It was my favourite day of the week."],
+   ["Now","Now I live in London. On Saturdays I {go always|always go|Always goes before the verb: I always go} to Ridley Road Market. I buy chicken, rice, onions and tomatoes. The vegetables at the market are {more cheap|cheaper|Comparative: cheap → cheaper} than in the supermarket. I don't have {some|any|Negatives: not … any} special spices here, so the food tastes a little different."],
+   ["Last week","Last week I cooked it for my friends from college. We {eated|ate|Past simple: eat → ate (irregular)} it in the kitchen at my hostel. My friends {was|were|Past simple: they were} very happy, and they asked for more!"],
+   ["Future","Next Saturday I {going to|am going to|Future: I am going to|'m going to} cook it again for my English class."],
+   ["Finish","I love this food because it is healthy and it {make|makes|it + s: it makes} me think of home. Thank you for listening."]
+  ],
+  topics:{
+   "My favourite food":[
+    ["Introduction","What is your favourite food?","Today I am going to talk about… It is…","Today I am going to talk about my favourite food. It is rice with chicken."],
+    ["Past","Who cooked it when you were a child? When?","When I was a child, my… cooked it…","When I was a child, my mother cooked it every Friday."],
+    ["Now","Where do you buy the food now? How often?","I usually… / I often…","I usually go to Ridley Road Market on Saturdays."],
+    ["Compare","Compare the market and the supermarket, or London and your country.","…is cheaper / bigger / better than…","The vegetables at the market are cheaper than in the supermarket."],
+    ["Last time","When did you last eat it? What happened?","Last… I cooked / ate…","Last week I cooked it for my friends. They were very happy."],
+    ["Future","When are you going to eat it again?","Next… I am going to…","Next Saturday I am going to cook it for my class."],
+    ["Finish","Why do you like it?","I love this food because… Thank you for listening.","I love this food because it is healthy and it makes me think of home."],
+    ["Partner","What 2 questions can your partner ask you? Write your answers.","1. …? – … 2. …? – …","1. Is it difficult to cook? – No, it's easy. 2. Is it spicy? – Yes, a little."]],
+   "Shopping":[
+    ["Introduction","What is your topic?","Today I am going to talk about…","Today I am going to talk about shopping in London."],
+    ["Where","Where do you usually go shopping?","I usually go to…","I usually go to Ridley Road Market and a supermarket in Dalston."],
+    ["What","What do you buy? How often?","I buy… once / twice a week.","I buy fruit, vegetables and rice twice a week."],
+    ["Compare","Which shop is cheaper or better? Why?","…is cheaper / better than… because…","The market is cheaper than the supermarket, but it is very busy."],
+    ["Last time","What did you buy last time? How much was it?","Last… I bought… It was £…","Last Saturday I bought a warm jacket. It was £15."],
+    ["Future","What are you going to buy next?","Next week I am going to buy…","Next week I am going to buy new shoes for winter."],
+    ["Finish","Do you like shopping in London? Why?","I like / don't like… because…","I like shopping at the market because the people are friendly."],
+    ["Partner","What 2 questions can your partner ask you? Write your answers.","1. …? – … 2. …? – …","1. How do you get to the market? – By bus. 2. What time does it open? – At 9 o'clock."]],
+   "My free time":[
+    ["Introduction","What is your topic?","Today I am going to talk about…","Today I am going to talk about my free time."],
+    ["Activities","What do you do in your free time?","In my free time I… / I like …ing","In my free time I like walking and playing football in the park."],
+    ["Where","Where do you go? Who with?","I usually… with…","I usually go to Hackney Marshes with my friends."],
+    ["Past","What did you do last weekend?","Last weekend I…","Last weekend I played football and then we had lunch together."],
+    ["Compare","Compare your free time in London and in your country.","In my country I… but in London I… / …is more … than…","In my country I had more free time, but London is more interesting."],
+    ["Future","What are you going to do next weekend?","Next weekend I am going to…","Next weekend I am going to visit the library."],
+    ["Finish","Why is free time important for you?","It is important because…","It is important because I can relax and meet people."],
+    ["Partner","What 2 questions can your partner ask you? Write your answers.","1. …? – … 2. …? – …","1. Is football free? – Yes, it is. 2. How often do you play? – Every Sunday."]]
+  },
+  exam:["Shopping in London","Your favourite food","Your free time","A festival in your country","Transport in London","Your best friend","The weather in London","Your daily routine"],
+  checks:[
+   ["Introduction: Today I am going to talk about…",t=>/going to talk about|today i/i.test(t)],
+   ["Past simple (went, was, -ed)",t=>/\b(went|was|were|did|had|saw|ate|met|came|made|took|got|bought|told|felt|left|gave|sat)\b|\b\w{3,}ed\b/i.test(t)],
+   ["Future (going to / will)",t=>/\bwill\b|'ll\b|\bgoing to (?!talk)/i.test(t)],
+   ["A reason (because)",t=>/\bbecause\b/i.test(t)],
+   ["Comparative (…er than / more … than)",t=>/\b\w+er than\b|\bmore \w+ than\b/i.test(t)],
+   ["4+ linking words (and, but, so, because, then)",t=>(t.match(/\b(and|but|so|because|also|then|when)\b/gi)||[]).length>=4],
+   ["Finish: Thank you for listening",t=>/thank you|in conclusion/i.test(t)]]
+},
+E3:{name:"Entry 3",cefr:"B1",colour:"--e3",talkSec:120,think:60,prepared:false,partnerQ:2,words:[200,260],
+  info:{Talk:"2 minutes",Think:"1 minute",Topic:"given by the assessor",Partner:"asks 2 questions"},
+  title:"A place in London I like",speaker:"Amina",
+  talk:[
+   ["Introduction","Hello, everyone. Today I am going to talk about a place in London that I really like. It is Victoria Park in Hackney."],
+   ["Description","Victoria Park is a very big park in East London. It has two lakes, lots of trees and a nice café next to the water. There is also a playground for children and a free outdoor gym. I live about fifteen minutes from the park, so I usually walk there."],
+   ["Past experience","The first time I went there was last summer. I {goed|went|Past simple: go → went (irregular)} with a friend from my English class. We sat {in|on|Preposition: we sit on the grass} the grass, ate sandwiches and watched the people. It was very hot, so we bought {a|an|Article: an before a vowel sound (an ice cream)} ice cream. In the evening there was a free concert and we {dance|danced|Past simple: regular verb + ed} until nine o'clock."],
+   ["Reasons","I like this park because it is quiet and green. My room is very small, so the park helps me to relax. It is {more bigger|bigger|Comparative: big → bigger (no more)} than my local park, and there {is|are|There are + plural (lots of things)} always lots of things to do. My favourite thing is watching the ducks on the lake. My son {love|loves|Present simple: he / she / it + s} them too."],
+   ["Future plans","Next month I {will to go|will go|Future: will + verb (no to)|am going to go;'ll go;am going} there with my classmates for a picnic. I {am want|want|Present simple: I want (no am)} to show them the old Chinese pagoda. {If is|If it is|Every sentence needs a subject: if it is|If it's} sunny, we will play football."],
+   ["Conclusion","In conclusion, Victoria Park is my favourite place in London because it is beautiful and it {cost|costs|Present simple: it + s} nothing. I think everybody should visit it. Thank you for {listen|listening|Thank you for + -ing} ."]
+  ],
+  topics:{
+   "A place I like":[
+    ["Introduction","What place are you going to talk about?","Today I am going to talk about…","Today I am going to talk about a place in London that I really like. It is Victoria Park in Hackney."],
+    ["Description","Where is it? What is there?","It is in… There is / There are…","It is in East London. It has two lakes, lots of trees and a café."],
+    ["Description","How often do you go there? How do you get there?","I usually… / I go there by…","I live about fifteen minutes from the park, so I usually walk there."],
+    ["Past experience","When did you first go there? Who did you go with?","The first time I went there was… I went with…","The first time I went there was last summer. I went with a friend from my English class."],
+    ["Past experience","What did you do there? How did you feel?","We… It was…","We sat on the grass and ate sandwiches. It was very hot."],
+    ["Reasons","Why do you like it?","I like it because…","I like this park because it is quiet and green."],
+    ["Reasons","Compare it with another place.","It is …er than… / It is more … than…","It is bigger than my local park."],
+    ["Future plans","When will you go again? What will you do?","Next… I am going to… / I will…","Next month I am going to go there with my classmates for a picnic."],
+    ["Conclusion","Why should other people go there?","In conclusion,… I think everybody should…","In conclusion, it is my favourite place because it is beautiful and it costs nothing."],
+    ["Partner","What 2 questions can your partner ask you? Prepare your answers.","1. …? – … 2. …? – …","1. Is it safe at night? – It closes at dusk. 2. Can you swim there? – Yes, in the summer."]],
+   "An important person":[
+    ["Introduction","Who are you going to talk about? (He / she can be alive or dead.)","Today I am going to talk about…","Today I am going to talk about my grandmother. Her name was Fatima. She died two years ago."],
+    ["Description","What does / did he or she look like?","He / She is… / was… He / She has… / had…","She was short and she had grey hair and kind eyes."],
+    ["Description","What is / was he or she like? What does / did he or she do every day?","He / She is / was very… Every day he / she…","She was very patient. Every day she cooked and talked to her neighbours."],
+    ["Past experience","When did you last see him / her? Where were you?","The last time I saw him / her was…","The last time I saw her was three years ago, in her village."],
+    ["Past experience","What did you do together?","We… It was…","We made bread together and she told me stories. It was a happy day."],
+    ["Reasons","Why is / was he or she important to you?","He / She is / was important to me because…","She was important to me because she taught me to be strong."],
+    ["Reasons","Compare him / her with you.","He / She is / was …er than me. / more … than me.","She was more patient than me, but I am taller than her!"],
+    ["Future","What will you do in the future? Or how will you remember him / her?","I hope… / Next year I am going to… / I will always remember…","I will always remember her stories. One day I am going to tell them to my children."],
+    ["Conclusion","What do you want to say about this person?","In conclusion,…","In conclusion, my grandmother was the most important person in my life."],
+    ["Partner","What 2 questions can your partner ask you? Prepare your answers.","1. …? – … 2. …? – …","1. What was her favourite food? – Lentil soup. 2. Do you miss her? – Yes, very much."]],
+   "A special day":[
+    ["Introduction","What special day are you going to talk about?","Today I am going to talk about…","Today I am going to talk about Eid, a special day in my country."],
+    ["Description","When is it? Who celebrates it?","It is in… / Many people…","It is at the end of Ramadan. Muslim families all over the world celebrate it."],
+    ["Description","What do people eat, wear or do?","People usually… They wear…","People wear new clothes, visit their families and eat sweet food."],
+    ["Past experience","When did you last celebrate it? Where were you?","Last year I celebrated it in…","Last year I celebrated it in London with my friends."],
+    ["Past experience","What did you do? How did you feel?","We… I felt…","We went to the mosque and then we cooked a big meal. I felt happy but I missed my family."],
+    ["Reasons","Why do you like this day?","I like it because…","I like it because everybody is together and kind to each other."],
+    ["Reasons","Compare it in London and in your country.","In my country it is …er / more… than in London.","In my country it is bigger and noisier than in London."],
+    ["Future plans","How will you celebrate it next time?","Next time I am going to… / I will…","Next time I am going to invite my classmates to try our food."],
+    ["Conclusion","What do you want people to remember?","In conclusion,…","In conclusion, Eid is the best day of the year for me."],
+    ["Partner","What 2 questions can your partner ask you? Prepare your answers.","1. …? – … 2. …? – …","1. What do children do? – They get presents. 2. How long is it? – Three days."]]
+  },
+  exam:["A place you like","An important person in your life","A special day or festival","Learning English","Keeping healthy","Your favourite season","Using the internet","Living in London"],
+  checks:[
+   ["Introduction (Today I am going to talk about…)",t=>/going to talk about|today i/i.test(t)],
+   ["Past simple (went, was, -ed)",t=>/\b(went|was|were|did|had|saw|ate|met|came|made|took|got|bought|told|felt|left|gave)\b|\b\w{3,}ed\b/i.test(t)],
+   ["Future (will / going to)",t=>/\bwill\b|'ll\b|\bgoing to (?!talk)/i.test(t)],
+   ["A reason (because)",t=>/\bbecause\b/i.test(t)],
+   ["Comparative (…er than / more … than)",t=>/\b\w+er than\b|\bmore \w+ than\b/i.test(t)],
+   ["5+ linking words",t=>(t.match(/\b(and|but|so|because|also|then|after that|when|if|first|finally)\b/gi)||[]).length>=5],
+   ["Conclusion (In conclusion… / Thank you)",t=>/in conclusion|to sum up|thank you/i.test(t)]]
+},
+L1:{name:"Level 1",cefr:"B2",colour:"--l1",talkSec:180,think:0,prepared:true,partnerQ:3,words:[330,420],
+  info:{Talk:"3-minute presentation",Prepare:"before the exam",Topic:"your own choice",Notes:"brief notes + visual aids",Partner:"asks 3 questions",Then:"1-minute discussion"},
+  title:"Hackney's libraries",speaker:"Marco",
+  talk:[
+   ["Introduction","Good morning, everyone. The topic of my presentation is Hackney's libraries, and why I think they are one of the best free services in London. I'm going to cover three points: what the libraries offer, how they have helped me, and how you can join."],
+   ["Point 1","Firstly, what do the libraries offer? Most people think a library is only for borrowing books, but that is not true. There are eight libraries in Hackney, and all of them have free wi-fi and computers. The biggest one is Hackney Central Library, {who|which|Relative pronouns: which (or that) for things|that} is very close to Hackney Central station. Many libraries also run free conversation clubs, homework clubs and computer classes, and you can get {informations|information|Uncountable noun: information (no s)} about jobs, housing and training. You can also print and photocopy documents for a small fee, which is really useful when you need to send forms to the council or the Jobcentre."],
+   ["Point 2","Secondly, I'd like to explain how the library has helped me personally. I {have joined|joined|Past simple with a finished time (two years ago)} Dalston Library two years ago. At that time I didn't know anybody in London and I felt quite lonely. One rainy afternoon, while I {was read|was reading|Past continuous: was + -ing} a newspaper, a volunteer asked me if I {am|was|Reported speech: am → was} interested {to join|in joining|interested in + -ing} the conversation club. I said yes, and since then I have made lots of friends and my English has improved enormously. {Despite of|Despite|Despite (no of) / In spite of|In spite of} the bad weather, I hardly ever miss a session. I've also used the library computers to write my CV and to apply for courses at college."],
+   ["Point 3","Finally, how can you join? It's very simple. You {should to|should|Modal verbs: should + verb (no to)} take some ID and, if possible, a letter with your address. The staff are very friendly, and they will give you {advices|advice|Uncountable noun: advice (no s)} if you have any problems. Once you have a card, you can borrow books, DVDs and e-books, and even reserve items online from home."],
+   ["Conclusion","In conclusion, I strongly believe that libraries are one of the {most easy|easiest|Superlative: easy → the easiest} places to make friends and improve your English. If I {would have|had|Second conditional: If + past simple, … would + verb} more free time, I would spend every afternoon there. Thank you for listening. Does anyone have any questions?"]
+  ],
+  topics:{
+   "Your own topic":[
+    ["Topic","What is your topic? What type of talk is it: a story, an explanation, or a description of a process, a person or a place?","My topic is… It is a / an…","My topic is Hackney's libraries. It is an explanation."],
+    ["Introduction","How will you start? Name your three main points.","The topic of my presentation is… I'm going to cover three points: …","The topic of my presentation is Hackney's libraries. I'm going to cover three points: what they offer, how they have helped me and how you can join."],
+    ["Point 1","What is your first point? Give facts or an example.","Firstly,… For example,…","Firstly, all eight libraries have free wi-fi and computers. For example, …"],
+    ["Point 2","What is your second point? Add a personal experience (past simple, past continuous, present perfect).","Secondly,… Two years ago… Since then I have…","Secondly, I joined Dalston Library two years ago. Since then I have made lots of friends."],
+    ["Point 3","What is your third point? Give advice or explain how to do something.","Finally,… You should… / First you…, then…","Finally, to join, you should take some ID and a letter with your address."],
+    ["Detail","Add a sentence with a relative clause (who / which / where).","…, which… / …who… / …where…","The biggest one is Hackney Central Library, which is close to the station."],
+    ["Conclusion","Sum up and give your opinion. Use a conditional.","In conclusion, I strongly believe… If I had…, I would…","In conclusion, libraries are one of the easiest places to make friends. If I had more free time, I would go every day."],
+    ["Partner","Your partner will ask you 3 questions. What might they ask? Prepare your answers.","1. … 2. … 3. …","1. Do you have to pay? – No, it's free. 2. When is the club? – Thursdays. 3. Can children join? – Yes."],
+    ["Discussion","Next you discuss one point for 1 minute. Which point could the assessor choose? What would you say?","I think… because… What do you think?","Are libraries still important now everyone has a smartphone? I think so, because…"],
+    ["Notes","Write your brief notes (key words only). You can take these into the exam.","key words…","8 libraries – free wi-fi – Dalston 2 yrs ago – conversation club – ID + letter"]]
+  },
+  checks:[
+   ["Signposting (Firstly, Secondly, Finally)",t=>(t.match(/\b(firstly|secondly|thirdly|finally|to begin with|first of all)\b/gi)||[]).length>=2],
+   ["Present perfect (have made, has improved)",t=>/\b(have|has|'ve)\s+(been|made|done|had|seen|met|got|become|learnt|learned|grown|given|taken|\w+ed)\b/i.test(t)],
+   ["Conditional (If … will / would)",t=>/\bif\b[^.!?]*\b(would|will|'d|'ll)\b/i.test(t)],
+   ["Relative clause (who / which / where)",t=>/,\s*(who|which|where|whose)\b|\b\w+ (who|which|that) (is|are|was|were|has|have|can|helps?)\b/i.test(t)],
+   ["3+ discourse markers (however, for example…)",t=>(t.match(/\b(however|in addition|for example|for instance|on the other hand|as a result|although|moreover|therefore|because of this)\b/gi)||[]).length>=3],
+   ["Conclusion + invite questions",t=>/in conclusion|to sum up|to conclude/i.test(t)&&/question/i.test(t)]]
+},
+L2:{name:"Level 2",cefr:"C1",colour:"--l2",talkSec:180,think:0,prepared:true,partnerQ:3,words:[370,450],
+  info:{Talk:"3-minute presentation",Prepare:"before the exam",Topic:"your own choice",Notes:"brief notes + visual aids",Partner:"asks 3 questions",Then:"2-minute discussion"},
+  title:"Why community gardens matter",speaker:"Daniela",
+  talk:[
+   ["Introduction","Good afternoon. Today I would like to talk about community gardens, and to explain why I believe they are far more important for city life than most people realise. I will start with a short description of what a community garden is, then look at the benefits, and finally consider some of the challenges they face."],
+   ["Background","A community garden is a shared piece of land where local residents grow fruit, vegetables and flowers together. In London, {the number of community gardens have|the number of community gardens has|Subject–verb agreement: the number of … has} grown in recent years, and there are now several in Hackney alone. Most of them are run by volunteers and are open to anyone, regardless of age, background or experience. Some focus mainly on growing food, while others are simply places where people can sit, relax and enjoy nature."],
+   ["Benefits","{Not only it improves|Not only does it improve|Inversion: Not only does it improve…} the local environment, but a garden also brings people together. {A research|Research|Uncountable: research (or 'a study')|a study;studies;one study} shows that people who garden regularly tend to feel less stressed. This has certainly been true for me. Three years ago I was feeling isolated and, to be honest, if I {didn't join|hadn't joined|Third conditional: if + past perfect|had not joined} my local garden, I would never have met some of my closest friends. Gardening has had a hugely positive {affect|effect|Vocabulary: effect (noun) / affect (verb)} on my mental health. In addition, gardens give children who live in flats a rare chance to learn where their food comes from, and volunteers pick up practical skills, from planning a vegetable bed to managing a small budget."],
+   ["Challenges","{In the other hand|On the other hand|Fixed phrase: on the other hand}, community gardens face real problems. Their success tends to {depend of|depend on|Dependent preposition: depend on} a small group of dedicated volunteers, and {less|fewer|Countable nouns: fewer people (not less)} people seem willing to give up their free time nowadays. Although land in London is extremely expensive, {but some|some|Although … (no but in the same sentence)} councils have chosen to protect these spaces rather than sell them to developers. Another issue is funding: many gardens rely on small grants which have to be renewed every year, so their future is often uncertain."],
+   ["Conclusion","In conclusion, community gardens offer far more than fresh vegetables. They improve wellbeing, strengthen communities and make our city greener. If more people became involved, I am convinced that every neighbourhood in London could have one. If you have never visited one, I would say it is definitely {worth to visit|worth visiting|worth + -ing} one soon. Thank you for listening. I'd be happy to answer any questions."]
+  ],
+  topics:{
+   "Your own topic":[
+    ["Topic","What is your topic and your main message (your argument)?","My presentation is about… I believe that…","My presentation is about community gardens. I believe they are far more important than most people realise."],
+    ["Introduction","How will you introduce the structure?","I will start by… then look at… and finally consider…","I will start with a short description, then look at the benefits, and finally consider some of the challenges."],
+    ["Background","Explain or describe the topic for a listener who knows nothing about it.","…is a… where… / Most of them are…","A community garden is a shared piece of land where local residents grow food together."],
+    ["Main point","Give your main point with evidence and a complex structure.","Not only does…, but… also… / Research suggests that…","Not only does it improve the environment, but it also brings people together."],
+    ["Experience","Add a personal example. Try a third conditional.","If I hadn't…, I would never have…","If I hadn't joined my local garden, I would never have met some of my closest friends."],
+    ["Other side","What are the problems or the other side? Use hedging.","On the other hand,… tends to… / It seems that…","On the other hand, their success tends to depend on a small group of volunteers."],
+    ["Conclusion","Sum up and finish with a recommendation.","In conclusion,… I would say it is definitely worth…","In conclusion, community gardens offer far more than fresh vegetables."],
+    ["Partner","Your partner will ask you 3 questions. Predict them and plan your answers.","1. … 2. … 3. …","1. How much time do you spend there each week? 2. Who pays for it? 3. Could it work in every area?"],
+    ["Discussion","Next you discuss one point for 2 minutes. Which point might the assessor choose? Prepare your view and a question for your partner.","In my view… Would you agree that…?","Should councils sell land for housing instead? In my view…, but would you agree that…?"],
+    ["Notes","Write your brief notes (key words only). You can take these into the exam.","key words…","definition – shared land – benefits: stress, friends – problems: volunteers, land prices – worth visiting"]]
+  },
+  checks:[
+   ["Clear structure (I will start by… / then / finally)",t=>/i will start|i'll start|first of all|firstly|to begin/i.test(t)&&/\bfinally\b|lastly/i.test(t)],
+   ["3+ complex linkers (although, whereas, despite…)",t=>(t.match(/\b(although|whereas|despite|nevertheless|however|furthermore|moreover|on the other hand|consequently|in contrast|therefore|even though)\b/gi)||[]).length>=3],
+   ["Passive (is run, was built, has been…)",t=>/\b(is|are|was|were|been|being|be)\s+(\w+ed|built|made|done|run|grown|known|seen|given|taken|found|chosen|held|kept|paid|sold|said|thought)\b/i.test(t)],
+   ["Hedging (tend to, seem, might, arguably)",t=>/\b(tend to|tends to|seem|seems|might|may|perhaps|arguably|likely|appears? to|suggests?)\b/i.test(t)],
+   ["Opinion (I believe, in my view, I would argue)",t=>/i believe|in my view|in my opinion|i would argue|i'd argue|i would say/i.test(t)],
+   ["Conditional (if …)",t=>/\bif\b[^.!?]*\b(would|will|'d|'ll|might|could)\b/i.test(t)],
+   ["Conclusion + invite questions",t=>/in conclusion|to sum up|to conclude/i.test(t)&&/question/i.test(t)]]
+}
+};
+
+
+/* ---------- Extra content for the new activities ---------- */
+const EXTRA={
+E1:{linkers:["and","but","because","then","so"],maxGaps:6,orderBy:"pairs",
+  pq:[["What do you buy at the market?","told","Yonas says he buys apples and bread."],["Where you go on Sunday?","grammar","Where do you go on Sunday?"],["What do you have for breakfast?","good","He doesn't say this. Good question!"],["Do you likes Monday?","grammar","Do you like Monday?"],["What is your favourite colour?","off","This is not about his weekend."],["Is the market expensive?","good","He doesn't say this. Good question!"]],
+  jum:[["Where","do","you","live?"],["Where","is","your friend","from?"],["Do","you","cook","on Sunday?"]],
+  notesEx:"weekend · Sat 9 o'clock · breakfast – Sami · market: apples, bread · Sun park – walk · friend cooks · like – relax · ✗ Monday",
+  map:["Saturday","Sunday","I like…","I don't like…"],
+  upg:[["I go to the market.","Add when (on Saturday / every day / at 10 o'clock).","\\b(on|every|at|in the)\\b","I go to the market on Saturday."],
+       ["I like my room.","Add because.","\\bbecause\\b","I like my room because it is warm."],
+       ["My friend cooks.","Add what and when.","\\b(in the|on|every|at)\\b","My friend cooks rice in the evening."],
+       ["The park is big.","Add and + another adjective.","\\band\\b","The park is big and green."],
+       ["I don't like Monday.","Add but + something you like.","\\bbut\\b","I like Saturday, but I don't like Monday."]],
+  phrases:[["I think…",0],["I like it because…",0],["Yes, me too.",1],["I agree.",1],["I don't think so.",2],["No, I don't agree.",2],["What do you think?",3],["Do you like…?",3]],
+  prompts:["Is the weekend better than the week?","Is the market better than the supermarket?","Is it good to live with a friend?","Is London a good place to live?"],
+  discSec:60,
+  peer:["Starts clearly (I want to talk about…)","Talks for about 1 minute","Present simple is correct (I go, he goes)","Uses and / but / because","Clear voice – easy to understand","Answers the questions"]},
+E2:{linkers:["and","but","so","because","when","then","now","next"],maxGaps:8,orderBy:"paras",
+  pq:[["Is it difficult to cook?","good","Leila doesn't say this. Good question!"],["What spices you use?","grammar","What spices do you use?"],["Where do you buy the vegetables?","told","She says Ridley Road Market."],["Did your mother taught you?","grammar","Did your mother teach you?"],["What is your favourite film?","off","This is not about food."],["How much does the chicken cost?","good","She doesn't say this. Good question!"]],
+  jum:[["When","did","you","learn","to cook?"],["What","are","you","going to","cook next?"],["Is","the food","very","spicy?"]],
+  notesEx:"fav food – rice + chicken · child – mum, Fridays, family · now – Ridley Rd Sat – cheaper · no spices · last week – friends, hostel – happy · next Sat – class · healthy, home",
+  map:["Past","Now","Future","Why?"],
+  upg:[["I went to the market.","Add when and who with.","\\b(last|yesterday|ago|with)\\b","Last Saturday I went to the market with my friend."],
+       ["The market is cheap.","Make a comparison (…er than).","\\bthan\\b","The market is cheaper than the supermarket."],
+       ["I cook rice.","Add always, usually, often or sometimes.","\\b(always|usually|often|sometimes|never)\\b","I usually cook rice on Fridays."],
+       ["I will cook for my class.","Use going to + a time.","going to","Next week I am going to cook for my class."],
+       ["The food is good.","Use a better adjective and because.","\\b(because|so)\\b","The food is delicious because my mother's recipe is the best."]],
+  phrases:[["I think…",0],["I prefer… because…",0],["Yes, I agree.",1],["Me too.",1],["I don't think so.",2],["I'm not sure.",2],["What do you think?",3],["Do you agree?",3]],
+  prompts:["Is it better to cook at home or to buy food?","Is food in London better than food in your country?","Should schools teach children to cook?","Is shopping at a market better than online?"],
+  discSec:60,
+  peer:["Clear introduction","Talks for about 2 minutes","Past simple is correct","Talks about the future (going to)","Gives reasons (because) and compares (…er than)","Uses linking words","Clear voice – easy to understand","Answers the 2 questions"]},
+E3:{linkers:["because","so","also","in conclusion","if","until","and","next","but"],maxGaps:10,orderBy:"paras",
+  pq:[["Is the café expensive?","good","Amina doesn't say this. Good question!"],["Why you like this park?","grammar","Why do you like this park?"],["How far do you live from the park?","told","She says fifteen minutes."],["How often do you goes there?","grammar","How often do you go there?"],["What is your favourite food?","off","This is not about the park."],["What is the pagoda like?","good","She doesn't describe it. Good question!"]],
+  jum:[["How","old","is","your son?"],["Who","did","you","go","with?"],["What time","does","the park","close?"]],
+  notesEx:"Victoria Park – Hackney · 2 lakes, café, gym · walk 15 min · last summer – friend – grass, ice cream, concert · quiet, green, bigger · next month – picnic, pagoda · free!",
+  map:["What / where","Past","Why I like it","Future"],
+  upg:[["The park is nice.","Use a superlative (the most… / the …est).","\\b(the \\w+est|the most|the best)\\b","It is one of the most beautiful parks in London."],
+       ["I went to the park. It was hot.","Make one sentence with so or because.","\\b(so|because)\\b","I went to the park because it was a hot day."],
+       ["I will go there.","Add a condition: If…","\\bif\\b","If it is sunny, I will go there with my classmates."],
+       ["There is a café.","Say where it is and what it is like.","\\b(next to|near|by|opposite|behind|in front of)\\b","There is a small café next to the lake."],
+       ["I like the park.","Give two reasons. Use also.","\\balso\\b","I like the park because it is green. It is also free."]],
+  phrases:[["In my opinion,…",0],["I think that…",0],["You're right.",1],["I agree with you.",1],["I'm not sure about that.",2],["I see your point, but…",2],["What about you?",3],["Do you agree?",3]],
+  prompts:["Should all parks and museums in London be free?","Is it better to live in a city or in the countryside?","Are parks important for families?","Is it easy to make friends in London?"],
+  discSec:60,
+  peer:["Clear introduction and conclusion","Talks for about 2 minutes","Uses past, present and future","Gives reasons and examples","Good linking words","Good range of vocabulary","Clear pronunciation","Answers the 2 questions well"]},
+L1:{linkers:["firstly","secondly","finally","in conclusion","but","while","since then","despite","if","also"],maxGaps:10,orderBy:"paras",
+  pq:[["How much does it cost to print a page?","good","Marco doesn't say. Good question!"],["How long you have been a member?","grammar","How long have you been a member?"],["How many libraries are there in Hackney?","told","He says there are eight."],["Which library you recommend?","grammar","Which library would you recommend?"],["What is your favourite sport?","off","This is not about libraries."],["What do you talk about at the conversation club?","good","He doesn't say. Good question!"],["Do you need to book the computers?","good","He doesn't say. Good question!"]],
+  jum:[["How long","have you","been going","to the club?"],["Which","library","would you","recommend?"],["Do you know","if","the library","is open","on Sundays?"]],
+  notesEx:"Hackney libraries · 1) offer: 8, wi-fi, clubs, info, printing · 2) me: Dalston 2 yrs ago, lonely → club, friends, CV · 3) join: ID + letter, card, e-books · concl: easiest place – questions?",
+  map:["Point 1","Point 2","Point 3","Conclusion"],
+  upg:[["I joined the library. I made friends.","Use since + the present perfect.","\\bsince\\b","Since I joined the library, I have made lots of friends."],
+       ["The library is good. It is near the station.","Join them with a relative clause (which / that / where).","\\b(which|that|where|who)\\b","The library, which is near the station, is very good."],
+       ["I don't have time. I don't go every day.","Use the second conditional.","\\bif\\b.*\\bwould\\b|\\bwould\\b.*\\bif\\b","If I had more time, I would go every day."],
+       ["The staff help you.","Make it precise: add an adverb and an example.","\\b(for example|such as|for instance)\\b","The staff are extremely helpful – for example, they showed me how to print."],
+       ["It was raining. I went to the club.","Use although, even though or despite.","\\b(although|even though|despite|in spite)\\b","Although it was raining, I went to the club."]],
+  phrases:[["From my point of view,…",0],["As far as I'm concerned,…",0],["That's a good point.",1],["I couldn't agree more.",1],["I see what you mean, but…",2],["I'm not so sure about that.",2],["How do you feel about…?",3],["Would you agree that…?",3]],
+  prompts:["Are libraries still important now everyone has a smartphone?","Should the council spend more money on libraries?","Is it better to learn English in a class or online?","Should all public services be free?"],
+  discSec:60,
+  peer:["Clear structure and signposting","Keeps to 3 minutes","Range of tenses (present perfect, past continuous…)","Complex sentences (relative clauses, conditionals)","Precise vocabulary","Clear pronunciation, stress and intonation","Uses notes – doesn't read","Answers the 3 questions fully","Takes part well in the discussion"]},
+L2:{linkers:["not only","on the other hand","although","in addition","regardless of","rather than","so","if","in conclusion","then","finally"],maxGaps:10,orderBy:"paras",
+  pq:[["How do new gardens find funding?","good","Daniela mentions grants but doesn't explain. Good question!"],["Do you think could every area have one?","grammar","Do you think every area could have one?"],["What is a community garden?","told","She explains this at the start."],["What did made you join?","grammar","What made you join?"],["What's the best season for skiing?","off","This is not about community gardens."],["What would you say to someone who thinks gardens waste valuable land?","good","A challenging, relevant question. Good!"],["How much time do you spend there each week?","good","She doesn't say. Good question!"]],
+  jum:[["Could you","explain","how","volunteers","are recruited?"],["Would it","be fair","to say","that gardens","are mainly","for older people?"],["What","do you think","would happen","if the council","sold the land?"]],
+  notesEx:"comm. gardens – more important than we think · what: shared land, volunteers · benefits: env + people, stress ↓, my story, kids, skills · problems: volunteers ↓, funding, land £££ · concl: worth visiting",
+  map:["Argument","Evidence","Other side","Conclusion"],
+  upg:[["Gardens are good for people.","Hedge it and add evidence.","\\b(tend|seems?|suggests?|research|studies|may|might|likely)\\b","Research suggests that gardening may significantly reduce stress."],
+       ["Volunteers run the gardens.","Use the passive.","\\b(is|are|was|were|been|be)\\s+(run|managed|organised|organized|maintained)\\b","Most gardens are run entirely by volunteers."],
+       ["I joined the garden. I met my friends.","Use the third conditional.","\\bhad(n't| not)?\\b.*\\bwould(n't| not)? have\\b|\\bwould(n't| not)? have\\b.*\\bhad","If I hadn't joined the garden, I would never have met my closest friends."],
+       ["It improves the area and brings people together.","Use Not only … but also …","\\bnot only\\b","Not only does it improve the area, but it also brings people together."],
+       ["Land is expensive. Councils protect gardens.","Contrast them: although / whereas / nevertheless.","\\b(although|whereas|nevertheless|even though|despite|nonetheless)\\b","Although land is expensive, some councils still choose to protect gardens."]],
+  phrases:[["I'd argue that…",0],["It seems to me that…",0],["That's a valid point.",1],["I take your point entirely.",1],["While I accept that…, I'd still say…",2],["With respect, I'm not entirely convinced.",2],["Where do you stand on…?",3],["I'd be interested to hear your view on…",3]],
+  prompts:["Should councils sell green spaces to build more housing?","Is volunteering a responsibility or a choice?","Do cities need more green space or more homes?","Should local services be run by volunteers or paid staff?"],
+  discSec:120,
+  peer:["Clear argument and structure","Keeps to 3 minutes","Wide range of complex structures","Hedging and opinion language","Precise, sophisticated vocabulary","Fluent, natural delivery","Engages listeners (eye contact, notes not read)","Answers the 3 questions fully","Develops the 2-minute discussion"]}
+};
+LEVELS.L1.exam=["A person who inspires you","How to cook a dish from your country","A journey you will never forget","The best free things to do in London","How to prepare for a job interview","Why learning a language matters","A place that changed you"];
+LEVELS.L2.exam=["Should public transport be free?","Social media and young people","How to settle into a new country","Working from home: pros and cons","Renting or buying a home","Why community projects matter","How technology has changed communication"];
+const ORDER=["E1","E2","E3","L1","L2"];
+const CATS=["Give your opinion","Agree","Disagree politely","Ask your partner"];
+const PQCATS=[["good","✓ Good question"],["grammar","✗ Wrong grammar"],["told","✗ Already in the talk"],["off","✗ Not about the topic"]];
+
+const ACTS=[
+ ["mist","Find the mistakes","Model talk",t=>"Click the mistakes in "+t.speaker+"'s talk and correct them.","--t1"],
+ ["order","Order the talk","Model talk",()=>"Put the parts of the talk in the right order.","--t1"],
+ ["link","Linking words","Model talk",()=>"Choose the missing linking words.","--t1"],
+ ["upg","Upgrade your sentences","Model talk",()=>"Make simple sentences better.","--t1"],
+ ["pq","Partner questions","Get ready",t=>"Spot good questions and fix the word order.","--t2"],
+ ["notes","One-minute notes","Get ready",t=>t.prepared?"Make key-word notes fast.":"Make key-word notes in your 1 minute.","--t2"],
+ ["plan","Plan your talk","Get ready",t=>"Answer questions to build your own "+(t.prepared?"presentation":"talk")+".","--t2"],
+ ["write","Write your talk","Your talk",t=>"Write it all, check it, then time it.","--t3"],
+ ["peer","Listen and mark","Your talk",()=>"Mark your partner's talk with a checklist.","--t3"],
+ ["disc","Discussion","Speaking together",t=>t.prepared?"Opinion phrases, then a "+(t.discSec/60)+"-minute discussion.":"Opinion phrases, then discuss with a timer.","--t4"],
+ ["game","Team game","Speaking together",()=>"Teams race to find the mistakes (projector).","--t4"]
+];
+
+/* ======================= STATE ======================= */
+const KEY="esol-talk-builder-v3";
+let S={level:null,view:"levels",name:"",L:{}};
+try{const raw=localStorage.getItem(KEY);if(raw)S=Object.assign(S,JSON.parse(raw));}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
+function D(){return Object.assign({},LEVELS[S.level],EXTRA[S.level]);}
+function st(){
+  const k=S.level;
+  if(!S.L[k])S.L[k]={};
+  const s=S.L[k];
+  const def={found:{},fixed:{},tries:{},topic:Object.keys(LEVELS[k].topics)[0],ans:{},full:"",examTopic:0,order:null,orderOk:false,gaps:{},upg:{},upgOk:{},pq:{},jum:{},notes:"",notesTopic:0,phr:{},phrOk:false,disc:0,peer:{},peerQ:0,peerName:"",peerTip:""};
+  for(const x in def)if(s[x]===undefined)s[x]=def[x];
+  return s;
+}
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const norm=s=>s.toLowerCase().replace(/[’‘]/g,"'").replace(/[.,!?;:]/g,"").replace(/\s+/g," ").trim();
+const mins=s=>s<60?s+" sec":(s/60)+" minute"+(s>60?"s":"");
+const clock=s=>Math.floor(s/60)+":"+String(Math.max(0,s)%60).padStart(2,"0");
+const wc=t=>(t.trim().match(/\S+/g)||[]).length;
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function corrected(){return D().talk.map(([sec,t])=>[sec,t.replace(/\{([^}]+)\}/g,(m,x)=>x.split("|")[1]).replace(/\s+\./g,".").replace(/\s{2,}/g," ")]);}
+
+/* ---------- generic timer ---------- */
+const TIMERS=[];
+function Timer(host,getSecs,label){
+  const T={left:getSecs(),iv:null};
+  host.innerHTML='<span class="timer'+(host.dataset.big?" big":"")+'"><small>'+esc(label||"timer")+'</small><span class="tv">'+clock(T.left)+'</span></span><button class="btn" data-t="go">Start</button><button class="btn ghost" data-t="reset">Reset</button>';
+  const tv=host.querySelector(".tv"),box=host.querySelector(".timer"),goBtn=host.querySelector('[data-t="go"]');
+  T.show=()=>{tv.textContent=clock(T.left);box.classList.toggle("end",T.left<=0);};
+  T.stop=()=>{clearInterval(T.iv);T.iv=null;goBtn.textContent="Start";};
+  T.reset=()=>{T.stop();T.left=getSecs();T.show();};
+  T.start=()=>{if(T.left<=0)T.left=getSecs();goBtn.textContent="Pause";T.iv=setInterval(()=>{T.left--;T.show();if(T.left<=0){T.stop();goBtn.textContent="Start";}},1000);};
+  host.onclick=e=>{const b=e.target.closest("[data-t]");if(!b)return;if(b.dataset.t==="go"){T.iv?T.stop():T.start();}else T.reset();};
+  TIMERS.push(T);return T;
+}
+function stopAll(){TIMERS.forEach(t=>t.stop());stopWrite();}
+
+/* ======================= LEVELS ======================= */
+$("#levels").innerHTML=ORDER.map(k=>{const d=LEVELS[k];
+  return '<button class="lv" data-level="'+k+'" style="--c:var('+d.colour+')"><div><div class="big">'+k+'</div><div class="cefr">'+d.name+' · about '+d.cefr+'</div></div>'+
+  '<dl>'+Object.entries(d.info).map(([a,b])=>'<dt>'+a+'</dt><dd>'+esc(b)+'</dd>').join("")+'</dl>'+
+  '<dl><dt>Model talk</dt><dd>'+esc(d.title)+'</dd><dt>Aim for</dt><dd>'+d.words[0]+'–'+d.words[1]+' words</dd></dl>'+
+  '<span class="go">Start '+k+' →</span></button>';}).join("");
+$("#levels").addEventListener("click",e=>{const b=e.target.closest("[data-level]");if(!b)return;S.level=b.dataset.level;save();loadLevel();go("hub");});
+
+/* ======================= HUB ======================= */
+function isDone(id){
+  const s=st(),d=D();
+  switch(id){
+    case "mist":return Object.keys(s.fixed).length>=ERRS.length&&ERRS.length>0;
+    case "order":return s.orderOk;
+    case "link":return GAPS.length>0&&GAPS.every((g,i)=>s.gaps[i]===g.ans);
+    case "upg":return d.upg.every((u,i)=>s.upgOk[i]);
+    case "pq":return d.pq.every((p,i)=>s.pq[i]===p[1])&&d.jum.every((j,i)=>s.jum[i]&&s.jum[i].ok);
+    case "notes":return wc(s.notes)>=4;
+    case "plan":{const a=s.ans[s.topic]||[];return a.filter(x=>x&&x.trim()).length>=Math.ceil(d.topics[s.topic].length/2);}
+    case "write":return wc(s.full)>=d.words[0];
+    case "peer":return Object.keys(s.peer).length>0;
+    case "disc":return s.phrOk;
+    default:return false;
+  }
+}
+function renderHub(){
+  const d=D();
+  $("#hubTitle").textContent=S.level+" · "+d.name+" – activities";
+  $("#hubInfo").textContent=d.prepared?"Exam: "+mins(d.talkSec)+" presentation":"Exam: "+mins(d.talkSec)+" talk · 1 minute to think";
+  $("#hub").innerHTML=ACTS.map(([id,t,g,desc,c],i)=>'<button class="tile" data-go="'+id+'" style="--tc:var('+c+')"><span class="grp">'+(i+1)+' · '+g+'</span><span class="tt">'+t+'</span><span class="td">'+esc(desc(d))+'</span>'+(isDone(id)?'<span class="done">✓ done</span>':'')+'</button>').join("");
+}
+
+/* ======================= 1 MISTAKES ======================= */
+let ERRS=[];
+function talkHTML(){
+  ERRS=[];let html="";
+  D().talk.forEach(([sec,text])=>{
+    html+='<p><span class="sec">'+esc(sec)+'</span>';
+    text.split(/(\{[^}]+\})/).forEach(part=>{
+      if(!part)return;
+      if(part[0]==="{"){
+        const [wrong,right,why,alts]=part.slice(1,-1).split("|");
+        const id=ERRS.length;
+        ERRS.push({wrong,right,why,ok:[right].concat(alts?alts.split(";"):[]).map(norm)});
+        html+='<span class="w e" data-e="'+id+'" role="button" tabindex="0"><span class="wr">'+esc(wrong)+'</span><span class="rt" hidden>'+esc(right)+'</span></span>';
+      }else{
+        part.split(/(\s+)/).forEach(t=>{
+          if(!t)return;
+          if(/^\s+$/.test(t)){html+=" ";return;}
+          html+='<span class="w" role="button" tabindex="0">'+esc(t)+'</span>';
+        });
+      }
+    });
+    html+='</p>';
+  });
+  return html.replace(/ <span class="w" role="button" tabindex="0">\.<\/span>/g,".");
+}
+function buildTalk(){
+  const talk=$("#talk");talk.innerHTML=talkHTML();
+  talk.classList.remove("answers");talk.classList.toggle("long",D().words[0]>=300);
+  $("#showAns").textContent="Show the correct talk";
+  $("#mTitle").innerHTML="Model talk: "+esc(D().title)+' <span class="pill">'+S.level+' · '+mins(D().talkSec)+'</span>';
+  $("#mHow").innerHTML="Read "+esc(D().speaker)+"'s "+(D().prepared?"presentation":"talk")+". There are <b>"+ERRS.length+" mistakes</b>. Click on each mistake.";
+}
+function toast(msg){const t=$("#toast");t.textContent=msg;clearTimeout(toast.t);toast.t=setTimeout(()=>t.textContent="",2600);}
+function clickWord(el){
+  const s=st();
+  if(el.classList.contains("e")){
+    const id=+el.dataset.e;
+    if(s.found[id]){toast("You already found this one.");return;}
+    s.found[id]=1;save();render1();toast("Well done! Now write the correct words.");
+    const inp=document.getElementById("fix"+id);if(inp)inp.focus();
+  }else{
+    el.classList.remove("nope");void el.offsetWidth;el.classList.add("nope");
+    toast("“"+el.textContent.replace(/[.,!?]/g,"")+"” is correct. Try again!");
+  }
+}
+$("#talk").addEventListener("click",e=>{const w=e.target.closest(".w");if(w&&!$("#talk").classList.contains("answers"))clickWord(w);});
+$("#talk").addEventListener("keydown",e=>{if((e.key==="Enter"||e.key===" ")&&e.target.classList.contains("w")){e.preventDefault();if(!$("#talk").classList.contains("answers"))clickWord(e.target);}});
+function render1(){
+  const s=st(),n=Object.keys(s.found).length,f=Object.keys(s.fixed).length;
+  $("#count").textContent=n+" / "+ERRS.length+" found"+(f?" · "+f+" corrected":"");
+  const answers=$("#talk").classList.contains("answers");
+  document.querySelectorAll("#talk .e").forEach(el=>{
+    const id=+el.dataset.e;
+    el.classList.toggle("found",!!s.found[id]&&!s.fixed[id]);
+    el.classList.toggle("fixed",!!s.fixed[id]);
+    el.querySelector(".wr").hidden=!!s.fixed[id]||answers;
+    el.querySelector(".rt").hidden=!(s.fixed[id]||answers);
+  });
+  const keep={};document.querySelectorAll("#slots input").forEach(x=>keep[x.id]=x.value);
+  $("#slots").innerHTML=ERRS.map((e,i)=>{
+    if(s.fixed[i])return '<div class="slot ok"><span class="n">Mistake '+(i+1)+'</span><div><span class="wrong">'+esc(e.wrong)+'</span> → <span class="right">'+esc(e.right)+'</span></div><span class="why">'+esc(e.why)+'</span></div>';
+    if(s.found[i])return '<div class="slot found"><span class="n">Mistake '+(i+1)+': <span class="wrong">'+esc(e.wrong)+'</span></span><div class="row"><input id="fix'+i+'" data-i="'+i+'" autocomplete="off" spellcheck="false" placeholder="Correct words…" aria-label="Correct words for '+esc(e.wrong)+'"><button class="mini" data-chk="'+i+'">Check</button></div>'+((s.tries[i]||0)>=2?'<button class="btn ghost" data-show="'+i+'">Show answer</button>':'')+'</div>';
+    return '<div class="slot"><span class="n">Mistake '+(i+1)+'</span><span class="howto">Not found yet</span></div>';
+  }).join("");
+  Object.keys(keep).forEach(k=>{const x=document.getElementById(k);if(x)x.value=keep[k];});
+}
+function check1(i){
+  const s=st(),inp=document.getElementById("fix"+i);if(!inp)return;
+  const v=inp.value;
+  if(ERRS[i].ok.includes(norm(v))){s.fixed[i]=1;save();render1();toast("Correct!");}
+  else{s.tries[i]=(s.tries[i]||0)+1;save();render1();const x=document.getElementById("fix"+i);x.value=v;x.classList.add("bad");x.focus();toast("Not quite. Try again.");}
+}
+$("#slots").addEventListener("click",e=>{
+  const c=e.target.closest("[data-chk]");if(c)check1(+c.dataset.chk);
+  const b=e.target.closest("[data-show]");if(b){st().fixed[+b.dataset.show]=1;save();render1();}
+});
+$("#slots").addEventListener("keydown",e=>{if(e.key==="Enter"&&e.target.dataset.i!==undefined)check1(+e.target.dataset.i);});
+$("#showAns").addEventListener("click",()=>{const t=$("#talk");t.classList.toggle("answers");$("#showAns").textContent=t.classList.contains("answers")?"Hide the correct talk":"Show the correct talk";render1();});
+$("#reset1").addEventListener("click",()=>{const s=st();s.found={};s.fixed={};s.tries={};save();$("#talk").classList.remove("answers");$("#showAns").textContent="Show the correct talk";render1();});
+
+/* ======================= 2 ORDER ======================= */
+let UNITS=[];
+function buildUnits(){
+  UNITS=[];
+  corrected().forEach(([sec,t])=>{
+    if(D().orderBy==="pairs"){
+      const ss=t.match(/[^.!?]+[.!?]+/g).map(x=>x.trim());
+      for(let i=0;i<ss.length;i+=3)UNITS.push({sec,text:ss.slice(i,i+3).join(" ")});
+    }else UNITS.push({sec,text:t});
+  });
+}
+function newOrder(){const s=st();let o;do{o=shuffle(UNITS.map((u,i)=>i));}while(UNITS.length>1&&o.every((v,i)=>v===i));s.order=o;s.orderOk=false;save();}
+function renderOrder(check){
+  const s=st();
+  if(!s.order||s.order.length!==UNITS.length)newOrder();
+  $("#olist").innerHTML=s.order.map((u,pos)=>{
+    const cls=check?(u===pos?"ok":"bad"):(s.orderOk?"ok":"");
+    return '<li class="'+cls+'"><span class="num">'+(pos+1)+'</span><span class="txt">'+((s.orderOk)?'<span class="lab">'+esc(UNITS[u].sec)+'</span>':'')+esc(UNITS[u].text)+'</span><span class="mv"><button data-mv="'+pos+'" data-d="-1" aria-label="Move up">▲</button><button data-mv="'+pos+'" data-d="1" aria-label="Move down">▼</button></span></li>';
+  }).join("");
+  const secs=[...new Set(D().talk.map(t=>t[0]))];
+  $("#orderTips").innerHTML='<p class="howto" style="margin-bottom:.5em">'+esc(D().speaker)+"'s "+(D().prepared?"presentation":"talk")+' has these parts:</p><ol style="margin:0;padding-left:1.4em;font-weight:700;line-height:1.9">'+secs.map(x=>'<li>'+esc(x)+'</li>').join("")+'</ol><p class="howto" style="margin-top:.6em">Look for clues: <i>'+(S.level==="E1"?"Hello… On Saturday… On Sunday… Thank you.":S.level.startsWith("E")?"Today I am going to… When I was… Now… Last week… Next… In conclusion…":"The topic of my presentation… Firstly… Secondly… Finally… In conclusion…")+'</i></p>';
+}
+$("#olist").addEventListener("click",e=>{
+  const b=e.target.closest("[data-mv]");if(!b)return;const s=st(),p=+b.dataset.mv,q=p+ +b.dataset.d;
+  if(q<0||q>=s.order.length)return;[s.order[p],s.order[q]]=[s.order[q],s.order[p]];s.orderOk=false;save();renderOrder();$("#orderFb").textContent="";
+  const btn=document.querySelector('[data-mv="'+q+'"][data-d="'+b.dataset.d+'"]');if(btn)btn.focus();
+});
+$("#orderCheck").addEventListener("click",()=>{
+  const s=st(),right=s.order.filter((u,i)=>u===i).length;
+  s.orderOk=right===s.order.length;save();renderOrder(!s.orderOk);
+  const f=$("#orderFb");f.className="fb "+(s.orderOk?"ok":"bad");
+  f.textContent=s.orderOk?"Perfect! The labels show each part of the talk.":right+" of "+s.order.length+" are in the right place (green). Move the red ones.";
+});
+$("#orderShuffle").addEventListener("click",()=>{newOrder();renderOrder();$("#orderFb").textContent="";});
+
+/* ======================= 3 LINKING ======================= */
+let GAPS=[],LINKPARAS=[];
+function buildGaps(){
+  const d=D(),paras=corrected();GAPS=[];
+  const list=d.linkers.slice().sort((a,b)=>b.length-a.length);
+  const re=new RegExp("\\b("+list.map(x=>x.replace(/ /g,"\\s+")).join("|")+")\\b","gi");
+  const all=[];
+  paras.forEach(([sec,t],pi)=>{let m;re.lastIndex=0;while((m=re.exec(t))){all.push({pi,idx:m.index,len:m[0].length,txt:m[0],ans:m[0].toLowerCase().replace(/\s+/g," ")});}});
+  const chosen=[],used=new Set();
+  d.linkers.forEach(l=>{const g=all.find(x=>x.ans===l);if(g&&!used.has(l)&&chosen.length<d.maxGaps){used.add(l);chosen.push(g);}});
+  all.forEach(g=>{if(chosen.length<d.maxGaps&&!chosen.includes(g)&&!chosen.some(c=>c.pi===g.pi&&Math.abs(c.idx-g.idx)<15))chosen.push(g);});
+  chosen.sort((a,b)=>a.pi-b.pi||a.idx-b.idx);
+  GAPS=chosen;
+  LINKPARAS=paras.map(([sec,t],pi)=>{
+    let out="",last=0;
+    GAPS.forEach((g,gi)=>{if(g.pi!==pi)return;out+=esc(t.slice(last,g.idx))+'@@'+gi+'@@';last=g.idx+g.len;});
+    return out+esc(t.slice(last));
+  });
+}
+function renderLink(check){
+  const s=st();
+  const opts=[...new Set(GAPS.map(g=>g.ans))].sort();
+  $("#gaptext").innerHTML=LINKPARAS.map(p=>'<p>'+p.replace(/@@(\d+)@@/g,(m,i)=>{
+    const v=s.gaps[i]||"";const cls=check&&v?(v===GAPS[i].ans?"ok":"bad"):(v&&v===GAPS[i].ans&&s.linkShown?"ok":"");
+    return '<select data-g="'+i+'" class="'+cls+'" aria-label="Gap '+(+i+1)+'"><option value="">('+(+i+1)+') ……</option>'+opts.map(o=>'<option'+(o===v?' selected':'')+'>'+esc(o)+'</option>').join("")+'</select>';
+  })+'</p>').join("");
+  $("#bank").innerHTML=opts.map(o=>'<span class="pill">'+esc(o)+'</span>').join("");
+  $("#linkTips").innerHTML=GAPS.length>opts.length?"Some words are used more than once.":"Use each word once.";
+}
+$("#gaptext").addEventListener("change",e=>{const g=e.target.dataset.g;if(g===undefined)return;st().gaps[g]=e.target.value;e.target.className="";save();});
+$("#linkCheck").addEventListener("click",()=>{const s=st();const right=GAPS.filter((g,i)=>s.gaps[i]===g.ans).length;renderLink(true);const f=$("#linkFb");f.className="fb "+(right===GAPS.length?"ok":"bad");f.textContent=right===GAPS.length?"All correct! Well done.":right+" of "+GAPS.length+" correct. Change the red ones.";});
+$("#linkReset").addEventListener("click",()=>{st().gaps={};save();renderLink();$("#linkFb").textContent="";});
+
+/* ======================= 4 UPGRADE ======================= */
+function renderUpg(){
+  const d=D(),s=st();
+  $("#upgHow").innerHTML="Rewrite each sentence. Follow the instruction. Then click <b>Check</b>. "+(S.level.startsWith("L")?"There is more than one good answer.":"There are many good answers.");
+  $("#upgRows").innerHTML=d.upg.map(([plain,ins,re,ex],i)=>'<div class="rowcard'+(s.upgOk[i]?" ok":"")+'"><span class="plain">'+esc(plain)+'</span><span class="instr">'+esc(ins)+'</span><div class="btns" style="flex-wrap:nowrap"><input class="inp" id="up'+i+'" data-u="'+i+'" autocomplete="off" spellcheck="false" value="'+esc(s.upg[i]||"")+'" aria-label="Better sentence"><button class="mini" data-uc="'+i+'">Check</button></div><p class="fb" id="ufb'+i+'"></p><details class="ex"><summary>Example</summary>'+esc(ex)+'</details></div>').join("");
+}
+function checkUpg(i){
+  const d=D(),s=st(),[plain,ins,re]=d.upg[i],inp=$("#up"+i),v=inp.value.trim(),fb=$("#ufb"+i);
+  const ok=new RegExp(re,"i").test(v)&&wc(v)>wc(plain)&&norm(v)!==norm(plain);
+  s.upg[i]=v;s.upgOk[i]=ok;save();
+  inp.className="inp "+(ok?"good":"bad");inp.closest(".rowcard").classList.toggle("ok",ok);
+  fb.className="fb "+(ok?"ok":"bad");fb.textContent=ok?"Good! Read it to your partner.":(v?"Not yet: "+ins:"Write your sentence first.");
+}
+$("#upgRows").addEventListener("click",e=>{const b=e.target.closest("[data-uc]");if(b)checkUpg(+b.dataset.uc);});
+$("#upgRows").addEventListener("keydown",e=>{if(e.key==="Enter"&&e.target.dataset.u!==undefined)checkUpg(+e.target.dataset.u);});
+$("#upgRows").addEventListener("input",e=>{if(e.target.dataset.u!==undefined){st().upg[e.target.dataset.u]=e.target.value;save();}});
+
+/* ======================= 5 PARTNER QUESTIONS ======================= */
+function renderPQ(){
+  const d=D(),s=st();
+  $("#pqHow").innerHTML="In the exam your partner asks you <b>"+d.partnerQ+" questions</b>. Good questions are about the talk, ask for <b>new</b> information and have correct grammar. Read each question about "+esc(d.speaker)+"'s talk. What is it?";
+  $("#pqTalkText").innerHTML=corrected().map(p=>'<p style="margin:.4em 0;color:var(--ink)">'+esc(p[1])+'</p>').join("");
+  $("#pqList").innerHTML=d.pq.map(([q,ans,why],i)=>{
+    const v=s.pq[i],ok=v===ans;
+    return '<div class="pqrow'+(ok?" ok":"")+'"><span class="qq">'+esc(q)+'</span><div class="choices">'+PQCATS.map(([k,l])=>'<button class="choice'+(v===k?(ok?" sel-ok":" sel-bad"):"")+'" data-pq="'+i+'" data-k="'+k+'">'+l+'</button>').join("")+'</div>'+(ok?'<span class="fb ok">'+(ans==="grammar"?"Correct question: ":"")+esc(why)+'</span>':(v?'<span class="fb bad">Not quite. Try again.</span>':''))+'</div>';
+  }).join("");
+  $("#jumList").innerHTML=d.jum.map((chunks,i)=>{
+    const j=s.jum[i]||{picked:[],ok:false};
+    const order=(s.jumOrder&&s.jumOrder[S.level+i])||null;
+    let ord=order;if(!ord){ord=shuffle(chunks.map((c,k)=>k));if(ord.every((v,k)=>v===k))ord.reverse();s.jumOrder=s.jumOrder||{};s.jumOrder[S.level+i]=ord;save();}
+    return '<div class="jum'+(j.ok?" ok":"")+'"><div class="built">'+(j.picked.map(k=>esc(chunks[k])).join(" ")||'<span class="howto">…</span>')+'</div>'+
+      (j.ok?'<span class="fb ok">Correct! Ask your partner this question.</span>':'<div class="chunks">'+ord.map(k=>'<button class="chunk" data-j="'+i+'" data-c="'+k+'"'+(j.picked.includes(k)?" disabled":"")+'>'+esc(chunks[k])+'</button>').join("")+'</div><div class="btns"><button class="btn ghost small" data-jclear="'+i+'">Clear</button><span class="fb bad" id="jfb'+i+'"></span></div>')+'</div>';
+  }).join("");
+}
+$("#pqList").addEventListener("click",e=>{const b=e.target.closest("[data-pq]");if(!b)return;const s=st();if(s.pq[b.dataset.pq]===D().pq[b.dataset.pq][1])return;s.pq[b.dataset.pq]=b.dataset.k;save();renderPQ();});
+$("#jumList").addEventListener("click",e=>{
+  const s=st(),d=D();
+  const c=e.target.closest("[data-c]");
+  if(c){const i=+c.dataset.j,k=+c.dataset.c;const j=s.jum[i]=s.jum[i]||{picked:[],ok:false};j.picked.push(k);
+    if(j.picked.length===d.jum[i].length){j.ok=j.picked.every((v,x)=>v===x);if(!j.ok){save();renderPQ();$("#jfb"+i).textContent="Not quite. Click Clear and try again.";return;}}
+    save();renderPQ();return;}
+  const cl=e.target.closest("[data-jclear]");if(cl){s.jum[+cl.dataset.jclear]={picked:[],ok:false};save();renderPQ();}
+});
+
+/* ======================= 6 NOTES ======================= */
+let notesT;
+function renderNotes(){
+  const d=D(),s=st();
+  $("#notesLabel").textContent=d.prepared?"Practice presentation topic":"Exam-style topic (from the assessor)";
+  $("#notesTopic").textContent=d.exam[s.notesTopic%d.exam.length];
+  $("#notesArea").value=s.notes||"";
+  $("#notesTips").innerHTML=(d.prepared
+    ?["In the exam you can take in <b>brief notes</b> and visual aids.","Write key words, not sentences, so you look up and speak.","Number your main points: 1) 2) 3).","Use symbols: → + ✗ £ ↑ ↓"]
+    :["In the exam you get <b>1 minute to think</b> before you talk.","Write key words only – nouns and verbs. No sentences!","Think: past, now, future, why.","Aim for 8–15 words."]).map(x=>'<li>'+x+'</li>').join("");
+  $("#mindmap").innerHTML=d.map.map(x=>'<div>'+esc(x)+'</div>').join("");
+  $("#notesEx").textContent=d.notesEx;
+  notesFb();
+}
+function notesFb(){
+  const t=$("#notesArea").value,n=wc(t),f=$("#notesFb");
+  const long=t.split(/[\n,·•\-–→;]+/).some(x=>wc(x)>6);
+  if(!n){f.textContent="";return;}
+  f.className="fb "+(long?"bad":"ok");
+  f.textContent=long?"Some notes look like sentences. Use key words only.":n+" key words. Good – now say your talk from your notes.";
+}
+$("#notesArea").addEventListener("input",()=>{st().notes=$("#notesArea").value;save();notesFb();});
+$("#notesNew").addEventListener("click",()=>{const s=st(),L=D().exam.length;s.notesTopic=(s.notesTopic+1+Math.floor(Math.random()*(L-1)))%L;s.notes="";save();renderNotes();notesT.reset();});
+
+/* ======================= 7 PLAN ======================= */
+function renderPlan(){
+  const d=D(),s=st(),names=Object.keys(d.topics);
+  if(!d.topics[s.topic])s.topic=names[0];
+  $("#topics").innerHTML=d.prepared?'<h2>Plan your presentation</h2><span class="pill">Your own topic</span>':'<h2>Choose a topic:</h2>'+names.map(n=>'<button class="topic" data-topic="'+esc(n)+'" aria-pressed="'+(n===s.topic)+'">'+esc(n)+'</button>').join("");
+  $("#planHow").innerHTML=d.prepared
+    ?"Choose your own topic: a story, an explanation, or a description of a process, a person or a place. Answer the questions. Click <b>Example</b> for help."
+    :"In the exam the assessor gives you the topic and you have 1 minute to think. Practise with these topics. Answer each question in 1 or 2 sentences. Click <b>Example</b> for help.";
+  const qs=d.topics[s.topic],a=(s.ans[s.topic]=s.ans[s.topic]||[]);
+  $("#qgrid").innerHTML=qs.map(([sec,q,stt,ex],i)=>'<div class="q"><span class="tag">'+(i+1)+' · '+esc(sec)+'</span><label for="q'+i+'">'+esc(q)+'</label><textarea id="q'+i+'" data-q="'+i+'" rows="2" placeholder="'+esc(stt)+'">'+esc(a[i]||"")+'</textarea><details class="ex"><summary>Example</summary>'+esc(ex)+'</details></div>').join("");
+}
+$("#topics").addEventListener("click",e=>{const b=e.target.closest("[data-topic]");if(b){st().topic=b.dataset.topic;save();renderPlan();}});
+$("#qgrid").addEventListener("input",e=>{const i=e.target.dataset.q;if(i===undefined)return;const s=st();(s.ans[s.topic]=s.ans[s.topic]||[])[+i]=e.target.value;save();});
+
+/* ======================= 8 WRITE ======================= */
+let wLeft=0,wIv=null,wMode="talk";
+function stopWrite(){clearInterval(wIv);wIv=null;}
+function renderExamRow(){
+  const d=D(),s=st();let h="";
+  if(!d.prepared)h+='<span class="howto">Exam practice topic:</span><span class="topicnow">'+esc(d.exam[s.examTopic%d.exam.length])+'</span><button class="btn ghost" id="newTopic">New topic</button><span class="spacer"></span><button class="btn" id="tThink">Think '+clock(d.think)+'</button>';
+  else h+='<span class="howto">Presentation · brief notes and visual aids allowed</span><span class="spacer"></span>';
+  h+='<button class="btn" id="tTalk">'+(d.prepared?"Present ":"Talk ")+clock(d.talkSec)+'</button><span class="timer" id="wtimer"><small id="tLabel">ready</small><span id="tVal">'+clock(d.talkSec)+'</span></span><button class="btn ghost" id="tStop">Stop</button>';
+  $("#examrow").innerHTML=h;
+}
+function startWrite(m){
+  const d=D();stopWrite();wMode=m;wLeft=m==="think"?d.think:d.talkSec;$("#tLabel").textContent=m;showW();
+  wIv=setInterval(()=>{wLeft--;showW();if(wLeft<=0){stopWrite();if(wMode==="think")startWrite("talk");else $("#tLabel").textContent="time is up!";}},1000);
+}
+function showW(){const v=$("#tVal");if(!v)return;v.textContent=clock(wLeft);$("#wtimer").classList.toggle("end",wLeft<=0);}
+$("#examrow").addEventListener("click",e=>{
+  const id=e.target.id;
+  if(id==="newTopic"){const s=st(),L=D().exam.length;s.examTopic=(s.examTopic+1+Math.floor(Math.random()*(L-1)))%L;save();stopWrite();renderExamRow();}
+  if(id==="tThink")startWrite("think");
+  if(id==="tTalk")startWrite("talk");
+  if(id==="tStop"){stopWrite();$("#tLabel").textContent="stopped";}
+});
+function renderWrite(){
+  const d=D(),s=st(),qs=d.topics[s.topic],a=s.ans[s.topic]||[];
+  $("#plan").innerHTML=a.some(x=>x&&x.trim())?qs.map(([sec,q],i)=>'<div class="item"><span class="tag">'+esc(sec)+'</span>'+(a[i]&&a[i].trim()?esc(a[i]):'<span class="empty">'+esc(q)+'</span>')+'</div>').join(""):'<p class="empty">Your answers from “Plan your talk” will appear here.</p>';
+  $("#full").value=s.full||"";
+  $("#full").placeholder=d.prepared?"Good morning, everyone. The topic of my presentation is…":(S.level==="E1"?"Hello. My name is… I want to talk about…":"Hello, everyone. Today I am going to talk about…");
+  $("#writeHow").innerHTML=d.prepared?"Write your whole presentation. Signpost clearly (<i>Firstly… Secondly… Finally…</i>) and finish by inviting questions. Then practise it in "+mins(d.talkSec)+".":"Write your whole talk. Use your plan and add linking words. Then practise: get a topic, think for 1 minute, then talk for "+mins(d.talkSec)+".";
+  renderExamRow();renderWriteCheck();
+}
+function renderWriteCheck(){
+  const d=D(),t=$("#full").value,n=wc(t),[lo,hi]=d.words,max=Math.round(hi*1.2);
+  $("#wc").textContent=n;$("#wbar").style.width=Math.min(100,n/max*100)+"%";
+  $("#zone").style.left=(lo/max*100)+"%";$("#zone").style.width=((hi-lo)/max*100)+"%";
+  $("#wmsg").textContent=n<lo?"Aim for "+lo+"–"+hi+" words (about "+mins(d.talkSec)+").":n<=hi?"Good length for "+mins(d.talkSec)+".":"A bit long for "+mins(d.talkSec)+". Can you cut something?";
+  const checks=d.checks.concat([[lo+"–"+hi+" words",x=>{const k=wc(x);return k>=lo&&k<=hi;}]]);
+  $("#check").innerHTML=checks.map(([l,f])=>'<li class="'+(f(t)?"done":"")+'">'+esc(l)+'</li>').join("");
+}
+$("#full").addEventListener("input",()=>{st().full=$("#full").value;save();renderWriteCheck();});
+$("#sname").addEventListener("input",()=>{S.name=$("#sname").value;save();});
+function copyText(txt,msgEl,okMsg,fallbackEl){
+  const fb=()=>{if(fallbackEl){fallbackEl.focus();fallbackEl.select();}msgEl.textContent="Press Ctrl + C to copy.";};
+  try{navigator.clipboard.writeText(txt).then(()=>msgEl.textContent=okMsg,fb);}catch(e){fb();}
+}
+$("#copy").addEventListener("click",()=>copyText(($("#sname").value?$("#sname").value+" – "+S.level+" "+(D().prepared?"presentation":"talk")+"\n\n":"")+$("#full").value,$("#copyMsg"),"Copied! Paste it in the class Team, General channel.",$("#full")));
+
+/* ======================= 9 DISCUSSION ======================= */
+let discT;
+function renderDisc(check){
+  const d=D(),s=st();
+  if(!s.phrOrder||s.phrOrder.lv!==S.level){s.phrOrder={lv:S.level,o:shuffle(d.phrases.map((p,i)=>i))};save();}
+  $("#phrList").innerHTML=s.phrOrder.o.map(i=>{const [p,c]=d.phrases[i],v=s.phr[i];
+    const cls=check&&v!==undefined&&v!==""?(+v===c?"ok":"bad"):"";
+    return '<div class="phr"><span>'+esc(p)+'</span><select data-ph="'+i+'" class="'+cls+'" aria-label="Job of: '+esc(p)+'"><option value="">Choose…</option>'+CATS.map((x,k)=>'<option value="'+k+'"'+(String(v)===String(k)?" selected":"")+'>'+x+'</option>').join("")+'</select></div>';}).join("");
+  $("#discHow").innerHTML=d.prepared?"In the exam, after the questions, you discuss one point from a presentation for <b>"+mins(d.discSec)+"</b>. Use the phrases.":"Practise giving and asking for opinions, like the discussion at the end of the exam. Talk for <b>"+mins(d.discSec)+"</b>.";
+  $("#discPrompt").textContent=d.prompts[s.disc%d.prompts.length];
+  $("#discCats").innerHTML=CATS.map((c,k)=>'<div><b>'+c+'</b>'+d.phrases.filter(p=>p[1]===k).map(p=>esc(p[0])).join("<br>")+'</div>').join("");
+  $("#discCats").hidden=!s.phrOk;
+}
+$("#phrList").addEventListener("change",e=>{const i=e.target.dataset.ph;if(i===undefined)return;st().phr[i]=e.target.value;e.target.className="";save();});
+$("#phrCheck").addEventListener("click",()=>{const d=D(),s=st();const right=d.phrases.filter((p,i)=>String(s.phr[i])===String(p[1])).length;s.phrOk=right===d.phrases.length;save();renderDisc(true);const f=$("#phrFb");f.className="fb "+(s.phrOk?"ok":"bad");f.textContent=s.phrOk?"All correct! The phrases are now under the question.":right+" of "+d.phrases.length+" correct. Change the red ones.";});
+$("#discNew").addEventListener("click",()=>{const s=st();s.disc=(s.disc+1)%D().prompts.length;save();renderDisc();discT.reset();});
+
+/* ======================= 10 PEER ======================= */
+let peerT;
+function renderPeer(){
+  const d=D(),s=st();
+  $("#peerName").value=s.peerName||"";$("#peerTip").value=s.peerTip||"";
+  $("#critList").innerHTML=d.peer.map((c,i)=>'<div class="crit"><span>'+esc(c)+'</span><div class="rate" role="group" aria-label="'+esc(c)+'">'+[["0","✗ Not yet"],["1","~ OK"],["2","✓ Great"]].map(([v,l])=>'<button data-cr="'+i+'" data-v="'+v+'" aria-pressed="'+(String(s.peer[i])===v)+'">'+l+'</button>').join("")+'</div></div>').join("");
+  $("#qcTitle").textContent="Questions answered (out of "+d.partnerQ+")";
+  $("#qcount").innerHTML=Array.from({length:d.partnerQ},(x,i)=>'<button data-q="'+(i+1)+'" aria-pressed="'+(s.peerQ>i)+'">'+(i+1)+'</button>').join("");
+  const max=d.peer.length*2,sc=Object.values(s.peer).reduce((a,b)=>a+ +b,0);
+  $("#peerScore").textContent=sc+" / "+max;
+}
+$("#critList").addEventListener("click",e=>{const b=e.target.closest("[data-cr]");if(!b)return;const s=st();s.peer[b.dataset.cr]=b.dataset.v;save();renderPeer();});
+$("#qcount").addEventListener("click",e=>{const b=e.target.closest("[data-q]");if(!b)return;const s=st(),q=+b.dataset.q;s.peerQ=s.peerQ===q?q-1:q;save();renderPeer();});
+$("#peerName").addEventListener("input",e=>{st().peerName=e.target.value;save();});
+$("#peerTip").addEventListener("input",e=>{st().peerTip=e.target.value;save();});
+$("#peerReset").addEventListener("click",()=>{const s=st();s.peer={};s.peerQ=0;s.peerName="";s.peerTip="";save();renderPeer();peerT.reset();$("#peerMsg").textContent="";});
+$("#peerCopy").addEventListener("click",()=>{
+  const d=D(),s=st(),L=["✗ Not yet","~ OK","✓ Great"];
+  const txt="Feedback for "+(s.peerName||"my partner")+" ("+S.level+" talk)\n"+d.peer.map((c,i)=>"- "+c+": "+(s.peer[i]!==undefined?L[+s.peer[i]]:"–")).join("\n")+"\nQuestions answered: "+s.peerQ+"/"+d.partnerQ+"\nScore: "+$("#peerScore").textContent+(s.peerTip?"\nNext time: "+s.peerTip:"");
+  copyText(txt,$("#peerMsg"),"Copied!",null);
+});
+
+/* ======================= 11 GAME ======================= */
+let G={teams:2,score:[0,0,0,0],turn:0,found:{},pending:null};
+function renderGame(){
+  $("#gtalk").innerHTML=talkHTML();
+  document.querySelectorAll("#gtalk .e").forEach(el=>{const id=+el.dataset.e;if(G.found[id]){el.classList.add("fixed");el.querySelector(".wr").hidden=true;el.querySelector(".rt").hidden=false;}});
+  $("#teamCount").innerHTML='<span class="howto">Teams:</span>'+[2,3,4].map(n=>'<button class="btn small'+(G.teams===n?" primary":"")+'" data-tc="'+n+'">'+n+'</button>').join("");
+  $("#teams").innerHTML=Array.from({length:G.teams},(x,i)=>'<div class="team'+(G.turn===i?" turn":"")+'" style="--tc:var(--t'+(i+1)+')"><span class="tn">Team '+"ABCD"[i]+'</span><span class="ts">'+G.score[i]+'</span></div>').join("");
+  gameBar();
+}
+function gameBar(msg){
+  const left=ERRS.length-Object.keys(G.found).length;
+  let h;
+  if(G.pending!==null){const e=ERRS[G.pending];h='Team '+"ABCD"[G.turn]+' found “'+esc(e.wrong)+'”. +1! Say the correction for 1 more point.<span class="spacer"></span><button class="btn small primary" data-gb="yes">✓ Correct (+1)</button><button class="btn small" data-gb="no">✗ Wrong</button>';}
+  else if(left===0){const best=Math.max(...G.score.slice(0,G.teams));h='Game over! Winner: '+G.score.slice(0,G.teams).map((v,i)=>v===best?"Team "+"ABCD"[i]:null).filter(Boolean).join(" & ")+' 🎉';}
+  else h=(msg?esc(msg)+" ":"")+'Team '+"ABCD"[G.turn]+': click a word. ('+left+' mistakes left)';
+  $("#gamebar").innerHTML=h;
+}
+function nextTurn(){G.turn=(G.turn+1)%G.teams;}
+$("#gtalk").addEventListener("click",e=>{
+  const w=e.target.closest(".w");if(!w||G.pending!==null)return;
+  if(w.classList.contains("e")){const id=+w.dataset.e;if(G.found[id])return;G.found[id]=1;G.score[G.turn]++;G.pending=id;renderGame();
+    const el=document.querySelector('#gtalk .e[data-e="'+id+'"]');el.classList.remove("fixed");el.classList.add("found");el.querySelector(".wr").hidden=false;el.querySelector(".rt").hidden=true;}
+  else{w.classList.remove("nope");void w.offsetWidth;w.classList.add("nope");const t="ABCD"[G.turn];nextTurn();renderGame();gameBar("“"+w.textContent.replace(/[.,!?]/g,"")+"” is correct – Team "+t+" loses its turn.");}
+});
+$("#gamebar").addEventListener("click",e=>{const b=e.target.closest("[data-gb]");if(!b)return;if(b.dataset.gb==="yes")G.score[G.turn]++;G.pending=null;nextTurn();renderGame();});
+$("#teamCount").addEventListener("click",e=>{const b=e.target.closest("[data-tc]");if(!b)return;G={teams:+b.dataset.tc,score:[0,0,0,0],turn:0,found:{},pending:null};renderGame();});
+$("#gameReset").addEventListener("click",()=>{G={teams:G.teams,score:[0,0,0,0],turn:0,found:{},pending:null};renderGame();});
+
+/* ======================= NAV ======================= */
+function loadLevel(){
+  const d=D();
+  document.documentElement.style.setProperty("--lv","var("+d.colour+")");
+  $("#lvBadge").innerHTML=S.level+'<span>'+d.name+' · change</span>';
+  buildTalk();buildUnits();buildGaps();
+  G={teams:G.teams,score:[0,0,0,0],turn:0,found:{},pending:null};
+}
+const RENDER={hub:renderHub,mist:render1,order:()=>renderOrder(),link:()=>renderLink(),upg:renderUpg,pq:renderPQ,notes:renderNotes,plan:renderPlan,write:renderWrite,disc:()=>renderDisc(),peer:renderPeer,game:renderGame};
+function go(v){
+  if(v!=="levels"&&!S.level)v="levels";
+  stopAll();
+  document.querySelectorAll("main > .panel").forEach(p=>p.hidden=p.id!=="p_"+v);
+  const inAct=ACTS.findIndex(a=>a[0]===v);
+  $("#nav").hidden=v==="levels";$("#lvBadge").hidden=v==="levels";
+  $("#nextAct").hidden=inAct<0||inAct===ACTS.length-1;
+  $("#h1").textContent=inAct>=0?(inAct+1)+". "+ACTS[inAct][1]:"My Talk";
+  if(v==="notes")notesT.reset();if(v==="disc")discT.reset();if(v==="peer")peerT.reset();
+  if(RENDER[v])RENDER[v]();
+  S.view=v;save();window.scrollTo(0,0);
+}
+$("#nextAct").addEventListener("click",()=>{const i=ACTS.findIndex(a=>a[0]===S.view);if(i>=0&&i<ACTS.length-1)go(ACTS[i+1][0]);});
+document.addEventListener("click",e=>{const g=e.target.closest("[data-go]");if(g)go(g.dataset.go);});
+
+notesT=Timer($("#notesTimer"),()=>!S.level?60:(D().prepared?120:D().think),"planning time");
+discT=Timer($("#discTimer"),()=>S.level?D().discSec:60,"discussion");
+peerT=Timer($("#peerTimer"),()=>S.level?D().talkSec:60,"talk");
+
+$("#sname").value=S.name||"";
+if(S.level&&LEVELS[S.level]){loadLevel();go(S.view&&S.view!=="levels"?S.view:"hub");}else go("levels");
+})();
+</script>
+
+</body></html>

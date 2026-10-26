@@ -1,0 +1,309 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+
+
+<title>E3 Reading – Hackney Leaflet, Email &amp; Review – Practice Questions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Lexend:wght@500;700&display=swap">
+<style>
+/* Layout: three texts as tabs; the text on the left (on top on phones), the question card on the right. Hints light up the paragraph to read. */
+:root{
+  --bg:#eef1f6; --paper:#ffffff; --ink:#18324d; --muted:#5a6b80; --line:#d5dde8;
+  --accent:#1f5f8b; --accent-ink:#ffffff; --leaf:#f3f8f4; --leaf-ink:#1d4d33; --hl:#fff1a6; --hl-line:#e0b400; --star:#c98a00;
+  --good:#1d7a4a; --good-bg:#e3f4ea; --bad:#b3362c; --bad-bg:#fbe7e4;
+  --display:"Lexend",Verdana,Arial,sans-serif; --body:"Atkinson Hyperlegible",Verdana,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0f1720; --paper:#17222e; --ink:#e6edf5; --muted:#9aaabd; --line:#2b3a4b;
+  --accent:#6fb2e3; --accent-ink:#0f1720; --leaf:#15261d; --leaf-ink:#9fdcb7; --hl:#3d3514; --hl-line:#c9a92a; --star:#e8b53a;
+  --good:#6fd39b; --good-bg:#16352a; --bad:#f08a80; --bad-bg:#3a1f1d; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1720; --paper:#17222e; --ink:#e6edf5; --muted:#9aaabd; --line:#2b3a4b;
+  --accent:#6fb2e3; --accent-ink:#0f1720; --leaf:#15261d; --leaf-ink:#9fdcb7; --hl:#3d3514; --hl-line:#c9a92a; --star:#e8b53a;
+  --good:#6fd39b; --good-bg:#16352a; --bad:#f08a80; --bad-bg:#3a1f1d; color-scheme:dark}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.05rem;line-height:1.55}
+.wrap{max-width:1100px;margin:0 auto;padding-inline:16px;padding-block:20px 48px;display:grid;gap:14px}
+header{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 16px}
+h1{font-family:var(--display);font-size:clamp(1.4rem,3.6vw,1.9rem);margin:0;text-wrap:balance}
+.stats{display:flex;gap:14px;font-variant-numeric:tabular-nums;color:var(--muted);font-weight:700}
+.stats b{color:var(--ink)}
+.tabs{display:flex;flex-wrap:wrap;gap:8px}
+.tab{font:inherit;font-weight:700;padding:8px 14px;border-radius:99px;border:2px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer;font-variant-numeric:tabular-nums}
+.tab[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.tab:focus-visible,.opt:focus-visible,.btn:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.tab small{font-weight:400;opacity:.85}
+.bar{height:8px;background:var(--line);border-radius:99px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--accent);width:0;transition:width .3s}
+.cols{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:16px;align-items:start}
+@media (max-width:820px){.cols{grid-template-columns:1fr}}
+.text{background:var(--leaf);border:1px solid var(--line);border-radius:6px;padding:20px 20px 22px;display:grid;gap:10px}
+.text.email,.text.review{background:var(--paper)}
+@media (min-width:821px){.text{position:sticky;top:calc(env(safe-area-inset-top,0px) + 12px)}}
+@media (max-width:820px){.text{max-height:48vh;overflow-y:auto}}
+.text h2{font-family:var(--display);color:var(--leaf-ink);margin:0;font-size:1.35rem;line-height:1.2}
+.text.email h2,.text.review h2{color:var(--ink)}
+.text .sub{margin:0;color:var(--leaf-ink);font-weight:700}
+.text.email .sub,.text.review .sub{color:var(--muted);font-weight:400}
+.meta{display:grid;gap:2px;padding-bottom:10px;border-bottom:1px solid var(--line);color:var(--muted);font-size:.95rem}
+.meta b{color:var(--ink)}
+.stars{color:var(--star);letter-spacing:.1em}
+.plain{margin:0;padding:0 8px}
+.para{display:grid;grid-template-columns:28px minmax(0,1fr);gap:8px;margin:0;padding:6px 8px;border-radius:6px;border-left:4px solid transparent;transition:background .3s,border-color .3s}
+.para .n{font-family:var(--display);font-weight:700;color:var(--muted);font-variant-numeric:tabular-nums}
+.para.look{background:var(--hl);border-left-color:var(--hl-line)}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:20px 20px 22px;display:grid;gap:14px}
+.label{font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700;margin:0}
+.q{font-size:clamp(1.15rem,3vw,1.4rem);font-weight:700;margin:0;text-wrap:balance}
+.opts{display:grid;gap:10px}
+.opt{display:grid;grid-template-columns:34px minmax(0,1fr);align-items:center;gap:10px;min-height:56px;padding:10px 14px;border:2px solid var(--line);border-radius:10px;background:var(--paper);color:var(--ink);font:inherit;text-align:left;cursor:pointer}
+.opt .l{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;border:2px solid var(--accent);color:var(--accent);font-weight:700}
+.opt:hover:not(:disabled){border-color:var(--accent)}
+.opt:disabled{cursor:default}
+.opt.right{border-color:var(--good);background:var(--good-bg)} .opt.right .l{border-color:var(--good);color:var(--good)}
+.opt.wrong{border-color:var(--bad);background:var(--bad-bg);opacity:.8} .opt.wrong .l{border-color:var(--bad);color:var(--bad)}
+.fb{border-radius:10px;padding:12px 14px;display:grid;gap:4px}
+.fb.good{background:var(--good-bg)} .fb.bad{background:var(--bad-bg)}
+.fb strong{font-family:var(--display)}
+.fb.good strong{color:var(--good)} .fb.bad strong{color:var(--bad)}
+.fb p{margin:0}
+.word{border-top:1px dashed var(--line);padding-top:6px;margin-top:4px}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{font:inherit;font-weight:700;font-size:1.05rem;padding:12px 22px;border-radius:10px;border:2px solid var(--accent);background:var(--accent);color:var(--accent-ink);cursor:pointer}
+.btn.alt{background:transparent;color:var(--accent)}
+.big{font-family:var(--display);font-size:clamp(2.4rem,9vw,3.2rem);line-height:1;margin:0;font-variant-numeric:tabular-nums}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>Reading practice</h1>
+    <div class="stats"><span>Question <b id="num">1</b> of <b id="tot">10</b></span><span>Score <b id="score">0</b></span></div>
+  </header>
+  <div class="tabs" role="tablist" id="tabs"></div>
+  <div class="bar" aria-hidden="true"><i id="prog"></i></div>
+
+  <div class="cols">
+    <article class="text" id="text" aria-label="The text"></article>
+    <main>
+      <section id="game" class="card">
+        <p class="label">Read the text. Then answer.</p>
+        <p class="q" id="q"></p>
+        <div class="opts" id="opts"></div>
+        <div id="fb" class="fb" hidden></div>
+        <div class="btns"><button class="btn" id="next" hidden>Next</button></div>
+      </section>
+      <section id="end" class="card" hidden>
+        <p class="label" id="endlabel">Finished</p>
+        <p class="big" id="final"></p>
+        <p id="verdict" style="margin:0"></p>
+        <div class="btns"><button class="btn" id="nexttext">Next text</button><button class="btn alt" id="again">Try again</button></div>
+      </section>
+    </main>
+  </div>
+</div>
+
+<script>
+// Each text: paragraphs are numbered for the hints. In each question, a = index of the right option, p = paragraphs to look at.
+const TEXTS = [
+{
+  tab: "1. Leaflet", kind: "leaflet",
+  head: `<h2>Mapledene Community Centre</h2><p class="sub">What's on this autumn</p>`,
+  paras: [
+    "Mapledene Community Centre is a friendly place for everyone who lives in Hackney. We are open from Monday to Friday, 9am to 8pm, and on Saturday mornings until 1pm. We are closed on Sundays and bank holidays.",
+    "This autumn we have lots of new classes. Our computer class is for beginners. You will learn how to send emails, fill in online forms and make video calls with your family. Classes are on Tuesday evenings and last two hours. Bring your own phone if you have one.",
+    "Every Wednesday at lunchtime, local volunteers cook a hot meal. The meal costs £2, but children under 12 eat free. Tea and coffee are always free.",
+    "Do you need help with letters from the council or the GP? Come to our advice desk on Thursday afternoons. You don't need an appointment, but it is often busy, so please arrive early.",
+    "All our classes are free, but places are limited. To book, speak to Maria at reception or phone 020 7946 0321."
+  ],
+  qs: [
+    { q: "What is the main purpose of the leaflet?", o: ["To tell local people about activities at the centre", "To ask people to work as volunteers", "To sell computers and phones"], a: 0, p: [1,2,3,4,5],
+      hint: "Think about all of the text, not one part. What do most paragraphs tell you about?", why: "Most paragraphs tell you about something you can do at the centre.", word: "purpose = the reason for writing" },
+    { q: "When can you visit the centre at the weekend?", o: ["Saturday and Sunday, all day", "Saturday, before 1pm", "Sunday morning only"], a: 1, p: [1],
+      hint: "Look at paragraph 1. The weekend = Saturday and Sunday.", why: "It is open on Saturday mornings until 1pm. It is closed on Sundays." },
+    { q: "True or false? The Tuesday course is for people who already know a lot about computers.", o: ["True", "False"], a: 1, p: [2],
+      hint: "Look at paragraph 2. A beginner = a person who is just starting to learn.", why: "The class is for beginners, so it is for people who don't know much yet." },
+    { q: "In paragraph 2, “Classes … last two hours” means:", o: ["Each class is two hours long", "The class finishes at 2 o'clock", "The last class is in two hours"], a: 0, p: [2],
+      hint: "Read the sentence again. Here, “last” is a verb. It means “continue for a time”.", why: "“Last two hours” = continue for two hours." },
+    { q: "Who would find the Tuesday course most useful?", o: ["Someone who repairs computers", "Someone who wants to see their relatives in another country on the phone", "Someone who wants to buy a new phone"], a: 1, p: [2],
+      hint: "Look at paragraph 2. What will you learn on the course?", why: "You learn to make video calls with your family. Relatives = family." },
+    { q: "How much does a 10-year-old pay to eat at the centre on Wednesday?", o: ["£2", "Nothing", "£12"], a: 1, p: [3],
+      hint: "Look at paragraph 3. Is a 10-year-old under 12?", why: "Children under 12 eat free. Free = you pay nothing." },
+    { q: "Which of these is NOT free?", o: ["A hot drink", "Learning to use a computer", "An adult's lunch on Wednesday"], a: 2, p: [3,5],
+      hint: "Look at paragraphs 3 and 5. One thing costs money for adults.", why: "The Wednesday meal costs £2 for adults. Drinks and classes are free.", word: "NOT: find the one answer that is wrong" },
+    { q: "What does the leaflet suggest about the Thursday help service?", o: ["Many people go there", "It is only for families", "You must book before you go"], a: 0, p: [4],
+      hint: "Look at paragraph 4. Why should you arrive early?", why: "It is often busy, so many people go there.", word: "suggest = show, but not say" },
+    { q: "In paragraph 4, what does “it” in “it is often busy” refer to?", o: ["The council", "The GP", "The advice desk"], a: 2, p: [4],
+      hint: "“It” goes back to a place in the sentence before. Which place can be busy on Thursday afternoons?", why: "The advice desk is often busy.", word: "refer to = talk about" },
+    { q: "How can you sign up for a course?", o: ["Fill in a form online", "Send an email", "Talk to someone at the front desk or call the centre"], a: 2, p: [5],
+      hint: "Look at paragraph 5. Reception = the front desk.", why: "Speak to Maria at reception or phone the centre." }
+  ]
+},
+{
+  tab: "2. Email", kind: "email",
+  head: `<div class="meta"><span><b>From:</b> Sara Ahmed</span><span><b>To:</b> Anna Clarke</span><span><b>Subject:</b> Missing class next week</span></div><p class="plain">Dear Anna,</p>`,
+  paras: [
+    "I'm sorry, but I can't come to English class next Tuesday. My son has an appointment at the hospital in the morning, and I don't know what time we will finish. The doctor says it could take most of the day.",
+    "Could you please tell me what the homework is? I don't want to fall behind. I can also come to the Thursday class instead, if there is a space. My friend Leyla goes on Thursdays, and she says the group is small.",
+    "Also, I have a question about the exam. Last week you said the speaking test is in December. Do we need to bring anything with us, for example our ID card or a pen?",
+    "Thank you for your help. I'm really enjoying the course, and my reading is getting better."
+  ],
+  foot: `<p class="plain">Best wishes,<br>Sara</p>`,
+  qs: [
+    { q: "Why did Sara write this email?", o: ["To complain about the English class", "To explain that she will be absent and to ask for help", "To ask Anna to come to the hospital"], a: 1, p: [1,2,3],
+      hint: "Look at paragraphs 1 and 2. What is Sara's problem, and what does she ask for?", why: "She can't come on Tuesday, and she asks about the homework and the exam.", word: "absent = not there" },
+    { q: "On which day is Sara busy with her son?", o: ["Next Tuesday", "Next Thursday", "A day in December"], a: 0, p: [1],
+      hint: "Look at paragraph 1. Which class can't she come to?", why: "The hospital appointment is next Tuesday." },
+    { q: "True or false? Sara expects to be back home quickly.", o: ["True", "False"], a: 1, p: [1],
+      hint: "Look at paragraph 1. “Most of the day” = a long time.", why: "The doctor says it could take most of the day." },
+    { q: "In paragraph 2, what does “fall behind” mean?", o: ["Fall over in class", "Sit at the back of the room", "Learn less than the other students"], a: 2, p: [2],
+      hint: "Read the sentence before. Sara is worried about the homework. Why?", why: "“Fall behind” = the other students learn more than you, because you miss work." },
+    { q: "What does Sara offer to do?", o: ["Go to a different class that week", "Do extra homework at the weekend", "Bring her son to class"], a: 0, p: [2],
+      hint: "Look at paragraph 2. “Instead” = in place of something.", why: "She can come to the Thursday class instead of Tuesday." },
+    { q: "What does Leyla say about the Thursday group?", o: ["It is very busy", "It doesn't have many students", "It is only for beginners"], a: 1, p: [2],
+      hint: "Look at the end of paragraph 2. What is the opposite of “big”?", why: "Leyla says the group is small, so there are not many students." },
+    { q: "In paragraph 3, who does “you” in “you said” refer to?", o: ["Leyla", "Anna", "Sara's son"], a: 1, p: [3],
+      hint: "Who is Sara writing to? Look at the start of the email.", why: "Sara is writing to Anna, her teacher. Anna talked about the speaking test.", word: "refer to = talk about" },
+    { q: "Which of these does Sara NOT ask about?", o: ["The homework", "Things to take to the test", "The price of the exam"], a: 2, p: [2,3],
+      hint: "Look at paragraphs 2 and 3. Find each question Sara asks.", why: "She asks about homework and what to bring. She doesn't ask about money.", word: "NOT: find the one answer that is wrong" },
+    { q: "How does Sara feel about the course?", o: ["She likes it", "She finds it boring", "She wants to stop"], a: 0, p: [4],
+      hint: "Look at paragraph 4. Find a feeling word.", why: "She is “really enjoying” it. Enjoy = like." },
+    { q: "What does the email suggest about Sara?", o: ["She is often late for class", "Her studies are important to her", "She doesn't like speaking tests"], a: 1, p: [2,4],
+      hint: "Look at paragraphs 2 and 4. She doesn't want to miss the homework. Why not?", why: "She wants the homework, she offers to come on Thursday, and she enjoys the course.", word: "suggest = show, but not say" }
+  ]
+},
+{
+  tab: "3. Review", kind: "review",
+  head: `<h2>Blue Door Café, Kingsland Road</h2><p class="sub"><span class="stars" aria-label="4 out of 5 stars">★★★★☆</span> · Posted by Tom, 12 October</p>`,
+  paras: [
+    "I went to the Blue Door Café on Saturday with my two children. It is a small café near Dalston Junction station, so it is easy to get to by train or bus.",
+    "The food was excellent. I had a big breakfast with eggs, beans and toast, and the children shared a plate of pancakes. Everything was fresh and hot. The prices are fair: our meal for three cost £24.",
+    "The only problem was the wait. The café was full, and we waited 20 minutes for a table. The staff were very kind, though. They brought the children some paper and pencils while we waited.",
+    "There is one thing to know before you go: the café only takes cards, not cash. Also, there are no toilets for customers.",
+    "I will definitely go back, but next time I will go early on a weekday."
+  ],
+  qs: [
+    { q: "What type of text is this?", o: ["An advert", "A letter", "A review"], a: 2, p: [1,2,3,4,5],
+      hint: "Who wrote it? Is he selling something, or giving his opinion of a place?", why: "A customer gives his opinion of a café, with stars. That is a review." },
+    { q: "What is Tom's opinion of the café overall?", o: ["Very negative", "Good, but with one or two problems", "He doesn't give an opinion"], a: 1, p: [2,3,5],
+      hint: "Look at the stars, and at paragraphs 2, 3 and 5. Overall = thinking about everything.", why: "He loves the food and will go back, but there was a long wait." },
+    { q: "Why is the café easy to reach?", o: ["It is close to a station", "It has a big car park", "It is next to Tom's house"], a: 0, p: [1],
+      hint: "Look at paragraph 1. Near = close to.", why: "It is near Dalston Junction station." },
+    { q: "In paragraph 2, what does “fair” mean?", o: ["Light in colour", "Not too expensive", "Free"], a: 1, p: [2],
+      hint: "Read the sentence. It is about prices. Try each answer in the sentence.", why: "“The prices are fair” = the prices are OK, not too high." },
+    { q: "On average, how much did one person's meal cost?", o: ["£3", "£8", "£24"], a: 1, p: [2],
+      hint: "Look at paragraph 2. £24 was for three people. 24 ÷ 3 = ?", why: "£24 for three people = £8 each.", word: "on average = the total, shared equally" },
+    { q: "True or false? Tom and his children sat down as soon as they arrived.", o: ["True", "False"], a: 1, p: [3],
+      hint: "Look at paragraph 3. How long did they wait?", why: "They waited 20 minutes for a table." },
+    { q: "What did the staff do while the family waited?", o: ["Gave them free drinks", "Asked them to come back later", "Gave the children something to draw with"], a: 2, p: [3],
+      hint: "Look at the end of paragraph 3. What can you do with paper and pencils?", why: "They brought the children paper and pencils." },
+    { q: "In paragraph 3, who does “They” in “They brought the children” refer to?", o: ["The staff", "The children", "The other customers"], a: 0, p: [3],
+      hint: "“They” goes back to the sentence before. Who was kind?", why: "The staff were kind, and they brought the paper and pencils.", word: "refer to = talk about" },
+    { q: "Which of these is NOT possible at the café?", o: ["Paying with a bank card", "Paying with notes and coins", "Ordering pancakes"], a: 1, p: [2,4],
+      hint: "Look at paragraph 4. Cash = notes and coins.", why: "The café only takes cards, not cash.", word: "NOT: find the one answer that is wrong" },
+    { q: "Why will Tom probably go on a weekday next time?", o: ["It is cheaper on weekdays", "The café will be less busy", "His children are at school at weekends"], a: 1, p: [3,5],
+      hint: "Look at paragraphs 3 and 5. What was the problem on Saturday?", why: "On Saturday it was full. On a weekday morning there are probably fewer people.", word: "probably = very likely" }
+  ]
+}
+];
+
+const $ = id => document.getElementById(id);
+const esc = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const best = TEXTS.map(() => null);
+let t, n, score, tries, done;
+
+function tabs() {
+  $('tabs').innerHTML = TEXTS.map((x, i) => `<button class="tab" role="tab" aria-selected="${i === t}" data-t="${i}">${x.tab}${best[i] !== null ? ` <small>${best[i]}/${x.qs.length}</small>` : ''}</button>`).join('');
+}
+$('tabs').addEventListener('click', e => { const b = e.target.closest('.tab'); if (b) open(+b.dataset.t); });
+
+function open(i) {
+  t = i; const x = TEXTS[t];
+  const box = $('text');
+  box.className = 'text ' + x.kind;
+  box.innerHTML = x.head + x.paras.map((p, k) => `<p class="para" id="p${k + 1}"><span class="n">${k + 1}</span><span>${esc(p)}</span></p>`).join('') + (x.foot || '');
+  box.scrollTop = 0;
+  tabs(); start();
+}
+function look(ps) {
+  document.querySelectorAll('.para').forEach(el => el.classList.remove('look'));
+  (ps || []).forEach(i => $('p' + i).classList.add('look'));
+  if (ps && ps.length < TEXTS[t].paras.length) {
+    const el = $('p' + ps[0]), box = $('text');
+    if (box.scrollHeight > box.clientHeight) box.scrollTo({ top: el.offsetTop - box.offsetTop - 8, behavior: 'smooth' });
+  }
+}
+function start() { n = 0; score = 0; $('tot').textContent = TEXTS[t].qs.length; $('end').hidden = true; $('game').hidden = false; show(); }
+function show() {
+  const q = TEXTS[t].qs[n]; tries = 0; done = false; look();
+  $('q').textContent = q.q;
+  $('opts').innerHTML = q.o.map((s, i) => `<button class="opt" data-i="${i}"><span class="l">${'ABCD'[i]}</span><span>${esc(s)}</span></button>`).join('');
+  $('fb').hidden = true; $('next').hidden = true;
+  $('num').textContent = n + 1; $('score').textContent = score;
+  $('prog').style.width = (n / TEXTS[t].qs.length * 100) + '%';
+}
+$('opts').addEventListener('click', e => {
+  const b = e.target.closest('.opt'); if (!b || done || b.disabled) return;
+  const qs = TEXTS[t].qs, q = qs[n], i = +b.dataset.i, fb = $('fb');
+  tries++;
+  if (i === q.a || tries >= 2) {
+    done = true;
+    const ok = i === q.a;
+    if (ok && tries === 1) score++;
+    if (!ok) b.classList.add('wrong');
+    $('opts').querySelectorAll('.opt').forEach(x => { x.disabled = true; if (+x.dataset.i === q.a) x.classList.add('right'); });
+    look(q.p);
+    fb.className = 'fb ' + (ok ? 'good' : 'bad');
+    fb.innerHTML = `<strong>${ok ? (tries === 1 ? 'Correct!' : 'Correct, well done.') : 'The answer is ' + 'ABCD'[q.a] + '.'}</strong><p>${esc(q.why)}</p>` +
+      (q.word ? `<p class="word"><b>Exam word:</b> ${esc(q.word)}</p>` : '');
+    fb.hidden = false;
+    $('score').textContent = score;
+    $('next').textContent = n + 1 < qs.length ? 'Next' : 'See my score';
+    $('next').hidden = false; $('next').focus();
+  } else {
+    b.classList.add('wrong'); b.disabled = true;
+    look(q.p);
+    fb.className = 'fb bad';
+    fb.innerHTML = `<strong>Not this one. Try again.</strong><p><b>Hint:</b> ${esc(q.hint)}</p>`;
+    fb.hidden = false;
+  }
+});
+$('next').addEventListener('click', () => {
+  const qs = TEXTS[t].qs;
+  n++;
+  if (n < qs.length) return show();
+  look(); $('prog').style.width = '100%';
+  best[t] = Math.max(best[t] ?? 0, score); tabs();
+  $('game').hidden = true; $('end').hidden = false;
+  $('endlabel').textContent = `Finished: ${TEXTS[t].tab.slice(3).toLowerCase()}`;
+  $('final').textContent = `${score} / ${qs.length}`;
+  $('verdict').textContent = (score === qs.length ? 'Excellent! All correct the first time.' : score >= 7 ? 'Well done!' : 'Good try. Read the text again, then try again.') + (score < qs.length ? ' The score counts answers that were right the first time.' : '');
+  $('nexttext').hidden = t === TEXTS.length - 1;
+  (t < TEXTS.length - 1 ? $('nexttext') : $('again')).focus();
+});
+$('nexttext').addEventListener('click', () => { open(t + 1); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+$('again').addEventListener('click', start);
+open(0);
+</script>
+
+<div class="atin-logo" aria-label="Made by Atin">
+<svg viewBox="104 28 172 134" width="64" height="50" role="img" aria-hidden="true">
+<text x="139" y="112" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="72" fill="currentColor">A</text>
+<rect x="177" y="83" width="24" height="6" rx="1" fill="currentColor"/>
+<path d="M216 66 L216 106 A25 7 0 0 0 266 106 L266 66" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+<ellipse cx="241" cy="66" rx="25" ry="7" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="216" y1="80" x2="266" y2="80" stroke="currentColor" stroke-width="1.5"/>
+<line x1="216" y1="94" x2="266" y2="94" stroke="currentColor" stroke-width="1.5"/>
+<ellipse cx="241" cy="47" rx="23" ry="5" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="114" y1="128" x2="266" y2="128" stroke="currentColor" stroke-width="1"/>
+<text x="190" y="152" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" letter-spacing="2" fill="currentColor">made by Atin</text>
+</svg>
+</div>
+<style>
+.atin-logo{position:fixed;left:calc(6px + env(safe-area-inset-left,0px));bottom:calc(6px + env(safe-area-inset-bottom,0px));z-index:2147483000;pointer-events:none;color:#1F3A5F;background:rgba(255,255,255,.92);border:1px solid #C9D3DF;border-radius:8px;padding:3px 5px;line-height:0}
+.atin-logo svg{display:block}
+@media print{.atin-logo{position:fixed;left:auto;right:6mm;bottom:5mm;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+
+</body></html>

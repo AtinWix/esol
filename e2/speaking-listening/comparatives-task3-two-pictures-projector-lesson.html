@@ -1,0 +1,562 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>E2 Comparatives – Speaking Task 3 Two Pictures – Projector Lesson</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@500;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<style>
+/* Layout: projector stage. Header = where we are; stage = one step (pictures side by side); footer = show / timer / next. */
+:root{
+  --bg:#F4F6F8; --surface:#FFFFFF; --ink:#141D28; --muted:#4F5B69; --line:#D3D9E0;
+  --accent:#0E6B6B; --accent-ink:#FFFFFF; --accent-soft:#DCEFEE;
+  --mark:#E3A008; --mark-soft:#FCEFCC;
+  --learn:#2F5DA8; --learn-soft:#E2EAF7; --prac:#0E6B6B; --prac-soft:#DCEFEE; --talk:#A3461F; --talk-soft:#F7E4DA;
+  --bad:#B3261E;
+  --display:"Lexend","Segoe UI",Arial,sans-serif;
+  --body:"Atkinson Hyperlegible",Verdana,Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#10151B; --surface:#19212A; --ink:#EEF2F6; --muted:#A2ADBA; --line:#2B3642;
+  --accent:#4FB8B3; --accent-ink:#08201F; --accent-soft:#163533;
+  --mark:#F0B940; --mark-soft:#3A2F14;
+  --learn:#86A8E6; --learn-soft:#1C2A42; --prac:#4FB8B3; --prac-soft:#163533; --talk:#EE9A74; --talk-soft:#3B2318;
+  --bad:#F08A82; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#10151B; --surface:#19212A; --ink:#EEF2F6; --muted:#A2ADBA; --line:#2B3642;
+  --accent:#4FB8B3; --accent-ink:#08201F; --accent-soft:#163533;
+  --mark:#F0B940; --mark-soft:#3A2F14;
+  --learn:#86A8E6; --learn-soft:#1C2A42; --prac:#4FB8B3; --prac-soft:#163533; --talk:#EE9A74; --talk-soft:#3B2318;
+  --bad:#F08A82; color-scheme:dark}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:clamp(18px,1.8vw,28px);line-height:1.45}
+.app{height:100%;display:grid;grid-template-rows:auto 1fr auto}
+.pad{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header{padding-block:12px 10px;border-bottom:1px solid var(--line);background:var(--surface)}
+.hrow{display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap;max-width:1500px;margin:0 auto}
+.where{display:flex;gap:12px;align-items:center;min-width:0}
+.tag{font:700 .62em/1 var(--display);letter-spacing:.08em;text-transform:uppercase;padding:.5em .7em;border-radius:6px;white-space:nowrap}
+.tag.learn{background:var(--learn-soft);color:var(--learn)}
+.tag.prac{background:var(--prac-soft);color:var(--prac)}
+.tag.talk{background:var(--talk-soft);color:var(--talk)}
+.stitle{font:700 1em/1.2 var(--display);margin:0;min-width:0}
+.dots{display:flex;gap:5px;flex-wrap:wrap}
+.dot{width:14px;height:14px;border-radius:50%;border:2px solid var(--line);background:transparent;padding:0;cursor:pointer}
+.dot.done{background:var(--line)}
+.dot.now{background:var(--accent);border-color:var(--accent)}
+main{overflow:auto;padding-block:20px}
+.stage{max-width:1500px;margin:0 auto;display:flex;flex-direction:column;gap:.8em}
+.who{display:flex;gap:.6em;align-items:center;flex-wrap:wrap;font:700 .9em/1.2 var(--display)}
+.who .badge{background:var(--ink);color:var(--bg);padding:.35em .7em;border-radius:8px}
+.who .how{color:var(--muted);font-weight:500}
+h2{font:700 clamp(1.5em,3.2vw,2.3em)/1.1 var(--display);margin:0;text-wrap:balance}
+p{margin:0}
+.lead{font-size:1.1em;max-width:44em}
+.ex{background:var(--surface);border:2px solid var(--line);border-radius:14px;padding:.6em 1em;font-size:1.05em}
+.ex b{color:var(--accent)}
+.grid{display:grid;gap:.7em}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.box{background:var(--surface);border:2px solid var(--line);border-radius:14px;padding:.6em 1em;min-width:0}
+.box h3{font:700 1em/1.2 var(--display);margin:0 0 .25em}
+.box .big{font:700 1.4em/1.15 var(--display)}
+.box.hl{border-color:var(--accent);background:var(--accent-soft)}
+.rv{transition:opacity .25s}
+.rv.off{opacity:0;pointer-events:none}
+.ans{color:var(--accent);font-weight:700}
+/* pictures */
+.pics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1em;max-width:calc(129vh + 1em)}
+.pics.one{grid-template-columns:minmax(0,1fr);max-width:64vh}
+.pic{margin:0;position:relative;min-width:0}
+.pic svg{display:block;width:100%;height:auto;border-radius:12px;border:3px solid var(--ink);background:#fff}
+.pic figcaption{position:absolute;left:10px;top:10px;background:var(--ink);color:var(--bg);font:700 1em/1 var(--display);padding:.35em .6em;border-radius:8px}
+.grey svg{filter:grayscale(1) contrast(1.08)}
+.bwbar{display:flex;gap:.6em;align-items:center;flex-wrap:wrap}
+.chip{font:700 .75em/1 var(--display);border-radius:999px;padding:.5em .9em;border:2px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.side{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:1em;align-items:start}
+.side>div{min-width:0}
+.mini{display:grid;gap:.45em}
+.mini div{background:var(--surface);border:2px solid var(--line);border-radius:10px;padding:.35em .7em}
+/* cards */
+.card{background:var(--surface);border:3px solid var(--accent);border-radius:18px;padding:.9em;display:flex;flex-direction:column;align-items:center;gap:.4em;text-align:center;min-height:6.5em;justify-content:center}
+.card .q{font:700 clamp(1.5em,4vw,2.7em)/1.15 var(--display);text-wrap:balance}
+.card .a{font:700 clamp(1.3em,3.3vw,2.3em)/1.15 var(--display);color:var(--accent);text-wrap:balance}
+.count{color:var(--muted);font:700 .85em var(--display);font-variant-numeric:tabular-nums;text-align:center}
+.cardpic .pics{max-width:calc(98vh + 1em);margin:0 auto;width:100%}
+.cardpic .pics.one{max-width:min(520px,49vh)}
+.steps{display:grid;gap:.45em;counter-reset:s;margin:0;padding:0}
+.steps li{list-style:none;display:flex;gap:.6em;align-items:flex-start}
+.steps li::before{counter-increment:s;content:counter(s);flex:0 0 1.6em;height:1.6em;border-radius:50%;background:var(--talk);color:var(--surface);display:grid;place-items:center;font:700 .85em var(--display)}
+.check{display:grid;gap:.5em}
+.check div{display:flex;justify-content:space-between;gap:1em;background:var(--surface);border:2px solid var(--line);border-radius:12px;padding:.5em .9em;align-items:center}
+.check span:last-child{white-space:nowrap;font-size:1.2em}
+.tw{overflow-x:auto}
+table.t{border-collapse:collapse;background:var(--surface)}
+table.t th,table.t td{border:2px solid var(--line);padding:.3em .8em;text-align:left}
+table.t th{background:var(--accent-soft);font-family:var(--display)}
+/* footer */
+footer{border-top:1px solid var(--line);background:var(--surface);padding-block:10px calc(10px + env(safe-area-inset-bottom,0px))}
+.frow{max-width:1500px;margin:0 auto;display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.fgroup{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.btn{font:700 .85em/1 var(--display);padding:.75em 1.1em;border-radius:12px;border:2px solid var(--accent);background:var(--accent);color:var(--accent-ink);cursor:pointer;min-height:48px}
+.btn.ghost{background:transparent;color:var(--accent)}
+.btn.mark{background:var(--mark);border-color:var(--mark);color:#1b1400}
+.btn:disabled{opacity:.35;cursor:default}
+.btn:focus-visible,.dot:focus-visible,.chip:focus-visible{outline:3px solid var(--mark);outline-offset:2px}
+.clock{font:700 1.5em/1 var(--display);font-variant-numeric:tabular-nums;min-width:3.3em;text-align:center}
+.clock.run{color:var(--accent)}
+.clock.end{color:var(--bad);animation:fl .5s 6}
+@keyframes fl{50%{opacity:.2}}
+.timeup{position:fixed;left:0;right:0;top:30%;text-align:center;pointer-events:none}
+.timeup span{display:inline-block;background:var(--bad);color:#fff;font:700 clamp(2em,6vw,4em)/1 var(--display);padding:.4em .8em;border-radius:20px}
+.tnote{background:var(--mark-soft);border-radius:12px;padding:.6em .9em;font-size:.8em}
+.keys{color:var(--muted);font-size:.7em}
+@media (prefers-reduced-motion:reduce){.clock.end{animation:none}.rv{transition:none}}
+@media (max-width:760px){.g3,.g4{grid-template-columns:repeat(2,minmax(0,1fr))}.g2,.side{grid-template-columns:1fr}.pics{grid-template-columns:1fr}.keys,.dots{display:none}}
+</style>
+
+<div class="app">
+  <header class="pad">
+    <div class="hrow">
+      <div class="where"><span class="tag" id="h-tag">Learn</span><p class="stitle" id="h-title">Start</p></div>
+      <div class="dots" id="dots" aria-label="Lesson steps"></div>
+    </div>
+  </header>
+  <main class="pad"><div class="stage" id="stage"></div></main>
+  <footer class="pad">
+    <div class="frow">
+      <div class="fgroup">
+        <button class="btn ghost" id="back" type="button">← Back</button>
+        <button class="btn ghost" id="retry" type="button">↺ Try again</button>
+        <button class="btn mark" id="show" type="button">Show answer</button>
+      </div>
+      <div class="fgroup">
+        <span class="clock" id="clock" aria-live="off" hidden>0:00</span>
+        <button class="btn ghost" id="tbtn" type="button" hidden>Start timer</button>
+        <button class="btn ghost" id="note" type="button">Teacher note</button>
+        <span class="keys">Space = next · ← back · T timer</span>
+      </div>
+      <div class="fgroup"><button class="btn" id="next" type="button">Next →</button></div>
+    </div>
+  </footer>
+</div>
+<div class="timeup" id="timeup" hidden><span>Time's up!</span></div>
+
+<script>
+(function(){
+const $=id=>document.getElementById(id);
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+/* ---------- Drawing kit (original illustrations, 400x260) ---------- */
+const SK=['#8D5524','#C68642','#E0AC69','#F1C27D','#5C3A21','#FFDBAC'];
+function person(x,y,s,o){
+  o=o||{};const sk=o.skin||SK[(Math.round(x+y))%SK.length];const c=o.c||'#3A6EA5';const h=o.hair||'#2B1B10';
+  const hy=y-46*s;let g='';
+  // legs
+  g+=`<line x1="${x-4*s}" y1="${y-16*s}" x2="${x-(o.walk?9:5)*s}" y2="${y}" stroke="${o.legs||'#2E3440'}" stroke-width="${5*s}" stroke-linecap="round"/>`;
+  g+=`<line x1="${x+4*s}" y1="${y-16*s}" x2="${x+(o.walk?9:5)*s}" y2="${y}" stroke="${o.legs||'#2E3440'}" stroke-width="${5*s}" stroke-linecap="round"/>`;
+  // body
+  g+=`<rect x="${x-9*s}" y="${y-38*s}" width="${18*s}" height="${24*s}" rx="${6*s}" fill="${c}"/>`;
+  // arms
+  const ay=o.armsUp?y-62*s:y-8*s;
+  g+=`<line x1="${x-8*s}" y1="${y-34*s}" x2="${x-14*s}" y2="${ay}" stroke="${c}" stroke-width="${5*s}" stroke-linecap="round"/>`;
+  g+=`<line x1="${x+8*s}" y1="${y-34*s}" x2="${x+14*s}" y2="${ay}" stroke="${c}" stroke-width="${5*s}" stroke-linecap="round"/>`;
+  if(o.bag) g+=`<rect x="${x+12*s}" y="${y-14*s}" width="${10*s}" height="${11*s}" rx="${2*s}" fill="${o.bag}"/>`;
+  // head + hair
+  g+=`<circle cx="${x}" cy="${hy}" r="${8*s}" fill="${sk}"/>`;
+  g+=`<path d="M${x-8*s} ${hy-1*s} a${8*s} ${8*s} 0 0 1 ${16*s} 0 q${-8*s} ${-5*s} ${-16*s} 0z" fill="${h}"/>`;
+  if(o.scarf) g+=`<path d="M${x-8*s} ${hy-2*s} a${8*s} ${8*s} 0 0 1 ${16*s} 0 v${9*s} q${-8*s} ${5*s} ${-16*s} 0z" fill="${o.scarf}" opacity=".95"/>`;
+  return g;
+}
+function head(x,y,s,sk,hair){return `<circle cx="${x}" cy="${y}" r="${8*s}" fill="${sk}"/><path d="M${x-8*s} ${y-1*s} a${8*s} ${8*s} 0 0 1 ${16*s} 0 q${-8*s} ${-5*s} ${-16*s} 0z" fill="${hair||'#2B1B10'}"/>`;}
+function tree(x,y,s,c){return `<rect x="${x-4*s}" y="${y-30*s}" width="${8*s}" height="${30*s}" fill="#7A5230"/><circle cx="${x}" cy="${y-42*s}" r="${20*s}" fill="${c||'#3F8F46'}"/><circle cx="${x-12*s}" cy="${y-32*s}" r="${13*s}" fill="${c||'#3F8F46'}"/><circle cx="${x+12*s}" cy="${y-32*s}" r="${13*s}" fill="${c||'#3F8F46'}"/>`;}
+function svg(inner,label){return `<svg viewBox="0 0 400 260" role="img" aria-label="${esc(label)}" xmlns="http://www.w3.org/2000/svg">${inner}</svg>`;}
+
+const PIC={
+ market:()=>{let g=`<rect width="400" height="260" fill="#BFE3F5"/><circle cx="350" cy="38" r="18" fill="#FFD43B"/><rect y="200" width="400" height="60" fill="#C9B79C"/>`;
+   g+=`<path d="M0 22 Q100 40 200 22 Q300 40 400 22" fill="none" stroke="#555" stroke-width="1.5"/>`;
+   for(let i=0;i<16;i++){const x=10+i*25;g+=`<path d="M${x} ${25+((i%2)?3:0)} l8 14 l8 -14z" fill="${['#E63946','#F4A261','#2A9D8F','#457B9D'][i%4]}"/>`;}
+   const stalls=[[20,'#E63946'],[145,'#2A9D8F'],[270,'#457B9D']];
+   stalls.forEach(([x,c],k)=>{
+     g+=head(x+55,118,1.1,SK[k+1],'#222');
+     g+=`<rect x="${x+2}" y="70" width="4" height="80" fill="#6B4F3A"/><rect x="${x+104}" y="70" width="4" height="80" fill="#6B4F3A"/>`;
+     for(let j=0;j<6;j++) g+=`<rect x="${x+j*18.3}" y="62" width="18.3" height="22" fill="${j%2?'#fff':c}"/>`;
+     g+=`<path d="M${x} 84 ${Array.from({length:6},(_,j)=>`q9.15 10 18.3 0`).join(' ')}" fill="${c}"/>`;
+     g+=`<rect x="${x-2}" y="135" width="114" height="34" fill="#8B5E3C"/><rect x="${x-2}" y="130" width="114" height="8" fill="#A9744F"/>`;
+     for(let j=0;j<9;j++){
+       const px=x+8+j*12;
+       if(k===0) g+=`<circle cx="${px}" cy="${124}" r="6" fill="${j%2?'#F77F00':'#D62828'}"/>`;
+       if(k===1) g+=`<line x1="${px}" y1="130" x2="${px}" y2="112" stroke="#2D6A4F" stroke-width="2"/><circle cx="${px}" cy="${110}" r="5" fill="${['#FF66A3','#FFD166','#C77DFF'][j%3]}"/>`;
+       if(k===2) g+=`<ellipse cx="${px}" cy="${125}" rx="6" ry="4.5" fill="#C68B59"/>`;
+     }
+   });
+   g+=person(70,235,1.25,{c:'#7B2CBF',bag:'#F4A261',scarf:'#2A9D8F'});
+   g+=person(200,238,1.3,{c:'#264653',walk:true});
+   g+=person(310,236,1.25,{c:'#E76F51',bag:'#E9C46A'});
+   g+=person(338,240,.75,{c:'#FFB703',armsUp:true});
+   return svg(g,'A busy outdoor market with three stalls and shoppers');},
+
+ supermarket:()=>{let g=`<rect width="400" height="260" fill="#EEF1F4"/><rect y="205" width="400" height="55" fill="#D8DEE4"/>`;
+   for(let i=0;i<4;i++) g+=`<rect x="${30+i*95}" y="12" width="60" height="6" rx="3" fill="#FFF7CC"/>`;
+   for(let u=0;u<2;u++){const x=20+u*130;g+=`<rect x="${x}" y="50" width="115" height="150" fill="#B0BAC5"/>`;
+     for(let r=0;r<4;r++){g+=`<rect x="${x+4}" y="${56+r*36}" width="107" height="4" fill="#7D8794"/>`;
+       for(let b=0;b<7;b++) g+=`<rect x="${x+7+b*15}" y="${36+r*36+24}" width="12" height="${14+(b%3)*2}" fill="${['#E63946','#2A9D8F','#F4A261','#457B9D','#FFD166','#8338EC','#06D6A0'][(b+r+u)%7]}"/>`;}}
+   // checkout
+   g+=`<rect x="290" y="150" width="100" height="50" fill="#5C677D"/><rect x="290" y="146" width="100" height="8" fill="#33415C"/><rect x="350" y="120" width="26" height="22" fill="#222"/>`;
+   g+=head(325,128,1.1,SK[0],'#111')+`<rect x="316" y="136" width="18" height="12" rx="5" fill="#2A9D8F"/>`;
+   // shopper + trolley
+   g+=person(205,240,1.3,{c:'#E76F51'});
+   g+=`<path d="M220 205 h55 l-6 22 h-44z" fill="none" stroke="#555" stroke-width="3"/><line x1="218" y1="200" x2="222" y2="207" stroke="#555" stroke-width="3"/><circle cx="232" cy="236" r="5" fill="#333"/><circle cx="264" cy="236" r="5" fill="#333"/>`;
+   g+=`<rect x="232" y="210" width="10" height="12" fill="#06D6A0"/><rect x="246" y="208" width="12" height="14" fill="#FFD166"/>`;
+   return svg(g,'A quiet supermarket with shelves, one shopper and a cashier');},
+
+ city:()=>{let g=`<rect width="400" height="260" fill="#AFC8DC"/>`;
+   const B=[[0,40,80,'#8E9AAF'],[78,15,70,'#6C757D'],[146,55,75,'#A3B1C2'],[219,25,90,'#7D8597'],[307,45,93,'#5C677D']];
+   B.forEach(([x,y,w,c])=>{g+=`<rect x="${x}" y="${y}" width="${w}" height="${190-y}" fill="${c}"/>`;
+     for(let r=y+10;r<175;r+=20) for(let cx=x+8;cx<x+w-12;cx+=18) g+=`<rect x="${cx}" y="${r}" width="10" height="12" fill="#E9F1F7"/>`;});
+   g+=`<rect y="190" width="400" height="20" fill="#B8B8B8"/><rect y="210" width="400" height="50" fill="#444"/>`;
+   for(let i=0;i<8;i++) g+=`<rect x="${10+i*52}" y="233" width="28" height="4" fill="#EEE"/>`;
+   g+=`<rect x="40" y="208" width="120" height="44" rx="6" fill="#D62828"/>`;for(let i=0;i<5;i++)g+=`<rect x="${48+i*22}" y="214" width="16" height="14" fill="#DDEFFF"/>`;g+=`<circle cx="65" cy="254" r="7" fill="#111"/><circle cx="135" cy="254" r="7" fill="#111"/>`;
+   g+=`<rect x="250" y="222" width="70" height="26" rx="8" fill="#1D3557"/><rect x="262" y="214" width="40" height="12" rx="4" fill="#1D3557"/><circle cx="268" cy="250" r="6" fill="#111"/><circle cx="305" cy="250" r="6" fill="#111"/>`;
+   g+=`<rect x="372" y="150" width="5" height="45" fill="#333"/><rect x="366" y="130" width="17" height="30" rx="3" fill="#222"/><circle cx="374.5" cy="137" r="4" fill="#E63946"/><circle cx="374.5" cy="153" r="4" fill="#2DC653"/>`;
+   [[20,'#264653'],[175,'#E76F51'],[200,'#2A9D8F'],[228,'#7B2CBF'],[340,'#F4A261']].forEach(([x,c],k)=>g+=person(x,205,.85,{c,walk:k%2===0,bag:k===3?'#E9C46A':null}));
+   return svg(g,'A busy city street with tall buildings, a bus, a car and people');},
+
+ country:()=>{let g=`<rect width="400" height="260" fill="#CDE7F0"/><circle cx="330" cy="45" r="22" fill="#FFD43B"/>`;
+   g+=`<path d="M0 150 Q90 95 190 140 T400 120 V260 H0z" fill="#88B35E"/><path d="M0 185 Q120 150 240 180 T400 170 V260 H0z" fill="#6A994E"/>`;
+   g+=`<rect x="60" y="120" width="60" height="40" fill="#F2E8CF"/><path d="M55 122 L90 95 L125 122z" fill="#9C6644"/><rect x="83" y="138" width="14" height="22" fill="#6F4518"/>`;
+   g+=`<rect x="250" y="112" width="48" height="34" fill="#F2E8CF"/><path d="M246 114 L274 92 L302 114z" fill="#9C6644"/><rect x="258" y="122" width="10" height="10" fill="#9AD1D4"/>`;
+   g+=tree(170,175,1)+tree(345,170,.9)+tree(30,180,.8);
+   [[140,215],[200,225],[245,212]].forEach(([x,y])=>g+=`<ellipse cx="${x}" cy="${y}" rx="16" ry="11" fill="#FAFAFA" stroke="#999"/><circle cx="${x+15}" cy="${y-5}" r="6" fill="#333"/><line x1="${x-8}" y1="${y+9}" x2="${x-8}" y2="${y+17}" stroke="#333" stroke-width="2.5"/><line x1="${x+8}" y1="${y+9}" x2="${x+8}" y2="${y+17}" stroke="#333" stroke-width="2.5"/>`);
+   g+=`<path d="M300 258 Q320 220 300 190" fill="none" stroke="#D4A373" stroke-width="10"/>`;
+   g+=person(330,240,1.1,{c:'#E63946',walk:true});
+   g+=`<ellipse cx="356" cy="236" rx="11" ry="6" fill="#7F5539"/><circle cx="366" cy="230" r="5" fill="#7F5539"/><line x1="343" y1="226" x2="358" y2="233" stroke="#333" stroke-width="1.5"/>`;
+   return svg(g,'A quiet village in the countryside with two houses, trees, sheep and a person walking a dog');},
+
+ bus:()=>{let g=`<rect width="400" height="260" fill="#9FB3C2"/><rect y="200" width="400" height="60" fill="#5A5A5A"/><rect y="190" width="400" height="14" fill="#9A9A9A"/>`;
+   for(let i=0;i<40;i++) g+=`<line x1="${(i*37)%400}" y1="${(i*53)%190}" x2="${(i*37)%400-4}" y2="${(i*53)%190+12}" stroke="#E6EEF5" stroke-width="1.5" opacity=".8"/>`;
+   g+=`<rect x="120" y="60" width="250" height="150" rx="12" fill="#D62828"/><rect x="120" y="128" width="250" height="6" fill="#A4161A"/>`;
+   for(let i=0;i<6;i++){g+=`<rect x="${132+i*39}" y="72" width="32" height="40" rx="4" fill="#DDEFFF"/>`;if(i%2===0)g+=head(148+i*39,96,.9,SK[i%6]);}
+   for(let i=0;i<5;i++){if(i===0)continue;g+=`<rect x="${132+i*46}" y="142" width="38" height="40" rx="4" fill="#DDEFFF"/>`;if(i!==2)g+=head(151+i*46,166,.9,SK[(i+2)%6]);}
+   g+=`<rect x="134" y="142" width="34" height="62" fill="#333"/>`;
+   g+=`<circle cx="165" cy="212" r="15" fill="#111"/><circle cx="325" cy="212" r="15" fill="#111"/>`;
+   g+=`<rect x="70" y="80" width="5" height="115" fill="#333"/><rect x="58" y="70" width="30" height="22" rx="4" fill="#F4F4F4" stroke="#333"/><circle cx="73" cy="81" r="7" fill="#D62828"/>`;
+   [[30,'#264653','#2A9D8F'],[62,'#7B2CBF',null],[95,'#F4A261','#E63946']].forEach(([x,c,u],k)=>{g+=person(x,198,.95,{c});if(u)g+=`<path d="M${x-22} ${150} a22 14 0 0 1 44 0z" fill="${u}"/><line x1="${x}" y1="150" x2="${x}" y2="170" stroke="#333" stroke-width="2"/>`;});
+   return svg(g,'People waiting at a bus stop in the rain next to a red double-decker bus');},
+
+ bike:()=>{let g=`<rect width="400" height="260" fill="#CFE8F3"/><circle cx="60" cy="45" r="22" fill="#FFD43B"/>`;
+   g+=`<rect y="150" width="400" height="110" fill="#8CC084"/><rect y="200" width="400" height="34" fill="#D9C6A5"/><rect y="234" width="400" height="26" fill="#5FA8D3"/>`;
+   for(let i=0;i<6;i++) g+=`<path d="M${20+i*70} 248 q10 -5 20 0" fill="none" stroke="#fff" stroke-width="2"/>`;
+   g+=tree(40,160,1)+tree(130,155,1.2,'#4C9A52')+tree(300,158,1.1)+tree(380,160,.9,'#4C9A52');
+   // bike + rider
+   g+=`<circle cx="175" cy="214" r="17" fill="none" stroke="#222" stroke-width="4"/><circle cx="235" cy="214" r="17" fill="none" stroke="#222" stroke-width="4"/>`;
+   g+=`<path d="M175 214 L198 214 L222 188 L192 188 Z M198 214 L190 182 M222 188 L235 214 M222 188 L226 176" fill="none" stroke="#2A9D8F" stroke-width="4" stroke-linejoin="round"/>`;
+   g+=`<line x1="196" y1="168" x2="200" y2="190" stroke="#1D3557" stroke-width="7" stroke-linecap="round"/><line x1="200" y1="190" x2="210" y2="210" stroke="#1D3557" stroke-width="6" stroke-linecap="round"/>`;
+   g+=`<rect x="186" y="138" width="20" height="32" rx="7" fill="#F4A261" transform="rotate(18 196 154)"/><line x1="203" y1="148" x2="225" y2="176" stroke="#F4A261" stroke-width="5" stroke-linecap="round"/>`;
+   g+=head(194,128,1.2,SK[1])+`<path d="M184 124 a10 8 0 0 1 21 0z" fill="#E63946"/>`;
+   g+=person(330,224,1,{c:'#7B2CBF',walk:true});
+   return svg(g,'A person riding a bike on a path by a canal on a sunny day');},
+
+ park:()=>{let g=`<rect width="400" height="260" fill="#BEE3F8"/><circle cx="340" cy="42" r="22" fill="#FFD43B"/><rect y="140" width="400" height="120" fill="#7BC96F"/>`;
+   g+=tree(40,150,1.2)+tree(120,145,.9,'#4C9A52')+tree(370,150,1.1);
+   g+=`<path d="M70 230 l90 -10 l20 25 l-95 10z" fill="#E63946"/><path d="M85 232 l15 -2 l4 6 l-15 2z M120 228 l15 -2 l4 6 l-15 2z" fill="#fff" opacity=".7"/>`;
+   g+=person(100,226,1.05,{c:'#2A9D8F'})+person(140,222,1.05,{c:'#F4A261',scarf:'#264653'})+person(122,234,.7,{c:'#FFD166'});
+   g+=`<rect x="140" y="214" width="16" height="12" rx="2" fill="#8D6E63"/>`;
+   g+=person(250,215,.8,{c:'#457B9D',armsUp:true,walk:true})+person(300,220,.8,{c:'#E76F51',walk:true})+`<circle cx="276" cy="168" r="7" fill="#fff" stroke="#E63946" stroke-width="2"/>`;
+   g+=`<rect x="300" y="160" width="70" height="8" fill="#8D6E63"/><rect x="300" y="146" width="70" height="6" fill="#8D6E63"/><rect x="305" y="168" width="5" height="20" fill="#5D4037"/><rect x="360" y="168" width="5" height="20" fill="#5D4037"/>`;
+   g+=head(335,148,1,SK[5],'#DDD')+`<rect x="326" y="155" width="18" height="12" rx="5" fill="#6D597A"/>`;
+   return svg(g,'A sunny park with a family having a picnic, children playing with a ball and an old man on a bench');},
+
+ gym:()=>{let g=`<rect width="400" height="260" fill="#E9ECEF"/><rect y="195" width="400" height="65" fill="#ADB5BD"/>`;
+   g+=`<rect x="20" y="30" width="150" height="110" fill="#CFE2F3" stroke="#6C757D" stroke-width="4"/><line x1="95" y1="30" x2="95" y2="140" stroke="#6C757D" stroke-width="4"/>`;
+   g+=`<rect x="220" y="30" width="160" height="150" fill="#DEE2E6" stroke="#868E96" stroke-width="3"/>`;
+   // treadmill
+   g+=`<rect x="40" y="208" width="130" height="16" rx="6" fill="#343A40"/><line x1="160" y1="208" x2="172" y2="160" stroke="#343A40" stroke-width="6"/><rect x="160" y="150" width="26" height="14" rx="3" fill="#495057"/>`;
+   g+=person(110,208,1.25,{c:'#E63946',walk:true});
+   // weights
+   g+=person(290,228,1.3,{c:'#2A9D8F',armsUp:true});
+   g+=`<line x1="255" y1="146" x2="325" y2="146" stroke="#212529" stroke-width="5"/><rect x="248" y="134" width="10" height="24" rx="2" fill="#212529"/><rect x="322" y="134" width="10" height="24" rx="2" fill="#212529"/>`;
+   g+=`<rect x="20" y="232" width="60" height="8" rx="4" fill="#7B2CBF"/><rect x="340" y="226" width="16" height="12" fill="#495057"/><rect x="360" y="226" width="16" height="12" fill="#495057"/>`;
+   return svg(g,'An indoor gym with a person running on a treadmill and a person lifting weights');}
+};
+function pics(a,b,grey,caps){caps=caps||['A','B'];
+  return `<div class="pics"><figure class="pic ${grey?'grey':''}">${PIC[a]()}<figcaption>${caps[0]}</figcaption></figure><figure class="pic ${grey?'grey':''}">${PIC[b]()}<figcaption>${caps[1]}</figcaption></figure></div>`;}
+function onepic(a,grey){return `<div class="pics one"><figure class="pic ${grey?'grey':''}">${PIC[a]()}<figcaption>A</figcaption></figure></div>`;}
+const bw=`<div class="bwbar"><button class="chip" type="button" data-bw aria-pressed="false">Black and white</button></div>`;
+
+const who=(badge,how)=>`<div class="who"><span class="badge">${badge}</span><span class="how">${how}</span></div>`;
+
+/* ---------- Lesson steps ---------- */
+const S=[
+ {type:'learn',title:'Two pictures',html:()=>`
+   <h2>Two pictures: describe, compare, choose</h2>
+   <p class="lead">ESB Entry 2 Speaking and Listening, Task 3. You look at two pictures. You say three things.</p>
+   <div class="grid g3">
+     <div class="box hl"><h3>1 Describe</h3>What can you see?</div>
+     <div class="box hl"><h3>2 Compare</h3>How are they the same? How are they different?</div>
+     <div class="box hl"><h3>3 Opinion</h3>Which do you prefer? Why?</div>
+   </div>
+   <p class="lead">Press <b>Next</b> to start. The screen tells you what to do.</p>`,
+   note:'Hand the mouse or clicker to a learner. Space shows answers first, then moves on.'},
+
+ {type:'talk',title:'Warm-up',timer:60,html:()=>`
+   ${who('Pairs','1 minute')}
+   <div class="side"><div>${onepic('market')}</div>
+   <div class="grid"><h2>What can you see?</h2>
+     <p class="lead">Tell your partner. Say three things.</p>
+     <div class="mini"><div>I can see …</div><div>There is a … / There are some …</div><div>A woman is …ing.</div></div></div></div>`,
+   note:'Listen for there is / there are and -ing. No correction yet.'},
+
+ {type:'learn',title:'Describe: where?',html:()=>`
+   ${who('Everyone','read')}
+   <h2>Where is it in the picture?</h2>
+   <div class="grid g3">
+     <div class="box"><span class="big">on the left</span></div>
+     <div class="box"><span class="big">in the middle</span></div>
+     <div class="box"><span class="big">on the right</span></div>
+     <div class="box"><span class="big">at the front</span></div>
+     <div class="box"><span class="big">at the back</span></div>
+     <div class="box"><span class="big">at the top</span></div>
+   </div>
+   <div class="ex rv off">On the left <b>there is</b> a fruit stall. In the middle <b>there are</b> some flowers. At the front a man <b>is walking</b>.</div>`},
+
+ {type:'prac',title:'Look and answer',who:['Everyone','look at the picture and answer'],pic:'market',cards:[
+   ['What is on the left?','A fruit stall. There are apples and oranges.'],
+   ['What is in the middle?','A flower stall.'],
+   ['What is on the right?','A bread stall.'],
+   ['Is it inside or outside?','Outside. It is sunny.'],
+   ['How many people can you see?','Seven: three sellers and four shoppers.'],
+   ['What is the woman on the left carrying?','A bag.'],
+   ['What is the man in the middle doing?','He is walking.'],
+   ['Is it busy or quiet?','It is busy.']]},
+
+ {type:'learn',title:'Comparatives',html:()=>`
+   ${who('Everyone','read')}
+   <h2>Comparing: -er and more</h2>
+   <div class="grid g3">
+     <div class="box rv off"><h3>Short word: + er</h3><span class="big">cheap → cheap<span class="ans">er</span></span></div>
+     <div class="box rv off"><h3>Ends in e: + r</h3><span class="big">large → large<span class="ans">r</span></span></div>
+     <div class="box rv off"><h3>Ends in y: → ier</h3><span class="big">busy → bus<span class="ans">ier</span></span></div>
+     <div class="box rv off"><h3>Short word: double</h3><span class="big">big → big<span class="ans">ger</span></span></div>
+     <div class="box rv off"><h3>Long word: more</h3><span class="big"><span class="ans">more</span> expensive</span></div>
+     <div class="box rv off"><h3>Different!</h3><span class="big">good → <span class="ans">better</span><br>bad → <span class="ans">worse</span></span></div>
+   </div>
+   <div class="ex rv off">Picture A is <b>busier than</b> picture B. &nbsp; Picture B is <b>more expensive than</b> picture A.</div>`},
+
+ {type:'prac',title:'Make it compare',who:['Everyone','say it together, then check'],shuffle:true,cards:[
+   ['cheap','cheaper'],['big','bigger'],['busy','busier'],['quiet','quieter'],['noisy','noisier'],['small','smaller'],
+   ['large','larger'],['expensive','more expensive'],['crowded','more crowded'],['good','better'],['bad','worse'],
+   ['hot','hotter'],['friendly','friendlier'],['modern','more modern'],['beautiful','more beautiful'],['healthy','healthier']]},
+
+ {type:'prac',title:'Market or supermarket?',who:['Everyone','say the missing word'],pics:['market','supermarket',false],cards:[
+   ['The market is ______ than the supermarket. (busy)','busier'],
+   ['The supermarket is ______ than the market. (quiet)','quieter'],
+   ['The market is ______ than the supermarket. (noisy)','noisier'],
+   ['The supermarket is ______ than the market. (expensive)','more expensive'],
+   ['The fruit at the market is ______. (fresh)','fresher'],
+   ['I think the market is ______ than the supermarket. (good)','better']]},
+
+ {type:'learn',title:'Same and different',html:()=>`
+   ${who('Everyone','read')}
+   <h2>Same and different</h2>
+   <div class="grid g2">
+     <div class="box"><h3>The same</h3><b>Both</b> pictures show shops.<br>In <b>both</b> pictures people are shopping.</div>
+     <div class="box"><h3>Different</h3>In picture A it is outside, <b>but</b> in picture B it is inside.<br>Picture A is busi<b>er than</b> picture B.</div>
+   </div>
+   <div class="ex rv off">Use <b>but</b> to join two different things: "The market is cheaper, <b>but</b> the supermarket is quieter."</div>`},
+
+ {type:'talk',title:'Compare: the shops',timer:120,html:()=>`
+   ${who('Pairs','2 minutes · take turns, one sentence each')}
+   ${pics('market','supermarket',false)}
+   <div class="grid g3"><div class="box">Both pictures …</div><div class="box">In picture A … but in picture B …</div><div class="box">Picture A is …er than picture B.</div></div>
+   <div class="ex rv off">Both pictures show places to buy food. Picture A is outside, but picture B is inside. The market is busier and noisier than the supermarket. The supermarket is quieter and tidier.</div>`,
+   note:'Press Show after the timer for a model answer. Ask 2–3 pairs to say their best sentence.'},
+
+ {type:'learn',title:'Black and white pictures',html:()=>`
+   ${who('Everyone','read')}
+   <h2>Black and white pictures</h2>
+   ${pics('city','country',true)}
+   <div class="grid g3">
+     <div class="box"><h3>No colours!</h3>Don't say "red bus". Say "a big bus".</div>
+     <div class="box"><h3>Talk about</h3>people · place · size · weather · busy or quiet</div>
+     <div class="box"><h3>Not sure?</h3>It <b>looks</b> … / I <b>think</b> it is … / <b>Maybe</b> …</div>
+   </div>`,
+   note:'Some exam pictures can be in black and white. Practise describing without colours.'},
+
+ {type:'prac',title:'City or countryside?',who:['Pairs','answer in a full sentence'],pics:['city','country',true],cards:[
+   ['Which picture is quieter?','Picture B is quieter than picture A.'],
+   ['Which picture is busier?','Picture A is busier than picture B.'],
+   ['Where are the buildings taller?','The buildings in picture A are taller.'],
+   ['Which place looks cleaner?','I think picture B looks cleaner.'],
+   ['What can you see in both pictures?','In both pictures there are people and buildings.'],
+   ['Which place is better for children? Why?','I think picture B is better because it is safer and quieter.']]},
+
+ {type:'learn',title:'Your opinion',html:()=>`
+   ${who('Everyone','read')}
+   <h2>Which one do you prefer?</h2>
+   <div class="grid g2">
+     <div class="box hl"><span class="big">I prefer picture A because …</span></div>
+     <div class="box hl"><span class="big">I like picture B more because …</span></div>
+   </div>
+   <div class="ex rv off">I prefer picture B <b>because</b> it is quieter and I like nature. In my country I lived in a small village.</div>
+   <p class="lead rv off">Always give a reason. Add one more thing about you.</p>`},
+
+ {type:'talk',title:'Full task: travel',talk:true,pair:['bus','bike',true],html:()=>`
+   ${who('Pairs','A talks, B listens. Then swap.')}
+   ${pics('bus','bike',true)}
+   <ol class="steps">
+     <li><span><b>Think · 30 seconds.</b> Look at both pictures.</span></li>
+     <li><span><b>A talks · 1 minute.</b> Describe → compare → opinion.</span></li>
+     <li><span><b>B asks one question.</b> Which is cheaper? How do you travel?</span></li>
+   </ol>
+   <div class="grid g3"><button class="btn" type="button" data-t="30">Think 0:30</button><button class="btn" type="button" data-t="60">Talk 1:00</button><button class="btn" type="button" data-t="30">Question 0:30</button></div>`,
+   note:'Useful words: cheaper, faster, healthier, more comfortable, wetter. Swap roles after step 3.'},
+
+ {type:'talk',title:'Full task: free time',talk:true,html:()=>`
+   ${who('Pairs','now B talks first')}
+   ${bw}
+   ${pics('park','gym',false)}
+   <ol class="steps">
+     <li><span><b>Think · 30 seconds.</b></span></li>
+     <li><span><b>B talks · 1 minute.</b> Describe → compare → opinion.</span></li>
+     <li><span><b>A asks one question.</b> Which is more relaxing? Do you go to a gym?</span></li>
+   </ol>
+   <div class="grid g3"><button class="btn" type="button" data-t="30">Think 0:30</button><button class="btn" type="button" data-t="60">Talk 1:00</button><button class="btn" type="button" data-t="30">Question 0:30</button></div>`,
+   note:'Press Black and white to practise without colours.'},
+
+ {type:'prac',title:'Find the mistake',who:['Pairs','say the correct sentence'],shuffle:true,cards:[
+   ['The market is more cheap than the supermarket.','The market is cheaper than the supermarket.'],
+   ['Picture A is more busier than picture B.','Picture A is busier than picture B.'],
+   ['The city is bigger that the village.','The city is bigger than the village.'],
+   ['I think the park is gooder.','I think the park is better.'],
+   ['The gym is expensiver than the park.','The gym is more expensive than the park.'],
+   ['In picture A there are a bus.','In picture A there is a bus.'],
+   ['I prefer picture B because is quiet.','I prefer picture B because it is quiet.'],
+   ['The woman wearing a scarf.','The woman is wearing a scarf.']]},
+
+ {type:'learn',title:'Check yourself',html:()=>`
+   ${who('Everyone','thumbs up or thumbs down')}
+   <h2>I can …</h2>
+   <div class="check">
+     <div><span>describe a picture: there is, there are, he is …ing</span><span>👍 / 👎</span></div>
+     <div><span>say where: on the left, in the middle, at the back</span><span>👍 / 👎</span></div>
+     <div><span>compare: busier than, more expensive than, better</span><span>👍 / 👎</span></div>
+     <div><span>say what is the same: both pictures …</span><span>👍 / 👎</span></div>
+     <div><span>talk about black and white pictures without colours</span><span>👍 / 👎</span></div>
+     <div><span>give my opinion with a reason: I prefer … because …</span><span>👍 / 👎</span></div>
+   </div>`}
+];
+
+let cur=0, st={};
+const typeName={learn:'Learn',prac:'Practise',talk:'Talk'};
+
+function dots(){
+  $('dots').innerHTML=S.map((s,i)=>`<button class="dot ${i<cur?'done':''} ${i===cur?'now':''}" data-i="${i}" type="button" aria-label="Step ${i+1}: ${esc(s.title)}"></button>`).join('');
+  $('dots').querySelectorAll('.dot').forEach(d=>d.addEventListener('click',()=>go(+d.dataset.i)));
+}
+function render(){
+  const s=S[cur];stopTimer();$('timeup').hidden=true;
+  $('h-tag').textContent=typeName[s.type];$('h-tag').className='tag '+s.type;$('h-title').textContent=(cur+1)+' / '+S.length+' · '+s.title;
+  dots();
+  const stage=$('stage');
+  if(s.cards){
+    const list=s.shuffle?shuffle(s.cards):s.cards.slice();
+    st={kind:'cards',list,i:0,shown:false};
+    const picHtml=s.pic?onepic(s.pic):s.pics?pics(s.pics[0],s.pics[1],s.pics[2]):'';
+    stage.innerHTML=`${who(s.who[0],s.who[1])}<h2>${esc(s.title)}</h2>
+      ${picHtml?`<div class="cardpic">${picHtml}</div>`:''}
+      <div class="card"><div class="q" id="cq"></div><div class="a rv off" id="ca"></div></div>
+      <p class="count" id="cc"></p>`;
+        drawCard();
+  } else {
+    stage.innerHTML=s.html();st={kind:'html',rv:[...stage.querySelectorAll('.rv.off')]};
+    stage.querySelectorAll('[data-t]').forEach(b=>b.addEventListener('click',()=>startTimer(+b.dataset.t)));
+    stage.querySelectorAll('[data-bw]').forEach(b=>b.addEventListener('click',()=>{
+      const on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on?'true':'false');
+      stage.querySelectorAll('.pic').forEach(p=>p.classList.toggle('grey',on));}));
+  }
+  const t=s.timer;
+  $('clock').hidden=!t;$('tbtn').hidden=!t;if(t){$('clock').textContent=fmt(t);$('clock').className='clock';}
+  if(s.talk){$('clock').hidden=false;$('clock').textContent='0:00';$('clock').className='clock';}
+  $('note').hidden=!s.note;
+  updateButtons();document.querySelector('main').scrollTop=0;
+}
+function drawCard(){
+  const [q,a]=st.list[st.i];$('cq').textContent=q;$('ca').textContent=a;$('ca').classList.add('off');st.shown=false;
+  $('cc').textContent='Card '+(st.i+1)+' of '+st.list.length;updateButtons();
+}
+function pending(){return st.kind==='cards'?!st.shown:st.rv.length>0;}
+function updateButtons(){
+  $('show').disabled=!pending();
+  $('show').textContent=st.kind==='cards'?'Show answer':'Show';
+  $('back').disabled=cur===0&&!(st.kind==='cards'&&st.i>0);
+  const lastCard=st.kind!=='cards'||st.i===st.list.length-1;
+  $('next').textContent=st.kind==='cards'&&!lastCard?'Next card →':(cur===S.length-1?'Finish':'Next →');
+  $('next').disabled=cur===S.length-1&&lastCard;
+}
+function show(){
+  if(st.kind==='cards'){if(!st.shown){$('ca').classList.remove('off');st.shown=true;}}
+  else if(st.rv.length){st.rv.shift().classList.remove('off');}
+  updateButtons();
+}
+function next(){if(st.kind==='cards'&&st.i<st.list.length-1){st.i++;drawCard();return;}if(cur<S.length-1)go(cur+1);}
+function back(){if(st.kind==='cards'&&st.i>0){st.i--;drawCard();return;}if(cur>0)go(cur-1);}
+function go(i){cur=i;render();}
+
+let tm=null,end=0;
+function fmt(s){s=Math.max(0,Math.ceil(s));return Math.floor(s/60)+':'+String(s%60).padStart(2,'0');}
+function startTimer(sec){
+  const dur=sec||S[cur].timer;if(!dur)return;stopTimer();
+  $('clock').hidden=false;$('clock').className='clock run';$('timeup').hidden=true;end=Date.now()+dur*1000;$('tbtn').textContent='Stop timer';
+  tm=setInterval(()=>{const left=(end-Date.now())/1000;$('clock').textContent=fmt(left);
+    if(left<=0){clearInterval(tm);tm=null;$('clock').className='clock end';$('tbtn').textContent='Start timer';
+      $('timeup').hidden=false;setTimeout(()=>{$('timeup').hidden=true;},3000);}},250);
+}
+function stopTimer(){if(tm){clearInterval(tm);tm=null;}$('tbtn').textContent='Start timer';if($('clock').classList.contains('run'))$('clock').className='clock';}
+$('tbtn').addEventListener('click',()=>{if(tm)stopTimer();else startTimer();});
+$('note').addEventListener('click',()=>{
+  const ex=$('stage').querySelector('.tnote');if(ex){ex.remove();return;}
+  const d=document.createElement('p');d.className='tnote';d.textContent='Teacher: '+S[cur].note;$('stage').appendChild(d);
+});
+document.addEventListener('click',e=>{const b=e.target.closest('footer button');if(b)setTimeout(()=>b.blur(),0);});
+$('show').addEventListener('click',show);
+$('next').addEventListener('click',next);
+$('back').addEventListener('click',back);
+$('retry').addEventListener('click',()=>{stopTimer();render();});
+document.addEventListener('keydown',e=>{
+  if(e.target.closest('input,textarea'))return;
+  if(e.key===' '||e.key==='Enter'||e.key==='PageDown'){if(e.target.closest('button')&&e.key!=='PageDown')return;e.preventDefault();pending()?show():next();}
+  else if(e.key==='ArrowRight'){e.preventDefault();pending()?show():next();}
+  else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();back();}
+  else if(e.key==='t'||e.key==='T'){if(!$('tbtn').hidden)$('tbtn').click();}
+});
+render();
+})();
+</script>
+<div class="atin-logo" aria-label="Made by Atin">
+<svg viewBox="104 28 172 134" width="64" height="50" role="img" aria-hidden="true">
+<text x="139" y="112" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="72" fill="currentColor">A</text>
+<rect x="177" y="83" width="24" height="6" rx="1" fill="currentColor"/>
+<path d="M216 66 L216 106 A25 7 0 0 0 266 106 L266 66" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+<ellipse cx="241" cy="66" rx="25" ry="7" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="216" y1="80" x2="266" y2="80" stroke="currentColor" stroke-width="1.5"/>
+<line x1="216" y1="94" x2="266" y2="94" stroke="currentColor" stroke-width="1.5"/>
+<ellipse cx="241" cy="47" rx="23" ry="5" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="114" y1="128" x2="266" y2="128" stroke="currentColor" stroke-width="1"/>
+<text x="190" y="152" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" letter-spacing="2" fill="currentColor">made by Atin</text>
+</svg>
+</div>
+<script>(function(){var l=document.querySelector(".atin-logo"),t=document.querySelector("footer .fgroup:nth-child(2)");if(l&&t){var nx=t.querySelector("#next");if(nx&&nx.parentNode===t)t.insertBefore(l,nx);else t.appendChild(l);}})();</script>
+<style>
+.atin-logo{position:static;flex:none;color:#1F3A5F;background:rgba(255,255,255,.92);border:1px solid #C9D3DF;border-radius:8px;padding:3px 5px;line-height:0;pointer-events:none}
+.atin-logo svg{display:block}
+@media print{.atin-logo{background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+.frow .atin-logo{padding:2px 4px}
+.frow .atin-logo svg{width:50px;height:39px}
+</style>
+
+</body></html>

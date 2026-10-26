@@ -1,0 +1,536 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>E1 Speaking – Task 3 Describe the Picture – Interactive Worksheets</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@500;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<style>
+/* Layout: widescreen = picture left, task right, all on one screen; phone = stacked */
+:root{
+  --bg:#F3F5F7; --surface:#FFFFFF; --ink:#18222E; --muted:#556170; --line:#D7DDE4;
+  --accent:#0E6B6B; --accent-ink:#FFFFFF; --accent-soft:#DDEFEE;
+  --mark:#E8A317; --mark-soft:#FCF0D2;
+  --good:#1D7A3A; --good-soft:#DDF1E3; --bad:#B3261E; --bad-soft:#F8DEDC;
+  --display:"Lexend","Segoe UI",Arial,sans-serif;
+  --body:"Atkinson Hyperlegible",Verdana,Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#11161C; --surface:#1A222B; --ink:#E9EEF3; --muted:#9AA6B3; --line:#2C3743;
+  --accent:#4FB8B3; --accent-ink:#08201F; --accent-soft:#163533; --mark:#F0B940; --mark-soft:#3A2F14;
+  --good:#5FCB82; --good-soft:#163222; --bad:#F08A82; --bad-soft:#3A1A18; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#11161C; --surface:#1A222B; --ink:#E9EEF3; --muted:#9AA6B3; --line:#2C3743;
+  --accent:#4FB8B3; --accent-ink:#08201F; --accent-soft:#163533; --mark:#F0B940; --mark-soft:#3A2F14;
+  --good:#5FCB82; --good-soft:#163222; --bad:#F08A82; --bad-soft:#3A1A18; color-scheme:dark}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{height:100%;margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.45}
+.wrap{min-height:100%;display:flex;flex-direction:column;gap:12px;padding-block:14px 16px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{font:700 1em var(--display);color:var(--accent)}
+.meta{color:var(--muted);font-variant-numeric:tabular-nums}
+h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance;line-height:1.2}
+h1{font-size:1.9em} h2{font-size:1.3em} h3{font-size:1.05em}
+p{margin:0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:14px;flex:1;min-height:0}
+.btn{font:600 1em/1 var(--display);padding:.7em 1.1em;border-radius:10px;border:2px solid var(--accent);background:var(--accent);color:var(--accent-ink);cursor:pointer;min-height:44px}
+.btn.ghost{background:transparent;color:var(--accent)}
+.btn:disabled{opacity:.4;cursor:default}
+.btn:focus-visible,.chip:focus-visible,.gap:focus-visible,.opt:focus-visible,.step:focus-visible,.thumb:focus-visible{outline:3px solid var(--mark);outline-offset:2px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.hint{color:var(--muted);font-size:.9em}
+input[type=text],textarea{font:inherit;padding:10px 12px;border:2px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);width:100%}
+textarea{min-height:3.2em;resize:vertical}
+/* start */
+.thumbs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.thumb{font:inherit;text-align:left;padding:8px;border:2px solid var(--line);border-radius:12px;background:var(--accent-soft);color:var(--ink);cursor:pointer;display:flex;flex-direction:column;gap:6px}
+.thumb svg{width:100%;height:auto;border-radius:8px;display:block}
+.thumb b{font-family:var(--display);color:var(--accent)}
+.thumb span{font-size:.85em;color:var(--muted)}
+/* activity */
+.act{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;align-items:start;flex:1;min-height:0}
+.pics{display:flex;flex-direction:column;gap:10px;min-width:0}
+.pic{margin:0;position:relative}
+.pic svg{display:block;width:100%;height:auto;border-radius:10px;border:2px solid var(--line)}
+.pic figcaption{position:absolute;left:8px;top:8px;background:var(--ink);color:var(--bg);font:700 .85em var(--display);padding:3px 9px;border-radius:6px}
+.pics.two{display:flex;flex-direction:column;align-items:flex-start}
+.pics.two .pic{max-width:100%}
+.pics.two .pic svg{height:min(41vh,calc((50vw - 60px)*0.65));width:auto;aspect-ratio:400/260;max-width:100%}
+@media (max-width:900px){.pics.two .pic,.pics.two .pic svg{height:auto;width:100%}}
+.panel{display:flex;flex-direction:column;gap:12px;min-width:0}
+.steps{display:flex;gap:8px;flex-wrap:wrap}
+.step{font:600 .9em var(--display);padding:.5em .9em;border-radius:999px;border:2px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.step[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.step.done::after{content:" ✓"}
+.box{background:var(--mark-soft);border-radius:10px;padding:8px 12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:inherit;padding:.4em .8em;border-radius:999px;border:2px solid var(--accent);background:var(--surface);color:var(--ink);cursor:pointer}
+.chip.used{opacity:.35}
+.chip.sel{background:var(--accent);color:var(--accent-ink)}
+.gaptext{font-size:1.1em;line-height:2.1}
+.gap{display:inline-block;min-width:6.5em;text-align:center;font:inherit;padding:0 .4em;border:none;border-bottom:3px solid var(--accent);background:var(--accent-soft);color:var(--ink);border-radius:6px 6px 0 0;cursor:pointer;line-height:1.5}
+.gap.right{background:var(--good-soft);border-color:var(--good)}
+.gap.wrong{background:var(--bad-soft);border-color:var(--bad)}
+.q{display:flex;flex-direction:column;gap:6px}
+.q p.qq{font-weight:700}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opt{font:inherit;padding:.45em .9em;border-radius:10px;border:2px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer;text-align:left}
+.opt.right{border-color:var(--good);background:var(--good-soft)}
+.opt.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.ex{color:var(--muted);font-size:.92em}
+.fb{font-weight:700;min-height:1.3em}
+.ok{color:var(--good)} .no{color:var(--bad)}
+.score{font:700 1em var(--display);font-variant-numeric:tabular-nums;color:var(--muted)}
+.big{font:700 clamp(2.5em,8vw,4em)/1 var(--display);color:var(--accent);font-variant-numeric:tabular-nums}
+@media (max-width:900px){.act{grid-template-columns:1fr}.thumbs{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap" id="wrap">
+  <div class="top">
+    <div class="brand">Entry 1 · Speaking Task 3 · Describe the picture</div>
+    <div class="row"><span class="meta" id="meta"></span><button class="btn ghost" id="home" type="button" hidden>⌂ All pictures</button></div>
+  </div>
+  <main class="card" id="card" aria-live="polite"></main>
+</div>
+
+<script>
+/* ---------- drawing helpers ---------- */
+function person(o){
+  const s=(o.h||110)/110, x=o.x, y=o.y, skin=o.skin||"#c68642", shirt=o.shirt||"#3a6fd8", legs=o.legs||"#2d3a5a", hair=o.hair||"#222";
+  const sh=y-82*s, L=[];
+  L.push(`<line x1="${x-6*s}" y1="${y-50*s}" x2="${x-8*s}" y2="${y}" stroke="${legs}" stroke-width="${7*s}" stroke-linecap="round"/>`);
+  L.push(`<line x1="${x+6*s}" y1="${y-50*s}" x2="${x+8*s}" y2="${y}" stroke="${legs}" stroke-width="${7*s}" stroke-linecap="round"/>`);
+  if(o.skirt) L.push(`<polygon points="${x-12*s},${y-54*s} ${x+12*s},${y-54*s} ${x+20*s},${y-28*s} ${x-20*s},${y-28*s}" fill="${o.skirt}"/>`);
+  if(o.longHair) L.push(`<rect x="${x-13*s}" y="${y-110*s}" width="${26*s}" height="${32*s}" rx="${10*s}" fill="${hair}"/>`);
+  L.push(`<rect x="${x-12*s}" y="${y-88*s}" width="${24*s}" height="${40*s}" rx="${8*s}" fill="${shirt}"/>`);
+  const arm=(x1,x2,y2)=>`<line x1="${x1}" y1="${sh}" x2="${x2}" y2="${y2}" stroke="${shirt}" stroke-width="${7*s}" stroke-linecap="round"/><circle cx="${x2}" cy="${y2}" r="${4*s}" fill="${skin}"/>`;
+  const la=o.left||"down", ra=o.right||"down";
+  L.push(la==="up"?arm(x-10*s,x-20*s,y-112*s):la==="forward"?arm(x-10*s,x-30*s,y-70*s):arm(x-10*s,x-17*s,y-54*s));
+  L.push(ra==="up"?arm(x+10*s,x+22*s,y-112*s):ra==="forward"?arm(x+10*s,x+30*s,y-70*s):arm(x+10*s,x+17*s,y-54*s));
+  L.push(`<rect x="${x-3*s}" y="${y-94*s}" width="${6*s}" height="${8*s}" fill="${skin}"/>`);
+  L.push(`<circle cx="${x}" cy="${y-102*s}" r="${11*s}" fill="${skin}"/>`);
+  L.push(`<path d="M${x-11*s},${y-102*s} a${11*s},${11*s} 0 0 1 ${22*s},0 q${-11*s},${-5*s} ${-22*s},0z" fill="${hair}"/>`);
+  L.push(`<circle cx="${x-4*s}" cy="${y-102*s}" r="${1.4*s}" fill="#222"/><circle cx="${x+4*s}" cy="${y-102*s}" r="${1.4*s}" fill="#222"/>`);
+  L.push(`<path d="M${x-4*s},${y-97*s} q${4*s},${3*s} ${8*s},0" stroke="#222" stroke-width="${1.2*s}" fill="none"/>`);
+  return L.join("");
+}
+function seated(x,y,shirt,skin,hair,longHair){
+  return `${longHair?`<rect x="${x-13}" y="${y-58}" width="26" height="30" rx="10" fill="${hair}"/>`:""}
+  <rect x="${x-12}" y="${y-36}" width="24" height="36" rx="8" fill="${shirt}"/>
+  <circle cx="${x}" cy="${y-48}" r="11" fill="${skin}"/>
+  <path d="M${x-11},${y-48} a11,11 0 0 1 22,0 q-11,-5 -22,0z" fill="${hair}"/>
+  <circle cx="${x-4}" cy="${y-48}" r="1.4" fill="#222"/><circle cx="${x+4}" cy="${y-48}" r="1.4" fill="#222"/>`;
+}
+const svg=(inner,label)=>`<svg viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${label}">${inner}</svg>`;
+const cloud=(x,y)=>`<ellipse cx="${x}" cy="${y}" rx="22" ry="11" fill="#e8edf2"/><ellipse cx="${x-12}" cy="${y+4}" rx="14" ry="9" fill="#e8edf2"/><ellipse cx="${x+13}" cy="${y+4}" rx="14" ry="9" fill="#e8edf2"/>`;
+
+/* ---------- scenes: draw(b) — b=false is Student A's picture, b=true is Student B's ---------- */
+const SCENES=[
+ {id:"kitchen", title:"In the kitchen",
+  questions:["Tell me what you can see in this picture.","What is the woman doing?","What is on the table?","Where is the cat?","Do you like cooking? Why? / Why not?","What food do you cook at home?"],
+  model:"In this picture I can see a kitchen. A woman is cooking. She has a red top. There are three green apples on the table. A black cat is on the chair. I like cooking because it is relaxing.",
+  diffs:[["The woman's top is red.","The woman's top is green."],["There are three apples.","There are two apples."],["The cat is black.","The cat is orange."],["It is three o'clock.","It is six o'clock."],["It is sunny.","It is cloudy."]],
+  draw:b=>svg(`
+   <rect width="400" height="200" fill="#fbeec4"/><rect y="200" width="400" height="60" fill="#c89b6d"/>
+   <rect x="230" y="35" width="95" height="75" fill="#9fd4f5" stroke="#fff" stroke-width="5"/>
+   ${b?cloud(300,62):`<circle cx="300" cy="58" r="12" fill="#ffd23f"/>`}
+   <line x1="277" y1="35" x2="277" y2="110" stroke="#fff" stroke-width="4"/>
+   <circle cx="150" cy="55" r="18" fill="#fff" stroke="#555" stroke-width="3"/><line x1="150" y1="55" x2="150" y2="42" stroke="#333" stroke-width="2.5"/>
+   ${b?`<line x1="150" y1="55" x2="150" y2="65" stroke="#333" stroke-width="3"/>`:`<line x1="150" y1="55" x2="160" y2="55" stroke="#333" stroke-width="3"/>`}
+   <rect x="8" y="95" width="58" height="140" rx="6" fill="#f4f6f8" stroke="#bfc6cf" stroke-width="2"/><line x1="8" y1="140" x2="66" y2="140" stroke="#bfc6cf" stroke-width="2"/><rect x="56" y="110" width="4" height="20" fill="#9aa3ad"/>
+   <rect x="130" y="160" width="75" height="75" fill="#8d96a0"/><rect x="134" y="168" width="67" height="40" fill="#5f6770"/><circle cx="150" cy="222" r="5" fill="#333"/><circle cx="185" cy="222" r="5" fill="#333"/>
+   <rect x="148" y="146" width="40" height="14" rx="3" fill="#333"/><line x1="188" y1="152" x2="205" y2="148" stroke="#333" stroke-width="4"/>
+   <path d="M160,140 q-5,-8 0,-16 M170,140 q5,-8 0,-16" stroke="#aaa" stroke-width="2.5" fill="none"/>
+   ${person({x:100,y:238,h:118,shirt:b?"#2e8b57":"#d63b3b",skirt:"#2f5fb3",legs:"#c68642",hair:"#1b1b1b",longHair:true,right:"forward"})}
+   <rect x="232" y="176" width="110" height="10" fill="#7a4b2a"/><rect x="240" y="186" width="8" height="50" fill="#7a4b2a"/><rect x="326" y="186" width="8" height="50" fill="#7a4b2a"/>
+   <path d="M266,176 q22,18 44,0z" fill="#e8e1d1"/><circle cx="278" cy="168" r="8" fill="#6abf3a"/><circle cx="294" cy="168" r="8" fill="#5aad2e"/>
+   ${b?"":`<circle cx="286" cy="157" r="8" fill="#6abf3a"/>`}
+   <rect x="352" y="160" width="6" height="76" fill="#7a4b2a"/><rect x="352" y="196" width="40" height="7" fill="#7a4b2a"/><rect x="386" y="196" width="6" height="40" fill="#7a4b2a"/>
+   ${(c=>`<ellipse cx="372" cy="186" rx="13" ry="11" fill="${c}"/><circle cx="372" cy="170" r="8" fill="${c}"/><polygon points="365,165 367,156 371,163" fill="${c}"/><polygon points="379,165 377,156 373,163" fill="${c}"/><circle cx="369" cy="170" r="1.5" fill="#1b1b1b"/><circle cx="375" cy="170" r="1.5" fill="#1b1b1b"/><path d="M384,192 q14,-4 8,-18" stroke="${c}" stroke-width="3" fill="none"/>`)(b?"#e08a2e":"#222")}
+  `,"A woman cooking in a kitchen, apples on a table, a cat on a chair")},
+
+ {id:"park", title:"In the park",
+  questions:["Tell me what you can see in this picture.","What is the man doing?","What are the children doing?","What is in the tree?","Do you like parks? Why? / Why not?","What do you do at the weekend?"],
+  model:"In this picture I can see a park. It is sunny. A man is walking his dog. Two children are playing football. There is a bird in the tree. I like parks because they are green and quiet.",
+  diffs:[["The man's jacket is blue.","The man's jacket is red."],["The dog is brown.","The dog is black."],["There is a bird in the tree.","There is no bird in the tree."],["There are no apples in the tree.","There are apples in the tree."],["The girl's top is yellow.","The girl's top is pink."]],
+  draw:b=>svg(`
+   <rect width="400" height="160" fill="#a8dcf7"/><rect y="150" width="400" height="110" fill="#7cc35a"/>
+   <circle cx="355" cy="40" r="20" fill="#ffd23f"/>
+   <rect x="40" y="95" width="16" height="105" fill="#7a4b2a"/><circle cx="48" cy="85" r="34" fill="#3f9a3a"/><circle cx="22" cy="105" r="22" fill="#3f9a3a"/><circle cx="74" cy="105" r="22" fill="#3f9a3a"/>
+   ${b?`<circle cx="34" cy="74" r="5" fill="#d9483b"/><circle cx="58" cy="66" r="5" fill="#d9483b"/><circle cx="22" cy="104" r="5" fill="#d9483b"/><circle cx="70" cy="100" r="5" fill="#d9483b"/>`:`<ellipse cx="82" cy="72" rx="8" ry="6" fill="#d9483b"/><circle cx="89" cy="68" r="4" fill="#d9483b"/><polygon points="93,68 98,69 93,70" fill="#f5a623"/>`}
+   <rect x="95" y="185" width="70" height="8" fill="#8b5a2b"/><rect x="95" y="172" width="70" height="6" fill="#8b5a2b"/><rect x="100" y="193" width="6" height="22" fill="#8b5a2b"/><rect x="154" y="193" width="6" height="22" fill="#8b5a2b"/>
+   ${person({x:205,y:245,h:118,shirt:b?"#d63b3b":"#2b59c3",legs:"#222",hair:"#5a3a1a",right:"forward",skin:"#f1c27d"})}
+   <path d="M240,173 q20,30 32,48" stroke="#333" stroke-width="2" fill="none"/>
+   ${((c,e)=>`<ellipse cx="282" cy="228" rx="22" ry="11" fill="${c}"/><circle cx="270" cy="216" r="9" fill="${c}"/><ellipse cx="263" cy="212" rx="4" ry="7" fill="${e}"/><circle cx="266" cy="214" r="1.6" fill="#fff"/>
+   <line x1="268" y1="236" x2="266" y2="248" stroke="${c}" stroke-width="5"/><line x1="296" y1="236" x2="298" y2="248" stroke="${c}" stroke-width="5"/><path d="M303,224 q12,-6 8,-16" stroke="${c}" stroke-width="4" fill="none"/>`)(b?"#222":"#8b5a2b", b?"#444":"#6b3f1a")}
+   ${person({x:318,y:232,h:78,shirt:b?"#f06bb0":"#f5c400",skirt:"#7a3fb0",legs:"#8d5524",hair:"#1b1b1b",longHair:true,skin:"#8d5524",left:"up"})}
+   ${person({x:378,y:232,h:78,shirt:"#f07a22",legs:"#2d3a5a",hair:"#1b1b1b",skin:"#e0ac69",left:"forward"})}
+   <circle cx="348" cy="228" r="7" fill="#fff" stroke="#222" stroke-width="1.5"/><circle cx="348" cy="228" r="2.5" fill="#222"/>
+  `,"A park: a man walking a dog, two children playing football, a tree and a bench")},
+
+ {id:"busstop", title:"At the bus stop",
+  questions:["Tell me what you can see in this picture.","What is the weather like?","What is the man holding?","What is the woman wearing?","Do you like the rain? Why? / Why not?","How do you come to college?"],
+  model:"In this picture I can see a bus stop. It is raining. A man has a black umbrella. A woman has a bag. She is wearing a green coat. The red bus is coming. I don't like the rain because it is cold.",
+  diffs:[["The umbrella is black.","The umbrella is red."],["The bus is red.","The bus is blue."],["The woman's coat is green.","The woman's coat is purple."],["The woman has a yellow bag.","The woman has no bag."],["There is a puddle.","There is no puddle."]],
+  draw:b=>svg(`
+   <rect width="400" height="200" fill="#b7c0c9"/><rect y="200" width="400" height="60" fill="#8f979e"/><rect y="195" width="400" height="8" fill="#6f777e"/>
+   <ellipse cx="80" cy="35" rx="50" ry="18" fill="#9aa4ad"/><ellipse cx="200" cy="25" rx="60" ry="20" fill="#9aa4ad"/><ellipse cx="330" cy="38" rx="55" ry="18" fill="#9aa4ad"/>
+   ${Array.from({length:28},(_,n)=>`<line x1="${(n*53)%400}" y1="${50+(n*37)%140}" x2="${(n*53)%400-6}" y2="${64+(n*37)%140}" stroke="#5d7fa3" stroke-width="2"/>`).join("")}
+   <rect x="28" y="70" width="5" height="160" fill="#555"/><rect x="12" y="62" width="38" height="28" rx="4" fill="#d63b3b"/><text x="31" y="81" font-family="Arial" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">BUS</text>
+   ${(c=>`<rect x="225" y="105" width="170" height="105" rx="10" fill="${c[0]}"/><rect x="231" y="160" width="26" height="45" fill="${c[1]}"/>`)(b?["#2f5fb3","#244a8c"]:["#d72a2a","#b31f1f"])}
+   <rect x="235" y="117" width="34" height="34" rx="3" fill="#cfe8f5"/><rect x="275" y="117" width="34" height="34" rx="3" fill="#cfe8f5"/><rect x="315" y="117" width="34" height="34" rx="3" fill="#cfe8f5"/><rect x="355" y="117" width="32" height="34" rx="3" fill="#cfe8f5"/>
+   <circle cx="265" cy="212" r="13" fill="#222"/><circle cx="355" cy="212" r="13" fill="#222"/><circle cx="265" cy="212" r="5" fill="#888"/><circle cx="355" cy="212" r="5" fill="#888"/>
+   <path d="M62,98 q35,-34 70,0z" fill="${b?"#d63b3b":"#1b1b1b"}"/><line x1="97" y1="98" x2="97" y2="132" stroke="#1b1b1b" stroke-width="3"/>
+   ${person({x:90,y:238,h:112,shirt:"#8b5a2b",legs:"#2d3a5a",hair:"#999",right:"up",skin:"#f1c27d"})}
+   ${person({x:160,y:238,h:108,shirt:b?"#7b3fb0":"#2e8b57",legs:"#333",hair:"#1b1b1b",longHair:true,skin:"#c68642"})}
+   ${b?"":`<rect x="168" y="182" width="20" height="22" rx="3" fill="#f4e04d" stroke="#c9b200" stroke-width="2"/><path d="M172,182 q6,-10 12,0" stroke="#c9b200" stroke-width="2" fill="none"/>`}
+   ${b?"":`<ellipse cx="135" cy="250" rx="45" ry="7" fill="#6d8fb3" opacity=".85"/>`}
+  `,"A rainy bus stop: a man with an umbrella, a woman, a bus")},
+
+ {id:"classroom", title:"In the classroom",
+  questions:["Tell me what you can see in this picture.","What is the teacher doing?","How many students can you see?","What is on the desks?","Do you like learning English? Why?","What is your favourite lesson?"],
+  model:"In this picture I can see a classroom. The teacher is pointing at the board. There are two students. They are sitting at their desks. There are books on the desks. I like learning English because I can talk to people.",
+  diffs:[["The board says ABC.","The board says 123."],["The teacher's top is purple.","The teacher's top is pink."],["There is a plant.","There is no plant."],["There is a clock on the wall.","There is no clock."],["There are three books.","There is one book."]],
+  draw:b=>svg(`
+   <rect width="400" height="215" fill="#e7eef4"/><rect y="215" width="400" height="45" fill="#b88a5a"/>
+   <rect x="30" y="35" width="170" height="90" rx="4" fill="#fff" stroke="#8e99a4" stroke-width="5"/><text x="115" y="95" font-family="Arial" font-size="40" font-weight="bold" fill="#2b59c3" text-anchor="middle">${b?"123":"ABC"}</text><rect x="30" y="125" width="170" height="6" fill="#8e99a4"/>
+   ${b?"":`<circle cx="320" cy="55" r="18" fill="#fff" stroke="#555" stroke-width="3"/><line x1="320" y1="55" x2="320" y2="43" stroke="#333" stroke-width="2.5"/><line x1="320" y1="55" x2="329" y2="58" stroke="#333" stroke-width="2.5"/>`}
+   ${b?"":`<path d="M8,215 l6,-30 h28 l6,30z" fill="#c0603a"/><circle cx="28" cy="172" r="14" fill="#3f9a3a"/><circle cx="16" cy="180" r="10" fill="#3f9a3a"/><circle cx="40" cy="180" r="10" fill="#3f9a3a"/>`}
+   ${person({x:225,y:238,h:118,shirt:b?"#f06bb0":"#7b3fb0",legs:"#2d3a5a",hair:"#6b3f1a",longHair:true,left:"up",skin:"#f1c27d"})}
+   ${seated(300,188,"#2e8b57","#8d5524","#1b1b1b",false)}
+   ${seated(365,188,"#f07a22","#e0ac69","#1b1b1b",true)}
+   <rect x="270" y="186" width="125" height="10" fill="#8b5a2b"/><rect x="276" y="196" width="7" height="42" fill="#8b5a2b"/><rect x="384" y="196" width="7" height="42" fill="#8b5a2b"/>
+   <rect x="318" y="175" width="30" height="11" rx="2" fill="#2b59c3"/>
+   ${b?"":`<rect x="320" y="164" width="27" height="11" rx="2" fill="#d63b3b"/><rect x="317" y="153" width="29" height="11" rx="2" fill="#f5c400"/>`}
+  `,"A classroom: a teacher pointing at the board, two students at desks")}
+];
+
+
+(function(){
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;};
+
+const TASKS={
+ kitchen:{gap:"In this picture I can see a {kitchen}. A woman is {cooking}. She has a {red} top. There are {three} green {apples} on the table. A black {cat} is on the {chair}.",
+  mcq:[["What is the woman doing?","She is cooking.",["She is sleeping.","She is reading."]],["What is on the table?","There are three green apples.",["There is a cat.","There is a pan."]],["Where is the cat?","On the chair.",["On the table.","Next to the fridge."]]],
+  own:[["Do you like cooking? Why? / Why not?","I like cooking because …","I like cooking because it is relaxing."],["What food do you cook at home?","I cook …","I cook rice and chicken."]],
+  diff:[["The woman's top is …","green",["blue","yellow"]],["On the table there are …","two apples",["four apples","one apple"]],["The cat is …","orange",["white","grey"]],["It is …","six o'clock",["nine o'clock","twelve o'clock"]],["The weather is …","cloudy",["raining","snowing"]]]},
+ park:{gap:"In this picture I can see a {park}. It is {sunny}. A man is {walking} his {dog}. Two {children} are playing {football}. There is a {bird} in the tree.",
+  mcq:[["What is the man doing?","He is walking his dog.",["He is playing football.","He is sitting on the bench."]],["What are the children doing?","They are playing football.",["They are eating.","They are sleeping."]],["What is in the tree?","A bird.",["A cat.","A ball."]]],
+  own:[["Do you like parks? Why? / Why not?","I like parks because …","I like parks because they are green and quiet."],["What do you do at the weekend?","At the weekend I …","At the weekend I go to the market with my family."]],
+  diff:[["The man's jacket is …","red",["green","yellow"]],["The dog is …","black",["white","grey"]],["In the tree there is …","no bird",["a cat","two birds"]],["In the tree there are …","apples",["flowers","balls"]],["The girl's top is …","pink",["blue","red"]]]},
+ busstop:{gap:"In this picture I can see a {bus stop}. It is {raining}. A man has a black {umbrella}. A woman has a {bag}. She is wearing a {green} {coat}. The {red} bus is coming.",
+  mcq:[["What is the weather like?","It is raining.",["It is sunny.","It is snowing."]],["What is the man holding?","An umbrella.",["A bag.","A phone."]],["What is the woman wearing?","A green coat.",["A red coat.","A black hat."]]],
+  own:[["Do you like the rain? Why? / Why not?","I don't like the rain because …","I don't like the rain because it is cold."],["How do you come to college?","I come by …","I come by bus. It takes 20 minutes."]],
+  diff:[["The umbrella is …","red",["green","blue"]],["The bus is …","blue",["green","yellow"]],["The woman's coat is …","purple",["black","red"]],["The woman has …","no bag",["two bags","a red bag"]],["On the ground there is …","no puddle",["a big puddle","a cat"]]]},
+ classroom:{gap:"In this picture I can see a {classroom}. The {teacher} is pointing at the {board}. There are {two} students. They are {sitting} at their {desks}. There are {books} on the desks.",
+  mcq:[["What is the teacher doing?","She is pointing at the board.",["She is sitting.","She is eating."]],["How many students can you see?","Two.",["Three.","Four."]],["What is on the desks?","Books.",["Bags.","Phones."]]],
+  own:[["Do you like learning English? Why?","I like learning English because …","I like learning English because I can talk to people."],["What is your favourite lesson?","My favourite lesson is …","My favourite lesson is speaking."]],
+  diff:[["The board says …","123",["ABC","XYZ"]],["The teacher's top is …","pink",["purple","green"]],["Next to the board there is …","no plant",["two plants","a big plant"]],["On the wall there is …","no clock",["two clocks","a big clock"]],["On the desk there is …","one book",["three books","five books"]]]}
+};
+
+let student="", cur=-1, step=0;
+const ST=SCENES.map(()=>({gap:null,gapDone:false,mcq:{},own:["",""],diff:{},steps:[false,false,false]}));
+const card=$('card'),meta=$('meta'),home=$('home');
+
+function score(i){const s=ST[i];let g=0,t=0;
+  if(s.gap){g+=s.gap.right;} t+=7;
+  TASKS[SCENES[i].id].mcq.forEach((_,k)=>{if(s.mcq[k]===true)g++;});t+=3;
+  TASKS[SCENES[i].id].diff.forEach((_,k)=>{if(s.diff[k]===true)g++;});t+=5;
+  return [g,t];}
+function total(){let g=0,t=0;SCENES.forEach((_,i)=>{const [a,b]=score(i);g+=a;t+=b;});return [g,t];}
+
+function render(){draw();fit();}
+function draw(){
+  home.hidden=cur<0;
+  const [g,t]=total();meta.textContent=student?`${student} · ${g} / ${t}`:'';
+  if(cur<0) return drawStart();
+  if(cur===99) return drawChallenge();
+  drawAct();
+}
+function drawStart(){
+  const done=ST.some(s=>s.steps.some(Boolean));
+  card.innerHTML=`<h1>Describe the picture</h1>
+   <div class="row" style="max-width:40em"><label for="sname" style="font-weight:700">Your name</label><input id="sname" type="text" autocomplete="off" maxlength="40" value="${esc(student)}" placeholder="Write your name" style="flex:1;min-width:10em"></div>
+   <p class="no fb" id="err" hidden>Please write your name first.</p>
+   <p>Choose a picture. Do 3 tasks for each picture: <b>1</b> fill the gaps, <b>2</b> answer the questions, <b>3</b> find the differences.</p>
+   <div class="thumbs">${SCENES.map((s,i)=>{const [a,b]=score(i);const n=ST[i].steps.filter(Boolean).length;
+     return `<button type="button" class="thumb" data-i="${i}">${s.draw(false)}<b>${i+1} · ${esc(s.title)}</b><span>${n?`${n} / 3 tasks · ${a} / ${b} points`:'Not started'}</span></button>`;}).join('')}</div>
+   ${done?`<p class="hint">Tap a picture to go back to it.</p>`:''}
+   <button type="button" class="thumb" id="chal" style="flex-direction:row;align-items:center;gap:16px;background:var(--mark-soft);border-color:var(--mark)"><span style="font:700 2.2em var(--display);color:var(--mark)">★</span><span><b style="font-size:1.2em">Finished? Challenge</b><br><span>5 harder tasks: build sentences, fix mistakes, where is it?, memory test, write a description${chScore()?` · ${chScore()} / ${CH_TOTAL} points`:''}</span></span></button>`;
+  const inp=$('sname');inp.oninput=()=>{student=inp.value.trim();$('err').hidden=true;meta.textContent=student;};
+  $('chal').onclick=()=>{if(!student){$('err').hidden=false;inp.focus();return;}cur=99;render();};
+  card.querySelectorAll('.thumb[data-i]').forEach(b=>b.onclick=()=>{if(!student){$('err').hidden=false;inp.focus();return;}cur=+b.dataset.i;step=ST[cur].steps.indexOf(false);if(step<0)step=0;render();});
+}
+function drawAct(){
+  const s=SCENES[cur],T=TASKS[s.id],st=ST[cur];
+  const names=['1 Fill the gaps','2 Questions','3 Differences'];
+  card.innerHTML=`<div class="act">
+    <div class="pics ${step===2?'two':''}" id="pics">
+      <figure class="pic">${s.draw(false)}<figcaption>A</figcaption></figure>
+      ${step===2?`<figure class="pic">${s.draw(true)}<figcaption>B</figcaption></figure>`:''}
+    </div>
+    <div class="panel">
+      <div class="row" style="justify-content:space-between"><h2>${cur+1} · ${esc(s.title)}</h2><span class="score" id="psc"></span></div>
+      <div class="steps" role="tablist">${names.map((n,k)=>`<button type="button" class="step ${st.steps[k]?'done':''}" role="tab" aria-selected="${k===step}" data-s="${k}">${n}</button>`).join('')}</div>
+      <div id="task" class="panel"></div>
+    </div></div>`;
+  card.querySelectorAll('.step').forEach(b=>b.onclick=()=>{step=+b.dataset.s;render();});
+  [stepGap,stepQ,stepDiff][step]();
+  const [a,b]=score(cur);$('psc').textContent=`${a} / ${b} points`;
+}
+function nextBtn(){const last=step===2;return `<button type="button" class="btn ghost" id="bk">← Back</button><button type="button" class="btn ghost" id="rt">↺ Try again</button><button type="button" class="btn" id="nx">${last?(cur<SCENES.length-1?'Next picture →':'Finish →'):'Next task →'}</button>`;}
+function resetStep(){const st=ST[cur];
+  if(step===0){st.gapFill=null;st.gapDone=false;st.gap=null;st.words=null;st.steps[0]=false;}
+  else if(step===1){st.mcq={};st.mcqPick={};st.qOrder=null;st.own=["",""];st.steps[1]=false;}
+  else{st.diff={};st.dPick={};st.dOrder=null;st.steps[2]=false;}}
+function wireNext(){$('bk').onclick=()=>{if(step>0)step--;else cur=-1;render();};$('rt').onclick=()=>{resetStep();render();};$('nx').onclick=()=>{if(step<2){step++;}else if(cur<SCENES.length-1){cur++;step=0;}else{cur=-1;showEnd=true;}render();};}
+let showEnd=false;
+
+/* Step 1: gap-fill */
+function stepGap(){
+  const T=TASKS[SCENES[cur].id],st=ST[cur];
+  const parts=T.gap.split(/(\{[^}]+\})/);const answers=parts.filter(p=>p[0]==='{').map(p=>p.slice(1,-1));
+  if(!st.gapFill) st.gapFill=answers.map(()=>null);
+  const words=st.words||(st.words=shuffle(answers));
+  let gi=0;const txt=parts.map(p=>{if(p[0]!=='{')return esc(p);const i=gi++;const v=st.gapFill[i];
+    const cls=st.gapDone?(v===answers[i]?'right':'wrong'):'';return `<button type="button" class="gap ${cls}" data-g="${i}">${v?esc(v):'&nbsp;'}</button>`;}).join('');
+  $('task').innerHTML=`<h3>Look at the picture. Tap the words in order. Tap a gap to empty it.</h3>
+    <div class="box"><div class="chips" id="chips">${words.map((w,k)=>`<button type="button" class="chip ${st.gapFill.includes(w)&&st.gapFill.filter(x=>x===w).length>=words.filter(x=>x===w).length?'used':''}" data-w="${esc(w)}">${esc(w)}</button>`).join('')}</div></div>
+    <p class="gaptext">${txt}</p>
+    <p class="fb" id="gfb">${st.gapDone?(st.gap.right===answers.length?'<span class="ok">All correct!</span>':`<span class="no">${st.gap.right} / ${answers.length} correct. Tap a red gap to change it, then check again.</span>`):''}</p>
+    <div class="row"><button type="button" class="btn ghost" id="gck">Check</button>${nextBtn()}</div>`;
+  $('chips').querySelectorAll('.chip').forEach(c=>c.onclick=()=>{if(c.classList.contains('used'))return;const e=st.gapFill.indexOf(null);if(e<0)return;st.gapFill[e]=c.dataset.w;st.gapDone=false;render();});
+  $('task').querySelectorAll('.gap').forEach(g=>g.onclick=()=>{const i=+g.dataset.g;if(st.gapFill[i]){st.gapFill[i]=null;st.gapDone=false;render();}});
+  $('gck').onclick=()=>{if(st.gapFill.includes(null)){$('gfb').innerHTML='<span class="no">Fill every gap first.</span>';return;}
+    const right=st.gapFill.filter((v,i)=>v===answers[i]).length;st.gapDone=true;
+    if(!st.gap||right>st.gap.right) st.gap={right};
+    if(right===answers.length) st.steps[0]=true; render();};
+  wireNext();
+}
+/* Step 2: questions */
+function stepQ(){
+  const T=TASKS[SCENES[cur].id],st=ST[cur];
+  if(!st.qOrder) st.qOrder=T.mcq.map(m=>shuffle([m[1],...m[2]]));
+  $('task').innerHTML=`<h3>Look at the picture. Tap the best answer.</h3>
+    ${T.mcq.map((m,k)=>`<div class="q"><p class="qq">${k+1}. ${esc(m[0])}</p><div class="opts">${st.qOrder[k].map(o=>{let c='opt';if(st.mcq[k]!==undefined){if(o===m[1])c+=' right';else if(o===st.mcqPick?.[k])c+=' wrong';}return `<button type="button" class="${c}" data-k="${k}" data-o="${esc(o)}" ${st.mcq[k]!==undefined?'disabled':''}>${esc(o)}</button>`;}).join('')}</div></div>`).join('')}
+    <h3>About you. Write a full sentence.</h3>
+    ${T.own.map((o,k)=>`<div class="q"><label class="qq" for="own${k}">${k+4}. ${esc(o[0])}</label><textarea id="own${k}" placeholder="${esc(o[1])}">${esc(st.own[k])}</textarea><p class="ex" id="ex${k}" hidden>Example: ${esc(o[2])}</p></div>`).join('')}
+    <div class="row"><button type="button" class="btn ghost" id="sex">Show examples</button>${nextBtn()}</div>`;
+  st.mcqPick=st.mcqPick||{};
+  $('task').querySelectorAll('.opt').forEach(b=>b.onclick=()=>{const k=+b.dataset.k;if(st.mcq[k]!==undefined)return;st.mcqPick[k]=b.dataset.o;st.mcq[k]=b.dataset.o===T.mcq[k][1];
+    if(Object.keys(st.mcq).length===T.mcq.length&&st.own.every(x=>x.trim().split(/\s+/).length>=3))st.steps[1]=true;render();});
+  T.own.forEach((_,k)=>{$('own'+k).oninput=e=>{st.own[k]=e.target.value;if(Object.keys(st.mcq).length===T.mcq.length&&st.own.every(x=>x.trim().split(/\s+/).length>=3)&&!st.steps[1]){st.steps[1]=true;card.querySelectorAll('.step')[1].classList.add('done');}};});
+  $('sex').onclick=()=>T.own.forEach((_,k)=>$('ex'+k).hidden=false);
+  wireNext();
+}
+/* Step 3: differences */
+function stepDiff(){
+  const T=TASKS[SCENES[cur].id],st=ST[cur];
+  if(!st.dOrder) st.dOrder=T.diff.map(d=>shuffle([d[1],...d[2]]));
+  st.dPick=st.dPick||{};
+  const n=Object.values(st.diff).filter(Boolean).length;
+  $('task').innerHTML=`<h3>Look at Picture B. Find the 5 differences.</h3>
+    ${T.diff.map((d,k)=>`<div class="q"><p class="qq">${k+1}. In Picture B, ${esc(d[0].charAt(0).toLowerCase()+d[0].slice(1))}</p><div class="opts">${st.dOrder[k].map(o=>{let c='opt';if(st.diff[k]!==undefined){if(o===d[1])c+=' right';else if(o===st.dPick[k])c+=' wrong';}return `<button type="button" class="${c}" data-k="${k}" data-o="${esc(o)}" ${st.diff[k]!==undefined?'disabled':''}>${esc(o)}</button>`;}).join('')}</div></div>`).join('')}
+    <p class="fb">${Object.keys(st.diff).length===5?`<span class="${n===5?'ok':'no'}">${n} / 5 correct.</span>`:''}</p>
+    <div class="row">${nextBtn()}</div>`;
+  $('task').querySelectorAll('.opt').forEach(b=>b.onclick=()=>{const k=+b.dataset.k;if(st.diff[k]!==undefined)return;st.dPick[k]=b.dataset.o;st.diff[k]=b.dataset.o===T.diff[k][1];
+    if(Object.keys(st.diff).length===5)st.steps[2]=true;render();});
+  wireNext();
+}
+function drawEnd(){
+  const [g,t]=total();const pct=Math.round(g/t*100);
+  card.innerHTML=`<div style="text-align:center;display:flex;flex-direction:column;gap:12px;align-items:center">
+    <h1>${esc(student)}</h1><div class="big">${pct}%</div><p style="font-size:1.3em;font-weight:700">${pct>=80?'Excellent work!':pct>=60?'Well done!':'Good try! Practise again.'}</p>
+    <p class="hint">${g} out of ${t} points</p></div>
+    <div class="thumbs">${SCENES.map((s,i)=>{const [a,b]=score(i);return `<button type="button" class="thumb" data-i="${i}">${s.draw(false)}<b>${esc(s.title)}</b><span>${a} / ${b} points</span></button>`;}).join('')}</div>`;
+  card.querySelectorAll('.thumb').forEach(b=>b.onclick=()=>{cur=+b.dataset.i;step=0;showEnd=false;render();});
+}
+const _draw=draw;draw=function(){if(cur<0&&showEnd){home.hidden=false;const [g,t]=total();meta.textContent=`${student} · ${g} / ${t}`;return drawEnd();}_draw();};
+home.onclick=()=>{clearInterval(memT);cur=-1;showEnd=false;render();};
+
+/* ================= CHALLENGE (early finishers) ================= */
+const CH_ID={kitchen:0,park:1,busstop:2,classroom:3};
+const CH={
+ build:[["kitchen","There is a cat on the chair."],["kitchen","The woman is cooking in the kitchen."],["kitchen","There are three apples on the table."],
+  ["park","The man is walking his dog."],["park","The children are playing football in the park."],["park","There is a bird in the tree."],
+  ["busstop","It is raining at the bus stop."],["busstop","The man has a black umbrella."],["busstop","The woman is wearing a green coat."],
+  ["classroom","The teacher is pointing at the board."],["classroom","Two students are sitting at their desks."],["classroom","There is a clock on the wall."]],
+ fix:[["There is three apples on the table.",["There are three apples on the table."],"One thing: There is. Two or more: There are."],
+  ["The woman cooking.",["The woman is cooking."],"Use is + -ing: is cooking."],
+  ["The cat is on chair.",["The cat is on the chair."],"Add the: on the chair."],
+  ["The man are walking his dog.",["The man is walking his dog."],"One man → is."],
+  ["The childrens are playing football.",["The children are playing football."],"child → children (no s)."],
+  ["It raining.",["It is raining.","It's raining."],"Use is + -ing: It is raining."],
+  ["The woman is wear a green coat.",["The woman is wearing a green coat."],"is + -ing: is wearing."],
+  ["There are a clock on the wall.",["There is a clock on the wall."],"One clock → There is."],
+  ["The teacher is point at the board.",["The teacher is pointing at the board."],"is + -ing: is pointing."],
+  ["the bus is red",["The bus is red."],"Capital letter at the start, full stop at the end."]],
+ prep:[["kitchen","The cat is ___ the chair.","on"],["kitchen","The fridge is ___ the woman.","next to"],["kitchen","The cooker is ___ the woman and the table.","between"],
+  ["park","The bird is ___ the tree.","in"],["park","The ball is ___ the two children.","between"],["park","The dog is ___ the man.","next to"],
+  ["busstop","The man is ___ the umbrella.","under"],["busstop","The woman is ___ the man.","next to"],
+  ["classroom","The books are ___ the desk.","on"],["classroom","The teacher is ___ the board and the students.","between"]],
+ mem:[["kitchen",[["The woman has a red top.",true],["There is a dog in the kitchen.",false],["There are three apples.",true]]],
+  ["park",[["The man has a red jacket.",false],["There are two children.",true],["The dog is black.",false]]],
+  ["busstop",[["It is sunny.",false],["The bus is red.",true],["The woman has a yellow bag.",true]]],
+  ["classroom",[["The board says ABC.",true],["There are three students.",false],["There is a plant.",true]]]]
+};
+const PREPS=["on","in","under","next to","between"];
+const CS={tab:0,build:{i:0,score:0,picked:[],tried:false,done:false},fix:{i:0,score:0,tries:0,done:false},prep:{i:0,score:0,done:false,pick:null},mem:{i:0,score:0,phase:'look',ans:{},done:false},write:{scene:0,text:""}};
+function chScore(){return CS.build.score+CS.fix.score+CS.prep.score+CS.mem.score;}
+const CH_TOTAL=12+10+10+12;
+function chPic(id,b){return `<figure class="pic">${SCENES[CH_ID[id]].draw(!!b)}</figure>`;}
+function drawChallenge(){
+  const names=['1 Build','2 Fix it','3 Where?','4 Memory','5 Write'];
+  card.innerHTML=`<div class="row" style="justify-content:space-between"><h2>★ Challenge</h2><span class="score">${chScore()} / ${CH_TOTAL} points</span></div>
+    <div class="steps" role="tablist">${names.map((n,k)=>`<button type="button" class="step" role="tab" aria-selected="${k===CS.tab}" data-c="${k}">${n}</button>`).join('')}</div>
+    <div id="ctask" class="act"></div>
+    <div class="row"><button type="button" class="btn ghost" id="cbk">← Back</button><button type="button" class="btn ghost" id="crt">↺ Try again</button></div>`;
+  $('cbk').onclick=()=>{clearInterval(memT);if(CS.tab>0)CS.tab--;else cur=-1;render();};
+  $('crt').onclick=()=>{clearInterval(memT);const k=['build','fix','prep','mem'][CS.tab];
+    if(k==='build')CS.build={i:0,score:0,picked:[],tried:false,done:false};
+    else if(k==='fix')CS.fix={i:0,score:0,tries:0,done:false};
+    else if(k==='prep')CS.prep={i:0,score:0,done:false,pick:null};
+    else if(k==='mem')CS.mem={i:0,score:0,phase:'look',ans:{},done:false};
+    else CS.write.text='';
+    render();};
+  card.querySelectorAll('[data-c]').forEach(b=>b.onclick=()=>{CS.tab=+b.dataset.c;render();});
+  [chBuild,chFix,chPrep,chMem,chWrite][CS.tab]();
+}
+function chNextTab(label){return `<button type="button" class="btn" id="cnext">${label||'Next challenge →'}</button>`;}
+function wireTab(){const b=$('cnext');if(b)b.onclick=()=>{CS.tab=Math.min(4,CS.tab+1);render();};}
+/* 1 Build the sentence */
+function chBuild(){
+  const B=CS.build;
+  if(B.i>=CH.build.length){$('ctask').innerHTML=`<div class="panel"><h3>Finished: ${B.score} / ${CH.build.length}</h3>${chNextTab()}</div>`;wireTab();return;}
+  const [id,sent]=CH.build[B.i];const words=sent.split(' ');
+  if(!B.order||B.orderFor!==B.i){let o=shuffle(words.map((w,i)=>i));let g=0;while(o.every((v,i)=>v===i)&&g++<5)o=shuffle(o);B.order=o;B.orderFor=B.i;B.picked=[];B.tried=false;B.ok=false;}
+  $('ctask').innerHTML=`<div class="pics">${chPic(id)}</div><div class="panel">
+    <h3>Make a sentence about the picture. Tap the words in order. (${B.i+1} / ${CH.build.length})</h3>
+    <div class="box" style="min-height:3em"><div class="chips" id="cans">${B.picked.map((k,j)=>`<button type="button" class="chip sel" data-j="${j}">${esc(words[k])}</button>`).join('')}</div></div>
+    <div class="chips" id="cwords">${B.order.map(k=>`<button type="button" class="chip ${B.picked.includes(k)?'used':''}" data-k="${k}">${esc(words[k])}</button>`).join('')}</div>
+    <p class="fb" id="cfb">${B.ok?'<span class="ok">Correct!</span>':''}</p>
+    <div class="row">${B.ok?`<button type="button" class="btn" id="cbn">Next →</button>`:`<button type="button" class="btn" id="cbc">Check</button><button type="button" class="btn ghost" id="cbs">Show me</button>`}</div></div>`;
+  $('cwords').querySelectorAll('.chip').forEach(c=>c.onclick=()=>{if(B.ok)return;const k=+c.dataset.k;if(B.picked.includes(k))return;B.picked.push(k);render();});
+  $('cans').querySelectorAll('.chip').forEach(c=>c.onclick=()=>{if(B.ok)return;B.picked.splice(+c.dataset.j,1);render();});
+  if(B.ok){$('cbn').onclick=()=>{B.i++;render();};return;}
+  $('cbc').onclick=()=>{if(B.picked.length<words.length){$('cfb').innerHTML='<span class="no">Use all the words.</span>';return;}
+    const s=B.picked.map(k=>words[k]).join(' ');if(s===sent){if(!B.tried)B.score++;B.ok=true;render();}else{B.tried=true;$('cfb').innerHTML='<span class="no">Not yet. Tap a word at the top to take it back.</span>';}};
+  $('cbs').onclick=()=>{B.tried=true;B.picked=words.map((_,i)=>i);B.ok=true;render();$('cfb').innerHTML='<span class="ok">Here is the sentence. Read it, then go on.</span>';};
+}
+/* 2 Fix the mistake */
+const norm=s=>s.replace(/[’‘]/g,"'").replace(/\s+/g,' ').trim();
+function chFix(){
+  const F=CS.fix;
+  if(F.i>=CH.fix.length){$('ctask').innerHTML=`<div class="panel"><h3>Finished: ${F.score} / ${CH.fix.length}</h3>${chNextTab()}</div>`;wireTab();return;}
+  const [bad,good,tip]=CH.fix[F.i];
+  $('ctask').innerHTML=`<div class="panel" style="grid-column:1/-1;max-width:60em">
+    <h3>Each sentence has one mistake. Write the correct sentence. (${F.i+1} / ${CH.fix.length})</h3>
+    <p style="font-size:1.4em;font-weight:700;color:var(--bad)">${esc(bad)}</p>
+    <form id="ffm" class="row" autocomplete="off"><input type="text" id="fin" aria-label="Correct sentence" value="${esc(F.val||'')}" ${F.shown?'disabled':''} style="flex:1;min-width:14em;font-size:1.2em"></form>
+    <p class="fb" id="ffb">${F.msg||''}</p>
+    <div class="row">${F.shown?`<button type="button" class="btn" id="fnx">Next →</button>`:`<button type="button" class="btn" id="fck">Check</button>`}</div></div>`;
+  const inp=$('fin');if(!F.shown)inp.focus();
+  inp.oninput=()=>F.val=inp.value;
+  const next=()=>{F.i++;F.val='';F.msg='';F.tries=0;F.shown=false;render();};
+  if(F.shown){$('fnx').onclick=next;return;}
+  const check=()=>{const v=norm(inp.value);if(!v)return;
+    if(good.some(g=>norm(g)===v)){if(F.tries===0)F.score++;F.msg='<span class="ok">Correct! '+esc(tip)+'</span>';F.shown=true;render();}
+    else{F.tries++;if(F.tries>=2){F.msg='<span class="no">The answer is: '+esc(good[0])+'</span> <span class="hint">'+esc(tip)+'</span>';F.shown=true;render();}
+      else $('ffb').innerHTML='<span class="no">Not yet. Hint: '+esc(tip)+'</span>';}};
+  $('ffm').onsubmit=e=>{e.preventDefault();check();};$('fck').onclick=check;
+}
+/* 3 Where is it? */
+function chPrep(){
+  const P=CS.prep;
+  if(P.i>=CH.prep.length){$('ctask').innerHTML=`<div class="panel"><h3>Finished: ${P.score} / ${CH.prep.length}</h3>${chNextTab()}</div>`;wireTab();return;}
+  const [id,sent,ans]=CH.prep[P.i];
+  $('ctask').innerHTML=`<div class="pics">${chPic(id)}</div><div class="panel">
+    <h3>Look at the picture. Choose the right word. (${P.i+1} / ${CH.prep.length})</h3>
+    <p style="font-size:1.4em;font-weight:700">${esc(sent).replace('___',`<span class="gap ${P.pick?(P.pick===ans?'right':'wrong'):''}">${P.pick?esc(ans):'&nbsp;'}</span>`)}</p>
+    <div class="opts">${PREPS.map(w=>`<button type="button" class="opt ${P.pick?(w===ans?'right':(w===P.pick?'wrong':'')):''}" data-w="${w}" ${P.pick?'disabled':''}>${w}</button>`).join('')}</div>
+    <div class="row">${P.pick?`<button type="button" class="btn" id="pnx">Next →</button>`:''}</div></div>`;
+  $('ctask').querySelectorAll('.opt').forEach(b=>b.onclick=()=>{P.pick=b.dataset.w;if(P.pick===ans)P.score++;render();});
+  if(P.pick)$('pnx').onclick=()=>{P.i++;P.pick=null;render();};
+}
+/* 4 Memory test */
+let memT=null;
+function chMem(){
+  const M=CS.mem;clearInterval(memT);
+  if(M.i>=CH.mem.length){$('ctask').innerHTML=`<div class="panel"><h3>Finished: ${M.score} / 12</h3>${chNextTab()}</div>`;wireTab();return;}
+  const [id,qs]=CH.mem[M.i];
+  if(M.phase==='look'){
+    $('ctask').innerHTML=`<div class="pics">${chPic(id)}</div><div class="panel">
+      <h3>Memory test ${M.i+1} / 4. Look at the picture for 20 seconds. Remember everything!</h3>
+      <p class="big" id="mclock">20</p><button type="button" class="btn" id="mgo">I'm ready</button></div>`;
+    let left=20;memT=setInterval(()=>{left--;const c=$('mclock');if(c)c.textContent=left;if(left<=0){clearInterval(memT);M.phase='ask';render();}},1000);
+    $('mgo').onclick=()=>{clearInterval(memT);M.phase='ask';render();};return;
+  }
+  const done=qs.every((_,k)=>M.ans[k]!==undefined);
+  $('ctask').innerHTML=`<div class="pics">${done?chPic(id):`<div class="box" style="aspect-ratio:400/260;display:grid;place-items:center;font:700 1.3em var(--display)">The picture is hidden!</div>`}</div><div class="panel">
+    <h3>True or false? Don't look back!</h3>
+    ${qs.map(([q,t],k)=>`<div class="q"><p class="qq">${k+1}. ${esc(q)}</p><div class="opts">${[['True',true],['False',false]].map(([l,v])=>{let c='opt';if(M.ans[k]!==undefined){if(v===t)c+=' right';else if(M.ans[k]===v)c+=' wrong';}return `<button type="button" class="${c}" data-k="${k}" data-v="${v}" ${M.ans[k]!==undefined?'disabled':''}>${l}</button>`;}).join('')}</div></div>`).join('')}
+    <div class="row">${done?`<button type="button" class="btn" id="mnx">Next picture →</button>`:''}</div></div>`;
+  $('ctask').querySelectorAll('.opt').forEach(b=>b.onclick=()=>{const k=+b.dataset.k;const v=b.dataset.v==='true';M.ans[k]=v;if(v===qs[k][1])M.score++;render();});
+  if(done)$('mnx').onclick=()=>{M.i++;M.ans={};M.phase='look';render();};
+}
+/* 5 Write */
+const COLOURS=/\b(red|blue|green|yellow|black|white|orange|brown|grey|gray|pink|purple)\b/gi;
+function chWrite(){
+  const W=CS.write;const s=SCENES[W.scene];
+  $('ctask').innerHTML=`<div class="pics">${chPic(s.id,true)}<div class="row">${SCENES.map((x,k)=>`<button type="button" class="step" aria-selected="${k===W.scene}" data-w="${k}">${esc(x.title)}</button>`).join('')}</div></div>
+    <div class="panel"><h3>Look at this picture (Picture B). Write 5 or more sentences about it.</h3>
+    <textarea id="wtx" style="min-height:8em" placeholder="In this picture I can see …">${esc(W.text)}</textarea>
+    <div class="opts" id="wck"></div>
+    <div class="row"><button type="button" class="btn ghost" id="wmd">Show an example</button></div>
+    <p class="ex" id="wmodel" hidden></p></div>`;
+  card.querySelectorAll('[data-w]').forEach(b=>b.onclick=()=>{W.scene=+b.dataset.w;W.text='';render();});
+  const tx=$('wtx');
+  const upd=()=>{W.text=tx.value;const t=tx.value,low=t.toLowerCase();
+    const sents=(t.match(/[^.!?]+[.!?]/g)||[]).filter(x=>x.trim().split(/\s+/).length>=3).length;
+    const words=(low.match(/[a-z']+/g)||[]).length;const cols=new Set((low.match(COLOURS)||[]));
+    const items=[["Starts with In this picture",/^\s*in this picture/.test(low)],["There is / There are",/\bthere (is|are)\b/.test(low)],["is / are + -ing",/\b(is|are)\s+\w+ing\b/.test(low)],["2 colours",cols.size>=2],[`5 sentences (${sents})`,sents>=5],[`35 words (${words})`,words>=35]];
+    $('wck').innerHTML=items.map(([l,ok])=>`<span class="opt ${ok?'right':''}">${ok?'✓':'○'} ${esc(l)}</span>`).join('');};
+  tx.oninput=upd;upd();
+  const MODELS={kitchen:"In this picture I can see a kitchen. A woman is cooking. She has a green top and a blue skirt. There are two green apples on the table. An orange cat is sitting on the chair. It is cloudy outside.",
+    park:"In this picture I can see a park. A man in a red jacket is walking his black dog. Two children are playing football. The girl has a pink top. There are red apples in the tree.",
+    busstop:"In this picture I can see a bus stop. It is raining. A man has a red umbrella. A woman is wearing a purple coat. A blue bus is coming.",
+    classroom:"In this picture I can see a classroom. The teacher is pointing at the board. She has a pink top. The board says 123. Two students are sitting at their desks. There is one blue book on the desk."};
+  $('wmd').onclick=()=>{const m=$('wmodel');m.hidden=false;m.textContent='Example: '+MODELS[s.id];};
+}
+
+/* Fit to one screen on wide displays */
+const wrap=$('wrap');
+function fit(){wrap.style.fontSize='';if(window.innerWidth<900)return;
+  let fs=Math.min(window.innerWidth*0.015,window.innerHeight*0.028,32);fs=Math.max(fs,14);wrap.style.fontSize=fs+'px';
+  while(document.documentElement.scrollHeight>window.innerHeight+1&&fs>12){fs-=0.5;wrap.style.fontSize=fs+'px';}}
+let ft=0;window.addEventListener('resize',()=>{clearTimeout(ft);ft=setTimeout(fit,120);});
+render();
+})();
+</script>
+
+<div class="atin-logo" aria-label="Made by Atin">
+<svg viewBox="104 28 172 134" width="64" height="50" role="img" aria-hidden="true">
+<text x="139" y="112" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="72" fill="currentColor">A</text>
+<rect x="177" y="83" width="24" height="6" rx="1" fill="currentColor"/>
+<path d="M216 66 L216 106 A25 7 0 0 0 266 106 L266 66" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+<ellipse cx="241" cy="66" rx="25" ry="7" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="216" y1="80" x2="266" y2="80" stroke="currentColor" stroke-width="1.5"/>
+<line x1="216" y1="94" x2="266" y2="94" stroke="currentColor" stroke-width="1.5"/>
+<ellipse cx="241" cy="47" rx="23" ry="5" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="114" y1="128" x2="266" y2="128" stroke="currentColor" stroke-width="1"/>
+<text x="190" y="152" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" letter-spacing="2" fill="currentColor">made by Atin</text>
+</svg>
+</div>
+<script>(function(){var l=document.querySelector(".atin-logo"),t=document.querySelector(".wrap");if(l&&t){var nx=t.querySelector("#next");if(nx&&nx.parentNode===t)t.insertBefore(l,nx);else t.appendChild(l);}})();</script>
+<style>
+.atin-logo{position:static;flex:none;color:#1F3A5F;background:rgba(255,255,255,.92);border:1px solid #C9D3DF;border-radius:8px;padding:3px 5px;line-height:0;pointer-events:none}
+.atin-logo svg{display:block}
+@media print{.atin-logo{background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+.wrap>.atin-logo{align-self:center;margin:auto auto 0}
+</style>
+
+</body></html>

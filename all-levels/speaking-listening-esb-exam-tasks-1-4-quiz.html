@@ -1,0 +1,338 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>E1–L2 Speaking &amp; Listening – ESB Exam Tasks 1–4 – Interactive Quiz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Lexend:wght@500;700&display=swap">
+<style>
+/* Layout: same as the E3 reading quiz — one question card per screen; start screen adds an E1/E2 choice */
+:root{
+  --bg:#f3f5f8; --card:#ffffff; --fg:#17202e; --muted:#5b6678; --line:#d7dde6;
+  --ink:#1f4fa3; --ink-soft:#e5ecf9; --good:#1d7a46; --good-bg:#e3f4ea; --bad:#b3261e; --bad-bg:#fbe7e5;
+  --paper:#fffdf6; --paper-line:#e6dfc8;
+  --display:"Lexend", "Atkinson Hyperlegible", Arial, sans-serif;
+  --body:"Atkinson Hyperlegible", Verdana, Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#11161f; --card:#1a212d; --fg:#e8edf5; --muted:#9aa6b8; --line:#2e3848;
+  --ink:#8db2ff; --ink-soft:#22304a; --good:#6fd39b; --good-bg:#16362a; --bad:#ff8f86; --bad-bg:#3d1d1b;
+  --paper:#202836; --paper-line:#364154; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#11161f; --card:#1a212d; --fg:#e8edf5; --muted:#9aa6b8; --line:#2e3848;
+  --ink:#8db2ff; --ink-soft:#22304a; --good:#6fd39b; --good-bg:#16362a; --bad:#ff8f86; --bad-bg:#3d1d1b;
+  --paper:#202836; --paper-line:#364154; color-scheme:dark}
+html,body{height:100%}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:18px;line-height:1.5}
+.wrap{max-width:760px;margin:0 auto;padding-inline:16px;padding-block:20px 40px;display:flex;flex-direction:column;gap:16px;min-height:100%;box-sizing:border-box}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{font-family:var(--display);font-weight:700;font-size:1em;color:var(--ink)}
+.meta{font-size:.9em;color:var(--muted);font-variant-numeric:tabular-nums}
+.bar{height:6px;background:var(--line);border-radius:3px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--ink);width:0;transition:width .25s}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px 22px;display:flex;flex-direction:column;gap:18px}
+.sec{font-size:.8em;text-transform:uppercase;letter-spacing:.08em;color:var(--ink);font-weight:700;position:relative}
+h1,h2{font-family:var(--display);margin:0;text-wrap:balance;line-height:1.25}
+h1{font-size:2em} h2{font-size:1.45em;font-weight:600}
+p{margin:0}
+.txt{background:var(--paper);border:1px solid var(--paper-line);border-left:4px solid var(--paper-line);padding:14px 16px;border-radius:6px;font-size:1.05em;white-space:pre-line}
+.txt .lbl{display:block;font-size:.75em;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:6px;white-space:normal}
+.opts{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.opt{display:flex;align-items:center;gap:14px;width:100%;text-align:left;font:inherit;font-size:1.1em;color:var(--fg);background:var(--card);border:2px solid var(--line);border-radius:10px;padding:12px 14px;cursor:pointer}
+.opt:hover{border-color:var(--ink)}
+.opt:focus-visible,.btn:focus-visible,.lvl button:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.let{flex:none;width:1.75em;height:1.75em;font-size:.95em;border-radius:50%;border:2px solid var(--ink);color:var(--ink);display:grid;place-items:center;font-family:var(--display);font-weight:700}
+.opt.right{border-color:var(--good);background:var(--good-bg)}
+.opt.right .let{background:var(--good);border-color:var(--good);color:var(--card)}
+.opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+.opt.wrong .let{border-color:var(--bad);color:var(--bad)}
+.opt[disabled]{cursor:default}
+.fb{border-radius:10px;padding:12px 14px;font-size:1em}
+.fb.ok{background:var(--good-bg);border:1px solid var(--good)}
+.fb.no{background:var(--bad-bg);border:1px solid var(--bad)}
+.fb b{font-family:var(--display)}
+.nav{display:flex;gap:10px;justify-content:space-between;flex-wrap:wrap}
+.btn{font:inherit;font-family:var(--display);font-weight:600;font-size:1em;padding:12px 20px;border-radius:10px;border:2px solid var(--ink);background:var(--card);color:var(--ink);cursor:pointer}
+.btn.primary{background:var(--ink);color:var(--card)}
+.btn[disabled]{opacity:.35;cursor:default}
+.lvl{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px}
+.lvl button{font:inherit;font-family:var(--display);font-weight:700;font-size:1.3em;padding:14px 10px;border-radius:12px;border:2px solid var(--line);background:var(--card);color:var(--fg);cursor:pointer}
+.lvl button span{display:block;font-family:var(--body);font-weight:400;font-size:.9em;color:var(--muted)}
+.lvl button[aria-pressed="true"]{border-color:var(--ink);background:var(--ink-soft);color:var(--ink)}
+.secs{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;position:relative}
+.secs button{font:inherit;text-align:left;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--ink-soft);color:var(--fg);cursor:pointer}
+.secs button b{display:block;font-family:var(--display);color:var(--ink)}
+.secs button span{font-size:.85em;color:var(--muted)}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label,.flabel{font-family:var(--display);font-weight:600}
+.field input{font:inherit;font-size:1.3em;padding:12px 14px;border:2px solid var(--line);border-radius:10px;background:var(--card);color:var(--fg)}
+.field input:focus{outline:3px solid var(--ink);outline-offset:1px;border-color:var(--ink)}
+.err{color:var(--bad);font-size:.95em}
+.hint{color:var(--muted);font-size:.9em}
+.splash{position:relative;overflow:hidden;text-align:center;align-items:center;padding-block:40px;background:var(--ink-soft);border-color:var(--ink)}
+.splash .who{font-family:var(--display);font-weight:700;font-size:clamp(2em,8vw,3.6em);line-height:1.1;word-break:break-word;position:relative}
+.splash .pct{font-family:var(--display);font-weight:700;font-size:clamp(5em,26vw,9.5em);line-height:1;color:var(--ink);font-variant-numeric:tabular-nums;position:relative}
+.splash .msg{font-family:var(--display);font-size:1.4em;font-weight:600;position:relative}
+.splash .sub{color:var(--muted);position:relative}
+.splash .secs{width:100%;text-align:left}
+.conf{position:absolute;inset:0;pointer-events:none}
+.conf i{position:absolute;top:-20px;width:10px;height:16px;border-radius:2px;opacity:.9;animation:fall 3.2s ease-in forwards}
+@keyframes fall{to{transform:translateY(900px) rotate(540deg);opacity:0}}
+@media (max-width:480px){h1{font-size:1.6em}h2{font-size:1.25em}.card{padding:20px 16px}}
+@media (prefers-reduced-motion:reduce){.bar i{transition:none}.conf{display:none}}
+
+html,body{margin:0}
+/* ---- 16:9 classroom screens: full width, two columns per question, text scales with the screen ---- */
+.topr{display:flex;align-items:center;gap:12px}
+.fs{font:inherit;font-family:var(--display);font-weight:600;font-size:.8em;padding:6px 12px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.qL,.qR{display:contents}
+@media (min-width:1000px){
+  body{font-size:clamp(18px, 0.9vw + 8px, 30px)}
+  .wrap{max-width:none;padding-inline:clamp(16px,2vw,40px);padding-block:12px 16px;gap:10px}
+  .card{padding:clamp(18px,1.8vw,36px)}
+  .card:has(> .qL){display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:clamp(24px,3vw,64px);align-items:start}
+  .qL,.qR{display:flex;flex-direction:column;gap:16px;min-width:0}
+  .qL .reading{max-height:58vh;overflow:auto}
+  .card > .reading.cols{display:block;column-count:2;column-gap:clamp(24px,3vw,64px)}
+  .card > .reading.cols > *{break-inside:avoid;margin:0 0 .7em}
+  .wrap > .hint{display:none}
+}
+</style>
+
+<div class="wrap">
+  <div class="top">
+    <div class="brand" id="brand">Speaking &amp; Listening · Exam practice</div>
+    <div class="topr"><div class="meta" id="meta"></div><button type="button" class="fs" id="fs" hidden>⛶ Full screen</button></div>
+  </div>
+  <div class="bar"><i id="bar"></i></div>
+  <main class="card" id="card" aria-live="polite"></main>
+  <div class="nav">
+    <button class="btn" id="prev" type="button">← Back</button>
+    <button class="btn primary" id="next" type="button">Next →</button>
+  </div>
+  <p class="hint">Tip: use the ← → keys, or press A, B, C, D to answer.</p>
+</div>
+
+<script>
+// lv: levels each question belongs to
+const A5=["e1","e2","e3","l1","l2"], E12=["e1","e2"], E123=["e1","e2","e3"], E3L=["e3","l1","l2"], LV=["l1","l2"];
+const ALL = [
+ // THE EXAM
+ {lv:A5, s:"The exam", q:"How many students do the exam together?", o:["Alone — just you","2 — you and a partner","3 students","4 students"], a:1, w:"You do the exam with a partner. You talk to each other and to the examiner."},
+ {lv:A5, s:"The exam", q:"Who gives you the exam?", o:["Your teacher","An examiner — not your teacher","Your teacher and an examiner together","Another teacher from your college"], a:1, w:"An examiner from the exam board comes to the college. It is not a teacher from your college."},
+ {lv:["e1"], s:"The exam", q:"How long is the whole exam?", o:["12 minutes","22 minutes","30 minutes","45 minutes"], a:1, w:"Entry 1 is 22 minutes for you and your partner."},
+ {lv:["e2"], s:"The exam", q:"How long is the whole exam?", o:["15 minutes","25 minutes","30 minutes","45 minutes"], a:1, w:"Entry 2 is 25 minutes for you and your partner."},
+ {lv:["e3"], s:"The exam", q:"How long is the whole exam?", o:["19 minutes","29 minutes","35 minutes","45 minutes"], a:1, w:"Entry 3 is 29 minutes for you and your partner."},
+ {lv:["l1"], s:"The exam", q:"How long is the whole exam?", o:["21 minutes","31 minutes","40 minutes","60 minutes"], a:1, w:"Level 1 is 31 minutes for you and your partner."},
+ {lv:["l2"], s:"The exam", q:"How long is the whole exam?", o:["24 minutes","34 minutes","45 minutes","60 minutes"], a:1, w:"Level 2 is 34 minutes for you and your partner."},
+ {lv:A5, s:"The exam", q:"How many tasks (parts) are in the exam?", o:["2","3","4","5"], a:2, w:"There are 4 tasks at every level."},
+ {lv:E12, s:"The exam", q:"Which list shows the 4 tasks?", o:["Talk about you · A short talk · Photos · Listening","Talk about you · Reading · Photos · Listening","A short talk · Writing · Photos · Listening","Talk about you · A short talk · Role play · Reading"], a:0, w:"1 Talk about you · 2 A short talk · 3 Describe photos · 4 Listening and discussion."},
+ {lv:["e3"], s:"The exam", q:"Which list shows the 4 tasks at Entry 3?", o:["Talk about you · A short talk · Photos · Listening","Talk about you · A short talk · Role play · Listening","Talk about you · Presentation · Role play · Listening","A short talk · Role play · Reading · Listening"], a:1, w:"At Entry 3 the photos task changes to a role play: 1 Talk about you · 2 A short talk · 3 Role play · 4 Listening."},
+ {lv:LV, s:"The exam", q:"Which list shows the 4 tasks?", o:["Talk about you · A short talk · Role play · Listening","Talk about you · Presentation · Role play · Listening","Talk about you · Presentation · Photos · Listening","Presentation · Role play · Writing · Listening"], a:1, w:"1 Personal information · 2 Prepared presentation and discussion · 3 Role play · 4 Listening and discussion."},
+ {lv:A5, s:"The exam", q:"What result can you get?", o:["Pass or not pass","Pass, Merit or Distinction","A score out of 100","A, B or C"], a:0, w:"The result is Pass or Unsuccessful (not pass). There is no Merit or Distinction."},
+ {lv:A5, s:"The exam", q:"You make a mistake in Task 1. Can you still pass?", o:["No — one mistake means you fail","Yes — you have more chances in the other tasks","Yes, but only if you ask to start again","Only if the mistake is in the last task"], a:1, w:"Each skill is checked 2 or 3 times across the exam. One mistake is OK. Keep going!"},
+
+ // TASK 1
+ {lv:E12, s:"Task 1: Talk about you", q:"What do you do in Task 1?", o:["Answer questions from the examiner only","Ask your partner questions about their life","Talk about a photo","Listen to a short conversation"], a:1, w:"You and your partner ask each other questions: where you live, what you like, your day. Then the examiner asks you more."},
+ {lv:["e3"], s:"Task 1: Talk about you", q:"In Task 1 at Entry 3, what do you ask your partner about?", o:["Only what they do every day","Their past, what they do now and their future plans","Only their plans for next year","Only their home country"], a:1, w:"Past, present and future: Where did you grow up? What do you do now? What are you going to do next year?"},
+ {lv:LV, s:"Task 1: Talk about you", q:"You ask your partner about their life. What do you do next?", o:["Write a short summary","Tell the examiner some things you found out about your partner","Ask the examiner the same questions","Repeat your own answers"], a:1, w:"You choose some information and report it back to the examiner: “Amina told me that she…”"},
+ {lv:E123, s:"Task 1: Talk about you", q:"Which question is correct?", o:["Where you live?","Where do you live?","Where are you live?","Where does you live?"], a:1, w:"Where + do + you + live? (does is for he / she)."},
+ {lv:E12, s:"Task 1: Talk about you", q:"The examiner asks: “What do you do at the weekend?” Which is the best answer?", o:["I go to the park.","At the weekend I go to the park with my children. We play football.","At the weekend.","Yes, I like the weekend."], a:1, w:"“I go to the park” is correct, but short. Add who, where, what: more detail = a better answer."},
+ {lv:E12, s:"Task 1: Talk about you", q:"Your partner says: “I live in Hackney.” What is a good next question?", o:["Do you like living there?","Where do you live?","Do you live in Hackney?","What is your address?"], a:0, w:"Ask about what your partner just said. Don't ask again — they told you already!"},
+ {lv:E12, s:"Task 1: Talk about you", q:"Which question asks about likes?", o:["What do you do?","What food do you like?","What food do you eat?","What do you like do?"], a:1, w:"What … do you like? asks about likes. (Not “like do” — say “like doing”.)"},
+ {lv:["e2","e3"], s:"Task 1: Talk about you", q:"The examiner asks: “What did you do last weekend?” Which answer is correct?", o:["I visit my friend.","I visited my friend.","I am visiting my friend.","I have visit my friend."], a:1, w:"Last weekend = past. Use the past: visited, went, saw, cooked."},
+ {lv:["e2"], s:"Task 1: Talk about you", q:"Which question asks about the past?", o:["Where do you go on Saturdays?","Where are you going now?","Where did you go yesterday?","Where will you go tomorrow?"], a:2, w:"Did + yesterday = the past."},
+ {lv:["e3"], s:"Task 1: Talk about you", q:"Which question about future plans is correct?", o:["What you going to do next year?","What are you going to do next year?","What are you go to do next year?","What do you going to do next year?"], a:1, w:"What + are + you + going to + verb? I'm going to start a course."},
+ {lv:["e3","l1"], s:"Task 1: Talk about you", q:"“How long have you lived in London?” Which answer is correct?", o:["I live here for three years.","I've lived here for three years.","I am living here since three years.","I lived here since three years."], a:1, w:"How long have you…? → I've (I have) lived here for three years / since 2023."},
+ {lv:LV, s:"Task 1: Talk about you", q:"You tell the examiner about your partner. Which sentence is correct?", o:["He said me he moved to London in 2019.","He told me that he moved to London in 2019.","He told that he moves to London in 2019.","He said he has move to London in 2019."], a:1, w:"He told me that… / He said that… (say has no “me”; tell needs a person)."},
+ {lv:["l2"], s:"Task 1: Talk about you", q:"Your partner says: “I used to be a teacher, but now I'm retraining as a nurse.” What is the best follow-up question?", o:["Are you a teacher?","What made you decide to change careers?","Do you like nurses?","When did you used to be a teacher?"], a:1, w:"A good follow-up asks for reasons or feelings. “What made you…?” invites a longer answer."},
+
+ // TASK 2 — Entry levels: unprepared talk
+ {lv:E123, s:"Task 2: A short talk", q:"The examiner gives you a topic. How long can you think first?", o:["No time — you start at once","1 minute","2 minutes","5 minutes"], a:1, w:"You have 1 minute to think. Think of 3 things to say."},
+ {lv:E123, s:"Task 2: A short talk", q:"Who do you talk to in Task 2?", o:["Only the examiner","Your partner","Your teacher","Everyone in the room"], a:1, w:"You talk to your partner. Look at them and speak clearly."},
+ {lv:E123, s:"Task 2: A short talk", q:"Your partner listens to your talk. Then what do they do?", o:["Ask you 2 questions","Ask you 1 question","Say if you are right or wrong","Give a talk on the same topic"], a:0, w:"Your partner asks you 2 questions. Then you change: they talk on a different topic, and you ask 2 questions."},
+ {lv:E12, s:"Task 2: A short talk", q:"Your partner talks about their favourite food. Which is a good question?", o:["Do you cook it at home?","What is your favourite colour?","Do you like food?","Your favourite food is what?"], a:0, w:"Ask about the same topic, with a correct, interesting question."},
+ {lv:["e2","e3"], s:"Task 2: A short talk", q:"How long do you talk?", o:["About 30 seconds","About 2 minutes","About 5 minutes","About 10 minutes"], a:1, w:"About 2 minutes. Practise at home with a timer."},
+ {lv:E123, s:"Task 2: A short talk", q:"You don't know what to say next. What is best?", o:["Stop and wait for the examiner","Say “Let me think…” and talk about something you know","Say the same sentence again","Say “Finished” and stop"], a:1, w:"Take a moment. Then add something simple: where, who, when, why you like it."},
+ {lv:E12, s:"Task 2: A short talk", q:"Which is a good way to start your talk about your weekend?", o:["My weekend.","I want to tell you about my weekend.","Weekend is good.","I tell you my weekend."], a:1, w:"Start by saying the topic in a full sentence. Then give details: first… then… after that…"},
+ {lv:["e3"], s:"Task 2: A short talk", q:"Which sentence gives a reason?", o:["I like Hackney and the market.","I like Hackney because the market is cheap.","I like Hackney, then the market.","I like Hackney, for example the market."], a:1, w:"Because gives a reason. Use because, so and but to join your ideas."},
+ {lv:["e3"], s:"Task 2: A short talk", q:"Which words help you put your talk in order?", o:["First… Then… Finally…","Yes… No… Maybe…","Because… But… So…","Here… There… Where…"], a:0, w:"First…, then…, after that…, finally… make your talk easy to follow."},
+
+ // TASK 2 — Levels 1 and 2: prepared presentation
+ {lv:LV, s:"Task 2: Presentation", q:"Who chooses the topic of your presentation?", o:["You choose it and prepare it before the exam","The examiner gives it to you on the day","Your partner chooses it","Your teacher chooses it on the day"], a:0, w:"You choose your own topic and prepare it: a story, an explanation, or a description of a process, person or place."},
+ {lv:LV, s:"Task 2: Presentation", q:"How long is your presentation?", o:["1 minute","2 minutes","3 minutes","5 minutes"], a:2, w:"3 minutes. Time yourself when you practise — not much shorter, not much longer."},
+ {lv:LV, s:"Task 2: Presentation", q:"Can you use notes?", o:["Yes — brief notes and pictures or objects","No — nothing at all","Yes — you can read a full script","Only a dictionary"], a:0, w:"Brief notes and visual aids are allowed. Don't read a script — talk to your listeners."},
+ {lv:LV, s:"Task 2: Presentation", q:"After your presentation, how many questions does your partner ask?", o:["1","2","3","5"], a:2, w:"Your partner asks 3 relevant questions. The examiner may ask more."},
+ {lv:["l1"], s:"Task 2: Presentation", q:"What happens after both presentations?", o:["You discuss one part of a presentation together for about 1 minute","You give a second presentation","You write a summary","You vote for the best presentation"], a:0, w:"The examiner picks one point and you and your partner discuss it for about 1 minute."},
+ {lv:["l2"], s:"Task 2: Presentation", q:"What happens after both presentations?", o:["You discuss one part of a presentation together for about 2 minutes","You discuss it for about 10 minutes","You give a second presentation","You write a summary"], a:0, w:"The examiner picks one point and you and your partner discuss it for about 2 minutes."},
+ {lv:LV, s:"Task 2: Presentation", q:"Which is a good way to end your presentation?", o:["Firstly, I'd like to talk about…","To sum up, …","For example, …","On the other hand, …"], a:1, w:"To sum up / In conclusion signal the end. Firstly starts; for example adds detail; on the other hand contrasts."},
+ {lv:LV, s:"Task 2: Presentation", q:"Your partner's presentation is about cooking jollof rice. Which is the best question?", o:["Do you like rice?","What's the most difficult part to get right?","Is rice food?","Jollof rice is from where?"], a:1, w:"Good questions are relevant and open: they ask how, why or what's the hardest/best part."},
+
+ // TASK 3 — photos (E1, E2)
+ {lv:["e1"], s:"Task 3: Photos", q:"What does the examiner give you in Task 3?", o:["A picture to draw","A photo","A short text to read","A map"], a:1, w:"You get a photo. You describe it. Then the examiner asks what you think."},
+ {lv:["e2"], s:"Task 3: Photos", q:"How many photos do you describe in Task 3?", o:["1","2","3","4"], a:1, w:"At Entry 2 you describe 2 photos and say how they are the same or different."},
+ {lv:E12, s:"Task 3: Photos", q:"Which is a good first sentence about a photo?", o:["This photo is a market.","In this photo I can see a busy market.","In this photo I see market.","This is photo of market."], a:1, w:"In this photo I can see a … · There is a … · There are …"},
+ {lv:E12, s:"Task 3: Photos", q:"The man is ___ the bus stop.", o:["next to","next","near of","in next"], a:0, w:"Next to (always with “to”). Other place words: near, in front of, behind."},
+ {lv:E12, s:"Task 3: Photos", q:"The examiner asks: “Do you like this place?” Which is the best answer?", o:["Yes, I like.","Yes, I like it because it is quiet and green.","Yes, because quiet.","I like it this place."], a:1, w:"Say “like it” (not just “like”), then a reason: because it is…"},
+ {lv:E12, s:"Task 3: Photos", q:"Which sentence is correct?", o:["The children play football now.","The children are playing football.","The children is playing football.","The children playing football."], a:1, w:"Happening now: are + -ing. Children = more than one, so “are”."},
+ {lv:["e2"], s:"Task 3: Photos", q:"Which sentence is correct?", o:["Photo 1 is more busy than photo 2.","Photo 1 is busier than photo 2.","Photo 1 is busy than photo 2.","Photo 1 is busiest than photo 2."], a:1, w:"Short words: busy → busier than, big → bigger than. Long words: more expensive than."},
+
+ // TASK 3 — role play (E3, L1, L2)
+ {lv:E3L, s:"Task 3: Role play", q:"What do you do in Task 3?", o:["Describe a photo","Act out a situation with your partner and agree what to do","Give a presentation","Listen to a conversation"], a:1, w:"The examiner gives you a situation. You and your partner talk about the problem and decide what to do."},
+ {lv:E3L, s:"Task 3: Role play", q:"How must the role play end?", o:["You agree on a plan — what to do next","One of you says who is right","You write the plan down","The examiner decides for you"], a:0, w:"You must agree what to do next. If you forget, the examiner will remind you."},
+ {lv:["e3"], s:"Task 3: Role play", q:"Which phrase makes a suggestion?", o:["Why don't we book the class online?","We booked the class online.","Did we book the class online?","We are booking the class online."], a:0, w:"Suggest: Why don't we…? · Shall we…? · Let's… · How about…?"},
+ {lv:["e3"], s:"Task 3: Role play", q:"Your kettle doesn't work. You take it back to the shop. What is best to say?", o:["Kettle broken. Money back.","Excuse me, I bought this kettle yesterday, but it doesn't work. Can I have a refund, please?","I want my money now.","Excuse me, do you sell kettles?"], a:1, w:"Polite and clear: say what happened, then ask: Can I have a refund / a new one, please?"},
+ {lv:E3L, s:"Task 3: Role play", q:"Your partner has a good idea. What do you say?", o:["That's a good idea. Let's do that.","That's a good idea. Let's to do that.","Is good idea. We do it.","Good. Next."], a:0, w:"Agree and move to the plan: That's a good idea. Let's… · OK, so we'll…"},
+ {lv:LV, s:"Task 3: Role play", q:"You're complaining. The shop offers a voucher, but you want a refund. What is best?", o:["OK, a voucher is fine.","I understand, but I'd really prefer a refund, please.","No! I want my money!","I'll take a voucher and a refund."], a:1, w:"Be polite but persistent: I understand, but… · I'd really prefer… · Is there any way you could…?"},
+ {lv:LV, s:"Task 3: Role play", q:"Your partner has a problem with a colleague. Which sentence gives advice correctly?", o:["If I am you, I will speak to your manager.","If I were you, I'd speak to your manager.","If I was you, I speak to your manager.","If I would be you, I'd speak to your manager."], a:1, w:"Advice: If I were you, I'd… · You could… · Have you thought about…?"},
+ {lv:["l2"], s:"Task 3: Role play", q:"A work role play: you need to ask your manager to change your shift. Which is the most suitable?", o:["Change my shift.","Would it be possible to swap my Friday shift for Monday?","I'm not working Friday.","You must change my shift."], a:1, w:"Formal and polite: Would it be possible to…? · I was wondering if I could…"},
+
+ // TASK 4
+ {lv:E123, s:"Task 4: Listening", q:"How many recordings do you listen to?", o:["1","2","3","4"], a:1, w:"There are 2 short recordings: a conversation or one person talking."},
+ {lv:LV, s:"Task 4: Listening", q:"How many recordings do you listen to?", o:["1","2","3","4"], a:0, w:"At Level 1 and Level 2 there is 1 recording: a dialogue or one person talking."},
+ {lv:A5, s:"Task 4: Listening", q:"How many times do you hear each recording?", o:["Once","Twice","Three times","As many times as you want"], a:1, w:"You hear each recording 2 times."},
+ {lv:A5, s:"Task 4: Listening", q:"The examiner asks: “What is the conversation about?” This question is about…", o:["the main idea","a time or a date","the names of the people","what you think about it"], a:0, w:"“What is it about?” = the main idea (the gist). For example: booking a doctor's appointment."},
+ {lv:["l1"], s:"Task 4: Listening", q:"How many detail questions does the examiner ask you?", o:["1","2","3","4"], a:1, w:"At Level 1 you get 1 main-idea question and 2 detail questions."},
+ {lv:["l2"], s:"Task 4: Listening", q:"How many detail questions does the examiner ask you?", o:["1","2","3","4"], a:2, w:"At Level 2 you get 1 main-idea question and 3 detail questions."},
+ {lv:A5, s:"Task 4: Listening", q:"After the first listening you don't know a detail answer. What happens?", o:["You lose the mark","You listen again and answer again","The examiner tells you the answer","Your partner answers for you"], a:1, w:"Don't worry. You hear it a second time. Then the examiner asks you the detail questions again."},
+ {lv:E123, s:"Task 4: Listening", q:"Which question asks for a detail?", o:["What is it about?","What time is the appointment?","What is the main idea?","Did you like the conversation?"], a:1, w:"Detail questions ask for one fact: a time, a day, a place, a number."},
+ {lv:A5, s:"Task 4: Listening", q:"What happens at the end of Task 4?", o:["You answer one more detail question","You talk with the examiner about the topic","You listen a third time","You describe a photo"], a:1, w:"You have a short discussion about the topic of the recording. Say what you think and why."},
+
+ // USEFUL LANGUAGE
+ {lv:E123, s:"Useful phrases", q:"You didn't hear the examiner. What do you say?", o:["What?","Can you repeat that, please?","Repeat.","Say again."], a:1, w:"Polite and full: Can you repeat that, please? · Sorry, can you say that again?"},
+ {lv:E123, s:"Useful phrases", q:"You don't understand a word. Which question is correct?", o:["Sorry, what does ‘appointment’ mean?","Sorry, what is mean ‘appointment’?","What mean ‘appointment’?","‘Appointment’ means what?"], a:0, w:"What does … mean? It's OK to ask — asking questions is a skill in the exam."},
+ {lv:E123, s:"Useful phrases", q:"Your partner says: “I think London is too expensive.” You think the same. What do you say?", o:["I agree with you.","I am agree with you.","I agree you.","I'm agree."], a:0, w:"I agree (no “am”). Disagree politely: I'm not sure. I think…"},
+ {lv:LV, s:"Useful phrases", q:"You're not sure what the examiner means. What is best?", o:["Sorry, could you rephrase that?","What you mean?","Again, please.","I don't know."], a:0, w:"Could you rephrase that? · Do you mean…? · Sorry, I'm not sure I follow."},
+ {lv:LV, s:"Useful phrases", q:"You disagree with your partner in the discussion. What is most polite?", o:["You're wrong.","I see your point, but I think…","No, no, no.","I disagree you."], a:1, w:"I see your point, but… · That's true, however… · I'm not so sure about that."},
+ {lv:["l2"], s:"Useful phrases", q:"Which phrase gives an opinion carefully (not too strongly)?", o:["It's definitely true that…","It could be argued that…","Everybody knows that…","Obviously…"], a:1, w:"At Level 2, soften opinions: It could be argued that… · It seems to me that… · I tend to think…"},
+ {lv:LV, s:"Useful phrases", q:"Your partner is quiet in the discussion. What do you say?", o:["What do you think about that?","Say something.","You don't talk.","Why you are quiet?"], a:0, w:"Include your partner: What do you think? · Do you agree? · What's your view?"},
+ {lv:A5, s:"Useful phrases", q:"Which is best in the exam?", o:["Speak fast so you say more","Speak clearly and not too fast","Speak slowly, one word at a time","Speak very loudly"], a:1, w:"Clear speaking is part of the mark. Look up, speak clearly, take your time."}
+];
+
+const L=["A","B","C","D"];
+const LNAME={e1:"Entry 1",e2:"Entry 2",e3:"Entry 3",l1:"Level 1",l2:"Level 2"};
+let level="", student="", Q=[], sections=[], ans=[], i=-1;
+
+function build(){
+  Q = ALL.filter(x=>x.lv.includes(level)).map(x=>({...x,o:[...x.o]}));
+  // fixed (seeded) shuffle so correct letters are spread out but the same each time
+  Q.forEach((x,n)=>{let seed=(n+3)*7919,idx=x.o.map((_,k)=>k);
+    for(let j=idx.length-1;j>0;j--){seed=(seed*9301+49297)%233280;const r=Math.floor(seed/233280*(j+1));[idx[j],idx[r]]=[idx[r],idx[j]];}
+    x.o=idx.map(k=>x.o[k]); x.a=idx.indexOf(x.a);});
+  sections=[...new Set(Q.map(x=>x.s))]; ans=new Array(Q.length).fill(null);
+}
+
+const card=document.getElementById("card"),meta=document.getElementById("meta"),bar=document.getElementById("bar"),
+      prev=document.getElementById("prev"),next=document.getElementById("next"),brand=document.getElementById("brand");
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
+
+function render(){ draw(); fit(); }
+function draw(){
+  const score=ans.filter((v,k)=>v===Q[k].a).length, done=ans.filter(v=>v!==null).length;
+  brand.textContent = level ? `${LNAME[level]} Speaking & Listening · Exam practice` : "Speaking & Listening · Exam practice";
+  meta.textContent = i<0 ? "Entry 1 to Level 2" : `${student} · Score ${score} / ${done}`;
+  bar.style.width=(i<0?0:Math.min(i+1,Q.length)/Q.length*100)+"%";
+  prev.disabled=i<0;
+  next.textContent = i<0?"Start →": i>=Q.length?"Start again": i===Q.length-1?"Finish →":"Next →";
+  card.classList.toggle("splash", i>=Q.length && Q.length>0);
+
+  if(i<0){
+    card.innerHTML=`<div class="sec">Get ready</div><h1>Speaking &amp; Listening exam: practice questions</h1>
+      <div class="field"><label for="sname">Write your name</label>
+        <input id="sname" type="text" autocomplete="off" maxlength="40" value="${esc(student)}" placeholder="Your name"></div>
+      <div><p class="flabel" style="margin-bottom:6px">Choose your level</p>
+        <div class="lvl">${Object.entries(LNAME).map(([k,n])=>`<button type="button" data-l="${k}" aria-pressed="${level===k}">${k.toUpperCase()}<span>${n}</span></button>`).join("")}</div></div>
+      <p class="err" id="err" hidden></p>
+      <p>Choose one answer for each question. You will see if you are right straight away.</p>
+      <div class="secs" id="secs"></div>`;
+    const inp=document.getElementById("sname");
+    inp.oninput=()=>{student=inp.value.trim();document.getElementById("err").hidden=true};
+    inp.onkeydown=e=>{if(e.key==="Enter")next.click()};
+    card.querySelectorAll("[data-l]").forEach(b=>b.onclick=()=>{level=b.dataset.l;build();render()});
+    if(level){
+      document.getElementById("secs").innerHTML=sections.map(s=>`<button type="button" data-s="${esc(s)}"><b>${esc(s)}</b><span>${Q.filter(x=>x.s===s).length} questions</span></button>`).join("");
+      card.querySelectorAll("[data-s]").forEach(b=>b.onclick=()=>{if(ready()){i=Q.findIndex(x=>x.s===b.dataset.s);render()}});
+    }
+    return;
+  }
+  if(i>=Q.length){
+    const pct=done?Math.round(score/done*100):0;
+    const msg=pct>=80?"Excellent! You are ready for the exam.":pct>=60?"Well done! A little more practice.":pct>=40?"Good try! Keep practising.":"Keep going! Practise the sections again.";
+    const cols=["var(--ink)","var(--good)","#f2b632","#e8613c","#9b5de5"];
+    const conf=pct>=60?Array.from({length:60},(_,n)=>`<i style="left:${(n*37)%100}%;background:${cols[n%5]};animation-delay:${(n%12)*0.12}s"></i>`).join(""):"";
+    const bySec=sections.map(s=>{const ks=Q.map((x,k)=>x.s===s?k:-1).filter(k=>k>=0);return [s,ks.filter(k=>ans[k]===Q[k].a).length,ks.length]});
+    card.innerHTML=`<div class="conf">${conf}</div><div class="sec">Finished · ${LNAME[level]}</div>
+      <div class="who">${esc(student)}</div><div class="pct">${pct}%</div><div class="msg">${msg}</div>
+      <p class="sub">${score} correct out of ${done} questions answered${done<Q.length?` (${Q.length} in total)`:""}</p>
+      <div class="secs">${bySec.map(([s,g,n])=>`<button type="button" data-s="${esc(s)}"><b>${esc(s)}</b><span>${g} / ${n} correct</span></button>`).join("")}</div>
+      <p class="hint" style="position:relative">Tap a section to practise it again.</p>`;
+    card.querySelectorAll("[data-s]").forEach(b=>b.onclick=()=>{i=Q.findIndex(x=>x.s===b.dataset.s);render()});
+    return;
+  }
+  const x=Q[i], picked=ans[i];
+  card.innerHTML=`<div class="qL"><div class="sec">${esc(x.s)} · Question ${i+1} of ${Q.length}</div>
+    ${x.t?`<div class="txt"><span class="lbl">Read</span>${esc(x.t)}</div>`:""}
+    <h2>${esc(x.q)}</h2></div><div class="qR">
+    <ul class="opts">${x.o.map((o,k)=>{let c="opt";if(picked!==null){if(k===x.a)c+=" right";else if(k===picked)c+=" wrong"}
+      return `<li><button type="button" class="${c}" data-k="${k}" ${picked!==null?"disabled":""}><span class="let">${L[k]}</span><span>${esc(o)}</span></button></li>`}).join("")}</ul>
+    ${picked!==null?`<div class="fb ${picked===x.a?"ok":"no"}"><b>${picked===x.a?"Correct!":"Not quite — the answer is "+L[x.a]+"."}</b> ${esc(x.w)}</div>`:""}</div>`;
+  card.querySelectorAll("[data-k]").forEach(b=>b.onclick=()=>choose(+b.dataset.k));
+}
+function ready(){
+  const e=document.getElementById("err");
+  if(!student){ if(e){e.textContent="Please write your name first.";e.hidden=false} document.getElementById("sname")?.focus(); return false; }
+  if(!level){ if(e){e.textContent="Please choose your level.";e.hidden=false} return false; }
+  return true;
+}
+function choose(k){ if(i<0||i>=Q.length||ans[i]!==null||k>=Q[i].o.length) return; ans[i]=k; render(); }
+next.onclick=()=>{
+  if(i<0&&!ready()) return;
+  if(i>=Q.length){student="";level="";Q=[];sections=[];ans=[];i=-1} else i++;
+  render(); window.scrollTo(0,0);
+};
+prev.onclick=()=>{if(i>=0){i=i>=Q.length?Q.length-1:i-1;render();window.scrollTo(0,0)}};
+document.addEventListener("keydown",e=>{
+  if(e.target.closest("input,textarea")) return;
+  if(e.key==="ArrowRight") next.click();
+  else if(e.key==="ArrowLeft") prev.click();
+  else if(i>=0){const k=L.indexOf(e.key.toUpperCase()); if(k>=0) choose(k);}
+});
+
+/* ---- full-screen button + fit-to-screen on wide displays ---- */
+const fsBtn=document.getElementById("fs"), wrapEl=document.querySelector(".wrap");
+try{ if(document.fullscreenEnabled && window.matchMedia("(min-width:700px)").matches) fsBtn.hidden=false; }catch(e){}
+fsBtn.onclick=async()=>{ try{ if(document.fullscreenElement) await document.exitFullscreen(); else await document.documentElement.requestFullscreen(); }catch(e){ fsBtn.hidden=true; } };
+document.addEventListener("fullscreenchange",()=>{ fsBtn.textContent=document.fullscreenElement?"✕ Exit full screen":"⛶ Full screen"; setTimeout(fit,150); });
+function fit(){
+  wrapEl.style.fontSize="";
+  if(window.innerWidth<1000) return;
+  // start big (good for a projector) and shrink only until nothing needs scrolling
+  let fs=Math.max(18, Math.min(44, window.innerWidth*0.0175, window.innerHeight*0.034));
+  wrapEl.style.fontSize=fs+"px";
+  while(document.documentElement.scrollHeight>window.innerHeight+1 && fs>14){ fs-=0.5; wrapEl.style.fontSize=fs+"px"; }
+}
+let fitT=0; window.addEventListener("resize",()=>{clearTimeout(fitT);fitT=setTimeout(fit,120)});
+
+render();
+</script>
+
+<div class="atin-logo" aria-label="Made by Atin">
+<svg viewBox="104 28 172 134" width="64" height="50" role="img" aria-hidden="true">
+<text x="139" y="112" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="72" fill="currentColor">A</text>
+<rect x="177" y="83" width="24" height="6" rx="1" fill="currentColor"/>
+<path d="M216 66 L216 106 A25 7 0 0 0 266 106 L266 66" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+<ellipse cx="241" cy="66" rx="25" ry="7" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="216" y1="80" x2="266" y2="80" stroke="currentColor" stroke-width="1.5"/>
+<line x1="216" y1="94" x2="266" y2="94" stroke="currentColor" stroke-width="1.5"/>
+<ellipse cx="241" cy="47" rx="23" ry="5" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="114" y1="128" x2="266" y2="128" stroke="currentColor" stroke-width="1"/>
+<text x="190" y="152" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" letter-spacing="2" fill="currentColor">made by Atin</text>
+</svg>
+</div>
+<script>(function(){var l=document.querySelector(".atin-logo"),t=document.querySelector(".nav");if(l&&t){var nx=t.querySelector("#next");if(nx&&nx.parentNode===t)t.insertBefore(l,nx);else t.appendChild(l);}})();</script>
+<style>
+.atin-logo{position:static;flex:none;color:#1F3A5F;background:rgba(255,255,255,.92);border:1px solid #C9D3DF;border-radius:8px;padding:3px 5px;line-height:0;pointer-events:none}
+.atin-logo svg{display:block}
+@media print{.atin-logo{background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+.nav>.atin-logo{align-self:center;padding:2px 4px}
+.nav>.atin-logo svg{width:50px;height:39px}
+</style>
+
+</body></html>

@@ -1,0 +1,475 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<style>.pnav{display:flex;gap:10px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:12px;margin-top:4px}</style>
+<title>E2 Past Simple – Speaking Tasks 1 & 2 – Interactive Practice</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@500;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<style>
+/* Layout: one activity at a time under a tab row; big tap targets for phones and the classroom screen */
+:root{
+  --bg:#F3F5F7; --surface:#FFFFFF; --ink:#18222E; --muted:#556170; --line:#D9DEE5;
+  --accent:#0E6B6B; --accent-ink:#FFFFFF; --accent-soft:#DDEFEE;
+  --mark:#E8A317; --mark-soft:#FCF0D2;
+  --good:#1D7A3A; --good-soft:#DDF1E3; --bad:#B3261E; --bad-soft:#F8DEDC;
+  --display:"Lexend","Segoe UI",Arial,sans-serif;
+  --body:"Atkinson Hyperlegible",Verdana,Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#11161C; --surface:#1A222B; --ink:#E9EEF3; --muted:#9AA6B3; --line:#2C3743;
+  --accent:#4FB8B3; --accent-ink:#08201F; --accent-soft:#163533;
+  --mark:#F0B940; --mark-soft:#3A2F14;
+  --good:#5FCB82; --good-soft:#163222; --bad:#F08A82; --bad-soft:#3A1A18; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#11161C; --surface:#1A222B; --ink:#E9EEF3; --muted:#9AA6B3; --line:#2C3743;
+  --accent:#4FB8B3; --accent-ink:#08201F; --accent-soft:#163533;
+  --mark:#F0B940; --mark-soft:#3A2F14;
+  --good:#5FCB82; --good-soft:#163222; --bad:#F08A82; --bad-soft:#3A1A18; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.5}
+.wrap{max-width:860px;margin:0 auto;padding-block:20px 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header h1{font-family:var(--display);font-weight:700;font-size:clamp(1.6rem,4vw,2.2rem);margin:0;text-wrap:balance;line-height:1.15}
+header p{margin:.3rem 0 0;color:var(--muted)}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:16px 0 12px;scrollbar-width:thin}
+.tab{flex:0 0 auto;font:600 .95rem/1 var(--display);padding:12px 16px;border-radius:999px;border:2px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.tab[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.tab:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--mark);outline-offset:2px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:18px}
+.panel h2{font-family:var(--display);font-size:1.35rem;margin:0}
+.task{margin:0;color:var(--muted)}
+.exam{display:inline-block;font:700 .72rem/1 var(--display);letter-spacing:.06em;text-transform:uppercase;background:var(--mark-soft);color:var(--ink);padding:6px 9px;border-radius:6px}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.spread{justify-content:space-between}
+.btn{font:600 1rem/1 var(--display);padding:14px 20px;border-radius:10px;border:2px solid var(--accent);background:var(--accent);color:var(--accent-ink);cursor:pointer;min-height:48px}
+.btn.ghost{background:transparent;color:var(--accent)}
+.btn:disabled{opacity:.45;cursor:default}
+.score{font:700 1rem/1 var(--display);font-variant-numeric:tabular-nums;color:var(--muted)}
+.big{font-family:var(--display);font-weight:700;font-size:clamp(2.2rem,8vw,3.4rem);line-height:1.1;text-align:center;margin:8px 0}
+.prompt{text-align:center;color:var(--muted);margin:0}
+input[type=text]{font:1.4rem var(--body);padding:12px 14px;border-radius:10px;border:2px solid var(--line);background:var(--bg);color:var(--ink);width:100%;max-width:340px;text-align:center}
+.center{justify-content:center}
+.feedback{min-height:1.6em;text-align:center;font-weight:700;margin:0}
+.ok{color:var(--good)} .no{color:var(--bad)}
+.progress{height:8px;background:var(--line);border-radius:99px;overflow:hidden}
+.progress>i{display:block;height:100%;background:var(--accent);width:0;transition:width .3s}
+.buckets{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.bucket{font:700 1.5rem/1.1 var(--display);padding:18px 8px;border-radius:12px;border:2px solid var(--accent);background:var(--accent-soft);color:var(--ink);cursor:pointer;min-height:84px}
+.bucket small{display:block;font:400 .85rem var(--body);color:var(--muted);margin-top:6px}
+.choices{display:grid;gap:12px}
+.choice{font:1.15rem/1.35 var(--body);text-align:left;padding:16px 18px;border-radius:12px;border:2px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.choice.right{border-color:var(--good);background:var(--good-soft)}
+.choice.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.tip{background:var(--mark-soft);border-radius:10px;padding:12px 14px;margin:0}
+.answer{min-height:70px;border:2px dashed var(--line);border-radius:12px;padding:10px;display:flex;flex-wrap:wrap;gap:8px;align-content:flex-start}
+.answer.right{border-style:solid;border-color:var(--good);background:var(--good-soft)}
+.answer.wrong{border-style:solid;border-color:var(--bad);background:var(--bad-soft)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:1.15rem/1 var(--body);padding:12px 14px;border-radius:10px;border:2px solid var(--accent);background:var(--surface);color:var(--ink);cursor:pointer}
+.chip.used{visibility:hidden}
+.story{display:grid;gap:10px}
+.line{display:flex;gap:12px;align-items:flex-start;text-align:left;font:1.05rem/1.4 var(--body);padding:14px;border-radius:12px;border:2px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.line .n{flex:0 0 34px;height:34px;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;font:700 1rem var(--display)}
+.line.picked{border-color:var(--accent)} .line.picked .n{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.line.right{border-color:var(--good);background:var(--good-soft)} .line.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.card{border:2px solid var(--accent);border-radius:14px;padding:18px;background:var(--accent-soft)}
+.card .label{font:700 .75rem/1 var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.card .topic{font:700 clamp(1.4rem,4.5vw,1.9rem)/1.2 var(--display);margin-top:8px;text-wrap:balance}
+.timer{font:700 clamp(3rem,14vw,5rem)/1 var(--display);font-variant-numeric:tabular-nums;text-align:center;letter-spacing:.02em}
+.timer.done{color:var(--bad);animation:flash .5s 4}
+@keyframes flash{50%{opacity:.25}}
+@media (prefers-reduced-motion:reduce){.timer.done{animation:none}.progress>i{transition:none}}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.cols>div{min-width:0}
+.cols h3{font:700 1rem var(--display);margin:0 0 6px}
+.cols ul{margin:0;padding-left:1.2em}
+.q-out{font:700 1.3rem/1.3 var(--display);min-height:1.4em;margin:0}
+.phase{text-align:center;color:var(--muted);font-weight:700;margin:0}
+@media (max-width:560px){.cols{grid-template-columns:1fr}.panel{padding:16px}.bucket{font-size:1.25rem}}
+</style>
+
+<style>
+/* Tabs: no sideways scrolling — wrap on small screens, one even row across a wide PC screen */
+.tabs{flex-wrap:wrap;overflow-x:visible}
+@media (min-width:1000px){
+  .wrap{max-width:min(1600px,100%)}
+  body{font-size:20px}
+  .tabs{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}
+  .tab{font-size:1.05rem;padding:16px 10px;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .panel{padding:28px 32px}
+}
+</style>
+<div class="wrap">
+  <header>
+    <h1>Past Tense Practice</h1>
+    <p>Entry 2 Speaking and Listening · Task 1 questions and Task 2 talk</p>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="Activities">
+    <button class="tab" role="tab" data-p="verbs" aria-selected="true">1 Irregular verbs</button>
+    <button class="tab" role="tab" data-p="sounds" aria-selected="false">2 -ed sounds</button>
+    <button class="tab" role="tab" data-p="fix" aria-selected="false">3 Right or wrong?</button>
+    <button class="tab" role="tab" data-p="build" aria-selected="false">4 Make the question</button>
+    <button class="tab" role="tab" data-p="order" aria-selected="false">5 Story order</button>
+    <button class="tab" role="tab" data-p="talk" aria-selected="false">6 My talk</button>
+  </nav>
+
+  <!-- 1 Irregular verbs -->
+  <section class="panel" id="verbs" role="tabpanel">
+    <div class="row spread"><h2>Irregular verbs</h2><span class="score" id="v-score">0 / 10</span></div>
+    <div class="progress"><i id="v-bar"></i></div>
+    <p class="prompt">Write the past.</p>
+    <div class="big" id="v-word">go</div>
+    <form class="row center" id="v-form" autocomplete="off">
+      <input type="text" id="v-input" aria-label="Past form" autocapitalize="off" spellcheck="false">
+    </form>
+    <p class="feedback" id="v-fb" aria-live="polite"></p>
+    <div class="row center">
+      <button class="btn" id="v-check" type="button">Check</button>
+      <button class="btn ghost" id="v-show" type="button">Show me</button>
+      <button class="btn ghost" id="v-next" type="button" hidden>Next</button>
+    </div>
+  </section>
+
+  <!-- 2 -ed sounds -->
+  <section class="panel" id="sounds" role="tabpanel" hidden>
+    <div class="row spread"><h2>Three -ed sounds</h2><span class="score" id="s-score">0 / 12</span></div>
+    <div class="progress"><i id="s-bar"></i></div>
+    <p class="prompt">Say the word. Which sound is the end?</p>
+    <div class="big" id="s-word">walked</div>
+    <div class="buckets">
+      <button class="bucket" data-b="t" type="button">t<small>walked</small></button>
+      <button class="bucket" data-b="d" type="button">d<small>played</small></button>
+      <button class="bucket" data-b="id" type="button">id<small>wanted</small></button>
+    </div>
+    <p class="feedback" id="s-fb" aria-live="polite"></p>
+    <p class="tip">We only say <b>id</b> after <b>t</b> or <b>d</b>: wanted, needed.</p>
+    <div class="row center"><button class="btn ghost" id="s-again" type="button" hidden>Play again</button></div>
+  </section>
+
+  <!-- 3 Right or wrong -->
+  <section class="panel" id="fix" role="tabpanel" hidden>
+    <div class="row spread"><h2>Right or wrong?</h2><span class="score" id="f-score">0 / 10</span></div>
+    <div class="progress"><i id="f-bar"></i></div>
+    <p class="prompt">Tap the correct sentence.</p>
+    <div class="choices" id="f-choices"></div>
+    <p class="tip" id="f-tip" hidden></p>
+    <div class="row center"><button class="btn" id="f-next" type="button" hidden>Next</button></div>
+  </section>
+
+  <!-- 4 Build question -->
+  <section class="panel" id="build" role="tabpanel" hidden>
+    <div class="row spread"><div><span class="exam">Task 1</span><h2>Make the question</h2></div><span class="score" id="b-score">0 / 8</span></div>
+    <div class="progress"><i id="b-bar"></i></div>
+    <p class="task">Tap the words in order. Tap a word again to take it back.</p>
+    <div class="answer" id="b-answer" aria-label="Your question"></div>
+    <div class="chips" id="b-chips"></div>
+    <p class="feedback" id="b-fb" aria-live="polite"></p>
+    <div class="row center">
+      <button class="btn" id="b-check" type="button">Check</button>
+      <button class="btn ghost" id="b-next" type="button" hidden>Next</button>
+    </div>
+    <p class="tip" id="b-tip" hidden></p>
+  </section>
+
+  <!-- 5 Story order -->
+  <section class="panel" id="order" role="tabpanel" hidden>
+    <div class="row spread"><div><span class="exam">Task 2</span><h2 id="o-title">Story order</h2></div><span class="score" id="o-count">Story 1 / 3</span></div>
+    <p class="task">Tap the sentences in the right order. Look at First, Then, After that, Finally.</p>
+    <div class="story" id="o-lines"></div>
+    <p class="feedback" id="o-fb" aria-live="polite"></p>
+    <div class="row center">
+      <button class="btn" id="o-check" type="button">Check</button>
+      <button class="btn ghost" id="o-reset" type="button">Start again</button>
+      <button class="btn ghost" id="o-next" type="button" hidden>Next story</button>
+    </div>
+  </section>
+
+  <!-- 6 Talk -->
+  <section class="panel" id="talk" role="tabpanel" hidden>
+    <div><span class="exam">Task 2</span><h2>My talk about the past</h2></div>
+    <div class="card">
+      <div class="label">Your topic</div>
+      <div class="topic" id="t-topic">Tell me what you did last weekend.</div>
+    </div>
+    <div class="row center"><button class="btn ghost" id="t-new" type="button">New topic</button></div>
+    <p class="phase" id="t-phase">Ready</p>
+    <div class="timer" id="t-clock" aria-live="off">1:00</div>
+    <div class="row center">
+      <button class="btn" id="t-plan" type="button">Plan · 1 minute</button>
+      <button class="btn" id="t-talk" type="button">Talk · 2 minutes</button>
+      <button class="btn ghost" id="t-stop" type="button">Stop</button>
+    </div>
+    <div class="cols">
+      <div>
+        <h3>Plan: write words, not sentences</h3>
+        <ul><li>When?</li><li>Where?</li><li>Who with?</li><li>What did you do? (3 things)</li><li>How did you feel? Why?</li></ul>
+      </div>
+      <div>
+        <h3>Use these words</h3>
+        <ul><li>First … Then … After that … Finally …</li><li>It was … because …</li><li>I felt happy / tired / surprised.</li></ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="label">Partner: ask a question</div>
+      <p class="q-out" id="t-q">Tap the button for a question.</p>
+      <div class="row" style="margin-top:12px"><button class="btn" id="t-ask" type="button">Give me a question</button></div>
+    </div>
+  </section>
+</div>
+
+<script>
+(function(){
+const $=id=>document.getElementById(id);
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;};
+const bar=(el,n,t)=>{el.style.width=(100*n/t)+'%';};
+
+/* Tabs */
+document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
+  document.querySelectorAll('.tab').forEach(x=>x.setAttribute('aria-selected',x===t?'true':'false'));
+  document.querySelectorAll('.panel').forEach(p=>p.hidden=p.id!==t.dataset.p);
+}));
+
+/* 1 Irregular verbs */
+const IRR=[["go","went"],["have","had"],["eat","ate"],["buy","bought"],["take","took"],["see","saw"],["meet","met"],["make","made"],["get","got"],["come","came"],["do","did"],["feel","felt"],["sleep","slept"],["leave","left"],["find","found"],["say","said"],["give","gave"],["drink","drank"],["write","wrote"],["speak","spoke"],["sit","sat"],["tell","told"],["think","thought"],["bring","brought"],["know","knew"],["put","put"],["run","ran"],["begin","began"],["lose","lost"],["pay","paid"],["send","sent"],["wear","wore"],["sing","sang"],["swim","swam"],["be (I / he / she)","was"],["be (you / we / they)","were"]];
+let V={list:[],i:0,score:0,done:false};
+function vStart(){V={list:shuffle(IRR).slice(0,10),i:0,score:0,done:false};vShow();}
+function vShow(){
+  const [w]=V.list[V.i];$('v-word').textContent=w;$('v-input').value='';$('v-fb').textContent='';$('v-fb').className='feedback';
+  $('v-input').disabled=false;$('v-check').hidden=false;$('v-show').hidden=false;$('v-next').hidden=true;
+  $('v-score').textContent=V.score+' / 10';bar($('v-bar'),V.i,10);
+}
+function vCheck(){
+  if(V.done) return;
+  const ans=$('v-input').value.trim().toLowerCase();if(!ans) return;
+  const right=V.list[V.i][1];
+  if(ans===right){V.score++;$('v-fb').textContent='Yes! '+V.list[V.i][0]+' → '+right;$('v-fb').className='feedback ok';vAfter();}
+  else{$('v-fb').textContent='Not yet. Try again.';$('v-fb').className='feedback no';}
+}
+function vReveal(){$('v-fb').textContent=V.list[V.i][0]+' → '+V.list[V.i][1];$('v-fb').className='feedback';vAfter();}
+function vAfter(){
+  $('v-input').disabled=true;$('v-check').hidden=true;$('v-show').hidden=true;$('v-next').hidden=false;
+  $('v-score').textContent=V.score+' / 10';bar($('v-bar'),V.i+1,10);
+  $('v-next').textContent=V.i===9?'Play again':'Next';$('v-next').focus();
+}
+function vNext(){
+  if(V.i===9){
+    if(!V.done){V.done=true;$('v-word').textContent=V.score+' / 10';$('v-fb').textContent=V.score>=8?'Great work!':'Practise again!';$('v-fb').className='feedback ok';$('v-next').textContent='Play again';$('v-input').value='';return;}
+    vStart();return;
+  }
+  V.i++;vShow();$('v-input').focus();
+}
+$('v-form').addEventListener('submit',e=>{e.preventDefault();vCheck();});
+$('v-check').addEventListener('click',vCheck);
+$('v-show').addEventListener('click',vReveal);
+$('v-next').addEventListener('click',vNext);
+vStart();
+
+/* 2 -ed sounds */
+const ED={t:["walked","cooked","watched","washed","helped","stopped","finished","looked","worked","asked","danced","laughed","missed","liked"],
+          d:["played","cleaned","lived","phoned","stayed","opened","called","enjoyed","listened","moved","cried","studied","arrived","tried"],
+          id:["wanted","needed","visited","waited","started","decided","ended","painted","invited","collected","added","rested"]};
+let S={};
+function sStart(){
+  const pool=[];for(const k in ED) shuffle(ED[k]).slice(0,4).forEach(w=>pool.push([w,k]));
+  S={list:shuffle(pool),i:0,score:0,lock:false};sShow();$('s-again').hidden=true;
+  document.querySelectorAll('.bucket').forEach(b=>b.disabled=false);
+}
+function sShow(){$('s-word').textContent=S.list[S.i][0];$('s-score').textContent=S.score+' / 12';bar($('s-bar'),S.i,12);}
+document.querySelectorAll('.bucket').forEach(b=>b.addEventListener('click',()=>{
+  if(S.lock) return;S.lock=true;
+  const [w,k]=S.list[S.i];const lab={t:'t',d:'d',id:'id'};
+  if(b.dataset.b===k){S.score++;$('s-fb').textContent='Yes! '+w+' ends in '+lab[k]+'.';$('s-fb').className='feedback ok';}
+  else{$('s-fb').textContent='No. '+w+' ends in '+lab[k]+'.';$('s-fb').className='feedback no';}
+  $('s-score').textContent=S.score+' / 12';bar($('s-bar'),S.i+1,12);
+  setTimeout(()=>{
+    S.lock=false;
+    if(S.i===11){$('s-word').textContent=S.score+' / 12';$('s-fb').textContent='Finished!';$('s-fb').className='feedback';$('s-again').hidden=false;document.querySelectorAll('.bucket').forEach(x=>x.disabled=true);return;}
+    S.i++;$('s-fb').textContent='';sShow();
+  },1300);
+}));
+$('s-again').addEventListener('click',()=>{$('s-fb').textContent='';sStart();});
+sStart();
+
+/* 3 Right or wrong */
+const FIX=[
+ ["Did you go to the market?","Did you went to the market?","After did, use the normal verb: go, not went."],
+ ["Where did you go yesterday?","Where you went yesterday?","Questions need did: Where did you go?"],
+ ["I didn't see him.","I didn't saw him.","After didn't, use the normal verb: see."],
+ ["She went to Dalston.","She goed to Dalston.","go is irregular: go → went."],
+ ["What did you eat?","What did you ate?","After did, use eat, not ate."],
+ ["I was tired.","I were tired.","I / he / she / it → was."],
+ ["They were at home.","They was at home.","you / we / they → were."],
+ ["We went to the park last week.","We go to the park last week.","last week = the past. Use went."],
+ ["I came to London two years ago.","I came to London before two years.","Say: two years ago."],
+ ["I bought some fish.","I buyed some fish.","buy is irregular: buy → bought."],
+ ["Did you like it? Yes, I did.","Did you like it? Yes, I liked.","Short answer: Yes, I did. / No, I didn't."],
+ ["How was your weekend?","How did your weekend?","How was …? It was good."],
+ ["I met my friend last Saturday.","I met my friend the last Saturday.","No 'the': last Saturday, last week."],
+ ["We didn't go to college.","We didn't went to college.","After didn't, use go."],
+ ["What time did you get up?","What time you got up?","Questions need did: What time did you get up?"],
+ ["It was very busy.","It were very busy.","it → was."]
+];
+let F={};
+function fStart(){F={list:shuffle(FIX).slice(0,10),i:0,score:0};fShow();}
+function fShow(){
+  const [r,w]=F.list[F.i];const box=$('f-choices');box.innerHTML='';
+  shuffle([[r,true],[w,false]]).forEach(([txt,ok])=>{
+    const b=document.createElement('button');b.type='button';b.className='choice';b.textContent=txt;b.dataset.ok=ok?'1':'';
+    b.addEventListener('click',()=>fPick(b));box.appendChild(b);
+  });
+  $('f-tip').hidden=true;$('f-next').hidden=true;$('f-score').textContent=F.score+' / 10';bar($('f-bar'),F.i,10);
+}
+function fPick(b){
+  if(!$('f-next').hidden) return;
+  const ok=!!b.dataset.ok;if(ok)F.score++;
+  document.querySelectorAll('#f-choices .choice').forEach(c=>{c.classList.add(c.dataset.ok?'right':'wrong');c.disabled=true;});
+  $('f-tip').textContent=(ok?'Yes! ':'Not this time. ')+F.list[F.i][2];$('f-tip').hidden=false;
+  $('f-score').textContent=F.score+' / 10';bar($('f-bar'),F.i+1,10);
+  $('f-next').hidden=false;$('f-next').textContent=F.i===9?'Play again':'Next';
+}
+$('f-next').addEventListener('click',()=>{
+  if(F.i===9){
+    if($('f-next').textContent==='Play again'&&!F.end){F.end=true;$('f-choices').innerHTML='<div class="big">'+F.score+' / 10</div>';$('f-tip').hidden=true;return;}
+    fStart();return;
+  }
+  F.i++;fShow();
+});
+fStart();
+
+/* 4 Build question */
+const BUILD=[
+ ["Where did you go last weekend?","Answer: I went to …"],
+ ["What did you eat yesterday?","Answer: I ate …"],
+ ["Who did you meet on Saturday?","Answer: I met …"],
+ ["Did you watch TV last night?","Answer: Yes, I did. / No, I didn't."],
+ ["How was your weekend?","Answer: It was … because …"],
+ ["What time did you get up today?","Answer: I got up at …"],
+ ["How did you come to college today?","Answer: I came by bus / on foot …"],
+ ["Were you at home yesterday?","Answer: Yes, I was. / No, I wasn't."],
+ ["What did you do after college?","Answer: I went … / I cooked …"],
+ ["When did you start this course?","Answer: I started in …"],
+ ["Did you go shopping last week?","Answer: Yes, I did. I went to …"],
+ ["Who did you live with in your country?","Answer: I lived with …"]
+];
+let B={};
+function bStart(){B={list:shuffle(BUILD).slice(0,8),i:0,score:0,picked:[],tried:false};bShow();}
+function bShow(){
+  const s=B.list[B.i][0];B.words=s.split(' ');B.picked=[];B.tried=false;
+  let order=shuffle(B.words.map((w,i)=>i));let guard=0;
+  while(order.every((v,i)=>v===i)&&guard++<5) order=shuffle(order);
+  const chips=$('b-chips');chips.innerHTML='';
+  order.forEach(idx=>{const c=document.createElement('button');c.type='button';c.className='chip';c.textContent=B.words[idx];c.dataset.idx=idx;
+    c.addEventListener('click',()=>{if(c.classList.contains('used'))return;c.classList.add('used');B.picked.push(c);bDraw();});chips.appendChild(c);});
+  $('b-answer').className='answer';$('b-fb').textContent='';$('b-tip').hidden=true;$('b-check').hidden=false;$('b-next').hidden=true;
+  $('b-score').textContent=B.score+' / 8';bar($('b-bar'),B.i,8);bDraw();
+}
+function bDraw(){
+  const a=$('b-answer');a.innerHTML='';
+  B.picked.forEach((c,k)=>{const x=document.createElement('button');x.type='button';x.className='chip';x.textContent=c.textContent;
+    x.addEventListener('click',()=>{if(!$('b-next').hidden)return;c.classList.remove('used');B.picked.splice(k,1);a.className='answer';bDraw();});a.appendChild(x);});
+}
+$('b-check').addEventListener('click',()=>{
+  if(B.picked.length<B.words.length){$('b-fb').textContent='Use all the words.';$('b-fb').className='feedback no';return;}
+  const s=B.picked.map(c=>c.textContent).join(' ');const target=B.list[B.i][0];
+  if(s===target){if(!B.tried)B.score++;$('b-answer').className='answer right';$('b-fb').textContent='Yes! Now ask your partner.';$('b-fb').className='feedback ok';
+    $('b-tip').textContent=B.list[B.i][1];$('b-tip').hidden=false;$('b-check').hidden=true;$('b-next').hidden=false;$('b-next').textContent=B.i===7?'Play again':'Next';
+    $('b-score').textContent=B.score+' / 8';bar($('b-bar'),B.i+1,8);}
+  else{B.tried=true;$('b-answer').className='answer wrong';$('b-fb').textContent='Not yet. Tap a word to move it.';$('b-fb').className='feedback no';}
+});
+$('b-next').addEventListener('click',()=>{if(B.i===7){bStart();return;}B.i++;bShow();});
+bStart();
+
+/* 5 Story order */
+const STORIES=[
+ ["Ana's Saturday",["Last Saturday I went to Broadway Market with my daughter.","First, we bought some bread and fruit.","Then we walked to London Fields and had a picnic.","After that, my daughter played in the playground.","Finally, we took the bus home. We were tired but happy."]],
+ ["Hassan's first day at college",["Last September I started my English course.","First, I went to the office and got my student card.","Then I met my teacher and my classmates.","After that, we did a test. It was difficult!","Finally, I went home and told my wife about my day."]],
+ ["A family wedding",["Last summer my cousin got married in Birmingham.","First, we took the coach from Victoria. It took three hours.","Then we went to the wedding hall. It was beautiful.","After that, we ate a big meal and danced all evening.","Finally, we stayed with my aunt and came home the next day."]],
+ ["A bad day",["Yesterday was a bad day for me.","First, I got up late because my phone didn't ring.","Then I ran to the bus stop, but the bus left without me.","After that, it started to rain and I didn't have an umbrella.","Finally, I arrived at college at ten o'clock. I was very wet!"]]
+];
+let O={};
+function oStart(){O={order:shuffle(STORIES).slice(0,3),s:0};oShow();}
+function oShow(){
+  const [title,lines]=O.order[O.s];$('o-title').textContent=title;$('o-count').textContent='Story '+(O.s+1)+' / 3';
+  O.picked=[];O.checked=false;const box=$('o-lines');box.innerHTML='';
+  let idx=shuffle(lines.map((l,i)=>i));let g=0;while(idx.every((v,i)=>v===i)&&g++<5) idx=shuffle(idx);
+  idx.forEach(i=>{const b=document.createElement('button');b.type='button';b.className='line';b.dataset.i=i;
+    b.innerHTML='<span class="n"></span><span></span>';b.lastChild.textContent=lines[i];
+    b.addEventListener('click',()=>{if(O.checked)return;const p=O.picked.indexOf(b);
+      if(p>=0){O.picked.splice(p,1);}else{O.picked.push(b);}oDraw();});box.appendChild(b);});
+  $('o-fb').textContent='';$('o-check').hidden=false;$('o-next').hidden=true;oDraw();
+}
+function oDraw(){document.querySelectorAll('#o-lines .line').forEach(b=>{const p=O.picked.indexOf(b);b.classList.toggle('picked',p>=0);b.querySelector('.n').textContent=p>=0?p+1:'';b.classList.remove('right','wrong');});}
+$('o-check').addEventListener('click',()=>{
+  const n=O.order[O.s][1].length;
+  if(O.picked.length<n){$('o-fb').textContent='Number all the sentences.';$('o-fb').className='feedback no';return;}
+  let all=true;O.picked.forEach((b,k)=>{const ok=+b.dataset.i===k;b.classList.add(ok?'right':'wrong');if(!ok)all=false;});
+  if(all){O.checked=true;$('o-fb').textContent='Yes! Now tell the story to your partner.';$('o-fb').className='feedback ok';$('o-check').hidden=true;$('o-next').hidden=false;$('o-next').textContent=O.s===2?'Play again':'Next story';}
+  else{$('o-fb').textContent='Some are wrong. Tap them to change.';$('o-fb').className='feedback no';
+    setTimeout(()=>{O.picked=O.picked.filter(b=>b.classList.contains('right'));oDraw();},1400);}
+});
+$('o-reset').addEventListener('click',()=>{if(O.checked)return;O.picked=[];oDraw();$('o-fb').textContent='';});
+$('o-next').addEventListener('click',()=>{if(O.s===2){oStart();return;}O.s++;oShow();});
+oStart();
+
+/* 6 Talk */
+const TOPICS=[
+ ["Tell me what you did last weekend.",["Where did you go?","Who were you with?","What did you eat?","Was it a good weekend? Why?"]],
+ ["Tell me what you did yesterday.",["What time did you get up?","What did you have for lunch?","What did you do in the evening?","Did you go out?"]],
+ ["Tell me about a special day or celebration.",["When was it?","Who was there?","What food did you have?","What did you wear?"]],
+ ["Tell me about a day out in London.",["How did you travel there?","What did you see?","Who did you go with?","Did you like it? Why?"]],
+ ["Tell me about your first day at this college.",["How did you feel?","Who did you meet?","What did you do?","Was it easy to find?"]],
+ ["Tell me about a meal you cooked for other people.",["What did you cook?","Who did you cook for?","Where did you buy the food?","Did they like it?"]],
+ ["Tell me about your last birthday.",["What did you do?","Who was with you?","Did you get a present?","Was it a good day?"]],
+ ["Tell me about a trip or a holiday.",["Where did you go?","Who did you go with?","What did you do there?","How was the weather?"]]
+];
+let T={i:0,timer:null,end:0,lastQ:-1};
+function tTopic(){let n;do{n=Math.floor(Math.random()*TOPICS.length);}while(n===T.i&&TOPICS.length>1);T.i=n;$('t-topic').textContent=TOPICS[n][0];$('t-q').textContent='Tap the button for a question.';T.lastQ=-1;}
+function fmt(s){s=Math.max(0,Math.ceil(s));return Math.floor(s/60)+':'+String(s%60).padStart(2,'0');}
+function tRun(secs,label){
+  tStop(true);$('t-phase').textContent=label;$('t-clock').classList.remove('done');T.end=Date.now()+secs*1000;$('t-clock').textContent=fmt(secs);
+  T.timer=setInterval(()=>{const left=(T.end-Date.now())/1000;$('t-clock').textContent=fmt(left);
+    if(left<=0){clearInterval(T.timer);T.timer=null;$('t-clock').classList.add('done');$('t-phase').textContent=label==='Planning'?'Time to talk!':'Stop. Partner, ask two questions.';}},250);
+}
+function tStop(silent){if(T.timer){clearInterval(T.timer);T.timer=null;}if(silent!==true){$('t-phase').textContent='Ready';$('t-clock').classList.remove('done');$('t-clock').textContent='1:00';}}
+$('t-new').addEventListener('click',tTopic);
+$('t-plan').addEventListener('click',()=>tRun(60,'Planning'));
+$('t-talk').addEventListener('click',()=>tRun(120,'Talking'));
+$('t-stop').addEventListener('click',tStop);
+$('t-ask').addEventListener('click',()=>{const qs=TOPICS[T.i][1];let n;do{n=Math.floor(Math.random()*qs.length);}while(n===T.lastQ&&qs.length>1);T.lastQ=n;$('t-q').textContent=qs[n];});
+tTopic();
+
+/* Back + Try again on every activity */
+const RESET={verbs:vStart,sounds:()=>{$('s-fb').textContent='';$('s-fb').className='feedback';sStart();},fix:fStart,build:bStart,order:oStart,talk:()=>{tStop();tTopic();}};
+const tabsEl=[...document.querySelectorAll('.tab')];
+document.querySelectorAll('.panel').forEach((p,i)=>{
+  const d=document.createElement('div');d.className='pnav';
+  d.innerHTML='<button class="btn ghost" type="button" data-nav="back"'+(i===0?' disabled':'')+'>← Back</button><button class="btn ghost" type="button" data-nav="retry">↺ Try again</button>';
+  p.appendChild(d);
+  d.querySelector('[data-nav=back]').onclick=()=>{if(i>0)tabsEl[i-1].click();window.scrollTo(0,0);};
+  d.querySelector('[data-nav=retry]').onclick=()=>{(RESET[p.id]||(()=>{}))();};
+});
+})();
+</script>
+<div class="atin-logo" aria-label="Made by Atin">
+<svg viewBox="104 28 172 134" width="64" height="50" role="img" aria-hidden="true">
+<text x="139" y="112" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="72" fill="currentColor">A</text>
+<rect x="177" y="83" width="24" height="6" rx="1" fill="currentColor"/>
+<path d="M216 66 L216 106 A25 7 0 0 0 266 106 L266 66" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+<ellipse cx="241" cy="66" rx="25" ry="7" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="216" y1="80" x2="266" y2="80" stroke="currentColor" stroke-width="1.5"/>
+<line x1="216" y1="94" x2="266" y2="94" stroke="currentColor" stroke-width="1.5"/>
+<ellipse cx="241" cy="47" rx="23" ry="5" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="114" y1="128" x2="266" y2="128" stroke="currentColor" stroke-width="1"/>
+<text x="190" y="152" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" letter-spacing="2" fill="currentColor">made by Atin</text>
+</svg>
+</div>
+<script>(function(){var l=document.querySelector(".atin-logo"),t=document.querySelector(".wrap");if(l&&t){var nx=t.querySelector("#next");if(nx&&nx.parentNode===t)t.insertBefore(l,nx);else t.appendChild(l);}})();</script>
+<style>
+.atin-logo{position:static;flex:none;color:#1F3A5F;background:rgba(255,255,255,.92);border:1px solid #C9D3DF;border-radius:8px;padding:3px 5px;line-height:0;pointer-events:none}
+.atin-logo svg{display:block}
+@media print{.atin-logo{background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+.wrap>.atin-logo{width:max-content;margin:24px auto 0}
+</style>
+
+</body></html>

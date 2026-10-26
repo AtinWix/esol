@@ -1,0 +1,176 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Block Drop</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+/* Layout: one-screen arcade cabinet — well on the left, readout column on the right; stacks on phones */
+:root{
+  --bg:#0d1017; --panel:#151a24; --line:#262e3d; --fg:#e4e8f0; --muted:#7d879a; --accent:#f2c14e;
+  --display:"Chakra Petch",system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,monospace;
+  color-scheme:dark;
+}
+html,body{height:100%}
+body{background:var(--bg);color:var(--fg);font-family:var(--display);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  padding-block:16px;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;gap:12px;overflow:hidden;
+  user-select:none;-webkit-user-select:none;touch-action:manipulation}
+.game{display:flex;gap:16px;align-items:flex-start;flex:1;min-height:0}
+.well{position:relative;height:100%;max-height:640px;aspect-ratio:1/2;border:2px solid var(--line);background:#0a0d13;border-radius:4px}
+canvas#board{width:100%;height:100%;display:block}
+.side{display:flex;flex-direction:column;gap:12px;width:128px}
+.box{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:10px}
+.lbl{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.num{font-family:var(--mono);font-size:22px;font-weight:700;font-variant-numeric:tabular-nums}
+.box canvas{width:100%;aspect-ratio:4/3;display:block}
+h1{margin:0;font-size:20px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+.overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;
+  background:rgba(10,13,19,.82);text-align:center;padding:16px}
+.overlay h2{margin:0;font-size:26px;letter-spacing:.12em;text-transform:uppercase}
+.overlay p{margin:0;color:var(--muted);font-size:13px;line-height:1.6}
+button{font:700 14px var(--display);letter-spacing:.1em;text-transform:uppercase;color:#14110a;background:var(--accent);
+  border:0;border-radius:4px;padding:10px 18px;cursor:pointer}
+button:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+.keys{font-size:12px;color:var(--muted);line-height:1.7}
+.keys b{color:var(--fg);font-family:var(--mono);font-weight:500}
+.pad{display:none;gap:8px;width:100%;max-width:420px}
+.pad button{flex:1;padding:14px 0;background:var(--panel);color:var(--fg);border:1px solid var(--line);font-size:18px}
+@media (max-width:620px){
+  .game{flex-direction:column-reverse;align-items:center;width:100%}
+  .side{flex-direction:row;width:100%;max-width:420px}
+  .side .box{flex:1;padding:6px}
+  .side .num{font-size:16px}
+  .keys,.side .hide-sm{display:none}
+  .well{height:auto;width:min(100%,calc((100dvh - 280px)/2))}
+  .pad{display:flex}
+  h1{font-size:16px}
+}
+@media (pointer:coarse){.pad{display:flex}}
+</style>
+
+<h1>Block Drop</h1>
+<div class="game">
+  <div class="well">
+    <canvas id="board" width="300" height="600"></canvas>
+    <div class="overlay" id="ov">
+      <h2 id="ovT">Block Drop</h2>
+      <p id="ovP">Clear lines. Don't reach the top.</p>
+      <button id="startBtn">Play</button>
+    </div>
+  </div>
+  <div class="side">
+    <div class="box"><div class="lbl">Next</div><canvas id="next" width="120" height="90"></canvas></div>
+    <div class="box"><div class="lbl">Hold</div><canvas id="hold" width="120" height="90"></canvas></div>
+    <div class="box"><div class="lbl">Score</div><div class="num" id="score">0</div></div>
+    <div class="box"><div class="lbl">Lines</div><div class="num" id="lines">0</div></div>
+    <div class="box"><div class="lbl">Level</div><div class="num" id="level">1</div></div>
+    <div class="box hide-sm"><div class="lbl">Best</div><div class="num" id="best">0</div></div>
+    <div class="keys">
+      <b>← →</b> move<br><b>↑</b> rotate<br><b>↓</b> soft drop<br><b>Space</b> hard drop<br><b>C</b> hold<br><b>P</b> pause
+    </div>
+  </div>
+</div>
+<div class="pad">
+  <button id="bL" aria-label="Left">◀</button>
+  <button id="bR" aria-label="Rotate">⟳</button>
+  <button id="bRt" aria-label="Right">▶</button>
+  <button id="bD" aria-label="Soft drop">▼</button>
+  <button id="bH" aria-label="Hard drop">⤓</button>
+  <button id="bC" aria-label="Hold">H</button>
+</div>
+
+<script>
+const W=10,H=20,S=30;
+const COLORS={I:'#4fd1e8',O:'#f2c14e',T:'#b07cf0',S:'#6ad37a',Z:'#ef6461',J:'#5b8def',L:'#f29a4e'};
+const SHAPES={I:[[0,0,0,0],[1,1,1,1],[0,0,0,0],[0,0,0,0]],O:[[1,1],[1,1]],T:[[0,1,0],[1,1,1],[0,0,0]],
+  S:[[0,1,1],[1,1,0],[0,0,0]],Z:[[1,1,0],[0,1,1],[0,0,0]],J:[[1,0,0],[1,1,1],[0,0,0]],L:[[0,0,1],[1,1,1],[0,0,0]]};
+const bc=document.getElementById('board').getContext('2d'),nc=document.getElementById('next').getContext('2d'),hc=document.getElementById('hold').getContext('2d');
+const $=id=>document.getElementById(id);
+let grid,cur,nextQ,holdT,canHold,score,lines,level,dropMs,acc,last,state='idle',bag=[],best=0;
+try{best=+localStorage.getItem('bd-best')||0}catch(e){}
+$('best').textContent=best;
+
+function refill(){const k=Object.keys(SHAPES);for(let i=k.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[k[i],k[j]]=[k[j],k[i]]}bag.push(...k)}
+function take(){if(bag.length<2)refill();return bag.shift()}
+function piece(t){const m=SHAPES[t].map(r=>r.slice());return{t,m,x:(W-m[0].length)>>1,y:t==='I'?-1:0}}
+function rot(m){return m[0].map((_,i)=>m.map(r=>r[i]).reverse())}
+function fits(m,x,y){for(let r=0;r<m.length;r++)for(let c=0;c<m[r].length;c++)if(m[r][c]){
+  const X=x+c,Y=y+r;if(X<0||X>=W||Y>=H)return false;if(Y>=0&&grid[Y][X])return false}return true}
+
+function reset(){grid=Array.from({length:H},()=>Array(W).fill(null));bag=[];nextQ=take();holdT=null;
+  score=0;lines=0;level=1;spawn();hud()}
+function spawn(){cur=piece(nextQ);nextQ=take();canHold=true;if(!fits(cur.m,cur.x,cur.y))over()}
+function speed(){return Math.max(60,800-(level-1)*70)}
+function lock(){
+  for(let r=0;r<cur.m.length;r++)for(let c=0;c<cur.m[r].length;c++)if(cur.m[r][c]){
+    const Y=cur.y+r;if(Y<0){over();return}grid[Y][cur.x+c]=cur.t}
+  let n=0;for(let r=H-1;r>=0;r--)if(grid[r].every(v=>v)){grid.splice(r,1);grid.unshift(Array(W).fill(null));n++;r++}
+  if(n){score+=[0,100,300,500,800][n]*level;lines+=n;level=1+(lines/10|0)}
+  hud();spawn()}
+function move(dx,dy){if(fits(cur.m,cur.x+dx,cur.y+dy)){cur.x+=dx;cur.y+=dy;return true}return false}
+function rotate(){const m=rot(cur.m);for(const k of[0,-1,1,-2,2])if(fits(m,cur.x+k,cur.y)){cur.m=m;cur.x+=k;return}}
+function soft(){if(move(0,1)){score+=1;hud()}else lock();acc=0}
+function hard(){let d=0;while(move(0,1))d++;score+=d*2;lock();acc=0}
+function hold(){if(!canHold)return;const t=cur.t;if(holdT){cur=piece(holdT)}else spawn();holdT=t;canHold=false;drawMini(hc,holdT)}
+function ghostY(){let y=cur.y;while(fits(cur.m,cur.x,y+1))y++;return y}
+
+function cell(ctx,x,y,col,s,alpha=1){ctx.globalAlpha=alpha;ctx.fillStyle=col;ctx.fillRect(x*s+1,y*s+1,s-2,s-2);
+  ctx.fillStyle='rgba(255,255,255,.22)';ctx.fillRect(x*s+1,y*s+1,s-2,4);ctx.fillStyle='rgba(0,0,0,.25)';ctx.fillRect(x*s+1,y*s+s-5,s-2,4);ctx.globalAlpha=1}
+function draw(){
+  bc.fillStyle='#0a0d13';bc.fillRect(0,0,W*S,H*S);
+  bc.strokeStyle='#161b26';bc.lineWidth=1;
+  for(let x=1;x<W;x++){bc.beginPath();bc.moveTo(x*S+.5,0);bc.lineTo(x*S+.5,H*S);bc.stroke()}
+  for(let y=1;y<H;y++){bc.beginPath();bc.moveTo(0,y*S+.5);bc.lineTo(W*S,y*S+.5);bc.stroke()}
+  grid.forEach((row,y)=>row.forEach((t,x)=>t&&cell(bc,x,y,COLORS[t],S)));
+  if(state==='play'||state==='pause'){
+    const gy=ghostY();
+    cur.m.forEach((row,r)=>row.forEach((v,c)=>{if(v&&gy+r>=0){bc.strokeStyle=COLORS[cur.t];bc.globalAlpha=.45;bc.strokeRect((cur.x+c)*S+2.5,(gy+r)*S+2.5,S-5,S-5);bc.globalAlpha=1}}));
+    cur.m.forEach((row,r)=>row.forEach((v,c)=>v&&cur.y+r>=0&&cell(bc,cur.x+c,cur.y+r,COLORS[cur.t],S)));
+  }
+}
+function drawMini(ctx,t){ctx.clearRect(0,0,120,90);if(!t)return;const m=SHAPES[t].filter(r=>r.some(v=>v)),s=24;
+  const w=m[0].length*s,h=m.length*s,ox=(120-w)/2,oy=(90-h)/2;ctx.save();ctx.translate(ox,oy);
+  m.forEach((row,r)=>row.forEach((v,c)=>v&&cell(ctx,c,r,COLORS[t],s)));ctx.restore()}
+function hud(){$('score').textContent=score;$('lines').textContent=lines;$('level').textContent=level;drawMini(nc,nextQ);drawMini(hc,holdT)}
+
+function loop(t){if(state!=='play')return;acc+=t-last;last=t;
+  if(acc>=speed()){acc=0;if(!move(0,1))lock()}draw();requestAnimationFrame(loop)}
+function start(){reset();state='play';$('ov').hidden=true;acc=0;last=performance.now();requestAnimationFrame(loop)}
+function pause(){if(state==='play'){state='pause';show('Paused','Press P or tap Resume.','Resume')}
+  else if(state==='pause'){state='play';$('ov').hidden=true;last=performance.now();requestAnimationFrame(loop)}}
+function over(){state='over';if(score>best){best=score;try{localStorage.setItem('bd-best',best)}catch(e){}$('best').textContent=best}
+  show('Game over',`Score ${score} · ${lines} lines`,'Play again')}
+function show(t,p,b){$('ovT').textContent=t;$('ovP').textContent=p;$('startBtn').textContent=b;$('ov').hidden=false}
+
+$('startBtn').onclick=()=>state==='pause'?pause():start();
+function act(k){if(state!=='play')return;({L:()=>move(-1,0),R:()=>move(1,0),U:rotate,D:soft,H:hard,C:hold})[k]();draw()}
+addEventListener('keydown',e=>{
+  const map={ArrowLeft:'L',ArrowRight:'R',ArrowUp:'U',ArrowDown:'D',' ':'H',c:'C',C:'C',x:'U',X:'U'};
+  if(e.key==='p'||e.key==='P'||e.key==='Escape'){pause();return}
+  if((e.key==='Enter'||e.key===' ')&&(state==='idle'||state==='over')){e.preventDefault();start();return}
+  if(map[e.key]){e.preventDefault();act(map[e.key])}});
+[['bL','L'],['bR','U'],['bRt','R'],['bD','D'],['bH','H'],['bC','C']].forEach(([id,k])=>{
+  const b=$(id);let t;b.addEventListener('pointerdown',e=>{e.preventDefault();act(k);
+    if(k==='L'||k==='R'||k==='D')t=setInterval(()=>act(k),90)});
+  ['pointerup','pointerleave','pointercancel'].forEach(ev=>b.addEventListener(ev,()=>clearInterval(t)))});
+
+grid=Array.from({length:H},()=>Array(W).fill(null));draw();
+</script>
+
+<div class="atin-logo" aria-label="Made by Atin">
+<svg viewBox="104 28 172 134" width="64" height="50" role="img" aria-hidden="true">
+<text x="139" y="112" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="72" fill="currentColor">A</text>
+<rect x="177" y="83" width="24" height="6" rx="1" fill="currentColor"/>
+<path d="M216 66 L216 106 A25 7 0 0 0 266 106 L266 66" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+<ellipse cx="241" cy="66" rx="25" ry="7" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="216" y1="80" x2="266" y2="80" stroke="currentColor" stroke-width="1.5"/>
+<line x1="216" y1="94" x2="266" y2="94" stroke="currentColor" stroke-width="1.5"/>
+<ellipse cx="241" cy="47" rx="23" ry="5" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="114" y1="128" x2="266" y2="128" stroke="currentColor" stroke-width="1"/>
+<text x="190" y="152" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" letter-spacing="2" fill="currentColor">made by Atin</text>
+</svg>
+</div>
+<style>
+.atin-logo{position:fixed;left:calc(6px + env(safe-area-inset-left,0px));bottom:calc(6px + env(safe-area-inset-bottom,0px));z-index:2147483000;pointer-events:none;color:#1F3A5F;background:rgba(255,255,255,.92);border:1px solid #C9D3DF;border-radius:8px;padding:3px 5px;line-height:0}
+.atin-logo svg{display:block}
+@media print{.atin-logo{position:fixed;left:auto;right:6mm;bottom:5mm;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style></body></html>

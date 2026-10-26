@@ -1,0 +1,202 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>ESOL Materials Catalogue</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<style>
+/* Layout: filter bar on top, then one section per class/strand; each section is an ordered teaching sequence */
+:root{
+  --bg:#f6f7f4; --surface:#ffffff; --fg:#1f2a24; --muted:#5c6b62; --line:#dde3dc;
+  --accent:#1d6b54; --accent-soft:#e1efe9;
+  --e1:#b4541f; --e2:#2f5fa8; --e3:#1d6b54; --all:#6b4fa0; --other:#7a7a72; --warn:#a2600d; --warn-soft:#fbefdc;
+  --display:"Fraunces",Georgia,serif; --body:"Atkinson Hyperlegible",Verdana,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#141a17; --surface:#1c2420; --fg:#e7ede9; --muted:#9fb0a6; --line:#2d3833;
+  --accent:#5cc3a0; --accent-soft:#1f3a30;
+  --e1:#e88a55; --e2:#7ea6ea; --e3:#5cc3a0; --all:#b39ae6; --other:#a3a39a; --warn:#e7a54a; --warn-soft:#3a2c14; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141a17; --surface:#1c2420; --fg:#e7ede9; --muted:#9fb0a6; --line:#2d3833;
+  --accent:#5cc3a0; --accent-soft:#1f3a30;
+  --e1:#e88a55; --e2:#7ea6ea; --e3:#5cc3a0; --all:#b39ae6; --other:#a3a39a; --warn:#e7a54a; --warn-soft:#3a2c14; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.5}
+.wrap{max-width:1180px;margin:0 auto;padding-block:20px 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap}
+h1{font-family:var(--display);font-size:2rem;margin:0;text-wrap:balance}
+.sub{color:var(--muted);margin:4px 0 0;max-width:65ch}
+.logo{display:flex;align-items:center;gap:6px;font-size:.8rem;color:var(--muted);white-space:nowrap}
+.logo svg{width:44px;height:26px}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:12px;margin-top:14px;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.chip{font:inherit;font-size:.85rem;border:1px solid var(--line);background:var(--surface);color:var(--fg);padding:5px 12px;border-radius:999px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.chip:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+#q{font:inherit;font-size:.9rem;padding:6px 12px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--fg);flex:1 1 180px;min-width:0}
+.stats{display:flex;gap:20px;flex-wrap:wrap;margin:18px 0 6px;color:var(--muted);font-size:.9rem}
+.stats b{color:var(--fg);font-variant-numeric:tabular-nums}
+section{margin-top:30px}
+.sh{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;border-bottom:2px solid var(--c,var(--accent));padding-bottom:6px}
+.sh h2{font-family:var(--display);font-size:1.3rem;margin:0}
+.sh .when{color:var(--muted);font-size:.88rem}
+.note{color:var(--muted);font-size:.88rem;margin:8px 0 0;max-width:80ch}
+ol.seq{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:6px}
+.row{display:grid;grid-template-columns:86px 1fr auto;gap:12px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:9px 12px}
+.step{font-size:.75rem;letter-spacing:.04em;text-transform:uppercase;color:var(--c,var(--accent));font-weight:700}
+.t{min-width:0}
+.t a{color:var(--fg);font-weight:700;text-decoration:none}
+.t a:hover{text-decoration:underline}
+.t .d{color:var(--muted);font-size:.85rem}
+.tags{display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end}
+.tag{font-size:.72rem;padding:2px 8px;border-radius:4px;background:var(--accent-soft);color:var(--fg);white-space:nowrap}
+.tag.dup{background:var(--warn-soft);color:var(--warn);font-weight:700}
+.empty{color:var(--muted);font-style:italic;margin-top:10px}
+.gaps{background:var(--warn-soft);border-radius:8px;padding:14px 16px;margin-top:12px}
+.gaps ul{margin:6px 0 0;padding-left:20px}
+@media (max-width:640px){.row{grid-template-columns:1fr}.tags{justify-content:flex-start}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="wrap">
+<header>
+  <div>
+    <h1>ESOL Materials Catalogue</h1>
+    <p class="sub">Everything published so far, sorted by class and put in teaching order. E3 Reading follows your scheme of work weeks; Speaking &amp; Listening follows ESB Tasks 1–4.</p>
+  </div>
+  <div class="logo" aria-label="made by Atin">
+    <svg viewBox="0 0 44 26" aria-hidden="true"><text x="0" y="20" font-family="Fraunces,Georgia,serif" font-size="20" font-weight="600" fill="currentColor">A</text><rect x="14" y="12" width="6" height="2" fill="currentColor"/><path d="M25 8h14v14a2 2 0 0 1-2 2H27a2 2 0 0 1-2-2z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M25 8 Q32 1 39 4" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M25 13h14M25 18h14" stroke="currentColor" stroke-width=".8"/></svg>
+    made by Atin
+  </div>
+</header>
+
+<div class="bar" role="toolbar" aria-label="Filter">
+  <button class="chip" data-f="all" aria-pressed="true">All</button>
+  <button class="chip" data-f="E1">E1</button>
+  <button class="chip" data-f="E2">E2</button>
+  <button class="chip" data-f="E3">E3</button>
+  <button class="chip" data-f="cross">All levels</button>
+  <button class="chip" data-f="tidy">Needs tidying</button>
+  <input id="q" type="search" placeholder="Search titles…" aria-label="Search titles">
+</div>
+
+<div class="stats" id="stats"></div>
+<div id="out"></div>
+
+<section style="--c:var(--warn)">
+  <div class="sh"><h2>Gaps worth filling</h2></div>
+  <div class="gaps">
+    <ul>
+      <li><b>E3 Reading weeks 9–21</b> have almost nothing yet (present perfect, conditionals, passives, health letters, news, opinion texts).</li>
+      <li><b>Mock papers:</b> only Set O so far. Week 15 and week 21 need two more full timed papers.</li>
+      <li><b>Kahoots:</b> none published as pages. Your template is in the project, ready for one per class per week.</li>
+      <li><b>E1 Listening (Task 4):</b> only the ordering activity. No full listening practice yet.</li>
+      <li><b>E1 Writing</b> (from Feb): one activity so far.</li>
+    </ul>
+  </div>
+</section>
+</div>
+
+<script>
+const U="https://claude.ai/code/artifact/";
+const S=[
+ {id:"e3",lvl:"E3",c:"--e3",h:"E3 Reading",when:"Mon & Wed · until Feb half term",note:"Ordered by scheme of work week.",items:[
+  ["Wk 1","What Does It Test? Reading Exam Sort","b55dbd2b-28c7-45ce-a837-719d22c81727","Match question types to ESB criteria",["Exam skills","Sort"]],
+  ["Wk 1","Reading exam question words","https://claude.ai/artifact/Bic4jiCJ8Z9es7imxsESBg","Key words in exam questions",["Exam skills","Doc"]],
+  ["Wk 1","E3 Reading – ESB Exam Skills – Interactive Quiz","6e6eabe1-ea79-4142-88c9-2fc9ecdf3d3d","Re-use at week 8 as revision",["Exam skills","Quiz"]],
+  ["Wk 4","Text types – Entry 3","https://claude.ai/artifact/FmM4TKmwEKhGFrut3JozsS","Older text types sheet; pairs with the matching activity",["Purpose","Doc"]],
+  ["Wk 4","E3 Reading – Text Types – Matching Activity","515695f7-426c-4a7b-830b-d7eada0e8996","Reading for purpose (AC2.1)",["Purpose","Match"]],
+  ["Wk 4","E3 Reading – Student Services Email","68ffec78-bb47-4a15-94dc-4da3964031b1","Public services; also fits week 14",["Email","Practice"]],
+  ["Wk 5","E3 & L1 Reading – Freecycle – Comprehension Quiz","313badce-62cb-409c-86d0-ccb7cebb1080","Products and quantities",["Quiz","Stretch L1"]],
+  ["Wk 5","E3 Reading – Fruit Vocabulary and Alphabetical Order – Worksheet","https://claude.ai/artifact/8CH253CbrqFWaCt5k792oY","Alphabetical order practice; Word version with answers made 23 Oct",["Worksheet","Word"]],
+  ["Wk 6","E3 Reading – Hackney Leaflet, Email & Review – Practice Questions","f0fb19c1-044b-47ba-88f5-c8b53084345a","Reviews and comparisons",["Practice"]],
+  ["Wk 7","E3 Reading – Graffiti Warning – Mixed Tenses Online Lesson","8a1ccd84-2d36-4788-97f6-a23ab1db3055","Four tenses and error correction, projector slides",["Graffiti set","Online"]],
+  ["Wk 7","E3 Mixed Tenses – Graffiti Warning Poster – Reading, Grammar & Error Correction","9b24ea29-1a06-4b15-bcd9-5c1afb0b45c2","Start of the graffiti set: rules and notices",["Graffiti set","Projector"]],
+  ["Wk 7","E3 Mixed Tenses – Graffiti Notice – Multiple Choice Poster","9828638f-975c-410a-9f57-c5ce30010230","",["Graffiti set","MCQ"]],
+  ["Wk 7","E3 Graffiti Student Worksheet","64b23381-76fa-4f92-a08f-07b8578d7b42","Printable for the set",["Graffiti set","Worksheet"]],
+  ["Wk 8","E3 Mixed Tenses – Graffiti News – Error Hunt","68696631-8ae9-40af-a38c-4bdc067336ea","Consolidation of tenses",["Graffiti set","Errors"]],
+  ["Wk 8","E3 Reading – ESB Mock Exam – Set O","9e0b202d-3b85-4525-ae50-bfb15077c477","Practice assessment 1",["Mock exam"]],
+  ["Wk 17","E3 Reading Skills – Hackney Bugle","a70e7a7a-b2ac-4d55-847d-94f4a774744d","News article; template for more skills pages",["Skills page","News"]],
+ ]},
+ {id:"e1",lvl:"E1",c:"--e1",h:"E1 Speaking & Listening",when:"Tue · shared with Barry",note:"Ordered by ESB task. The 'Put It in Order' set also works for E2.",items:[
+  ["Task 1","E1 & E2 Speaking – Task 1 Talk About You – Put It in Order","57d3b167-219d-4ef9-b6ea-682bb28fbae8","",["E1/E2","Order"]],
+  ["Task 2","E1 & E2 Speaking – Task 2 Short Talk – Put It in Order","0aa4dfde-5861-4a82-b5e3-125f9fac2be8","",["E1/E2","Order"]],
+  ["Task 3","E1 & E2 Speaking – Task 3 Describe the Photo – Put It in Order","ec477864-1dd0-417a-833c-2ea21b4976e3","",["E1/E2","Order"]],
+  ["Task 3","E1 Speaking – Task 3 Describe the Picture – Interactive Worksheets","f1ebe017-dfa5-4232-af52-fe8e1e9516fb","",["Interactive"]],
+  ["Task 3","E1 Speaking – Task 3 In the Kitchen – Drag Match","a29e40ca-e93d-4c9e-b859-cc56401196fb","There is/are and prepositions, with kitchen picture",["Interactive"]],
+  ["Task 3","In the Kitchen – Questions and Answers","https://claude.ai/artifact/GMYquRYkiYa1MWi8ruEyNV","Paper version of the drag match, with picture",["Worksheet"]],
+  ["Task 3","E1 Speaking – Task 3 Describe the Picture – Pair Practice","36c96d88-2435-459a-a80d-0b58ec34d15c","",["Pairs"]],
+  ["Task 3","Describe the Photo: E1 and E2 Model Scripts","https://claude.ai/artifact/TrbLrvGVwBKS15BUcBPMuG","",["E1/E2","Teacher"]],
+  ["Task 4","E1 & E2 Listening – Task 4 – Put It in Order","8e78257b-592c-4fbb-8696-cff5a16db138","",["E1/E2","Listening"]],
+  ["Task 4","Task 4 Recording Transcripts (Teacher Copy)","https://claude.ai/artifact/5F6TnRRT68gHkCF35qTKBA","",["E1/E2","Teacher"]],
+  ["Any","Entry 1 Quiet Tasks","https://claude.ai/artifact/AYFgvsDEM2EapV5tVhVBT9","Fillers for early finishers",["Filler"]],
+  ["Feb on","E1 Writing – Describe the Picture – Practice with Feedback","f6e4a740-94fb-471e-8b0b-37ef2b561b9d","For the E1 Writing class after half term",["Writing"]],
+ ]},
+ {id:"e2",lvl:"E2",c:"--e2",h:"E2 Speaking & Listening",when:"Thu · shared with Joey · until Feb",note:"Ordered by ESB task. Also use the E1/E2 'Put It in Order' set above.",items:[
+  ["Tasks 1–2","E2 Past Simple – Speaking Tasks 1 & 2 – Projector Lesson","7e6ec89b-1780-4149-99e6-69008bc730fe","Lesson 1",["Projector"]],
+  ["Tasks 1–2","E2 Past Simple – Speaking Tasks 1 & 2 – Interactive Practice","af0bf5fd-4813-431b-9f5f-f6a4bdf854d0","Follows lesson 1",["Interactive"]],
+  ["Tasks 1–2","E2 Past Tense Speaking Practice - Worksheets","93ac8201-cc55-48a0-850e-acee7d81f91c","Printable",["Worksheet"]],
+  ["Tasks 1–2","E2 Past Simple – Speaking Tasks 1 & 2 – Projector Lesson 2","ed0822cf-e66c-4549-8bde-ccf0dd8ab24a","Lesson 2",["Projector"]],
+  ["Tasks 1–2","E2 Past Simple – Speaking Tasks 1 & 2 – Interactive Practice 2","d80053a1-ff58-45da-91a5-bd8a1e584d5a","Follows lesson 2",["Interactive"]],
+  ["Task 3","E2 Comparatives – Speaking Task 3 Two Pictures – Projector Lesson","c8da04ae-92b5-4f12-ae08-755f5d70fbed","",["Projector"]],
+  ["All tasks","E2 Speaking and Listening Exam Prep - Lesson Plan and Answers - Version 1","https://claude.ai/artifact/G4V3W3167fXuQu27g5ETKW","Goes with the handout pack below",["Teacher"]],
+  ["All tasks","E2 Speaking and Listening Exam Prep - Student Handouts - Version 1","34715520-c208-4cc1-bcc6-0d0efb1ce197","Handout pack",["Handouts"]],
+ ]},
+ {id:"cross",lvl:"cross",c:"--all",h:"All levels",when:"Use with any class",note:"",items:[
+  ["Exam","E1–L2 Speaking & Listening – ESB Exam Tasks 1–4 – Interactive Quiz","de2e494c-5bd2-49dc-90c7-8c9c298359fd","Run near the end of a S&L block",["S&L","Quiz"]],
+  ["Task 2","ESOL Speaking – Task 2 Talk Builder (E1–L2)","2aa8b23f-acf8-4446-a6df-0bc0afe8526b","",["S&L","Builder"]],
+  ["Topic","ESOL Citizenship – Life in the UK, London & Hackney – Quiz","c2894909-70c6-4ef0-9b18-21971dc61878","",["Quiz"]],
+  ["Tool","ESOL All Levels – Classroom Tool – A–D / 1–4 Vote Card","f5767e59-829c-4576-902a-e8933343cefd","",["Tool"]],
+  ["Planning","ESOL Lesson Ideas","787d2783-3fa8-4538-a412-eca2b00cc008","",["Planning"]],
+  ["Planning","ESOL Exam Preparation Lessons: E3 Reading, E2 and E1 Speaking & Listening","https://claude.ai/artifact/LT7keHCqHRhruziT1kkAUC","The original lesson series",["Planning"]],
+  ["Planning","Smart Targets","https://claude.ai/artifact/7AWMTsbT5LZCLTDc6mFSiC","",["Planning"]],
+ ]},
+ {id:"place",lvl:"cross",c:"--all",h:"Placement tests",when:"Start of course",note:"All placement results show a level from Pre-Entry to Level 2.",items:[
+  ["Reading","Reading Level Check (ESB style)","","Online, click and drag answers; results to the 'Reading assessment ESB Style' Form. Link not saved: send it and I'll add it",["Placement","GitHub"]],
+  ["Writing","Writing Level Check","","Typed test; results to the 'Writing assessment ESB Style' Form. Link not saved: send it and I'll add it",["Placement","GitHub"]],
+  ["Writing","ESOL Writing – Placement Test – AI Level Marker","17dc5842-fd4c-4075-8746-23f46454431c","Teacher tool: paste Writing Check rows, get levels",["Placement","Teacher"]],
+  ["Speaking","Listening & Speaking Placement Interview","","Run by voice in the chat, about 5 minutes, E1 to Level 2+. Feeds Smart Targets",["Placement","Voice"]],
+  ["ICT","ICT Skills Test","https://atinwix.github.io/ict-test","Computer skills check; results to a Microsoft Form",["Placement","GitHub"]],
+ ]},
+ {id:"train",lvl:"train",c:"--accent",h:"Teacher training: Claude for ESOL Prep",when:"For colleagues",note:"",items:[
+  ["1 Plan","For Me: Intro to Claude for ESOL Prep – 60-Minute Session Plan","f9f55093-7cf1-4804-92ae-287ae79b38dd","",["Trainer"]],
+  ["2 Slides","Claude for ESOL Prep – Intro Session Slides (Trainer)","d628bccd-4323-482a-94a3-1a200927ae60","",["Trainer"]],
+  ["3 Handout","Claude for ESOL Prep – Prompt Bank Handout (Teachers)","b5e4a6af-0ce4-49a3-8263-fe6725578442","",["Handout"]],
+  ["4 Learners","How to Use Claude: Easy Steps","https://claude.ai/artifact/EBcMWZ1Vgktp5RztRp8Puf","",["Handout"]],
+  ["5 Setup","For Training Teachers: Claude for ESOL Prep – Project Instructions","798ac298-20e5-40a0-b7c8-5f91ffa71d9c","",["Handout"]],
+ ]},
+ {id:"games",lvl:"cross",c:"--all",h:"Games",when:"Classroom games",note:"",items:[
+  ["Grammar","Grammar Blast","9a776749-2127-4113-a207-7b78584f879c","Multi-level",["Game"]],
+  ["Grammar","Verb catcher","531caa7e-a34f-4ef4-8730-d04f80299896","Multi-level",["Game"]],
+  ["WIP","Block Drop","7cfbc5ee-1256-401f-a6d0-29cb904f51c2","Tetris clone. Plan: when you die, pick an ESOL question level; easy clears 3 lines, hard clears all",["Work in progress"]],
+ ]},
+];
+const TIDY=["Duplicate?","Rename","Check"];
+let f="all",q="";
+function render(){
+  const out=document.getElementById("out");out.innerHTML="";let shown=0,total=0,tidy=0;
+  S.forEach(s=>{
+    const items=s.items.filter(i=>{
+      total++; if(i[4].some(t=>TIDY.includes(t)))tidy++;
+      const lvlOk=f==="all"||(f==="tidy"?i[4].some(t=>TIDY.includes(t)):(s.lvl===f||(f!=="cross"&&i[4].includes("E1/E2")&&(f==="E2"))));
+      return lvlOk&&(!q||i[1].toLowerCase().includes(q));
+    });
+    if(!items.length)return; shown+=items.length;
+    const sec=document.createElement("section");sec.style.setProperty("--c",`var(${s.c})`);
+    sec.innerHTML=`<div class="sh"><h2>${s.h}</h2><span class="when">${s.when}</span></div>${s.note?`<p class="note">${s.note}</p>`:""}`;
+    const ol=document.createElement("ol");ol.className="seq";
+    items.forEach(i=>{const li=document.createElement("li");li.className="row";
+      li.innerHTML=`<span class="step">${i[0]}</span><div class="t">${i[2]?`<a href="${i[2].startsWith('http')?i[2]:U+i[2]}" target="_blank" rel="noopener">${i[1]}</a>`:`<b>${i[1]}</b>`}${i[3]?`<div class="d">${i[3]}</div>`:""}</div><div class="tags">${i[4].map(t=>`<span class="tag${TIDY.includes(t)?" dup":""}">${t}</span>`).join("")}</div>`;
+      ol.appendChild(li)});
+    sec.appendChild(ol);out.appendChild(sec);
+  });
+  if(!shown)out.innerHTML='<p class="empty">Nothing matches. Clear the search or pick another filter.</p>';
+  const all=S.reduce((n,s)=>n+s.items.length,0);
+  const tid=S.reduce((n,s)=>n+s.items.filter(i=>i[4].some(t=>TIDY.includes(t))).length,0);
+  document.getElementById("stats").innerHTML=`<span><b>${all}</b> pages catalogued</span><span><b>${S[0].items.length}</b> E3 Reading</span><span><b>${S[1].items.length}</b> E1</span><span><b>${S[2].items.length}</b> E2</span><span><b>${tid}</b> need tidying</span>`;
+}
+document.querySelectorAll(".chip").forEach(b=>b.addEventListener("click",()=>{
+  document.querySelectorAll(".chip").forEach(x=>x.setAttribute("aria-pressed","false"));
+  b.setAttribute("aria-pressed","true");f=b.dataset.f;render();}));
+document.getElementById("q").addEventListener("input",e=>{q=e.target.value.trim().toLowerCase();render();});
+render();
+</script>
+
+</body></html>

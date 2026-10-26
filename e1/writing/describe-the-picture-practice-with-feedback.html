@@ -1,0 +1,434 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>E1 Writing – Describe the Picture – Practice with Feedback</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Lexend:wght@500;700&display=swap">
+<style>
+/* Layout: one picture per page; picture, word bank, writing box, then Claude's feedback underneath */
+:root{
+  --bg:#f3f5f8; --card:#ffffff; --fg:#17202e; --muted:#5b6678; --line:#d7dde6;
+  --ink:#1f4fa3; --ink-soft:#e5ecf9; --good:#1d7a46; --good-bg:#e3f4ea; --bad:#b3261e; --bad-bg:#fbe7e5;
+  --warm:#9a5b00; --warm-bg:#fff3dc;
+  --display:"Lexend", "Atkinson Hyperlegible", Arial, sans-serif;
+  --body:"Atkinson Hyperlegible", Verdana, Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#11161f; --card:#1a212d; --fg:#e8edf5; --muted:#9aa6b8; --line:#2e3848;
+  --ink:#8db2ff; --ink-soft:#22304a; --good:#6fd39b; --good-bg:#16362a; --bad:#ff8f86; --bad-bg:#3d1d1b;
+  --warm:#ffc46b; --warm-bg:#3a2c12; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#11161f; --card:#1a212d; --fg:#e8edf5; --muted:#9aa6b8; --line:#2e3848;
+  --ink:#8db2ff; --ink-soft:#22304a; --good:#6fd39b; --good-bg:#16362a; --bad:#ff8f86; --bad-bg:#3d1d1b;
+  --warm:#ffc46b; --warm-bg:#3a2c12; color-scheme:dark}
+html,body{height:100%}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:18px;line-height:1.5}
+.wrap{max-width:760px;margin:0 auto;padding-inline:16px;padding-block:20px 40px;display:flex;flex-direction:column;gap:16px;min-height:100%;box-sizing:border-box}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{font-family:var(--display);font-weight:700;font-size:1em;color:var(--ink)}
+.meta{font-size:.9em;color:var(--muted);font-variant-numeric:tabular-nums}
+.bar{height:6px;background:var(--line);border-radius:3px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--ink);width:0;transition:width .25s}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px 22px;display:flex;flex-direction:column;gap:18px}
+.sec{font-size:.8em;text-transform:uppercase;letter-spacing:.08em;color:var(--ink);font-weight:700;position:relative}
+h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance;line-height:1.25}
+h1{font-size:2em} h2{font-size:1.45em;font-weight:600} h3{font-size:1.05em;font-weight:600}
+p{margin:0}
+.pic{border-radius:10px;overflow:hidden;border:1px solid var(--line);line-height:0}
+.pic svg{width:100%;height:auto;display:block}
+.prompts{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:2px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:inherit;font-size:1em;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--ink-soft);color:var(--fg);cursor:pointer}
+.chip:hover{border-color:var(--ink)}
+textarea{font:inherit;font-size:1.2em;line-height:1.6;min-height:150px;padding:12px 14px;border:2px solid var(--line);border-radius:10px;background:var(--card);color:var(--fg);resize:vertical;width:100%;box-sizing:border-box}
+textarea:focus,.field input:focus{outline:3px solid var(--ink);outline-offset:1px;border-color:var(--ink)}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.count{color:var(--muted);font-size:.9em}
+.btn{font:inherit;font-family:var(--display);font-weight:600;font-size:1em;padding:12px 20px;border-radius:10px;border:2px solid var(--ink);background:var(--card);color:var(--ink);cursor:pointer}
+.btn.primary{background:var(--ink);color:var(--card)}
+.btn[disabled]{opacity:.35;cursor:default}
+.btn:focus-visible,.chip:focus-visible,summary:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.nav{display:flex;gap:10px;justify-content:space-between;flex-wrap:wrap}
+.fb{display:flex;flex-direction:column;gap:12px;border:1px solid var(--line);border-radius:12px;padding:16px;background:var(--bg)}
+.stars{font-size:1.8em;letter-spacing:4px;color:#e0a100;line-height:1}
+.stars span{color:var(--line)}
+.box{border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:6px}
+.box.good{background:var(--good-bg);border:1px solid var(--good)}
+.box.fix{background:var(--bad-bg);border:1px solid var(--bad)}
+.box.idea{background:var(--warm-bg);border:1px solid var(--warm)}
+.box.model{background:var(--ink-soft);border:1px solid var(--ink)}
+.box ul{margin:0;padding-left:1.2em}
+.wrong{text-decoration:line-through;color:var(--bad)}
+.right{font-weight:700;color:var(--good)}
+.thinking{color:var(--muted);font-style:italic}
+details summary{cursor:pointer;font-family:var(--display);font-weight:600;color:var(--ink)}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-family:var(--display);font-weight:600}
+.field input{font:inherit;font-size:1.3em;padding:12px 14px;border:2px solid var(--line);border-radius:10px;background:var(--card);color:var(--fg)}
+.err{color:var(--bad);font-size:.95em}
+.hint{color:var(--muted);font-size:.9em}
+.thumbs{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;position:relative}
+.thumbs button{font:inherit;text-align:left;padding:8px;border:1px solid var(--line);border-radius:10px;background:var(--ink-soft);color:var(--fg);cursor:pointer;display:flex;flex-direction:column;gap:6px}
+.thumbs button svg{width:100%;height:auto;border-radius:6px;display:block}
+.thumbs b{font-family:var(--display);color:var(--ink)}
+.thumbs span{font-size:.85em;color:var(--muted)}
+.splash{position:relative;overflow:hidden;text-align:center;align-items:center;padding-block:40px;background:var(--ink-soft);border-color:var(--ink)}
+.splash .who{font-family:var(--display);font-weight:700;font-size:clamp(2em,8vw,3.6em);line-height:1.1;word-break:break-word;position:relative}
+.splash .pct{font-family:var(--display);font-weight:700;font-size:clamp(5em,26vw,9.5em);line-height:1;color:var(--ink);font-variant-numeric:tabular-nums;position:relative}
+.splash .msg{font-family:var(--display);font-size:1.4em;font-weight:600;position:relative}
+.splash .sub{color:var(--muted);position:relative}
+.splash .thumbs{width:100%;text-align:left}
+.conf{position:absolute;inset:0;pointer-events:none}
+.conf i{position:absolute;top:-20px;width:10px;height:16px;border-radius:2px;opacity:.9;animation:fall 3.2s ease-in forwards}
+@keyframes fall{to{transform:translateY(900px) rotate(540deg);opacity:0}}
+@media (max-width:480px){h1{font-size:1.6em}h2{font-size:1.25em}.card{padding:20px 16px}}
+@media (prefers-reduced-motion:reduce){.bar i{transition:none}.conf{display:none}}
+
+html,body{margin:0}
+/* ---- 16:9 classroom screens: full width, two columns per question, text scales with the screen ---- */
+.topr{display:flex;align-items:center;gap:12px}
+.fs{font:inherit;font-family:var(--display);font-weight:600;font-size:.8em;padding:6px 12px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.qL,.qR{display:contents}
+@media (min-width:1000px){
+  body{font-size:clamp(18px, 0.9vw + 8px, 30px)}
+  .wrap{max-width:none;padding-inline:clamp(16px,2vw,40px);padding-block:12px 16px;gap:10px}
+  .card{padding:clamp(18px,1.8vw,36px)}
+  .card:has(> .qL){display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:clamp(24px,3vw,64px);align-items:start}
+  .qL,.qR{display:flex;flex-direction:column;gap:16px;min-width:0}
+  .qL .reading{max-height:58vh;overflow:auto}
+  .card > .reading.cols{display:block;column-count:2;column-gap:clamp(24px,3vw,64px)}
+  .card > .reading.cols > *{break-inside:avoid;margin:0 0 .7em}
+  .wrap > .hint{display:none}
+  .card textarea{min-height:7em}
+}
+</style>
+
+<div class="wrap">
+  <div class="top">
+    <div class="brand">Entry 1 Writing · Describe the picture</div>
+    <div class="topr"><div class="meta" id="meta"></div><button type="button" class="fs" id="fs" hidden>⛶ Full screen</button></div>
+  </div>
+  <div class="bar"><i id="bar"></i></div>
+  <main class="card" id="card" aria-live="polite"></main>
+  <div class="nav">
+    <button class="btn" id="prev" type="button">← Back</button>
+    <button class="btn primary" id="next" type="button">Next →</button>
+  </div>
+</div>
+
+<script>
+/* ---------- drawing helpers (simple flat illustrations) ---------- */
+function person(o){
+  const s=(o.h||110)/110, x=o.x, y=o.y, skin=o.skin||"#c68642", shirt=o.shirt||"#3a6fd8", legs=o.legs||"#2d3a5a", hair=o.hair||"#222";
+  const sh=y-82*s, L=[];
+  // legs
+  L.push(`<line x1="${x-6*s}" y1="${y-50*s}" x2="${x-8*s}" y2="${y}" stroke="${legs}" stroke-width="${7*s}" stroke-linecap="round"/>`);
+  L.push(`<line x1="${x+6*s}" y1="${y-50*s}" x2="${x+8*s}" y2="${y}" stroke="${legs}" stroke-width="${7*s}" stroke-linecap="round"/>`);
+  if(o.skirt) L.push(`<polygon points="${x-12*s},${y-54*s} ${x+12*s},${y-54*s} ${x+20*s},${y-28*s} ${x-20*s},${y-28*s}" fill="${o.skirt}"/>`);
+  // long hair behind
+  if(o.longHair) L.push(`<rect x="${x-13*s}" y="${y-110*s}" width="${26*s}" height="${32*s}" rx="${10*s}" fill="${hair}"/>`);
+  // body
+  L.push(`<rect x="${x-12*s}" y="${y-88*s}" width="${24*s}" height="${40*s}" rx="${8*s}" fill="${shirt}"/>`);
+  // arms
+  const arm=(x1,x2,y2)=>`<line x1="${x1}" y1="${sh}" x2="${x2}" y2="${y2}" stroke="${shirt}" stroke-width="${7*s}" stroke-linecap="round"/><circle cx="${x2}" cy="${y2}" r="${4*s}" fill="${skin}"/>`;
+  const la=o.left||"down", ra=o.right||"down";
+  L.push(la==="up"?arm(x-10*s,x-20*s,y-112*s):la==="forward"?arm(x-10*s,x-30*s,y-70*s):arm(x-10*s,x-17*s,y-54*s));
+  L.push(ra==="up"?arm(x+10*s,x+22*s,y-112*s):ra==="forward"?arm(x+10*s,x+30*s,y-70*s):arm(x+10*s,x+17*s,y-54*s));
+  // head
+  L.push(`<rect x="${x-3*s}" y="${y-94*s}" width="${6*s}" height="${8*s}" fill="${skin}"/>`);
+  L.push(`<circle cx="${x}" cy="${y-102*s}" r="${11*s}" fill="${skin}"/>`);
+  L.push(`<path d="M${x-11*s},${y-102*s} a${11*s},${11*s} 0 0 1 ${22*s},0 q${-11*s},${-5*s} ${-22*s},0z" fill="${hair}"/>`);
+  L.push(`<circle cx="${x-4*s}" cy="${y-102*s}" r="${1.4*s}" fill="#222"/><circle cx="${x+4*s}" cy="${y-102*s}" r="${1.4*s}" fill="#222"/>`);
+  L.push(`<path d="M${x-4*s},${y-97*s} q${4*s},${3*s} ${8*s},0" stroke="#222" stroke-width="${1.2*s}" fill="none"/>`);
+  return L.join("");
+}
+function seated(x,y,shirt,skin,hair,longHair){ // upper body only, for people behind a desk
+  return `${longHair?`<rect x="${x-13}" y="${y-58}" width="26" height="30" rx="10" fill="${hair}"/>`:""}
+  <rect x="${x-12}" y="${y-36}" width="24" height="36" rx="8" fill="${shirt}"/>
+  <circle cx="${x}" cy="${y-48}" r="11" fill="${skin}"/>
+  <path d="M${x-11},${y-48} a11,11 0 0 1 22,0 q-11,-5 -22,0z" fill="${hair}"/>
+  <circle cx="${x-4}" cy="${y-48}" r="1.4" fill="#222"/><circle cx="${x+4}" cy="${y-48}" r="1.4" fill="#222"/>`;
+}
+const svg=(inner,label)=>`<svg viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${label}">${inner}</svg>`;
+
+/* ---------- the four scenes ---------- */
+const SCENES=[
+ {id:"kitchen", title:"In the kitchen",
+  facts:"A kitchen. A woman with long black hair, a red top and a blue skirt is standing at the cooker and cooking. There is a pan on the cooker with steam. There is a brown table with a bowl of three green apples on it. A black cat is sitting on a chair. There is a window and it is sunny outside. There is a clock on the wall. There is a big white fridge.",
+  words:["kitchen","woman","cooking","cooker","pan","table","apples","green","cat","chair","window","sunny","clock","fridge","There is","There are","She is"],
+  model:"This is a kitchen. A woman is cooking. She has a red top. There are three green apples on the table. A black cat is on the chair. It is sunny.",
+  draw:()=>svg(`
+   <rect width="400" height="200" fill="#fbeec4"/><rect y="200" width="400" height="60" fill="#c89b6d"/>
+   <rect x="230" y="35" width="95" height="75" fill="#9fd4f5" stroke="#fff" stroke-width="5"/><circle cx="300" cy="58" r="12" fill="#ffd23f"/><line x1="277" y1="35" x2="277" y2="110" stroke="#fff" stroke-width="4"/>
+   <circle cx="150" cy="55" r="18" fill="#fff" stroke="#555" stroke-width="3"/><line x1="150" y1="55" x2="150" y2="44" stroke="#333" stroke-width="2.5"/><line x1="150" y1="55" x2="158" y2="55" stroke="#333" stroke-width="2.5"/>
+   <rect x="8" y="95" width="58" height="140" rx="6" fill="#f4f6f8" stroke="#bfc6cf" stroke-width="2"/><line x1="8" y1="140" x2="66" y2="140" stroke="#bfc6cf" stroke-width="2"/><rect x="56" y="110" width="4" height="20" fill="#9aa3ad"/>
+   <rect x="130" y="160" width="75" height="75" fill="#8d96a0"/><rect x="134" y="168" width="67" height="40" fill="#5f6770"/><circle cx="150" cy="222" r="5" fill="#333"/><circle cx="185" cy="222" r="5" fill="#333"/>
+   <rect x="148" y="146" width="40" height="14" rx="3" fill="#333"/><line x1="188" y1="152" x2="205" y2="148" stroke="#333" stroke-width="4"/>
+   <path d="M160,140 q-5,-8 0,-16 M170,140 q5,-8 0,-16" stroke="#aaa" stroke-width="2.5" fill="none"/>
+   ${person({x:100,y:238,h:118,shirt:"#d63b3b",skirt:"#2f5fb3",legs:"#c68642",hair:"#1b1b1b",longHair:true,right:"forward"})}
+   <rect x="232" y="176" width="110" height="10" fill="#7a4b2a"/><rect x="240" y="186" width="8" height="50" fill="#7a4b2a"/><rect x="326" y="186" width="8" height="50" fill="#7a4b2a"/>
+   <path d="M266,176 q22,18 44,0z" fill="#e8e1d1"/><circle cx="278" cy="168" r="8" fill="#6abf3a"/><circle cx="292" cy="166" r="8" fill="#5aad2e"/><circle cx="286" cy="158" r="8" fill="#6abf3a"/>
+   <rect x="352" y="160" width="6" height="76" fill="#7a4b2a"/><rect x="352" y="196" width="40" height="7" fill="#7a4b2a"/><rect x="386" y="196" width="6" height="40" fill="#7a4b2a"/>
+   <ellipse cx="372" cy="186" rx="13" ry="11" fill="#222"/><circle cx="372" cy="170" r="8" fill="#222"/><polygon points="365,165 367,156 371,163" fill="#222"/><polygon points="379,165 377,156 373,163" fill="#222"/><circle cx="369" cy="170" r="1.5" fill="#ffd23f"/><circle cx="375" cy="170" r="1.5" fill="#ffd23f"/><path d="M384,192 q14,-4 8,-18" stroke="#222" stroke-width="3" fill="none"/>
+  `,"A woman cooking in a kitchen, apples on a table, a black cat on a chair")},
+
+ {id:"park", title:"In the park",
+  facts:"A park on a sunny day. Blue sky and a yellow sun. There is a big tree with a small bird in it. There is a brown bench. A man in a blue jacket and black trousers is walking a brown dog on a lead. Two children are playing football: a girl in a yellow top and a boy in an orange top. There is a white and black football.",
+  words:["park","sunny","tree","bird","bench","man","walking","dog","children","playing","football","boy","girl","grass","There is","There are","They are"],
+  model:"This is a park. It is sunny. A man is walking his dog. Two children are playing football. There is a tree and a bench. A bird is in the tree.",
+  draw:()=>svg(`
+   <rect width="400" height="160" fill="#a8dcf7"/><rect y="150" width="400" height="110" fill="#7cc35a"/>
+   <circle cx="355" cy="40" r="20" fill="#ffd23f"/>
+   <rect x="40" y="95" width="16" height="105" fill="#7a4b2a"/><circle cx="48" cy="85" r="34" fill="#3f9a3a"/><circle cx="22" cy="105" r="22" fill="#3f9a3a"/><circle cx="74" cy="105" r="22" fill="#3f9a3a"/>
+   <ellipse cx="82" cy="72" rx="8" ry="6" fill="#d9483b"/><circle cx="89" cy="68" r="4" fill="#d9483b"/><polygon points="93,68 98,69 93,70" fill="#f5a623"/>
+   <rect x="95" y="185" width="70" height="8" fill="#8b5a2b"/><rect x="95" y="172" width="70" height="6" fill="#8b5a2b"/><rect x="100" y="193" width="6" height="22" fill="#8b5a2b"/><rect x="154" y="193" width="6" height="22" fill="#8b5a2b"/>
+   ${person({x:205,y:245,h:118,shirt:"#2b59c3",legs:"#222",hair:"#5a3a1a",right:"forward",skin:"#f1c27d"})}
+   <path d="M240,173 q20,30 32,48" stroke="#333" stroke-width="2" fill="none"/>
+   <ellipse cx="282" cy="228" rx="22" ry="11" fill="#8b5a2b"/><circle cx="270" cy="216" r="9" fill="#8b5a2b"/><ellipse cx="263" cy="212" rx="4" ry="7" fill="#6b3f1a"/><circle cx="266" cy="214" r="1.6" fill="#222"/>
+   <line x1="268" y1="236" x2="266" y2="248" stroke="#8b5a2b" stroke-width="5"/><line x1="296" y1="236" x2="298" y2="248" stroke="#8b5a2b" stroke-width="5"/><path d="M303,224 q12,-6 8,-16" stroke="#8b5a2b" stroke-width="4" fill="none"/>
+   ${person({x:318,y:232,h:78,shirt:"#f5c400",skirt:"#7a3fb0",legs:"#8d5524",hair:"#1b1b1b",longHair:true,skin:"#8d5524",left:"up"})}
+   ${person({x:378,y:232,h:78,shirt:"#f07a22",legs:"#2d3a5a",hair:"#1b1b1b",skin:"#e0ac69",left:"forward"})}
+   <circle cx="348" cy="228" r="7" fill="#fff" stroke="#222" stroke-width="1.5"/><circle cx="348" cy="228" r="2.5" fill="#222"/>
+  `,"A park: a man walking a dog, two children playing football, a tree and a bench")},
+
+ {id:"busstop", title:"At the bus stop",
+  facts:"A rainy day at a bus stop. Grey sky and rain. A man in a brown coat is holding a black umbrella. A woman in a green coat is holding a shopping bag. There is a bus stop sign. A red bus is coming. There is a puddle on the ground.",
+  words:["rain","raining","bus stop","man","umbrella","black","woman","coat","green","bag","bus","red","waiting","puddle","He has","She has","There is"],
+  model:"It is raining. A man has a black umbrella. A woman has a bag. She is wearing a green coat. The red bus is coming. They are at the bus stop.",
+  draw:()=>svg(`
+   <rect width="400" height="200" fill="#b7c0c9"/><rect y="200" width="400" height="60" fill="#8f979e"/><rect y="195" width="400" height="8" fill="#6f777e"/>
+   <ellipse cx="80" cy="35" rx="50" ry="18" fill="#9aa4ad"/><ellipse cx="200" cy="25" rx="60" ry="20" fill="#9aa4ad"/><ellipse cx="330" cy="38" rx="55" ry="18" fill="#9aa4ad"/>
+   ${Array.from({length:28},(_,n)=>`<line x1="${(n*53)%400}" y1="${50+(n*37)%140}" x2="${(n*53)%400-6}" y2="${64+(n*37)%140}" stroke="#5d7fa3" stroke-width="2"/>`).join("")}
+   <rect x="28" y="70" width="5" height="160" fill="#555"/><rect x="12" y="62" width="38" height="28" rx="4" fill="#d63b3b"/><text x="31" y="81" font-family="Arial" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">BUS</text>
+   <rect x="225" y="105" width="170" height="105" rx="10" fill="#d72a2a"/><rect x="235" y="117" width="34" height="34" rx="3" fill="#cfe8f5"/><rect x="275" y="117" width="34" height="34" rx="3" fill="#cfe8f5"/><rect x="315" y="117" width="34" height="34" rx="3" fill="#cfe8f5"/><rect x="355" y="117" width="32" height="34" rx="3" fill="#cfe8f5"/>
+   <rect x="231" y="160" width="26" height="45" fill="#b31f1f"/><circle cx="265" cy="212" r="13" fill="#222"/><circle cx="355" cy="212" r="13" fill="#222"/><circle cx="265" cy="212" r="5" fill="#888"/><circle cx="355" cy="212" r="5" fill="#888"/>
+   <path d="M62,98 q35,-34 70,0z" fill="#1b1b1b"/><line x1="97" y1="98" x2="97" y2="132" stroke="#1b1b1b" stroke-width="3"/>
+   ${person({x:90,y:238,h:112,shirt:"#8b5a2b",legs:"#2d3a5a",hair:"#999",right:"up",skin:"#f1c27d"})}
+   ${person({x:160,y:238,h:108,shirt:"#2e8b57",legs:"#333",hair:"#1b1b1b",longHair:true,skin:"#c68642"})}
+   <rect x="168" y="182" width="20" height="22" rx="3" fill="#f4e04d" stroke="#c9b200" stroke-width="2"/><path d="M172,182 q6,-10 12,0" stroke="#c9b200" stroke-width="2" fill="none"/>
+   <ellipse cx="135" cy="250" rx="45" ry="7" fill="#6d8fb3" opacity=".8"/>
+  `,"A rainy bus stop: a man with an umbrella, a woman with a bag, a red bus")},
+
+ {id:"classroom", title:"In the classroom",
+  facts:"A classroom. There is a whiteboard with the letters ABC on it. A teacher with long brown hair and a purple top is standing and pointing at the board. Two students are sitting at their desks: a man in a green top and a woman in an orange top. There are books on the desks. There is a clock on the wall and a plant in a pot.",
+  words:["classroom","teacher","standing","pointing","board","students","sitting","desk","books","clock","plant","wall","She is","They are","There is","There are"],
+  model:"This is a classroom. The teacher is standing. She is pointing at the board. Two students are sitting at their desks. They have books. There is a clock on the wall.",
+  draw:()=>svg(`
+   <rect width="400" height="215" fill="#e7eef4"/><rect y="215" width="400" height="45" fill="#b88a5a"/>
+   <rect x="30" y="35" width="170" height="90" rx="4" fill="#fff" stroke="#8e99a4" stroke-width="5"/><text x="115" y="95" font-family="Arial" font-size="40" font-weight="bold" fill="#2b59c3" text-anchor="middle">ABC</text><rect x="30" y="125" width="170" height="6" fill="#8e99a4"/>
+   <circle cx="320" cy="55" r="18" fill="#fff" stroke="#555" stroke-width="3"/><line x1="320" y1="55" x2="320" y2="43" stroke="#333" stroke-width="2.5"/><line x1="320" y1="55" x2="329" y2="58" stroke="#333" stroke-width="2.5"/>
+   <path d="M8,215 l6,-30 h28 l6,30z" fill="#c0603a"/><circle cx="28" cy="172" r="14" fill="#3f9a3a"/><circle cx="16" cy="180" r="10" fill="#3f9a3a"/><circle cx="40" cy="180" r="10" fill="#3f9a3a"/>
+   ${person({x:225,y:238,h:118,shirt:"#7b3fb0",legs:"#2d3a5a",hair:"#6b3f1a",longHair:true,left:"up",skin:"#f1c27d"})}
+   ${seated(300,188,"#2e8b57","#8d5524","#1b1b1b",false)}
+   ${seated(365,188,"#f07a22","#e0ac69","#1b1b1b",true)}
+   <rect x="270" y="186" width="125" height="10" fill="#8b5a2b"/><rect x="276" y="196" width="7" height="42" fill="#8b5a2b"/><rect x="384" y="196" width="7" height="42" fill="#8b5a2b"/>
+   <rect x="288" y="178" width="24" height="8" fill="#2b59c3"/><rect x="352" y="178" width="24" height="8" fill="#d63b3b"/><rect x="355" y="172" width="20" height="6" fill="#f5c400"/>
+  `,"A classroom: a teacher pointing at the board, two students at desks with books")}
+];
+
+/* ---------- state ---------- */
+let i=-1, student="";
+const texts=SCENES.map(()=> ""), best=SCENES.map(()=>null), fbHtml=SCENES.map(()=> "");
+let sample=null, aiChecked=false, ctl=null;
+(async()=>{ try{ sample = window.claude ? await window.claude.use("sample") : null }catch(e){ sample=null } aiChecked=true; if(i>=0&&i<SCENES.length&&!fbHtml[i]) render(); })();
+
+const card=document.getElementById("card"), meta=document.getElementById("meta"), bar=document.getElementById("bar"),
+      prev=document.getElementById("prev"), next=document.getElementById("next");
+function esc(s){return String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
+const words=t=>(t.trim().match(/[A-Za-z'’]+/g)||[]).length;
+const starsHtml=n=>"★".repeat(n)+`<span>${"★".repeat(5-n)}</span>`;
+function totals(){const d=best.filter(v=>v!==null);return [d.reduce((a,b)=>a+b,0),d.length]}
+
+function render(){ draw(); fit(); }
+function draw(){
+  const [pts,done]=totals();
+  meta.textContent = i<0 ? `${SCENES.length} pictures` : `${student}${done?` · ★ ${pts} / ${done*5}`:""}`;
+  bar.style.width=(i<0?0:Math.min(i+1,SCENES.length)/SCENES.length*100)+"%";
+  prev.disabled=i<0;
+  next.textContent = i<0?"Start →": i>=SCENES.length?"Start again": i===SCENES.length-1?"Finish →":"Next picture →";
+  card.classList.toggle("splash", i>=SCENES.length);
+
+  if(i<0){
+    card.innerHTML=`<div class="sec">Writing practice</div><h1>Describe the picture</h1>
+     <div class="field"><label for="sname">Write your name</label>
+       <input id="sname" type="text" autocomplete="off" maxlength="40" value="${esc(student)}" placeholder="Your name"></div>
+     <p class="err" id="err" hidden>Please write your name first.</p>
+     <p>Look at the picture. Write 4 or 5 sentences. Then press <b>Check my writing</b>.</p>
+     <div class="thumbs">${SCENES.map((s,k)=>`<button type="button" data-go="${k}">${s.draw()}<b>${s.title}</b></button>`).join("")}</div>`;
+    const inp=document.getElementById("sname");
+    inp.oninput=()=>{student=inp.value.trim();document.getElementById("err").hidden=true};
+    inp.onkeydown=e=>{if(e.key==="Enter")next.click()};
+    card.querySelectorAll("[data-go]").forEach(b=>b.onclick=()=>{if(!needName()){i=+b.dataset.go;render()}});
+    return;
+  }
+  if(i>=SCENES.length){ renderSplash(pts,done); return; }
+
+  const s=SCENES[i];
+  card.innerHTML=`<div class="qL"><div class="sec">Picture ${i+1} of ${SCENES.length} · ${s.title}</div>
+   <div class="pic">${s.draw()}</div>
+   <h2>What can you see? Write 4 or 5 sentences.</h2>
+   <ul class="prompts"><li>Where is it?</li><li>Who can you see?</li><li>What are they doing?</li><li>What colours can you see?</li></ul></div><div class="qR">
+   <div><h3 style="margin-bottom:8px">Word help — tap a word to add it</h3><div class="chips">${s.words.map(w=>`<button type="button" class="chip">${esc(w)}</button>`).join("")}</div></div>
+   <label for="w${i}" class="hint">Your writing</label>
+   <textarea id="w${i}" spellcheck="false" placeholder="This is a …">${esc(texts[i])}</textarea>
+   <div class="row"><button type="button" class="btn primary" id="check">Check my writing</button><button type="button" class="btn" id="stop" hidden>Stop</button><span class="count" id="count"></span></div>
+   <div id="fb">${fbHtml[i]}</div></div>`;
+  const ta=document.getElementById("w"+i), cnt=document.getElementById("count"), chk=document.getElementById("check");
+  const upd=()=>{texts[i]=ta.value;const n=words(ta.value);cnt.textContent=`${n} word${n===1?"":"s"}`;chk.disabled=n<3};
+  ta.oninput=upd; upd();
+  card.querySelectorAll(".chip").forEach(c=>c.onclick=()=>{
+    const w=c.textContent, a=ta.selectionStart??ta.value.length, b=ta.selectionEnd??a, before=ta.value.slice(0,a);
+    const pad=(before&&!/\s$/.test(before)?" ":"");
+    ta.value=before+pad+w+" "+ta.value.slice(b); const p=(before+pad+w+" ").length; ta.focus(); ta.setSelectionRange(p,p); upd();
+  });
+  chk.onclick=()=>check(i);
+  document.getElementById("stop").onclick=()=>ctl?.abort();
+}
+
+function needName(){
+  if(student) return false;
+  const e=document.getElementById("err"); if(e) e.hidden=false;
+  const inp=document.getElementById("sname"); if(inp) inp.focus();
+  return true;
+}
+
+function fallbackHtml(k,why){
+  const s=SCENES[k];
+  return `<div class="fb">${why?`<p class="hint">${why}</p>`:""}
+   <div class="box idea"><h3>Check your writing</h3><ul>
+    <li>Every sentence starts with a <b>Capital letter</b>.</li><li>Every sentence ends with a full stop <b>.</b></li>
+    <li>One thing: <b>There is</b> a cat. Two or more: <b>There are</b> three apples.</li>
+    <li>What are they doing? He <b>is walking</b>. They <b>are playing</b>.</li></ul></div>
+   <div class="box model"><h3>Example answer</h3><p>${esc(s.model)}</p></div></div>`;
+}
+
+async function check(k){
+  const s=SCENES[k], text=texts[k].trim(), fb=document.getElementById("fb"), chk=document.getElementById("check"), stop=document.getElementById("stop");
+  if(!sample){
+    fbHtml[k]=fallbackHtml(k, aiChecked?"Automatic feedback is not available here. Use this checklist and compare with the example.":"");
+    fb.innerHTML=fbHtml[k]; return;
+  }
+  const prompt=`You are a kind ESOL teacher in London. An adult learner at Entry 1 (CEFR A1) wrote a short description of a picture.
+
+THE PICTURE SHOWS: ${s.facts}
+
+LEARNER'S WRITING (between the lines):
+---
+${text.slice(0,1500)}
+---
+
+Give feedback for an A1 learner. Use VERY simple English: short sentences, everyday words, no grammar terms except "capital letter" and "full stop".
+There are TWO different kinds of feedback. Keep them apart.
+1. "fixes" = ONLY real English mistakes: spelling, capital letters, full stops, is/are, a/an, he/she, missing "is" before -ing, wrong word order, missing words. A sentence that is correct English is NEVER a fix, even if a different sentence would be better or more exact. Do not rewrite correct sentences. Do not put a sentence in "fixes" because it does not match the picture.
+2. "picture" = sentences that are correct English but do not match the picture (for example the learner wrote "a dog" but it is a cat). At most 1 item. Write a kind tip that starts by saying the English is correct, e.g. "Your sentence is correct! But in the picture it is a cat, not a dog." If what they wrote is possible or close enough (e.g. "She is standing between the fridge and the cooker"), do NOT mention it.
+Sentences that are vague but true (e.g. "She has a cat", "It is a nice kitchen") are fine: do not correct them. Praise them in "good".
+
+Score from 0 to 5:
+0 = nothing about the picture
+1 = only single words
+2 = 1 or 2 sentences, many mistakes
+3 = 2 or 3 sentences, mostly correct
+4 = 4 or more sentences, small mistakes
+5 = 4 or more correct sentences about different things in the picture
+
+Reply with only JSON in this shape:
+{"score": 3, "good": ["one or two short things they did well"], "fixes": [{"wrong": "exact words from their text with the mistake", "right": "the same words with only the mistake corrected"}], "picture": "a kind tip, or an empty string", "idea": "one question about something in the picture they did not write about, e.g. What is the cat doing?", "better": "their writing with ONLY the real mistakes corrected, keeping their own ideas and words, 5 sentences at most"}
+"fixes" has at most 3 items and is often empty. If there are no mistakes, "fixes" is [].`;
+  chk.disabled=true; stop.hidden=false; ctl=new AbortController();
+  fb.innerHTML=`<div class="fb"><p class="thinking">Reading your writing…</p></div>`;
+  try{
+    const r=await sample.json(prompt,{modelTier:"quick",signal:ctl.signal});
+    const sc=Math.max(0,Math.min(5,Math.round(Number(r?.score)||0)));
+    best[k]=Math.max(best[k]??0,sc);
+    const norm=t=>String(t||"").trim().toLowerCase();
+    const good=(Array.isArray(r?.good)?r.good:[]).slice(0,2);
+    // keep only real corrections: drop items where nothing actually changed
+    const fixes=(Array.isArray(r?.fixes)?r.fixes:[]).filter(f=>f&&f.wrong&&f.right&&norm(f.wrong)!==norm(f.right)).slice(0,3);
+    const tip=typeof r?.picture==="string"?r.picture.trim():"";
+    fbHtml[k]=`<div class="fb">
+      <div class="row" style="justify-content:space-between"><div class="stars" aria-label="${sc} out of 5 stars">${starsHtml(sc)}</div><span class="count">${sc} / 5</span></div>
+      ${good.length?`<div class="box good"><h3>Good!</h3><ul>${good.map(g=>`<li>${esc(g)}</li>`).join("")}</ul></div>`:""}
+      ${fixes.length?`<div class="box fix"><h3>Small mistakes — correct these</h3><ul>${fixes.map(f=>`<li>You wrote: <span class="wrong">${esc(f.wrong)}</span><br>Correct: <span class="right">${esc(f.right)}</span></li>`).join("")}</ul></div>`
+        :`<div class="box good"><h3>No mistakes!</h3><p>Your English is correct.</p></div>`}
+      ${tip?`<div class="box idea"><h3>Look at the picture again</h3><p>${esc(tip)}</p></div>`:""}
+      ${r?.idea?`<div class="box idea"><h3>Write one more sentence</h3><p>${esc(r.idea)}</p></div>`:""}
+      ${r?.better?`<details><summary>See your writing corrected</summary><div class="box model" style="margin-top:8px"><p>${esc(r.better)}</p></div></details>`:""}
+      <details><summary>See an example answer</summary><div class="box model" style="margin-top:8px"><p>${esc(s.model)}</p></div></details>
+      <p class="hint">Change your writing and press Check again to get more stars.</p></div>`;
+    if(i===k){ fb.innerHTML=fbHtml[k]; render(); }
+  }catch(e){
+    const code=e?.code;
+    if(code==="cancelled"){ if(i===k) fb.innerHTML=fbHtml[k]; }
+    else if(["not_granted","sampling_disabled","not_declared","capability_disabled","capability_removed"].includes(code)){
+      sample=null; fbHtml[k]=fallbackHtml(k,"Automatic feedback is turned off. Use this checklist and compare with the example."); if(i===k) fb.innerHTML=fbHtml[k];
+    } else {
+      const msg = code==="rate_limited"?"Too many checks. Wait a minute and try again.":code==="session_expired"?"Please sign in to Claude again.":"Something went wrong. Press Check again.";
+      if(i===k) fb.innerHTML=`<div class="fb"><p class="err">${msg}</p></div>`;
+    }
+  }finally{
+    if(i===k){ const c=document.getElementById("check"), st=document.getElementById("stop"); if(c) c.disabled=words(texts[k])<3; if(st) st.hidden=true; }
+  }
+}
+
+function renderSplash(pts,done){
+  const pct = done ? Math.round(pts/(done*5)*100) : null;
+  const msg = pct===null ? "Well done for writing!" : pct>=80?"Excellent writing!":pct>=60?"Well done! Great work.":pct>=40?"Good try! Keep practising.":"Keep going! Try again.";
+  const cols=["var(--ink)","var(--good)","#f2b632","#e8613c","#9b5de5"];
+  const conf=(pct===null||pct>=60)?Array.from({length:60},(_,n)=>`<i style="left:${(n*37)%100}%;background:${cols[n%5]};animation-delay:${(n%12)*0.12}s"></i>`).join(""):"";
+  const written=texts.filter(t=>words(t)>=3).length;
+  card.innerHTML=`<div class="conf">${conf}</div><div class="sec">Finished</div>
+   <div class="who">${esc(student)}</div>
+   ${pct!==null?`<div class="pct">${pct}%</div>`:""}
+   <div class="msg">${msg}</div>
+   <p class="sub">${pct!==null?`★ ${pts} out of ${done*5} stars · `:""}You described ${written} of ${SCENES.length} pictures</p>
+   <div class="thumbs">${SCENES.map((s,k)=>`<button type="button" data-go="${k}">${s.draw()}<b>${s.title}</b><span>${best[k]!==null?`${best[k]} / 5 stars`:words(texts[k])>=3?"Written":"Not done"}</span></button>`).join("")}</div>
+   <p class="hint" style="position:relative">Tap a picture to look at it again.</p>`;
+  card.querySelectorAll("[data-go]").forEach(b=>b.onclick=()=>{i=+b.dataset.go;render()});
+}
+
+next.onclick=()=>{
+  if(i<0&&needName()) return;
+  if(i>=SCENES.length){ texts.fill(""); best.fill(null); fbHtml.fill(""); student=""; i=-1; } else i++;
+  render(); window.scrollTo(0,0);
+};
+prev.onclick=()=>{ if(i>=0){ i=i>=SCENES.length?SCENES.length-1:i-1; render(); window.scrollTo(0,0); } };
+
+/* ---- full-screen button + fit-to-screen on wide displays ---- */
+const fsBtn=document.getElementById("fs"), wrapEl=document.querySelector(".wrap");
+try{ if(document.fullscreenEnabled && window.matchMedia("(min-width:700px)").matches) fsBtn.hidden=false; }catch(e){}
+fsBtn.onclick=async()=>{ try{ if(document.fullscreenElement) await document.exitFullscreen(); else await document.documentElement.requestFullscreen(); }catch(e){ fsBtn.hidden=true; } };
+document.addEventListener("fullscreenchange",()=>{ fsBtn.textContent=document.fullscreenElement?"✕ Exit full screen":"⛶ Full screen"; setTimeout(fit,150); });
+function fit(){
+  wrapEl.style.fontSize="";
+  if(window.innerWidth<1000) return;
+  // start big (good for a projector) and shrink only until nothing needs scrolling
+  let fs=Math.max(18, Math.min(44, window.innerWidth*0.0175, window.innerHeight*0.034));
+  wrapEl.style.fontSize=fs+"px";
+  while(document.documentElement.scrollHeight>window.innerHeight+1 && fs>14){ fs-=0.5; wrapEl.style.fontSize=fs+"px"; }
+}
+let fitT=0; window.addEventListener("resize",()=>{clearTimeout(fitT);fitT=setTimeout(fit,120)});
+
+render();
+</script>
+
+<div class="atin-logo" aria-label="Made by Atin">
+<svg viewBox="104 28 172 134" width="64" height="50" role="img" aria-hidden="true">
+<text x="139" y="112" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="72" fill="currentColor">A</text>
+<rect x="177" y="83" width="24" height="6" rx="1" fill="currentColor"/>
+<path d="M216 66 L216 106 A25 7 0 0 0 266 106 L266 66" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+<ellipse cx="241" cy="66" rx="25" ry="7" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="216" y1="80" x2="266" y2="80" stroke="currentColor" stroke-width="1.5"/>
+<line x1="216" y1="94" x2="266" y2="94" stroke="currentColor" stroke-width="1.5"/>
+<ellipse cx="241" cy="47" rx="23" ry="5" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="114" y1="128" x2="266" y2="128" stroke="currentColor" stroke-width="1"/>
+<text x="190" y="152" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" letter-spacing="2" fill="currentColor">made by Atin</text>
+</svg>
+</div>
+<script>(function(){var l=document.querySelector(".atin-logo"),t=document.querySelector(".nav");if(l&&t){var nx=t.querySelector("#next");if(nx&&nx.parentNode===t)t.insertBefore(l,nx);else t.appendChild(l);}})();</script>
+<style>
+.atin-logo{position:static;flex:none;color:#1F3A5F;background:rgba(255,255,255,.92);border:1px solid #C9D3DF;border-radius:8px;padding:3px 5px;line-height:0;pointer-events:none}
+.atin-logo svg{display:block}
+@media print{.atin-logo{background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+.nav>.atin-logo{align-self:center;padding:2px 4px}
+.nav>.atin-logo svg{width:50px;height:39px}
+</style>
+
+</body></html>

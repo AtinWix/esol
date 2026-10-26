@@ -1,0 +1,200 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+
+
+<title>E3 &amp; L1 Reading – Freecycle – Comprehension Quiz</title>
+<style>
+/* Layout: reading text pinned left, questions right; stacks on phones. Level switch at top. */
+:root{
+  --bg:#f6f8f7; --panel:#ffffff; --fg:#1d2422; --muted:#5b6662; --line:#d6dedb;
+  --accent:#1f7a5a; --accent-soft:#e2f1ea; --ok:#1e7d3c; --ok-soft:#e3f4e8; --bad:#b3261e; --bad-soft:#fbe6e4;
+  --font:Verdana, Tahoma, Arial, sans-serif; --font-head:Arial, Helvetica, sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#141a18; --panel:#1c2421; --fg:#e7ecea; --muted:#9aa7a2; --line:#33403b;
+  --accent:#5cc49b; --accent-soft:#1f3a30; --ok:#6fcf8b; --ok-soft:#1d3526; --bad:#f28b82; --bad-soft:#3d2120; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141a18; --panel:#1c2421; --fg:#e7ecea; --muted:#9aa7a2; --line:#33403b;
+  --accent:#5cc49b; --accent-soft:#1f3a30; --ok:#6fcf8b; --ok-soft:#1d3526; --bad:#f28b82; --bad-soft:#3d2120; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--font);font-size:16px;line-height:1.6}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:16px;padding-block:20px 48px}
+header{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:end;justify-content:space-between;margin-bottom:16px}
+h1{font-family:var(--font-head);font-size:1.7rem;margin:0;text-wrap:balance}
+.levels{display:flex;gap:6px;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:4px}
+.levels button{font:inherit;font-size:.95rem;border:0;background:transparent;color:var(--fg);padding:8px 18px;border-radius:999px;cursor:pointer}
+.levels button[aria-pressed="true"]{background:var(--accent);color:var(--panel);font-weight:bold}
+.levels button:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.student{display:flex;flex-wrap:wrap;gap:12px 20px;margin-bottom:20px}
+.student label{display:flex;gap:8px;align-items:center;font-size:.95rem}
+.student input{font:inherit;padding:6px 10px;border:1px solid var(--line);border-radius:6px;background:var(--panel);color:var(--fg);min-width:0;width:14em;max-width:100%}
+.grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:24px;align-items:start}
+@media (max-width:820px){.grid{grid-template-columns:minmax(0,1fr)}}
+.text{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:20px 22px;position:sticky;top:calc(env(safe-area-inset-top,0px) + 12px);max-height:calc(100vh - 24px);overflow:auto}
+@media (max-width:820px){.text{position:static;max-height:none}}
+.text h2{font-family:var(--font-head);font-size:1.3rem;margin:0 0 4px}
+.tag{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:bold}
+.text p{margin:0 0 14px;max-width:65ch}
+.qs{display:flex;flex-direction:column;gap:14px}
+.q{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 18px}
+.q.correct{border-color:var(--ok);background:var(--ok-soft)}
+.q.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.q p.stem{margin:0 0 10px;font-weight:bold}
+.q p.stem .n{color:var(--accent);margin-right:6px}
+.opts{display:flex;flex-direction:column;gap:6px}
+.opts label{display:flex;gap:10px;align-items:flex-start;padding:6px 8px;border-radius:6px;cursor:pointer}
+.opts label:hover{background:var(--accent-soft)}
+.opts input{margin-top:5px;accent-color:var(--accent)}
+.opts b{min-width:1.2em}
+.order{display:flex;flex-direction:column;gap:8px}
+.order .row{display:flex;gap:10px;align-items:center}
+.order select{font:inherit;padding:4px 6px;border:1px solid var(--line);border-radius:6px;background:var(--panel);color:var(--fg)}
+.hint{font-size:.85rem;color:var(--muted);margin:0 0 8px}
+.fb{margin:10px 0 0;font-size:.9rem}
+.actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:6px}
+.btn{font:inherit;font-weight:bold;border:0;border-radius:8px;padding:12px 22px;cursor:pointer;background:var(--accent);color:var(--panel)}
+.btn.ghost{background:transparent;color:var(--fg);border:1px solid var(--line)}
+.score{font-size:1.1rem;font-weight:bold}
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>Freecycle: Reading</h1>
+    <div class="levels" role="group" aria-label="Choose level">
+      <button type="button" id="btn-e3" data-level="e3">Entry 3</button>
+      <button type="button" id="btn-l1" data-level="l1">Level 1</button>
+    </div>
+  </header>
+  <div class="student">
+    <label for="name">Name <input id="name" type="text" autocomplete="name"></label>
+    <label for="date">Date <input id="date" type="text" placeholder="dd/mm/yyyy"></label>
+  </div>
+  <div class="grid">
+    <article class="text" id="text"></article>
+    <section>
+      <form id="quiz" class="qs" novalidate></form>
+    </section>
+  </div>
+</div>
+
+<script>
+const DATA = {
+  e3: {
+    tag: "Entry 3",
+    title: "Freecycle",
+    text: [
+      "Do you have things at home that you do not need? Maybe an old chair, a lamp or some children's books? Do not throw them away. You can give them to someone on Freecycle.",
+      "Freecycle is a website. People use it to give away things for free. Nobody pays any money. There are small groups for different areas. In London, there is a group for almost every area, including Hackney.",
+      "It is easy to use. First, you join your local group online. Then you write a short message about your item. For example: “Offer: small table, good condition, Mare Street.” People who want the item send you a reply. Usually, the first person to reply gets it. Then they come to your home and collect it.",
+      "You can also ask for things. If you need a cooker or a winter coat, you can post a message and wait.",
+      "Freecycle is good for the environment, because less rubbish goes into the ground. It is also good for people. You can get useful things without spending money, and you can help your neighbours. Many people say it feels good to give."
+    ],
+    qs: [
+      {stem:"Who is ‘they’ in “Then they come to your home and collect it”?", opts:["The Freecycle team","The person who gives the item","Your family","The person who gets the item"], a:3},
+      {stem:"What does ‘throw them away’ mean?", opts:["Put them in the bin","Sell them","Clean them","Keep them"], a:0},
+      {type:"order", stem:"Put these steps in order. Number them 1–4.", items:["Describe your item","People answer you","Become a member of a group","The new owner takes the item"], a:[2,3,1,4]},
+      {stem:"How much does an item cost on Freecycle?", opts:["£1","Nothing","Half price","It depends on the item"], a:1},
+      {stem:"What does ‘collect’ mean?", opts:["Buy","Pick up and take away","Make","Send"], a:1},
+      {stem:"Who usually gets the item?", opts:["The person who needs it most","The quickest person to answer","The person who lives nearest","A friend of the owner"], a:1},
+      {stem:"Which sentence is correct?", opts:["You can only give things, not ask for them.","You can say what you are looking for.","Freecycle is only in Hackney.","You must visit an office to join."], a:1},
+      {stem:"Why is Freecycle good for the environment?", opts:["People drive less.","It plants trees.","There is less waste.","Shops use less plastic."], a:2},
+      {stem:"The text…", opts:["sells furniture.","explains how Freecycle works.","warns people about Freecycle.","advertises a shop."], a:1},
+      {type:"order", stem:"Put these words from the text in alphabetical order. Number them 1–5.", items:["table","chair","lamp","books","coat"], a:[5,2,4,1,3]}
+    ]
+  },
+  l1: {
+    tag: "Level 1",
+    title: "Freecycle in the UK",
+    text: [
+      "Freecycle is a global online platform where people can give away things they no longer need, instead of throwing them away. The aim is to reduce waste and encourage people to reuse items. Freecycle works through local groups. Members can offer items, or ask for items they are looking for. Freecycle is popular in the UK, and there are groups in most towns and cities. In London, almost every borough has one, including Hackney.",
+      "Members offer a wide range of items, from furniture and electronics to books and clothing. When an item is listed, anyone in the group can reply to say they are interested. The owner then chooses who will receive it, usually on a first-come, first-served basis. Nothing is sold: every item is free, and the new owner normally collects it.",
+      "Freecycle helps the environment because less rubbish goes to landfill. It also builds community spirit, as people feel good about helping others. It can save money too, because people can get useful things without paying for them. The process is simple, and anyone with internet access can join. Many people in the UK use Freecycle to declutter their homes while also giving something back to their community."
+    ],
+    qs: [
+      {stem:"What is the main purpose of Freecycle?", opts:["To help people earn money","To cut down on rubbish by passing things on","To sell second-hand goods cheaply","To run an online shop"], a:1},
+      {stem:"Which statement about how Freecycle is organised is true?", opts:["There is one group for the whole country.","Groups are based in particular areas.","Groups only exist in London.","You must meet other members before joining."], a:1},
+      {stem:"What does ‘first-come, first-served’ mean?", opts:["The person who replies fastest gets the item.","The person who needs it most gets the item.","The owner decides to keep the item.","The item goes to someone chosen at random."], a:0},
+      {stem:"How does an item usually reach its new home?", opts:["The owner delivers it.","Freecycle posts it.","The person receiving it picks it up.","It is left at a local shop."], a:2},
+      {stem:"In the text, what does ‘declutter’ mean?", opts:["Arrange things neatly","Add more things to a room","Get rid of things you don’t need","Put things into storage"], a:2},
+      {stem:"What do you need to take part?", opts:["A car","A way to get online","A small fee","A large home"], a:1},
+      {stem:"What is one personal benefit of Freecycle mentioned in the text?", opts:["People can get useful things at no cost.","People can earn extra income.","People get discounts in local shops.","People get free delivery."], a:0},
+      {stem:"Which item is NOT given as an example in the text?", opts:["Electronics","Shoes","Furniture","Books"], a:1},
+      {stem:"In the text, ‘landfill’ is…", opts:["a recycling centre.","a site where unwanted material is buried.","a warehouse for reusable goods.","a charity collection point."], a:1},
+      {stem:"How does Freecycle affect relationships between local people?", opts:["It causes arguments between neighbours.","It gives people a sense of belonging and helping each other.","It makes local shops lose business.","It makes people spend more."], a:1}
+    ]
+  }
+};
+
+const textEl = document.getElementById('text');
+const form = document.getElementById('quiz');
+let level = 'e3';
+try { level = localStorage.getItem('fc-level') || 'e3'; } catch(e) {}
+
+function render(){
+  const d = DATA[level];
+  document.querySelectorAll('.levels button').forEach(b=>b.setAttribute('aria-pressed', b.dataset.level===level));
+  textEl.innerHTML = `<div class="tag">${d.tag} &middot; Reading text</div><h2>${d.title}</h2>` + d.text.map(p=>`<p>${p}</p>`).join('');
+  form.innerHTML = d.qs.map((q,i)=>{
+    const id = `${level}-q${i}`;
+    let body;
+    if(q.type==='order'){
+      const n = q.items.length;
+      body = `<div class="order">` + q.items.map((it,j)=>`<div class="row"><select id="${id}-${j}" aria-label="${it}"><option value="">–</option>${Array.from({length:n},(_,k)=>`<option>${k+1}</option>`).join('')}</select><span>${it}</span></div>`).join('') + `</div>`;
+    } else {
+      body = `<div class="opts">` + q.opts.map((o,j)=>`<label for="${id}-${j}"><input type="radio" id="${id}-${j}" name="${id}" value="${j}"><b>${'ABCD'[j]}</b><span>${o.replace('NOT','<strong>NOT</strong>')}</span></label>`).join('') + `</div>`;
+    }
+    return `<div class="q" id="${id}"><p class="stem"><span class="n">${i+1}.</span>${q.stem}</p>${body}<p class="fb" hidden></p></div>`;
+  }).join('') + `<div class="actions"><button class="btn" type="submit">Check answers</button><button class="btn ghost" type="button" id="reset">Start again</button><span class="score" id="score" aria-live="polite"></span></div>`;
+  document.getElementById('reset').onclick = ()=>{ render(); window.scrollTo(0,0); };
+}
+
+form.addEventListener('submit', e=>{
+  e.preventDefault();
+  const d = DATA[level]; let score = 0;
+  d.qs.forEach((q,i)=>{
+    const id = `${level}-q${i}`, box = document.getElementById(id), fb = box.querySelector('.fb');
+    let ok;
+    if(q.type==='order'){
+      const vals = q.items.map((_,j)=>+document.getElementById(`${id}-${j}`).value);
+      ok = vals.every((v,j)=>v===q.a[j]);
+      const right = q.items.map((it,j)=>[q.a[j],it]).sort((x,y)=>x[0]-y[0]).map(x=>x[1]).join(' → ');
+      fb.textContent = ok ? 'Correct.' : `Correct order: ${right}`;
+    } else {
+      const sel = form.querySelector(`input[name="${id}"]:checked`);
+      ok = sel && +sel.value===q.a;
+      fb.textContent = ok ? 'Correct.' : `Answer: ${'ABCD'[q.a]} – ${q.opts[q.a]}`;
+    }
+    if(ok) score++;
+    box.classList.toggle('correct', !!ok); box.classList.toggle('wrong', !ok);
+    fb.hidden = false;
+  });
+  document.getElementById('score').textContent = `Score: ${score} / ${d.qs.length}`;
+});
+
+document.querySelectorAll('.levels button').forEach(b=>b.addEventListener('click',()=>{
+  level = b.dataset.level;
+  try { localStorage.setItem('fc-level', level); } catch(e) {}
+  render();
+}));
+render();
+</script>
+
+<div class="atin-logo" aria-label="Made by Atin">
+<svg viewBox="104 28 172 134" width="64" height="50" role="img" aria-hidden="true">
+<text x="139" y="112" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="72" fill="currentColor">A</text>
+<rect x="177" y="83" width="24" height="6" rx="1" fill="currentColor"/>
+<path d="M216 66 L216 106 A25 7 0 0 0 266 106 L266 66" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+<ellipse cx="241" cy="66" rx="25" ry="7" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="216" y1="80" x2="266" y2="80" stroke="currentColor" stroke-width="1.5"/>
+<line x1="216" y1="94" x2="266" y2="94" stroke="currentColor" stroke-width="1.5"/>
+<ellipse cx="241" cy="47" rx="23" ry="5" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="114" y1="128" x2="266" y2="128" stroke="currentColor" stroke-width="1"/>
+<text x="190" y="152" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" letter-spacing="2" fill="currentColor">made by Atin</text>
+</svg>
+</div>
+<style>
+.atin-logo{position:fixed;left:calc(6px + env(safe-area-inset-left,0px));bottom:calc(6px + env(safe-area-inset-bottom,0px));z-index:2147483000;pointer-events:none;color:#1F3A5F;background:rgba(255,255,255,.92);border:1px solid #C9D3DF;border-radius:8px;padding:3px 5px;line-height:0}
+.atin-logo svg{display:block}
+@media print{.atin-logo{position:fixed;left:auto;right:6mm;bottom:5mm;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+
+</body></html>

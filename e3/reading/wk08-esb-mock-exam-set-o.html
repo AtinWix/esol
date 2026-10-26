@@ -1,0 +1,320 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>E3 Reading – ESB Mock Exam – Set O</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Lexend:wght@500;700&display=swap">
+<style>
+/* Layout: one page per question; each task opens with its reading text, which can be reopened from any question */
+:root{
+  --bg:#f3f5f8; --card:#ffffff; --fg:#17202e; --muted:#5b6678; --line:#d7dde6;
+  --ink:#1f4fa3; --ink-soft:#e5ecf9; --good:#1d7a46; --good-bg:#e3f4ea; --bad:#b3261e; --bad-bg:#fbe7e5;
+  --paper:#fffdf6; --paper-line:#e6dfc8;
+  --display:"Lexend", "Atkinson Hyperlegible", Arial, sans-serif;
+  --body:"Atkinson Hyperlegible", Verdana, Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#11161f; --card:#1a212d; --fg:#e8edf5; --muted:#9aa6b8; --line:#2e3848;
+  --ink:#8db2ff; --ink-soft:#22304a; --good:#6fd39b; --good-bg:#16362a; --bad:#ff8f86; --bad-bg:#3d1d1b;
+  --paper:#202836; --paper-line:#364154; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#11161f; --card:#1a212d; --fg:#e8edf5; --muted:#9aa6b8; --line:#2e3848;
+  --ink:#8db2ff; --ink-soft:#22304a; --good:#6fd39b; --good-bg:#16362a; --bad:#ff8f86; --bad-bg:#3d1d1b;
+  --paper:#202836; --paper-line:#364154; color-scheme:dark}
+html,body{height:100%}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:18px;line-height:1.5}
+.wrap{max-width:760px;margin:0 auto;padding-inline:16px;padding-block:20px 40px;display:flex;flex-direction:column;gap:16px;min-height:100%;box-sizing:border-box}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{font-family:var(--display);font-weight:700;font-size:1em;color:var(--ink)}
+.meta{font-size:.9em;color:var(--muted);font-variant-numeric:tabular-nums}
+.bar{height:6px;background:var(--line);border-radius:3px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--ink);width:0;transition:width .25s}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px 22px;display:flex;flex-direction:column;gap:18px}
+.sec{font-size:.8em;text-transform:uppercase;letter-spacing:.08em;color:var(--ink);font-weight:700;position:relative}
+h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance;line-height:1.25}
+h1{font-size:2em}
+h2{font-size:1.45em;font-weight:600}
+h3{font-size:1.15em;font-weight:600}
+p{margin:0}
+.txt{background:var(--paper);border:1px solid var(--paper-line);border-left:4px solid var(--paper-line);padding:14px 16px;border-radius:6px;font-size:1.05em;white-space:pre-line}
+.txt .lbl{display:block;font-size:.75em;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:6px;white-space:normal}
+.reading{background:var(--paper);border:1px solid var(--paper-line);border-radius:8px;padding:18px;display:flex;flex-direction:column;gap:12px;font-size:1.05em}
+.reading .url{font-size:.85em;color:var(--muted);border-bottom:1px solid var(--paper-line);padding-bottom:6px}
+.reading ul,.reading ol{margin:0;padding-left:1.3em;display:flex;flex-direction:column;gap:6px}
+.reading .tag{display:inline-grid;place-items:center;width:30px;height:30px;border:2px solid var(--fg);font-family:var(--display);font-weight:700;margin-right:8px}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.two > div{min-width:0;display:flex;flex-direction:column;gap:10px}
+details.again{border:1px solid var(--paper-line);border-radius:8px;background:var(--paper)}
+details.again summary{cursor:pointer;padding:10px 14px;font-family:var(--display);font-weight:600;color:var(--ink)}
+details.again .reading{border:0;border-top:1px solid var(--paper-line);border-radius:0 0 8px 8px}
+.opts{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.opt{display:flex;align-items:center;gap:14px;width:100%;text-align:left;font:inherit;font-size:1.1em;color:var(--fg);background:var(--card);border:2px solid var(--line);border-radius:10px;padding:12px 14px;cursor:pointer}
+.opt > span:last-child{white-space:pre-line;min-width:0}
+.opt:hover{border-color:var(--ink)}
+.opt:focus-visible,.btn:focus-visible,summary:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.let{flex:none;width:1.75em;height:1.75em;font-size:.95em;border-radius:50%;border:2px solid var(--ink);color:var(--ink);display:grid;place-items:center;font-family:var(--display);font-weight:700}
+.opt.right{border-color:var(--good);background:var(--good-bg)}
+.opt.right .let{background:var(--good);border-color:var(--good);color:var(--card)}
+.opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+.opt.wrong .let{border-color:var(--bad);color:var(--bad)}
+.opt[disabled]{cursor:default}
+.fb{border-radius:10px;padding:12px 14px;font-size:1em}
+.fb.ok{background:var(--good-bg);border:1px solid var(--good)}
+.fb.no{background:var(--bad-bg);border:1px solid var(--bad)}
+.fb b{font-family:var(--display)}
+.nav{display:flex;gap:10px;justify-content:space-between;flex-wrap:wrap}
+.btn{font:inherit;font-family:var(--display);font-weight:600;font-size:1em;padding:12px 20px;border-radius:10px;border:2px solid var(--ink);background:var(--card);color:var(--ink);cursor:pointer}
+.btn.primary{background:var(--ink);color:var(--card)}
+.btn[disabled]{opacity:.35;cursor:default}
+.secs{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;position:relative}
+.secs button{font:inherit;text-align:left;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--ink-soft);color:var(--fg);cursor:pointer}
+.secs button b{display:block;font-family:var(--display);color:var(--ink)}
+.secs button span{font-size:.85em;color:var(--muted)}
+.rules{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:4px}
+.hint{color:var(--muted);font-size:.9em}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-family:var(--display);font-weight:600}
+.field input{font:inherit;font-size:1.3em;padding:12px 14px;border:2px solid var(--line);border-radius:10px;background:var(--card);color:var(--fg)}
+.field input:focus{outline:3px solid var(--ink);outline-offset:1px;border-color:var(--ink)}
+.err{color:var(--bad);font-size:.95em}
+.splash{position:relative;overflow:hidden;text-align:center;align-items:center;padding-block:40px;background:var(--ink-soft);border-color:var(--ink)}
+.splash .who{font-family:var(--display);font-weight:700;font-size:clamp(2em,8vw,3.6em);line-height:1.1;word-break:break-word;position:relative}
+.splash .pct{font-family:var(--display);font-weight:700;font-size:clamp(5em,26vw,9.5em);line-height:1;color:var(--ink);font-variant-numeric:tabular-nums;position:relative}
+.splash .msg{font-family:var(--display);font-size:1.4em;font-weight:600;position:relative}
+.splash .sub{color:var(--muted);position:relative}
+.splash .secs{width:100%;text-align:left}
+.conf{position:absolute;inset:0;pointer-events:none}
+.conf i{position:absolute;top:-20px;width:10px;height:16px;border-radius:2px;opacity:.9;animation:fall 3.2s ease-in forwards}
+@keyframes fall{to{transform:translateY(900px) rotate(540deg);opacity:0}}
+@media (max-width:480px){h1{font-size:1.6em}h2{font-size:1.25em}.card{padding:20px 16px}.reading{padding:14px}}
+@media (prefers-reduced-motion:reduce){.bar i{transition:none}.conf{display:none}}
+
+html,body{margin:0}
+/* ---- 16:9 classroom screens: full width, two columns per question, text scales with the screen ---- */
+.topr{display:flex;align-items:center;gap:12px}
+.fs{font:inherit;font-family:var(--display);font-weight:600;font-size:.8em;padding:6px 12px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.qL,.qR{display:contents}
+@media (min-width:1000px){
+  body{font-size:clamp(18px, 0.9vw + 8px, 30px)}
+  .wrap{max-width:none;padding-inline:clamp(16px,2vw,40px);padding-block:12px 16px;gap:10px}
+  .card{padding:clamp(18px,1.8vw,36px)}
+  .card:has(> .qL){display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:clamp(24px,3vw,64px);align-items:start}
+  .qL,.qR{display:flex;flex-direction:column;gap:16px;min-width:0}
+  .qL .reading{max-height:58vh;overflow:auto}
+  .qL h2{order:-1}
+  .qL .sec{order:-2}
+  .card > .reading.cols{display:block;column-count:2;column-gap:clamp(24px,3vw,64px)}
+  .card > .reading.cols > *{break-inside:avoid;margin:0 0 .7em}
+  .wrap > .hint{display:none}
+}
+</style>
+
+<div class="wrap">
+  <div class="top">
+    <div class="brand">Entry 3 Reading · Mock test (Set O)</div>
+    <div class="topr"><div class="meta" id="meta"></div><button type="button" class="fs" id="fs" hidden>⛶ Full screen</button></div>
+  </div>
+  <div class="bar"><i id="bar"></i></div>
+  <main class="card" id="card" aria-live="polite"></main>
+  <div class="nav">
+    <button class="btn" id="prev" type="button">← Back</button>
+    <button class="btn primary" id="next" type="button">Next →</button>
+  </div>
+  <p class="hint">Tip: use the ← → keys, or press A, B, C, D to answer.</p>
+</div>
+
+<script>
+const TEXT = {
+ t1:`<div class="url">www.fieldsofcolour.com</div>
+  <h3>Fields of colour</h3>
+  <p>The first wonderful flowers known as Tulips came from Turkey. Hortus Botanicus took the tulips to the Netherlands in 1593. The flowers were so special that a lively trade began quite quickly.</p>
+  <p>In 1634 there was one single type of tulip that was very expensive. It cost the same price as a whole house in the city of Amsterdam. In 1637 the government decided to manage the business and the flowers suddenly dropped in price.</p>
+  <p>These days, the tulip fields are great for tourism. People visit the Netherlands just to see the flowers. They say the fields are like paintings and there has even been a song written about the lovely flowers. Max Bygraves sang “Tulips from Amsterdam” in 1958.</p>
+  <p>The best time to visit the tulip fields is in the spring, at the end of April or the beginning of May. Tourists can visit by boat or by bike, which are both popular ways to travel in The Netherlands. Special tours are arranged where you can cycle by day and sleep on the boats at night. You can also explore some of the traditional old towns in the area. So if you like flowers, the Netherlands in the spring is the place for you!</p>`,
+ t2:`<div class="two">
+  <div><h3><span class="tag">A</span>Becoming a firefighter</h3>
+   <ul>
+    <li>You must be 18, although you can apply earlier if you'll be 18 when you start the job.</li>
+    <li>You'll do some fitness tests and some exams.</li>
+    <li>You will also need a health check and an interview.</li>
+    <li>You need GCSEs at grades 9 to 4 in English and maths.</li>
+    <li>Doing some work experience with your local fire service would be useful because you can see if you like the job. You will also learn about available jobs.</li>
+    <li>You will need to pass background police checks.</li>
+   </ul>
+   <p>You can find out more about becoming a firefighter by getting a “firefighter pack” from your local fire service.</p>
+  </div>
+  <div><h3><span class="tag">B</span>What makes a successful nurse?</h3>
+   <p><b>1. Communicating</b><br>Nurses pass information from doctors to patients and to other doctors and nurses who are sharing the care. They need to talk to patients and their families so they understand about their care and medicine.</p>
+   <p><b>2. Managing change</b><br>Last-minute changes keep nurses busy. There is a lot of record keeping to do.</p>
+   <p><b>3. Thinking</b><br>Nurses must look at a situation and make important decisions. They need to work quickly and accurately.</p>
+   <p><b>4. Learning</b><br>Medicine is always changing so nurses should continue to learn.</p>
+   <p><b>5. Paying attention</b><br>Small details are important in nursing, especially when you have a lot to do. A nurse can’t make mistakes.</p>
+  </div></div>`,
+ t3:`<p>Dear Steven Bentley</p>
+  <p>We have considered your application for the building training job and would like you to attend an interview. The first interview will be a phone conversation with Alison Dent and the details for this are:<br>Time: 10.00<br>Date: Monday 16th July<br>Call time: 15 minutes</p>
+  <p>We advise you to visit our company web site at www.woodworkstore.co.uk. Here, you will find information about the work we do and the training programs we run. You will also find examples of completed jobs which show the variety of work we do.</p>
+  <p>If you are successful, you will be asked to attend a second interview which involves a whole day event. You will be contacted by John White 5 days after your phone interview if you are required to attend this second session. He will give you a day and time to attend.</p>
+  <p>If you have any questions about the interview or are not available at the time and date above, please contact Sally Burns in our office on 0166523481. Sally will give you a different time or day for your phone interview.</p>
+  <p>Congratulations on your successful application and good luck with your interview.</p>
+  <p>Kind regards<br>James Turner</p>`
+};
+
+// Items: reading pages (r) and questions (q). n = question number on the paper.
+const ITEMS = [
+ {r:"t1", s:"Task 1", h:"Read the text. Then answer questions 1 – 7."},
+ {s:"Task 1", tx:"t1", n:1, q:"The text is about buying flowers. True or false?", o:["True","False"], a:1, w:"The text is about the history of tulips and visiting the tulip fields. It is not about buying flowers."},
+ {s:"Task 1", tx:"t1", n:2, q:"Which list shows the events in the correct order?", o:[
+   "1 Tulips arrive in the Netherlands\n2 The government changes the prices\n3 One tulip costs the same as a house\n4 Max Bygraves sings the song",
+   "1 Tulips arrive in the Netherlands\n2 Max Bygraves sings the song\n3 One tulip costs the same as a house\n4 The government changes the prices",
+   "1 Tulips arrive in the Netherlands\n2 One tulip costs the same as a house\n3 The government changes the prices\n4 Max Bygraves sings the song",
+   "1 Tulips arrive in the Netherlands\n2 One tulip costs the same as a house\n3 Max Bygraves sings the song\n4 The government changes the prices"], a:2, w:"Look at the years: 1593 tulips arrive, 1634 one tulip costs as much as a house, 1637 the government changes prices, 1958 the song."},
+ {s:"Task 1", tx:"t1", n:3, q:"The word “trade”, in the first paragraph, means buying and selling. True or false?", o:["True","False"], a:0, w:"Trade = buying and selling. The flowers were special, so people started buying and selling them."},
+ {s:"Task 1", tx:"t1", n:4, q:"Which 2 ways do people in the Netherlands like to travel?", o:["by car and by train","by boat and by bike","by bike and on foot","by boat and by plane"], a:1, w:"The text says boat and bike are both popular ways to travel. In the real exam you write both — you need 2 for the mark."},
+ {s:"Task 1", tx:"t1", n:5, q:"Who is “you” in the last paragraph?", t:"You can also explore some of the traditional old towns in the area.", o:["The government","The song writer","The painters","The reader"], a:3, w:"“You” is the person reading the text — a possible tourist."},
+ {s:"Task 1", tx:"t1", n:6, q:"The text…", o:["persuades","compares","orders","warns"], a:0, w:"The last line says if you like flowers, the Netherlands is the place for you. It wants you to visit: it persuades."},
+ {s:"Task 1", tx:"t1", n:7, q:"Which list is in the correct alphabetical order?", t:"place   suddenly   popular   special", o:["popular, place, special, suddenly","place, popular, special, suddenly","place, popular, suddenly, special","place, special, popular, suddenly"], a:1, w:"Look at the second letters: pl – po – sp – su."},
+
+ {r:"t2", s:"Task 2", h:"Read the texts. Then answer questions 8 – 14."},
+ {s:"Task 2", tx:"t2", n:8, q:"Which text is about the qualifications you need for the job?", o:["Text A","Text B"], a:0, w:"Text A says you need GCSEs in English and maths. GCSEs are qualifications."},
+ {s:"Task 2", tx:"t2", n:9, q:"Read Text A. Why would work experience be an advantage? Because…", o:["they will give you a job","it will help with your GCSEs","you will get a free firefighter pack","you can see if the job is right for you"], a:3, w:"Work experience is useful because you can see if you like the job."},
+ {s:"Task 2", tx:"t2", n:10, q:"What does “You’ll do” mean in Text A?", o:["you do","you did","you will do","you are doing"], a:2, w:"’ll = will. You’ll do = you will do."},
+ {s:"Task 2", tx:"t2", n:11, q:"In Text B, “accurately” means “in the correct way”. True or false?", o:["True","False"], a:0, w:"Accurately = correctly, with no mistakes."},
+ {s:"Task 2", tx:"t2", n:12, q:"Why should nurses continue to learn? Because…", o:["they are always busy","small details are important","medicine is always changing","they need to talk to the families"], a:2, w:"Look at number 4, Learning: medicine is always changing. The other answers are in the text but they don’t answer this question."},
+ {s:"Task 2", tx:"t2", n:13, q:"The purpose of Text B is to…", o:["invite you to apply","give instructions","describe a job","list skills"], a:3, w:"Text B is a numbered list of skills a good nurse needs."},
+ {s:"Task 2", n:14, q:"You have a list of places. Which list is in the correct alphabetical order?", o:["Lightwood, Black Cross, Ludgate, Brancote","Brancote, Black Cross, Ludgate, Lightwood","Black Cross, Brancote, Lightwood, Ludgate"], a:2, w:"Bl – Br – Li – Lu. l comes before r, and i comes before u."},
+
+ {r:"t3", s:"Task 3", h:"Read the text. Then answer questions 15 – 21."},
+ {s:"Task 3", tx:"t3", n:15, q:"The text is about training at a college. True or false?", o:["True","False"], a:1, w:"The letter is about an interview for a building training job at a company, not a college."},
+ {s:"Task 3", tx:"t3", n:16, q:"What can Steven find on the company website?", o:["Examples of completed jobs","John White’s phone number","The date of a whole day event","The date of a second interview"], a:0, w:"The website has information about the work, the training and examples of completed jobs."},
+ {s:"Task 3", tx:"t3", n:17, q:"Which is closest in meaning to “variety”?", o:["everything the same","only one type of thing","different types of things","everything nearly the same"], a:2, w:"Variety = many different types of things."},
+ {s:"Task 3", tx:"t3", n:18, q:"What must Steven do if he is successful at the first interview?", o:["Phone Sally Burns","Visit the website","Attend a second interview","Phone Alison Dent"], a:2, w:"If he is successful, he must go to a second interview (a whole day event). In the real exam you write this on the line."},
+ {s:"Task 3", tx:"t3", n:19, q:"Who is “He” in this sentence?", t:"He will give you a day and time to attend.", o:["Steven Bentley","James Turner","John White","Sally Burns"], a:2, w:"Look at the sentence before: you will be contacted by John White. “He” = John White."},
+ {s:"Task 3", tx:"t3", n:20, q:"The text…", o:["advertises","persuades","invites","warns"], a:2, w:"The letter invites Steven to an interview."},
+ {s:"Task 3", n:21, q:"Which word comes BEFORE “application” in a dictionary?", o:["available","attend","about"], a:2, w:"Second letters: ab – ap – at – av. Only about comes before application."}
+];
+
+const QS = ITEMS.filter(x=>x.o);
+const sections = [...new Set(ITEMS.map(x=>x.s))];
+const L = ["A","B","C","D"];
+let i = -1;                       // -1 = start, ITEMS.length = results
+let student = "";
+const ans = new Map();            // question number -> chosen index
+
+const card=document.getElementById("card"), meta=document.getElementById("meta"),
+      bar=document.getElementById("bar"), prev=document.getElementById("prev"), next=document.getElementById("next");
+function esc(s){return s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
+function tally(){let g=0;ans.forEach((v,n)=>{if(QS.find(x=>x.n===n).a===v)g++});return [g,ans.size]}
+
+function render(){ draw(); fit(); }
+function draw(){
+  const [score,done]=tally();
+  meta.textContent = i<0 ? "21 questions · 3 tasks" : `${student} · Score ${score} / ${done}`;
+  bar.style.width = (i<0?0:Math.min(i+1,ITEMS.length)/ITEMS.length*100)+"%";
+  prev.disabled = i<0;
+  next.textContent = i<0 ? "Start →" : i>=ITEMS.length ? "Start again" : i===ITEMS.length-1 ? "Finish →" : "Next →";
+  card.classList.toggle("splash", i>=ITEMS.length);
+
+  if(i<0){
+    card.innerHTML=`<div class="sec">Mock test</div><h1>Entry 3 Reading: Set O</h1>
+      <div class="field"><label for="sname">Write your name</label>
+        <input id="sname" type="text" autocomplete="off" maxlength="40" value="${esc(student)}" placeholder="Your name"></div>
+      <p class="err" id="err" hidden>Please write your name first.</p>
+      <ul class="rules"><li>3 texts, 21 questions.</li><li>In the real exam you have 60 minutes.</li><li>Read each text first. You can open it again on every question.</li><li>You can answer in any order — choose a task below.</li></ul>
+      <div class="secs">${sections.map(s=>`<button type="button" data-s="${s}"><b>${s}</b><span>7 questions</span></button>`).join("")}</div>`;
+    const inp=document.getElementById("sname");
+    inp.oninput=()=>{student=inp.value.trim();document.getElementById("err").hidden=true};
+    inp.onkeydown=e=>{if(e.key==="Enter")next.click()};
+    card.querySelectorAll("[data-s]").forEach(b=>b.onclick=()=>{if(!needName()){i=ITEMS.findIndex(x=>x.s===b.dataset.s);render()}});
+    return;
+  }
+  if(i>=ITEMS.length){
+    const pct = Math.round(score/QS.length*100);
+    const msg = pct>=80?"Excellent! You are ready for the exam.":pct>=60?"Well done! A little more practice.":pct>=40?"Good try! Keep practising.":"Keep going! Try the tasks again.";
+    const cols=["var(--ink)","var(--good)","#f2b632","#e8613c","#9b5de5"];
+    const conf = pct>=60 ? Array.from({length:60},(_,n)=>`<i style="left:${(n*37)%100}%;background:${cols[n%5]};animation-delay:${(n%12)*0.12}s"></i>`).join("") : "";
+    const bySec=sections.map(s=>{const qs=QS.filter(x=>x.s===s);return [s,qs.filter(x=>ans.get(x.n)===x.a).length,qs.length]});
+    card.innerHTML=`<div class="conf">${conf}</div><div class="sec">Finished</div>
+      <div class="who">${esc(student)}</div><div class="pct">${pct}%</div><div class="msg">${msg}</div>
+      <p class="sub">${score} out of 21 correct${done<21?` · ${21-done} not answered`:""}</p>
+      <div class="secs">${bySec.map(([s,g,n])=>`<button type="button" data-s="${s}"><b>${s}</b><span>${g} / ${n} correct</span></button>`).join("")}</div>
+      <p class="hint" style="position:relative">Tap a task to look at it again.</p>`;
+    card.querySelectorAll("[data-s]").forEach(b=>b.onclick=()=>{i=ITEMS.findIndex(x=>x.s===b.dataset.s);render()});
+    return;
+  }
+  const x=ITEMS[i];
+  if(x.r){
+    card.innerHTML=`<div class="sec">${x.s}</div><h2>${x.h}</h2><div class="reading${x.r!=="t2"?" cols":""}">${TEXT[x.r]}</div>`;
+    return;
+  }
+  const picked = ans.has(x.n) ? ans.get(x.n) : null;
+  card.innerHTML=`<div class="qL"><div class="sec">${x.s} · Question ${x.n} of 21</div>
+    ${x.tx?`<details class="again" ${window.innerWidth>=1000?"open":""}><summary>Read the text again</summary><div class="reading">${TEXT[x.tx]}</div></details>`:""}
+    ${x.t?`<div class="txt"><span class="lbl">From the text</span>${esc(x.t)}</div>`:""}
+    <h2>${esc(x.q)}</h2></div><div class="qR">
+    <ul class="opts">${x.o.map((o,k)=>{let c="opt";if(picked!==null){if(k===x.a)c+=" right";else if(k===picked)c+=" wrong"}
+      return `<li><button type="button" class="${c}" data-k="${k}" ${picked!==null?"disabled":""}><span class="let">${L[k]}</span><span>${esc(o)}</span></button></li>`}).join("")}</ul>
+    ${picked!==null?`<div class="fb ${picked===x.a?"ok":"no"}"><b>${picked===x.a?"Correct!":"Not quite — the answer is "+L[x.a]+"."}</b> ${esc(x.w)}</div>`:""}</div>`;
+  card.querySelectorAll("[data-k]").forEach(b=>b.onclick=()=>choose(+b.dataset.k));
+}
+function needName(){
+  if(student) return false;
+  const e=document.getElementById("err"); if(e) e.hidden=false;
+  const inp=document.getElementById("sname"); if(inp) inp.focus();
+  return true;
+}
+function choose(k){
+  const x=ITEMS[i]; if(!x||!x.o||ans.has(x.n)||k>=x.o.length) return;
+  ans.set(x.n,k); render();
+}
+next.onclick=()=>{
+  if(i<0&&needName()) return;
+  if(i>=ITEMS.length){ans.clear();student="";i=-1} else i++;
+  render(); window.scrollTo(0,0);
+};
+prev.onclick=()=>{if(i>=0){i=i>=ITEMS.length?ITEMS.length-1:i-1;render();window.scrollTo(0,0)}};
+document.addEventListener("keydown",e=>{
+  if(e.target.closest("input,textarea")) return;
+  if(e.key==="ArrowRight") next.click();
+  else if(e.key==="ArrowLeft") prev.click();
+  else {const k=L.indexOf(e.key.toUpperCase()); if(k>=0) choose(k);}
+});
+
+/* ---- full-screen button + fit-to-screen on wide displays ---- */
+const fsBtn=document.getElementById("fs"), wrapEl=document.querySelector(".wrap");
+try{ if(document.fullscreenEnabled && window.matchMedia("(min-width:700px)").matches) fsBtn.hidden=false; }catch(e){}
+fsBtn.onclick=async()=>{ try{ if(document.fullscreenElement) await document.exitFullscreen(); else await document.documentElement.requestFullscreen(); }catch(e){ fsBtn.hidden=true; } };
+document.addEventListener("fullscreenchange",()=>{ fsBtn.textContent=document.fullscreenElement?"✕ Exit full screen":"⛶ Full screen"; setTimeout(fit,150); });
+function fit(){
+  wrapEl.style.fontSize="";
+  if(window.innerWidth<1000) return;
+  // start big (good for a projector) and shrink only until nothing needs scrolling
+  let fs=Math.max(18, Math.min(44, window.innerWidth*0.0175, window.innerHeight*0.034));
+  wrapEl.style.fontSize=fs+"px";
+  while(document.documentElement.scrollHeight>window.innerHeight+1 && fs>14){ fs-=0.5; wrapEl.style.fontSize=fs+"px"; }
+}
+let fitT=0; window.addEventListener("resize",()=>{clearTimeout(fitT);fitT=setTimeout(fit,120)});
+
+render();
+</script>
+
+<div class="atin-logo" aria-label="Made by Atin">
+<svg viewBox="104 28 172 134" width="64" height="50" role="img" aria-hidden="true">
+<text x="139" y="112" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="72" fill="currentColor">A</text>
+<rect x="177" y="83" width="24" height="6" rx="1" fill="currentColor"/>
+<path d="M216 66 L216 106 A25 7 0 0 0 266 106 L266 66" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+<ellipse cx="241" cy="66" rx="25" ry="7" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="216" y1="80" x2="266" y2="80" stroke="currentColor" stroke-width="1.5"/>
+<line x1="216" y1="94" x2="266" y2="94" stroke="currentColor" stroke-width="1.5"/>
+<ellipse cx="241" cy="47" rx="23" ry="5" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="114" y1="128" x2="266" y2="128" stroke="currentColor" stroke-width="1"/>
+<text x="190" y="152" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" letter-spacing="2" fill="currentColor">made by Atin</text>
+</svg>
+</div>
+<script>(function(){var l=document.querySelector(".atin-logo"),t=document.querySelector(".nav");if(l&&t){var nx=t.querySelector("#next");if(nx&&nx.parentNode===t)t.insertBefore(l,nx);else t.appendChild(l);}})();</script>
+<style>
+.atin-logo{position:static;flex:none;color:#1F3A5F;background:rgba(255,255,255,.92);border:1px solid #C9D3DF;border-radius:8px;padding:3px 5px;line-height:0;pointer-events:none}
+.atin-logo svg{display:block}
+@media print{.atin-logo{background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+.nav>.atin-logo{align-self:center;padding:2px 4px}
+.nav>.atin-logo svg{width:50px;height:39px}
+</style>
+
+</body></html>

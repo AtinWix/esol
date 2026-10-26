@@ -1,0 +1,492 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Grammar Blast</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@600;700;800&display=swap">
+<style>
+/* Layout: one-screen arcade column — header strip, square 8x8 board, three-piece tray; question cards sit over the board */
+:root{
+  --bg:#1b2142; --panel:#121732; --cell:#232b53; --line:#323c6e;
+  --fg:#f1f2fb; --muted:#a3abd6; --gold:#ffc93c; --good:#4fd18b; --bad:#ff6b6b;
+  --display:"Baloo 2","Nunito",system-ui,sans-serif;
+  --body:"Nunito",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  --cs:44px; --gap:3px; --pad:6px;
+  color-scheme:dark;
+}
+html,body{height:100%;overscroll-behavior:none}
+:fullscreen,::backdrop{background:var(--bg)}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);overflow:hidden;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+
+.screen{height:100%;box-sizing:border-box;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:12px;display:flex;flex-direction:column;align-items:center}
+
+/* Start */
+#start{overflow-y:auto;justify-content:flex-start}
+.start-in{width:100%;max-width:440px;display:flex;flex-direction:column;gap:18px;padding-block:20px}
+.logo{display:flex;align-items:center;gap:12px}
+.logo-blocks{display:grid;grid-template-columns:repeat(2,18px);gap:3px}
+.logo-blocks i{width:18px;height:18px;border-radius:4px;display:block}
+h1{font-family:var(--display);font-weight:800;font-size:2.6rem;line-height:1;margin:0;letter-spacing:-.01em}
+h1 span{color:var(--gold)}
+.lede{margin:0;color:var(--muted);font-size:1.05rem;line-height:1.5;max-width:38ch}
+.lede b{color:var(--fg)}
+.label{font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin:6px 0 -6px}
+.levels{display:flex;flex-direction:column;gap:10px}
+.lvl{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:14px;text-align:left;background:var(--panel);border:2px solid var(--line);border-radius:14px;padding:12px 14px;transition:border-color .15s,transform .1s}
+.lvl:hover{border-color:var(--gold)}
+.lvl:active{transform:scale(.98)}
+.lvl .sw{width:34px;height:34px;border-radius:8px}
+.lvl .nm{font-family:var(--display);font-weight:800;font-size:1.3rem;line-height:1.1}
+.lvl .tg{display:block;color:var(--muted);font-size:.9rem;font-weight:600}
+.lvl .bs{font-size:.8rem;color:var(--muted);text-align:right;font-variant-numeric:tabular-nums}
+.lvl .bs b{display:block;color:var(--fg);font-size:1.05rem}
+
+/* Game */
+#game{gap:10px}
+.hud{width:calc(var(--cs)*6 + var(--gap)*5 + var(--pad)*2);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;min-height:52px}
+.back{justify-self:start;background:none;border:2px solid var(--line);border-radius:10px;padding:6px 10px;font-weight:800;font-size:.85rem;color:var(--muted)}
+.score{text-align:center}
+.score .n{font-family:var(--display);font-weight:800;font-size:2.1rem;line-height:1;font-variant-numeric:tabular-nums}
+.score .chip{font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
+.side{justify-self:end;text-align:right;font-size:.75rem;color:var(--muted);font-weight:700;line-height:1.4;font-variant-numeric:tabular-nums}
+.side b{color:var(--fg)}
+.top{width:calc(var(--cs)*6 + var(--gap)*5 + var(--pad)*2);height:96px;display:grid;align-items:center;flex:none}
+.top>*{grid-area:1/1}
+.stuck{width:calc(var(--cs)*6 + var(--gap)*5 + var(--pad)*2);box-sizing:border-box;display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;background:var(--panel);border:2px solid var(--gold);border-radius:12px;padding:8px 10px;animation:fade .2s ease-out}
+.stuck .t{flex:1 1 100%;font-weight:800;font-size:.95rem;line-height:1.3}
+.stuck .t span{color:var(--gold)}
+.stuck .btn{flex:1;padding:9px 10px;font-size:.95rem}
+.slot.dead .piece{opacity:.55}
+
+.board-wrap{position:relative}
+.board-logo{position:absolute;inset:0;z-index:0;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none;transform:rotate(-12deg);color:var(--gold);opacity:.3;text-align:center;line-height:1}
+.board-logo .mb{font-family:var(--body);font-weight:800;font-size:calc(var(--cs)*.42);letter-spacing:.3em;text-transform:uppercase;padding-left:.3em}
+.board-logo .nm{font-family:var(--display);font-weight:800;font-size:calc(var(--cs)*1.9);letter-spacing:-.02em;margin-top:calc(var(--cs)*-.05)}
+.board-logo .nm{display:flex;align-items:flex-end;gap:calc(var(--cs)*.08)}
+.board-logo .tin{height:calc(var(--cs)*1.45);width:auto;margin-bottom:calc(var(--cs)*.12)}
+.board-logo .ln{width:calc(var(--cs)*2.4);height:4px;border-radius:2px;background:currentColor;margin-top:calc(var(--cs)*.05)}
+#board .cell{position:relative;z-index:1}
+#board .cell:not(.blk):not(.ghost){background:rgba(35,43,83,.5)}
+#board{position:relative;display:grid;grid-template-columns:repeat(6,var(--cs));gap:var(--gap);padding:var(--pad);background:var(--panel);border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.cell{width:var(--cs);height:var(--cs);border-radius:calc(var(--cs)*.16);background:var(--cell)}
+.blk{background:var(--b);box-shadow:inset 0 3px 0 rgba(255,255,255,.35),inset 0 -4px 0 rgba(0,0,0,.22)}
+.c0{--b:#ff6b6b}.c1{--b:#ff9f43}.c2{--b:#ffd43b}.c3{--b:#5fd38d}.c4{--b:#4dabf7}.c5{--b:#9775fa}.c6{--b:#f783ac}
+.cell.ghost{background:var(--b);opacity:.4}
+.cell.hot{filter:brightness(1.25) saturate(1.1)}
+.cell.pop{animation:pop .38s ease-in forwards}
+@keyframes pop{0%{transform:scale(1);filter:brightness(1.8)}100%{transform:scale(.2);opacity:0}}
+
+.toast{position:absolute;left:50%;top:42%;transform:translate(-50%,-50%);text-align:center;pointer-events:none;font-family:var(--display);font-weight:800;text-shadow:0 3px 0 rgba(0,0,0,.35);animation:rise .9s ease-out forwards}
+.toast .p{font-size:2.4rem;color:var(--gold);line-height:1}
+.toast .k{font-size:1.2rem}
+@keyframes rise{0%{opacity:0;transform:translate(-50%,-30%) scale(.7)}20%{opacity:1;transform:translate(-50%,-50%) scale(1.05)}100%{opacity:0;transform:translate(-50%,-110%)}}
+
+#tray{width:calc(var(--cs)*6 + var(--gap)*5 + var(--pad)*2);display:flex;justify-content:space-around;align-items:center;height:calc(var(--cs)*2.1 + 16px)}
+.slot{flex:1;height:100%;display:grid;place-items:center;touch-action:none;cursor:grab}
+.slot.dead .piece{opacity:.3}
+.slot.lifting .piece{visibility:hidden}
+.piece{position:relative}
+.piece .blk{position:absolute}
+.floating{position:fixed;left:0;top:0;z-index:50;pointer-events:none;filter:drop-shadow(0 8px 10px rgba(0,0,0,.4))}
+
+/* Modal */
+.overlay{position:fixed;inset:0;z-index:80;background:rgba(9,12,30,.78);display:grid;place-items:center;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:16px;animation:fade .2s ease-out}
+@keyframes fade{from{opacity:0}}
+.card{width:100%;max-width:420px;box-sizing:border-box;background:var(--panel);border:2px solid var(--line);border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:14px;animation:up .25s ease-out}
+@keyframes up{from{transform:translateY(16px)}}
+.card h2{font-family:var(--display);font-weight:800;font-size:1.8rem;line-height:1.1;margin:0;text-wrap:balance}
+.card p{margin:0;line-height:1.5;color:var(--muted)}
+.eyebrow{font-size:.75rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+.q{font-size:1.4rem!important;font-weight:800;color:var(--fg)!important;line-height:1.45!important}
+.blank{display:inline-block;min-width:3.2em;border-bottom:3px solid var(--gold);text-align:center;color:var(--gold);padding:0 4px}
+.opts{display:flex;flex-direction:column;gap:10px}
+.opt{text-align:left;font-weight:800;font-size:1.15rem;padding:13px 16px;border-radius:12px;background:var(--cell);border:2px solid var(--line)}
+.opt:not(:disabled):hover{border-color:var(--gold)}
+.opt.right{background:var(--good);border-color:var(--good);color:#0d1f15}
+.opt.wrong{background:var(--bad);border-color:var(--bad);color:#2a0b0b}
+.opt:disabled{cursor:default}
+.fb{border-radius:12px;padding:12px 14px;background:var(--cell);line-height:1.5}
+.fb b{display:block;font-size:1.05rem}
+.fb.ok b{color:var(--good)}.fb.no b{color:var(--bad)}
+.actions{display:flex;flex-direction:column;gap:10px}
+.btn{font-weight:800;font-size:1.05rem;padding:13px 16px;border-radius:12px;border:2px solid var(--line);background:none}
+.btn.primary{background:var(--gold);border-color:var(--gold);color:#2a1d00}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;text-align:center}
+.stats div{background:var(--cell);border-radius:12px;padding:10px 4px;font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.stats b{display:block;font-family:var(--display);font-size:1.6rem;color:var(--fg);letter-spacing:0;font-variant-numeric:tabular-nums}
+
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition:none!important}}
+</style>
+
+<section id="start" class="screen">
+  <div class="start-in">
+    <div class="logo">
+      <div class="logo-blocks" aria-hidden="true"><i class="blk c2"></i><i class="blk c0"></i><i class="blk c4"></i><i class="blk c3"></i></div>
+      <h1>Grammar <span>Blast</span></h1>
+    </div>
+    <p class="lede">Drag blocks onto the board. Fill a row or column to clear it. Out of moves? <b>No ads.</b> Get a grammar question right to keep playing.</p>
+    <p class="label">Choose your level</p>
+    <div class="levels" id="levels"></div>
+  </div>
+</section>
+
+<section id="game" class="screen" hidden>
+  <div class="top">
+  <div class="hud">
+    <button class="back" id="back" type="button">‹ Levels</button>
+    <div class="score"><div class="chip" id="lvlChip">Entry 1</div><div class="n" id="score">0</div></div>
+    <div class="side">Best <b id="best">0</b><br>Questions <b id="qright">0</b></div>
+  </div>
+  <div class="stuck" id="stuck" hidden>
+    <div class="t"><span>No moves left.</span> These blocks don't fit.</div>
+    <button class="btn primary" id="s-go" type="button">Answer a question</button>
+    <button class="btn" id="s-end" type="button">End game</button>
+  </div>
+  </div>
+  <div class="board-wrap"><div id="board"></div></div>
+  <div id="tray"></div>
+</section>
+
+<div id="modal" hidden></div>
+
+<script>
+const LEVELS=[
+{id:'e1',name:'Entry 1',tag:'be, have, present simple',sw:'c3',qs:[
+{q:"She ___ a teacher.",a:["is","are","am"],e:"He / she / it → is."},
+{q:"I ___ two brothers.",a:["have","has","haves"],e:"I / you / we / they → have."},
+{q:"They ___ from Turkey.",a:["are","is","am"],e:"They → are."},
+{q:"___ you like coffee?",a:["Do","Does","Are"],e:"Present simple questions with you → do."},
+{q:"He ___ in Hackney.",a:["lives","live","living"],e:"He / she / it → add -s: lives."},
+{q:"I eat ___ apple every day.",a:["an","a","two"],e:"Before a vowel sound → an: an apple."},
+{q:"There ___ three chairs in the room.",a:["are","is","am"],e:"Plural → there are."},
+{q:"My sister ___ like fish.",a:["doesn't","don't","isn't"],e:"He / she / it → doesn't + verb."},
+{q:"I can ___ English.",a:["speak","speaks","to speak"],e:"After can → base verb: can speak."},
+{q:"Where ___ you live?",a:["do","does","are"],e:"You → do: Where do you live?"},
+{q:"___ is your name?",a:["What","Who","Where"],e:"What is your name?"},
+{q:"The book is ___ the table.",a:["on","at","to"],e:"On a surface → on the table."},
+{q:"We ___ happy today.",a:["are","is","am"],e:"We → are."},
+{q:"___ she work on Mondays?",a:["Does","Do","Is"],e:"He / she / it questions → does."},
+{q:"I get up ___ 7 o'clock.",a:["at","in","on"],e:"Clock times → at."},
+{q:"These ___ my keys.",a:["are","is","be"],e:"These (plural) → are."},
+{q:"He ___ got a car.",a:["has","have","is"],e:"He / she / it → has got."},
+{q:"I go to college ___ Tuesday.",a:["on","in","at"],e:"Days → on."}]},
+{id:'e2',name:'Entry 2',tag:'past simple, comparatives, continuous',sw:'c4',qs:[
+{q:"Yesterday I ___ to the market.",a:["went","go","goed"],e:"Go → went (irregular past)."},
+{q:"She ___ TV at the moment.",a:["is watching","watches","watch"],e:"At the moment → present continuous."},
+{q:"My bag is ___ than your bag.",a:["bigger","more big","biggest"],e:"Short adjective: big → bigger than."},
+{q:"Did you ___ the film?",a:["see","saw","seen"],e:"After did → base verb."},
+{q:"How ___ milk do we need?",a:["much","many","lots"],e:"Uncountable nouns → how much."},
+{q:"They ___ at home last night.",a:["were","was","are"],e:"They → were (past)."},
+{q:"I ___ my homework yesterday.",a:["didn't do","don't do","didn't did"],e:"Past negative → didn't + base verb."},
+{q:"There aren't ___ eggs in the fridge.",a:["any","some","a"],e:"Negatives → any."},
+{q:"He is ___ person in the class.",a:["the tallest","tallest","the taller"],e:"Superlative → the + -est."},
+{q:"We usually ___ to the park on Sundays.",a:["go","are going","goes"],e:"Habits → present simple."},
+{q:"Listen! The baby ___.",a:["is crying","cries","cry"],e:"Happening now → present continuous."},
+{q:"You ___ smoke in the hospital.",a:["mustn't","don't must","not must"],e:"Not allowed → mustn't + verb."},
+{q:"Where ___ you born?",a:["were","was","did"],e:"You → were born."},
+{q:"She ___ her phone on the bus last week.",a:["lost","losed","loses"],e:"Lose → lost (irregular past)."},
+{q:"I'm going ___ my friend tomorrow.",a:["to visit","visit","visiting"],e:"Plans → be going to + verb."},
+{q:"This chair is ___ comfortable than that one.",a:["more","most","much"],e:"Long adjective → more … than."},
+{q:"What ___ you do last weekend?",a:["did","do","were"],e:"Past question → did + base verb."},
+{q:"Can I have ___ water, please?",a:["some","any","a"],e:"Requests and offers → some."}]},
+{id:'e3',name:'Entry 3',tag:'present perfect, first conditional',sw:'c5',qs:[
+{q:"I ___ to Spain three times.",a:["have been","have gone","was"],e:"Experience → present perfect. Been = went and came back."},
+{q:"She ___ here since 2019.",a:["has lived","lives","is living"],e:"Since + start point → present perfect."},
+{q:"I was cooking when the phone ___.",a:["rang","was ringing","rings"],e:"Short action interrupts a longer one → past simple."},
+{q:"If it rains, we ___ stay at home.",a:["will","would","are"],e:"First conditional: if + present, will + verb."},
+{q:"You look tired. You ___ go to bed.",a:["should","would","must to"],e:"Advice → should + verb."},
+{q:"Look at those clouds! It ___ rain.",a:["is going to","will to","rains"],e:"Prediction from what you can see → going to."},
+{q:"Have you finished your work ___?",a:["yet","already","still"],e:"Questions and negatives → yet, at the end."},
+{q:"I've known him ___ ten years.",a:["for","since","during"],e:"Length of time → for."},
+{q:"He ___ TV when I arrived.",a:["was watching","watched","is watching"],e:"Longer action in progress → past continuous."},
+{q:"She ___ never eaten sushi.",a:["has","have","did"],e:"She → has + past participle."},
+{q:"This is the man ___ helped me.",a:["who","which","what"],e:"People → who."},
+{q:"I used ___ in Poland.",a:["to live","live","living"],e:"Past habit → used to + verb."},
+{q:"I'm interested ___ learning Spanish.",a:["in","on","at"],e:"Interested in."},
+{q:"If you don't hurry, you ___ the train.",a:["will miss","miss","would miss"],e:"First conditional → will + verb."},
+{q:"The film was ___ boring that I fell asleep.",a:["so","such","too"],e:"So + adjective + that."},
+{q:"We've ___ moved house.",a:["just","yet","ever"],e:"Very recent → just, before the main verb."},
+{q:"I'm not old ___ to drive.",a:["enough","too","so"],e:"Adjective + enough."}]},
+{id:'l1',name:'Level 1',tag:'passives, second conditional, past perfect',sw:'c1',qs:[
+{q:"If I ___ more money, I would buy a car.",a:["had","have","would have"],e:"Second conditional: if + past, would + verb."},
+{q:"The letter ___ yesterday.",a:["was sent","sent","has sent"],e:"Past passive → was / were + past participle."},
+{q:"By the time we arrived, the film ___.",a:["had started","started","has started"],e:"Earlier past action → past perfect."},
+{q:"I'm used to ___ up early.",a:["getting","get","got"],e:"Be used to + -ing."},
+{q:"His coat has gone. He ___ have left already.",a:["must","can't","shouldn't"],e:"Strong logical guess about the past → must have."},
+{q:"The hotel ___ we stayed was lovely.",a:["where","which","who"],e:"Places → where."},
+{q:"Despite ___ tired, she went to work.",a:["being","she was","be"],e:"Despite + -ing or a noun."},
+{q:"I wish I ___ speak Italian.",a:["could","can","will"],e:"Wish about the present → past form: could."},
+{q:"He suggested ___ a taxi.",a:["taking","to take","take"],e:"Suggest + -ing."},
+{q:"Unless you ___, you'll fail the exam.",a:["study","don't study","won't study"],e:"Unless = if not, so the verb stays positive."},
+{q:"I haven't seen her ___ we left school.",a:["since","for","ago"],e:"Since + a point in time."},
+{q:"The new bridge ___ next year.",a:["will be built","will build","is building"],e:"Future passive → will be + past participle."},
+{q:"She asked me where I ___.",a:["lived","did live","do live"],e:"Reported questions use statement word order."},
+{q:"I'd like ___ to the meeting.",a:["to come","coming","come"],e:"Would like + to + verb."},
+{q:"You ___ wear a uniform, but you can if you want.",a:["don't have to","mustn't","haven't"],e:"Not necessary → don't have to."},
+{q:"I've been waiting here ___ two hours.",a:["for","since","from"],e:"Length of time → for."},
+{q:"She's the woman ___ son plays for Arsenal.",a:["whose","who's","which"],e:"Possession → whose."}]},
+{id:'l2',name:'Level 2',tag:'third conditional, inversion, modals',sw:'c0',qs:[
+{q:"If I had known, I ___ you.",a:["would have told","would tell","had told"],e:"Third conditional: if + past perfect, would have + past participle."},
+{q:"Hardly ___ arrived when it started to rain.",a:["had we","we had","did we"],e:"Negative adverb first → inversion: hardly had we."},
+{q:"Not only ___ late, but he also forgot the tickets.",a:["was he","he was","he is"],e:"Not only at the start → inversion."},
+{q:"She is thought ___ the country last week.",a:["to have left","to leave","that she left"],e:"Past event → be thought to have + past participle."},
+{q:"It's high time we ___.",a:["left","leave","will leave"],e:"It's high time + past simple."},
+{q:"___ he apologised, I would have forgiven him.",a:["Had","If","Should"],e:"Inverted third conditional: Had he apologised = If he had apologised."},
+{q:"By next June, I ___ here for ten years.",a:["will have worked","will work","am working"],e:"Duration up to a future point → future perfect."},
+{q:"He denied ___ the money.",a:["taking","to take","take"],e:"Deny + -ing."},
+{q:"No sooner had we sat down ___ the phone rang.",a:["than","when","that"],e:"No sooner … than."},
+{q:"You ___ have brought food. There was plenty.",a:["needn't","mustn't","couldn't"],e:"Did something unnecessary → needn't have."},
+{q:"Little ___ that they were being watched.",a:["did they know","they knew","they did know"],e:"Little at the start → inversion with did."},
+{q:"The more you practise, ___ you get.",a:["the better","better","the best"],e:"The + comparative, the + comparative."},
+{q:"I'd rather you ___ my car.",a:["didn't borrow","don't borrow","not borrow"],e:"I'd rather + another person + past simple."},
+{q:"If she hadn't missed the bus, she ___ here now.",a:["would be","would have been","will be"],e:"Mixed conditional: past cause, present result → would be."},
+{q:"The report, ___ was published yesterday, caused a stir.",a:["which","that","what"],e:"Non-defining clause (with commas) → which, not that."},
+{q:"She insisted ___ the bill.",a:["on paying","to pay","paying"],e:"Insist on + -ing."},
+{q:"He ___ have taken your keys. He was at work all day.",a:["can't","mustn't","needn't"],e:"Impossible in the past → can't have."}]}
+];
+
+const SHAPES=[
+ [[[0,0]],.3],
+ [[[0,0],[0,1]],.5],[[[0,0],[1,0]],.5],
+ [[[0,0],[0,1],[0,2]],1],[[[0,0],[1,0],[2,0]],1],
+ [[[0,0],[0,1],[0,2],[0,3]],1],[[[0,0],[1,0],[2,0],[3,0]],1],
+ [[[0,0],[0,1],[0,2],[0,3],[0,4]],1.2],[[[0,0],[1,0],[2,0],[3,0],[4,0]],1.2],
+ [[[0,0],[0,1],[1,0],[1,1]],1],
+ [[[0,0],[0,1],[0,2],[1,0],[1,1],[1,2],[2,0],[2,1],[2,2]],1.4],
+ [[[0,0],[0,1],[0,2],[1,0],[1,1],[1,2]],1.1],[[[0,0],[0,1],[1,0],[1,1],[2,0],[2,1]],1.1],
+ [[[0,0],[1,0],[1,1]],.8],[[[0,1],[1,0],[1,1]],.8],[[[0,0],[0,1],[1,0]],.8],[[[0,0],[0,1],[1,1]],.8],
+ [[[0,0],[1,0],[2,0],[2,1]],.6],[[[0,1],[1,1],[2,1],[2,0]],.6],[[[0,0],[0,1],[1,0],[2,0]],.6],[[[0,0],[0,1],[1,1],[2,1]],.6],
+ [[[0,0],[0,1],[0,2],[1,0]],.6],[[[0,0],[0,1],[0,2],[1,2]],.6],[[[0,0],[1,0],[1,1],[1,2]],.6],[[[0,2],[1,0],[1,1],[1,2]],.6],
+ [[[0,0],[0,1],[0,2],[1,1]],.6],[[[1,0],[1,1],[1,2],[0,1]],.6],[[[0,0],[1,0],[2,0],[1,1]],.6],[[[0,1],[1,1],[2,1],[1,0]],.6],
+ [[[0,1],[0,2],[1,0],[1,1]],.5],[[[0,0],[0,1],[1,1],[1,2]],.5],[[[0,0],[1,0],[1,1],[2,1]],.5],[[[0,1],[1,1],[1,0],[2,0]],.5]
+];
+const TOTALW=SHAPES.reduce((s,x)=>s+x[1],0);
+const N=6,COLORS=7;
+const $=id=>document.getElementById(id);
+const boardEl=$('board'),trayEl=$('tray'),modal=$('modal');
+let grid,tray,score,best,level,combo,sinceClear,rescues,deck,busy=false,drag=null;
+let cs=44,gap=3,pad=6,mini=22;
+
+const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+const bestFor=id=>+(store.get('gb-best-'+id)||0);
+const rnd=n=>Math.floor(Math.random()*n);
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=rnd(i+1);[a[i],a[j]]=[a[j],a[i]]}return a};
+const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+/* ---------- start screen ---------- */
+function renderLevels(){
+  $('levels').innerHTML=LEVELS.map((L,i)=>`<button class="lvl" type="button" data-i="${i}" id="lvl-${L.id}">
+    <span class="sw blk ${L.sw}"></span><span><span class="nm">${L.name}</span><span class="tg">${L.tag}</span></span>
+    <span class="bs">Best<b>${bestFor(L.id)}</b></span></button>`).join('');
+  $('levels').querySelectorAll('.lvl').forEach(b=>b.onclick=()=>{goFull();startGame(LEVELS[+b.dataset.i])});
+}
+
+/* ---------- fullscreen (needs a tap; browsers block it on page load) ---------- */
+function goFull(){
+  const d=document,el=d.documentElement;
+  if(d.fullscreenElement||d.webkitFullscreenElement)return;
+  const fn=el.requestFullscreen||el.webkitRequestFullscreen;
+  if(!fn)return;
+  try{const p=fn.call(el,{navigationUI:'hide'});if(p&&p.then)p.then(()=>{try{screen.orientation.lock('portrait').catch(()=>{})}catch(e){}}).catch(()=>{})}catch(e){}
+}
+document.addEventListener('fullscreenchange',()=>setTimeout(sizeUp,100));
+document.addEventListener('webkitfullscreenchange',()=>setTimeout(sizeUp,100));
+
+/* ---------- board setup ---------- */
+const cells=[];
+boardEl.innerHTML='<div class="board-logo" aria-hidden="true"><span class="mb">Made by</span><span class="nm">A<span style="display:inline-block;width:calc(var(--cs)*.5);height:calc(var(--cs)*.14);border-radius:3px;background:currentColor;align-self:center;margin-top:calc(var(--cs)*.3)"></span><svg class="tin" viewBox="0 0 64 84" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"><path d="M6 12v60c0 6 11.6 10 26 10s26-4 26-10V12" fill="currentColor" fill-opacity=".25"/><ellipse cx="32" cy="12" rx="26" ry="9" fill="currentColor" fill-opacity=".5"/><ellipse cx="32" cy="12" rx="17" ry="5"/><path d="M6 28c0 5 11.6 9 26 9s26-4 26-9M6 58c0 5 11.6 9 26 9s26-4 26-9"/><path d="M6 36v14M58 36v14" stroke-width="0"/><path d="M20 44v8M32 46v8M44 44v8" stroke-width="3" stroke-linecap="round"/></svg></span><span class="ln"></span></div>';
+for(let i=0;i<N*N;i++){const d=document.createElement('div');d.className='cell';boardEl.appendChild(d);cells.push(d)}
+const slots=[];
+for(let i=0;i<3;i++){const s=document.createElement('div');s.className='slot';s.dataset.i=i;trayEl.appendChild(s);slots.push(s);s.addEventListener('pointerdown',e=>startDrag(e,i))}
+
+function sizeUp(){
+  const W=Math.min(window.innerWidth-32,480);
+  const H=(window.visualViewport&&window.visualViewport.height)||document.documentElement.clientHeight;
+  cs=Math.floor(Math.min((W-2*pad-5*gap)/6,(H-188)/8.3,66));
+  cs=Math.max(cs,26);
+  mini=Math.round(cs*.38);
+  const r=document.documentElement.style;
+  r.setProperty('--cs',cs+'px');r.setProperty('--gap',gap+'px');r.setProperty('--pad',pad+'px');
+  if(tray)renderTray();
+}
+window.addEventListener('resize',sizeUp);
+
+function pickShape(){let x=Math.random()*TOTALW;for(const [s,w] of SHAPES){x-=w;if(x<=0)return s}return SHAPES[0][0]}
+const newPiece=()=>({shape:pickShape(),color:rnd(COLORS),used:false});
+const dims=s=>({r:Math.max(...s.map(p=>p[0]))+1,c:Math.max(...s.map(p=>p[1]))+1});
+function canPlace(s,r,c){for(const[dr,dc]of s){const rr=r+dr,cc=c+dc;if(rr<0||cc<0||rr>=N||cc>=N||grid[rr][cc]!==null)return false}return true}
+function fits(s){for(let r=0;r<N;r++)for(let c=0;c<N;c++)if(canPlace(s,r,c))return true;return false}
+function refillTray(safe){
+  if(!safe){tray=[newPiece(),newPiece(),newPiece()];return}
+  for(let t=0;t<40;t++){tray=[newPiece(),newPiece(),newPiece()];if(tray.some(p=>fits(p.shape)))return}
+  tray[0]={shape:[[0,0]],color:rnd(COLORS),used:false};
+}
+
+function makePiece(p,size,g){
+  const d=dims(p.shape),el=document.createElement('div');
+  el.className='piece';el.style.width=(d.c*size+(d.c-1)*g)+'px';el.style.height=(d.r*size+(d.r-1)*g)+'px';
+  for(const[r,c]of p.shape){const b=document.createElement('div');b.className='blk c'+p.color;
+    Object.assign(b.style,{left:c*(size+g)+'px',top:r*(size+g)+'px',width:size+'px',height:size+'px',borderRadius:Math.round(size*.16)+'px'});el.appendChild(b)}
+  return el;
+}
+
+function renderBoard(pv){
+  for(let i=0;i<N*N;i++){
+    const r=i/N|0,c=i%N,v=grid[r][c];let cl='cell';
+    if(pv&&pv.clears.has(i))cl+=' blk hot c'+pv.color;
+    else if(v!==null)cl+=' blk c'+v;
+    else if(pv&&pv.cells.has(i))cl+=' ghost c'+pv.color;
+    cells[i].className=cl;
+  }
+}
+function renderTray(){
+  tray.forEach((p,i)=>{const s=slots[i];s.innerHTML='';s.classList.remove('dead','lifting');
+    if(!p.used){s.appendChild(makePiece(p,mini,2));if(!fits(p.shape))s.classList.add('dead')}});
+}
+function renderHud(){$('score').textContent=score;$('best').textContent=Math.max(best,score);$('qright').textContent=rescues}
+
+/* ---------- drag ---------- */
+function startDrag(e,i){
+  if(busy||drag)return;const p=tray[i];if(!p||p.used)return;
+  e.preventDefault();
+  const el=makePiece(p,cs,gap);el.classList.add('floating');document.body.appendChild(el);
+  const d=dims(p.shape);
+  drag={i,el,w:d.c*cs+(d.c-1)*gap,h:d.r*cs+(d.r-1)*gap,touch:e.pointerType!=='mouse',target:null,pv:null};
+  slots[i].classList.add('lifting');moveDrag(e.clientX,e.clientY);
+}
+function moveDrag(x,y){
+  const left=x-drag.w/2, top=drag.touch?y-drag.h-cs*1.3:y-drag.h/2;
+  drag.el.style.transform=`translate(${left}px,${top}px)`;
+  const br=boardEl.getBoundingClientRect(),step=cs+gap;
+  const c=Math.round((left-br.left-pad)/step),r=Math.round((top-br.top-pad)/step);
+  const p=tray[drag.i];
+  const key=canPlace(p.shape,r,c)?r+','+c:null;
+  if(key===(drag.target&&drag.target.key))return;
+  if(key){drag.target={r,c,key};drag.pv=preview(p,r,c)}else{drag.target=null;drag.pv=null}
+  renderBoard(drag.pv);
+}
+function preview(p,r,c){
+  const set=new Set(p.shape.map(([dr,dc])=>(r+dr)*N+c+dc)),filled=i=>set.has(i)||grid[i/N|0][i%N]!==null,clears=new Set();
+  for(let y=0;y<N;y++){let ok=true;for(let x=0;x<N;x++)if(!filled(y*N+x)){ok=false;break}if(ok)for(let x=0;x<N;x++)clears.add(y*N+x)}
+  for(let x=0;x<N;x++){let ok=true;for(let y=0;y<N;y++)if(!filled(y*N+x)){ok=false;break}if(ok)for(let y=0;y<N;y++)clears.add(y*N+x)}
+  return{cells:set,clears,color:p.color};
+}
+window.addEventListener('pointermove',e=>{if(drag){e.preventDefault();moveDrag(e.clientX,e.clientY)}},{passive:false});
+window.addEventListener('pointerup',()=>endDrag(true));
+window.addEventListener('pointercancel',()=>endDrag(false));
+function endDrag(ok){
+  if(!drag)return;const d=drag;drag=null;d.el.remove();slots[d.i].classList.remove('lifting');
+  if(ok&&d.target)place(d.i,d.target.r,d.target.c);else renderBoard();
+}
+
+/* ---------- game logic ---------- */
+function place(i,r,c){
+  const p=tray[i];
+  for(const[dr,dc]of p.shape)grid[r+dr][c+dc]=p.color;
+  p.used=true;score+=p.shape.length;
+  const rows=[],cols=[];
+  for(let y=0;y<N;y++)if(grid[y].every(v=>v!==null))rows.push(y);
+  for(let x=0;x<N;x++)if(grid.every(row=>row[x]!==null))cols.push(x);
+  const lines=rows.length+cols.length,popped=[];
+  if(lines){
+    const set=new Set();rows.forEach(y=>{for(let x=0;x<N;x++)set.add(y*N+x)});cols.forEach(x=>{for(let y=0;y<N;y++)set.add(y*N+x)});
+    set.forEach(k=>{popped.push([k,grid[k/N|0][k%N]]);grid[k/N|0][k%N]=null});
+    combo++;sinceClear=0;
+    const pts=10*lines*lines*Math.max(1,combo);score+=pts;
+    toast('+'+pts,combo>1?'Combo ×'+combo:lines>1?lines+' lines!':'');
+  }else if(++sinceClear>=3)combo=0;
+  renderBoard();pop(popped);
+  if(tray.every(t=>t.used))refillTray();
+  renderTray();renderHud();
+  if(!tray.some(t=>!t.used&&fits(t.shape))){busy=true;setTimeout(offerContinue,750)}
+}
+function pop(list){
+  if(!list.length)return;
+  list.forEach(([k,col])=>cells[k].className='cell blk pop c'+col);
+  setTimeout(()=>renderBoard(drag&&drag.pv),400);
+}
+function toast(p,k){
+  const t=document.createElement('div');t.className='toast';t.innerHTML=`<div class="p">${p}</div>${k?`<div class="k">${k}</div>`:''}`;
+  boardEl.parentNode.appendChild(t);setTimeout(()=>t.remove(),950);
+}
+
+function startGame(L){
+  level=L;grid=Array.from({length:N},()=>Array(N).fill(null));
+  score=0;combo=0;sinceClear=0;rescues=0;best=bestFor(L.id);deck=shuffle(L.qs);busy=false;
+  $('lvlChip').textContent=L.name;
+  $('start').hidden=true;$('game').hidden=false;closeModal();setStuck(false);
+  sizeUp();refillTray(true);renderBoard();renderTray();renderHud();
+}
+function toLevels(){closeModal();setStuck(false);$('game').hidden=true;$('start').hidden=false;renderLevels()}
+
+/* ---------- modals ---------- */
+function setStuck(on){$('stuck').hidden=!on;document.querySelector('.hud').hidden=on}
+function openModal(html){setStuck(false);modal.innerHTML=`<div class="overlay"><div class="card" role="dialog" aria-modal="true">${html}</div></div>`;modal.hidden=false;const f=modal.querySelector('button');if(f)f.focus()}
+function closeModal(){modal.hidden=true;modal.innerHTML=''}
+
+function offerContinue(){setStuck(true);$('s-go').focus()}
+$('s-go').onclick=()=>askQuestion();$('s-end').onclick=()=>gameOver();
+function nextQ(){if(!deck.length)deck=shuffle(level.qs);return deck.pop()}
+function askQuestion(){
+  const Q=nextQ(),opts=shuffle(Q.a),right=Q.a[0];
+  const qHtml=esc(Q.q).replace('___','<span class="blank" id="m-blank">?</span>');
+  openModal(`<div class="eyebrow">${level.name} · Choose the correct answer</div><p class="q">${qHtml}</p>
+  <div class="opts">${opts.map((o,i)=>`<button class="opt" type="button" id="m-o${i}" data-v="${esc(o)}">${esc(o)}</button>`).join('')}</div>
+  <div class="fb" id="m-fb" hidden></div><div class="actions" id="m-next" hidden></div>`);
+  modal.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{
+    const ok=b.dataset.v===right;
+    modal.querySelectorAll('.opt').forEach(x=>{x.disabled=true;if(x.dataset.v===right)x.classList.add('right')});
+    if(!ok)b.classList.add('wrong');
+    $('m-blank').textContent=right;
+    const fb=$('m-fb');fb.hidden=false;fb.className='fb '+(ok?'ok':'no');
+    fb.innerHTML=`<b>${ok?'Correct!':'Not quite. The answer is “'+esc(right)+'”.'}</b>${esc(Q.e)}`;
+    const nx=$('m-next');nx.hidden=false;
+    nx.innerHTML=ok?`<button class="btn primary" id="m-k" type="button">Keep playing</button>`:`<button class="btn primary" id="m-k" type="button">See my score</button>`;
+    $('m-k').onclick=ok?rescue:gameOver;$('m-k').focus();
+  });
+}
+function rescue(){
+  rescues++;closeModal();setStuck(false);
+  const order=[...Array(N).keys()].sort((a,b)=>grid[b].filter(v=>v!==null).length-grid[a].filter(v=>v!==null).length).slice(0,2);
+  const popped=[];order.forEach(y=>{for(let x=0;x<N;x++)if(grid[y][x]!==null){popped.push([y*N+x,grid[y][x]]);grid[y][x]=null}});
+  refillTray(true);renderBoard();pop(popped);renderTray();renderHud();toast('Saved!','');
+  busy=false;
+  if(!tray.some(t=>!t.used&&fits(t.shape))){busy=true;setTimeout(offerContinue,750)}
+}
+function gameOver(){
+  const isBest=score>best;if(isBest){best=score;store.set('gb-best-'+level.id,score)}
+  renderHud();
+  openModal(`<div class="eyebrow">${level.name}</div><h2>${isBest?'New best score!':'Game over'}</h2>
+  <div class="stats"><div>Score<b>${score}</b></div><div>Best<b>${best}</b></div><div>Questions<b>${rescues}</b></div></div>
+  <div class="actions"><button class="btn primary" id="m-again" type="button">Play again</button><button class="btn" id="m-lv" type="button">Change level</button></div>`);
+  $('m-again').onclick=()=>{goFull();startGame(level)};$('m-lv').onclick=toLevels;
+}
+$('back').onclick=()=>{
+  if(score===0||busy){toLevels();return}
+  openModal(`<h2>Leave this game?</h2><p>Your score of ${score} will be lost.</p>
+  <div class="actions"><button class="btn primary" id="m-stay" type="button">Keep playing</button><button class="btn" id="m-leave" type="button">Leave</button></div>`);
+  $('m-stay').onclick=closeModal;$('m-leave').onclick=toLevels;
+};
+
+renderLevels();sizeUp();
+</script>
+
+<div class="atin-logo" aria-label="Made by Atin">
+<svg viewBox="104 28 172 134" width="64" height="50" role="img" aria-hidden="true">
+<text x="139" y="112" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="72" fill="currentColor">A</text>
+<rect x="177" y="83" width="24" height="6" rx="1" fill="currentColor"/>
+<path d="M216 66 L216 106 A25 7 0 0 0 266 106 L266 66" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+<ellipse cx="241" cy="66" rx="25" ry="7" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="216" y1="80" x2="266" y2="80" stroke="currentColor" stroke-width="1.5"/>
+<line x1="216" y1="94" x2="266" y2="94" stroke="currentColor" stroke-width="1.5"/>
+<ellipse cx="241" cy="47" rx="23" ry="5" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="114" y1="128" x2="266" y2="128" stroke="currentColor" stroke-width="1"/>
+<text x="190" y="152" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" letter-spacing="2" fill="currentColor">made by Atin</text>
+</svg>
+</div>
+<style>
+.atin-logo{position:fixed;left:calc(6px + env(safe-area-inset-left,0px));bottom:calc(6px + env(safe-area-inset-bottom,0px));z-index:2147483000;pointer-events:none;color:#1F3A5F;background:rgba(255,255,255,.92);border:1px solid #C9D3DF;border-radius:8px;padding:3px 5px;line-height:0}
+.atin-logo svg{display:block}
+@media print{.atin-logo{position:fixed;left:auto;right:6mm;bottom:5mm;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style></body></html>

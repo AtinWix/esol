@@ -1,0 +1,412 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<style>.pnav{display:flex;gap:10px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:12px;margin-top:4px}</style>
+<title>E2 Past Simple – Speaking Tasks 1 & 2 – Interactive Practice 2</title>
+<style>[hidden]{display:none!important}</style>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@500;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<style>
+/* Layout: one activity at a time under a tab row; big tap targets for phones and the classroom screen */
+:root{
+  --bg:#F3F5F7; --surface:#FFFFFF; --ink:#18222E; --muted:#556170; --line:#D9DEE5;
+  --accent:#0E6B6B; --accent-ink:#FFFFFF; --accent-soft:#DDEFEE;
+  --mark:#E8A317; --mark-soft:#FCF0D2;
+  --good:#1D7A3A; --good-soft:#DDF1E3; --bad:#B3261E; --bad-soft:#F8DEDC;
+  --display:"Lexend","Segoe UI",Arial,sans-serif;
+  --body:"Atkinson Hyperlegible",Verdana,Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#11161C; --surface:#1A222B; --ink:#E9EEF3; --muted:#9AA6B3; --line:#2C3743;
+  --accent:#4FB8B3; --accent-ink:#08201F; --accent-soft:#163533;
+  --mark:#F0B940; --mark-soft:#3A2F14;
+  --good:#5FCB82; --good-soft:#163222; --bad:#F08A82; --bad-soft:#3A1A18; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#11161C; --surface:#1A222B; --ink:#E9EEF3; --muted:#9AA6B3; --line:#2C3743;
+  --accent:#4FB8B3; --accent-ink:#08201F; --accent-soft:#163533;
+  --mark:#F0B940; --mark-soft:#3A2F14;
+  --good:#5FCB82; --good-soft:#163222; --bad:#F08A82; --bad-soft:#3A1A18; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.5}
+.wrap{max-width:860px;margin:0 auto;padding-block:20px 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header h1{font-family:var(--display);font-weight:700;font-size:clamp(1.6rem,4vw,2.2rem);margin:0;text-wrap:balance;line-height:1.15}
+header p{margin:.3rem 0 0;color:var(--muted)}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:16px 0 12px;scrollbar-width:thin}
+.tab{flex:0 0 auto;font:600 .95rem/1 var(--display);padding:12px 16px;border-radius:999px;border:2px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.tab[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.tab:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--mark);outline-offset:2px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:18px}
+.panel h2{font-family:var(--display);font-size:1.35rem;margin:0}
+.task{margin:0;color:var(--muted)}
+.exam{display:inline-block;font:700 .72rem/1 var(--display);letter-spacing:.06em;text-transform:uppercase;background:var(--mark-soft);color:var(--ink);padding:6px 9px;border-radius:6px}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.spread{justify-content:space-between}
+.btn{font:600 1rem/1 var(--display);padding:14px 20px;border-radius:10px;border:2px solid var(--accent);background:var(--accent);color:var(--accent-ink);cursor:pointer;min-height:48px}
+.btn.ghost{background:transparent;color:var(--accent)}
+.btn:disabled{opacity:.45;cursor:default}
+.score{font:700 1rem/1 var(--display);font-variant-numeric:tabular-nums;color:var(--muted)}
+.big{font-family:var(--display);font-weight:700;font-size:clamp(2.2rem,8vw,3.4rem);line-height:1.1;text-align:center;margin:8px 0}
+.prompt{text-align:center;color:var(--muted);margin:0}
+input[type=text]{font:1.4rem var(--body);padding:12px 14px;border-radius:10px;border:2px solid var(--line);background:var(--bg);color:var(--ink);width:100%;max-width:340px;text-align:center}
+.center{justify-content:center}
+.feedback{min-height:1.6em;text-align:center;font-weight:700;margin:0}
+.ok{color:var(--good)} .no{color:var(--bad)}
+.progress{height:8px;background:var(--line);border-radius:99px;overflow:hidden}
+.progress>i{display:block;height:100%;background:var(--accent);width:0;transition:width .3s}
+.buckets{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.bucket{font:700 1.5rem/1.1 var(--display);padding:18px 8px;border-radius:12px;border:2px solid var(--accent);background:var(--accent-soft);color:var(--ink);cursor:pointer;min-height:84px}
+.bucket small{display:block;font:400 .85rem var(--body);color:var(--muted);margin-top:6px}
+.choices{display:grid;gap:12px}
+.choice{font:1.15rem/1.35 var(--body);text-align:left;padding:16px 18px;border-radius:12px;border:2px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.choice.right{border-color:var(--good);background:var(--good-soft)}
+.choice.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.tip{background:var(--mark-soft);border-radius:10px;padding:12px 14px;margin:0}
+.answer{min-height:70px;border:2px dashed var(--line);border-radius:12px;padding:10px;display:flex;flex-wrap:wrap;gap:8px;align-content:flex-start}
+.answer.right{border-style:solid;border-color:var(--good);background:var(--good-soft)}
+.answer.wrong{border-style:solid;border-color:var(--bad);background:var(--bad-soft)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:1.15rem/1 var(--body);padding:12px 14px;border-radius:10px;border:2px solid var(--accent);background:var(--surface);color:var(--ink);cursor:pointer}
+.chip.used{visibility:hidden}
+.story{display:grid;gap:10px}
+.line{display:flex;gap:12px;align-items:flex-start;text-align:left;font:1.05rem/1.4 var(--body);padding:14px;border-radius:12px;border:2px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.line .n{flex:0 0 34px;height:34px;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;font:700 1rem var(--display)}
+.line.picked{border-color:var(--accent)} .line.picked .n{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.line.right{border-color:var(--good);background:var(--good-soft)} .line.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.card{border:2px solid var(--accent);border-radius:14px;padding:18px;background:var(--accent-soft)}
+.card .label{font:700 .75rem/1 var(--display);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.card .topic{font:700 clamp(1.4rem,4.5vw,1.9rem)/1.2 var(--display);margin-top:8px;text-wrap:balance}
+.timer{font:700 clamp(3rem,14vw,5rem)/1 var(--display);font-variant-numeric:tabular-nums;text-align:center;letter-spacing:.02em}
+.timer.done{color:var(--bad);animation:flash .5s 4}
+@keyframes flash{50%{opacity:.25}}
+@media (prefers-reduced-motion:reduce){.timer.done{animation:none}.progress>i{transition:none}}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.cols>div{min-width:0}
+.cols h3{font:700 1rem var(--display);margin:0 0 6px}
+.cols ul{margin:0;padding-left:1.2em}
+.q-out{font:700 1.3rem/1.3 var(--display);min-height:1.4em;margin:0}
+.phase{text-align:center;color:var(--muted);font-weight:700;margin:0}
+@media (max-width:560px){.cols{grid-template-columns:1fr}.panel{padding:16px}.bucket{font-size:1.25rem}}
+</style>
+<style>
+.opts3{display:grid;gap:10px}
+.hstory{font-size:1.15rem;line-height:2;background:var(--bg);border:2px solid var(--line);border-radius:12px;padding:14px 16px}
+.hstory .w,.hstory .err{cursor:pointer;border-radius:4px;padding:0 2px}
+.hstory .w:hover,.hstory .err:hover{background:var(--accent-soft)}
+.hstory .err.found{background:var(--good-soft);color:var(--good);box-shadow:0 0 0 2px var(--good)}
+.hstory .w.miss{background:var(--bad-soft);box-shadow:0 0 0 2px var(--bad)}
+textarea{font:1.1rem/1.6 var(--body);width:100%;min-height:9em;padding:12px 14px;border-radius:10px;border:2px solid var(--line);background:var(--bg);color:var(--ink);resize:vertical}
+textarea:focus-visible{outline:3px solid var(--mark);outline-offset:2px}
+.checks{display:grid;gap:8px;margin:0;padding:0;list-style:none}
+.checks li{display:flex;gap:10px;align-items:center;padding:10px 12px;border-radius:10px;border:2px solid var(--line);background:var(--bg)}
+.checks li.ok{border-color:var(--good);background:var(--good-soft)}
+.checks .tick{font:700 1.2rem var(--display);width:1.4em;text-align:center}
+.found-list{color:var(--muted);font-size:.95rem}
+.topicbox{font:700 1.3rem/1.3 var(--display);color:var(--accent)}
+.clock{font:700 2.4rem var(--display);font-variant-numeric:tabular-nums}
+.clock.end{color:var(--bad)}
+select{font:1rem var(--body);padding:10px;border-radius:10px;border:2px solid var(--line);background:var(--bg);color:var(--ink);max-width:100%}
+</style>
+
+<style>
+/* Tabs: no sideways scrolling — wrap on small screens, one even row across a wide PC screen */
+.tabs{flex-wrap:wrap;overflow-x:visible}
+@media (min-width:1000px){
+  .wrap{max-width:min(1600px,100%)}
+  body{font-size:20px}
+  .tabs{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}
+  .tab{font-size:1.05rem;padding:16px 10px;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .panel{padding:28px 32px}
+}
+</style>
+<div class="wrap">
+  <header>
+    <h1>Past Tense Practice 2</h1>
+    <p>Entry 2 · on your own · Task 1 questions and Task 2 talk</p>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="Activities">
+    <button class="tab" role="tab" data-p="verbs" aria-selected="true">1 Verbs</button>
+    <button class="tab" role="tab" data-p="neg" aria-selected="false">2 didn't</button>
+    <button class="tab" role="tab" data-p="time" aria-selected="false">3 Time words</button>
+    <button class="tab" role="tab" data-p="build" aria-selected="false">4 Questions</button>
+    <button class="tab" role="tab" data-p="hunt" aria-selected="false">5 Mistake hunt</button>
+    <button class="tab" role="tab" data-p="write" aria-selected="false">6 My story</button>
+  </nav>
+
+  <!-- 1 verbs -->
+  <section class="panel" id="verbs" role="tabpanel">
+    <div class="row spread"><h2>Irregular verbs</h2><span class="score" id="v-score">0 / 12</span></div>
+    <div class="progress"><i id="v-bar"></i></div>
+    <p class="prompt">Write the past.</p>
+    <div class="big" id="v-word">go</div>
+    <form class="row center" id="v-form" autocomplete="off">
+      <input type="text" id="v-input" aria-label="Past form" autocapitalize="off" spellcheck="false">
+    </form>
+    <p class="feedback" id="v-fb" aria-live="polite"></p>
+    <div class="row center">
+      <button class="btn" id="v-check" type="button">Check</button>
+      <button class="btn ghost" id="v-show" type="button">Show me</button>
+      <button class="btn ghost" id="v-next" type="button" hidden>Next</button>
+    </div>
+  </section>
+
+  <!-- 2 negatives -->
+  <section class="panel" id="neg" role="tabpanel" hidden>
+    <div class="row spread"><h2>Saying no</h2><span class="score" id="n-score">0 / 10</span></div>
+    <div class="progress"><i id="n-bar"></i></div>
+    <p class="prompt">Make it negative. Tap the correct sentence.</p>
+    <div class="big" id="n-q" style="font-size:clamp(1.5rem,5vw,2.2rem)"></div>
+    <div class="opts3" id="n-opts"></div>
+    <p class="tip" id="n-tip" hidden></p>
+    <div class="row center"><button class="btn" id="n-next" type="button" hidden>Next</button></div>
+  </section>
+
+  <!-- 3 time words -->
+  <section class="panel" id="time" role="tabpanel" hidden>
+    <div class="row spread"><h2>ago, last, in or yesterday?</h2><span class="score" id="t-score">0 / 10</span></div>
+    <div class="progress"><i id="t-bar"></i></div>
+    <p class="prompt">Tap the missing word.</p>
+    <div class="big" id="t-q" style="font-size:clamp(1.4rem,4.5vw,2.1rem)"></div>
+    <div class="buckets" style="grid-template-columns:repeat(2,1fr)">
+      <button class="bucket" data-w="ago" type="button">ago</button>
+      <button class="bucket" data-w="last" type="button">last</button>
+      <button class="bucket" data-w="in" type="button">in</button>
+      <button class="bucket" data-w="yesterday" type="button">yesterday</button>
+    </div>
+    <p class="feedback" id="t-fb" aria-live="polite"></p>
+    <div class="row center"><button class="btn ghost" id="t-again" type="button" hidden>Play again</button></div>
+  </section>
+
+  <!-- 4 build question -->
+  <section class="panel" id="build" role="tabpanel" hidden>
+    <div class="row spread"><div><span class="exam">Task 1</span><h2>What was the question?</h2></div><span class="score" id="b-score">0 / 8</span></div>
+    <div class="progress"><i id="b-bar"></i></div>
+    <p class="task">Read the answer. Tap the words to make the question.</p>
+    <p class="tip" id="b-ans"></p>
+    <div class="answer" id="b-answer" aria-label="Your question"></div>
+    <div class="chips" id="b-chips"></div>
+    <p class="feedback" id="b-fb" aria-live="polite"></p>
+    <div class="row center">
+      <button class="btn" id="b-check" type="button">Check</button>
+      <button class="btn ghost" id="b-next" type="button" hidden>Next</button>
+    </div>
+  </section>
+
+  <!-- 5 mistake hunt -->
+  <section class="panel" id="hunt" role="tabpanel" hidden>
+    <div class="row spread"><h2 id="h-title">Mistake hunt</h2><span class="score" id="h-score">0 / 6</span></div>
+    <p class="task">Some past verbs are wrong. Tap the wrong verbs.</p>
+    <div class="hstory" id="h-story"></div>
+    <p class="feedback" id="h-fb" aria-live="polite"></p>
+    <div class="row center">
+      <button class="btn ghost" id="h-show" type="button">Show the answers</button>
+      <button class="btn" id="h-next" type="button">Next story</button>
+    </div>
+  </section>
+
+  <!-- 6 write -->
+  <section class="panel" id="write" role="tabpanel" hidden>
+    <div><span class="exam">Task 2</span><h2>Plan and practise my talk</h2></div>
+    <label for="w-topic" class="task">Choose a topic</label>
+    <select id="w-topic">
+      <option>Tell me about a time you lost something.</option>
+      <option>Tell me about a time you helped someone.</option>
+      <option>Tell me about your best holiday.</option>
+      <option>Tell me about a good meal you ate.</option>
+      <option>Tell me about your first week in London.</option>
+      <option>Tell me about a happy day with your family.</option>
+      <option>Tell me what you did last weekend.</option>
+    </select>
+    <label for="w-text" class="task">Write your talk. Use past verbs, time words and First / Then / After that / Finally.</label>
+    <textarea id="w-text" placeholder="Last summer I went to …"></textarea>
+    <ul class="checks">
+      <li id="c-verbs"><span class="tick">○</span><span>8 or more past verbs: <b id="c-vn">0</b></span></li>
+      <li id="c-time"><span class="tick">○</span><span>A time word (yesterday, last …, … ago, in …)</span></li>
+      <li id="c-link"><span class="tick">○</span><span>2 or more of First, Then, After that, Finally</span></li>
+      <li id="c-feel"><span class="tick">○</span><span>A feeling (happy, tired, sad, surprised …)</span></li>
+      <li id="c-len"><span class="tick">○</span><span>60 words or more: <b id="c-wn">0</b></span></li>
+    </ul>
+    <p class="found-list" id="c-list"></p>
+    <div class="card">
+      <div class="label">Now say it without reading. Aim for 2 minutes.</div>
+      <div class="row" style="margin-top:10px"><span class="clock" id="w-clock">2:00</span><button class="btn" id="w-go" type="button">Start 2 minutes</button></div>
+    </div>
+  </section>
+</div>
+
+<script>
+(function(){
+const $=id=>document.getElementById(id);
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;};
+const bar=(el,n,t)=>{el.style.width=(100*n/t)+'%';};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
+  document.querySelectorAll('.tab').forEach(x=>x.setAttribute('aria-selected',x===t?'true':'false'));
+  document.querySelectorAll('.panel').forEach(p=>p.hidden=p.id!==t.dataset.p);
+}));
+
+/* 1 Verbs */
+const IRR=[["write","wrote"],["read","read"],["leave","left"],["lose","lost"],["pay","paid"],["send","sent"],["wear","wore"],["tell","told"],["bring","brought"],["think","thought"],["sit","sat"],["run","ran"],["wake","woke"],["forget","forgot"],["understand","understood"],["teach","taught"],["catch","caught"],["fly","flew"],["drive","drove"],["break","broke"]];
+const VN=12;let V={};
+function vStart(){V={list:shuffle(IRR).slice(0,VN),i:0,score:0,end:false};vShow();}
+function vShow(){$('v-word').textContent=V.list[V.i][0];$('v-input').value='';$('v-input').disabled=false;$('v-fb').textContent='';$('v-fb').className='feedback';
+  $('v-check').hidden=false;$('v-show').hidden=false;$('v-next').hidden=true;$('v-score').textContent=V.score+' / '+VN;bar($('v-bar'),V.i,VN);}
+function vAfter(){$('v-input').disabled=true;$('v-check').hidden=true;$('v-show').hidden=true;$('v-next').hidden=false;$('v-score').textContent=V.score+' / '+VN;bar($('v-bar'),V.i+1,VN);$('v-next').textContent=V.i===VN-1?'Finish':'Next';$('v-next').focus();}
+function vCheck(){const a=$('v-input').value.trim().toLowerCase();if(!a)return;const [w,r]=V.list[V.i];
+  if(a===r){V.score++;$('v-fb').textContent='Yes! '+w+' → '+r;$('v-fb').className='feedback ok';vAfter();}
+  else{$('v-fb').textContent='Not yet. Try again.';$('v-fb').className='feedback no';}}
+$('v-form').addEventListener('submit',e=>{e.preventDefault();vCheck();});
+$('v-check').addEventListener('click',vCheck);
+$('v-show').addEventListener('click',()=>{const [w,r]=V.list[V.i];$('v-fb').textContent=w+' → '+r;$('v-fb').className='feedback';vAfter();});
+$('v-next').addEventListener('click',()=>{if(V.end){vStart();return;}if(V.i===VN-1){V.end=true;$('v-word').textContent=V.score+' / '+VN;$('v-fb').textContent=V.score>=10?'Great work!':'Practise again!';$('v-next').textContent='Play again';return;}V.i++;vShow();$('v-input').focus();});
+vStart();
+
+/* 2 Negatives */
+const NEG=[
+ ["I went to work.","I didn't go to work.",["I didn't went to work.","I not went to work."]],
+ ["We bought a new TV.","We didn't buy a new TV.",["We didn't bought a new TV.","We don't buy a new TV."]],
+ ["She was at home.","She wasn't at home.",["She didn't was at home.","She weren't at home."]],
+ ["They were tired.","They weren't tired.",["They wasn't tired.","They didn't tired."]],
+ ["He ate breakfast.","He didn't eat breakfast.",["He didn't ate breakfast.","He not ate breakfast."]],
+ ["I saw my friend.","I didn't see my friend.",["I didn't saw my friend.","I don't saw my friend."]],
+ ["The bus was late.","The bus wasn't late.",["The bus didn't late.","The bus weren't late."]],
+ ["We paid by card.","We didn't pay by card.",["We didn't paid by card.","We not pay by card."]],
+ ["You phoned me.","You didn't phone me.",["You didn't phoned me.","You wasn't phone me."]],
+ ["It rained yesterday.","It didn't rain yesterday.",["It didn't rained yesterday.","It wasn't rain yesterday."]],
+ ["I slept well.","I didn't sleep well.",["I didn't slept well.","I wasn't sleep well."]],
+ ["The shops were open.","The shops weren't open.",["The shops wasn't open.","The shops didn't open were."]]];
+const NN=10;let N={};
+function nStart(){N={list:shuffle(NEG).slice(0,NN),i:0,score:0};nShow();}
+function nShow(){const [q,r,w]=N.list[N.i];$('n-q').textContent=q;const box=$('n-opts');box.innerHTML='';
+  shuffle([[r,true],[w[0],false],[w[1],false]]).forEach(([t,ok])=>{const b=document.createElement('button');b.type='button';b.className='choice';b.textContent=t;b.dataset.ok=ok?'1':'';b.onclick=()=>nPick(b);box.appendChild(b);});
+  $('n-tip').hidden=true;$('n-next').hidden=true;$('n-score').textContent=N.score+' / '+NN;bar($('n-bar'),N.i,NN);}
+function nPick(b){if(!$('n-next').hidden)return;const ok=!!b.dataset.ok;if(ok)N.score++;
+  document.querySelectorAll('#n-opts .choice').forEach(c=>{if(c.dataset.ok)c.classList.add('right');else if(c===b)c.classList.add('wrong');c.disabled=true;});
+  $('n-tip').textContent=(ok?'Yes! ':'Not this time. ')+(/was|were/.test(N.list[N.i][0])&&!/didn/.test(N.list[N.i][1])?'With was / were, say wasn\'t / weren\'t.':'didn\'t + the normal verb.');$('n-tip').hidden=false;
+  $('n-score').textContent=N.score+' / '+NN;bar($('n-bar'),N.i+1,NN);$('n-next').hidden=false;$('n-next').textContent=N.i===NN-1?'Play again':'Next';}
+$('n-next').addEventListener('click',()=>{if(N.i===NN-1){nStart();return;}N.i++;nShow();});
+nStart();
+
+/* 3 Time words */
+const TW=[["I came to London three years ____.","ago"],["I saw the doctor ____ Tuesday.","last"],["My daughter was born ____ 2018.","in"],["I phoned my mum ____ evening.","yesterday"],["We moved house ____ March.","in"],["I started this course two months ____.","ago"],["I went to the park ____ weekend.","last"],["I didn't go to college ____ morning.","yesterday"],["She left her job a week ____.","ago"],["We had a party ____ night.","last"],["I learned to drive ____ 2015.","in"],["____ I cooked rice and chicken.","yesterday"]];
+const TN=10;let T={};
+function tStart(){T={list:shuffle(TW).slice(0,TN),i:0,score:0,lock:false};tShow();$('t-again').hidden=true;document.querySelectorAll('#time .bucket').forEach(b=>b.disabled=false);}
+function tShow(){$('t-q').textContent=T.list[T.i][0];$('t-score').textContent=T.score+' / '+TN;bar($('t-bar'),T.i,TN);$('t-fb').textContent='';}
+document.querySelectorAll('#time .bucket').forEach(b=>b.addEventListener('click',()=>{
+  if(T.lock)return;T.lock=true;const [q,a]=T.list[T.i];const full=q.replace('____',a).replace(/^y/,'Y');
+  if(b.dataset.w===a){T.score++;$('t-fb').textContent='Yes! '+full;$('t-fb').className='feedback ok';}else{$('t-fb').textContent='No: '+full;$('t-fb').className='feedback no';}
+  $('t-score').textContent=T.score+' / '+TN;bar($('t-bar'),T.i+1,TN);
+  setTimeout(()=>{T.lock=false;if(T.i===TN-1){$('t-q').textContent=T.score+' / '+TN;$('t-fb').textContent='Finished!';$('t-fb').className='feedback';$('t-again').hidden=false;document.querySelectorAll('#time .bucket').forEach(x=>x.disabled=true);return;}T.i++;tShow();},1500);
+}));
+$('t-again').addEventListener('click',tStart);
+tStart();
+
+/* 4 Build the question */
+const BQ=[["I went to Dalston.","Where did you go?"],["I bought some fish.","What did you buy?"],["I went with my sister.","Who did you go with?"],["I got up at 7 o'clock.","What time did you get up?"],["I came by bus.","How did you come?"],["I left early because I was tired.","Why did you leave early?"],["I came to the UK in 2022.","When did you come to the UK?"],["It was great, thanks!","How was your weekend?"],["I met my friend Kofi.","Who did you meet?"],["I wore my new coat.","What did you wear?"]];
+const BN=8;let B={};
+function bStart(){B={list:shuffle(BQ).slice(0,BN),i:0,score:0};bShow();}
+function bShow(){const [a,q]=B.list[B.i];B.words=q.split(' ');B.picked=[];B.tried=false;$('b-ans').textContent='Answer: "'+a+'"';
+  let order=shuffle(B.words.map((w,i)=>i));let g=0;while(order.every((v,i)=>v===i)&&g++<5)order=shuffle(order);
+  const chips=$('b-chips');chips.innerHTML='';
+  order.forEach(idx=>{const c=document.createElement('button');c.type='button';c.className='chip';c.textContent=B.words[idx];c.onclick=()=>{if(c.classList.contains('used'))return;c.classList.add('used');B.picked.push(c);bDraw();};chips.appendChild(c);});
+  $('b-answer').className='answer';$('b-fb').textContent='';$('b-check').hidden=false;$('b-next').hidden=true;$('b-score').textContent=B.score+' / '+BN;bar($('b-bar'),B.i,BN);bDraw();}
+function bDraw(){const a=$('b-answer');a.innerHTML='';B.picked.forEach((c,k)=>{const x=document.createElement('button');x.type='button';x.className='chip';x.textContent=c.textContent;
+  x.onclick=()=>{if(!$('b-next').hidden)return;c.classList.remove('used');B.picked.splice(k,1);a.className='answer';bDraw();};a.appendChild(x);});}
+$('b-check').addEventListener('click',()=>{
+  if(B.picked.length<B.words.length){$('b-fb').textContent='Use all the words.';$('b-fb').className='feedback no';return;}
+  const s=B.picked.map(c=>c.textContent).join(' ');
+  if(s===B.list[B.i][1]){if(!B.tried)B.score++;$('b-answer').className='answer right';$('b-fb').textContent='Yes! Question word + did + you + verb.';$('b-fb').className='feedback ok';$('b-check').hidden=true;$('b-next').hidden=false;$('b-next').textContent=B.i===BN-1?'Play again':'Next';$('b-score').textContent=B.score+' / '+BN;bar($('b-bar'),B.i+1,BN);}
+  else{B.tried=true;$('b-answer').className='answer wrong';$('b-fb').textContent='Not yet. Tap a word to move it.';$('b-fb').className='feedback no';}
+});
+$('b-next').addEventListener('click',()=>{if(B.i===BN-1){bStart();return;}B.i++;bShow();});
+bStart();
+
+/* 5 Mistake hunt — wrong verbs written as {wrong|right} */
+const STORIES=[
+ ["Hassan's weekend","Last Saturday I {waked|woke} up early. I {goed|went} to Ridley Road Market and I {buyed|bought} some vegetables. Then I met my friend Kofi. We {drinked|drank} coffee and talked. In the afternoon it {rain|rained}, so we {didn't went|didn't go} to the park. In the evening I cooked soup. It was a good day."],
+ ["Amina's bad day","Yesterday was a bad day. My alarm {not rang|didn't ring}, so I got up late. I {runned|ran} to the bus stop, but the bus {leaved|left} without me. I waited twenty minutes. When I arrived at college, I {forgetted|forgot} my book at home! My teacher {were|was} kind. She {gived|gave} me a book. In the evening I slept early."],
+ ["Tomasz's trip","Last summer I {travel|travelled} to Brighton with my brother. We {taked|took} the train from Victoria. The weather {were|was} sunny and hot. First, we {swimmed|swam} in the sea. Then we {eated|ate} fish and chips on the beach. In the evening we {catched|caught} the last train home. We were tired but happy."]];
+let H={s:0};
+function hRender(){
+  const [title,text]=STORIES[H.s];$('h-title').textContent='Mistake hunt: '+title;
+  let html='';text.split(/(\{[^}]+\})/).forEach(part=>{
+    if(!part)return;
+    if(part[0]==='{'){const [w,r]=part.slice(1,-1).split('|');html+=`<span class="err" data-fix="${esc(r)}">${esc(w)}</span>`;}
+    else html+=part.split(/(\s+)/).map(t=>/^\s+$/.test(t)||!t?t:`<span class="w">${esc(t)}</span>`).join('');
+  });
+  $('h-story').innerHTML=html;H.total=$('h-story').querySelectorAll('.err').length;H.found=0;H.tries=0;
+  $('h-score').textContent='0 / '+H.total;$('h-fb').textContent='';$('h-fb').className='feedback';
+}
+function hFix(e){if(e.classList.contains('found'))return false;e.classList.add('found');e.textContent=e.textContent+' → '+e.dataset.fix;return true;}
+$('h-story').addEventListener('click',e=>{
+  const er=e.target.closest('.err');
+  if(er){if(hFix(er)){H.found++;$('h-score').textContent=H.found+' / '+H.total;$('h-fb').textContent=H.found===H.total?'All found! Well done.':'Yes! Keep going.';$('h-fb').className='feedback ok';}return;}
+  const w=e.target.closest('.w');if(!w)return;w.classList.add('miss');setTimeout(()=>w.classList.remove('miss'),800);
+  $('h-fb').textContent='That word is correct. Look again.';$('h-fb').className='feedback no';
+});
+$('h-show').addEventListener('click',()=>{$('h-story').querySelectorAll('.err').forEach(hFix);$('h-fb').textContent='Here are all the corrections. Read the story again.';$('h-fb').className='feedback';});
+$('h-next').addEventListener('click',()=>{H.s=(H.s+1)%STORIES.length;hRender();});
+hRender();
+
+/* 6 Write and practise */
+const IRRPAST=new Set("was were went had ate bought took saw met made got came did felt slept left found said gave drank wrote spoke sat told thought brought knew put ran began lost paid sent wore sang swam woke forgot understood taught caught flew drove broke heard became chose fell kept let read rode stood won".split(' '));
+const NOT_ED=new Set(["need","red","bed","feed","seed","speed","bread","shed","led","fed","wed","hundred","ted","ed"]);
+const TIMEW=/\b(yesterday|last (night|week|weekend|month|year|summer|winter|spring|autumn|monday|tuesday|wednesday|thursday|friday|saturday|sunday)|ago|in (19|20)\d\d|in (january|february|march|april|may|june|july|august|september|october|november|december))\b/i;
+const LINKS=["first","then","after that","finally","in the end","later"];
+const FEEL=/\b(happy|sad|tired|surprised|excited|nervous|angry|worried|proud|bored|scared|pleased|great|relaxed)\b/i;
+function analyse(){
+  const t=$('w-text').value, low=t.toLowerCase();
+  const words=(low.match(/[a-z']+/g)||[]);
+  const pv=[];words.forEach(w=>{const ww=w.replace(/'s$/,'');if(IRRPAST.has(ww)||(/ed$/.test(ww)&&ww.length>3&&!NOT_ED.has(ww)))pv.push(ww);});
+  if(/\bdidn'?t\b/.test(low)) (low.match(/\bdidn'?t\s+[a-z]+/g)||[]).forEach(m=>pv.push(m));
+  const links=LINKS.filter(l=>new RegExp('\\b'+l+'\\b').test(low));
+  const set=(id,ok)=>{const li=$(id);li.classList.toggle('ok',ok);li.querySelector('.tick').textContent=ok?'✓':'○';};
+  $('c-vn').textContent=pv.length;$('c-wn').textContent=words.length;
+  set('c-verbs',pv.length>=8);set('c-time',TIMEW.test(low));set('c-link',links.length>=2);set('c-feel',FEEL.test(low));set('c-len',words.length>=60);
+  $('c-list').textContent=pv.length?'Past verbs found: '+[...new Set(pv)].join(', '):'';
+}
+$('w-text').addEventListener('input',analyse);analyse();
+let wt=null,wend=0;
+$('w-go').addEventListener('click',()=>{
+  if(wt){clearInterval(wt);wt=null;$('w-go').textContent='Start 2 minutes';$('w-clock').textContent='2:00';$('w-clock').classList.remove('end');return;}
+  wend=Date.now()+120000;$('w-go').textContent='Stop';$('w-clock').classList.remove('end');
+  wt=setInterval(()=>{const l=Math.max(0,Math.ceil((wend-Date.now())/1000));$('w-clock').textContent=Math.floor(l/60)+':'+String(l%60).padStart(2,'0');
+    if(l===0){clearInterval(wt);wt=null;$('w-clock').classList.add('end');$('w-clock').textContent='Time!';$('w-go').textContent='Start 2 minutes';}},250);
+});
+
+/* Back + Try again on every activity */
+const RESET={verbs:vStart,neg:nStart,time:()=>{T.lock=false;tStart();},build:bStart,hunt:hRender,write:()=>{$('w-text').value='';analyse();if(wt){clearInterval(wt);wt=null;}$('w-clock').textContent='2:00';$('w-clock').classList.remove('end');$('w-go').textContent='Start 2 minutes';}};
+const tabsEl=[...document.querySelectorAll('.tab')];
+document.querySelectorAll('.panel').forEach((p,i)=>{
+  const d=document.createElement('div');d.className='pnav';
+  d.innerHTML='<button class="btn ghost" type="button" data-nav="back"'+(i===0?' disabled':'')+'>← Back</button><button class="btn ghost" type="button" data-nav="retry">↺ Try again</button>';
+  p.appendChild(d);
+  d.querySelector('[data-nav=back]').onclick=()=>{if(i>0)tabsEl[i-1].click();window.scrollTo(0,0);};
+  d.querySelector('[data-nav=retry]').onclick=()=>{(RESET[p.id]||(()=>{}))();};
+});
+})();
+</script>
+<div class="atin-logo" aria-label="Made by Atin">
+<svg viewBox="104 28 172 134" width="64" height="50" role="img" aria-hidden="true">
+<text x="139" y="112" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="72" fill="currentColor">A</text>
+<rect x="177" y="83" width="24" height="6" rx="1" fill="currentColor"/>
+<path d="M216 66 L216 106 A25 7 0 0 0 266 106 L266 66" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+<ellipse cx="241" cy="66" rx="25" ry="7" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="216" y1="80" x2="266" y2="80" stroke="currentColor" stroke-width="1.5"/>
+<line x1="216" y1="94" x2="266" y2="94" stroke="currentColor" stroke-width="1.5"/>
+<ellipse cx="241" cy="47" rx="23" ry="5" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="114" y1="128" x2="266" y2="128" stroke="currentColor" stroke-width="1"/>
+<text x="190" y="152" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" letter-spacing="2" fill="currentColor">made by Atin</text>
+</svg>
+</div>
+<script>(function(){var l=document.querySelector(".atin-logo"),t=document.querySelector(".wrap");if(l&&t){var nx=t.querySelector("#next");if(nx&&nx.parentNode===t)t.insertBefore(l,nx);else t.appendChild(l);}})();</script>
+<style>
+.atin-logo{position:static;flex:none;color:#1F3A5F;background:rgba(255,255,255,.92);border:1px solid #C9D3DF;border-radius:8px;padding:3px 5px;line-height:0;pointer-events:none}
+.atin-logo svg{display:block}
+@media print{.atin-logo{background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+.wrap>.atin-logo{width:max-content;margin:24px auto 0}
+</style>
+
+</body></html>

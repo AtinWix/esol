@@ -1,0 +1,136 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>E3 Reading Skills – Hackney Bugle</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<style>
+/* Layout: widescreen projector board – skills key on the left, the 15 questions in two columns on the right; tap a letter to choose. Single light look for projectors. */
+:root{
+  --bg:#f3f5f4; --card:#ffffff; --ink:#151515; --muted:#5a5f5d; --rule:#d5dbd8;
+  --brand:#0e5a4a; --ok:#1b7a3d; --ok-bg:#e3f3e8; --bad:#b3261e; --bad-bg:#fbe4e2;
+  --A:#1f5fbf; --B:#b45309; --C:#0e5a4a; --D:#7c3aed; --E:#be185d;
+  --display:"Archivo Black","Arial Black",Arial,sans-serif; --body:"Atkinson Hyperlegible",Arial,sans-serif;
+  color-scheme:light;
+}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);margin:0;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:18px}
+.wrap{max-width:1500px;margin:0 auto;display:flex;flex-direction:column;gap:16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(26px,3vw,40px);margin:0;color:var(--brand);line-height:1.1}
+.sub{font-size:20px;margin:4px 0 0}
+.bar{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.score{font-size:22px;font-weight:700;font-variant-numeric:tabular-nums;background:var(--card);border:2px solid var(--ink);padding:6px 14px;border-radius:6px}
+.btn{font:700 18px var(--body);border:2px solid var(--ink);background:var(--card);color:var(--ink);padding:8px 16px;border-radius:6px;cursor:pointer}
+.btn:hover{background:var(--ink);color:#fff}
+button:focus-visible{outline:3px solid #f59e0b;outline-offset:2px}
+.grid{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:20px;align-items:start}
+@media (max-width:900px){.grid{grid-template-columns:minmax(0,1fr)}}
+.key{background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:16px;display:flex;flex-direction:column;gap:12px}
+.key h2{font-family:var(--display);font-weight:400;font-size:20px;margin:0;text-transform:uppercase}
+.sk{display:grid;grid-template-columns:44px minmax(0,1fr);gap:10px;align-items:start}
+.let{width:44px;height:44px;border-radius:8px;color:#fff;font:700 17px var(--body);display:grid;place-items:center}
+.sk b{font-size:19px;display:block}
+.sk span{font-size:16px;color:var(--muted);line-height:1.3}
+.qs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+@media (max-width:1100px){.qs{grid-template-columns:minmax(0,1fr)}}
+.q{background:var(--card);border:2px solid var(--rule);border-radius:8px;padding:10px 12px;display:flex;flex-direction:column;gap:8px}
+.q.ok{border-color:var(--ok);background:var(--ok-bg)} .q.no{border-color:var(--bad);background:var(--bad-bg)}
+.qt{font-size:19px;line-height:1.3}
+.qt .n{font-weight:700;margin-right:6px}
+.qt .part{font-size:13px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-left:6px}
+.picks{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.picks button{min-width:52px;padding:0 6px;height:40px;border-radius:6px;border:2px solid var(--rule);background:#fff;font:700 19px var(--body);color:var(--ink);cursor:pointer}
+.picks button.on{color:#fff;border-color:transparent}
+.why{font-size:16px;color:var(--ok);font-weight:700}
+.key{position:sticky;top:calc(12px + env(safe-area-inset-top,0px))}
+.mini{display:none}
+@media (max-width:900px){
+  .key{display:none}
+  body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+  .mini{display:flex;flex-wrap:wrap;gap:6px;position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding:8px 0;border-bottom:2px solid var(--rule);margin-inline:-4px;padding-inline:4px}
+  .mini span{display:inline-flex;align-items:center;gap:5px;font-size:14px;font-weight:700;background:var(--card);border:1px solid var(--rule);border-radius:6px;padding:3px 8px 3px 3px;line-height:1.2}
+  .mini i{font-style:normal;color:#fff;min-width:24px;padding:0 3px;font-size:12px!important;height:24px;border-radius:4px;display:grid;place-items:center;font-size:15px;flex:none}
+}
+.atin{display:flex;align-items:center;gap:5px;justify-content:flex-end}
+.atin b{font-family:var(--display);font-weight:400;font-size:28px;line-height:1}
+.atin small{font-size:14px;font-weight:700;margin-left:4px}
+</style>
+
+<div class="wrap">
+  <header>
+    <div>
+      <h1>Which ESB criterion does each question test?</h1>
+      <p class="sub">The Hackney Bugle reading questions. Choose the E3 Reading criterion (1.1–3.1) for each question.</p>
+    </div>
+    <div class="bar">
+      <span class="score" id="score">0 / 15</span>
+      <button class="btn" id="check">Check</button>
+      <button class="btn" id="answers">Show answers</button>
+      <button class="btn" id="reset">Clear</button>
+    </div>
+  </header>
+
+  <div class="mini" id="mini" aria-label="Skills key"></div>
+  <div class="grid">
+    <aside class="key" id="key">
+      <h2>ESB E3 Reading criteria</h2>
+    </aside>
+    <section class="qs" id="qs" aria-label="Questions"></section>
+  </div>
+
+  <div class="atin" aria-label="made by Atin"><b>A</b><b>-</b>
+    <svg width="26" height="33" viewBox="0 0 32 40" fill="none" stroke="#151515" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+      <path d="M5 15 V34 A11 4 0 0 0 27 34 V15" fill="#ffffff"/><ellipse cx="16" cy="15" rx="11" ry="4" fill="#ffffff"/>
+      <path d="M5 23 A11 4 0 0 0 27 23" stroke-dasharray="2 2"/><ellipse cx="12" cy="6" rx="10" ry="3.5" transform="rotate(-28 12 6)" fill="#ffffff"/>
+    </svg><small>made by Atin</small></div>
+</div>
+
+<script>
+(function(){
+  const SK=[['1.1','Main points','Identify the main points of short straightforward text'],['1.2','Main events','Identify main events in short straightforward text'],['1.3','Language features','Use language features to identify meaning in short straightforward text'],['1.4','Words and phrases','Identify the meaning of words and phrases in short straightforward text'],['2.1','Purpose','Identify the purpose of short straightforward text'],['3.1','Obtain information','Obtain information from short straightforward text']];
+  const Q=[
+   ['A','Why did the newspaper write this story?','Purpose of the whole text','2.1'],
+   ['A','In 2026, how often has someone damaged the shop?','Find a detail: a number','3.1'],
+   ['A','What else is on the notice, next to the message?','Find a detail: "photos from the CCTV camera"','3.1'],
+   ['A','How much did the owner spend a month ago?','Find a detail: a price','3.1'],
+   ['A','Who thinks the notice could frighten someone?','Find a detail: a name (Tom)','3.1'],
+   ['A','What does the owner plan to do?','An event: "keep the poster… until the graffiti stops"','1.2'],
+   ['B','The notice went up about seven days ago.','An event: "last week"','1.2'],
+   ['B','Maria believes all painting on walls is bad.','A main point: some graffiti is art','1.1'],
+   ['B','Maria\'s home is close to the business.','Find a detail: "lives near the shop"','3.1'],
+   ['B','The police plan to watch the camera video.','An event: "We will look at the CCTV"','1.2'],
+   ['B','The owner is looking for problems.','A main point: "I don\'t want any trouble"','1.1'],
+   ['B','Tom thinks the owner should contact the police.','A main point: "He should call the police"','1.1'],
+   ['C','Which road is the business on?','Find a detail: a place name','3.1'],
+   ['C','What word does a neighbour use for paint on walls that is NOT art?','Word meaning: tagging','1.4'],
+   ['C','Who does the police officer want to hear from about painted walls?','Find a detail: "Shop owners should report graffiti to us"','3.1'],
+  ];
+  const key=document.getElementById('key'),qs=document.getElementById('qs'),score=document.getElementById('score');
+  const COL={'1.1':'#1f5fbf','1.2':'#b45309','1.3':'#0e5a4a','1.4':'#be185d','2.1':'#7c3aed','3.1':'#475569'};
+  const col=l=>COL[l];
+  const SHORT={'1.1':'Main points','1.2':'Main events','1.3':'Language features','1.4':'Words & phrases','2.1':'Purpose','3.1':'Obtain information'};
+  const mini=document.getElementById('mini');
+  SK.forEach(([l])=>{const s=document.createElement('span');s.innerHTML='<i style="background:'+col(l)+'">'+l+'</i>'+SHORT[l];mini.appendChild(s);});
+  SK.forEach(([l,t,d])=>{const e=document.createElement('div');e.className='sk';e.innerHTML='<span class="let" style="background:'+col(l)+'">'+l+'</span><div><b>'+t+'</b><span>'+d+'</span></div>';key.appendChild(e);});
+  const pick=new Array(Q.length).fill(null);
+  Q.forEach(([part,text],i)=>{
+    const c=document.createElement('div');c.className='q';
+    c.innerHTML='<div class="qt"><span class="n">'+(i+1)+'.</span>'+text+'<span class="part">Part '+part+'</span></div><div class="picks"></div><div class="why" hidden></div>';
+    const ps=c.querySelector('.picks');
+    SK.forEach(([l])=>{const b=document.createElement('button');b.textContent=l;b.setAttribute('aria-label','Question '+(i+1)+': criterion '+l);
+      b.onclick=()=>{pick[i]=l;c.classList.remove('ok','no');c.querySelector('.why').hidden=true;paint(i);};ps.appendChild(b);});
+    qs.appendChild(c);
+  });
+  function paint(i){const c=qs.children[i];c.querySelectorAll('.picks button').forEach(b=>{const on=b.textContent===pick[i];b.classList.toggle('on',on);b.style.background=on?col(b.textContent):'#fff';});}
+  function check(show){let n=0;Q.forEach((q,i)=>{const c=qs.children[i],w=c.querySelector('.why');
+    if(show){pick[i]=q[3];paint(i);}
+    if(!pick[i]){c.classList.remove('ok','no');return;}
+    const ok=pick[i]===q[3];if(ok)n++;c.classList.toggle('ok',ok);c.classList.toggle('no',!ok);
+    w.hidden=!ok;w.textContent=q[2];});score.textContent=n+' / 15';}
+  document.getElementById('check').onclick=()=>check(false);
+  document.getElementById('answers').onclick=()=>check(true);
+  document.getElementById('reset').onclick=()=>{pick.fill(null);Q.forEach((q,i)=>{const c=qs.children[i];c.classList.remove('ok','no');c.querySelector('.why').hidden=true;paint(i);});score.textContent='0 / 15';};
+})();
+</script>
+
+
+</body></html>

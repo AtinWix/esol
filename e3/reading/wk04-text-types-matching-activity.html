@@ -1,0 +1,182 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>E3 Reading – Text Types – Matching Activity</title>
+<style>
+/* Layout: one heading, a status line, then three equal-height card columns (picture / text type / meaning) that line up into rows as matches are made. */
+:root{
+  --bg:#eef2f9; --card:#ffffff; --ink:#14213a; --muted:#51607a; --line:#bcc8dc;
+  --sel:#1d4ed8; --sel-bg:#dbe6ff; --good:#15803d; --good-bg:#dcfce7; --bad:#b91c1c; --bad-bg:#fee2e2;
+  --tile:#ffffff; --tin:#cfd6e0;
+  --font: Arial, Verdana, Helvetica, sans-serif;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#0f1727; --card:#1b2538; --ink:#e9eef8; --muted:#a6b3c9; --line:#3b4862;
+  --sel:#8fb2ff; --sel-bg:#1f3160; --good:#4ade80; --good-bg:#123a22; --bad:#f87171; --bad-bg:#4a1a1c; --tin:#8792a3;
+  color-scheme:dark } }
+:root[data-theme="dark"]{
+  --bg:#0f1727; --card:#1b2538; --ink:#e9eef8; --muted:#a6b3c9; --line:#3b4862;
+  --sel:#8fb2ff; --sel-bg:#1f3160; --good:#4ade80; --good-bg:#123a22; --bad:#f87171; --bad-bg:#4a1a1c; --tin:#8792a3;
+  color-scheme:dark }
+body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:1rem;line-height:1.35}
+.wrap{max-width:760px;margin:0 auto;padding-inline:16px;padding-block:20px 32px;display:flex;flex-direction:column;gap:14px}
+h1{font-size:1.6rem;margin:0;text-wrap:balance}
+.how{margin:0;color:var(--muted);font-size:1.05rem}
+.bar{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;justify-content:space-between}
+.status{font-weight:bold;font-size:1.05rem;font-variant-numeric:tabular-nums}
+.msg{min-height:1.5em;font-weight:bold;font-size:1.1rem;margin:0}
+.msg.good{color:var(--good)} .msg.bad{color:var(--bad)}
+.cols{display:grid;grid-template-columns:96px minmax(0,1fr) minmax(0,1.5fr);gap:8px}
+.col{display:flex;flex-direction:column;gap:8px;min-width:0}
+.col h2{font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0;text-align:center}
+.c{height:92px;width:100%;box-sizing:border-box;display:flex;align-items:center;justify-content:center;text-align:center;
+  background:var(--card);color:var(--ink);border:2px solid var(--line);border-radius:10px;padding:6px 8px;
+  font:inherit;cursor:pointer;overflow-wrap:anywhere}
+.c.word{font-weight:bold;font-size:1.15rem}
+.c.meaning{font-size:1rem}
+.c.pic{background:var(--tile);padding:4px}
+.c.pic svg{height:76px;width:76px;display:block}
+.c:hover:not(:disabled){border-color:var(--sel)}
+.c:focus-visible,.btn:focus-visible{outline:3px solid var(--sel);outline-offset:2px}
+.c.sel{border-color:var(--sel);border-width:4px;background:var(--sel-bg)}
+.c.pic.sel{background:var(--tile)}
+.c.done{border-color:var(--good);background:var(--good-bg);cursor:default}
+.c.pic.done{background:var(--tile);border-width:4px}
+.c.wrong{border-color:var(--bad);border-width:4px;background:var(--bad-bg);animation:shake .35s}
+.c.pic.wrong{background:var(--tile)}
+@keyframes shake{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+@media (prefers-reduced-motion:reduce){.c.wrong{animation:none}}
+.btn{font:inherit;font-weight:bold;font-size:1.05rem;padding:10px 18px;border-radius:10px;border:2px solid var(--sel);
+  background:var(--sel);color:var(--card);cursor:pointer}
+.btn.quiet{background:transparent;color:var(--sel)}
+.actions{display:flex;flex-wrap:wrap;gap:10px}
+@media (max-width:480px){
+  .cols{grid-template-columns:72px minmax(0,1fr) minmax(0,1.4fr);gap:6px}
+  .c{height:100px;padding:4px 5px}
+  .c.word{font-size:.95rem} .c.meaning{font-size:.85rem}
+  .c.pic svg{height:58px;width:58px}
+  h1{font-size:1.35rem}
+}
+.made{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:10px;color:var(--muted);font-weight:bold;font-size:1rem}
+.made svg{width:40px;height:48px;display:block}
+.tin-metal{fill:var(--tin);stroke:var(--ink);stroke-width:3}
+.tin-label{fill:var(--sel);stroke:var(--ink);stroke-width:3}
+.tin-rib{stroke:var(--ink);stroke-width:2;fill:none;opacity:.55}
+</style>
+<div class="wrap">
+  <h1>Text types: match the three</h1>
+  <p class="how">Choose one picture, one text type and one meaning. All three must match.</p>
+  <div class="bar">
+    <div class="status" id="status"></div>
+    <div class="actions">
+      <button class="btn" id="next" type="button" hidden>Next round</button>
+      <button class="btn quiet" id="restart" type="button">Start again</button>
+    </div>
+  </div>
+  <p class="msg" id="msg" aria-live="polite"></p>
+  <div class="cols">
+    <div class="col" id="col-pic"><h2>Picture</h2></div>
+    <div class="col" id="col-word"><h2>Text type</h2></div>
+    <div class="col" id="col-meaning"><h2>Meaning</h2></div>
+  </div>
+</div>
+<script>
+const ITEMS = [{"id": "email", "word": "email", "meaning": "a long message sent on a computer or phone", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\" role=\"img\" aria-label=\"picture\"><rect x=\"25\" y=\"55\" width=\"150\" height=\"100\" rx=\"8\" fill=\"#dbeafe\" stroke=\"#222\" stroke-width=\"5\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/>\n<polyline points=\"25,62 100,115 175,62\" fill=\"none\" stroke=\"#222\" stroke-width=\"5\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/>\n<circle cx=\"155\" cy=\"55\" r=\"28\" fill=\"#2563eb\" stroke=\"#222\" stroke-width=\"4\"/>\n<text x=\"155\" y=\"67\" text-anchor=\"middle\" font-size=\"34\" fill=\"#fff\" font-family=\"DejaVu Sans, Arial, sans-serif\" font-weight=\"bold\">@<\/text><\/svg>"}, {"id": "letter", "word": "letter", "meaning": "a message on paper, sent by post", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\" role=\"img\" aria-label=\"picture\"><rect x=\"25\" y=\"50\" width=\"150\" height=\"105\" rx=\"4\" fill=\"#fff7e0\" stroke=\"#222\" stroke-width=\"5\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/>\n<polyline points=\"25,52 100,105 175,52\" fill=\"none\" stroke=\"#222\" stroke-width=\"3\" opacity=\"0.35\"/>\n<rect x=\"135\" y=\"62\" width=\"28\" height=\"34\" fill=\"#e11d48\" stroke=\"#222\" stroke-width=\"3\"/>\n<line x1=\"45\" y1=\"112\" x2=\"115\" y2=\"112\" stroke=\"#444\" stroke-width=\"4\" stroke-linecap=\"round\"/><line x1=\"45\" y1=\"126\" x2=\"115\" y2=\"126\" stroke=\"#444\" stroke-width=\"4\" stroke-linecap=\"round\"/><line x1=\"45\" y1=\"140\" x2=\"115\" y2=\"140\" stroke=\"#444\" stroke-width=\"4\" stroke-linecap=\"round\"/><\/svg>"}, {"id": "text_message", "word": "text message", "meaning": "a short message on a phone", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\" role=\"img\" aria-label=\"picture\"><rect x=\"60\" y=\"15\" width=\"80\" height=\"170\" rx=\"14\" fill=\"#f3f4f6\" stroke=\"#222\" stroke-width=\"5\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/>\n<circle cx=\"100\" cy=\"170\" r=\"5\" fill=\"#222\"/>\n<rect x=\"68\" y=\"38\" width=\"48\" height=\"26\" rx=\"10\" fill=\"#d1d5db\"/>\n<rect x=\"84\" y=\"74\" width=\"48\" height=\"26\" rx=\"10\" fill=\"#22c55e\"/>\n<rect x=\"68\" y=\"110\" width=\"40\" height=\"26\" rx=\"10\" fill=\"#d1d5db\"/><\/svg>"}, {"id": "note", "word": "note", "meaning": "a short message on paper for someone", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\" role=\"img\" aria-label=\"picture\"><polygon points=\"35,30 165,30 165,135 130,170 35,170\" fill=\"#fde047\" stroke=\"#222\" stroke-width=\"5\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/>\n<polygon points=\"165,135 130,135 130,170\" fill=\"#eab308\" stroke=\"#222\" stroke-width=\"5\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/>\n<line x1=\"55\" y1=\"65\" x2=\"145\" y2=\"65\" stroke=\"#444\" stroke-width=\"4\" stroke-linecap=\"round\"/><line x1=\"55\" y1=\"90\" x2=\"145\" y2=\"90\" stroke=\"#444\" stroke-width=\"4\" stroke-linecap=\"round\"/><line x1=\"55\" y1=\"115\" x2=\"145\" y2=\"115\" stroke=\"#444\" stroke-width=\"4\" stroke-linecap=\"round\"/><line x1=\"55\" y1=\"140\" x2=\"110\" y2=\"140\" stroke=\"#444\" stroke-width=\"4\" stroke-linecap=\"round\"/><\/svg>"}, {"id": "notice", "word": "notice", "meaning": "information on a wall or board for everyone to read", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\" role=\"img\" aria-label=\"picture\"><rect x=\"15\" y=\"25\" width=\"170\" height=\"150\" rx=\"6\" fill=\"#d6a56b\" stroke=\"#7c4a1e\" stroke-width=\"8\"/>\n<rect x=\"50\" y=\"50\" width=\"100\" height=\"105\" fill=\"#fff\" stroke=\"#222\" stroke-width=\"4\"/>\n<rect x=\"62\" y=\"72\" width=\"76\" height=\"12\" fill=\"#222\"/>\n<line x1=\"62\" y1=\"102\" x2=\"138\" y2=\"102\" stroke=\"#888\" stroke-width=\"4\" stroke-linecap=\"round\"/><line x1=\"62\" y1=\"118\" x2=\"138\" y2=\"118\" stroke=\"#888\" stroke-width=\"4\" stroke-linecap=\"round\"/><line x1=\"62\" y1=\"134\" x2=\"138\" y2=\"134\" stroke=\"#888\" stroke-width=\"4\" stroke-linecap=\"round\"/>\n<circle cx=\"100\" cy=\"50\" r=\"9\" fill=\"#dc2626\" stroke=\"#222\" stroke-width=\"3\"/><\/svg>"}, {"id": "poster", "word": "poster", "meaning": "a big paper on a wall with pictures and information", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\" role=\"img\" aria-label=\"picture\"><rect x=\"40\" y=\"15\" width=\"120\" height=\"170\" fill=\"#fff\" stroke=\"#222\" stroke-width=\"5\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/>\n<rect x=\"52\" y=\"28\" width=\"96\" height=\"18\" fill=\"#7c3aed\"/>\n<rect x=\"52\" y=\"56\" width=\"96\" height=\"72\" fill=\"#bae6fd\"/>\n<circle cx=\"125\" cy=\"76\" r=\"11\" fill=\"#facc15\"/>\n<polygon points=\"52,128 85,85 110,112 125,98 148,128\" fill=\"#16a34a\"/>\n<line x1=\"52\" y1=\"144\" x2=\"148\" y2=\"144\" stroke=\"#888\" stroke-width=\"4\" stroke-linecap=\"round\"/><line x1=\"52\" y1=\"158\" x2=\"148\" y2=\"158\" stroke=\"#888\" stroke-width=\"4\" stroke-linecap=\"round\"/><line x1=\"52\" y1=\"172\" x2=\"148\" y2=\"172\" stroke=\"#888\" stroke-width=\"4\" stroke-linecap=\"round\"/><\/svg>"}, {"id": "leaflet", "word": "leaflet", "meaning": "a small paper with information, often free", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\" role=\"img\" aria-label=\"picture\"><polygon points=\"20,45 73,30 73,170 20,185\" fill=\"#fef3c7\" stroke=\"#222\" stroke-width=\"5\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/>\n<polygon points=\"73,30 127,45 127,185 73,170\" fill=\"#fff\" stroke=\"#222\" stroke-width=\"5\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/>\n<polygon points=\"127,45 180,30 180,170 127,185\" fill=\"#fef3c7\" stroke=\"#222\" stroke-width=\"5\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/>\n<rect x=\"83\" y=\"58\" width=\"34\" height=\"28\" fill=\"#0ea5e9\" transform=\"skewY(15) translate(0,-27)\"/>\n<line x1=\"32\" y1=\"80\" x2=\"62\" y2=\"80\" stroke=\"#888\" stroke-width=\"4\" stroke-linecap=\"round\"/><line x1=\"32\" y1=\"98\" x2=\"62\" y2=\"98\" stroke=\"#888\" stroke-width=\"4\" stroke-linecap=\"round\"/><line x1=\"32\" y1=\"116\" x2=\"62\" y2=\"116\" stroke=\"#888\" stroke-width=\"4\" stroke-linecap=\"round\"/><line x1=\"32\" y1=\"134\" x2=\"62\" y2=\"134\" stroke=\"#888\" stroke-width=\"4\" stroke-linecap=\"round\"/><line x1=\"84\" y1=\"115\" x2=\"116\" y2=\"115\" stroke=\"#888\" stroke-width=\"4\" stroke-linecap=\"round\"/><line x1=\"84\" y1=\"130\" x2=\"116\" y2=\"130\" stroke=\"#888\" stroke-width=\"4\" stroke-linecap=\"round\"/><line x1=\"84\" y1=\"145\" x2=\"116\" y2=\"145\" stroke=\"#888\" stroke-width=\"4\" stroke-linecap=\"round\"/><line x1=\"138\" y1=\"80\" x2=\"168\" y2=\"80\" stroke=\"#888\" stroke-width=\"4\" stroke-linecap=\"round\"/><line x1=\"138\" y1=\"98\" x2=\"168\" y2=\"98\" stroke=\"#888\" stroke-width=\"4\" stroke-linecap=\"round\"/><line x1=\"138\" y1=\"116\" x2=\"168\" y2=\"116\" stroke=\"#888\" stroke-width=\"4\" stroke-linecap=\"round\"/><line x1=\"138\" y1=\"134\" x2=\"168\" y2=\"134\" stroke=\"#888\" stroke-width=\"4\" stroke-linecap=\"round\"/><\/svg>"}, {"id": "advert", "word": "advert", "meaning": "it tries to sell you something", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\" role=\"img\" aria-label=\"picture\"><polygon points=\"100,10 118,32 145,22 150,50 178,55 166,80 190,100 166,120 178,145 150,150 145,178 118,168 100,190 82,168 55,178 50,150 22,145 34,120 10,100 34,80 22,55 50,50 55,22 82,32\" fill=\"#ef4444\" stroke=\"#222\" stroke-width=\"5\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/>\n<text x=\"100\" y=\"92\" text-anchor=\"middle\" font-size=\"34\" fill=\"#fff\" font-family=\"DejaVu Sans, Arial, sans-serif\" font-weight=\"bold\">SALE<\/text>\n<text x=\"100\" y=\"128\" text-anchor=\"middle\" font-size=\"26\" fill=\"#fde047\" font-family=\"DejaVu Sans, Arial, sans-serif\" font-weight=\"bold\">50% off<\/text><\/svg>"}, {"id": "article", "word": "article", "meaning": "a text in a newspaper or magazine", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\" role=\"img\" aria-label=\"picture\"><rect x=\"22\" y=\"25\" width=\"156\" height=\"150\" fill=\"#fff\" stroke=\"#222\" stroke-width=\"5\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/>\n<text x=\"100\" y=\"60\" text-anchor=\"middle\" font-size=\"30\" fill=\"#222\" font-family=\"DejaVu Sans, Arial, sans-serif\" font-weight=\"bold\">NEWS<\/text>\n<line x1=\"34\" y1=\"70\" x2=\"166\" y2=\"70\" stroke=\"#222\" stroke-width=\"3\"/>\n<rect x=\"34\" y=\"82\" width=\"60\" height=\"45\" fill=\"#9ca3af\"/>\n<line x1=\"104\" y1=\"86\" x2=\"166\" y2=\"86\" stroke=\"#888\" stroke-width=\"4\" stroke-linecap=\"round\"/><line x1=\"104\" y1=\"100\" x2=\"166\" y2=\"100\" stroke=\"#888\" stroke-width=\"4\" stroke-linecap=\"round\"/><line x1=\"104\" y1=\"114\" x2=\"166\" y2=\"114\" stroke=\"#888\" stroke-width=\"4\" stroke-linecap=\"round\"/><line x1=\"104\" y1=\"128\" x2=\"166\" y2=\"128\" stroke=\"#888\" stroke-width=\"4\" stroke-linecap=\"round\"/><line x1=\"34\" y1=\"142\" x2=\"166\" y2=\"142\" stroke=\"#888\" stroke-width=\"4\" stroke-linecap=\"round\"/><line x1=\"34\" y1=\"156\" x2=\"166\" y2=\"156\" stroke=\"#888\" stroke-width=\"4\" stroke-linecap=\"round\"/><\/svg>"}, {"id": "web_page", "word": "web page", "meaning": "a page on the internet", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\" role=\"img\" aria-label=\"picture\"><rect x=\"15\" y=\"30\" width=\"170\" height=\"140\" rx=\"8\" fill=\"#fff\" stroke=\"#222\" stroke-width=\"5\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/>\n<path d=\"M15 62 H185\" stroke=\"#222\" stroke-width=\"5\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/>\n<circle cx=\"32\" cy=\"46\" r=\"5\" fill=\"#ef4444\"/><circle cx=\"48\" cy=\"46\" r=\"5\" fill=\"#facc15\"/><circle cx=\"64\" cy=\"46\" r=\"5\" fill=\"#22c55e\"/>\n<rect x=\"80\" y=\"38\" width=\"92\" height=\"16\" rx=\"8\" fill=\"#e5e7eb\"/>\n<text x=\"126\" y=\"51\" text-anchor=\"middle\" font-size=\"12\" fill=\"#222\" font-family=\"DejaVu Sans, Arial, sans-serif\" font-weight=\"bold\">www.<\/text>\n<rect x=\"30\" y=\"76\" width=\"60\" height=\"42\" fill=\"#93c5fd\"/>\n<line x1=\"102\" y1=\"82\" x2=\"170\" y2=\"82\" stroke=\"#888\" stroke-width=\"4\" stroke-linecap=\"round\"/><line x1=\"102\" y1=\"96\" x2=\"170\" y2=\"96\" stroke=\"#888\" stroke-width=\"4\" stroke-linecap=\"round\"/><line x1=\"102\" y1=\"110\" x2=\"170\" y2=\"110\" stroke=\"#888\" stroke-width=\"4\" stroke-linecap=\"round\"/><line x1=\"30\" y1=\"134\" x2=\"170\" y2=\"134\" stroke=\"#888\" stroke-width=\"4\" stroke-linecap=\"round\"/><line x1=\"30\" y1=\"150\" x2=\"170\" y2=\"150\" stroke=\"#888\" stroke-width=\"4\" stroke-linecap=\"round\"/><\/svg>"}, {"id": "review", "word": "review", "meaning": "someone's opinion of a film, book, restaurant or product", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\" role=\"img\" aria-label=\"picture\"><path d=\"M20 30 H180 V125 H95 L60 160 V125 H20 Z\" fill=\"#fff\" stroke=\"#222\" stroke-width=\"5\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/>\n<polygon points=\"48.0,45.0 52.2,56.2 64.2,56.7 54.8,64.2 58.0,75.8 48.0,69.1 38.0,75.8 41.2,64.2 31.8,56.7 43.8,56.2\" fill=\"#facc15\" stroke=\"#222\" stroke-width=\"3\" stroke-linejoin=\"round\"/><polygon points=\"84.0,45.0 88.2,56.2 100.2,56.7 90.8,64.2 94.0,75.8 84.0,69.1 74.0,75.8 77.2,64.2 67.8,56.7 79.8,56.2\" fill=\"#facc15\" stroke=\"#222\" stroke-width=\"3\" stroke-linejoin=\"round\"/><polygon points=\"120.0,45.0 124.2,56.2 136.2,56.7 126.8,64.2 130.0,75.8 120.0,69.1 110.0,75.8 113.2,64.2 103.8,56.7 115.8,56.2\" fill=\"#facc15\" stroke=\"#222\" stroke-width=\"3\" stroke-linejoin=\"round\"/><polygon points=\"156.0,45.0 160.2,56.2 172.2,56.7 162.8,64.2 166.0,75.8 156.0,69.1 146.0,75.8 149.2,64.2 139.8,56.7 151.8,56.2\" fill=\"#fff\" stroke=\"#222\" stroke-width=\"3\" stroke-linejoin=\"round\"/>\n<line x1=\"38\" y1=\"94\" x2=\"162\" y2=\"94\" stroke=\"#444\" stroke-width=\"4\" stroke-linecap=\"round\"/><line x1=\"38\" y1=\"108\" x2=\"162\" y2=\"108\" stroke=\"#444\" stroke-width=\"4\" stroke-linecap=\"round\"/><\/svg>"}, {"id": "instructions", "word": "instructions", "meaning": "steps that tell you how to do something", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\" role=\"img\" aria-label=\"picture\"><rect x=\"30\" y=\"15\" width=\"140\" height=\"170\" fill=\"#fff\" stroke=\"#222\" stroke-width=\"5\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/>\n<circle cx=\"58\" cy=\"50\" r=\"15\" fill=\"#2563eb\"/><text x=\"58\" y=\"58\" text-anchor=\"middle\" font-size=\"22\" fill=\"#fff\" font-family=\"DejaVu Sans, Arial, sans-serif\" font-weight=\"bold\">1<\/text><line x1=\"84\" y1=\"44\" x2=\"155\" y2=\"44\" stroke=\"#444\" stroke-width=\"4\" stroke-linecap=\"round\"/><line x1=\"84\" y1=\"58\" x2=\"155\" y2=\"58\" stroke=\"#444\" stroke-width=\"4\" stroke-linecap=\"round\"/><circle cx=\"58\" cy=\"100\" r=\"15\" fill=\"#2563eb\"/><text x=\"58\" y=\"108\" text-anchor=\"middle\" font-size=\"22\" fill=\"#fff\" font-family=\"DejaVu Sans, Arial, sans-serif\" font-weight=\"bold\">2<\/text><line x1=\"84\" y1=\"94\" x2=\"155\" y2=\"94\" stroke=\"#444\" stroke-width=\"4\" stroke-linecap=\"round\"/><line x1=\"84\" y1=\"108\" x2=\"155\" y2=\"108\" stroke=\"#444\" stroke-width=\"4\" stroke-linecap=\"round\"/><circle cx=\"58\" cy=\"150\" r=\"15\" fill=\"#2563eb\"/><text x=\"58\" y=\"158\" text-anchor=\"middle\" font-size=\"22\" fill=\"#fff\" font-family=\"DejaVu Sans, Arial, sans-serif\" font-weight=\"bold\">3<\/text><line x1=\"84\" y1=\"144\" x2=\"155\" y2=\"144\" stroke=\"#444\" stroke-width=\"4\" stroke-linecap=\"round\"/><line x1=\"84\" y1=\"158\" x2=\"155\" y2=\"158\" stroke=\"#444\" stroke-width=\"4\" stroke-linecap=\"round\"/><\/svg>"}, {"id": "recipe", "word": "recipe", "meaning": "it tells you how to cook something", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\" role=\"img\" aria-label=\"picture\"><path d=\"M30 105 H170 V120 Q170 175 100 175 Q30 175 30 120 Z\" fill=\"#f97316\" stroke=\"#222\" stroke-width=\"5\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/>\n<line x1=\"15\" y1=\"105\" x2=\"185\" y2=\"105\" stroke=\"#222\" stroke-width=\"5\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/>\n<path d=\"M70 85 Q60 70 70 55 Q80 40 70 25\" fill=\"none\" stroke=\"#222\" stroke-width=\"5\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/>\n<path d=\"M100 85 Q90 70 100 55 Q110 40 100 25\" fill=\"none\" stroke=\"#222\" stroke-width=\"5\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/>\n<path d=\"M130 85 Q120 70 130 55 Q140 40 130 25\" fill=\"none\" stroke=\"#222\" stroke-width=\"5\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><\/svg>"}, {"id": "form", "word": "form", "meaning": "you write your details in the boxes", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\" role=\"img\" aria-label=\"picture\"><rect x=\"30\" y=\"20\" width=\"140\" height=\"165\" fill=\"#fff\" stroke=\"#222\" stroke-width=\"5\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/>\n<text x=\"42\" y=\"48\" font-size=\"15\" fill=\"#222\" font-family=\"DejaVu Sans, Arial, sans-serif\" font-weight=\"bold\">Name<\/text>\n<rect x=\"42\" y=\"55\" width=\"116\" height=\"20\" fill=\"#f3f4f6\" stroke=\"#222\" stroke-width=\"2\"/>\n<text x=\"42\" y=\"98\" font-size=\"15\" fill=\"#222\" font-family=\"DejaVu Sans, Arial, sans-serif\" font-weight=\"bold\">Address<\/text>\n<rect x=\"42\" y=\"105\" width=\"116\" height=\"20\" fill=\"#f3f4f6\" stroke=\"#222\" stroke-width=\"2\"/>\n<rect x=\"42\" y=\"142\" width=\"20\" height=\"20\" fill=\"#fff\" stroke=\"#222\" stroke-width=\"3\"/>\n<polyline points=\"46,152 51,158 59,146\" fill=\"none\" stroke=\"#16a34a\" stroke-width=\"4\" stroke-linecap=\"round\"/>\n<rect x=\"100\" y=\"142\" width=\"20\" height=\"20\" fill=\"#fff\" stroke=\"#222\" stroke-width=\"3\"/>\n<text x=\"68\" y=\"158\" font-size=\"14\" fill=\"#222\" font-family=\"DejaVu Sans, Arial, sans-serif\" font-weight=\"bold\">Yes<\/text><text x=\"126\" y=\"158\" font-size=\"14\" fill=\"#222\" font-family=\"DejaVu Sans, Arial, sans-serif\" font-weight=\"bold\">No<\/text><\/svg>"}, {"id": "story", "word": "story", "meaning": "it tells you what happened to someone", "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 200 200\" role=\"img\" aria-label=\"picture\"><path d=\"M100 50 Q60 25 15 40 V160 Q60 145 100 170 Z\" fill=\"#fff\" stroke=\"#222\" stroke-width=\"5\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/>\n<path d=\"M100 50 Q140 25 185 40 V160 Q140 145 100 170 Z\" fill=\"#fff\" stroke=\"#222\" stroke-width=\"5\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/>\n<line x1=\"32\" y1=\"70\" x2=\"84\" y2=\"70\" stroke=\"#888\" stroke-width=\"4\" stroke-linecap=\"round\"/><line x1=\"32\" y1=\"88\" x2=\"84\" y2=\"88\" stroke=\"#888\" stroke-width=\"4\" stroke-linecap=\"round\"/><line x1=\"32\" y1=\"106\" x2=\"84\" y2=\"106\" stroke=\"#888\" stroke-width=\"4\" stroke-linecap=\"round\"/><line x1=\"32\" y1=\"124\" x2=\"84\" y2=\"124\" stroke=\"#888\" stroke-width=\"4\" stroke-linecap=\"round\"/><line x1=\"116\" y1=\"70\" x2=\"168\" y2=\"70\" stroke=\"#888\" stroke-width=\"4\" stroke-linecap=\"round\"/><line x1=\"116\" y1=\"88\" x2=\"168\" y2=\"88\" stroke=\"#888\" stroke-width=\"4\" stroke-linecap=\"round\"/><line x1=\"116\" y1=\"106\" x2=\"168\" y2=\"106\" stroke=\"#888\" stroke-width=\"4\" stroke-linecap=\"round\"/><line x1=\"116\" y1=\"124\" x2=\"168\" y2=\"124\" stroke=\"#888\" stroke-width=\"4\" stroke-linecap=\"round\"/>\n<path d=\"M140 28 V70 L150 60 L160 70 V30\" fill=\"#dc2626\" stroke=\"#222\" stroke-width=\"3\" stroke-linejoin=\"round\"/><\/svg>"}];
+const PER_ROUND = 5, KINDS = ['pic','word','meaning'];
+const $ = id => document.getElementById(id);
+let order, round, sel, doneCount, tries, totalDone, busy;
+
+function shuffle(a){ a = a.slice(); for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+function rounds(){ return Math.ceil(ITEMS.length/PER_ROUND); }
+
+function newGame(){ order = shuffle(ITEMS); round = 0; tries = 0; totalDone = 0; startRound(); }
+
+function startRound(){
+  sel = {}; doneCount = 0; busy = false;
+  const set = order.slice(round*PER_ROUND, (round+1)*PER_ROUND);
+  KINDS.forEach(kind => {
+    const col = $('col-'+kind);
+    col.querySelectorAll('.c').forEach(n => n.remove());
+    let mixed = shuffle(set);
+    if (kind !== 'pic' && set.length > 1) { let n = 0; while (mixed.every((it,i) => it === set[i]) && n++ < 10) mixed = shuffle(set); }
+    mixed.forEach(it => {
+      const b = document.createElement('button');
+      b.type = 'button'; b.className = 'c ' + kind; b.dataset.id = it.id; b.dataset.kind = kind;
+      if (kind === 'pic') b.innerHTML = it.svg; else b.textContent = it[kind];
+      if (kind === 'pic') b.setAttribute('aria-label', 'picture');
+      b.addEventListener('click', () => pick(b));
+      col.appendChild(b);
+    });
+  });
+  $('next').hidden = true;
+  say('', '');
+  status();
+}
+
+function status(){
+  $('status').textContent = 'Round ' + (round+1) + ' of ' + rounds() + '   Matched: ' + totalDone + ' of ' + ITEMS.length + '   Tries: ' + tries;
+}
+function say(text, cls){ const m = $('msg'); m.textContent = text; m.className = 'msg ' + cls; }
+
+function pick(b){
+  if (busy || b.disabled) return;
+  const kind = b.dataset.kind;
+  if (sel[kind] === b) { b.classList.remove('sel'); delete sel[kind]; return; }
+  if (sel[kind]) sel[kind].classList.remove('sel');
+  sel[kind] = b; b.classList.add('sel');
+  if (KINDS.every(k => sel[k])) check();
+}
+
+function check(){
+  tries++;
+  const chosen = KINDS.map(k => sel[k]);
+  const ok = chosen.every(b => b.dataset.id === chosen[0].dataset.id);
+  sel = {};
+  if (ok) {
+    chosen.forEach(b => {
+      b.classList.remove('sel'); b.classList.add('done'); b.disabled = true;
+      const col = b.parentNode, dones = col.querySelectorAll('.c.done');
+      // move solved cards to the top so finished rows line up across the three columns
+      const others = Array.from(dones).filter(n => n !== b);
+      const after = others.length ? others[others.length-1] : col.querySelector('h2');
+      after.after(b);
+    });
+    doneCount++; totalDone++;
+    if (doneCount === PER_ROUND || totalDone === ITEMS.length) {
+      if (round + 1 < rounds()) { say('Well done! Go to the next round.', 'good'); $('next').hidden = false; $('next').focus(); }
+      else say('Finished! You matched all ' + ITEMS.length + ' in ' + tries + ' tries.', 'good');
+    } else say('Correct!', 'good');
+  } else {
+    busy = true;
+    chosen.forEach(b => { b.classList.remove('sel'); b.classList.add('wrong'); });
+    say('Not a match. Try again.', 'bad');
+    setTimeout(() => { chosen.forEach(b => b.classList.remove('wrong')); busy = false; }, 800);
+  }
+  status();
+}
+
+$('next').addEventListener('click', () => { round++; startRound(); });
+$('restart').addEventListener('click', newGame);
+newGame();
+</script>
+
+<div class="atin-logo" aria-label="Made by Atin">
+<svg viewBox="104 28 172 134" width="64" height="50" role="img" aria-hidden="true">
+<text x="139" y="112" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="72" fill="currentColor">A</text>
+<rect x="177" y="83" width="24" height="6" rx="1" fill="currentColor"/>
+<path d="M216 66 L216 106 A25 7 0 0 0 266 106 L266 66" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+<ellipse cx="241" cy="66" rx="25" ry="7" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="216" y1="80" x2="266" y2="80" stroke="currentColor" stroke-width="1.5"/>
+<line x1="216" y1="94" x2="266" y2="94" stroke="currentColor" stroke-width="1.5"/>
+<ellipse cx="241" cy="47" rx="23" ry="5" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="114" y1="128" x2="266" y2="128" stroke="currentColor" stroke-width="1"/>
+<text x="190" y="152" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" letter-spacing="2" fill="currentColor">made by Atin</text>
+</svg>
+</div>
+<script>(function(){var l=document.querySelector(".atin-logo"),t=document.querySelector(".wrap");if(l&&t){var nx=t.querySelector("#next");if(nx&&nx.parentNode===t)t.insertBefore(l,nx);else t.appendChild(l);}})();</script>
+<style>
+.atin-logo{position:static;flex:none;color:#1F3A5F;background:rgba(255,255,255,.92);border:1px solid #C9D3DF;border-radius:8px;padding:3px 5px;line-height:0;pointer-events:none}
+.atin-logo svg{display:block}
+@media print{.atin-logo{background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+.wrap>.atin-logo{align-self:center;margin:auto auto 0}
+</style>
+
+</body></html>
