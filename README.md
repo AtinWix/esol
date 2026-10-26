@@ -28,6 +28,7 @@ Word documents:
 
 Word documents:
 - [Task 3 In the Kitchen – questions and answers](e1/speaking-listening/docs/task3-in-the-kitchen-questions-and-answers.pdf) (PDF) · [Word](e1/speaking-listening/docs/task3-in-the-kitchen-questions-and-answers.docx)
+- [Task 3 In the Kitchen – questions and answers – answers (teacher)](e1/speaking-listening/docs/task3-in-the-kitchen-questions-and-answers-answers.pdf) (PDF) · [Word](e1/speaking-listening/docs/task3-in-the-kitchen-questions-and-answers-answers.docx)
 - [Quiet tasks – mixed skills worksheet](e1/speaking-listening/docs/quiet-tasks-mixed-skills-worksheet.pdf) (PDF) · [Word](e1/speaking-listening/docs/quiet-tasks-mixed-skills-worksheet.docx)
 - [Task 3 Describe the photo – model scripts](e1/speaking-listening/docs/task3-describe-the-photo-model-scripts.pdf) (PDF) · [Word](e1/speaking-listening/docs/task3-describe-the-photo-model-scripts.docx)
 - [Task 4 Listening – recording transcripts (teacher)](e1/speaking-listening/docs/task4-listening-recording-transcripts-teacher.pdf) (PDF) · [Word](e1/speaking-listening/docs/task4-listening-recording-transcripts-teacher.docx)
@@ -41,6 +42,7 @@ Word documents:
 
 Word documents:
 - [Past simple Tasks 1–2 – worksheets](e2/speaking-listening/docs/past-simple-tasks1-2-worksheets.pdf) (PDF) · [Word](e2/speaking-listening/docs/past-simple-tasks1-2-worksheets.docx)
+- [Past simple Tasks 1–2 – worksheets – answers (teacher)](e2/speaking-listening/docs/past-simple-tasks1-2-worksheets-answers.pdf) (PDF) · [Word](e2/speaking-listening/docs/past-simple-tasks1-2-worksheets-answers.docx)
 - [ESB exam prep, all tasks – student handouts](e2/speaking-listening/docs/esb-exam-prep-all-tasks-student-handouts.pdf) (PDF) · [Word](e2/speaking-listening/docs/esb-exam-prep-all-tasks-student-handouts.docx)
 - [ESB exam prep, all tasks – lesson plan and answers](e2/speaking-listening/docs/esb-exam-prep-all-tasks-lesson-plan-and-answers.pdf) (PDF) · [Word](e2/speaking-listening/docs/esb-exam-prep-all-tasks-lesson-plan-and-answers.docx)
 
@@ -56,11 +58,15 @@ Word documents:
 
 Word documents:
 - [Wk 1 Exam question types – sort activity](e3/reading/docs/wk01-exam-question-types-sort-activity.pdf) (PDF) · [Word](e3/reading/docs/wk01-exam-question-types-sort-activity.docx)
+- [Wk 1 Exam question types – sort activity – answers (teacher)](e3/reading/docs/wk01-exam-question-types-sort-activity-answers.pdf) (PDF) · [Word](e3/reading/docs/wk01-exam-question-types-sort-activity-answers.docx)
 - [Wk 1 Exam question words – reference sheet](e3/reading/docs/wk01-exam-question-words-reference-sheet.pdf) (PDF) · [Word](e3/reading/docs/wk01-exam-question-words-reference-sheet.docx)
 - [Wk 4 Student Services email](e3/reading/docs/wk04-student-services-email.pdf) (PDF) · [Word](e3/reading/docs/wk04-student-services-email.docx)
+- [Wk 4 Student Services email – answers (teacher)](e3/reading/docs/wk04-student-services-email-answers.pdf) (PDF) · [Word](e3/reading/docs/wk04-student-services-email-answers.docx)
 - [Wk 4 Text types – reference sheet](e3/reading/docs/wk04-text-types-reference-sheet.pdf) (PDF) · [Word](e3/reading/docs/wk04-text-types-reference-sheet.docx)
 - [Wk 5 Fruit vocabulary and alphabetical order – worksheet](e3/reading/docs/wk05-fruit-vocabulary-alphabetical-order-worksheet.pdf) (PDF) · [Word](e3/reading/docs/wk05-fruit-vocabulary-alphabetical-order-worksheet.docx)
+- [Wk 5 Fruit vocabulary and alphabetical order – worksheet – answers (teacher)](e3/reading/docs/wk05-fruit-vocabulary-alphabetical-order-worksheet-answers.pdf) (PDF) · [Word](e3/reading/docs/wk05-fruit-vocabulary-alphabetical-order-worksheet-answers.docx)
 - [Wk 7 Graffiti warning poster – lesson and worksheet](e3/reading/docs/wk07-graffiti-warning-poster-lesson-and-worksheet.pdf) (PDF) · [Word](e3/reading/docs/wk07-graffiti-warning-poster-lesson-and-worksheet.docx)
+- [Wk 7 Graffiti warning poster – lesson and worksheet – answers (teacher)](e3/reading/docs/wk07-graffiti-warning-poster-lesson-and-worksheet-answers.pdf) (PDF) · [Word](e3/reading/docs/wk07-graffiti-warning-poster-lesson-and-worksheet-answers.docx)
 
 ## games
 - [Grammar Blast](games/grammar-blast.html)
