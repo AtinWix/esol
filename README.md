@@ -65,8 +65,8 @@ Word documents:
 - [Wk 4 Text types – reference sheet](e3/reading/docs/wk04-text-types-reference-sheet.pdf) (PDF) · [Word](e3/reading/docs/wk04-text-types-reference-sheet.docx)
 - [Wk 5 Fruit vocabulary and alphabetical order – worksheet](e3/reading/docs/wk05-fruit-vocabulary-alphabetical-order-worksheet.pdf) (PDF) · [Word](e3/reading/docs/wk05-fruit-vocabulary-alphabetical-order-worksheet.docx)
 - [Wk 5 Fruit vocabulary and alphabetical order – worksheet – answers (teacher)](e3/reading/docs/wk05-fruit-vocabulary-alphabetical-order-worksheet-answers.pdf) (PDF) · [Word](e3/reading/docs/wk05-fruit-vocabulary-alphabetical-order-worksheet-answers.docx)
-- [Wk 7 Graffiti warning poster – lesson and worksheet](e3/reading/docs/wk07-graffiti-warning-poster-lesson-and-worksheet.pdf) (PDF) · [Word](e3/reading/docs/wk07-graffiti-warning-poster-lesson-and-worksheet.docx)
-- [Wk 7 Graffiti warning poster – lesson and worksheet – answers (teacher)](e3/reading/docs/wk07-graffiti-warning-poster-lesson-and-worksheet-answers.pdf) (PDF) · [Word](e3/reading/docs/wk07-graffiti-warning-poster-lesson-and-worksheet-answers.docx)
+- [Wk 7 Graffiti warning poster – student worksheet](e3/reading/docs/wk07-graffiti-warning-poster-lesson-and-worksheet.pdf) (PDF) · [Word](e3/reading/docs/wk07-graffiti-warning-poster-lesson-and-worksheet.docx)
+- [Wk 7 Graffiti warning poster – teacher notes and answers](e3/reading/docs/wk07-graffiti-warning-poster-lesson-and-worksheet-answers.pdf) (PDF) · [Word](e3/reading/docs/wk07-graffiti-warning-poster-lesson-and-worksheet-answers.docx)
 
 ## games
 - [Grammar Blast](games/grammar-blast.html)
