@@ -1,0 +1,287 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>E3 Reading – Purpose, Pronouns & Word Meaning – Projector Lesson</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Lexend:wght@400;600&display=swap">
+<style>
+/* Layout: one fixed 16:9 projector stage (1280x720) scaled to the window; slides change with buttons, arrow keys or swipe.
+   Single deliberate light look for classroom projectors: clean paper, navy ink, highlighter yellow for clue words. */
+:root{
+  --desk:#e4e8ee;      /* page ground */
+  --paper:#ffffff;
+  --ink:#152238;       /* navy ink */
+  --muted:#56627a;
+  --line:#cfd6e2;
+  --hi:#ffe14d;        /* highlighter: the one accent */
+  --arrow:#d23c2a;     /* pronoun arrows only */
+  --ok:#1d7a4b; --ok-bg:#dcf2e5;
+  --bad:#b3261e; --bad-bg:#fbe2df;
+  --display:"Bricolage Grotesque","Arial Narrow",Arial,sans-serif;
+  --body:"Lexend",Verdana,Arial,sans-serif;
+  color-scheme:light;
+}
+html,body{height:100%}
+body{margin:0;background:var(--desk);color:var(--ink);font-family:var(--body);overflow:hidden;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+#wrap{position:fixed;inset:0;display:grid;place-items:center}
+#stage{width:1280px;height:720px;position:relative;transform-origin:center center;flex:none}
+.slide{position:absolute;inset:0;background:var(--paper);border-radius:6px;box-shadow:0 18px 40px rgba(21,34,56,.18);
+  padding:46px 60px 78px;display:flex;flex-direction:column;gap:20px;overflow:hidden}
+.slide[hidden]{display:none!important}
+.eyebrow{font-size:17px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+h1,h2{font-family:var(--display);font-weight:800;margin:0;line-height:1.05;text-wrap:balance}
+h1{font-size:80px}
+h2{font-size:46px}
+p,li{font-size:26px;line-height:1.45;margin:0}
+.mark{background:linear-gradient(transparent 55%,var(--hi) 55%);padding:0 3px}
+.lede{font-size:28px;color:var(--muted);max-width:30em}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{border:2px solid var(--line);border-radius:6px;padding:16px 18px;display:flex;flex-direction:column;gap:6px}
+.card b{font-family:var(--display);font-size:34px}
+.card span{font-size:21px;color:var(--muted)}
+.steps{display:flex;flex-direction:column;gap:18px;counter-reset:s;list-style:none;padding:0;margin:0}
+.steps li{position:relative;padding-left:62px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:-2px;width:44px;height:44px;border-radius:50%;background:var(--ink);color:var(--paper);display:grid;place-items:center;font-family:var(--display);font-size:24px}
+button{font-family:var(--body);cursor:pointer}
+button:focus-visible{outline:3px solid var(--arrow);outline-offset:2px}
+.opt{font-size:21px;padding:9px 16px;border:2px solid var(--ink);background:var(--paper);color:var(--ink);border-radius:6px}
+.opt:hover{background:var(--hi)}
+.opt.right{background:var(--ok);border-color:var(--ok);color:var(--paper)}
+.opt.wrong{background:var(--bad-bg);border-color:var(--bad);color:var(--bad);animation:shake .3s}
+@keyframes shake{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+@media (prefers-reduced-motion:reduce){.opt.wrong{animation:none}}
+.q{display:grid;grid-template-columns:1fr auto;gap:10px 24px;align-items:center;padding:12px 16px;border:2px solid var(--line);border-radius:6px}
+.q p{font-size:23px}
+.q .opts{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end}
+.q.done{border-color:var(--ok);background:var(--ok-bg)}
+.fb{grid-column:1/-1;font-size:19px;color:var(--ok)}
+.fb[hidden]{display:none!important}
+.clue{border-radius:3px}
+.done .clue{background:var(--hi)}
+.list{display:flex;flex-direction:column;gap:10px;flex:1;min-height:0}
+.score{font-size:20px;color:var(--muted);font-weight:600;margin-left:auto}
+.head{display:flex;align-items:baseline;gap:20px}
+/* pronoun example with arrow */
+.pron{font-size:34px;line-height:2.2}
+.pron .n{border-bottom:4px solid var(--arrow)}
+.pron .p{color:var(--arrow);font-weight:600}
+/* matching */
+.match{display:grid;grid-template-columns:1fr 1fr;gap:12px 60px;flex:1;align-content:start}
+.mcol{display:flex;flex-direction:column;gap:12px}
+.chip{font-size:24px;text-align:left;padding:12px 16px;border:2px solid var(--line);background:var(--paper);border-radius:6px;color:var(--ink)}
+.chip.sel{border-color:var(--ink);background:var(--hi)}
+.chip.done{border-color:var(--ok);background:var(--ok-bg);color:var(--ok);cursor:default}
+.chip.wrong{border-color:var(--bad);background:var(--bad-bg);animation:shake .3s}
+.kahoot{flex:1;border-radius:10px;background:var(--ink);color:var(--paper);display:grid;place-items:center;text-align:center;gap:6px;padding:30px}
+.kahoot b{font-family:var(--display);font-size:84px}
+.kahoot span{font-size:32px}
+.trap{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.trap .card{gap:10px}
+.tag{font-size:17px;letter-spacing:.1em;text-transform:uppercase;font-weight:600}
+.tag.bad{color:var(--bad)} .tag.good{color:var(--ok)}
+/* navigation */
+#nav{position:absolute;right:24px;bottom:18px;display:flex;align-items:center;gap:12px}
+#nav button{font-size:22px;font-weight:600;border:2px solid var(--ink);background:var(--paper);color:var(--ink);border-radius:6px;padding:6px 18px}
+#nav button:disabled{opacity:.3;cursor:default}
+#count{font-size:18px;color:var(--muted);font-variant-numeric:tabular-nums}
+</style>
+
+<div id="wrap"><div id="stage">
+
+<section class="slide">
+  <div class="eyebrow">E3 Reading · Week 8 · Exam skills</div>
+  <h1>Reading <span class="mark">detectives</span></h1>
+  <p class="lede">Today: why was a text written? What is each part about? Who is “he”? What does a new word mean?</p>
+  <p class="lede">Find the clue. Prove the answer.</p>
+</section>
+
+<section class="slide" hidden>
+  <div class="head"><h2>Why was it written?</h2><span style="font-size:20px;color:var(--muted)">Choose the purpose, then find the clues.</span><span class="score" id="pScore">0 / 6</span></div>
+  <div class="list" id="purposeList" style="gap:7px"></div>
+</section>
+
+<section class="slide" hidden>
+  <h2>Six purposes, six kinds of clue</h2>
+  <div class="grid3">
+    <div class="card"><b>warn</b><span>danger · beware · do not · be careful</span></div>
+    <div class="card"><b>advise</b><span>you should · it is a good idea to · try to</span></div>
+    <div class="card"><b>instruct</b><span>sentences start with a verb: Press… Open… Wait…</span></div>
+    <div class="card"><b>advertise</b><span>prices · free · new · best · sale · buy</span></div>
+    <div class="card"><b>inform</b><span>facts: dates, times, places · will open / will close</span></div>
+    <div class="card"><b>describe</b><span>adjectives · there is / there are · it has</span></div>
+  </div>
+  <p>In the exam, one question always asks this. Choose the verb that fits the <span class="mark">whole text</span>.</p>
+</section>
+
+<section class="slide" hidden>
+  <h2>What is it mainly about?</h2>
+  <ol class="steps">
+    <li>Read the <b>title</b>.</li>
+    <li>Read the <b>first sentence</b> of each paragraph.</li>
+    <li>Stop. Say the topic in <b>four words or fewer</b>.</li>
+    <li>Then read everything to check.</li>
+  </ol>
+</section>
+
+<section class="slide" hidden>
+  <h2>The trap: a true detail is not the main point</h2>
+  <div class="trap">
+    <div class="card"><span class="tag bad">True, but only a detail</span><p>“The shops used to throw food away.”</p></div>
+    <div class="card"><span class="tag good">The main point</span><p>“A free weekly dinner run by local people.”</p></div>
+  </div>
+  <p>Ask: does this answer cover <span class="mark">the whole text</span>, or just one sentence?</p>
+</section>
+
+<section class="slide" hidden>
+  <h2>Who is “he”? What is “it”?</h2>
+  <p class="pron"><span class="n">Rosa</span> has a <span class="n">brother</span>. <span class="p">He</span> lives in Leeds. <span class="p">She</span> visits <span class="p">him</span> every month.</p>
+  <ol class="steps">
+    <li>Look <b>back</b>, not forward.</li>
+    <li>One or more than one? (it / they)</li>
+    <li>A person or a thing? (he, she / it)</li>
+  </ol>
+</section>
+
+<section class="slide" hidden>
+  <div class="head"><h2>Follow the arrow</h2><span class="score" id="rScore">0 / 5</span></div>
+  <p style="font-size:21px;color:var(--muted)">What does the word in <b>bold</b> mean?</p>
+  <div class="list" id="pronList"></div>
+</section>
+
+<section class="slide" hidden>
+  <h2>A new word? Read around it</h2>
+  <ol class="steps">
+    <li>Read the sentence <b>before</b> and <b>after</b>.</li>
+    <li>Good or bad? A thing, a person or an action?</li>
+    <li>Try each answer in the sentence. Does it make sense?</li>
+  </ol>
+  <p>No dictionary in the exam. The text gives you the clues.</p>
+</section>
+
+<section class="slide" hidden>
+  <div class="head"><h2>Guess the word</h2><span class="score" id="wScore">0 / 4</span></div>
+  <div class="list" id="wordList"></div>
+</section>
+
+<section class="slide" hidden>
+  <div class="head"><h2>Same idea, different words</h2><span class="score" id="mScore">0 / 6</span></div>
+  <p style="font-size:21px;color:var(--muted)">Exam questions rarely copy the text. Tap a phrase on the left, then its partner on the right.</p>
+  <div class="match"><div class="mcol" id="mLeft"></div><div class="mcol" id="mRight"></div></div>
+</section>
+
+<section class="slide" hidden>
+  <h2>Kahoot!</h2>
+  <div class="kahoot"><div><b>kahoot.it</b><br><span>Enter the game PIN on the screen</span></div></div>
+</section>
+
+<section class="slide" hidden>
+  <div class="eyebrow">Before you go</div>
+  <h2>Finish the sentence with your partner</h2>
+  <p class="lede">“When I do not know a word in the exam, I will …”</p>
+  <p class="lede">“When a question asks why a text was written, I will …”</p>
+</section>
+
+<div id="nav"><button id="prev" type="button" aria-label="Previous slide">←</button><span id="count"></span><button id="next" type="button" aria-label="Next slide">→</button></div>
+</div></div>
+
+<div class="atin-logo" aria-label="Made by Atin">
+<svg viewBox="104 28 172 134" width="64" height="50" role="img" aria-hidden="true">
+<text x="139" y="112" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="72" fill="currentColor">A</text>
+<rect x="177" y="83" width="24" height="6" rx="1" fill="currentColor"/>
+<path d="M216 66 L216 106 A25 7 0 0 0 266 106 L266 66" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+<ellipse cx="241" cy="66" rx="25" ry="7" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="216" y1="80" x2="266" y2="80" stroke="currentColor" stroke-width="1.5"/>
+<line x1="216" y1="94" x2="266" y2="94" stroke="currentColor" stroke-width="1.5"/>
+<ellipse cx="241" cy="47" rx="23" ry="5" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="114" y1="128" x2="266" y2="128" stroke="currentColor" stroke-width="1"/>
+<text x="190" y="152" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" letter-spacing="2" fill="currentColor">made by Atin</text>
+</svg>
+</div>
+<style>
+.atin-logo{position:fixed;left:calc(6px + env(safe-area-inset-left,0px));bottom:calc(6px + env(safe-area-inset-bottom,0px));z-index:2147483000;pointer-events:none;color:#1F3A5F;background:rgba(255,255,255,.92);border:1px solid #C9D3DF;border-radius:8px;padding:3px 5px;line-height:0}
+.atin-logo svg{display:block}
+</style>
+
+<script>
+(function(){
+  const PURPOSES=['warn','advise','instruct','advertise','inform','describe'];
+  const P=[
+    {t:'<span class="clue">Danger</span>: the floor near the café is wet. <span class="clue">Be careful</span> when you walk past.',a:'warn'},
+    {t:'Big <span class="clue">sale</span>! All winter boots are <span class="clue">half price</span> – today only. Come in and grab a bargain.',a:'advertise'},
+    {t:'If you feel nervous before an exam, <span class="clue">it is a good idea to</span> go for a walk. You <span class="clue">should</span> also sleep well.',a:'advise'},
+    {t:'<span class="clue">Open</span> the app. <span class="clue">Tap</span> “Book”. <span class="clue">Choose</span> a date and <span class="clue">press</span> “Confirm”.',a:'instruct'},
+    {t:'Ridley Road Market is <span class="clue">long and busy</span>. <span class="clue">There are</span> stalls with fish, fabric and fresh fruit.',a:'describe'},
+    {t:'The college café <span class="clue">will be closed</span> next Monday. It <span class="clue">will open</span> again on Tuesday at 9am.',a:'inform'}
+  ];
+  const R=[
+    {s:'Leila bought a new coat. She wore <b>it</b> to college the next day.',o:['Leila','the coat','college'],a:1},
+    {s:'The students asked the teacher a question, but <b>she</b> did not know the answer.',o:['the students','the teacher','the question'],a:1},
+    {s:'My neighbours have two dogs. They walk <b>them</b> in the park every morning.',o:['my neighbours','the two dogs','the mornings'],a:1},
+    {s:'Omar phoned the GP surgery. <b>It</b> was closed, so he tried again later.',o:['Omar','the phone','the GP surgery'],a:2},
+    {s:'Hana and her son went to the library. The librarian found some books for <b>him</b>.',o:['Hana','the librarian','her son'],a:2}
+  ];
+  const W=[
+    {s:'The bus was <b>packed</b>. There were no seats and people stood by the doors.',o:['very full','very cold','very late','very quiet'],a:0,c:'Clue: no seats, people stood.'},
+    {s:'The new library is <b>spacious</b>. There is a lot of room for tables, sofas and computers.',o:['dark','large inside','modern','noisy'],a:1,c:'Clue: a lot of room.'},
+    {s:'Please be <b>punctual</b>. The class starts at 9.30 and the door closes at 9.45.',o:['quiet','polite','on time','ready to write'],a:2,c:'Clue: start time, door closes.'},
+    {s:'The soup was <b>bland</b>, so I added salt and pepper.',o:['too hot','too thick','very old','without much taste'],a:3,c:'Clue: salt and pepper were added.'}
+  ];
+  const M=[['nearly an hour','almost 60 minutes'],['began','started'],['without paying','at no cost'],['every Wednesday','once a week, on the same day'],['an unpaid helper','a volunteer'],['scared','frightened']];
+
+  function setScore(id,n,t){document.getElementById(id).textContent=n+' / '+t}
+  function build(listId,items,scoreId,render){
+    const box=document.getElementById(listId);let score=0;
+    items.forEach(it=>{
+      const row=document.createElement('div');row.className='q';
+      const p=document.createElement('p');p.innerHTML=render(it);row.append(p);
+      const opts=document.createElement('div');opts.className='opts';
+      const fb=document.createElement('div');fb.className='fb';fb.hidden=true;
+      it.options.forEach((label,i)=>{
+        const b=document.createElement('button');b.type='button';b.className='opt';b.textContent=label;
+        b.addEventListener('click',()=>{
+          if(row.classList.contains('done'))return;
+          if(i===it.correct){b.classList.add('right');row.classList.add('done');score++;setScore(scoreId,score,items.length);if(it.feedback){fb.textContent=it.feedback;fb.hidden=false}}
+          else{b.classList.remove('wrong');void b.offsetWidth;b.classList.add('wrong')}
+        });
+        opts.append(b);
+      });
+      row.append(opts,fb);box.append(row);
+    });
+    setScore(scoreId,0,items.length);
+  }
+  build('purposeList',P.map(x=>({text:x.t,options:PURPOSES,correct:PURPOSES.indexOf(x.a),feedback:'The highlighted words are the clues.'})),'pScore',x=>x.text);
+  // purpose rows are long: put options under the text
+  document.querySelectorAll('#purposeList .q').forEach(q=>{q.style.gridTemplateColumns='1fr';q.querySelector('.opts').style.justifyContent='flex-start';q.style.padding='6px 14px';q.style.gap='6px 24px'});
+  document.querySelectorAll('#purposeList .q p').forEach(p=>p.style.fontSize='20px');
+  document.querySelectorAll('#purposeList .opt').forEach(b=>{b.style.fontSize='17px';b.style.padding='4px 12px'});
+  build('pronList',R.map(x=>({text:x.s,options:x.o,correct:x.a})),'rScore',x=>x.text);
+  build('wordList',W.map(x=>({text:x.s,options:x.o,correct:x.a,feedback:x.c})),'wScore',x=>x.text);
+  document.querySelectorAll('#wordList .q').forEach(q=>{q.style.gridTemplateColumns='1fr';q.querySelector('.opts').style.justifyContent='flex-start'});
+
+  // matching
+  (function(){
+    const L=document.getElementById('mLeft'),Rt=document.getElementById('mRight');let sel=null,score=0;
+    const right=M.map((m,i)=>({t:m[1],i})).sort((a,b)=>a.t.length%3-b.t.length%3||a.t.localeCompare(b.t));
+    M.forEach((m,i)=>{const b=document.createElement('button');b.type='button';b.className='chip';b.textContent=m[0];b.dataset.i=i;
+      b.addEventListener('click',()=>{if(b.classList.contains('done'))return;document.querySelectorAll('#mLeft .chip').forEach(c=>c.classList.remove('sel'));b.classList.add('sel');sel=b});L.append(b)});
+    right.forEach(r=>{const b=document.createElement('button');b.type='button';b.className='chip';b.textContent=r.t;
+      b.addEventListener('click',()=>{if(!sel||b.classList.contains('done'))return;
+        if(+sel.dataset.i===r.i){sel.classList.remove('sel');sel.classList.add('done');b.classList.add('done');sel=null;score++;setScore('mScore',score,M.length)}
+        else{b.classList.remove('wrong');void b.offsetWidth;b.classList.add('wrong')}});Rt.append(b)});
+    setScore('mScore',0,M.length);
+  })();
+
+  // slides
+  const slides=[...document.querySelectorAll('.slide')];let cur=0;
+  const prev=document.getElementById('prev'),next=document.getElementById('next'),count=document.getElementById('count');
+  function show(n){cur=Math.max(0,Math.min(slides.length-1,n));slides.forEach((s,i)=>s.hidden=i!==cur);prev.disabled=cur===0;next.disabled=cur===slides.length-1;count.textContent=(cur+1)+' / '+slides.length}
+  prev.addEventListener('click',()=>show(cur-1));next.addEventListener('click',()=>show(cur+1));
+  document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){e.preventDefault();show(cur+1)}if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();show(cur-1)}});
+  let sx=null;document.addEventListener('touchstart',e=>{sx=e.touches[0].clientX},{passive:true});
+  document.addEventListener('touchend',e=>{if(sx===null)return;const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>60)show(cur+(dx<0?1:-1));sx=null});
+  const stage=document.getElementById('stage');
+  function fit(){const s=Math.min((window.innerWidth-32)/1280,(window.innerHeight-16)/720);stage.style.transform='scale('+Math.max(s,0.2)+')'}
+  window.addEventListener('resize',fit);fit();show(0);
+})();
+</script>
+</body></html>

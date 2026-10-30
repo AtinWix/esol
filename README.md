@@ -101,6 +101,7 @@ Word documents:
 - [E3 Mixed Tenses – Graffiti News – Error Hunt](e3/reading/wk08-graffiti-news-error-hunt.html)
 - [E3 Reading – ESB Mock Exam – Set O](e3/reading/wk08-esb-mock-exam-set-o.html)
 - [E3 Reading Skills – Hackney Bugle](e3/reading/wk17-reading-skills-hackney-bugle.html)
+- [E3 Reading – Purpose, Pronouns & Word Meaning – Projector Lesson](e3/reading/wk08-purpose-pronouns-word-meaning-projector-lesson.html)
 
 Word documents:
 - [Wk 1 Exam question types – sort activity – answers (teacher)](e3/reading/docs/wk01-exam-question-types-sort-activity-answers.pdf) (PDF) · [Word](e3/reading/docs/wk01-exam-question-types-sort-activity-answers.docx)
@@ -113,6 +114,7 @@ Word documents:
 - [Wk 5 Fruit vocabulary and alphabetical order – worksheet](e3/reading/docs/wk05-fruit-vocabulary-alphabetical-order-worksheet.pdf) (PDF) · [Word](e3/reading/docs/wk05-fruit-vocabulary-alphabetical-order-worksheet.docx)
 - [Wk 7 Graffiti warning poster – teacher notes and answers](e3/reading/docs/wk07-graffiti-warning-poster-lesson-and-worksheet-answers.pdf) (PDF) · [Word](e3/reading/docs/wk07-graffiti-warning-poster-lesson-and-worksheet-answers.docx)
 - [Wk 7 Graffiti warning poster – student worksheet](e3/reading/docs/wk07-graffiti-warning-poster-lesson-and-worksheet.pdf) (PDF) · [Word](e3/reading/docs/wk07-graffiti-warning-poster-lesson-and-worksheet.docx)
+- [Wk 8 Mon Purpose, main points, pronouns and word meaning – day plan (teacher)](e3/reading/docs/wk08-mon-purpose-pronouns-word-meaning-day-plan.pdf) (PDF) · [Word](e3/reading/docs/wk08-mon-purpose-pronouns-word-meaning-day-plan.docx)
 - [Lesson 1: Main points and purpose – student handouts](e3/reading/exam-prep/lesson-01-handouts.pdf) (PDF) · [Word](e3/reading/exam-prep/lesson-01-handouts.docx)
 - [Lesson 1: Main points and purpose – plan and answers](e3/reading/exam-prep/lesson-01-plan.pdf) (PDF) · [Word](e3/reading/exam-prep/lesson-01-plan.docx)
 - [Lesson 2: Pronouns, word meaning and finding details – student handouts](e3/reading/exam-prep/lesson-02-handouts.pdf) (PDF) · [Word](e3/reading/exam-prep/lesson-02-handouts.docx)
