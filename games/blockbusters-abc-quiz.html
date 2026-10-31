@@ -645,12 +645,13 @@ $("genGo").onclick = async () => {
 Level: ${LEVELS[level]}
 Theme(s): ${themes}
 
-Write ${per} question${per > 1 ? "s" : ""} for each letter of the alphabet. Skip a letter (Q, X, Z especially) only if no fair, on-theme answer exists at this level; aim for at least 22 letters.
+Write ${per} question${per > 1 ? "s" : ""} for each letter of the alphabet. Skip any letter where no fair, on-theme answer exists at this level.
 Rules:
 - Each question starts "What [LETTER] ..." (or "Which [LETTER] ..." / "Who [LETTER] ...") and the answer starts with that letter, e.g. "What P do you show at the airport?" -> "passport".
 - Exactly one clear correct answer. No trick questions. The answer word must not appear in the question.
 - Question vocabulary must be at or below the level. British English spelling and UK life (e.g. GP, chemist, bus pass, pounds).
-- Stay on the theme(s); if a letter is hard, use a closely related everyday word.
+- EVERY question must be clearly about the theme(s) and should mention the theme or something specific to it. A generic question that would fit any topic is NOT allowed. If the theme is a place (e.g. a town or borough), ask about real, well-known things there (named streets, markets, parks, landmarks, transport, local facts) and name the place in the question. Good (theme Hackney): "What L is the big park in Hackney with an outdoor swimming pool?" -> "London Fields". Bad: "What C is a place where you watch films?" -> "cinema" (fits any topic). Only use facts you are sure are true.
+- If you cannot write a fair, on-theme, true question for a letter, SKIP that letter. Fewer letters is better than off-theme questions. Aim for at least 20 letters only if they are all on-theme.
 - Suitable for adult learners from many cultures: no alcohol, pork-only, religion, politics or adult topics.
 - If a letter has more than one question, the answers must be different words.
 
