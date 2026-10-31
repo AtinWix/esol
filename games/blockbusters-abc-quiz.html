@@ -81,6 +81,15 @@ textarea#bank{width:100%;min-height:260px;background:var(--stage);border:2px sol
 .warn{color:#ffb4ae;font-size:14px;margin:0}
 .go{max-width:1100px;margin:18px auto 0;display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-end}
 .go .btn{font-size:20px;padding:12px 26px}
+.gen{border:2px dashed var(--gold);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:10px}
+.gen h3{margin:0;font-size:17px;color:var(--gold)}
+.gen-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr) minmax(0,1fr);gap:10px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips button{border:1px solid var(--line);background:var(--stage);border-radius:999px;padding:3px 11px;font-size:14px}
+.chips button:hover{border-color:var(--gold)}
+.gen-status{margin:0;font-size:15px;color:var(--muted);min-height:1.4em}
+.gen-status.ok{color:var(--green)}.gen-status.err{color:#ffb4ae}
+@media (max-width:640px){.gen-grid{grid-template-columns:1fr}}
 code{background:var(--stage);border:1px solid var(--line);border-radius:5px;padding:1px 6px;font-size:13px}
 
 /* ---------- GAME ---------- */
@@ -202,6 +211,28 @@ code{background:var(--stage);border:1px solid var(--line);border-radius:5px;padd
     <div class="step wide">
       <h2><i>3</i>Questions</h2>
       <p class="hint">One question per line: <code>letter | question | answer</code>. Add more than one line for a letter if you want spare questions (use <b>Next question</b> in the game). Example: <code>P | What P do you show at the airport? | passport</code></p>
+      <div class="gen" id="gen">
+        <h3>✨ Make questions automatically</h3>
+        <div class="gen-grid">
+          <div class="field"><label for="genLevel">Level</label>
+            <select id="genLevel"><option>Pre-Entry</option><option>Entry 1</option><option selected>Entry 2</option><option>Entry 3</option><option>Level 1</option><option>Level 2</option></select>
+          </div>
+          <div class="field"><label for="genThemes">Theme(s)</label>
+            <input id="genThemes" placeholder="e.g. food, shopping, health" maxlength="200">
+          </div>
+          <div class="field"><label for="genPer">Questions per letter</label>
+            <select id="genPer"><option value="1">1</option><option value="2" selected>2 (one spare)</option><option value="3">3</option></select>
+          </div>
+        </div>
+        <div class="chips" id="themeChips"></div>
+        <div class="row">
+          <button class="btn primary" id="genGo">Generate questions</button>
+          <button class="btn small ghost" id="genStop" hidden>Stop</button>
+          <label class="check" style="align-items:center"><input type="checkbox" id="genAdd"><span>Add to my questions (don't replace)</span></label>
+        </div>
+        <p class="gen-status" id="genStatus" aria-live="polite"></p>
+      </div>
+      <p class="hint" id="genOff" hidden>Automatic questions only work when the game is opened from your Claude link. Here you can still paste or type questions.</p>
       <textarea id="bank" spellcheck="false" aria-label="Questions"></textarea>
       <div class="counts" id="counts"></div>
       <p class="warn" id="bankWarn" hidden></p>
@@ -583,6 +614,78 @@ document.addEventListener("keydown", e => {
 let ac = null;
 function beep(f, d){ try{ ac = ac || new (window.AudioContext || window.webkitAudioContext)(); const o = ac.createOscillator(), g = ac.createGain(); o.type = "triangle"; o.frequency.value = f; g.gain.setValueAtTime(.18, ac.currentTime); g.gain.exponentialRampToValueAtTime(.001, ac.currentTime + d); o.connect(g).connect(ac.destination); o.start(); o.stop(ac.currentTime + d); }catch(e){} }
 function fanfare(){ [523, 659, 784, 1047].forEach((f, k) => setTimeout(() => beep(f, .3), 160 * k)); }
+
+/* ---------- automatic question generator (works inside Claude only) ---------- */
+const THEMES = ["Food and drink","Shopping","Health","Work and jobs","Home","Family","Transport","Weather","Clothes","Free time","School and college","Town and places","Animals","Money","Halloween"];
+const LEVELS = {
+  "Pre-Entry": "Pre-Entry ESOL (below A1): only very common, concrete words that can be pictured. Questions 8 words or fewer. Answers one short word.",
+  "Entry 1": "Entry 1 ESOL (CEFR A1): very high-frequency everyday words, present simple, questions about 10 words or fewer. Answers one word.",
+  "Entry 2": "Entry 2 ESOL (CEFR A2): common everyday vocabulary, simple sentences, questions about 12 words or fewer. Answers one or two words.",
+  "Entry 3": "Entry 3 ESOL (CEFR B1): wider everyday, work and community vocabulary, questions about 15 words or fewer. Answers one to three words.",
+  "Level 1": "Level 1 ESOL (CEFR B2): less common vocabulary, definitions, collocations and phrasal verbs are fine.",
+  "Level 2": "Level 2 ESOL (CEFR C1): advanced vocabulary, idioms, formal and abstract words are fine."
+};
+$("themeChips").innerHTML = THEMES.map(t => `<button type="button" data-t="${t}">+ ${t}</button>`).join("");
+$("themeChips").addEventListener("click", e => {
+  const b = e.target.closest("[data-t]"); if (!b) return;
+  const cur = $("genThemes").value.split(",").map(s => s.trim()).filter(Boolean);
+  if (!cur.includes(b.dataset.t)) cur.push(b.dataset.t);
+  $("genThemes").value = cur.join(", ");
+});
+let sampleFn = null, genCtl = null;
+if (!window.claude){ $("gen").hidden = true; $("genOff").hidden = false; }
+else claude.use("sample").then(fn => { sampleFn = fn; if (!fn){ $("gen").hidden = true; $("genOff").hidden = false; } });
+
+function genStatus(msg, cls){ const el = $("genStatus"); el.textContent = msg; el.className = "gen-status " + (cls || ""); }
+$("genStop").onclick = () => genCtl && genCtl.abort();
+$("genGo").onclick = async () => {
+  if (!sampleFn){ genStatus("Automatic questions aren't available here.", "err"); return; }
+  const level = $("genLevel").value, themes = $("genThemes").value.trim() || "everyday life", per = +$("genPer").value;
+  const prompt = `You are an experienced UK ESOL teacher writing questions for a classroom "Blockbusters" ABC quiz.
+Level: ${LEVELS[level]}
+Theme(s): ${themes}
+
+Write ${per} question${per > 1 ? "s" : ""} for each letter of the alphabet. Skip a letter (Q, X, Z especially) only if no fair, on-theme answer exists at this level; aim for at least 22 letters.
+Rules:
+- Each question starts "What [LETTER] ..." (or "Which [LETTER] ..." / "Who [LETTER] ...") and the answer starts with that letter, e.g. "What P do you show at the airport?" -> "passport".
+- Exactly one clear correct answer. No trick questions. The answer word must not appear in the question.
+- Question vocabulary must be at or below the level. British English spelling and UK life (e.g. GP, chemist, bus pass, pounds).
+- Stay on the theme(s); if a letter is hard, use a closely related everyday word.
+- Suitable for adult learners from many cultures: no alcohol, pork-only, religion, politics or adult topics.
+- If a letter has more than one question, the answers must be different words.
+
+Reply with only a JSON array of objects: [{"letter":"A","question":"What A ...?","answer":"..."}]`;
+  genCtl = new AbortController();
+  $("genGo").disabled = true; $("genStop").hidden = false;
+  genStatus(`Writing ${level} questions on ${themes}… this can take up to a minute.`);
+  try{
+    const data = await sampleFn.json(prompt, {signal: genCtl.signal, cache: false});
+    const rows = (Array.isArray(data) ? data : []).filter(o => o && o.letter && o.question && o.answer)
+      .map(o => ({L: String(o.letter).trim().charAt(0).toUpperCase(), q: String(o.question).replace(/\|/g, "/").trim(), a: String(o.answer).replace(/\|/g, "/").trim()}))
+      .filter(o => /[A-Z]/.test(o.L));
+    if (!rows.length) throw {code: "empty"};
+    rows.sort((x, y) => x.L.localeCompare(y.L));
+    const text = `# ${level} · ${themes}\n` + rows.map(o => `${o.L} | ${o.q} | ${o.a}`).join("\n");
+    S.bank = $("genAdd").checked && S.bank.trim() ? S.bank.trimEnd() + "\n" + text : text;
+    $("bank").value = S.bank;
+    bank = parseBank(S.bank);
+    // swap board letters that have no questions for unused letters that do
+    const spare = Object.keys(bank).filter(L => !S.letters.includes(L)).sort(() => Math.random() - .5);
+    let swapped = 0;
+    S.letters = S.letters.map(L => bank[L] ? L : (spare.length ? (swapped++, spare.pop()) : L));
+    save(); refreshSetup();
+    const letters = new Set(rows.map(o => o.L)).size;
+    genStatus(`Done: ${rows.length} questions for ${letters} letters.${swapped ? ` ${swapped} board letter${swapped > 1 ? "s" : ""} changed to match.` : ""} Check them below, then start the game.`, "ok");
+  }catch(e){
+    const c = e && e.code;
+    if (c === "cancelled") genStatus("Stopped.");
+    else if (c === "not_granted" || c === "sampling_disabled"){ genStatus("Claude wasn't allowed for this page, so automatic questions are off.", "err"); }
+    else if (c === "rate_limited") genStatus("Too many requests just now. Wait a minute and try again.", "err");
+    else genStatus("That didn't work. Try again, or change the theme.", "err");
+  }finally{
+    $("genGo").disabled = false; $("genStop").hidden = true; genCtl = null;
+  }
+};
 
 fillSetup();
 })();
