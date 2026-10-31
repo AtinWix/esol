@@ -228,7 +228,7 @@ code{background:var(--stage);border:1px solid var(--line);border-radius:5px;padd
         <div class="row">
           <button class="btn primary" id="genGo">Generate questions</button>
           <button class="btn small ghost" id="genStop" hidden>Stop</button>
-          <label class="check" style="align-items:center"><input type="checkbox" id="genAdd"><span>Add to my questions (don't replace)</span></label>
+          <label class="check" style="align-items:center"><input type="checkbox" id="genAdd"><span>Keep my other questions as spares (new ones are asked first)</span></label>
         </div>
         <p class="gen-status" id="genStatus" aria-live="polite"></p>
       </div>
@@ -666,8 +666,13 @@ Reply with only a JSON array of objects: [{"letter":"A","question":"What A ...?"
     if (!rows.length) throw {code: "empty"};
     rows.sort((x, y) => x.L.localeCompare(y.L));
     const text = `# ${level} · ${themes}\n` + rows.map(o => `${o.L} | ${o.q} | ${o.a}`).join("\n");
-    S.bank = $("genAdd").checked && S.bank.trim() ? S.bank.trimEnd() + "\n" + text : text;
-    $("bank").value = S.bank;
+    // new questions go FIRST so the game asks them first; older ones become spares
+    S.bank = $("genAdd").checked && S.bank.trim() ? text + "\n" + S.bank.trim() : text;
+    const ta = $("bank");
+    ta.value = S.bank;
+    ta.scrollTop = 0;
+    try{ ta.focus({preventScroll: true}); ta.setSelectionRange(0, text.length); }catch(_){}
+    ta.scrollIntoView({behavior: "smooth", block: "center"});
     bank = parseBank(S.bank);
     // swap board letters that have no questions for unused letters that do
     const spare = Object.keys(bank).filter(L => !S.letters.includes(L)).sort(() => Math.random() - .5);
@@ -675,7 +680,7 @@ Reply with only a JSON array of objects: [{"letter":"A","question":"What A ...?"
     S.letters = S.letters.map(L => bank[L] ? L : (spare.length ? (swapped++, spare.pop()) : L));
     save(); refreshSetup();
     const letters = new Set(rows.map(o => o.L)).size;
-    genStatus(`Done: ${rows.length} questions for ${letters} letters.${swapped ? ` ${swapped} board letter${swapped > 1 ? "s" : ""} changed to match.` : ""} Check them below, then start the game.`, "ok");
+    genStatus(`Done: ${rows.length} questions for ${letters} letters.${swapped ? ` ${swapped} board letter${swapped > 1 ? "s" : ""} changed to match.` : ""} They're highlighted at the top of the list below.`, "ok");
   }catch(e){
     const c = e && e.code;
     if (c === "cancelled") genStatus("Stopped.");
