@@ -1,0 +1,525 @@
+<title>ESOL All Levels – Who Wants to Be a Millionaire – Projector Quiz Game</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700;800&display=swap">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+/* Layout: one 16:9 screen. Left = question + 4 answer lozenges + lifelines; right = money ladder. Stacks on phones. */
+:root{
+  color-scheme: dark;
+  --night:#070b2a; --deep:#0e1650; --panel:#111a5c; --line:#8f9bd6; --ink:#f3f5ff; --muted:#aab3e0;
+  --gold:#f5c542; --gold-ink:#2a1d00; --pick:#f39a1e; --right:#1fb35f; --wrong:#d93a3a;
+  --a:#e23d3d; --b:#2f6fe0; --c:#f2b707; --d:#1fa35b;
+  --font:"Lexend","Verdana","Arial",sans-serif;
+}
+[hidden]{display:none!important}
+html,body{height:100%}
+body{margin:0;background:radial-gradient(ellipse at 40% 30%,#1b2a8a 0%,var(--deep) 45%,var(--night) 100%) fixed,var(--night);color:var(--ink);font-family:var(--font);overflow:hidden;-webkit-tap-highlight-color:transparent}
+button{font-family:inherit;cursor:pointer}
+button:focus-visible,textarea:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.app{height:100%;box-sizing:border-box;display:grid;grid-template-columns:minmax(0,1fr) clamp(200px,20vw,280px);gap:clamp(12px,1.6vw,24px);padding-block:clamp(10px,1.6vh,20px);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.main{display:flex;flex-direction:column;gap:clamp(8px,1.6vh,18px);min-width:0;min-height:0}
+.top{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.top h1{margin:0;font-size:clamp(1rem,1.6vw,1.4rem);font-weight:800;letter-spacing:.04em;color:var(--gold);text-transform:uppercase;flex:1;min-width:0}
+.top .now{font-variant-numeric:tabular-nums;color:var(--muted);font-size:clamp(.85rem,1.2vw,1.05rem)}
+.tbtn{background:transparent;border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:6px 14px;font-size:.9rem}
+.tbtn:hover{background:rgba(255,255,255,.08)}
+.lifelines{display:flex;gap:clamp(8px,1.2vw,16px);justify-content:center}
+.life{width:clamp(90px,10vw,140px);aspect-ratio:1.7;border-radius:50%;border:3px solid var(--line);background:radial-gradient(circle,#2b3aa8,#0c1450);color:var(--ink);font-weight:800;font-size:clamp(.8rem,1.15vw,1.05rem);line-height:1.1;display:flex;align-items:center;justify-content:center;text-align:center;padding:4px;position:relative;max-width:100%}
+.life:hover:not(:disabled){border-color:var(--gold)}
+.life:disabled{opacity:.35;cursor:default}
+.life:disabled::after{content:"";position:absolute;inset:10% 12%;background:linear-gradient(to top right,transparent 47%,var(--wrong) 47%,var(--wrong) 53%,transparent 53%)}
+.stage{flex:1;display:flex;flex-direction:column;justify-content:center;gap:clamp(10px,2vh,22px);min-height:0}
+.q{position:relative;background:linear-gradient(#18237a,#0a1046);border:2px solid var(--line);clip-path:polygon(3% 0,97% 0,100% 50%,97% 100%,3% 100%,0 50%);padding:clamp(14px,3vh,34px) 6%;text-align:center;font-size:clamp(1.15rem,2.5vw,2.3rem);font-weight:500;line-height:1.3;text-wrap:balance;min-height:3.2em;display:flex;align-items:center;justify-content:center}
+.answers{display:grid;grid-template-columns:1fr 1fr;gap:clamp(8px,1.6vh,18px) clamp(10px,1.6vw,22px)}
+.ans{display:flex;align-items:center;gap:.6em;text-align:left;background:linear-gradient(#18237a,#0a1046);border:0;color:var(--ink);clip-path:polygon(4% 0,96% 0,100% 50%,96% 100%,4% 100%,0 50%);padding:clamp(10px,2vh,22px) 6%;font-size:clamp(1rem,2vw,1.8rem);min-height:2.6em;box-shadow:inset 0 0 0 2px var(--line);transition:background .15s}
+.ans:hover:not(:disabled){background:linear-gradient(#2a3aa8,#121c6a)}
+.ans .L{flex:none;width:1.6em;height:1.6em;border-radius:8px;display:grid;place-items:center;font-weight:800;color:#fff}
+.ans[data-l="A"] .L{background:var(--a)} .ans[data-l="B"] .L{background:var(--b)} .ans[data-l="C"] .L{background:var(--c);color:#1d1600} .ans[data-l="D"] .L{background:var(--d)}
+.ans .t{min-width:0;overflow-wrap:anywhere}
+.ans.gone{visibility:hidden}
+.ans.pick{background:var(--pick);color:#1d1000}
+.ans.right{background:var(--right);color:#fff;animation:flash .35s 4 alternate}
+.ans.wrong{background:var(--wrong);color:#fff}
+.ans:disabled{cursor:default}
+@keyframes flash{to{filter:brightness(1.45)}}
+.bar{display:flex;gap:12px;justify-content:center;align-items:center;flex-wrap:wrap;min-height:52px}
+.bar p{margin:0;font-size:clamp(1rem,1.6vw,1.4rem);font-weight:700;color:var(--gold);text-align:center}
+.btn{border:0;border-radius:999px;padding:12px 26px;font-size:clamp(.95rem,1.3vw,1.15rem);font-weight:700;background:var(--gold);color:var(--gold-ink)}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--line)}
+.btn:hover{filter:brightness(1.08)}
+.foot{display:flex;justify-content:space-between;align-items:end;gap:12px}
+/* ladder */
+.ladder{display:flex;flex-direction:column;background:rgba(5,9,40,.65);border:2px solid var(--line);border-radius:14px;padding:10px 8px;min-height:0;overflow:hidden}
+.ladder ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column-reverse;flex:1;justify-content:space-between}
+.ladder li{display:flex;gap:10px;align-items:center;padding:2px 10px;border-radius:8px;font-variant-numeric:tabular-nums;font-size:clamp(.78rem,1.05vw,1.05rem);color:var(--gold);font-weight:500}
+.ladder li .n{width:1.8em;text-align:right;color:var(--muted)}
+.ladder li.safe{color:#fff;font-weight:800}
+.ladder li.done{opacity:.55}
+.ladder li.cur{background:var(--pick);color:#1d1000}
+.ladder li.cur .n{color:#1d1000}
+/* overlays */
+.ov{position:fixed;inset:0;background:rgba(3,5,25,.82);display:flex;align-items:center;justify-content:center;z-index:10;padding:16px}
+.card{background:linear-gradient(#141e6e,#0a1046);border:2px solid var(--line);border-radius:18px;padding:clamp(16px,2.6vw,32px);width:min(980px,100%);max-height:100%;overflow:auto;box-sizing:border-box;display:flex;flex-direction:column;gap:14px}
+.card h2{margin:0;color:var(--gold);font-size:clamp(1.3rem,2.4vw,2rem);text-wrap:balance}
+.card p{margin:0;line-height:1.5}
+.hint{color:var(--muted);font-size:.9rem}
+.row{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.cols>*{min-width:0}
+label{font-weight:700;font-size:.95rem}
+textarea,select,input[type=text]{width:100%;box-sizing:border-box;background:#070b2a;color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:10px;font-family:inherit;font-size:.9rem}
+textarea{min-height:150px;resize:vertical;font-family:ui-monospace,Consolas,monospace;font-size:.82rem}
+.sets{display:flex;gap:8px;flex-wrap:wrap}
+.sets button{background:transparent;border:2px solid var(--line);color:var(--ink);border-radius:999px;padding:8px 16px;font-weight:700}
+.sets button[aria-pressed=true]{background:var(--gold);border-color:var(--gold);color:var(--gold-ink)}
+.status{font-size:.9rem;min-height:1.2em}
+.status.ok{color:#7ee0a5}.status.err{color:#ff9a9a}
+/* audience */
+.aud{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center}
+.qr{background:#fff;padding:10px;border-radius:12px;width:200px;height:200px;display:grid;place-items:center}
+.qr img,.qr canvas{width:180px!important;height:180px!important}
+.link{font-family:ui-monospace,Consolas,monospace;font-size:.85rem;color:var(--gold);overflow-wrap:anywhere;user-select:all}
+.chart{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;align-items:end;height:220px}
+.col{display:flex;flex-direction:column;align-items:center;gap:6px;height:100%;justify-content:flex-end}
+.col .pc{font-weight:800;font-variant-numeric:tabular-nums}
+.col .bx{width:70%;background:var(--line);border-radius:6px 6px 0 0;min-height:2px;transition:height .25s}
+.col[data-l="A"] .bx{background:var(--a)} .col[data-l="B"] .bx{background:var(--b)} .col[data-l="C"] .bx{background:var(--c)} .col[data-l="D"] .bx{background:var(--d)}
+.col .ctl{display:flex;align-items:center;gap:6px}
+.col .ctl button{width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:#070b2a;color:var(--ink);font-size:1.1rem;font-weight:800}
+.col .ctl b{min-width:1.5em;text-align:center;font-variant-numeric:tabular-nums}
+.col .lt{font-weight:800;font-size:1.3rem}
+.col.off{opacity:.25;pointer-events:none}
+/* friend */
+.clock{font-size:clamp(4rem,12vw,8rem);font-weight:800;color:var(--gold);text-align:center;font-variant-numeric:tabular-nums;line-height:1}
+.friend{font-size:clamp(1.6rem,3.5vw,2.8rem);font-weight:800;text-align:center;min-height:1.3em}
+.big-end{font-size:clamp(2.6rem,7vw,5rem);font-weight:800;color:var(--gold);text-align:center;font-variant-numeric:tabular-nums}
+.atin-logo{color:#1F3A5F;background:rgba(255,255,255,.92);border:1px solid #C9D3DF;border-radius:8px;padding:3px 5px;line-height:0;flex:none}
+.atin-logo svg{display:block;width:62px;height:48px}
+@media (max-width:820px){
+  body{overflow:auto}
+  .app{grid-template-columns:1fr;height:auto;min-height:100%}
+  .ladder{display:none}
+  .answers{grid-template-columns:1fr}
+  .aud,.cols{grid-template-columns:1fr}
+  .qr{margin:auto}
+}
+@media (prefers-reduced-motion:reduce){.ans.right{animation:none}.col .bx{transition:none}}
+</style>
+
+<div class="app" id="app">
+  <section class="main">
+    <div class="top">
+      <h1>Who Wants to Be a Millionaire?</h1>
+      <span class="now" id="now"></span>
+      <button class="tbtn" id="soundBtn" aria-pressed="true">Sound on</button>
+      <button class="tbtn" id="setupBtn">Questions &amp; settings</button>
+    </div>
+    <div class="lifelines">
+      <button class="life" id="l50" title="Remove two wrong answers">50:50</button>
+      <button class="life" id="lAud" title="Students vote on their phones">Ask the<br>Audience</button>
+      <button class="life" id="lFr" title="Ask one classmate">Ask a<br>Friend</button>
+    </div>
+    <div class="stage">
+      <div class="q" id="q">Press Start to play</div>
+      <div class="answers" id="answers">
+        <button class="ans" id="ansA" data-l="A"><span class="L">A</span><span class="t"></span></button>
+        <button class="ans" id="ansB" data-l="B"><span class="L">B</span><span class="t"></span></button>
+        <button class="ans" id="ansC" data-l="C"><span class="L">C</span><span class="t"></span></button>
+        <button class="ans" id="ansD" data-l="D"><span class="L">D</span><span class="t"></span></button>
+      </div>
+      <div class="bar" id="bar"></div>
+    </div>
+    <div class="foot">
+      <button class="btn ghost" id="walkBtn">Walk away</button>
+      <div class="atin-logo" aria-label="Made by Atin">
+        <svg viewBox="104 28 172 134" role="img" aria-hidden="true"><text x="139" y="112" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="72" fill="currentColor">A</text><rect x="177" y="83" width="24" height="6" rx="1" fill="currentColor"/><path d="M216 66 L216 106 A25 7 0 0 0 266 106 L266 66" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><ellipse cx="241" cy="66" rx="25" ry="7" fill="none" stroke="currentColor" stroke-width="3"/><line x1="216" y1="80" x2="266" y2="80" stroke="currentColor" stroke-width="1.5"/><line x1="216" y1="94" x2="266" y2="94" stroke="currentColor" stroke-width="1.5"/><ellipse cx="241" cy="47" rx="23" ry="5" fill="none" stroke="currentColor" stroke-width="3"/><line x1="114" y1="128" x2="266" y2="128" stroke="currentColor" stroke-width="1"/><text x="190" y="152" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" letter-spacing="2" fill="currentColor">made by Atin</text></svg>
+      </div>
+    </div>
+  </section>
+  <aside class="ladder" aria-label="Money ladder"><ol id="ladder"></ol></aside>
+</div>
+
+<!-- Setup -->
+<div class="ov" id="setup">
+  <div class="card">
+    <h2>Who Wants to Be a Millionaire? – Set up</h2>
+    <div class="cols">
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <label>Question set</label>
+        <div class="sets" id="sets">
+          <button data-s="E1">Entry 1</button><button data-s="E2">Entry 2</button><button data-s="E3">Entry 3</button><button data-s="MY">My questions</button>
+        </div>
+        <label for="bank">Questions (one per line: question | A | B | C | D | correct letter)</label>
+        <textarea id="bank" spellcheck="false"></textarea>
+        <p class="hint" id="bankInfo"></p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div id="gen" style="display:flex;flex-direction:column;gap:8px">
+          <label>Make new questions with Claude</label>
+          <div class="row">
+            <select id="genLevel" style="width:auto"><option>Pre-Entry</option><option>Entry 1</option><option selected>Entry 2</option><option>Entry 3</option><option>Level 1</option><option>Level 2</option></select>
+            <input type="text" id="genTopic" placeholder="Topic, e.g. past simple, health, Hackney" style="flex:1;width:auto;min-width:160px">
+          </div>
+          <div class="row"><button class="btn" id="genGo">Make 15 questions</button><button class="btn ghost" id="genStop" hidden>Stop</button></div>
+          <p class="status" id="genStatus"></p>
+        </div>
+        <p class="hint" id="genOff" hidden>Making questions automatically only works when the game is opened from your Claude link. Here you can paste or type questions.</p>
+        <label for="names">Class names for Ask a Friend (optional, one per line or commas)</label>
+        <textarea id="names" style="min-height:90px" placeholder="Amina, Yusuf, Maria…"></textarea>
+        <p class="hint">Easiest questions first. 15 questions = £1 million. Safe amounts: £1,000 and £32,000.</p>
+      </div>
+    </div>
+    <div class="row" style="justify-content:flex-end"><button class="btn" id="startBtn">Start game</button></div>
+  </div>
+</div>
+
+<!-- Ask the audience -->
+<div class="ov" id="audOv" hidden>
+  <div class="card">
+    <h2>Ask the Audience</h2>
+    <div class="aud">
+      <div class="qr" id="qr"></div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <p style="font-size:1.25rem"><b>1.</b> Scan the code or open the Vote Card.<br><b>2.</b> Tap your answer.<br><b>3.</b> Hold up your phone. Don't shout!</p>
+        <p class="link" id="voteLink"></p>
+        <p class="hint">Teacher: count the phones and press + for each vote.</p>
+      </div>
+    </div>
+    <div class="chart" id="chart"></div>
+    <div class="row" style="justify-content:flex-end"><button class="btn ghost" id="audReset">Clear votes</button><button class="btn" id="audClose">Back to the question</button></div>
+  </div>
+</div>
+
+<!-- Ask a friend -->
+<div class="ov" id="frOv" hidden>
+  <div class="card" style="width:min(640px,100%);align-items:center;text-align:center">
+    <h2>Ask a Friend</h2>
+    <p>Choose one friend in the class. They have 30 seconds to help. Only the friend can talk!</p>
+    <div class="friend" id="friendName"></div>
+    <div class="clock" id="clock">30</div>
+    <div class="row" style="justify-content:center"><button class="btn ghost" id="pickFriend">Pick a random friend</button><button class="btn" id="clockGo">Start 30 seconds</button><button class="btn ghost" id="frClose">Back to the question</button></div>
+  </div>
+</div>
+
+<!-- End -->
+<div class="ov" id="endOv" hidden>
+  <div class="card" style="width:min(640px,100%);align-items:center;text-align:center">
+    <h2 id="endTitle"></h2>
+    <p id="endText"></p>
+    <div class="big-end" id="endMoney"></div>
+    <div class="row" style="justify-content:center"><button class="btn" id="againBtn">Play again</button><button class="btn ghost" id="endSetup">Change questions</button></div>
+  </div>
+</div>
+
+<script>
+(function(){
+const $ = id => document.getElementById(id);
+const VOTE_URL = "https://atinwix.github.io/esol/all-levels/classroom-tool-vote-card.html";
+const MONEY = [100,200,300,500,1000,2000,4000,8000,16000,32000,64000,125000,250000,500000,1000000];
+const SAFE = [4,9]; // indexes of £1,000 and £32,000
+const fmt = n => "£" + n.toLocaleString("en-GB");
+
+const SETS = {
+E1:`# Entry 1 – everyday English
+What colour is a banana? | red | yellow | blue | black | B
+"I ___ from Syria." | am | is | are | be | A
+Which day comes after Monday? | Sunday | Friday | Tuesday | Thursday | C
+How many days are there in a week? | five | six | seven | eight | C
+Where do you buy medicine? | a chemist | a library | a cinema | a park | A
+"She ___ two children." | have | has | having | haves | B
+What do you say when you meet someone at 9 in the morning? | Good night | Good morning | Goodbye | See you later | B
+Which one is a fruit? | a carrot | a potato | an apple | an onion | C
+What is the opposite of "hot"? | cold | big | wet | old | A
+"___ is your name?" | Who | Where | What | When | C
+Which word is the number 15? | fifty | fifteen | five | fifty-five | B
+You feel ill. Who do you see? | a teacher | a GP | a bus driver | a chef | B
+"There ___ three chairs in the room." | is | am | are | be | C
+Which month comes before May? | June | March | April | July | C
+What time is 7:30? | half past seven | half past six | quarter to eight | seven o'clock | A`,
+E2:`# Entry 2 – everyday English
+What is the plural of "child"? | childs | children | childes | childrens | B
+"Yesterday I ___ to the market." | go | goes | went | going | C
+Where can you borrow books for free? | a bank | a library | a bakery | a gym | B
+"London is ___ than Hackney." | big | bigger | biggest | more big | B
+You want to see a doctor. What do you make? | an appointment | a ticket | a receipt | a menu | A
+What is the opposite of "cheap"? | expensive | small | easy | quiet | A
+"She is good ___ cooking." | in | on | at | for | C
+Which one is a job? | a kitchen | a plumber | a hammer | a bathroom | B
+"Did you ___ the bus this morning?" | took | take | taking | takes | B
+How do you pay on a London bus? | with a stamp | with an Oyster or bank card | with your passport | with cash only | B
+"There isn't ___ milk in the fridge." | some | many | any | a | C
+What is the past simple of "buy"? | buyed | bought | brought | buys | B
+"I have lived in London ___ 2023." | for | since | at | in | B
+What does "rent" mean? | money you pay to live in a home | money you get for your work | money you keep in a bank | money you spend on food | A
+Which is the most polite? | Give me water. | I want water. | Could I have some water, please? | Water now. | C`,
+E3:`# Entry 3 – grammar, vocabulary and reading
+"If it rains tomorrow, we ___ stay at home." | will | would | are | did | A
+"I've been waiting ___ two hours." | since | for | during | ago | B
+Which word means "very tired"? | exhausted | excited | annoyed | relaxed | A
+A sign at a hotel says "No vacancies". What does it mean? | There are no free rooms. | You can't smoke here. | It is closed for the holidays. | Entry is free. | A
+"She asked me where I ___." | live | lived | living | am living | B
+A leaflet says "Join our free English club every Tuesday!" What is it for? | to complain | to advertise | to apologise | to warn | B
+"The letter ___ yesterday." | was sent | sent | is send | has sent | A
+How do you start a formal email to a person you don't know? | Hi mate | Dear Sir or Madam | Hey there | Hello friend | B
+What does "look after" mean? | search for | take care of | look behind | visit | B
+"You ___ wear a seatbelt in a car. It's the law." | must | might | could | would | A
+Which word is an adverb? | quick | quickly | quicker | quickness | B
+What is a "deadline"? | the last day to do something | a long queue | an emergency | a bus route | A
+"I wish I ___ more free time." | have | had | has | having | B
+"Tom left before the meeting started." What happened first? | The meeting started. | Tom left. | Both at the same time. | The text doesn't say. | B
+"Despite ___ tired, she went to work." | be | being | was | been | B`
+};
+
+let S = {set:"E1", my:"", names:""};
+try{ const s = JSON.parse(localStorage.getItem("wwtbam-esol") || "null"); if (s) S = Object.assign(S, s); }catch(e){}
+function save(){ try{ localStorage.setItem("wwtbam-esol", JSON.stringify(S)); }catch(e){} }
+
+function parse(text){
+  return text.split(/\r?\n/).map(l => l.trim()).filter(l => l && !l.startsWith("#")).map(l => {
+    const p = l.split("|").map(x => x.trim());
+    if (p.length < 6) return null;
+    const c = p[5].toUpperCase().charAt(0);
+    if (!"ABCD".includes(c) || !p[0]) return null;
+    return {q:p[0], A:p[1], B:p[2], C:p[3], D:p[4], c};
+  }).filter(Boolean);
+}
+
+/* ---------- state ---------- */
+let Q = [], i = 0, picked = null, locked = false, used = {f:false, a:false, r:false}, removed = [], votes = {A:0,B:0,C:0,D:0};
+const ansEls = {A:$("ansA"), B:$("ansB"), C:$("ansC"), D:$("ansD")};
+
+function ladder(){
+  $("ladder").innerHTML = MONEY.map((m, k) => `<li class="${SAFE.includes(k) ? "safe" : ""} ${k < i ? "done" : ""} ${k === i ? "cur" : ""}"><span class="n">${k + 1}</span><span>${fmt(m)}</span></li>`).join("");
+  $("now").textContent = Q.length ? `Question ${i + 1} of ${Q.length} · for ${fmt(MONEY[i])}` : "";
+}
+function show(){
+  const it = Q[i];
+  picked = null; locked = false; removed = []; votes = {A:0,B:0,C:0,D:0};
+  $("q").textContent = it.q;
+  "ABCD".split("").forEach(L => { const b = ansEls[L]; b.className = "ans"; b.disabled = false; b.querySelector(".t").textContent = it[L]; });
+  $("l50").disabled = used.f; $("lAud").disabled = used.a; $("lFr").disabled = used.r;
+  $("walkBtn").disabled = false;
+  $("bar").innerHTML = "";
+  ladder();
+}
+function choose(L){
+  if (locked || !Q.length || removed.includes(L)) return;
+  picked = L;
+  "ABCD".split("").forEach(k => ansEls[k].classList.toggle("pick", k === L));
+  $("bar").innerHTML = `<p>Is ${L} your final answer?</p><button class="btn" id="finalYes">Yes, final answer</button><button class="btn ghost" id="finalNo">No, change it</button>`;
+  $("finalYes").onclick = final; $("finalNo").onclick = unpick;
+  tone(440, .12);
+}
+function unpick(){ picked = null; "ABCD".split("").forEach(k => ansEls[k].classList.remove("pick")); $("bar").innerHTML = ""; }
+function final(){
+  if (!picked || locked) return;
+  locked = true;
+  "ABCD".split("").forEach(k => ansEls[k].disabled = true);
+  $("walkBtn").disabled = true; ["l50","lAud","lFr"].forEach(id => $(id).disabled = true);
+  $("bar").innerHTML = `<p>Let's see…</p>`;
+  setTimeout(() => {
+    const c = Q[i].c;
+    ansEls[picked].classList.remove("pick");
+    ansEls[c].classList.add("right");
+    if (picked === c){
+      tune([523,659,784,1047]);
+      if (i === Q.length - 1){ setTimeout(() => end("win"), 1400); return; }
+      $("bar").innerHTML = `<p>Correct! You have ${fmt(MONEY[i])}.</p><button class="btn" id="nextBtn">Next question</button>`;
+      $("nextBtn").onclick = () => { i++; show(); };
+      $("nextBtn").focus();
+    } else {
+      ansEls[picked].classList.add("wrong");
+      tune([330,262,196]);
+      $("bar").innerHTML = `<p>Sorry! The answer is ${c}.</p><button class="btn" id="endBtn">See your money</button>`;
+      $("endBtn").onclick = () => end("lose");
+    }
+  }, 1600);
+}
+function safeMoney(){ let m = 0; SAFE.forEach(k => { if (i > k) m = MONEY[k]; }); return m; }
+function end(kind){
+  $("endOv").hidden = false;
+  if (kind === "win"){ $("endTitle").textContent = "You are a MILLIONAIRE!"; $("endText").textContent = "Amazing! You answered every question."; $("endMoney").textContent = fmt(MONEY[Q.length - 1]); }
+  else if (kind === "walk"){ $("endTitle").textContent = "You walked away"; $("endText").textContent = "Good decision! You keep your money."; $("endMoney").textContent = fmt(i ? MONEY[i - 1] : 0); }
+  else { $("endTitle").textContent = "Game over"; $("endText").textContent = "You go home with your safe money."; $("endMoney").textContent = fmt(safeMoney()); }
+  $("againBtn").focus();
+}
+function startGame(){
+  const text = S.set === "MY" ? S.my : SETS[S.set];
+  Q = parse(text).slice(0, 15);
+  if (Q.length < 3){ $("bankInfo").textContent = "Add at least 3 questions in the right format first."; $("bankInfo").style.color = "#ff9a9a"; return false; }
+  i = 0; used = {f:false, a:false, r:false};
+  $("setup").hidden = true; $("endOv").hidden = true;
+  show();
+  return true;
+}
+
+/* ---------- lifelines ---------- */
+$("l50").onclick = () => {
+  if (locked || used.f || !Q.length) return;
+  used.f = true; $("l50").disabled = true;
+  const c = Q[i].c;
+  const wrong = "ABCD".split("").filter(L => L !== c).sort(() => Math.random() - .5).slice(0, 2);
+  removed = wrong;
+  wrong.forEach(L => { ansEls[L].classList.add("gone"); ansEls[L].disabled = true; if (picked === L) unpick(); });
+  tone(660, .2);
+};
+let qrDone = false;
+$("lAud").onclick = () => {
+  if (locked || used.a || !Q.length) return;
+  used.a = true; $("lAud").disabled = true;
+  if (!qrDone){
+    $("voteLink").textContent = VOTE_URL;
+    try{ new QRCode($("qr"), {text: VOTE_URL, width: 180, height: 180, correctLevel: QRCode.CorrectLevel.M}); qrDone = true; }
+    catch(e){ $("qr").innerHTML = '<span style="color:#000;text-align:center;font-size:.9rem">Use the link</span>'; }
+  }
+  drawChart(); $("audOv").hidden = false; $("audClose").focus();
+};
+function drawChart(){
+  const total = Object.values(votes).reduce((a, b) => a + b, 0);
+  $("chart").innerHTML = "ABCD".split("").map(L => {
+    const pc = total ? Math.round(votes[L] / total * 100) : 0;
+    return `<div class="col ${removed.includes(L) ? "off" : ""}" data-l="${L}"><span class="pc">${pc}%</span><div class="bx" style="height:${pc * 1.3}px"></div><span class="lt">${L}</span><div class="ctl"><button data-l="${L}" data-d="-1" aria-label="One less vote for ${L}">−</button><b>${votes[L]}</b><button data-l="${L}" data-d="1" aria-label="One more vote for ${L}">+</button></div></div>`;
+  }).join("");
+}
+$("chart").addEventListener("click", e => {
+  const b = e.target.closest("button[data-l]"); if (!b) return;
+  votes[b.dataset.l] = Math.max(0, votes[b.dataset.l] + +b.dataset.d); drawChart();
+});
+$("audReset").onclick = () => { votes = {A:0,B:0,C:0,D:0}; drawChart(); };
+$("audClose").onclick = () => { $("audOv").hidden = true; };
+
+let clockT = null;
+$("lFr").onclick = () => {
+  if (locked || used.r || !Q.length) return;
+  used.r = true; $("lFr").disabled = true;
+  clearInterval(clockT); $("clock").textContent = "30"; $("friendName").textContent = "";
+  $("pickFriend").hidden = !names().length;
+  $("frOv").hidden = false; $("clockGo").focus();
+};
+function names(){ return S.names.split(/[\n,]/).map(s => s.trim()).filter(Boolean); }
+$("pickFriend").onclick = () => {
+  const n = names(); if (!n.length) return;
+  let k = 0; const spin = setInterval(() => {
+    $("friendName").textContent = n[Math.floor(Math.random() * n.length)];
+    tone(500 + Math.random() * 300, .05);
+    if (++k > 14) clearInterval(spin);
+  }, 90);
+};
+$("clockGo").onclick = () => {
+  clearInterval(clockT); let t = 30; $("clock").textContent = t;
+  clockT = setInterval(() => {
+    t--; $("clock").textContent = t;
+    if (t <= 5 && t > 0) tone(880, .08);
+    if (t <= 0){ clearInterval(clockT); $("clock").textContent = "Time!"; tune([392,262]); }
+  }, 1000);
+};
+$("frClose").onclick = () => { clearInterval(clockT); $("frOv").hidden = true; };
+
+/* ---------- controls ---------- */
+"ABCD".split("").forEach(L => ansEls[L].onclick = () => choose(L));
+$("walkBtn").onclick = () => {
+  if (locked || !Q.length) return;
+  $("bar").innerHTML = `<p>Walk away with ${fmt(i ? MONEY[i - 1] : 0)}?</p><button class="btn" id="walkYes">Yes, walk away</button><button class="btn ghost" id="walkNo">No, keep playing</button>`;
+  $("walkYes").onclick = () => { locked = true; ansEls[Q[i].c].classList.add("right"); setTimeout(() => end("walk"), 1500); };
+  $("walkNo").onclick = () => { $("bar").innerHTML = ""; if (picked) choose(picked); };
+};
+document.addEventListener("keydown", e => {
+  if (e.target.matches("textarea,input,select")) return;
+  if (!$("setup").hidden || !$("audOv").hidden || !$("frOv").hidden || !$("endOv").hidden){
+    if (e.key === "Escape"){ $("audOv").hidden = true; $("frOv").hidden = true; clearInterval(clockT); }
+    return;
+  }
+  const k = e.key.toUpperCase();
+  if (/^[ABCD]$/.test(k)) choose(k);
+  else if (e.key === "Enter" && picked && !locked && $("finalYes")) { e.preventDefault(); final(); }
+});
+$("setupBtn").onclick = () => { fillSetup(); $("setup").hidden = false; };
+$("endSetup").onclick = () => { $("endOv").hidden = true; fillSetup(); $("setup").hidden = false; };
+$("againBtn").onclick = startGame;
+$("startBtn").onclick = () => { readSetup(); startGame(); };
+
+/* ---------- sound ---------- */
+let ac = null, sound = true;
+function tone(f, d){ if (!sound) return; try{ ac = ac || new (window.AudioContext || window.webkitAudioContext)(); const o = ac.createOscillator(), g = ac.createGain(); o.type = "triangle"; o.frequency.value = f; g.gain.setValueAtTime(.16, ac.currentTime); g.gain.exponentialRampToValueAtTime(.001, ac.currentTime + d); o.connect(g).connect(ac.destination); o.start(); o.stop(ac.currentTime + d); }catch(e){} }
+function tune(fs){ fs.forEach((f, k) => setTimeout(() => tone(f, .3), 170 * k)); }
+$("soundBtn").onclick = () => { sound = !sound; $("soundBtn").textContent = sound ? "Sound on" : "Sound off"; $("soundBtn").setAttribute("aria-pressed", sound); };
+
+/* ---------- setup ---------- */
+function fillSetup(){
+  document.querySelectorAll("#sets button").forEach(b => b.setAttribute("aria-pressed", b.dataset.s === S.set));
+  $("bank").value = S.set === "MY" ? S.my : SETS[S.set];
+  $("bank").readOnly = S.set !== "MY";
+  $("names").value = S.names;
+  info();
+}
+function info(){
+  const n = parse($("bank").value).length;
+  $("bankInfo").style.color = "";
+  $("bankInfo").textContent = S.set === "MY"
+    ? `${n} question${n === 1 ? "" : "s"} ready (the game uses the first 15). Example: Where do you buy bread? | a bakery | a bank | a garage | a library | A`
+    : `${n} questions ready. To edit them, choose "My questions" – these will be copied in for you to change.`;
+}
+function readSetup(){ if (S.set === "MY") S.my = $("bank").value; S.names = $("names").value; save(); }
+$("sets").addEventListener("click", e => {
+  const b = e.target.closest("[data-s]"); if (!b) return;
+  if (S.set === "MY") S.my = $("bank").value;
+  if (b.dataset.s === "MY" && !S.my.trim() && S.set !== "MY") S.my = SETS[S.set];
+  S.set = b.dataset.s; save(); fillSetup();
+});
+$("bank").addEventListener("input", () => { if (S.set === "MY"){ S.my = $("bank").value; save(); } info(); });
+$("names").addEventListener("input", () => { S.names = $("names").value; save(); });
+
+/* ---------- Claude question maker ---------- */
+let sampleFn = null, genCtl = null;
+if (!window.claude){ $("gen").hidden = true; $("genOff").hidden = false; }
+else claude.use("sample").then(fn => { sampleFn = fn; if (!fn){ $("gen").hidden = true; $("genOff").hidden = false; } });
+const LEVELS = {
+  "Pre-Entry":"Pre-Entry ESOL (below A1): only very common, concrete words. Questions 8 words or fewer. Options one or two words.",
+  "Entry 1":"Entry 1 ESOL (CEFR A1): very high-frequency everyday words, present simple, questions about 10 words or fewer.",
+  "Entry 2":"Entry 2 ESOL (CEFR A2): common everyday vocabulary and simple grammar, questions about 12 words or fewer.",
+  "Entry 3":"Entry 3 ESOL (CEFR B1): wider everyday, work and community vocabulary, questions about 15 words or fewer.",
+  "Level 1":"Level 1 ESOL (CEFR B2): less common vocabulary, collocations and phrasal verbs are fine.",
+  "Level 2":"Level 2 ESOL (CEFR C1): advanced vocabulary, idioms and formal language are fine."
+};
+function gs(m, c){ $("genStatus").textContent = m; $("genStatus").className = "status " + (c || ""); }
+$("genStop").onclick = () => genCtl && genCtl.abort();
+$("genGo").onclick = async () => {
+  if (!sampleFn){ gs("Automatic questions aren't available here.", "err"); return; }
+  const level = $("genLevel").value, topic = $("genTopic").value.trim() || "everyday life in London";
+  const prompt = `You are an experienced UK ESOL teacher writing questions for a classroom "Who Wants to Be a Millionaire?" quiz.
+Level: ${LEVELS[level]}
+Topic: ${topic}
+
+Write exactly 15 multiple-choice questions, from easiest (question 1) to hardest (question 15), all within the level.
+Rules:
+- Each question has four options A–D and exactly ONE correct answer. Wrong options must be plausible but clearly wrong. No "all of the above".
+- Question and option vocabulary at or below the level. British English spelling and UK life (GP, chemist, pounds, Oyster card).
+- Every question must be on the topic. Grammar topics: test that grammar point. Only use facts you are sure are true.
+- Spread the correct letters across A, B, C and D.
+- Suitable for adult learners from many cultures: no alcohol, religion, politics or adult topics.
+Reply with only a JSON array: [{"q":"...","A":"...","B":"...","C":"...","D":"...","correct":"B"}]`;
+  genCtl = new AbortController();
+  $("genGo").disabled = true; $("genStop").hidden = false;
+  gs(`Writing ${level} questions on ${topic}… this can take up to a minute.`);
+  try{
+    const data = await sampleFn.json(prompt, {signal: genCtl.signal, cache: false});
+    const clean = s => String(s || "").replace(/\|/g, "/").replace(/\n/g, " ").trim();
+    const rows = (Array.isArray(data) ? data : []).filter(o => o && o.q && o.A && o.B && o.C && o.D && /^[ABCD]/i.test(String(o.correct || "")))
+      .map(o => [clean(o.q), clean(o.A), clean(o.B), clean(o.C), clean(o.D), String(o.correct).trim().charAt(0).toUpperCase()].join(" | "));
+    if (rows.length < 3) throw {code: "empty"};
+    S.my = `# ${level} · ${topic}\n` + rows.join("\n");
+    S.set = "MY"; save(); fillSetup();
+    gs(`Done: ${rows.length} questions. Check them below, then press Start game.`, "ok");
+  }catch(e){
+    const c = e && e.code;
+    if (c === "cancelled") gs("Stopped.");
+    else if (c === "not_granted" || c === "sampling_disabled") gs("Claude wasn't allowed for this page, so automatic questions are off.", "err");
+    else if (c === "rate_limited") gs("Too many requests just now. Wait a minute and try again.", "err");
+    else gs("That didn't work. Try again, or change the topic.", "err");
+  }finally{ $("genGo").disabled = false; $("genStop").hidden = true; genCtl = null; }
+};
+
+fillSetup(); ladder();
+})();
+</script>

@@ -147,3 +147,4 @@ Word documents:
 - [Verb Catcher](games/verb-catcher.html)
 - [Block Drop (work in progress)](games/block-drop.html)
 - [Blockbusters – ABC Quiz – Projector Game (all levels)](games/blockbusters-abc-quiz.html)
+- [Who Wants to Be a Millionaire – Projector Quiz Game (all levels)](games/millionaire-quiz.html)
