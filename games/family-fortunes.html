@@ -84,6 +84,12 @@ button:focus-visible,[contenteditable]:focus-visible,textarea:focus-visible{outl
 .btn.check:hover{background:#1a9f59}
 #xmsg{margin:0;padding:14px 34px;border-radius:18px;background:#fff;color:#9b1222;font:900 48px var(--f-display);text-align:center;max-width:1500px}
 #xmsg:empty{display:none}
+#pick{position:absolute;inset:0;z-index:28;display:none;flex-direction:column;align-items:center;justify-content:center;gap:40px;background:rgba(3,6,24,.88)}
+#pick.show{display:flex}
+#pick p{margin:0;font:900 80px var(--f-display);color:var(--gold)}
+#pick .row{gap:40px}
+.pk{min-width:520px;padding:40px 50px;border:10px solid #fff;border-radius:30px;color:var(--dark);font:900 60px var(--f-display);background:var(--left);text-transform:uppercase}
+.pk.r{background:var(--right)}
 .board{position:relative;flex:1;min-height:0;padding:34px 22px;border:6px solid var(--gold);border-radius:30px;
   background:linear-gradient(#0a1150,#050827);box-shadow:inset 0 0 60px rgba(58,88,240,.35)}
 .board::before,.board::after{content:"";position:absolute;left:22px;right:22px;height:14px;
@@ -145,6 +151,7 @@ button:focus-visible,[contenteditable]:focus-visible,textarea:focus-visible{outl
 .list{flex:1;min-height:0;overflow:auto;display:flex;flex-direction:column;gap:8px;padding-right:6px}
 .item{display:flex;gap:14px;align-items:center;text-align:left;border:3px solid var(--line);border-radius:14px;padding:10px 14px;
   background:rgba(29,47,163,.35);color:#fff;font:700 26px/1.15 var(--f-body)}
+.btn.lv.on{background:var(--gold);color:#1a1200;border-color:#fff}
 .item.cur{background:var(--royal);border-color:var(--gold)}
 .item b{flex:none;background:var(--gold);color:#1a1200;border-radius:10px;padding:4px 10px;font:900 22px var(--f-display);min-width:48px;text-align:center}
 textarea{flex:1;min-height:0;resize:none;box-sizing:border-box;padding:16px;border:3px solid var(--line);border-radius:14px;
@@ -174,7 +181,7 @@ textarea{flex:1;min-height:0;resize:none;box-sizing:border-box;padding:16px;bord
     <div class="board"><div class="slots" id="slots"></div></div>
     <div class="ctl">
       <form class="guess" id="guessForm" autocomplete="off">
-        <label for="guess">GUESS</label>
+        <label for="guess" id="glbl">GUESS</label>
         <input id="guess" type="text" placeholder="Type what the student says, then press Enter" spellcheck="false" autocomplete="off">
         <button class="btn check" type="submit">CHECK</button>
       </form>
@@ -216,14 +223,17 @@ textarea{flex:1;min-height:0;resize:none;box-sizing:border-box;padding:16px;bord
   </section>
 
   <div id="banner" role="status" aria-live="assertive"></div>
+  <div id="pick" role="dialog" aria-label="Who is stealing?"><p>Who is stealing?</p><div class="row"><button class="pk" id="pick0" type="button">TEAM LEFT</button><button class="pk r" id="pick1" type="button">TEAM RIGHT</button></div></div>
   <div id="strikeov" aria-hidden="true"><div class="xs" id="xs"></div><p id="xmsg"></p></div>
 
   <div id="menu">
     <div class="panel">
       <div class="pane">
         <h2>Topics</h2>
+        <div class="row lvls" style="flex:none"><button class="btn lv on" type="button" data-l="">All</button><button class="btn lv" type="button" data-l="E2">E2</button><button class="btn lv" type="button" data-l="E3">E3</button><button class="btn lv" type="button" data-l="L1">L1</button></div>
         <div class="list" id="list"></div>
         <button class="btn" id="restore" type="button" style="flex:none">Restore built-in topics</button>
+        <p class="hint">Surveys marked * are adapted from ProtoQA (Boratko et al., 2020), CC BY 4.0.</p>
       </div>
       <div class="pane">
         <h2>Custom survey</h2>
@@ -259,11 +269,63 @@ var DECK0=[
  {q:"Give a reason why people learn English.",lvl:"E3",a:[["To get a job",30,["job","work","get a better job","career","employment"]],["To talk to people",22,["talk","speak","communicate","make friends","friends","conversation"]],["To help their children",16,["children","kids","help my kids","school","homework","parents evening"]],["To go to college or university",12,["college","university","study","course","education"]],["To pass the citizenship test",10,["citizenship","Life in the UK","Life in the UK test","passport","British passport","test"]],["For appointments",10,["doctor","GP","hospital","appointments","bank","council"]]]},
  {q:"Name a quality of a good teacher.",lvl:"L1",a:[["Patient",28,["patience","calm"]],["Kind",20,["friendly","nice","caring","helpful","supportive"]],["Explains things clearly",16,["clear","explains well","good explanations","explains"]],["Funny",14,["fun","humour","sense of humour","jokes","makes jokes"]],["Knowledgeable",12,["knows a lot","clever","intelligent","knowledge","expert"]],["Fair",10,["treats everyone equally","equal","fairness"]]]},
  {q:"Name an advantage of living in a big city.",lvl:"L1",a:[["More jobs",26,["jobs","work","employment","job opportunities"]],["Public transport",20,["transport","buses","tube","trains","bus","underground"]],["Things to do",16,["entertainment","cinema","theatre","nightlife","museums","restaurants","activities"]],["Shops",14,["shopping","supermarkets","markets"]],["Different cultures",12,["diversity","multicultural","culture","people from everywhere","diverse"]],["Hospitals",8,["healthcare","doctors","NHS","health"]],["Colleges and universities",4,["education","schools","college","university"]]]},
- {q:"Name a way to save money.",lvl:"L1",a:[["Cook at home",26,["cook","cooking","don't eat out","home cooking","cook at home"]],["Walk or cycle",18,["walk","cycle","bike","bicycle","walking","cycling"]],["Switch off lights and heating",16,["switch off","turn off","lights","heating","save energy","energy","electricity"]],["Buy second-hand",14,["second hand","charity shops","charity shop","used","vinted","ebay"]],["Look for offers",14,["offers","discounts","sales","deals","compare prices","cheaper shops","special offers","coupons"]],["Make a budget",12,["budget","plan","plan your spending","write a budget"]]]}
+ {q:"Name a way to save money.",lvl:"L1",a:[["Cook at home",26,["cook","cooking","don't eat out","home cooking","cook at home"]],["Walk or cycle",18,["walk","cycle","bike","bicycle","walking","cycling"]],["Switch off lights and heating",16,["switch off","turn off","lights","heating","save energy","energy","electricity"]],["Buy second-hand",14,["second hand","charity shops","charity shop","used","vinted","ebay"]],["Look for offers",14,["offers","discounts","sales","deals","compare prices","cheaper shops","special offers","coupons"]],["Make a budget",12,["budget","plan","plan your spending","write a budget"]]]},
+ {"q":"Name something people use more in winter than in summer.","lvl":"E2","a":[["Coat",43,["jacket","warm coat"]],["Heating",29,["heater","radiator","central heating"]],["Gloves",6,["mittens"]],["Boots",5,["wellies"]],["Jumper",5,["sweater","jumpers"]],["Blanket",3,["duvet","blankets"]]],"src":1},
+ {"q":"Name something parents always tell their children to clean.","lvl":"E2","a":[["Their room",49,["room","bedroom","tidy room"]],["Their teeth",17,["teeth","brush teeth","brush your teeth"]],["Their hands",13,["hands","wash hands","wash your hands"]],["Their ears",10,["ears"]],["Their plate",8,["plate","dishes","clean plate"]]],"src":1},
+ {"q":"Name something children do in the summer holidays.","lvl":"E2","a":[["Go swimming",32,["swim","swimming","pool"]],["Play outside",24,["play","play with friends","park"]],["Go to holiday club",17,["camp","holiday club","summer camp","club"]],["Sleep late",12,["sleep","lie in","stay in bed"]],["Go on holiday",5,["travel","holiday","trip","go away"]],["Watch TV",3,["tv","television"]],["Read",3,["books","reading"]]],"src":1},
+ {"q":"Name a tinned food you always have in your cupboard.","lvl":"E2","a":[["Baked beans",43,["beans"]],["Tomatoes",15,["chopped tomatoes","tinned tomatoes"]],["Spaghetti",12,["pasta","spaghetti hoops"]],["Soup",12,["tomato soup"]],["Tuna",6,["fish","sardines"]],["Sweetcorn",4,["corn"]]],"src":1},
+ {"q":"Name something people do to relax.","lvl":"E2","a":[["Read",34,["reading","read a book","book"]],["Have a bath",26,["bath","take a bath"]],["Watch TV",16,["tv","television","film","films"]],["Sleep",10,["nap","have a nap"]],["Listen to music",9,["music"]],["Go to a spa",5,["spa","massage"]]],"src":1},
+ {"q":"Name a fruit you often find in a fruit salad.","lvl":"E2","a":[["Grapes",26,["grape"]],["Apples",23,["apple"]],["Strawberries",19,["strawberry"]],["Pineapple",9,["pineapples"]],["Oranges",7,["orange"]],["Bananas",6,["banana"]]],"src":1},
+ {"q":"Name a food you cook in a frying pan.","lvl":"E2","a":[["Eggs",53,["egg","fried egg","omelette"]],["Chicken",24,[]],["Bacon",10,[]],["Burgers",6,["burger","hamburger"]],["Fish",2,[]],["Potatoes",2,["chips","potato"]]],"src":1},
+ {"q":"Name something people keep in a kitchen cupboard.","lvl":"E2","a":[["Plates",33,["dishes","bowls","plate"]],["Tins",25,["tinned food","cans","tin"]],["Flour",20,[]],["Cups",9,["mugs","glasses","cup"]],["Sugar",7,[]],["Cereal",6,["cornflakes"]]],"src":1},
+ {"q":"How do you warm your hands when they are cold?","lvl":"E2","a":[["Rub them together",39,["rub","rub hands"]],["Blow on them",21,["blow","breathe on them"]],["Wear gloves",16,["gloves","mittens"]],["Warm water",10,["water","wash them"]],["Put them in your pockets",6,["pockets","pocket"]],["Sit by the heater",5,["heater","fire","radiator"]]],"src":1},
+ {"q":"Name something you need to be happy.","lvl":"E2","a":[["Money",47,[]],["Love",34,[]],["Family",7,[]],["Friends",5,["friend"]],["Good health",3,["health"]],["Food",3,[]]],"src":1},
+ {"q":"Name something supermarkets keep in the fridge or freezer.","lvl":"E2","a":[["Milk",59,[]],["Ice cream",9,[]],["Meat",7,["chicken","beef"]],["Butter",5,[]],["Cheese",5,[]],["Eggs",3,["egg"]],["Vegetables",3,["frozen vegetables","peas"]]],"src":1},
+ {"q":"Name something you shouldn't leave on when you go out.","lvl":"E2","a":[["Lights",35,["light"]],["Oven",34,["cooker","hob"]],["Coffee machine",12,["coffee maker"]],["TV",5,["television"]],["Iron",3,[]]],"src":1},
+ {"q":"Name an excuse children give for not doing their homework.","lvl":"E2","a":[["The dog ate it",38,["dog"]],["I forgot",24,["forgot","forget"]],["I was ill",17,["ill","sick"]],["I was tired",16,["tired"]],["I left it at school",5,["left it","lost it"]]],"src":1},
+ {"q":"Name something people worry about.","lvl":"E2","a":[["Money",56,[]],["Paying bills",21,["bills"]],["Their children",10,["children","kids","family"]],["Tax",8,["taxes"]],["Work",5,["job"]]],"src":1},
+ {"q":"Name something you do a lot when you have a cold.","lvl":"E2","a":[["Sneeze",42,["sneezing"]],["Cough",30,["coughing"]],["Blow your nose",14,["blow nose","tissues","tissue"]],["Sleep",5,["rest"]],["Sniff",4,["sniffle","runny nose"]]],"src":1},
+ {"q":"Name a kind of weather you hate driving in.","lvl":"E2","a":[["Snow",46,["snowing"]],["Rain",26,["raining"]],["Ice",9,["icy roads","icy"]],["Hail",8,["sleet"]],["Fog",5,["mist","foggy"]]],"src":1},
+ {"q":"Name something you do at the library.","lvl":"E2","a":[["Read",41,["reading"]],["Study",24,["homework","revise"]],["Borrow books",15,["borrow","take out books"]],["Look for information",9,["research","information"]],["Use a computer",7,["computer","internet"]],["Photocopy",4,["copy","print","printing"]]],"src":1},
+ {"q":"Name something parents tell children not to waste.","lvl":"E2","a":[["Food",53,[]],["Money",17,[]],["Water",14,[]],["Electricity",4,["energy","lights"]],["Time",3,[]]],"src":1},
+ {"q":"Name something a hotel gives you for free.","lvl":"E2","a":[["Shampoo",29,[]],["Soap",27,[]],["Breakfast",15,[]],["Towels",14,["towel"]],["Wi-Fi",8,["wifi","internet"]],["Tea and coffee",7,["tea","coffee"]]],"src":1},
+ {"q":"Name something you teach children to be careful with.","lvl":"E2","a":[["Scissors",29,[]],["Knives",20,["knife"]],["Fire",19,["matches","cooker","oven"]],["Crossing the road",10,["road","roads","traffic","cars"]],["Glass",9,[]],["Money",7,[]],["Animals",5,["pets","dogs"]]],"src":1},
+ {"q":"Name something you only do when you are ill.","lvl":"E2","a":[["Sleep in the day",37,["nap","sleep"]],["Be sick",34,["vomit","throw up"]],["Take medicine",14,["medicine","tablets","pills"]],["Eat soup",8,["soup"]],["Stay off work",3,["stay home","stay in bed"]],["Go to the doctor",3,["doctor","GP"]]],"src":1},
+ {"q":"Name something you do when you stay up late at night.","lvl":"E2","a":[["Watch TV or films",58,["tv","film","films","movie","netflix"]],["Read",16,["reading","book"]],["Eat snacks",14,["eat","snack","snacks"]],["Have a drink",7,["drink","tea"]],["Play computer games",3,["games","video games","play games"]]],"src":1},
+ {"q":"Name something you see in a doctor's waiting room.","lvl":"E2","a":[["Magazines",51,["magazine"]],["Patients",23,["people","sick people"]],["Chairs",12,["seats","chair"]],["Water machine",8,["water"]],["Hand gel",6,["sanitiser","hand sanitiser"]]],"src":1},
+ {"q":"Name something children take a long time to learn.","lvl":"E2","a":[["Walk",42,["walking"]],["Read",28,["reading"]],["Talk",14,["speak","talking"]],["Tie their shoelaces",10,["shoelaces","tie shoes","laces"]],["Write",6,["writing"]]],"src":1},
+ {"q":"Name something you need when you move house.","lvl":"E3","a":[["A van",44,["van","removal van","lorry","truck"]],["Boxes",33,["box","cardboard boxes"]],["A trolley",12,["trolley","dolly"]],["Friends to help",6,["friends","help","family"]],["A removal company",4,["removal men","movers"]]],"src":1},
+ {"q":"Name something you see at an afternoon tea.","lvl":"E3","a":[["Scones",32,["scone"]],["Cakes",22,["cake"]],["Tea",18,["cup of tea","teapot"]],["Biscuits",10,["biscuit"]],["Sandwiches",9,["sandwich"]]],"src":1},
+ {"q":"Name something teachers do when a class behaves badly.","lvl":"E3","a":[["Give a detention",69,["detention","keep them after class"]],["Take away break time",9,["break","no break","playtime"]],["Call the parents",7,["phone parents","parents"]],["Send them to the head teacher",6,["head teacher","headteacher","head","office"]],["Give extra homework",4,["homework","extra homework"]],["Send them home",3,["suspend","exclude"]]],"src":1},
+ {"q":"Name something children argue about on a long car journey.","lvl":"E3","a":[["Toys",46,["games","toy"]],["The music",23,["radio","music"]],["Space",18,["room","space in the back"]],["The window seat",7,["window","seat"]],["Snacks",4,["food","sweets"]]],"src":1},
+ {"q":"Name something you can't wear to work in an office.","lvl":"E3","a":[["Shorts",33,[]],["Jeans",32,[]],["A short skirt",12,["mini skirt","skirt"]],["A swimming costume",12,["swimsuit","bikini","swimming costume"]],["A cap",5,["cap","hat","baseball cap"]],["Trainers",4,["sneakers"]]],"src":1},
+ {"q":"Name something a job advert should tell you.","lvl":"E3","a":[["The pay",45,["pay","salary","wages","money"]],["The job title",25,["title","name of the job"]],["The hours",16,["hours","working hours","time"]],["The duties",9,["duties","tasks","responsibilities","what you do"]],["The location",3,["location","place","where","address"]]],"src":1},
+ {"q":"Name something rude people do at the supermarket.","lvl":"E3","a":[["Push in the queue",29,["push in","jump the queue","cut in"]],["Eat food before paying",16,["eat","open food"]],["Hit you with their trolley",12,["trolley","bump into you"]],["Leave their trolley anywhere",9,["leave trolley"]],["Touch all the food",6,["touch food","touch"]]],"src":1},
+ {"q":"Name a school subject many parents can't help their children with.","lvl":"E3","a":[["Maths",75,["math","mathematics","numbers"]],["Science",9,[]],["PE",4,["sport","gym"]],["History",2,[]],["English",2,["reading"]],["ICT",2,["computers","IT"]]],"src":1},
+ {"q":"Name something you hate about your journey to work.","lvl":"E3","a":[["Traffic",52,["traffic jam"]],["It takes too long",11,["too long","long","time"]],["Driving",7,[]],["Getting up early",5,["early","waking up"]],["Bad weather",5,["rain","weather"]]],"src":1},
+ {"q":"Name a food doctors tell people to eat less of.","lvl":"E3","a":[["Red meat",37,["meat","beef"]],["Fried food",25,["fried","chips"]],["Sweets",18,["sugar","chocolate","cake"]],["Pizza",8,[]],["Eggs",5,[]],["Butter",4,["fat"]]],"src":1},
+ {"q":"Name something a hotel guest phones reception to ask for.","lvl":"E3","a":[["Room service",32,["food"]],["More towels",26,["towels"]],["A wake-up call",23,["wake up call","wake up"]],["Check-out time",9,["checkout","check out"]],["A noise complaint",4,["noise","complain"]],["Messages",3,["message"]]],"src":1},
+ {"q":"Name something you hate about being in hospital.","lvl":"E3","a":[["The food",35,["food"]],["Injections",23,["needles","tests","injection"]],["Waiting",8,["waiting around"]],["The hospital gown",7,["gown"]],["Being woken up",6,["can't sleep","noise"]],["Pain",5,["being ill"]]],"src":1},
+ {"q":"Name something people miss when they feel ill.","lvl":"E3","a":[["Meals",56,["food","lunch","dinner","eating"]],["Work",23,[]],["College",4,["school","class"]],["Housework",4,["chores","cleaning"]],["Family events",2,["parties","party"]]],"src":1},
+ {"q":"Name something parents do to stop a baby crying.","lvl":"E3","a":[["Rock the baby",34,["rock","rocking"]],["Feed the baby",24,["feed","milk","bottle"]],["Give a dummy",15,["dummy","pacifier"]],["Walk around",9,["walk","pram"]],["Make funny faces",6,["faces","sing","play"]]],"src":1},
+ {"q":"Name something every teacher needs.","lvl":"E3","a":[["Students",35,["learners","class","pupils"]],["Patience",21,["patient"]],["Pens",15,["pencils","pen"]],["Qualifications",11,["degree","certificate"]],["Books",3,["book"]],["A sense of humour",3,["humour","funny"]]],"src":1},
+ {"q":"Name a place where you can easily catch a cold.","lvl":"E3","a":[["School",41,["college","class"]],["Hospital",21,[]],["On a plane",10,["plane","airport"]],["The doctor's surgery",9,["GP","doctor","surgery"]],["Public transport",6,["bus","tube","train"]],["Shopping centre",6,["shops","supermarket"]],["Work",5,["office"]]],"src":1},
+ {"q":"Name the first bill you pay each month.","lvl":"E3","a":[["Rent",41,[]],["Mortgage",20,[]],["Gas and electric",11,["electricity","gas","energy"]],["Car payment",9,["car"]],["Phone",7,["mobile"]],["Credit card",5,[]]],"src":1},
+ {"q":"Name something people do to stop getting ill.","lvl":"E3","a":[["Take vitamins",45,["vitamins"]],["Eat healthy food",14,["eat well","healthy food","fruit"]],["Exercise",9,["sport","gym"]],["See the doctor",9,["doctor","GP"]],["Take medicine",9,["medicine"]],["Wrap up warm",6,["warm clothes","coat","dress warmly"]]],"src":1},
+ {"q":"Name a service you cancel when you move house.","lvl":"L1","a":[["Electricity",42,["gas","energy"]],["Phone",26,["landline"]],["Internet",13,["broadband","wifi","tv package"]],["Newspaper",9,["paper"]],["Post",4,["mail","redirect post"]]],"src":1},
+ {"q":"Name a quality of a good family doctor.","lvl":"L1","a":[["A good listener",44,["listens","listening","good listener"]],["Caring",40,["kind","cares"]],["Clever",6,["intelligent","knowledge"]],["Patient",5,["patience"]],["Honest",3,["honesty"]]],"src":1},
+ {"q":"Name something a doctor tells you to do when you feel run down.","lvl":"L1","a":[["Take vitamins",40,["vitamins"]],["Sleep more",33,["sleep","rest"]],["Exercise",9,[]],["Have a holiday",8,["holiday","break"]],["Eat healthy food",5,["eat well"]],["Relax",3,[]]],"src":1},
+ {"q":"Name a common complaint people have about their boss.","lvl":"L1","a":[["Too demanding",44,["demanding","too much work","bossy","strict"]],["Unkind",22,["mean","rude","nasty"]],["Doesn't pay enough",14,["low pay","mean with money"]],["Unfair",5,["discriminates","favourites"]],["Doesn't listen",4,["doesn't care","unsympathetic"]]],"src":1},
+ {"q":"Name something that can ruin a dinner.","lvl":"L1","a":[["Burnt food",37,["burnt"]],["A phone call",11,["phone"]],["An argument",9,["fight","row"]],["Snacking before",7,["snacks"]],["A hair in the food",6,["hair"]],["A guest arriving late",4,["late"]]],"src":1},
+ {"q":"Name something you must remember to do in a job interview.","lvl":"L1","a":[["Smile",22,[]],["Answer the questions",20,["talk","answer"]],["Say thank you",14,["thank you"]],["Introduce yourself",12,["introduce"]],["Bring your CV",11,["CV"]],["Shake hands",10,["handshake"]],["Ask about pay",9,["salary"]]],"src":1},
+ {"q":"Name something people are afraid of doing in a job interview.","lvl":"L1","a":[["Saying something stupid",32,["stupid"]],["Not getting the job",18,["rejection"]],["Not knowing what to say",13,["tongue tied","forget","forgetting"]],["Sweating",12,["sweat"]],["Looking bad",12,["appearance","clothes"]],["Being nervous",5,["nervous"]]],"src":1},
+ {"q":"Name a worry you have now that you didn't have at ten years old.","lvl":"L1","a":[["Money",48,[]],["Health",13,[]],["Children",11,["kids"]],["Relationships",5,["relationship"]],["Job security",4,["job","losing my job"]],["Getting old",4,["age","ageing"]]],"src":1},
+ {"q":"Name something many people can't afford these days.","lvl":"L1","a":[["A house",28,["house","home"]],["A car",25,["car"]],["A holiday",15,["holiday"]],["Private healthcare",8,["healthcare","dentist"]],["Petrol",6,["fuel"]],["University",5,["education","college"]]],"src":1}
 ];
+DECK0.sort(function(x,y){return ({E2:0,E3:1,L1:2}[x.lvl])-({E2:0,E3:1,L1:2}[y.lvl])});
 var EXAMPLE="Name something you take to the beach.\nSun cream / suncream / sunscreen, 30\nTowel, 24\nSwimming costume / swimsuit / bikini / trunks, 20\nSunglasses, 14\nWater / drink, 8\nHat / cap, 4";
 
-var deck=DECK0.slice(), idx=0, open=[], strikes=0, bank=0, scores=[0,0], turn=-1, last=null, locked=false, muted=false, log=[];
+var deck=DECK0.slice(), idx=0, open=[], strikes=0, bank=0, scores=[0,0], turn=-1, last=null, locked=false, muted=false, log=[], phase='play', stealer=-1;
 var timers={};
 var stage=$('#stage');
 
@@ -297,7 +359,7 @@ addEventListener('pointerdown',function(){ctx()},{passive:true});
 function name(i){var t=$(i===0?'#nameL':'#nameR').textContent.trim();return t||(i===0?'TEAM LEFT':'TEAM RIGHT')}
 function renderQ(){
   var d=deck[idx], n=d.a.length, cols=n>4?2:1, rows=Math.ceil(n/cols), s=$('#slots');
-  open=d.a.map(function(){return false}); log=[]; strikes=0; bank=0; turn=-1; last=null;
+  open=d.a.map(function(){return false}); log=[]; phase='play'; stealer=-1; clearTimeout(timers.steal); $('#pick').classList.remove('show'); strikes=0; bank=0; turn=-1; last=null;
   $('#q').textContent=d.q; $('#lvl').textContent=d.lvl;
   s.style.gridTemplateColumns='repeat('+cols+',1fr)'; s.style.gridTemplateRows='repeat('+rows+',1fr)';
   s.innerHTML=d.a.map(function(a,i){
@@ -318,6 +380,8 @@ function hud(){
   $('#chip').textContent='Question '+(idx+1)+' of '+deck.length+' · '+deck[idx].lvl;
   $('#sideL').classList.toggle('turn',turn===0); $('#sideR').classList.toggle('turn',turn===1);
   $('#sideL').classList.toggle('dim',turn===1); $('#sideR').classList.toggle('dim',turn===0);
+  $('#glbl').textContent=phase==='steal'?'STEAL':'GUESS';
+  $('#guess').placeholder=phase==='steal'?'One steal guess for '+name(stealer):'Type what the student says, then press Enter';
   $('#undoL').hidden=!(last&&last.team===0); $('#undoR').hidden=!(last&&last.team===1);
 }
 function reveal(i,scored){
@@ -329,15 +393,47 @@ function reveal(i,scored){
 function revealAll(){
   var k=0; deck[idx].a.forEach(function(_,i){ if(!open[i]){ setTimeout(function(){reveal(i,false)},k*260); k++; } });
 }
-function strike(caption){
-  $('#xmsg').textContent=caption||'';
-  strikes=Math.min(3,strikes+1); strikeSound(); hud();
-  var xs=''; for(var i=0;i<strikes;i++) xs+='<div class="bigx"></div>';
+function showX(n,caption,ms){
+  $('#xmsg').textContent=caption||''; strikeSound();
+  var xs=''; for(var i=0;i<n;i++) xs+='<div class="bigx"></div>';
   $('#xs').innerHTML=xs; var o=$('#strikeov'); o.classList.add('show');
-  clearTimeout(timers.strike); timers.strike=setTimeout(function(){o.classList.remove('show')},caption?2200:1300);
+  clearTimeout(timers.strike); timers.strike=setTimeout(function(){o.classList.remove('show')},ms||(caption?2200:1300));
+}
+function flash(text,team,ms){
+  var b=$('#banner'); b.textContent=text; b.style.background=team===0?'var(--left)':'var(--right)'; b.classList.add('show');
+  clearTimeout(timers.flash); timers.flash=setTimeout(function(){b.classList.remove('show')},ms||2000);
+}
+function strike(caption){
+  if(phase==='steal'){stealFail(caption);return}
+  if(phase!=='play') return;
+  strikes=Math.min(3,strikes+1); hud(); showX(strikes,caption);
+  if(strikes===3){clearTimeout(timers.steal); timers.steal=setTimeout(startSteal,caption?2300:1400)}
+}
+function startSteal(){
+  if(phase!=='play'||strikes<3) return;
+  if(turn<0){$('#pick0').textContent=name(0);$('#pick1').textContent=name(1);$('#pick').classList.add('show');return}
+  beginSteal(1-turn);
+}
+function beginSteal(team){
+  $('#pick').classList.remove('show');
+  phase='steal'; stealer=team; turn=team; hud();
+  buzzSound(team); flash(name(team)+' \u2013 STEAL!',team,2500);
+}
+function stealWin(i){
+  phase='done'; reveal(i,true);
+  setTimeout(function(){flash(name(stealer)+' STEALS THE POINTS!',stealer,2600); award(stealer); timers.steal=setTimeout(revealAll,2000)},800);
+}
+function stealFail(caption){
+  phase='done'; clearTimeout(timers.flash); $('#banner').classList.remove('show'); var keep=1-stealer; turn=keep;
+  showX(1,(caption?caption+' \u2013 ':'No steal \u2013 ')+name(keep)+' keeps the points',2800);
+  timers.steal=setTimeout(function(){if(bank>0)award(keep);else hud(); timers.steal=setTimeout(revealAll,1500)},2200);
+}
+function pickSlot(i){
+  if(phase==='steal'){if(!open[i]){log.unshift({t:deck[idx].a[i][0],c:'ok',i:i}); stealWin(i)} return}
+  reveal(i,true);
 }
 function buzz(side){
-  if(locked||$('#menu').classList.contains('show')) return;
+  if(phase!=='play'||locked||$('#menu').classList.contains('show')) return;
   locked=true; turn=side; buzzSound(side);
   var b=$('#banner'); b.textContent=name(side)+' BUZZED IN!';
   b.style.background=side===0?'var(--left)':'var(--right)'; b.classList.add('show');
@@ -359,7 +455,7 @@ function undo(team){
 function go(n){
   if(!deck.length) return;
   idx=(n+deck.length)%deck.length;
-  clearTimeout(timers.buzz); locked=false;
+  clearTimeout(timers.buzz); clearTimeout(timers.steal); locked=false;
   $('#banner').classList.remove('show'); $('#buzzL').classList.remove('hit'); $('#buzzR').classList.remove('hit');
   renderQ();
 }
@@ -410,6 +506,12 @@ function submitGuess(){
   var inp=$('#guess'), t=inp.value.trim(); if(!t) return;
   inp.value='';
   var i=matchGuess(t);
+  if(phase==='done') return;
+  if(phase==='steal'){
+    if(i>=0&&!open[i]){log.unshift({t:t,c:'ok',i:i}); stealWin(i)}
+    else {log.unshift({t:t,c:'x',i:-1}); hud(); stealFail('\u201C'+t+'\u201D'+(i>=0?' is already on the board':' is not on the board'))}
+    return;
+  }
   if(i<0){log.unshift({t:t,c:'x',i:-1}); strike('\u201C'+t+'\u201D is not on the board')}
   else if(open[i]){log.unshift({t:t+' (already)',c:'ok',i:i}); hud(); var el=$('#slots').children[i]; el.classList.remove('pulse'); void el.offsetWidth; el.classList.add('pulse')}
   else {log.unshift({t:t,c:'ok',i:i}); reveal(i,true)}
@@ -418,7 +520,7 @@ function submitGuess(){
 /* ---------- Menu & custom surveys ---------- */
 function renderList(){
   $('#list').innerHTML=deck.map(function(d,i){
-    return '<button class="item'+(i===idx?' cur':'')+'" type="button" data-i="'+i+'"><b>'+esc(d.lvl)+'</b><span>'+esc(d.q)+'</span></button>';
+    return '<button class="item'+(i===idx?' cur':'')+'" type="button" data-i="'+i+'"><b>'+esc(d.lvl)+'</b><span>'+esc(d.q)+(d.src?' *':'')+'</span></button>';
   }).join('');
 }
 function parseSurveys(text){
@@ -456,7 +558,9 @@ function openMenu(){renderList();$('#menu').classList.add('show');var c=$('.item
 function closeMenu(){$('#menu').classList.remove('show')}
 
 /* ---------- Wiring ---------- */
-$('#slots').addEventListener('click',function(e){var b=e.target.closest('.slot');if(b)reveal(+b.dataset.i,true)});
+$('#slots').addEventListener('click',function(e){var b=e.target.closest('.slot');if(b)pickSlot(+b.dataset.i)});
+$('#pick0').addEventListener('click',function(){beginSteal(0)});
+$('#pick1').addEventListener('click',function(){beginSteal(1)});
 ['L','R'].forEach(function(S,side){
   var b=$('#buzz'+S);
   b.addEventListener('pointerdown',function(e){e.preventDefault();buzz(side)});
@@ -484,7 +588,13 @@ $('#full').addEventListener('click',function(){
   }catch(e){}
 });
 $('#list').addEventListener('click',function(e){var b=e.target.closest('.item');if(b){go(+b.dataset.i);closeMenu()}});
-$('#restore').addEventListener('click',function(){deck=DECK0.slice();scores=[0,0];go(0);closeMenu()});
+function setLevel(l){
+  deck=DECK0.filter(function(d){return !l||d.lvl===l});
+  [].forEach.call(document.querySelectorAll('.lv'),function(b){b.classList.toggle('on',b.dataset.l===l)});
+  go(0); renderList();
+}
+[].forEach.call(document.querySelectorAll('.lv'),function(b){b.addEventListener('click',function(){setLevel(b.dataset.l)})});
+$('#restore').addEventListener('click',function(){setLevel('');scores=[0,0];hud();closeMenu()});
 $('#example').addEventListener('click',function(){$('#custom').value=EXAMPLE;msg('');saveDraft()});
 $('#addDeck').addEventListener('click',function(){useCustom(false)});
 $('#replaceDeck').addEventListener('click',function(){useCustom(true)});
@@ -497,7 +607,7 @@ document.addEventListener('keydown',function(e){
   var k=e.key.toLowerCase();
   if(k==='z'){buzz(0)} else if(k==='m'){buzz(1)} else if(k==='x'){strike()}
   else if(k==='arrowright'){go(idx+1)} else if(k==='arrowleft'){go(idx-1)}
-  else if(/^[1-8]$/.test(k)){reveal(+k-1,true)}
+  else if(/^[1-8]$/.test(k)){pickSlot(+k-1)}
 });
 
 try{var d=localStorage.getItem('ff_custom');$('#custom').value=d!==null&&d!==''?d:EXAMPLE}catch(e){$('#custom').value=EXAMPLE}
