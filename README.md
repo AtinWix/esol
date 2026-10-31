@@ -148,4 +148,4 @@ Word documents:
 - [Block Drop (work in progress)](games/block-drop.html)
 - [Blockbusters – ABC Quiz – Projector Game (all levels)](games/blockbusters-abc-quiz.html)
 - [Who Wants to Be a Millionaire – Projector Quiz Game (all levels)](games/millionaire-quiz.html)
-- [Family Fortunes – Interactive Whiteboard Game (E1–E3)](games/family-fortunes.html)
+- [Family Fortunes – Interactive Whiteboard Game (E2–L1)](games/family-fortunes.html)
