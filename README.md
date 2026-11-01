@@ -142,6 +142,15 @@ Word documents:
 - [Lesson 13: Full mock paper and review – student handouts](e3/reading/exam-prep/lesson-13-handouts.pdf) (PDF) · [Word](e3/reading/exam-prep/lesson-13-handouts.docx)
 - [Lesson 13: Full mock paper and review – plan and answers](e3/reading/exam-prep/lesson-13-plan.pdf) (PDF) · [Word](e3/reading/exam-prep/lesson-13-plan.docx)
 
+## Child Migrant Stories worksheets (YouTube)
+Lessons built around the short films by [Child Migrant Stories](https://childmigrantstories.com/films/), free on YouTube.
+
+**Life is a Destiny – E2–E3 Second Conditional – What would you save?** – film: https://www.youtube.com/watch?v=qtW3OfYDyOw (clips 0:37–1:34, 10:15–12:02, 13:22–14:04)
+- [Student worksheet](child-migrant-stories/life-is-a-destiny/e2-e3-second-conditional-worksheet.pdf) (PDF) · [Word](child-migrant-stories/life-is-a-destiny/e2-e3-second-conditional-worksheet.docx)
+- [Projector slides](child-migrant-stories/life-is-a-destiny/e2-e3-second-conditional-projector-slides.pdf) (PDF) · [PowerPoint](child-migrant-stories/life-is-a-destiny/e2-e3-second-conditional-projector-slides.pptx)
+- [Teacher notes and answer key (teacher)](child-migrant-stories/life-is-a-destiny/e2-e3-second-conditional-teacher-notes-answers.pdf) (PDF) · [Word](child-migrant-stories/life-is-a-destiny/e2-e3-second-conditional-teacher-notes-answers.docx)
+- [Kahoot quiz – import file](child-migrant-stories/life-is-a-destiny/e2-e3-second-conditional-kahoot.xlsx) (Excel)
+
 ## games
 - [Grammar Blast](games/grammar-blast.html)
 - [Verb Catcher](games/verb-catcher.html)
