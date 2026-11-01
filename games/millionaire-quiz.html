@@ -268,12 +268,78 @@ Which word is an adverb? | quick | quickly | quicker | quickness | B
 What is a "deadline"? | the last day to do something | a long queue | an emergency | a bus route | A
 "I wish I ___ more free time." | have | had | has | having | B
 "Tom left before the meeting started." What happened first? | The meeting started. | Tom left. | Both at the same time. | The text doesn't say. | B
-"Despite ___ tired, she went to work." | be | being | was | been | B`
+"Despite ___ tired, she went to work." | be | being | was | been | B`,
+/* Child Migrant Stories film sets – open with ?set=film-liad, film-ugw, film-pt or film-vpp */
+"film-liad":`# Life is a Destiny – Argun's story (E2–E3, 2nd conditional)
+Where was Argun born? | Turkey | Cyprus | Greece | Italy | B
+What did Argun save? | his phone | his photo album | his money | his school bag | B
+Where did he hide it? | under his bed | in the garden | behind a cupboard | in a tent | C
+Where did the family live after they left home? | in a hotel | in tents | on a boat | in a school | B
+How old was Argun when he came to London? | 3 | 13 | 23 | 33 | B
+Who did he travel to London with? | his brother | his grandfather | his wife | his teacher | A
+Today Argun has a printing shop in … | Brick Lane | Mare Street, Hackney | Oxford Street | Cyprus | B
+What would Alara take if she had to leave? | her photos | her dog | her phone and charger | her clothes | C
+Why would she take it? | for social media | to play games | to keep in contact with her family | to take photos | C
+"If I ___ to leave, I would take my photos." | have | had | will have | having | B
+"If I had one bag, I ___ my phone." | would pack | packed | will pack | would packed | A
+I would = ? | I'll | I'd | I'm | I've | B
+"What ___ you take if you had to leave?" | do | did | would | will | C
+Which sentence is correct? | If I would have time, I help. | If I had time, I would help. | If I have time, I would helped. | If I had time, I helped. | B
+"If my mother hadn't left my father, I ___ here." | won't be | wouldn't be | am not | wasn't | B`,
+"film-ugw":`# Ugwumpiti – Maurice's story (E2–E3, comparatives)
+Where was Maurice born? | Biafra (now Nigeria) | Jamaica | Ghana | Somalia | A
+Who did Maurice live with in the war? | his parents | his grandma | his teacher | his uncle | B
+Who gave the children one meal a day? | the army | the Red Cross | the school | his parents | B
+Which animal did Maurice NOT talk about eating? | snakes | rats | lizards | fish | D
+What is in Ugwumpiti? | rice and meat | corn meal and powdered milk | bread and jam | fish and chips | B
+What was Ugwumpiti served from? | a big oil drum | a pot | a plastic bag | a fridge | A
+What did Maurice think of chocolate at first? | delicious | horrible | healthy | cheap | B
+Where did the boys hide the chocolate? | behind the car seat | in the fridge | at school | in a cupboard | A
+Where did the boys hide bread and jam at night? | in the garden | under the mattress | in their bags | in the kitchen | B
+"Cheese was ___ than chocolate." | worse | more bad | badder | worst | A
+sweet → ? | more sweet | sweeter | sweetter | sweetest | B
+hot → ? | hoter | more hot | hotter | hotest | C
+tasty → ? | tastyer | tastier | more tasty | tastyier | B
+"Fruit is healthier ___ chocolate." | that | then | than | as | C
+"For Maurice, Ugwumpiti is the ___ food." | most amazing | more amazing | amazinger | amazingest | A`,
+"film-pt":`# Passing Tides – Linh's journey (E2–E3, past simple)
+Where was Linh born? | China | Vietnam | Singapore | Thailand | B
+How old was Linh when she left? | 3 | 7 | 12 | 17 | B
+Who did she leave with? | her mother | her sister | her father | her brother | C
+How did they travel? | by plane | on a tiny boat | by train | by bus | B
+About how many people were on the boat? | 5 | 15 | 50 | 500 | C
+Who rescued them? | pirates | a British ship | the police | a fishing boat | B
+What did the sailors throw down? | bread and cheese | rice and fish | crackers and apples | chocolate | C
+Where was their first camp? | Singapore | Hackney | France | Vietnam | A
+Where did Linh and her father live in London? | Hackney | Camden | Brixton | Ealing | A
+leave → ? | leaved | left | lefted | leaving | B
+find → ? | finded | found | fond | founded | B
+throw → ? | throwed | threw | thrown | throwd | B
+"They ___ any food." | didn't had | didn't have | not had | don't had | B
+"___, they waited in the water." | Finally | First | After that | Then | B
+"I ___ ride my bike everywhere when I was a child." | use to | used to | using to | was use | B`,
+"film-vpp":`# Voices Past and Present – first impressions (E2–E3, adjectives)
+Many people in the film call ___ home. | Hackney | Camden | Croydon | Brent | A
+Where was Manuhar from? | India | Bangladesh | Jamaica | Turkey | B
+How did Manuhar feel about London before he came? | scared | bored | excited | angry | C
+What was London like at night for Manuhar? | boring | dark | colourful | quiet | C
+What was his new home like? | like heaven | worse than his dream | very big | very new | B
+How many blankets were on the bed in winter 1964? | 3 | 13 | 30 | 1 | B
+What did one child make in the snow? | a cake | five snowmen | a fire | a picture | B
+A very big plane is a … | jumbo jet | blanket | accent | dream | A
+How people say words is their … | dream | accent | blanket | airport | B
+"It was absolutely ___!" | cold | freezing | nice | dirty | B
+"The airport was very ___." | fantastic | wonderful | nice | terrible | C
+Which is a strong adjective? | good | big | terrible | small | C
+cold → strong? | freezing | huge | tiny | exhausted | A
+Which word goes with BOTH normal and strong adjectives? | very | absolutely | really | a bit | C
+small → strong? | huge | tiny | exhausted | awful | B`
 };
 
 let S = {set:"E1", my:"", names:""};
 try{ const s = JSON.parse(localStorage.getItem("wwtbam-esol") || "null"); if (s) S = Object.assign(S, s); }catch(e){}
-function save(){ try{ localStorage.setItem("wwtbam-esol", JSON.stringify(S)); }catch(e){} }
+{ const u = new URLSearchParams(location.search).get("set"); if (u && SETS[u]) S.set = u; }
+function save(){ try{ const o = Object.assign({}, S); if (String(o.set).startsWith("film-")) o.set = "E1"; localStorage.setItem("wwtbam-esol", JSON.stringify(o)); }catch(e){} }
 
 function parse(text){
   return text.split(/\r?\n/).map(l => l.trim()).filter(l => l && !l.startsWith("#")).map(l => {

@@ -143,13 +143,39 @@ Word documents:
 - [Lesson 13: Full mock paper and review – plan and answers](e3/reading/exam-prep/lesson-13-plan.pdf) (PDF) · [Word](e3/reading/exam-prep/lesson-13-plan.docx)
 
 ## Child Migrant Stories worksheets (YouTube)
-Lessons built around the short films by [Child Migrant Stories](https://childmigrantstories.com/films/), free on YouTube.
+Lessons built around the short films by [Child Migrant Stories](https://childmigrantstories.com/films/), free on YouTube. One film per lesson.
 
-**Life is a Destiny – E2–E3 Second Conditional – What would you save?** – film: https://www.youtube.com/watch?v=qtW3OfYDyOw (clips 0:37–1:34, 10:15–12:02, 13:22–14:04)
+**Life is a Destiny – E2–E3 Second Conditional – What would you save?** – film: https://www.youtube.com/watch?v=qtW3OfYDyOw (clips 0:37–1:34, 10:15–12:02, 13:22–14:04 (L1 extension))
 - [Student worksheet](child-migrant-stories/life-is-a-destiny/e2-e3-second-conditional-worksheet.pdf) (PDF) · [Word](child-migrant-stories/life-is-a-destiny/e2-e3-second-conditional-worksheet.docx)
 - [Projector slides](child-migrant-stories/life-is-a-destiny/e2-e3-second-conditional-projector-slides.pdf) (PDF) · [PowerPoint](child-migrant-stories/life-is-a-destiny/e2-e3-second-conditional-projector-slides.pptx)
 - [Teacher notes and answer key (teacher)](child-migrant-stories/life-is-a-destiny/e2-e3-second-conditional-teacher-notes-answers.pdf) (PDF) · [Word](child-migrant-stories/life-is-a-destiny/e2-e3-second-conditional-teacher-notes-answers.docx)
+- [Who Wants to Be a Millionaire? – film questions](games/millionaire-quiz.html?set=film-liad)
+- [Hangman paragraph](https://atinwix.github.io/Hangman-Paragraphs-Game/?p=QXJndW4gd2FzIGJvcm4gaW4gQ3lwcnVzIGluIDE5NDkuIFdoZW4gaGUgd2FzIGEgYm95LCB0aGVyZSB3YXMgYSB3YXIgYW5kIGhpcyBmYW1pbHkgaGFkIHRvIGxlYXZlIHRoZWlyIGhvbWUuIEFyZ3VuIGhpZCBoaXMgcGhvdG8gYWxidW0gYmVoaW5kIGEgY3VwYm9hcmQuIExhdGVyLCBoZSB3ZW50IGJhY2sgYW5kIGZvdW5kIGl0LiBJbiAxOTY0IGhlIGNhbWUgdG8gTG9uZG9uIHdpdGggaGlzIGJyb3RoZXIuIFRvZGF5IGhlIGhhcyBhIHByaW50aW5nIHNob3AgaW4gSGFja25leS4gSGlzIGdyYW5kZGF1Z2h0ZXIgQWxhcmEgc2F5cyB0aGF0IGlmIHNoZSBoYWQgdG8gbGVhdmUgaGVyIGhvbWUsIHNoZSB3b3VsZCB0YWtlIGhlciBwaG9uZSBhbmQgaGVyIGNoYXJnZXIu)
 - [Kahoot quiz – import file](child-migrant-stories/life-is-a-destiny/e2-e3-second-conditional-kahoot.xlsx) (Excel)
+
+**Ugwumpiti – E2–E3 Comparatives – Food then and now** – film: https://www.youtube.com/watch?v=eioWpfYroUs (clips 3:05–5:40, 12:30–13:57)
+- [Student worksheet](child-migrant-stories/ugwumpiti/e2-e3-comparatives-worksheet.pdf) (PDF) · [Word](child-migrant-stories/ugwumpiti/e2-e3-comparatives-worksheet.docx)
+- [Projector slides](child-migrant-stories/ugwumpiti/e2-e3-comparatives-projector-slides.pdf) (PDF) · [PowerPoint](child-migrant-stories/ugwumpiti/e2-e3-comparatives-projector-slides.pptx)
+- [Teacher notes and answer key (teacher)](child-migrant-stories/ugwumpiti/e2-e3-comparatives-teacher-notes-answers.pdf) (PDF) · [Word](child-migrant-stories/ugwumpiti/e2-e3-comparatives-teacher-notes-answers.docx)
+- [Who Wants to Be a Millionaire? – film questions](games/millionaire-quiz.html?set=film-ugw)
+- [Hangman paragraph](https://atinwix.github.io/Hangman-Paragraphs-Game/?p=TWF1cmljZSB3YXMgYm9ybiBpbiBCaWFmcmEuIEhpcyBwYXJlbnRzIHdlbnQgdG8gRW5nbGFuZCB0byBzdHVkeSwgc28gaGUgbGl2ZWQgd2l0aCBoaXMgZ3JhbmRtYS4gRHVyaW5nIHRoZSB3YXIgdGhlcmUgd2FzIHZlcnkgbGl0dGxlIGZvb2QuIFRoZSBSZWQgQ3Jvc3MgZ2F2ZSB0aGUgY2hpbGRyZW4gb25lIG1lYWwgYSBkYXkuIEl0IHdhcyBjYWxsZWQgVWd3dW1waXRpLiBGb3IgTWF1cmljZSwgaXQgd2FzIGJldHRlciB0aGFuIGFueSBvdGhlciBmb29kLiBXaGVuIGhlIGNhbWUgdG8gTG9uZG9uLCBoZSB0cmllZCBjaG9jb2xhdGUuIEl0IHdhcyBzd2VldGVyIHRoYW4gYW55dGhpbmcgaGUga25ldywgYW5kIGhlIHRob3VnaHQgaXQgd2FzIGhvcnJpYmxlLiBDaGVlc2Ugd2FzIGV2ZW4gd29yc2Uh)
+- [Kahoot quiz – import file](child-migrant-stories/ugwumpiti/e2-e3-comparatives-kahoot.xlsx) (Excel)
+
+**Passing Tides – E2–E3 Past Simple and Sequencing – Linh’s journey** – film: https://www.youtube.com/watch?v=3ePfMggJoFc (clips 2:54–5:11, 5:11–6:56, 6:56–10:49 (L1 extension))
+- [Student worksheet](child-migrant-stories/passing-tides/e2-e3-past-simple-sequencing-worksheet.pdf) (PDF) · [Word](child-migrant-stories/passing-tides/e2-e3-past-simple-sequencing-worksheet.docx)
+- [Projector slides](child-migrant-stories/passing-tides/e2-e3-past-simple-sequencing-projector-slides.pdf) (PDF) · [PowerPoint](child-migrant-stories/passing-tides/e2-e3-past-simple-sequencing-projector-slides.pptx)
+- [Teacher notes and answer key (teacher)](child-migrant-stories/passing-tides/e2-e3-past-simple-sequencing-teacher-notes-answers.pdf) (PDF) · [Word](child-migrant-stories/passing-tides/e2-e3-past-simple-sequencing-teacher-notes-answers.docx)
+- [Who Wants to Be a Millionaire? – film questions](games/millionaire-quiz.html?set=film-pt)
+- [Hangman paragraph](https://atinwix.github.io/Hangman-Paragraphs-Game/?p=TGluaCB3YXMgYm9ybiBpbiBWaWV0bmFtLiBXaGVuIHNoZSB3YXMgc2V2ZW4sIHNoZSBsZWZ0IFZpZXRuYW0gd2l0aCBoZXIgZmF0aGVyLiBGaXJzdCwgdGhleSB3YWl0ZWQgaW4gdGhlIHdhdGVyLiBUaGVuIHRoZXkgZ290IG9uIGEgdGlueSBib2F0IHdpdGggYWJvdXQgZmlmdHkgcGVvcGxlLiBBZnRlciBhIGZldyBkYXlzLCB0aGV5IGhhZCBubyBmb29kLiBUaGVuIGEgYmlnIEJyaXRpc2ggc2hpcCBmb3VuZCB0aGVtLiBUaGUgc2FpbG9ycyB0aHJldyBkb3duIGNyYWNrZXJzIGFuZCBncmVlbiBhcHBsZXMuIEFmdGVyIHRoYXQsIHRoZXkgc3RheWVkIGluIGEgY2FtcCBpbiBTaW5nYXBvcmUuIEZpbmFsbHksIHRoZXkgd2VudCB0byBCcml0YWluIGFuZCBsaXZlZCBpbiBIYWNrbmV5Lg)
+- [Kahoot quiz – import file](child-migrant-stories/passing-tides/e2-e3-past-simple-sequencing-kahoot.xlsx) (Excel)
+
+**Voices Past and Present – E2–E3 Adjectives – First impressions** – film: https://www.youtube.com/watch?v=cjF3FI1ngtY (clips 4:28–5:14, 5:14–6:10, 8:31–10:05 (L1 extension))
+- [Student worksheet](child-migrant-stories/voices-past-and-present/e2-e3-adjectives-worksheet.pdf) (PDF) · [Word](child-migrant-stories/voices-past-and-present/e2-e3-adjectives-worksheet.docx)
+- [Projector slides](child-migrant-stories/voices-past-and-present/e2-e3-adjectives-projector-slides.pdf) (PDF) · [PowerPoint](child-migrant-stories/voices-past-and-present/e2-e3-adjectives-projector-slides.pptx)
+- [Teacher notes and answer key (teacher)](child-migrant-stories/voices-past-and-present/e2-e3-adjectives-teacher-notes-answers.pdf) (PDF) · [Word](child-migrant-stories/voices-past-and-present/e2-e3-adjectives-teacher-notes-answers.docx)
+- [Who Wants to Be a Millionaire? – film questions](games/millionaire-quiz.html?set=film-vpp)
+- [Hangman paragraph](https://atinwix.github.io/Hangman-Paragraphs-Game/?p=TWFueSBjaGlsZHJlbiBjYW1lIHRvIExvbmRvbiBmcm9tIG90aGVyIGNvdW50cmllcy4gU29tZSBjYW1lIGJlY2F1c2Ugb2Ygd2FyLCBhbmQgc29tZSBjYW1lIHRvIGZpbmQgd29yay4gT25lIHBlcnNvbiBhcnJpdmVkIGluIHRoZSB3aW50ZXIgb2YgMTk2NC4gSXQgd2FzIHZlcnkgY29sZCwgYW5kIHRoZXJlIHdlcmUgdGhpcnRlZW4gYmxhbmtldHMgb24gdGhlIGJlZCEgTWFudWhhciBmcm9tIEJhbmdsYWRlc2ggdGhvdWdodCBMb25kb24gd2FzIGZhbnRhc3RpYy4gVGhlIGFpcnBvcnQgd2FzIGJlYXV0aWZ1bCBhbmQgY29sb3VyZnVsLiBCdXQgaGlzIG5ldyBob21lIHdhcyB0ZXJyaWJsZS4gVG9kYXksIEhlbnJ5IGZyb20gRWwgU2FsdmFkb3Igc2F5cyB0aGF0IEhhY2tuZXkgaXMgaGlzIGhvbWUu)
+- [Kahoot quiz – import file](child-migrant-stories/voices-past-and-present/e2-e3-adjectives-kahoot.xlsx) (Excel)
 
 ## games
 - [Grammar Blast](games/grammar-blast.html)
@@ -157,4 +183,5 @@ Lessons built around the short films by [Child Migrant Stories](https://childmig
 - [Block Drop (work in progress)](games/block-drop.html)
 - [Blockbusters – ABC Quiz – Projector Game (all levels)](games/blockbusters-abc-quiz.html)
 - [Who Wants to Be a Millionaire – Projector Quiz Game (all levels)](games/millionaire-quiz.html)
+- [Hangman Paragraphs – type or paste any text](https://atinwix.github.io/Hangman-Paragraphs-Game/)
 - [Family Fortunes – Interactive Whiteboard Game (E2–L1)](games/family-fortunes.html)
