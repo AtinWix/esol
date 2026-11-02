@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ESOL All Levels – My Story – Student Bio Form (E1–L2)</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700&display=swap">
+<style>
+/* Layout: one card per question, centred, fits a 16:9 screen without scrolling; stacks on phones */
+:root{
+  --bg:#eef3f1; --card:#ffffff; --ink:#1d2b28; --muted:#5b6e69;
+  --accent:#1f7a68; --accent-ink:#ffffff; --soft:#dcebe6; --line:#c9d8d3;
+  --font:"Lexend",Verdana,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:18px;line-height:1.4;
+  display:flex;align-items:center;justify-content:center;padding:16px}
+.card{background:var(--card);width:100%;max-width:1150px;min-height:min(620px,calc(100vh - 32px));
+  border-radius:18px;box-shadow:0 6px 24px rgba(20,60,50,.10);padding:32px 44px;display:flex;flex-direction:column;gap:20px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:700;color:var(--accent);font-size:20px}
+.bar{flex:1;max-width:420px;height:10px;border-radius:5px;background:var(--soft);overflow:hidden}
+.bar i{display:block;height:100%;background:var(--accent);border-radius:5px}
+h1{font-size:34px;margin:0;text-wrap:balance}
+h2{font-size:30px;margin:0;text-wrap:balance}
+p{margin:0}
+.muted{color:var(--muted)}
+.body{flex:1;display:flex;flex-direction:column;gap:16px;justify-content:center}
+label.field{display:flex;flex-direction:column;gap:8px;font-weight:500}
+input[type=text]{font:inherit;font-size:22px;padding:12px 16px;border:2px solid var(--line);border-radius:12px;
+  background:var(--card);color:var(--ink);width:100%;max-width:520px}
+input:focus{outline:none;border-color:var(--accent)}
+.topics{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.topic{font:inherit;text-align:left;border:2px solid var(--line);background:var(--card);color:var(--ink);
+  border-radius:14px;padding:20px;cursor:pointer;display:flex;flex-direction:column;gap:6px;min-width:0}
+.topic b{font-size:22px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{font:inherit;font-size:20px;border:2px solid var(--line);background:var(--card);color:var(--ink);
+  border-radius:999px;padding:10px 20px;cursor:pointer}
+.chip:hover,.topic:hover{border-color:var(--accent)}
+.chip[aria-pressed=true],.topic[aria-pressed=true]{border-color:var(--accent);background:var(--accent);color:var(--accent-ink)}
+.topic[aria-pressed=true] .hint{color:var(--accent-ink)}
+.chip:focus-visible,.topic:focus-visible,.btn:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.how{display:inline-block;font-size:15px;font-weight:500;color:var(--accent);background:var(--soft);border-radius:999px;padding:4px 12px}
+.row{display:flex;gap:12px;justify-content:space-between;align-items:center;flex-wrap:wrap}
+.btn{font:inherit;font-size:20px;font-weight:500;border-radius:12px;padding:14px 28px;cursor:pointer;border:2px solid var(--accent)}
+.btn.main{background:var(--accent);color:var(--accent-ink)}
+.btn.ghost{background:transparent;color:var(--accent)}
+.hint{font-size:16px;color:var(--muted)}
+.qnum{font-size:15px;font-weight:700;color:var(--accent);letter-spacing:.06em;text-transform:uppercase}
+.list{background:var(--soft);padding:14px 18px;border-radius:12px;font-size:16px;max-height:46vh;overflow:auto;
+  display:grid;grid-template-columns:1fr 1fr;gap:4px 28px}
+.list div{min-width:0}
+.list b{font-weight:500;color:var(--muted)}
+pre{white-space:pre-wrap;background:var(--soft);padding:14px;border-radius:12px;font-family:var(--font);font-size:15px;
+  max-height:40vh;overflow:auto;margin:0}
+.steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:18px;font-size:24px}
+.steps li{display:flex;gap:16px;align-items:flex-start}
+.steps .n{flex:none;width:44px;height:44px;border-radius:50%;background:var(--accent);color:var(--accent-ink);
+  display:flex;align-items:center;justify-content:center;font-weight:700}
+.btn.big{display:inline-block;margin-top:10px;font-size:24px;padding:16px 36px;text-decoration:none}
+.fake{display:inline-block;background:#0f6cbd;color:#fff;font-weight:700;border-radius:6px;padding:4px 18px;margin-left:4px}
+.warn{font-size:22px;background:#fdecea;color:#8a1f17;border-radius:12px;padding:12px 16px}
+@media (max-width:760px){.steps{font-size:19px}.warn{font-size:18px}.btn.big{font-size:20px}}
+.err{color:#a3312a;font-size:16px;min-height:1.2em}
+@media (max-width:760px){
+  body{font-size:17px;align-items:flex-start}
+  .card{padding:20px 16px;min-height:auto}
+  h1{font-size:26px} h2{font-size:23px}
+  .topics,.list{grid-template-columns:1fr}
+  .chip{font-size:18px;padding:9px 16px}
+  input[type=text]{font-size:19px}
+}
+@media (prefers-reduced-motion:no-preference){.chip,.topic,.btn{transition:border-color .15s,background .15s}}
+.atin-logo{position:fixed;left:calc(6px + env(safe-area-inset-left,0px));bottom:calc(6px + env(safe-area-inset-bottom,0px));z-index:2147483000;pointer-events:none;color:#1F3A5F;background:rgba(255,255,255,.92);border:1px solid #C9D3DF;border-radius:8px;padding:3px 5px;line-height:0}
+.atin-logo svg{display:block}
+@media print{.atin-logo{position:fixed;left:auto;right:6mm;bottom:5mm;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+</head>
+<body>
+<main class="card" id="app" aria-live="polite"></main>
+<div class="atin-logo" aria-label="Made by Atin">
+<svg viewBox="104 28 172 134" width="64" height="50" role="img" aria-hidden="true">
+<text x="139" y="112" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="72" fill="currentColor">A</text>
+<rect x="177" y="83" width="24" height="6" rx="1" fill="currentColor"/>
+<path d="M216 66 L216 106 A25 7 0 0 0 266 106 L266 66" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+<ellipse cx="241" cy="66" rx="25" ry="7" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="216" y1="80" x2="266" y2="80" stroke="currentColor" stroke-width="1.5"/>
+<line x1="216" y1="94" x2="266" y2="94" stroke="currentColor" stroke-width="1.5"/>
+<ellipse cx="241" cy="47" rx="23" ry="5" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="114" y1="128" x2="266" y2="128" stroke="currentColor" stroke-width="1"/>
+<text x="190" y="152" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" letter-spacing="2" fill="currentColor">made by Atin</text>
+</svg>
+</div>
+
+<script>
+(function(){
+/* ====== TEACHER SETTING ======
+   Paste the Microsoft Form pre-filled link here (with "x" typed in both boxes).
+   First "x" = Name, second "x" = Answers. Leave empty to use the Copy fallback. */
+const FORM_PREFILL_URL = (function(){try{const f=new URLSearchParams(location.search).get("form");return f&&/^https:\/\/forms\.(office\.com|cloud\.microsoft)\//.test(f)?f:"";}catch(e){return "";}})();
+/* ============================ */
+
+/* type: one = tap one, many = tap all you want, text = a word or two. "other" adds a small box. */
+const one=(q,o,x={})=>({q,type:"one",o,other:true,...x});
+const many=(q,o,x={})=>({q,type:"many",o,other:true,...x});
+const text=(q,hint,x={})=>({q,type:"text",hint,...x});
+
+const FEATURES=["Mountains","Hills","A river","A lake","The sea","A beach","A forest","A desert","Fields","Farms","A market","Small shops","Tall buildings","A busy road","A park","A mosque","A church","A temple","A school"];
+const TOPICS = {
+  house:{title:"The house where I grew up", blurb:"Your childhood home: the place, the people, the animals.", qs:[
+    text("Which country was it in?","Example: Bangladesh"),
+    text("Which town or city was it in?","Example: Sylhet"),
+    many("What was near the house?",FEATURES),
+    one("Where was the house?",["In a city","In a town","In a village","In the countryside","By the sea","In the mountains"]),
+    one("What kind of home was it?",["A flat","A house","A farmhouse","A house with a garden","A small hut"]),
+    one("How many rooms?",["1","2","3","4","5","More than 5"],{other:false}),
+    many("Who lived there with you?",["Mother","Father","Brothers","Sisters","Grandmother","Grandfather","Aunts","Uncles","Cousins"]),
+    many("What animals were near the house?",["Chickens","Goats","Sheep","Cows","Donkeys","Horses","Camels","Dogs","Cats","Birds","No animals"]),
+    many("How did people travel?",["Walk","Bicycle","Motorbike","Bus","Car","Taxi","Train","Boat","Donkey or horse"]),
+    many("What could you hear in the morning?",["Birds","Animals","Traffic","The sea","People talking","Music","Children playing","Nothing — quiet"]),
+    one("What was the weather like in summer?",["Very hot","Hot","Warm","Cool","Rainy"]),
+    text("How much was bread then?","Example: 5 taka. Write \"don't know\" if you don't know."),
+    one("Was food cheap or expensive?",["Very cheap","Cheap","OK","Expensive","Very expensive"],{other:false}),
+    one("Your favourite place near the house?",["The market","The river","The fields","The beach","The park","A friend's house","The shop","The garden"]),
+    one("One word for the house:",["Happy","Busy","Noisy","Quiet","Warm","Cold","Small","Big"]),
+    one("When did you leave this house?",["As a child","As a teenager","As an adult","I still live there sometimes"]),
+    many("Your home now is…",["Bigger","Smaller","Quieter","Noisier","Warmer","Colder","More expensive","Cheaper","Closer to shops","Further from family"],{min:"E2"}),
+    text("Tell me about one day you remember in that house.","Example: When I was eight, my uncle came from the city and brought a radio.",{min:"E3",long:true}),
+    text("What was better there? What is better here? Why?","Write 2 or 3 sentences.",{min:"L1",long:true}),
+    text("How did growing up there change you?","Write 2 or 3 sentences.",{min:"L1",long:true})
+  ]},
+  day:{title:"A special day", blurb:"A wedding, a festival, a party, a graduation…", qs:[
+    one("What was the day?",["A wedding","Eid","Christmas","New Year","A birthday","A graduation","A new baby","Nowruz","Diwali"]),
+    one("Whose day was it?",["Mine","My brother's","My sister's","My cousin's","My friend's","My whole family's","Everyone's"]),
+    text("What year was it?","Example: 2019"),
+    text("Which country was it in?","Example: Afghanistan"),
+    text("Which town or city was it in?","Example: Kabul"),
+    many("What could you see near the place?",FEATURES),
+    one("Where was it?",["At home","In a big hall","In a garden","In a restaurant","In a hotel","In the street","In a park"]),
+    one("How many people were there?",["Fewer than 10","10–50","50–100","100–300","More than 300"],{other:false}),
+    many("What food was there?",["Rice","Meat","Chicken","Fish","Bread","Soup","Salad","Fruit","Cake","Sweets"]),
+    many("What did you wear?",["New clothes","Traditional clothes","A suit","A dress","Gold jewellery","A hat or scarf"]),
+    one("How did you get there?",["Walked","By car","By bus","By taxi","By train","By plane","By boat","I was already there"]),
+    many("What did people do?",["Danced","Sang","Ate","Played music","Gave presents","Took photos","Prayed","Watched fireworks"]),
+    one("What was the weather like?",["Sunny","Hot","Warm","Cloudy","Rainy","Cold","Snowy"]),
+    text("A present you gave or got:","Example: money, a watch, gold"),
+    one("When did it finish?",["In the afternoon","In the evening","At midnight","Late at night","The next morning"],{other:false}),
+    one("How did you feel?",["Happy","Excited","Proud","Tired","Emotional","Nervous"]),
+    one("Would you like to have a day like this again?",["Yes","No","Maybe"],{other:false}),
+    text("What happened first, next and at the end?","Example: First we ate. Then we danced. At the end we watched fireworks.",{min:"E2",long:true}),
+    text("Did anything funny or surprising happen?","Write 1 or 2 sentences.",{min:"E3",long:true}),
+    text("Why was this day important to you?","Write 2 or 3 sentences.",{min:"L1",long:true}),
+    text("How is this celebration different in the UK?","Write 2 or 3 sentences.",{min:"L1",long:true})
+  ]},
+  person:{title:"A person who is important to me", blurb:"A family member, a friend, a teacher…", qs:[
+    one("Who is the person?",["My mother","My father","My grandmother","My grandfather","My sister","My brother","My aunt","My uncle","My friend","My teacher","My neighbour"]),
+    one("Is this person still alive?",["Yes","No, they have died"],{other:false,alive:true}),
+    text("What is their name?","Example: Fatma",{qp:"What was their name?"}),
+    text("Which country do they live in?","Example: Turkey",{qp:"Which country did they live in?"}),
+    text("Which town or city do they live in?","Example: Izmir",{qp:"Which town or city did they live in?"}),
+    many("What is near their home?",FEATURES,{qp:"What was near their home?"}),
+    one("How old are they?",["Under 20","20–40","40–60","60–80","Over 80"],{other:false,qp:"How old were they when they died?"}),
+    one("What colour is their hair?",["Black","Brown","Blond","Red","Grey","White","No hair"],{qp:"What colour was their hair?"}),
+    one("How tall are they?",["Tall","Medium","Short"],{other:false,qp:"How tall were they?"}),
+    many("What are they like?",["Kind","Funny","Strict","Quiet","Clever","Hard-working","Generous","Chatty","Patient"],{qp:"What were they like?"}),
+    one("What is their job?",["Cook","Farmer","Teacher","Driver","Shopkeeper","Builder","Doctor or nurse","Student","Housewife","Works at home","Retired"],
+      {qp:"What was their job?",op:["Cook","Farmer","Teacher","Driver","Shopkeeper","Builder","Doctor or nurse","Student","Housewife","Worked at home","Retired"]}),
+    many("What do you do together?",["Cook","Eat","Walk","Go shopping","Go to the market","Watch TV","Play games","Talk on the phone","Go to the beach"],
+      {qp:"What did you do together?",op:["Cooked","Ate","Walked","Went shopping","Went to the market","Watched TV","Played games","Talked on the phone","Went to the beach"]}),
+    text("Their best food or dish:","Example: lentil soup"),
+    one("How often do you see or talk to them?",["Every day","Every week","Every month","Every year","Not often"],{other:false,qp:"How often did you see or talk to them?"}),
+    many("Do they have animals?",["A cat","A dog","Chickens","Birds","Goats","Sheep","No animals"],{qp:"Did they have animals?"}),
+    one("Why are they important to you?",["They helped me","They taught me a lot","They make me laugh","They looked after me","They are always there for me"],
+      {qp:"Why were they important to you?",op:["They helped me","They taught me a lot","They made me laugh","They looked after me","They were always there for me"]}),
+    text("Tell me one thing you did together.","Example: Every Friday we cooked bread together.",{min:"E2",long:true}),
+    text("A short story about this person:","Example: One day my grandmother walked 10 km to bring me medicine.",{min:"E3",long:true}),
+    text("What is the most important thing you learned from them?","Write 2 or 3 sentences.",{min:"L1",long:true}),
+    text("Are you like this person? How?","Write 2 or 3 sentences.",{min:"L1",long:true})
+  ]},
+  journey:{title:"My journey to the UK", blurb:"Your life before, why you came, who you miss, who you live with, your hopes. You can always choose \"I prefer not to say\".", qs:[
+    text("Which country did you live in before the UK?","Example: Syria",{pns:true}),
+    text("Which town or city?","Example: Aleppo",{pns:true}),
+    many("What did you do there?",["Went to school","Went to university","Worked","Worked on a farm","Had my own business","Looked after children","Looked after my family"],{pns:true}),
+    one("When did you come to the UK?",["This year","Last year","2–5 years ago","5–10 years ago","More than 10 years ago"],{other:false,pns:true}),
+    many("Why did you come to the UK?",["To be safe","For my family","For work","To study","To get married","For a better life","For my children's school","For medical help","My family was already here"],{pns:true}),
+    one("How did you travel here?",["By plane","By car","By bus","By train","By boat","On foot","A mix of ways"],{pns:true}),
+    many("Who did you leave behind?",["Mother","Father","Brothers","Sisters","Grandparents","Husband or wife","Children","Friends","Aunts and uncles","Nobody"],{pns:true}),
+    one("Who do you miss the most?",["Mother","Father","Brother or sister","Grandparent","Husband or wife","Child","Friend","Everyone"],{pns:true}),
+    one("How often do you talk to them?",["Every day","Every week","Every month","Not often","I can't talk to them"],{other:false,pns:true}),
+    many("How do you talk to them?",["WhatsApp","Phone calls","Video calls","Messages","Letters"],{pns:true}),
+    many("Who do you live with now?",["Alone","My husband or wife","My children","My mother","My father","Brothers or sisters","Friends","Other family","A host family","People in a shared house"],{pns:true}),
+    one("How many people live in your home?",["1","2","3","4","5","6","More than 6"],{other:false,pns:true}),
+    many("What do you hope for in the future?",["A good job","My own home","To speak English well","To study at college or university","To pass my exams","A happy family","To get married","To have children","To see my family again","To be healthy","To feel safe","To learn to drive","To start my own business","To travel"],{pns:true}),
+    text("One hope for your future:","Example: I want to be a nurse.",{pns:true}),
+    one("How do you feel about life in the UK now?",["Happy","Hopeful","Tired","Lonely","Safe","Busy","Still learning"],{pns:true}),
+    many("What was difficult when you first came?",["The language","Finding a home","Finding work","The weather","The food","Being away from family","Money","Making friends","Transport"],{min:"E2",pns:true}),
+    text("What is different in the UK from your country?","Example: Here the shops close early. At home they are open at night.",{min:"E3",long:true,pns:true}),
+    text("Why is your hope for the future important to you?","Write 2 or 3 sentences.",{min:"L1",long:true,pns:true}),
+    text("What advice would you give a new student in the UK?","Write 2 or 3 sentences.",{min:"L1",long:true,pns:true})
+  ]}
+};
+
+const LEVELS=["E1","E2","E3","L1","L2"];
+function lvl(){const i=LEVELS.indexOf(S.level);return i<0?1:i;}           /* "Don't know" = E2 */
+function show(Q){return !Q.min||lvl()>=LEVELS.indexOf(Q.min);}
+function QS(){return TOPICS[S.topic].qs.filter(show);}
+const app=document.getElementById("app");
+const S={step:"start",name:"",useName:"same",otherName:"",level:null,topic:null,q:0,ans:[]};
+
+function el(html){const t=document.createElement("template");t.innerHTML=html.trim();return t.content;}
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
+function header(){
+  let pct=0; const n=S.topic?QS().length:13;
+  if(S.step==="nameuse")pct=2; if(S.step==="level")pct=4; if(S.step==="topic")pct=5; if(S.step==="q")pct=8+Math.round(S.q/n*84); if(S.step==="check")pct=94; if(S.step==="done")pct=100;
+  return '<div class="top"><div class="brand">My Story</div><div class="bar" aria-hidden="true"><i style="width:'+pct+'%"></i></div></div>';
+}
+function render(){
+  app.innerHTML="";
+  ({start:renderStart,nameuse:renderNameUse,level:renderLevel,topic:renderTopic,q:renderQ,check:renderCheck,done:renderDone})[S.step]();
+}
+
+function renderStart(){
+  app.append(el(header()+`
+  <div class="body">
+    <h1>Tell us your story</h1>
+    <p class="muted">Your teacher will use your answers to write a reading text for the class. Most answers are just one tap.</p>
+    <label class="field">What is your name?
+      <input type="text" id="name" maxlength="40" autocomplete="off" value="${esc(S.name)}">
+    </label>
+    <p class="err" id="err"></p>
+  </div>
+  <div class="row"><span></span><button class="btn main" id="next">Next</button></div>`));
+  const name=app.querySelector("#name");
+  name.oninput=()=>S.name=name.value;
+  name.onkeydown=e=>{if(e.key==="Enter")app.querySelector("#next").click();};
+  app.querySelector("#next").onclick=()=>{
+    if(!S.name.trim()){app.querySelector("#err").textContent="Please write your name.";return;}
+    S.step="nameuse";render();
+  };
+  name.focus();
+}
+
+function renderNameUse(){
+  app.append(el(header()+`
+  <div class="body">
+    <h2>In the text, which name can we use?</h2>
+    <span><span class="how">Tap ONE</span></span>
+    <div class="chips">
+      <button class="chip" id="nm-same" aria-pressed="${S.useName==="same"}">My name</button>
+      <button class="chip" id="nm-other" aria-pressed="${S.useName==="other"}">A different name</button>
+    </div>
+    <input type="text" id="other" maxlength="40" autocomplete="off" placeholder="Write the different name" value="${esc(S.otherName)}" ${S.useName==="other"?"":"hidden"} aria-label="Different name">
+    <p class="err" id="err"></p>
+  </div>
+  <div class="row"><button class="btn ghost" id="back">Back</button><button class="btn main" id="next">Next</button></div>`));
+  const other=app.querySelector("#other");
+  other.oninput=()=>S.otherName=other.value;
+  app.querySelector("#nm-same").onclick=()=>{S.useName="same";render();};
+  app.querySelector("#nm-other").onclick=()=>{S.useName="other";render();app.querySelector("#other").focus();};
+  app.querySelector("#back").onclick=()=>{S.step="start";render();};
+  app.querySelector("#next").onclick=()=>{
+    if(S.useName==="other"&&!S.otherName.trim()){app.querySelector("#err").textContent="Please write the different name.";return;}
+    S.step="level";render();
+  };
+}
+
+function renderLevel(){
+  const opts=[["E1","Entry 1"],["E2","Entry 2"],["E3","Entry 3"],["L1","Level 1"],["L2","Level 2"],["?","I don't know"]];
+  app.append(el(header()+`
+  <div class="body">
+    <h2>Which English class are you in?</h2>
+    <span><span class="how">Tap ONE</span></span>
+    <div class="chips">${opts.map(([k,l])=>`<button class="chip" data-k="${k}" aria-pressed="${S.level===k}">${l}</button>`).join("")}</div>
+    <p class="hint">Higher classes get a few extra questions where you write a sentence or two.</p>
+    <p class="err" id="err"></p>
+  </div>
+  <div class="row"><button class="btn ghost" id="back">Back</button><button class="btn main" id="next">Next</button></div>`));
+  app.querySelectorAll(".chip").forEach(b=>b.onclick=()=>{if(S.level!==b.dataset.k){S.level=b.dataset.k;S.ans=[];S.q=0;}render();});
+  app.querySelector("#back").onclick=()=>{S.step="nameuse";render();};
+  app.querySelector("#next").onclick=()=>{
+    if(!S.level){app.querySelector("#err").textContent="Please choose your class.";return;}
+    S.step="topic";render();
+  };
+}
+
+function renderTopic(){
+  app.append(el(header()+`
+  <div class="body">
+    <h2>Choose ONE topic</h2>
+    <div class="topics">${Object.entries(TOPICS).map(([k,t])=>
+      `<button class="topic" data-k="${k}" aria-pressed="${S.topic===k}"><b>${esc(t.title)}</b><span class="hint">${esc(t.blurb)}</span></button>`).join("")}
+    </div>
+    <p class="err" id="err"></p>
+  </div>
+  <div class="row"><button class="btn ghost" id="back">Back</button><button class="btn main" id="next">Next</button></div>`));
+  app.querySelectorAll(".topic").forEach(b=>b.onclick=()=>{
+    if(S.topic!==b.dataset.k){S.topic=b.dataset.k;S.ans=[];S.q=0;} render();
+  });
+  app.querySelector("#back").onclick=()=>{S.step="level";render();};
+  app.querySelector("#next").onclick=()=>{
+    if(!S.topic){app.querySelector("#err").textContent="Please choose a topic.";return;}
+    S.step="q";S.q=0;render();
+  };
+}
+
+function isPast(){
+  if(S.topic!=="person")return false;
+  const i=QS().findIndex(Q=>Q.alive), a=S.ans[i];
+  return !!(a&&a.picks[0]==="No, they have died");
+}
+function qText(Q){return isPast()&&Q.qp?Q.qp:Q.q;}
+function qOpts(Q){return isPast()&&Q.op?Q.op:Q.o;}
+function cur(){ /* answer object for the current question */
+  if(!S.ans[S.q])S.ans[S.q]={picks:[],other:"",text:""};
+  return S.ans[S.q];
+}
+
+function renderQ(){
+  const t=TOPICS[S.topic],Q=QS()[S.q],a=cur(),total=QS().length;
+  const how=Q.type==="one"?"Tap ONE":Q.type==="many"?"Tap ALL that are true":Q.long?"Write in sentences":"Write a word or two";
+  let input="";
+  if(Q.type==="text"){
+    input=`<input type="text" id="txt" maxlength="${Q.long?240:60}" autocomplete="off" value="${esc(a.text)}" aria-label="${esc(qText(Q))}">
+           <p class="hint">${esc(Q.hint||"")}</p>`;
+  }else{
+    const opts=[...qOpts(Q)]; if(Q.other)opts.push("Other"); if(Q.pns)opts.push("I prefer not to say");
+    input=`<div class="chips">${opts.map(o=>`<button class="chip" data-o="${esc(o)}" aria-pressed="${a.picks.includes(o)}">${esc(o)}</button>`).join("")}</div>
+      <input type="text" id="oth" maxlength="40" autocomplete="off" placeholder="Write it here" value="${esc(a.other)}" ${a.picks.includes("Other")?"":"hidden"} aria-label="Other">`;
+  }
+  app.append(el(header()+`
+  <div class="body">
+    <p class="qnum">${esc(t.title)} · ${S.q+1} of ${total}</p>
+    <h2>${esc(qText(Q))}</h2>
+    <span><span class="how">${how}</span></span>
+    ${input}
+    <p class="err" id="err"></p>
+  </div>
+  <div class="row"><button class="btn ghost" id="back">Back</button>${Q.type==="text"&&(Q.pns||Q.min)?`<button class="btn ghost" id="skip">${Q.pns?"I prefer not to say":"Skip"}</button>`:""}<button class="btn main" id="next">${S.q===total-1?"Check my answers":"Next"}</button></div>`));
+
+  if(Q.type==="text"){
+    const i=app.querySelector("#txt"); i.oninput=()=>a.text=i.value; i.focus();
+    const sk=app.querySelector("#skip"); if(sk)sk.onclick=()=>{a.text=Q.pns?"I prefer not to say":"(skipped)";if(S.q===total-1)S.step="check";else S.q++;render();};
+    i.onkeydown=e=>{if(e.key==="Enter")app.querySelector("#next").click();};
+  }else{
+    const oth=app.querySelector("#oth"); oth.oninput=()=>a.other=oth.value;
+    app.querySelectorAll(".chip").forEach(b=>b.onclick=()=>{
+      const o=b.dataset.o;
+      if(Q.type==="one"){
+        if(Q.alive&&a.picks[0]!==o)S.ans.length=S.q+1; /* tense changed: clear later answers */
+        a.picks=[o];
+      }
+      else{
+        const EX=/^No animals$|^Nothing|^I prefer not to say$/;const exclusive=EX.test(o);
+        if(a.picks.includes(o))a.picks=a.picks.filter(p=>p!==o);
+        else a.picks=exclusive?[o]:[...a.picks.filter(p=>!EX.test(p)),o];
+      }
+      app.querySelectorAll(".chip").forEach(c=>c.setAttribute("aria-pressed",a.picks.includes(c.dataset.o)));
+      oth.hidden=!a.picks.includes("Other"); if(!oth.hidden&&o==="Other")oth.focus();
+      app.querySelector("#err").textContent="";
+    });
+  }
+  app.querySelector("#back").onclick=()=>{if(S.q===0)S.step="topic";else S.q--;render();};
+  app.querySelector("#next").onclick=()=>{
+    const e=app.querySelector("#err");
+    if(Q.type==="text"&&!a.text.trim()){e.textContent="Please write a word or two.";return;}
+    if(Q.type!=="text"&&!a.picks.length){e.textContent="Please tap an answer.";return;}
+    if(a.picks.includes("Other")&&!a.other.trim()){e.textContent="Please write your answer in the box.";return;}
+    if(S.q===total-1)S.step="check";else S.q++;render();
+  };
+}
+
+function answerText(i){
+  const Q=QS()[i],a=S.ans[i]||{picks:[],other:"",text:""};
+  if(Q.type==="text")return a.text.trim();
+  return a.picks.map(p=>p==="Other"?a.other.trim():p).filter(Boolean).join(", ");
+}
+function summary(){
+  const t=TOPICS[S.topic];
+  const lines=["Topic: "+t.title,"Class: "+(S.level==="?"?"Don't know":S.level),"Use name: "+(S.useName==="other"?S.otherName.trim():S.name.trim())];
+  QS().forEach((Q,i)=>lines.push(qText(Q).replace(/[:?]$/,"")+": "+answerText(i)));
+  return lines.join("\n");
+}
+
+function renderCheck(){
+  const t=TOPICS[S.topic];
+  app.append(el(header()+`
+  <div class="body">
+    <h2>Check your answers</h2>
+    <div class="list">${QS().map((Q,i)=>`<div><b>${i+1}.</b> ${esc(answerText(i))}</div>`).join("")}</div>
+    <p class="hint">To change an answer, press Back.</p>
+  </div>
+  <div class="row"><button class="btn ghost" id="back">Back</button><button class="btn main" id="send">Send</button></div>`));
+  app.querySelector("#back").onclick=()=>{S.step="q";S.q=QS().length-1;render();};
+  app.querySelector("#send").onclick=()=>{S.url=FORM_PREFILL_URL?buildFormUrl():null;S.step="done";render();};
+}
+
+function buildFormUrl(){
+  try{
+    const u=new URL(FORM_PREFILL_URL);
+    const keys=[...u.searchParams.keys()].filter(k=>u.searchParams.get(k).toLowerCase()==="x");
+    if(keys.length<2)return null;
+    u.searchParams.set(keys[0],S.name.trim());
+    u.searchParams.set(keys[1],summary());
+    return u.toString();
+  }catch(e){return null;}
+}
+
+function renderDone(){
+  if(S.url){
+    app.append(el(header()+`
+    <div class="body">
+      <h1>Nearly finished! 2 more steps.</h1>
+      <ol class="steps">
+        <li><span class="n">1</span><div>Press this button:<br>
+          <a class="btn main big" id="go" href="${esc(S.url)}" target="_blank" rel="noopener">Open the form</a></div></li>
+        <li><span class="n">2</span><div>A new page opens. Your answers are already there.<br>
+          Go to the <b>bottom</b> of the page and press <span class="fake">Submit</span></div></li>
+      </ol>
+      <p class="warn">⚠ If you do NOT press <b>Submit</b>, your teacher gets <b>nothing</b>.</p>
+      <p class="hint">When you see <b>"Your response was submitted"</b>, you are finished.</p>
+    </div>
+    <div class="row"><button class="btn ghost" id="back">Back</button><span></span></div>`));
+  }else{
+    app.append(el(header()+`
+    <div class="body">
+      <h1>Thank you!</h1>
+      <p>Press <b>Copy</b> and give your answers to your teacher.</p>
+      <pre id="sum">${esc(S.name.trim()+"\n"+summary())}</pre>
+      <div class="row" style="justify-content:flex-start"><button class="btn main" id="copy">Copy</button><span class="hint" id="copied"></span></div>
+    </div>
+    <div class="row"><button class="btn ghost" id="back">Back</button><span></span></div>`));
+    app.querySelector("#copy").onclick=async()=>{
+      const box=app.querySelector("#sum"),msg=app.querySelector("#copied");
+      try{await navigator.clipboard.writeText(box.textContent);msg.textContent="Copied.";}
+      catch(e){const r=document.createRange();r.selectNodeContents(box);const s=getSelection();s.removeAllRanges();s.addRange(r);
+        msg.textContent="Text selected. Press Ctrl+C.";}
+    };
+  }
+  app.querySelector("#back").onclick=()=>{S.step="check";render();};
+}
+
+render();
+})();
+</script>
+</body>
+</html>
