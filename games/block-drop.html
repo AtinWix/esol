@@ -45,6 +45,9 @@ button:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
   h1{font-size:16px}
 }
 @media (pointer:coarse){.pad{display:flex}}
+#choices button.alt{background:var(--panel);color:var(--fg);border:1px solid var(--line);text-transform:none;letter-spacing:0;font-size:15px}
+#choices button.ok{background:#3c9a5f;color:#fff}#choices button.no{background:#c0453b;color:#fff}
+.overlay .q{color:var(--fg);font-size:16px;line-height:1.5}
 </style>
 
 <h1>Block Drop</h1>
@@ -53,7 +56,8 @@ button:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
     <canvas id="board" width="300" height="600"></canvas>
     <div class="overlay" id="ov">
       <h2 id="ovT">Block Drop</h2>
-      <p id="ovP">Clear lines. Don't reach the top.</p>
+      <p id="ovP">Clear lines. Don't reach the top. If you lose, answer an English question to keep playing!</p>
+      <div id="choices" hidden style="display:flex;flex-direction:column;gap:8px;width:100%;max-width:240px"></div>
       <button id="startBtn">Play</button>
     </div>
   </div>
@@ -96,7 +100,29 @@ function rot(m){return m[0].map((_,i)=>m.map(r=>r[i]).reverse())}
 function fits(m,x,y){for(let r=0;r<m.length;r++)for(let c=0;c<m[r].length;c++)if(m[r][c]){
   const X=x+c,Y=y+r;if(X<0||X>=W||Y>=H)return false;if(Y>=0&&grid[Y][X])return false}return true}
 
-function reset(){grid=Array.from({length:H},()=>Array(W).fill(null));bag=[];nextQ=take();holdT=null;
+
+const QE=[["She ___ a teacher.",["is","are","am"],0],["I ___ to college by bus.",["goes","go","going"],1],["They ___ football yesterday.",["play","playing","played"],2],["More than one child = two ___",["children","childs","childes"],0],["The opposite of 'hot' is…",["warm","cold","wet"],1],["___ you like tea?",["Does","Is","Do"],2],["He ___ got two sisters.",["has","have","is"],0],["There ___ three chairs in the room.",["is","are","be"],1],["Which one is a fruit?",["carrot","bread","apple"],2],["I was born ___ 1990.",["in","on","at"],0],["The meeting is ___ Monday.",["in","on","at"],1],["Yesterday I ___ to the market.",["goed","go","went"],2],["___ do you live? In Hackney.",["Where","What","Who"],0],["She is ___ than her brother.",["tall","taller","tallest"],1],["Can you ___ English?",["speaks","speaking","speak"],2],["The shop opens ___ 9am.",["at","in","on"],0],["Which word is a verb?",["blue","run","table"],1],["I ___ hungry now.",["is","are","am"],2]];
+const QH=[["If it rains, we ___ at home.",["will stay","stayed","stays"],0],["I have lived here ___ 2019.",["for","since","from"],1],["The letter ___ yesterday.",["sent","is send","was sent"],2],["He's the man ___ helped me.",["who","which","where"],0],["You ___ wear a seatbelt. It's the law.",["might","must","could"],1],["'Punctual' means…",["polite","quiet","on time"],2],["Which spelling is correct?",["accommodation","acommodation","accomodation"],0],["I'm looking forward ___ you.",["to see","to seeing","seeing"],1],["Have you ever ___ to Scotland?",["went","go","been"],2],["When we arrived, the film ___ already started.",["had","has","was"],0],["'Frightened' means…",["tired","scared","bored"],1],["Which sentence is correct?",["She don't like it.","She not like it.","She doesn't like it."],2],["I would buy a car if I ___ more money.",["had","have","will have"],0],["I was tired, ___ I went to bed early.",["but","so","although"],1],["Which word means 'make something work again'?",["remove","replace","repair"],2],["She has been waiting ___ two hours.",["for","since","during"],0],["The opposite of 'cheap' is…",["free","expensive","low"],1],["Choose the polite request.",["Give me the form.","I want the form.","Could I have the form, please?"],2]];
+let usedQ=new Set(),rescues=0;
+function pickQ(hard){const pool=(hard?QH:QE).map((q,i)=>[q,(hard?'h':'e')+i]).filter(([,id])=>!usedQ.has(id));
+  const list=pool.length?pool:(hard?QH:QE).map((q,i)=>[q,(hard?'h':'e')+i]);const [q,id]=list[Math.random()*list.length|0];usedQ.add(id);return q}
+function chance(){state='ask';$('startBtn').hidden=true;$('ovT').textContent='Second chance!';
+  $('ovP').textContent='Answer a question to keep playing.';const ch=$('choices');ch.hidden=false;ch.replaceChildren();
+  [['Easy – clear 3 lines',false],['Hard – clear ALL lines',true]].forEach(([t,h])=>{const b=document.createElement('button');b.textContent=t;b.onclick=()=>ask(h);ch.append(b)});
+  const g=document.createElement('button');g.className='alt';g.textContent='No thanks – end game';g.onclick=()=>{ch.hidden=true;$('startBtn').hidden=false;endGame()};ch.append(g);$('ov').hidden=false}
+function ask(hard){const [q,opts,ans]=pickQ(hard);$('ovT').textContent=hard?'Hard question':'Easy question';
+  $('ovP').innerHTML='';const p=document.createElement('span');p.className='q';p.textContent=q;$('ovP').append(p);
+  const ch=$('choices');ch.replaceChildren();
+  opts.forEach((o,i)=>{const b=document.createElement('button');b.className='alt';b.textContent=o;b.onclick=()=>{
+    [...ch.children].forEach(x=>x.disabled=true);
+    if(i===ans){b.className='ok';setTimeout(()=>rescue(hard),700)}
+    else{b.className='no';ch.children[ans].className='ok';setTimeout(()=>{ch.hidden=true;$('startBtn').hidden=false;endGame('The answer was: '+opts[ans])},1400)}};ch.append(b)})}
+function rescue(hard){rescues++;const n=hard?H:3;
+  for(let k=0;k<n;k++){grid.pop();grid.unshift(Array(W).fill(null))}
+  $('choices').hidden=true;$('startBtn').hidden=false;$('ov').hidden=true;state='rescue';spawn();
+  if(state!=='rescue')return;state='play';hud();acc=0;last=performance.now();requestAnimationFrame(loop)}
+
+function reset(){usedQ=new Set();rescues=0;grid=Array.from({length:H},()=>Array(W).fill(null));bag=[];nextQ=take();holdT=null;
   score=0;lines=0;level=1;spawn();hud()}
 function spawn(){cur=piece(nextQ);nextQ=take();canHold=true;if(!fits(cur.m,cur.x,cur.y))over()}
 function speed(){return Math.max(60,800-(level-1)*70)}
@@ -137,8 +163,9 @@ function loop(t){if(state!=='play')return;acc+=t-last;last=t;
 function start(){reset();state='play';$('ov').hidden=true;acc=0;last=performance.now();requestAnimationFrame(loop)}
 function pause(){if(state==='play'){state='pause';show('Paused','Press P or tap Resume.','Resume')}
   else if(state==='pause'){state='play';$('ov').hidden=true;last=performance.now();requestAnimationFrame(loop)}}
-function over(){state='over';if(score>best){best=score;try{localStorage.setItem('bd-best',best)}catch(e){}$('best').textContent=best}
-  show('Game over',`Score ${score} · ${lines} lines`,'Play again')}
+function over(){if(state==='ask')return;state='over';draw();chance()}
+function endGame(extra){state='over';if(score>best){best=score;try{localStorage.setItem('bd-best',best)}catch(e){}$('best').textContent=best}
+  show('Game over',(extra?extra+' · ':'')+`Score ${score} · ${lines} lines · ${rescues} rescue${rescues===1?'':'s'}`,'Play again')}
 function show(t,p,b){$('ovT').textContent=t;$('ovP').textContent=p;$('startBtn').textContent=b;$('ov').hidden=false}
 
 $('startBtn').onclick=()=>state==='pause'?pause():start();
@@ -146,7 +173,7 @@ function act(k){if(state!=='play')return;({L:()=>move(-1,0),R:()=>move(1,0),U:ro
 addEventListener('keydown',e=>{
   const map={ArrowLeft:'L',ArrowRight:'R',ArrowUp:'U',ArrowDown:'D',' ':'H',c:'C',C:'C',x:'U',X:'U'};
   if(e.key==='p'||e.key==='P'||e.key==='Escape'){pause();return}
-  if((e.key==='Enter'||e.key===' ')&&(state==='idle'||state==='over')){e.preventDefault();start();return}
+  if((e.key==='Enter'||e.key===' ')&&(state==='idle'||state==='over')&&$('choices').hidden){e.preventDefault();start();return}
   if(map[e.key]){e.preventDefault();act(map[e.key])}});
 [['bL','L'],['bR','U'],['bRt','R'],['bD','D'],['bH','H'],['bC','C']].forEach(([id,k])=>{
   const b=$(id);let t;b.addEventListener('pointerdown',e=>{e.preventDefault();act(k);
