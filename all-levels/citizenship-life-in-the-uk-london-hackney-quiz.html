@@ -1,0 +1,62 @@
+<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ESOL Citizenship – Life in the UK, London &amp; Hackney – Quiz</title>
+<style>
+:root{--ink:#1F2A44;--bg:#FAF7F0;--card:#FFFDF8;--line:#E2DCCF;--uk:#B3202E;--lon:#1F5FAD;--hac:#1E7A4F;--ok:#1b7a3d;--bad:#b3261e}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:20px/1.4 Verdana,Arial,sans-serif;min-height:100vh}
+.wrap{max-width:1100px;margin:0 auto;padding:28px 20px 110px}
+.pill{display:inline-block;color:#fff;font-weight:800;padding:6px 18px;border-radius:30px;font-size:.8rem}
+h1{font-size:clamp(2rem,6vw,4rem);margin:.4em 0 .2em}h2{font-size:clamp(1.5rem,4vw,2.6rem);margin:.6em 0 1em;line-height:1.2}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:16px}@media(max-width:700px){.opts{grid-template-columns:1fr}}
+.opt{display:flex;align-items:center;gap:16px;background:var(--card);border:3px solid var(--line);border-radius:18px;padding:16px 20px;font:700 clamp(1.1rem,2.6vw,1.7rem) Verdana,Arial,sans-serif;color:var(--ink);cursor:pointer;text-align:left}
+.opt b{flex:none;width:2.4em;height:2.4em;border-radius:50%;background:var(--c);color:#fff;display:flex;align-items:center;justify-content:center}
+.opt:focus-visible,.btn:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.opt.ok{background:#e3f4e9;border-color:var(--ok)}.opt.no{background:#fbe4e2;border-color:var(--bad);text-decoration:line-through}.opt.dim{opacity:.55}
+.fb{min-height:3em;font-weight:700;margin-top:18px;font-size:1.1rem}
+.bar{display:flex;gap:12px;align-items:center;justify-content:space-between;margin-top:18px;color:#5A6378;font-size:.9rem}
+.btn{font:700 1rem Verdana,Arial,sans-serif;background:var(--ink);color:#fff;border:0;border-radius:12px;padding:12px 26px;cursor:pointer}
+.btn[hidden]{display:none}
+table{border-collapse:collapse;width:100%;font-size:1rem}td{padding:6px 10px;border-bottom:1px solid var(--line)}
+.atin-logo{position:fixed;left:calc(6px + env(safe-area-inset-left,0px));bottom:calc(6px + env(safe-area-inset-bottom,0px));z-index:2147483000;pointer-events:none;color:#1F3A5F;background:rgba(255,255,255,.92);border:1px solid #C9D3DF;border-radius:8px;padding:3px 5px;line-height:0}
+.atin-logo svg{display:block}
+@media print{.atin-logo{position:fixed;left:auto;right:6mm;bottom:5mm;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
+</style></head><body><div class="wrap">
+<div id="app"></div>
+<div class="atin-logo" aria-label="Made by Atin">
+<svg viewBox="104 28 172 134" width="64" height="50" role="img" aria-hidden="true">
+<text x="139" y="112" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="72" fill="currentColor">A</text>
+<rect x="177" y="83" width="24" height="6" rx="1" fill="currentColor"/>
+<path d="M216 66 L216 106 A25 7 0 0 0 266 106 L266 66" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+<ellipse cx="241" cy="66" rx="25" ry="7" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="216" y1="80" x2="266" y2="80" stroke="currentColor" stroke-width="1.5"/>
+<line x1="216" y1="94" x2="266" y2="94" stroke="currentColor" stroke-width="1.5"/>
+<ellipse cx="241" cy="47" rx="23" ry="5" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="114" y1="128" x2="266" y2="128" stroke="currentColor" stroke-width="1"/>
+<text x="190" y="152" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" letter-spacing="2" fill="currentColor">made by Atin</text>
+</svg>
+</div>
+</div>
+<script>
+const Q=[{"s": "UK", "q": "What is the capital city of the UK?", "o": ["Manchester", "London", "Edinburgh", "Cardiff"], "a": 1, "n": ""}, {"s": "UK", "q": "How many countries are in the UK?", "o": ["2", "3", "4", "5"], "a": 2, "n": "England, Scotland, Wales and Northern Ireland."}, {"s": "UK", "q": "Which country is part of the UK?", "o": ["France", "Spain", "Portugal", "Wales"], "a": 3, "n": ""}, {"s": "UK", "q": "What money do we use in the UK?", "o": ["Pounds", "Euros", "Dollars", "Francs"], "a": 0, "n": ""}, {"s": "UK", "q": "What number do you call in an emergency?", "o": ["111", "101", "100", "999"], "a": 3, "n": "101 is the police non-emergency number."}, {"s": "UK", "q": "You feel ill but it's not an emergency. What number can you call?", "o": ["999", "111", "100", "123"], "a": 1, "n": "NHS 111 for medical help that is not an emergency."}, {"s": "UK", "q": "Who is the head of state in the UK?", "o": ["The Prime Minister", "The Mayor of London", "King Charles III", "The Archbishop of Canterbury"], "a": 2, "n": ""}, {"s": "UK", "q": "In November, people wear a red flower to remember soldiers. What is it?", "o": ["A rose", "A tulip", "A daisy", "A poppy"], "a": 3, "n": "For Remembrance Day, 11 November."}, {"s": "UK", "q": "When is Bonfire Night?", "o": ["25 December", "5 November", "1 January", "14 February"], "a": 1, "n": ""}, {"s": "UK", "q": "Which side of the road do people drive on in the UK?", "o": ["Left", "Right", "Middle", "Either side"], "a": 0, "n": ""}, {"s": "London", "q": "Which river goes through London?", "o": ["The Severn", "The Clyde", "The Thames", "The Mersey"], "a": 2, "n": ""}, {"s": "London", "q": "What do people call the London Underground?", "o": ["The Metro", "The Tube", "The Subway", "The Line"], "a": 1, "n": ""}, {"s": "London", "q": "What is Big Ben?", "o": ["A bridge", "A park", "A palace", "A big bell"], "a": 3, "n": "The bell in the clock tower at the Houses of Parliament."}, {"s": "London", "q": "Where is the UK Parliament?", "o": ["Camden", "Westminster", "Greenwich", "Hackney"], "a": 1, "n": ""}, {"s": "London", "q": "Which big street party happens in Notting Hill every August?", "o": ["A marathon", "A flower show", "A carnival", "A boat race"], "a": 2, "n": "Notting Hill Carnival, August bank holiday weekend."}, {"s": "Hackney", "q": "Hackney is in which part of London?", "o": ["North-west", "South", "West", "East"], "a": 3, "n": ""}, {"s": "Hackney", "q": "Hackney Marshes is famous for...", "o": ["Football pitches", "Shopping centres", "Museums", "Hotels"], "a": 0, "n": "Sunday league football."}, {"s": "Hackney", "q": "Ridley Road Market is in...", "o": ["Shoreditch", "Clapton", "Dalston", "Camden"], "a": 2, "n": ""}, {"s": "Hackney", "q": "The Hackney Empire on Mare Street is a...", "o": ["Theatre", "Shopping centre", "Library", "Hospital"], "a": 0, "n": ""}, {"s": "Hackney", "q": "What is London Fields Lido?", "o": ["A cinema", "A café", "A library", "An outdoor swimming pool"], "a": 3, "n": ""}];const C={UK:'var(--uk)',London:'var(--lon)',Hackney:'var(--hac)'};
+let i=-1,score=0,done=false;const app=document.getElementById('app');
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+function cover(){app.innerHTML=`<span class="pill" style="background:var(--uk)">UK</span> <span class="pill" style="background:var(--lon)">London</span> <span class="pill" style="background:var(--hac)">Hackney</span>
+<h1>Life in the UK Quiz</h1><p>20 questions. Choose A, B, C or D. Work in pairs or small groups: read the question aloud, talk for 30 seconds, then choose.</p><button class="btn" id="go">Start</button>`;
+document.getElementById('go').onclick=()=>{i=0;score=0;show()}}
+function show(){const q=Q[i],c=C[q.s];done=false;
+app.innerHTML=`<span class="pill" style="background:${c}">${q.s} · Question ${i+1}</span><h2>${esc(q.q)}</h2>
+<div class="opts" style="--c:${c}">${q.o.map((t,k)=>`<button class="opt" data-k="${k}"><b>${'ABCD'[k]}</b><span>${esc(t)}</span></button>`).join('')}</div>
+<div class="fb" id="fb" aria-live="polite"></div><div class="bar"><span>${i+1} / ${Q.length} · Score ${score}</span><button class="btn" id="nx" hidden>${i==Q.length-1?'Finish':'Next'}</button></div>`;
+app.querySelectorAll('.opt').forEach(b=>b.onclick=()=>pick(+b.dataset.k));
+document.getElementById('nx').onclick=()=>{i++;i<Q.length?show():end()}}
+function pick(k){if(done)return;done=true;const q=Q[i];const bs=app.querySelectorAll('.opt');
+bs.forEach((b,j)=>{if(j===q.a)b.classList.add('ok');else if(j===k)b.classList.add('no');else b.classList.add('dim')});
+if(k===q.a)score++;
+document.getElementById('fb').textContent=(k===q.a?'Correct! ':'Not quite. The answer is '+'ABCD'[q.a]+'. ')+(q.n||'');
+document.getElementById('nx').hidden=false;document.getElementById('nx').focus()}
+function end(){app.innerHTML=`<h1>Your score: ${score} / ${Q.length}</h1><table>${Q.map((q,k)=>`<tr><td>${k+1}.</td><td>${'ABCD'[q.a]} – ${esc(q.o[q.a])}</td></tr>`).join('')}</table><p><button class="btn" id="again">Play again</button></p>`;
+document.getElementById('again').onclick=cover}
+document.addEventListener('keydown',e=>{const k='abcd'.indexOf(e.key.toLowerCase());if(i>=0&&i<Q.length&&k>-1&&e.key.length==1&&!done)pick(k);
+if((e.key==='Enter'||e.key==='ArrowRight')&&done){const n=document.getElementById('nx');if(n&&!n.hidden)n.click()}});
+cover();
+</script></body></html>

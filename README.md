@@ -10,6 +10,7 @@ Each level has three strands: Reading, Writing, Speaking & Listening.
 - [E1–L2 Speaking & Listening – ESB Exam Tasks 1–4 – Interactive Quiz](all-levels/speaking-listening-esb-exam-tasks-1-4-quiz.html)
 - [ESOL Speaking – Task 2 Talk Builder (E1–L2)](all-levels/speaking-task2-talk-builder.html)
 - [ESOL All Levels – Classroom Tool – A–D / 1–4 Vote Card](all-levels/classroom-tool-vote-card.html)
+- [ESOL Citizenship – Life in the UK, London & Hackney – Quiz](all-levels/citizenship-life-in-the-uk-london-hackney-quiz.html)
 
 ## e1/speaking-listening
 - [E1 & E2 Speaking – Task 1 Talk About You – Put It in Order](e1/speaking-listening/task1-talk-about-you-put-it-in-order.html)
@@ -98,6 +99,7 @@ Word documents:
 - [E3 & L1 Reading – Freecycle – Comprehension Quiz](e3/reading/wk05-freecycle-comprehension-quiz.html)
 - [E3 Reading – Hackney Leaflet, Email & Review – Practice Questions](e3/reading/wk06-hackney-leaflet-email-review-practice.html)
 - [E3 Reading – Graffiti Warning – Mixed Tenses Online Lesson](e3/reading/wk07-graffiti-warning-mixed-tenses-online-lesson.html)
+- [E3 Mixed Tenses – Graffiti Notice – Multiple Choice Poster](e3/reading/wk07-graffiti-notice-multiple-choice-poster.html) · [answer key (teacher)](e3/reading/wk07-graffiti-notice-multiple-choice-answer-key-teacher.html)
 - [E3 Mixed Tenses – Graffiti News – Error Hunt](e3/reading/wk08-graffiti-news-error-hunt.html)
 - [E3 Reading – ESB Mock Exam – Set O](e3/reading/wk08-esb-mock-exam-set-o.html)
 - [E3 Reading Skills – Hackney Bugle](e3/reading/wk17-reading-skills-hackney-bugle.html)

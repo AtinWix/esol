@@ -1,0 +1,47 @@
+<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>E3 Mixed Tenses – Graffiti Notice – Multiple Choice Poster</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#c9cdd2;font:18px/1.5 Arial,Helvetica,sans-serif;color:#111;padding:20px 12px 100px}
+.paper{max-width:1000px;margin:0 auto;background:#fff;box-shadow:0 10px 26px rgba(0,0,0,.18);padding:30px clamp(16px,5vw,56px) 24px;position:relative}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;border-bottom:2px solid #111;padding-bottom:8px;font-weight:700}
+.top span:first-child{text-transform:uppercase;letter-spacing:.08em;font-size:.85rem}
+h1{font:400 clamp(1.8rem,5vw,2.4rem) 'Arial Black',Arial,sans-serif;text-transform:uppercase;text-decoration:underline;text-decoration-thickness:4px;text-underline-offset:8px;text-align:center;margin:18px 0}
+.txt{font-size:clamp(1.1rem,2.4vw,1.3rem);line-height:1.9;text-align:center}.txt p{margin:.4em 0}
+.stop{font:400 1.5rem 'Arial Black',Arial,sans-serif;text-transform:uppercase;color:#c8223a}
+button.o{font:inherit;font-size:1.05rem;margin:2px;padding:4px 10px;border:2px solid #111;border-radius:6px;background:#fff;color:#111;cursor:pointer;min-height:36px}
+button.o.ok{background:#1b7a3d;border-color:#1b7a3d;color:#fff;font-weight:700}button.o.no{background:#fbe4e2;border-color:#b3261e;color:#b3261e;text-decoration:line-through}button.o.dim{border:2px dashed #b8bcc0;color:#9aa0a6}
+button.r{font:700 .9rem Arial;border:2px solid #111;background:#fff;border-radius:6px;padding:6px 12px;cursor:pointer;min-height:36px}
+.well{color:#1b7a3d;font-weight:700}
+.atin-logo{position:fixed;left:calc(6px + env(safe-area-inset-left,0px));bottom:calc(6px + env(safe-area-inset-bottom,0px));z-index:2147483000;pointer-events:none;color:#1F3A5F;background:rgba(255,255,255,.92);border:1px solid #C9D3DF;border-radius:8px;padding:3px 5px;line-height:0}
+.atin-logo svg{display:block}
+@media print{.atin-logo{position:fixed;left:auto;right:6mm;bottom:5mm;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+
+</style></head><body><div class="paper">
+<div class="top"><span>Task 7 · E3 Mixed tenses</span><span>Score: <span id="sc">0</span> / 6 <button class="r" id="rs">Start again</button></span></div>
+<p><b>Click the correct tense.</b> Look for the time clue: <i>since</i>, <i>every</i>, <i>already</i>, <i>last</i>, <i>next</i>.</p>
+<h1>To the graffiti artist</h1><div class="txt" id="t"></div>
+<div class="atin-logo" aria-label="Made by Atin">
+<svg viewBox="104 28 172 134" width="64" height="50" role="img" aria-hidden="true">
+<text x="139" y="112" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="72" fill="currentColor">A</text>
+<rect x="177" y="83" width="24" height="6" rx="1" fill="currentColor"/>
+<path d="M216 66 L216 106 A25 7 0 0 0 266 106 L266 66" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+<ellipse cx="241" cy="66" rx="25" ry="7" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="216" y1="80" x2="266" y2="80" stroke="currentColor" stroke-width="1.5"/>
+<line x1="216" y1="94" x2="266" y2="94" stroke="currentColor" stroke-width="1.5"/>
+<ellipse cx="241" cy="47" rx="23" ry="5" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="114" y1="128" x2="266" y2="128" stroke="currentColor" stroke-width="1"/>
+<text x="190" y="152" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" letter-spacing="2" fill="currentColor">made by Atin</text>
+</svg>
+</div>
+</div>
+<script>
+const S=[{"pre": "This", "post": "our family shop since 2015.", "o": ["is", "was", "has been", "will be"], "a": 2}, {"pre": "Every morning I", "post": "it at 8 o'clock.", "o": ["will open", "open", "opened", "have opened"], "a": 1}, {"pre": "You", "post": "our shutter five times this year.", "o": ["painted", "paint", "will paint", "have already painted"], "a": 3}, {"pre": "Last week we", "post": "£200 to clean it.", "o": ["have paid", "will pay", "paid", "pay"], "a": 2}, {"pre": "We are a small business, and we", "post": "any trouble.", "o": ["don't want", "haven't wanted", "didn't want", "won't want"], "a": 0}, {"pre": "Next time, we", "post": "our CCTV video to the police.", "o": ["gave", "have given", "give", "will give"], "a": 3}];let p={};const t=document.getElementById('t');
+function draw(){let h='';S.forEach((s,si)=>{
+h+=`<p>${s.pre} ${s.o.map((x,oi)=>{let c='o';if(p[si]===oi)c+=oi===s.a?' ok':' no';else if(p[si]===s.a)c+=' dim';return `<button class="${c}" data-s="${si}" data-o="${oi}">${x.replace(/</g,'&lt;')}</button>`}).join('')} ${s.post}</p>`;
+if(si===4)h+='<p class="stop">Please stop.</p>'});
+h+='<p>Thank you, <b>The shop owner</b></p>';const n=S.filter((s,i)=>p[i]===s.a).length;
+if(n===6)h+='<p class="well">Well done! All 6 correct.</p>';
+t.innerHTML=h;document.getElementById('sc').textContent=n;
+t.querySelectorAll('button').forEach(b=>b.onclick=()=>{const si=+b.dataset.s;if(p[si]===S[si].a)return;p[si]=+b.dataset.o;draw()})}
+document.getElementById('rs').onclick=()=>{p={};draw()};draw();
+</script></body></html>
