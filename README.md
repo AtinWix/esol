@@ -147,3 +147,4 @@ Word documents:
 - [Grammar Blast](games/grammar-blast.html)
 - [Verb Catcher](games/verb-catcher.html)
 - [Block Drop (work in progress)](games/block-drop.html)
+- [Phone Games – Scan and Play (QR codes for early finishers)](games/phone-games-qr.html)

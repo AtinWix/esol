@@ -1,0 +1,63 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>ESOL Phone Games – Scan and Play</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;800&display=swap">
+<style>
+/* Layout: one projector-friendly screen; a card per game with a big QR code, title and one-line description. */
+:root{--bg:#eef1f5;--card:#ffffff;--ink:#16243a;--muted:#55627a;--line:#d3dae5;--accent:#e2552d;--font:"Lexend",Verdana,Arial,sans-serif;color-scheme:light}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+main{max-width:1200px;margin:0 auto;padding-block:24px 80px;display:flex;flex-direction:column;gap:20px}
+h1{font-size:clamp(28px,4.5vw,52px);font-weight:800;margin:0;text-wrap:balance}
+.sub{font-size:clamp(16px,2vw,24px);color:var(--muted);margin:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.card{background:var(--card);border:2px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;min-width:0}
+.qr{background:#fff;padding:10px;border-radius:10px;line-height:0}
+.qr img,.qr canvas{width:220px;height:220px;max-width:100%}
+.card h2{font-size:28px;margin:0}
+.card p{font-size:18px;color:var(--muted);margin:0}
+.card a{font-size:16px;color:var(--accent);font-weight:600;word-break:break-all}
+.card a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+</style>
+<main>
+  <h1>Finished? Scan and play!</h1>
+  <p class="sub">Open your phone camera, point it at a code, and tap the link.</p>
+  <div class="grid" id="grid"></div>
+</main>
+<div class="atin-logo" aria-label="Made by Atin">
+<svg viewBox="104 28 172 134" width="64" height="50" role="img" aria-hidden="true">
+<text x="139" y="112" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="72" fill="currentColor">A</text>
+<rect x="177" y="83" width="24" height="6" rx="1" fill="currentColor"/>
+<path d="M216 66 L216 106 A25 7 0 0 0 266 106 L266 66" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+<ellipse cx="241" cy="66" rx="25" ry="7" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="216" y1="80" x2="266" y2="80" stroke="currentColor" stroke-width="1.5"/>
+<line x1="216" y1="94" x2="266" y2="94" stroke="currentColor" stroke-width="1.5"/>
+<ellipse cx="241" cy="47" rx="23" ry="5" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="114" y1="128" x2="266" y2="128" stroke="currentColor" stroke-width="1"/>
+<text x="190" y="152" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" letter-spacing="2" fill="currentColor">made by Atin</text>
+</svg>
+</div>
+<style>
+.atin-logo{position:fixed;left:calc(6px + env(safe-area-inset-left,0px));bottom:calc(6px + env(safe-area-inset-bottom,0px));z-index:2147483000;pointer-events:none;color:#1F3A5F;background:rgba(255,255,255,.92);border:1px solid #C9D3DF;border-radius:8px;padding:3px 5px;line-height:0}
+.atin-logo svg{display:block}
+@media print{.atin-logo{position:fixed;left:auto;right:6mm;bottom:5mm;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+const BASE="https://atinwix.github.io/esol/games/";
+const GAMES=[
+ ["grammar-blast.html","Grammar Blast","Shoot the right grammar. All levels."],
+ ["verb-catcher.html","Verb Catcher","Catch the verbs. All levels."],
+ ["block-drop.html","Block Drop","Drop and fit the blocks."]
+];
+const grid=document.getElementById("grid");
+GAMES.forEach(([f,t,d])=>{
+  const c=document.createElement("div");c.className="card";
+  const q=document.createElement("div");q.className="qr";
+  const h=document.createElement("h2");h.textContent=t;
+  const p=document.createElement("p");p.textContent=d;
+  const a=document.createElement("a");a.href=BASE+f;a.textContent=BASE.replace("https://","")+f;a.target="_blank";a.rel="noopener";
+  c.append(q,h,p,a);grid.append(c);
+  try{new QRCode(q,{text:BASE+f,width:220,height:220,correctLevel:QRCode.CorrectLevel.M})}catch(e){q.textContent="";}
+});
+</script>
+</body></html>
