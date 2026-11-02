@@ -1,0 +1,11 @@
+# ESOL Library – rules for adding or changing materials
+
+The home page (`index.html`) and `README.md` are GENERATED. Never edit them by hand.
+
+To add, rename or remove anything in the library:
+1. Put the file in `<level>/<skill>/` (online pages) or `<level>/<skill>/docs/` (Word + PDF with the same name).
+2. Add an entry to the lists in the AtinWix/personal repo: `tools/esol.json` for online pages (id, folder, path, title, note, claude) or `tools/docs.json` for Word documents (folder, path, title).
+3. Copy `esol.json`, `docs.json` and `logo.html` to `/home/claude/build/` (or fix the paths in the script), then run `python3 <personal>/tools/home.py`. It rebuilds `index.html` and `README.md`, including the "Report a problem" links (they email Atin via `r.html`).
+4. If home.py stops with "items are on the library page but missing", add those items to the lists – never use `--force` unless Atin asked for them to be removed.
+5. Commit and push BOTH repos (esol and personal), so the lists and the page stay in step.
+6. Update Atin's ESOL Materials Catalogue artifact as well.
