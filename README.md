@@ -18,6 +18,8 @@ Each level has three strands: Reading, Writing, Speaking & Listening.
 Word documents:
 - [Too Cold to Learn – complaint emails – plan and answers (teacher)](all-levels/docs/complaint-email-too-cold-to-learn-teacher-plan.pdf) (PDF) · [Word](all-levels/docs/complaint-email-too-cold-to-learn-teacher-plan.docx)
 - [Too Cold to Learn – classroom writing frames E1–L1](all-levels/docs/complaint-email-too-cold-to-learn-writing-frames.pdf) (PDF) · [Word](all-levels/docs/complaint-email-too-cold-to-learn-writing-frames.docx)
+- [Induction E2/E3 – classroom rules and safety words – preteaching (before the RARPA form) – answers (teacher)](all-levels/docs/induction-e2-e3-classroom-rules-and-safety-words-preteaching-answers.pdf) (PDF) · [Word](all-levels/docs/induction-e2-e3-classroom-rules-and-safety-words-preteaching-answers.docx)
+- [Induction E2/E3 – classroom rules and safety words – preteaching (before the RARPA form)](all-levels/docs/induction-e2-e3-classroom-rules-and-safety-words-preteaching.pdf) (PDF) · [Word](all-levels/docs/induction-e2-e3-classroom-rules-and-safety-words-preteaching.docx)
 
 ## e1/speaking-listening
 - [E1 & E2 Speaking – Task 1 Talk About You – Put It in Order](e1/speaking-listening/task1-talk-about-you-put-it-in-order.html)
@@ -29,8 +31,12 @@ Word documents:
 - [E1 & E2 Listening – Task 4 – Put It in Order](e1/speaking-listening/task4-listening-put-it-in-order.html)
 
 Word documents:
+- [Induction – timetable, classroom and safety words – preteaching (before the RARPA form)](e1/speaking-listening/docs/induction-timetable-classroom-and-safety-words-preteaching.pdf) (PDF) · [Word](e1/speaking-listening/docs/induction-timetable-classroom-and-safety-words-preteaching.docx)
 - [Quiet tasks – mixed skills worksheet](e1/speaking-listening/docs/quiet-tasks-mixed-skills-worksheet.pdf) (PDF) · [Word](e1/speaking-listening/docs/quiet-tasks-mixed-skills-worksheet.docx)
+- [Task 1 Personal information – exam conversation gap-fill](e1/speaking-listening/docs/task1-personal-information-exam-conversation-gap-fill.pdf) (PDF) · [Word](e1/speaking-listening/docs/task1-personal-information-exam-conversation-gap-fill.docx)
 - [Task 3 Describe the photo – model scripts](e1/speaking-listening/docs/task3-describe-the-photo-model-scripts.pdf) (PDF) · [Word](e1/speaking-listening/docs/task3-describe-the-photo-model-scripts.docx)
+- [Task 3 Describe the Picture – four pictures (kitchen, park, bus stop, classroom) – worksheets – answers (teacher)](e1/speaking-listening/docs/task3-describe-the-picture-four-pictures-worksheets-answers.pdf) (PDF) · [Word](e1/speaking-listening/docs/task3-describe-the-picture-four-pictures-worksheets-answers.docx)
+- [Task 3 Describe the Picture – four pictures (kitchen, park, bus stop, classroom) – worksheets](e1/speaking-listening/docs/task3-describe-the-picture-four-pictures-worksheets.pdf) (PDF) · [Word](e1/speaking-listening/docs/task3-describe-the-picture-four-pictures-worksheets.docx)
 - [Task 3 In the Kitchen – questions and answers – answers (teacher)](e1/speaking-listening/docs/task3-in-the-kitchen-questions-and-answers-answers.pdf) (PDF) · [Word](e1/speaking-listening/docs/task3-in-the-kitchen-questions-and-answers-answers.docx)
 - [Task 3 In the Kitchen – questions and answers](e1/speaking-listening/docs/task3-in-the-kitchen-questions-and-answers.pdf) (PDF) · [Word](e1/speaking-listening/docs/task3-in-the-kitchen-questions-and-answers.docx)
 - [Task 4 Listening – recording transcripts (teacher)](e1/speaking-listening/docs/task4-listening-recording-transcripts-teacher.pdf) (PDF) · [Word](e1/speaking-listening/docs/task4-listening-recording-transcripts-teacher.docx)
@@ -71,8 +77,14 @@ Word documents:
 Word documents:
 - [ESB exam prep, all tasks – lesson plan and answers](e2/speaking-listening/docs/esb-exam-prep-all-tasks-lesson-plan-and-answers.pdf) (PDF) · [Word](e2/speaking-listening/docs/esb-exam-prep-all-tasks-lesson-plan-and-answers.docx)
 - [ESB exam prep, all tasks – student handouts](e2/speaking-listening/docs/esb-exam-prep-all-tasks-student-handouts.pdf) (PDF) · [Word](e2/speaking-listening/docs/esb-exam-prep-all-tasks-student-handouts.docx)
+- [ESB exam Tasks 1–4 – practice worksheet – answers and listening script (teacher)](e2/speaking-listening/docs/esb-exam-tasks-1-4-practice-student-worksheet-answers.pdf) (PDF) · [Word](e2/speaking-listening/docs/esb-exam-tasks-1-4-practice-student-worksheet-answers.docx)
+- [ESB exam Tasks 1–4 – practice worksheet](e2/speaking-listening/docs/esb-exam-tasks-1-4-practice-student-worksheet.pdf) (PDF) · [Word](e2/speaking-listening/docs/esb-exam-tasks-1-4-practice-student-worksheet.docx)
+- [Past simple – more practice (irregular verbs, negatives, time words, questions, mistake hunt) – answers (teacher)](e2/speaking-listening/docs/past-simple-more-practice-verbs-negatives-time-words-questions-answers.pdf) (PDF) · [Word](e2/speaking-listening/docs/past-simple-more-practice-verbs-negatives-time-words-questions-answers.docx)
+- [Past simple – more practice (irregular verbs, negatives, time words, questions, mistake hunt)](e2/speaking-listening/docs/past-simple-more-practice-verbs-negatives-time-words-questions.pdf) (PDF) · [Word](e2/speaking-listening/docs/past-simple-more-practice-verbs-negatives-time-words-questions.docx)
 - [Past simple Tasks 1–2 – worksheets – answers (teacher)](e2/speaking-listening/docs/past-simple-tasks1-2-worksheets-answers.pdf) (PDF) · [Word](e2/speaking-listening/docs/past-simple-tasks1-2-worksheets-answers.docx)
 - [Past simple Tasks 1–2 – worksheets](e2/speaking-listening/docs/past-simple-tasks1-2-worksheets.pdf) (PDF) · [Word](e2/speaking-listening/docs/past-simple-tasks1-2-worksheets.docx)
+- [Task 2 Talk about your day – Leila's day – ordering and cut-out cards – answers (teacher)](e2/speaking-listening/docs/task2-leilas-day-ordering-and-cut-out-cards-answers.pdf) (PDF) · [Word](e2/speaking-listening/docs/task2-leilas-day-ordering-and-cut-out-cards-answers.docx)
+- [Task 2 Talk about your day – Leila's day – ordering and cut-out cards](e2/speaking-listening/docs/task2-leilas-day-ordering-and-cut-out-cards.pdf) (PDF) · [Word](e2/speaking-listening/docs/task2-leilas-day-ordering-and-cut-out-cards.docx)
 - [Lesson 1: Personal information and the short talk – student handouts](e2/speaking-listening/exam-prep/lesson-01-handouts.pdf) (PDF) · [Word](e2/speaking-listening/exam-prep/lesson-01-handouts.docx)
 - [Lesson 1: Personal information and the short talk – plan and answers](e2/speaking-listening/exam-prep/lesson-01-plan.pdf) (PDF) · [Word](e2/speaking-listening/exam-prep/lesson-01-plan.docx)
 - [Lesson 2: Describing people, places and things – student handouts](e2/speaking-listening/exam-prep/lesson-02-handouts.pdf) (PDF) · [Word](e2/speaking-listening/exam-prep/lesson-02-handouts.docx)
