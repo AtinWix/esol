@@ -13,6 +13,12 @@ Each level has three strands: Reading, Writing, Speaking & Listening.
 - [ESOL Speaking – Task 2 Talk Builder (E1–L2)](all-levels/speaking-task2-talk-builder.html)
 - [ESOL All Levels – Classroom Tool – A–D / 1–4 Vote Card](all-levels/classroom-tool-vote-card.html)
 - [ESOL Citizenship – Life in the UK, London & Hackney – Quiz](all-levels/citizenship-life-in-the-uk-london-hackney-quiz.html)
+- [ESOL All Levels – Too Cold to Learn – Complaint Emails – PC Room Lesson](all-levels/complaint-email-too-cold-to-learn.html)
+
+Word documents:
+- [Too Cold to Learn – complaint emails – plan and answers (teacher)](all-levels/docs/complaint-email-too-cold-to-learn-teacher-plan.pdf) (PDF) · [Word](all-levels/docs/complaint-email-too-cold-to-learn-teacher-plan.docx)
+- [Too Cold to Learn – classroom writing frames E1–L1](all-levels/docs/complaint-email-too-cold-to-learn-writing-frames.pdf) (PDF) · [Word](all-levels/docs/complaint-email-too-cold-to-learn-writing-frames.docx)
+- [Too Cold to Learn – Kahoot import file](all-levels/docs/complaint-email-too-cold-to-learn-kahoot.xlsx) (Excel)
 
 ## e1/speaking-listening
 - [E1 & E2 Speaking – Task 1 Talk About You – Put It in Order](e1/speaking-listening/task1-talk-about-you-put-it-in-order.html)
@@ -106,8 +112,10 @@ Word documents:
 - [E3 Reading – ESB Mock Exam – Set O](e3/reading/wk08-esb-mock-exam-set-o.html)
 - [E3 Reading Skills – Hackney Bugle](e3/reading/wk17-reading-skills-hackney-bugle.html)
 - [E3 Reading – Purpose, Pronouns & Word Meaning – Projector Lesson](e3/reading/wk08-purpose-pronouns-word-meaning-projector-lesson.html)
+- [E3 Reading – Too Cold to Learn – Exam Practice (PC Room)](e3/reading/wk08-too-cold-to-learn-exam-practice.html)
 
 Word documents:
+- [Wk 8 Too Cold to Learn – exam practice – teacher notes and answers (teacher)](e3/reading/docs/wk08-too-cold-to-learn-exam-practice-answers.pdf) (PDF) · [Word](e3/reading/docs/wk08-too-cold-to-learn-exam-practice-answers.docx)
 - [Exam Prep Lesson 1 – Activity 5 secret purpose cards (cut out)](e3/reading/docs/lesson-01-activity5-secret-purpose-cards.pdf) (PDF) · [Word](e3/reading/docs/lesson-01-activity5-secret-purpose-cards.docx)
 - [Wk 1 Exam question types – sort activity – answers (teacher)](e3/reading/docs/wk01-exam-question-types-sort-activity-answers.pdf) (PDF) · [Word](e3/reading/docs/wk01-exam-question-types-sort-activity-answers.docx)
 - [Wk 1 Exam question types – sort activity](e3/reading/docs/wk01-exam-question-types-sort-activity.pdf) (PDF) · [Word](e3/reading/docs/wk01-exam-question-types-sort-activity.docx)
