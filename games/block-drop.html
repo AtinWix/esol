@@ -15,7 +15,7 @@ body{background:var(--bg);color:var(--fg);font-family:var(--display);
   padding-block:16px;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;gap:12px;overflow:hidden;
   user-select:none;-webkit-user-select:none;touch-action:manipulation}
 .game{display:flex;gap:16px;align-items:flex-start;flex:1;min-height:0}
-.well{position:relative;height:100%;max-height:640px;aspect-ratio:1/2;border:2px solid var(--line);background:#0a0d13;border-radius:4px}
+.well{position:relative;height:100%;max-height:640px;aspect-ratio:1/2;border:2px solid var(--line);background:#0a0d13;border-radius:4px;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22240%22%20height%3D%22190%22%20viewBox%3D%2290%2020%20200%20170%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23e4e8f0%22%20stroke-width%3D%223%22%20opacity%3D%22.07%22%3E%3Ctext%20x%3D%22139%22%20y%3D%22112%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%22%20font-weight%3D%22700%22%20font-size%3D%2272%22%20fill%3D%22%23e4e8f0%22%20stroke%3D%22none%22%3EA%3C/text%3E%3Crect%20x%3D%22177%22%20y%3D%2283%22%20width%3D%2224%22%20height%3D%226%22%20fill%3D%22%23e4e8f0%22%20stroke%3D%22none%22/%3E%3Cpath%20d%3D%22M216%2066%20L216%20106%20A25%207%200%200%200%20266%20106%20L266%2066%22/%3E%3Cellipse%20cx%3D%22241%22%20cy%3D%2266%22%20rx%3D%2225%22%20ry%3D%227%22/%3E%3Cellipse%20cx%3D%22241%22%20cy%3D%2247%22%20rx%3D%2223%22%20ry%3D%225%22/%3E%3Ctext%20x%3D%22190%22%20y%3D%22152%22%20text-anchor%3D%22middle%22%20font-family%3D%22Arial%22%20font-size%3D%2218%22%20letter-spacing%3D%222%22%20fill%3D%22%23e4e8f0%22%20stroke%3D%22none%22%3Emade%20by%20Atin%3C/text%3E%3C/g%3E%3C/svg%3E");background-repeat:repeat;background-size:140px auto;background-position:center}
 canvas#board{width:100%;height:100%;display:block}
 .side{display:flex;flex-direction:column;gap:12px;width:128px}
 .box{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:10px}
@@ -144,7 +144,7 @@ function ghostY(){let y=cur.y;while(fits(cur.m,cur.x,y+1))y++;return y}
 function cell(ctx,x,y,col,s,alpha=1){ctx.globalAlpha=alpha;ctx.fillStyle=col;ctx.fillRect(x*s+1,y*s+1,s-2,s-2);
   ctx.fillStyle='rgba(255,255,255,.22)';ctx.fillRect(x*s+1,y*s+1,s-2,4);ctx.fillStyle='rgba(0,0,0,.25)';ctx.fillRect(x*s+1,y*s+s-5,s-2,4);ctx.globalAlpha=1}
 function draw(){
-  bc.fillStyle='#0a0d13';bc.fillRect(0,0,W*S,H*S);
+  bc.clearRect(0,0,W*S,H*S);
   bc.strokeStyle='#161b26';bc.lineWidth=1;
   for(let x=1;x<W;x++){bc.beginPath();bc.moveTo(x*S+.5,0);bc.lineTo(x*S+.5,H*S);bc.stroke()}
   for(let y=1;y<H;y++){bc.beginPath();bc.moveTo(0,y*S+.5);bc.lineTo(W*S,y*S+.5);bc.stroke()}
