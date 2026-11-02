@@ -4,8 +4,6 @@ Online ESOL activities, projector lessons and games, Entry 1 to Level 2. Made by
 
 Live site: https://atinwix.github.io/esol/
 
-Found a mistake in a teacher document? Use the "Report a problem" link next to it on the live site (opens a GitHub issue).
-
 Each level has three strands: Reading, Writing, Speaking & Listening.
 
 ## all-levels
@@ -18,7 +16,6 @@ Each level has three strands: Reading, Writing, Speaking & Listening.
 Word documents:
 - [Too Cold to Learn – complaint emails – plan and answers (teacher)](all-levels/docs/complaint-email-too-cold-to-learn-teacher-plan.pdf) (PDF) · [Word](all-levels/docs/complaint-email-too-cold-to-learn-teacher-plan.docx)
 - [Too Cold to Learn – classroom writing frames E1–L1](all-levels/docs/complaint-email-too-cold-to-learn-writing-frames.pdf) (PDF) · [Word](all-levels/docs/complaint-email-too-cold-to-learn-writing-frames.docx)
-- [Too Cold to Learn – Kahoot import file](all-levels/docs/complaint-email-too-cold-to-learn-kahoot.xlsx) (Excel)
 
 ## e1/speaking-listening
 - [E1 & E2 Speaking – Task 1 Talk About You – Put It in Order](e1/speaking-listening/task1-talk-about-you-put-it-in-order.html)
@@ -107,15 +104,15 @@ Word documents:
 - [E3 & L1 Reading – Freecycle – Comprehension Quiz](e3/reading/wk05-freecycle-comprehension-quiz.html)
 - [E3 Reading – Hackney Leaflet, Email & Review – Practice Questions](e3/reading/wk06-hackney-leaflet-email-review-practice.html)
 - [E3 Reading – Graffiti Warning – Mixed Tenses Online Lesson](e3/reading/wk07-graffiti-warning-mixed-tenses-online-lesson.html)
-- [E3 Mixed Tenses – Graffiti Notice – Multiple Choice Poster](e3/reading/wk07-graffiti-notice-multiple-choice-poster.html) · [answer key (teacher)](e3/reading/wk07-graffiti-notice-multiple-choice-answer-key-teacher.html)
 - [E3 Mixed Tenses – Graffiti News – Error Hunt](e3/reading/wk08-graffiti-news-error-hunt.html)
 - [E3 Reading – ESB Mock Exam – Set O](e3/reading/wk08-esb-mock-exam-set-o.html)
 - [E3 Reading Skills – Hackney Bugle](e3/reading/wk17-reading-skills-hackney-bugle.html)
 - [E3 Reading – Purpose, Pronouns & Word Meaning – Projector Lesson](e3/reading/wk08-purpose-pronouns-word-meaning-projector-lesson.html)
+- [E3 Mixed Tenses – Graffiti Notice – Multiple Choice Poster](e3/reading/wk07-graffiti-notice-multiple-choice-poster.html)
+- [E3 Mixed Tenses – Graffiti Notice – Answer Key (teacher)](e3/reading/wk07-graffiti-notice-multiple-choice-answer-key-teacher.html)
 - [E3 Reading – Too Cold to Learn – Exam Practice (PC Room)](e3/reading/wk08-too-cold-to-learn-exam-practice.html)
 
 Word documents:
-- [Wk 8 Too Cold to Learn – exam practice – teacher notes and answers (teacher)](e3/reading/docs/wk08-too-cold-to-learn-exam-practice-answers.pdf) (PDF) · [Word](e3/reading/docs/wk08-too-cold-to-learn-exam-practice-answers.docx)
 - [Exam Prep Lesson 1 – Activity 5 secret purpose cards (cut out)](e3/reading/docs/lesson-01-activity5-secret-purpose-cards.pdf) (PDF) · [Word](e3/reading/docs/lesson-01-activity5-secret-purpose-cards.docx)
 - [Wk 1 Exam question types – sort activity – answers (teacher)](e3/reading/docs/wk01-exam-question-types-sort-activity-answers.pdf) (PDF) · [Word](e3/reading/docs/wk01-exam-question-types-sort-activity-answers.docx)
 - [Wk 1 Exam question types – sort activity](e3/reading/docs/wk01-exam-question-types-sort-activity.pdf) (PDF) · [Word](e3/reading/docs/wk01-exam-question-types-sort-activity.docx)
@@ -128,6 +125,7 @@ Word documents:
 - [Wk 7 Graffiti warning poster – teacher notes and answers](e3/reading/docs/wk07-graffiti-warning-poster-lesson-and-worksheet-answers.pdf) (PDF) · [Word](e3/reading/docs/wk07-graffiti-warning-poster-lesson-and-worksheet-answers.docx)
 - [Wk 7 Graffiti warning poster – student worksheet](e3/reading/docs/wk07-graffiti-warning-poster-lesson-and-worksheet.pdf) (PDF) · [Word](e3/reading/docs/wk07-graffiti-warning-poster-lesson-and-worksheet.docx)
 - [Wk 8 Mon Purpose, main points, pronouns and word meaning – day plan (teacher)](e3/reading/docs/wk08-mon-purpose-pronouns-word-meaning-day-plan.pdf) (PDF) · [Word](e3/reading/docs/wk08-mon-purpose-pronouns-word-meaning-day-plan.docx)
+- [Wk 8 Too Cold to Learn – exam practice – teacher notes and answers (teacher)](e3/reading/docs/wk08-too-cold-to-learn-exam-practice-answers.pdf) (PDF) · [Word](e3/reading/docs/wk08-too-cold-to-learn-exam-practice-answers.docx)
 - [Lesson 1: Main points and purpose – student handouts](e3/reading/exam-prep/lesson-01-handouts.pdf) (PDF) · [Word](e3/reading/exam-prep/lesson-01-handouts.docx)
 - [Lesson 1: Main points and purpose – plan and answers](e3/reading/exam-prep/lesson-01-plan.pdf) (PDF) · [Word](e3/reading/exam-prep/lesson-01-plan.docx)
 - [Lesson 2: Pronouns, word meaning and finding details – student handouts](e3/reading/exam-prep/lesson-02-handouts.pdf) (PDF) · [Word](e3/reading/exam-prep/lesson-02-handouts.docx)
