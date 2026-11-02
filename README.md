@@ -4,6 +4,8 @@ Online ESOL activities, projector lessons and games, Entry 1 to Level 2. Made by
 
 Live site: https://atinwix.github.io/esol/
 
+Found a mistake in a teacher document? Use the "Report a problem" link next to it on the live site (opens a GitHub issue).
+
 Each level has three strands: Reading, Writing, Speaking & Listening.
 
 ## all-levels
