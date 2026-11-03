@@ -158,6 +158,7 @@ Word documents:
 - [Wk 8 – Hackney Skills Fair Leaflet – exam practice (21 questions + which skill?)](e3/reading/docs/wk08-hackney-skills-fair-leaflet-exam-practice.pdf) (PDF) · [Word](e3/reading/docs/wk08-hackney-skills-fair-leaflet-exam-practice.docx)
 - [Wk 8 Mon Purpose, main points, pronouns and word meaning – day plan (teacher)](e3/reading/docs/wk08-mon-purpose-pronouns-word-meaning-day-plan.pdf) (PDF) · [Word](e3/reading/docs/wk08-mon-purpose-pronouns-word-meaning-day-plan.docx)
 - [Wk 8 Too Cold to Learn – exam practice – teacher notes and answers (teacher)](e3/reading/docs/wk08-too-cold-to-learn-exam-practice-answers.pdf) (PDF) · [Word](e3/reading/docs/wk08-too-cold-to-learn-exam-practice-answers.docx)
+- [Wk 8 Wed Purpose, main points, pronouns and word meaning – day plan (teacher)](e3/reading/docs/wk08-wed-purpose-pronouns-word-meaning-day-plan.pdf) (PDF) · [Word](e3/reading/docs/wk08-wed-purpose-pronouns-word-meaning-day-plan.docx)
 - [Lesson 1: Main points and purpose – student handouts](e3/reading/exam-prep/lesson-01-handouts.pdf) (PDF) · [Word](e3/reading/exam-prep/lesson-01-handouts.docx)
 - [Lesson 1: Main points and purpose – plan and answers](e3/reading/exam-prep/lesson-01-plan.pdf) (PDF) · [Word](e3/reading/exam-prep/lesson-01-plan.docx)
 - [Lesson 2: Pronouns, word meaning and finding details – student handouts](e3/reading/exam-prep/lesson-02-handouts.pdf) (PDF) · [Word](e3/reading/exam-prep/lesson-02-handouts.docx)
