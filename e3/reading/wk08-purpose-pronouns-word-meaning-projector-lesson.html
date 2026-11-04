@@ -56,6 +56,9 @@ button:focus-visible{outline:3px solid var(--arrow);outline-offset:2px}
 .q.done{border-color:var(--ok);background:var(--ok-bg)}
 .fb{grid-column:1/-1;font-size:19px;color:var(--ok)}
 .fb[hidden]{display:none!important}
+.opts .fb{grid-column:auto;align-self:center;font-size:17px;margin-left:6px}
+.q.done .opt:not(.right){display:none}
+#purposeList{gap:5px}
 .clue{border-radius:3px}
 .done .clue{background:var(--hi)}
 .list{display:flex;flex-direction:column;gap:10px;flex:1;min-height:0}
@@ -245,7 +248,7 @@ button:focus-visible{outline:3px solid var(--arrow);outline-offset:2px}
         });
         opts.append(b);
       });
-      row.append(opts,fb);box.append(row);
+      opts.append(fb);row.append(opts);box.append(row);
     });
     setScore(scoreId,0,items.length);
   }
