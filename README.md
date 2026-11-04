@@ -125,6 +125,8 @@ Word documents:
 - [E3 Reading – ESB Mock Exam – Set O](e3/reading/wk08-esb-mock-exam-set-o.html)
 - [E3 Reading – Purpose, Pronouns & Word Meaning – Projector Lesson](e3/reading/wk08-purpose-pronouns-word-meaning-projector-lesson.html)
 - [E3 Reading – Too Cold to Learn – Exam Practice (PC Room)](e3/reading/wk08-too-cold-to-learn-exam-practice.html)
+- [E3 Reading – Ordering Tasks and Practice Paper – Projector Lesson](e3/reading/wk09-ordering-tasks-practice-paper-projector-lesson.html) – Exam Prep Lesson 3: time order, alphabetical order, 40-minute timer and answers
+- [E3 Reading – Time Order and Alphabetical Order – Online Practice](e3/reading/wk09-time-order-alphabetical-order-practice.html) – What happened first?, four time-order texts and six alphabetical sets – PC or phone
 - [E3 Reading Skills – Hackney Bugle](e3/reading/wk17-reading-skills-hackney-bugle.html)
 - [E3 Reading – Purpose Clues – Drag and Sort Activity](e3/reading/purpose-clues-drag-sort-activity.html) – Drag each clue onto its purpose: warn, advise, instruct, advertise, inform, describe
 
@@ -161,6 +163,8 @@ Word documents:
 - [Wk 8 Mon Purpose, main points, pronouns and word meaning – day plan (teacher)](e3/reading/docs/wk08-mon-purpose-pronouns-word-meaning-day-plan.pdf) (PDF) · [Word](e3/reading/docs/wk08-mon-purpose-pronouns-word-meaning-day-plan.docx)
 - [Wk 8 Too Cold to Learn – exam practice – teacher notes and answers (teacher)](e3/reading/docs/wk08-too-cold-to-learn-exam-practice-answers.pdf) (PDF) · [Word](e3/reading/docs/wk08-too-cold-to-learn-exam-practice-answers.docx)
 - [Wk 8 Wed Purpose, main points, pronouns and word meaning – day plan (teacher)](e3/reading/docs/wk08-wed-purpose-pronouns-word-meaning-day-plan.pdf) (PDF) · [Word](e3/reading/docs/wk08-wed-purpose-pronouns-word-meaning-day-plan.docx)
+- [Wk 9 Alphabetical order word cards – cut-outs (Exam Prep Lesson 3)](e3/reading/docs/wk09-mon-alphabetical-order-word-cards.pdf) (PDF) · [Word](e3/reading/docs/wk09-mon-alphabetical-order-word-cards.docx)
+- [Wk 9 Mon Pronouns, word meaning and ordering tasks – day plan (teacher)](e3/reading/docs/wk09-mon-pronouns-word-meaning-ordering-day-plan.pdf) (PDF) · [Word](e3/reading/docs/wk09-mon-pronouns-word-meaning-ordering-day-plan.docx)
 - [Lesson 1: Main points and purpose – student handouts](e3/reading/exam-prep/lesson-01-handouts.pdf) (PDF) · [Word](e3/reading/exam-prep/lesson-01-handouts.docx)
 - [Lesson 1: Main points and purpose – plan and answers](e3/reading/exam-prep/lesson-01-plan.pdf) (PDF) · [Word](e3/reading/exam-prep/lesson-01-plan.docx)
 - [Lesson 2: Pronouns, word meaning and finding details – student handouts](e3/reading/exam-prep/lesson-02-handouts.pdf) (PDF) · [Word](e3/reading/exam-prep/lesson-02-handouts.docx)

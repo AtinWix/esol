@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>E3 Reading – Time Order and Alphabetical Order – Online Practice</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Lexend:wght@400;600&display=swap">
+<style>
+:root{--bg:#eef1f5;--paper:#fff;--ink:#152238;--muted:#56627a;--line:#cfd6e2;--hi:#ffe14d;--red:#d23c2a;--ok:#1d7a4b;--ok-bg:#dcf2e5;--bad:#b3261e;--bad-bg:#fbe2df;
+--display:"Bricolage Grotesque","Arial Narrow",Arial,sans-serif;--body:"Lexend",Verdana,Arial,sans-serif;color-scheme:light}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.5;padding:0 16px 90px}
+main{max-width:860px;margin:0 auto}
+header{padding:22px 0 8px}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(28px,6vw,44px);line-height:1.05;margin:0 0 6px}
+h2{font-family:var(--display);font-weight:800;font-size:26px;margin:0}
+.sub{color:var(--muted);margin:0}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}
+.tab{font:600 17px var(--body);padding:8px 16px;border:2px solid var(--ink);background:var(--paper);color:var(--ink);border-radius:6px;cursor:pointer}
+.tab[aria-selected=true]{background:var(--ink);color:#fff}
+.part[hidden]{display:none}
+.box{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:18px;margin:0 0 16px}
+.text{background:#fafbfd;border-left:4px solid var(--hi);padding:10px 14px;margin:10px 0}
+.how{color:var(--muted);font-size:16px;margin:4px 0 10px}
+.order{display:flex;flex-direction:column;gap:8px}
+.order.row{flex-direction:row;flex-wrap:wrap}
+.ev{font:17px var(--body);text-align:left;padding:10px 14px 10px 52px;border:2px solid var(--line);background:var(--paper);border-radius:6px;color:var(--ink);position:relative;min-height:46px;cursor:pointer}
+.ev::before{content:attr(data-n);position:absolute;left:10px;top:50%;transform:translateY(-50%);width:30px;height:30px;border-radius:50%;border:2px dashed var(--line);display:grid;place-items:center;font:800 17px var(--display)}
+.ev.done{border-color:var(--ok);background:var(--ok-bg);cursor:default}
+.ev.done::before{background:var(--ok);border:2px solid var(--ok);color:#fff}
+.ev.wrong{border-color:var(--bad);background:var(--bad-bg);animation:shake .3s}
+@keyframes shake{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+@media (prefers-reduced-motion:reduce){.ev.wrong,.opt.wrong{animation:none}}
+.bar{display:flex;gap:12px;align-items:center;margin-top:10px;flex-wrap:wrap}
+.small{font:600 15px var(--body);padding:6px 12px;border:2px solid var(--ink);background:var(--paper);color:var(--ink);border-radius:6px;cursor:pointer}
+.msg{font-weight:600;color:var(--ok)}
+.hint{color:var(--bad);font-size:16px}
+.q{border:2px solid var(--line);border-radius:6px;padding:10px 14px;margin:0 0 10px}
+.q p{margin:0 0 8px}
+.opts{display:flex;gap:8px;flex-wrap:wrap}
+.opt{font:17px var(--body);padding:7px 14px;border:2px solid var(--ink);background:var(--paper);color:var(--ink);border-radius:6px;cursor:pointer}
+.opt.right{background:var(--ok);border-color:var(--ok);color:#fff}
+.opt.wrong{background:var(--bad-bg);border-color:var(--bad);color:var(--bad);animation:shake .3s}
+.q.done{border-color:var(--ok);background:var(--ok-bg)}
+.q.done .opt:not(.right){display:none}
+.l{color:var(--red);font-weight:600;text-decoration:underline}
+#score{position:fixed;right:16px;bottom:16px;background:var(--ink);color:#fff;border-radius:8px;padding:8px 14px;font-weight:600;z-index:5}
+button:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+</style></head><body><main>
+<header>
+<h1>Put it in order</h1>
+<p class="sub">E3 Reading · Week 9 · Practise for the exam. Tap or click. No sound.</p>
+</header>
+<div class="tabs" role="tablist">
+<button class="tab" role="tab" aria-selected="true" data-p="p1">1 · What happened first?</button>
+<button class="tab" role="tab" aria-selected="false" data-p="p2">2 · Time order</button>
+<button class="tab" role="tab" aria-selected="false" data-p="p3">3 · Alphabetical order</button>
+</div>
+
+<section class="part" id="p1">
+<div class="box"><h2>What happened first?</h2><p class="how">The first event in the sentence is not always the first in time. Look for <b>before</b>, <b>after</b>, <b>when</b> and <b>by the time</b>.</p><div id="firstList"></div></div>
+</section>
+
+<section class="part" id="p2" hidden>
+<div id="texts"></div>
+</section>
+
+<section class="part" id="p3" hidden>
+<div class="box"><h2>Alphabetical order</h2><p class="how">Tap the words from A to Z. Same first letter? Look at the second letter. Same again? Look at the third.</p></div>
+<div id="alpha"></div>
+</section>
+<div id="score">0 / 0</div>
+</main>
+<script>
+(function(){
+let got=0,total=0;const sc=document.getElementById('score');function up(){sc.textContent='Score: '+got+' / '+total}
+// Part 1
+const F=[["<b>Before</b> she cooked dinner, Mariam went to the shop.",["She cooked dinner.","She went to the shop."],1],
+["<b>After</b> the lesson finished, we had a coffee.",["The lesson finished.","We had a coffee."],0],
+["Kofi read the letter <b>when</b> he got home.",["Kofi read the letter.","Kofi got home."],1],
+["I had already eaten <b>when</b> my friend called.",["I ate.","My friend called."],0],
+["<b>By the time</b> the doctor arrived, the baby was asleep.",["The doctor arrived.","The baby fell asleep."],1],
+["Leila paid the rent <b>after</b> she got her money.",["Leila paid the rent.","Leila got her money."],1]];
+const fl=document.getElementById('firstList');
+F.forEach(f=>{total++;const r=document.createElement('div');r.className='q';r.innerHTML='<p>'+f[0]+'</p>';const o=document.createElement('div');o.className='opts';
+ f[1].forEach((l,i)=>{const b=document.createElement('button');b.type='button';b.className='opt';b.textContent=l;b.onclick=()=>{if(r.classList.contains('done'))return;
+  if(i===f[2]){b.classList.add('right');r.classList.add('done');got++;up()}else{b.classList.remove('wrong');void b.offsetWidth;b.classList.add('wrong')}};o.append(b)});r.append(o);fl.append(r)});
+// Part 2: texts. events listed in correct order; shown shuffled (fixed order below)
+const T=[
+{t:"Samir’s Saturday",x:"On Saturday morning Samir went to the market on Ridley Road. Before that, he made a shopping list. After he bought some vegetables, he met a friend from college. In the afternoon they cooked lunch together at the hostel.",
+ e:["Samir wrote down what he needed.","Samir visited the market.","Samir got some vegetables.","Samir saw a classmate.","Samir and his friend made a meal."],s:[3,1,4,0,2]},
+{t:"A library card",x:"Grace wanted to borrow books from Hackney Central Library. First, she filled in a form at the desk. The librarian asked for proof of address, so Grace went home to get a letter. When she came back, the librarian took her photo. A week later, her card arrived in the post.",
+ e:["Grace completed a form.","Grace went to fetch a letter.","Grace had her picture taken.","Grace received her card."],s:[2,0,3,1]},
+{t:"A new room",x:"In September, Daniel moved into a hostel in Dalston. His room was very small. In October, he asked his key worker for a bigger room. She told him he had to wait. In December, a room on the second floor was free. Daniel cleaned his old room, and then he moved upstairs just before Christmas.",
+ e:["Daniel arrived at the hostel.","Daniel asked for a bigger room.","Daniel heard that he had to wait.","Daniel cleaned his old room.","Daniel went to live on the second floor."],s:[3,0,4,2,1]},
+{t:"The football match",x:"After the match, the players had a picnic in London Fields. The match started at two o’clock. Before it started, the coach gave a short talk. Ahmed scored the only goal ten minutes before the end.",
+ e:["The coach spoke to the team.","The game began.","Ahmed got a goal.","The team ate outside in the park."],s:[2,3,0,1]}];
+const tb=document.getElementById('texts');
+function orderBox(parent,items,show,fmt){
+  const box=document.createElement('div');box.className='order'+(fmt?' row':'');parent.append(box);
+  const bar=document.createElement('div');bar.className='bar';const rs=document.createElement('button');rs.className='small';rs.type='button';rs.textContent='Start again';
+  const msg=document.createElement('span');msg.className='msg';bar.append(rs,msg);parent.append(bar);
+  let n=0,counted=false;total++;
+  function build(){box.innerHTML='';n=0;msg.textContent='';msg.className='msg';
+    show.forEach(i=>{const b=document.createElement('button');b.type='button';b.className='ev';b.dataset.n='';b.textContent=items[i];
+      b.onclick=()=>{if(b.classList.contains('done'))return;
+        if(i===n){n++;b.dataset.n=n;b.classList.add('done');if(fmt)b.innerHTML=fmt(items[i],items);if(n===items.length){msg.textContent='Well done – all in order.';if(!counted){counted=true;got++;up()}}}
+        else{b.classList.remove('wrong');void b.offsetWidth;b.classList.add('wrong');msg.className='hint';msg.textContent=fmt?'Not yet – compare the letters again.':'Not yet – find the time words in the text.'}}
+      box.append(b)})}
+  rs.onclick=build;build();
+}
+T.forEach(t=>{const d=document.createElement('div');d.className='box';d.innerHTML='<h2>'+t.t+'</h2><div class="text">'+t.x+'</div><p class="how">Tap the events in the order they happened.</p>';tb.append(d);orderBox(d,t.e,t.s)});
+// Part 3
+function hl(w,all){let k=0;while(all.every(v=>v.slice(0,k+1)===all[0].slice(0,k+1)))k++;return w.slice(0,k)+'<span class="l">'+w[k]+'</span>'+w.slice(k+1)}
+function hl2(w,all){ // letter that decides against its neighbours
+  let k=0;for(const v of all){if(v===w)continue;let j=0;while(j<w.length&&w[j]===v[j])j++;k=Math.max(k,j)}return w.slice(0,k)+'<span class="l">'+(w[k]||'')+'</span>'+w.slice(k+1)}
+const A=[["Look at the first letter",["bank","doctor","job","pharmacy","rent"],[4,1,3,0,2]],
+["All start with h",["hat","help","hire","hot","hungry"],[3,1,4,0,2]],
+["All start with p",["paper","phone","plate","price","pupil"],[3,4,1,0,2]],
+["All start with br",["brave","bread","bring","brown","brush"],[2,4,0,3,1]],
+["All start with sh",["share","shelter","shirt","shop","shut"],[1,3,4,0,2]],
+["Harder: all start with tr",["trade","train","travel","tree","trip"],[1,4,3,0,2]]];
+const al=document.getElementById('alpha');
+A.forEach(a=>{const d=document.createElement('div');d.className='box';d.innerHTML='<h2>'+a[0]+'</h2>';al.append(d);orderBox(d,a[1],a[2],hl2)});
+up();
+document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.setAttribute('aria-selected',x===t));document.querySelectorAll('.part').forEach(p=>p.hidden=p.id!==t.dataset.p);scrollTo(0,0)});
+})();
+</script>
+<div class="atin-logo" aria-label="Made by Atin">
+<svg viewBox="104 28 172 134" width="64" height="50" role="img" aria-hidden="true">
+<text x="139" y="112" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="72" fill="currentColor">A</text>
+<rect x="177" y="83" width="24" height="6" rx="1" fill="currentColor"/>
+<path d="M216 66 L216 106 A25 7 0 0 0 266 106 L266 66" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+<ellipse cx="241" cy="66" rx="25" ry="7" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="216" y1="80" x2="266" y2="80" stroke="currentColor" stroke-width="1.5"/>
+<line x1="216" y1="94" x2="266" y2="94" stroke="currentColor" stroke-width="1.5"/>
+<ellipse cx="241" cy="47" rx="23" ry="5" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="114" y1="128" x2="266" y2="128" stroke="currentColor" stroke-width="1"/>
+<text x="190" y="152" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" letter-spacing="2" fill="currentColor">made by Atin</text>
+</svg>
+</div>
+<style>
+.atin-logo{position:fixed;left:calc(6px + env(safe-area-inset-left,0px));bottom:calc(6px + env(safe-area-inset-bottom,0px));z-index:2147483000;pointer-events:none;color:#1F3A5F;background:rgba(255,255,255,.92);border:1px solid #C9D3DF;border-radius:8px;padding:3px 5px;line-height:0}
+.atin-logo svg{display:block}
+@media print{.atin-logo{position:fixed;left:auto;right:6mm;bottom:5mm;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style></body></html>
