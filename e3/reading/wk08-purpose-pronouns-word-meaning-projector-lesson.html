@@ -23,8 +23,8 @@
 html,body{height:100%}
 body{margin:0;background:var(--desk);color:var(--ink);font-family:var(--body);overflow:hidden;
   padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-#wrap{position:fixed;inset:0;display:grid;place-items:center}
-#stage{width:1280px;height:720px;position:relative;transform-origin:center center;flex:none}
+#wrap{position:fixed;inset:0;overflow:hidden}
+#stage{width:1280px;height:720px;position:absolute;left:50%;top:50%;transform-origin:center center}
 .slide{position:absolute;inset:0;background:var(--paper);border-radius:6px;box-shadow:0 18px 40px rgba(21,34,56,.18);
   padding:46px 60px 78px;display:flex;flex-direction:column;gap:20px;overflow:hidden}
 .slide[hidden]{display:none!important}
@@ -280,7 +280,7 @@ button:focus-visible{outline:3px solid var(--arrow);outline-offset:2px}
   let sx=null;document.addEventListener('touchstart',e=>{sx=e.touches[0].clientX},{passive:true});
   document.addEventListener('touchend',e=>{if(sx===null)return;const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>60)show(cur+(dx<0?1:-1));sx=null});
   const stage=document.getElementById('stage');
-  function fit(){const s=Math.min((window.innerWidth-32)/1280,(window.innerHeight-16)/720);stage.style.transform='scale('+Math.max(s,0.2)+')'}
+  function fit(){const s=Math.min((window.innerWidth-32)/1280,(window.innerHeight-16)/720);stage.style.transform='translate(-50%,-50%) scale('+Math.max(s,0.2)+')'}
   window.addEventListener('resize',fit);fit();show(0);
 })();
 </script>
