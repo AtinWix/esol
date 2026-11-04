@@ -145,6 +145,7 @@ button.ctl:hover { border-color: var(--fg); }
   var nOk = document.getElementById('nOk'), nBad = document.getElementById('nBad'), nAll = document.getElementById('nAll');
   var ok = 0, bad = 0, selected = null;
   var zoneEls = {};
+  var phone = window.matchMedia('(max-width: 640px)');
 
   PURPOSES.forEach(function (p, i) {
     var z = document.createElement('div');
@@ -153,10 +154,13 @@ button.ctl:hover { border-color: var(--fg); }
     z.tabIndex = 0;
     z.setAttribute('role', 'group');
     z.setAttribute('aria-label', p.name);
-    z.innerHTML = '<h2>' + p.name + '<small>' + p.gloss + '</small></h2><div class="drop"></div>';
+    z.innerHTML = '<h2><span class="zn">' + p.name + '</span><span class="n">0</span><small>' + p.gloss + '</small></h2><div class="drop"></div>';
     zonesEl.appendChild(z);
     zoneEls[p.id] = z;
-    z.addEventListener('click', function () { if (selected) place(selected, z); });
+    z.addEventListener('click', function () {
+      var s = selected || (phone.matches ? bank.querySelector('.chip.cur') : null);
+      if (s) place(s, z);
+    });
     z.addEventListener('keydown', function (e) {
       if ((e.key === 'Enter' || e.key === ' ') && selected) { e.preventDefault(); place(selected, z); }
     });
@@ -197,6 +201,8 @@ button.ctl:hover { border-color: var(--fg); }
       chip.removeAttribute('tabindex');
       chip.removeAttribute('role');
       zone.querySelector('.drop').appendChild(chip);
+      zone.classList.add('flash');
+      setTimeout(function () { zone.classList.remove('flash'); }, 450);
       ok++;
       if (selected === chip) selected = null;
     } else {
@@ -209,6 +215,12 @@ button.ctl:hover { border-color: var(--fg); }
 
   function update() {
     nOk.textContent = ok; nBad.textContent = bad; nAll.textContent = CLUES.length;
+    Array.prototype.forEach.call(bank.querySelectorAll('.chip.cur'), function (c) { c.classList.remove('cur'); });
+    var first = bank.querySelector('.chip:not(.placed)');
+    if (first) first.classList.add('cur');
+    Object.keys(zoneEls).forEach(function (k) {
+      zoneEls[k].querySelector('.n').textContent = zoneEls[k].querySelectorAll('.chip').length;
+    });
     var done = document.getElementById('doneMsg');
     if (ok === CLUES.length && !done) {
       var d = document.createElement('div');
@@ -278,6 +290,11 @@ button.ctl:hover { border-color: var(--fg); }
     shuffle(chips).forEach(function (c) { bank.appendChild(c); });
   });
 
+  document.addEventListener('DOMContentLoaded', function () {
+    var lg = document.querySelector('.atin-logo'), hd = document.querySelector('header');
+    if (lg && hd) hd.appendChild(lg);
+  });
+
   build();
 })();
 </script>
@@ -298,4 +315,34 @@ button.ctl:hover { border-color: var(--fg); }
 .atin-logo{position:fixed;left:calc(6px + env(safe-area-inset-left,0px));bottom:calc(6px + env(safe-area-inset-bottom,0px));z-index:2147483000;pointer-events:none;color:#1F3A5F;background:rgba(255,255,255,.92);border:1px solid #C9D3DF;border-radius:8px;padding:3px 5px;line-height:0}
 .atin-logo svg{display:block}
 @media print{.atin-logo{position:fixed;left:auto;right:6mm;bottom:5mm;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+
+<style>
+.zone h2 .n { display: none; }
+.zone.flash { outline: 4px solid var(--ok); outline-offset: -2px; }
+.atin-logo { position: static !important; flex: none; pointer-events: none; }
+.atin-logo svg { width: 56px; height: 44px; }
+@media (max-width: 640px) {
+  html, body { height: 100%; overflow: hidden; }
+  body { margin: 0; padding-block: 10px; }
+  .wrap { height: calc(100dvh - 20px); gap: 8px; }
+  header { flex-wrap: nowrap; gap: 8px; align-items: center; }
+  h1 { font-size: 1.15rem; }
+  .sub, .hint, #shuffle { display: none; }
+  .bar { gap: 6px 12px; flex-wrap: nowrap; }
+  .score { font-size: .95rem; gap: 12px; }
+  .score b { font-size: 1.05rem; }
+  .btns { margin-left: auto; }
+  button.ctl { padding: 5px 12px; font-size: .9rem; }
+  .bank { flex: 1; min-height: 0; align-items: center; justify-content: center; align-content: center; padding: 10px; border-style: solid; }
+  .bank .chip { display: none; }
+  .bank .chip.cur { display: block; font-size: clamp(1.6rem, 8vw, 2.2rem); padding: 16px 26px; text-align: center; }
+  .bank .done { font-size: 1.25rem; }
+  .zones { flex: none; height: 42%; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .zone { min-height: 0; cursor: pointer; }
+  .zone h2 { flex: 1; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; align-content: center; padding: 4px 10px; font-size: 1.1rem; border-radius: 5px; }
+  .zone h2 small { flex-basis: 100%; font-size: .75rem; line-height: 1.2; }
+  .zone h2 .n { display: inline-block; min-width: 1.7em; text-align: center; font-size: .9rem; border-radius: 10px; background: color-mix(in srgb, currentColor 24%, transparent); }
+  .zone .drop { display: none; }
+}
 </style>
