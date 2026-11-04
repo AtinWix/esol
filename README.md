@@ -126,6 +126,7 @@ Word documents:
 - [E3 Reading – Purpose, Pronouns & Word Meaning – Projector Lesson](e3/reading/wk08-purpose-pronouns-word-meaning-projector-lesson.html)
 - [E3 Reading – Too Cold to Learn – Exam Practice (PC Room)](e3/reading/wk08-too-cold-to-learn-exam-practice.html)
 - [E3 Reading Skills – Hackney Bugle](e3/reading/wk17-reading-skills-hackney-bugle.html)
+- [E3 Reading – Purpose Clues – Drag and Sort Activity](e3/reading/purpose-clues-drag-sort-activity.html) – Drag each clue onto its purpose: warn, advise, instruct, advertise, inform, describe
 
 Word documents:
 - [Extra – The Camping Group – mock reading paper (18 questions) – answers (teacher)](e3/reading/docs/extra-camping-group-mock-reading-paper-answers.pdf) (PDF) · [Word](e3/reading/docs/extra-camping-group-mock-reading-paper-answers.docx)

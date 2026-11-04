@@ -1,0 +1,301 @@
+<title>E3 Reading – Purpose Clues – Drag and Sort Activity</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+/* Layout: clue bank across the top, six purpose boxes in a 3x2 grid below. Big text for the projector. */
+:root {
+  --bg: #f6f7f9;
+  --fg: #1b2330;
+  --muted: #5a6577;
+  --surface: #ffffff;
+  --line: #cfd5de;
+  --chip: #ffffff;
+  --chip-line: #8a94a6;
+  --ok: #15803d;
+  --bad: #b42318;
+  --z1: #b42318; --z1i: #ffffff;
+  --z2: #0e7490; --z2i: #ffffff;
+  --z3: #1d4ed8; --z3i: #ffffff;
+  --z4: #92400e; --z4i: #ffffff;
+  --z5: #6d28d9; --z5i: #ffffff;
+  --z6: #15803d; --z6i: #ffffff;
+  --font: Calibri, Arial, Verdana, "Helvetica Neue", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #12161d; --fg: #eef1f6; --muted: #a3adbf; --surface: #1b212b; --line: #3a4352;
+    --chip: #252d3a; --chip-line: #6b7790; --ok: #86efac; --bad: #fca5a5;
+    --z1: #fca5a5; --z1i: #450a0a; --z2: #67e8f9; --z2i: #083344; --z3: #93c5fd; --z3i: #172554;
+    --z4: #fcd34d; --z4i: #451a03; --z5: #c4b5fd; --z5i: #2e1065; --z6: #86efac; --z6i: #052e16;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #12161d; --fg: #eef1f6; --muted: #a3adbf; --surface: #1b212b; --line: #3a4352;
+  --chip: #252d3a; --chip-line: #6b7790; --ok: #86efac; --bad: #fca5a5;
+  --z1: #fca5a5; --z1i: #450a0a; --z2: #67e8f9; --z2i: #083344; --z3: #93c5fd; --z3i: #172554;
+  --z4: #fcd34d; --z4i: #451a03; --z5: #c4b5fd; --z5i: #2e1065; --z6: #86efac; --z6i: #052e16;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--fg); font-family: var(--font);
+  padding-block: 16px 28px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.wrap { max-width: 1180px; margin: 0 auto; display: flex; flex-direction: column; gap: 18px; }
+header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; }
+h1 { margin: 0; font-size: clamp(1.5rem, 3.4vw, 2.2rem); line-height: 1.15; text-wrap: balance; }
+.sub { margin: 4px 0 0; color: var(--muted); font-size: 1.05rem; }
+
+.bar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; }
+.score { font-size: 1.15rem; font-variant-numeric: tabular-nums; display: flex; gap: 18px; flex-wrap: wrap; }
+.score b { font-size: 1.3rem; }
+.score .good b { color: var(--ok); }
+.score .miss b { color: var(--bad); }
+.btns { display: flex; gap: 8px; margin-left: auto; }
+button.ctl {
+  font: inherit; font-size: 1rem; padding: 8px 16px; border: 2px solid var(--chip-line);
+  background: var(--surface); color: var(--fg); border-radius: 6px; cursor: pointer;
+}
+button.ctl:hover { border-color: var(--fg); }
+:focus-visible { outline: 3px solid var(--z3); outline-offset: 2px; }
+
+.bank {
+  background: var(--surface); border: 2px dashed var(--line); border-radius: 10px;
+  padding: 14px; min-height: 92px; display: flex; flex-wrap: wrap; gap: 10px; align-content: flex-start;
+}
+.bank .done { width: 100%; text-align: center; font-size: 1.4rem; font-weight: 700; color: var(--ok); padding: 10px 0; }
+.chip {
+  font-size: clamp(1.05rem, 2vw, 1.35rem); font-weight: 600; padding: 8px 14px;
+  background: var(--chip); color: var(--fg); border: 2px solid var(--chip-line); border-radius: 8px;
+  cursor: grab; user-select: none; -webkit-user-select: none; touch-action: none;
+}
+.chip.sel { outline: 3px solid var(--z3); outline-offset: 2px; }
+.chip.lift { opacity: .35; }
+.chip.shake { animation: shake .4s; border-color: var(--bad); }
+.chip.placed { cursor: default; touch-action: auto; font-size: clamp(.95rem, 1.7vw, 1.15rem); padding: 5px 11px; }
+.ghost { position: fixed; z-index: 50; pointer-events: none; box-shadow: 0 6px 18px rgba(0,0,0,.3); transform: translate(-50%, -60%) rotate(-2deg); }
+@keyframes shake { 0%,100% { transform: translateX(0); } 20% { transform: translateX(-7px); } 40% { transform: translateX(7px); } 60% { transform: translateX(-5px); } 80% { transform: translateX(5px); } }
+
+.zones { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.zone { background: var(--surface); border: 2px solid var(--line); border-radius: 8px; display: flex; flex-direction: column; min-height: 150px; min-width: 0; }
+.zone.over { border-color: var(--fg); background: color-mix(in srgb, var(--surface) 88%, var(--fg)); }
+.zone h2 { margin: 0; padding: 8px 14px; font-size: 1.45rem; border-radius: 5px 5px 0 0; }
+.zone h2 small { display: block; font-size: .95rem; font-weight: 400; opacity: .95; }
+.zone .drop { padding: 10px; display: flex; flex-wrap: wrap; gap: 8px; align-content: flex-start; flex: 1; }
+.z1 h2 { background: var(--z1); color: var(--z1i); } .z1 .chip.placed { border-color: var(--z1); }
+.z2 h2 { background: var(--z2); color: var(--z2i); } .z2 .chip.placed { border-color: var(--z2); }
+.z3 h2 { background: var(--z3); color: var(--z3i); } .z3 .chip.placed { border-color: var(--z3); }
+.z4 h2 { background: var(--z4); color: var(--z4i); } .z4 .chip.placed { border-color: var(--z4); }
+.z5 h2 { background: var(--z5); color: var(--z5i); } .z5 .chip.placed { border-color: var(--z5); }
+.z6 h2 { background: var(--z6); color: var(--z6i); } .z6 .chip.placed { border-color: var(--z6); }
+.hint { color: var(--muted); font-size: 1rem; margin: 0; }
+@media (max-width: 860px) { .zones { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .zones { grid-template-columns: minmax(0, 1fr); } .btns { margin-left: 0; } }
+@media (prefers-reduced-motion: reduce) { .chip.shake { animation: none; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div>
+      <h1>Six purposes, six kinds of clue</h1>
+      <p class="sub">Drag each clue onto the purpose it tells you about. In the exam, one question always asks this.</p>
+    </div>
+  </header>
+
+  <div class="bar">
+    <div class="score" aria-live="polite">
+      <span class="good">Correct <b id="nOk">0</b> / <span id="nAll">0</span></span>
+      <span class="miss">Mistakes <b id="nBad">0</b></span>
+    </div>
+    <p class="hint" id="hint">Tap a clue, then tap a box, if dragging is awkward.</p>
+    <div class="btns">
+      <button class="ctl" id="shuffle" type="button">Shuffle</button>
+      <button class="ctl" id="reset" type="button">Start again</button>
+    </div>
+  </div>
+
+  <div class="bank" id="bank" aria-label="Clues to sort"></div>
+
+  <div class="zones" id="zones"></div>
+</div>
+
+<script>
+(function () {
+  var PURPOSES = [
+    { id: 'warn',      name: 'Warn',      gloss: 'Something is dangerous' },
+    { id: 'advise',    name: 'Advise',    gloss: 'A good idea for you' },
+    { id: 'instruct',  name: 'Instruct',  gloss: 'How to do something' },
+    { id: 'advertise', name: 'Advertise', gloss: 'Sell something' },
+    { id: 'inform',    name: 'Inform',    gloss: 'Give facts' },
+    { id: 'describe',  name: 'Describe',  gloss: 'What it is like' }
+  ];
+  var CLUES = [
+    ['warn', 'danger'], ['warn', 'beware'], ['warn', 'do not'], ['warn', 'be careful'],
+    ['advise', 'you should'], ['advise', 'it is a good idea to'], ['advise', 'try to'],
+    ['instruct', 'Press…'], ['instruct', 'Open…'], ['instruct', 'Wait…'],
+    ['advertise', 'prices'], ['advertise', 'free'], ['advertise', 'new'], ['advertise', 'best'], ['advertise', 'sale'], ['advertise', 'buy'],
+    ['inform', 'dates'], ['inform', 'times'], ['inform', 'places'], ['inform', 'will open'], ['inform', 'will close'],
+    ['describe', 'adjectives'], ['describe', 'there is'], ['describe', 'there are'], ['describe', 'it has']
+  ];
+
+  var bank = document.getElementById('bank');
+  var zonesEl = document.getElementById('zones');
+  var nOk = document.getElementById('nOk'), nBad = document.getElementById('nBad'), nAll = document.getElementById('nAll');
+  var ok = 0, bad = 0, selected = null;
+  var zoneEls = {};
+
+  PURPOSES.forEach(function (p, i) {
+    var z = document.createElement('div');
+    z.className = 'zone z' + (i + 1);
+    z.dataset.purpose = p.id;
+    z.tabIndex = 0;
+    z.setAttribute('role', 'group');
+    z.setAttribute('aria-label', p.name);
+    z.innerHTML = '<h2>' + p.name + '<small>' + p.gloss + '</small></h2><div class="drop"></div>';
+    zonesEl.appendChild(z);
+    zoneEls[p.id] = z;
+    z.addEventListener('click', function () { if (selected) place(selected, z); });
+    z.addEventListener('keydown', function (e) {
+      if ((e.key === 'Enter' || e.key === ' ') && selected) { e.preventDefault(); place(selected, z); }
+    });
+  });
+
+  function shuffle(a) {
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t;
+    }
+    return a;
+  }
+
+  function makeChip(purpose, text) {
+    var c = document.createElement('div');
+    c.className = 'chip';
+    c.textContent = text;
+    c.dataset.purpose = purpose;
+    c.tabIndex = 0;
+    c.setAttribute('role', 'button');
+    attachDrag(c);
+    c.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); select(c); }
+    });
+    return c;
+  }
+
+  function select(c) {
+    if (selected) selected.classList.remove('sel');
+    selected = (selected === c) ? null : c;
+    if (selected) selected.classList.add('sel');
+  }
+
+  function place(chip, zone) {
+    if (chip.classList.contains('placed')) return;
+    if (chip.dataset.purpose === zone.dataset.purpose) {
+      chip.classList.remove('sel', 'lift', 'shake');
+      chip.classList.add('placed');
+      chip.removeAttribute('tabindex');
+      chip.removeAttribute('role');
+      zone.querySelector('.drop').appendChild(chip);
+      ok++;
+      if (selected === chip) selected = null;
+    } else {
+      bad++;
+      chip.classList.remove('shake'); void chip.offsetWidth; chip.classList.add('shake');
+      chip.classList.remove('lift');
+    }
+    update();
+  }
+
+  function update() {
+    nOk.textContent = ok; nBad.textContent = bad; nAll.textContent = CLUES.length;
+    var done = document.getElementById('doneMsg');
+    if (ok === CLUES.length && !done) {
+      var d = document.createElement('div');
+      d.className = 'done'; d.id = 'doneMsg';
+      d.textContent = bad === 0 ? 'All correct, no mistakes!' : 'All sorted. Mistakes: ' + bad;
+      bank.appendChild(d);
+    }
+  }
+
+  function attachDrag(chip) {
+    chip.addEventListener('pointerdown', function (e) {
+      if (chip.classList.contains('placed') || (e.pointerType === 'mouse' && e.button !== 0)) return;
+      e.preventDefault();
+      var sx = e.clientX, sy = e.clientY, moved = false, ghost = null, over = null;
+      try { chip.setPointerCapture(e.pointerId); } catch (err) {}
+
+      function zoneAt(x, y) {
+        var el = document.elementFromPoint(x, y);
+        return el ? el.closest('.zone') : null;
+      }
+      function move(ev) {
+        if (!moved && Math.hypot(ev.clientX - sx, ev.clientY - sy) > 6) {
+          moved = true;
+          ghost = chip.cloneNode(true);
+          ghost.classList.add('ghost'); ghost.classList.remove('sel');
+          document.body.appendChild(ghost);
+          chip.classList.add('lift');
+        }
+        if (moved) {
+          ghost.style.left = ev.clientX + 'px'; ghost.style.top = ev.clientY + 'px';
+          var z = zoneAt(ev.clientX, ev.clientY);
+          if (z !== over) { if (over) over.classList.remove('over'); over = z; if (over) over.classList.add('over'); }
+        }
+      }
+      function up(ev) {
+        chip.removeEventListener('pointermove', move);
+        chip.removeEventListener('pointerup', up);
+        chip.removeEventListener('pointercancel', up);
+        try { chip.releasePointerCapture(e.pointerId); } catch (err) {}
+        if (over) over.classList.remove('over');
+        if (ghost) ghost.remove();
+        chip.classList.remove('lift');
+        if (moved) {
+          var z = zoneAt(ev.clientX, ev.clientY);
+          if (z) place(chip, z);
+        } else {
+          select(chip);
+        }
+      }
+      chip.addEventListener('pointermove', move);
+      chip.addEventListener('pointerup', up);
+      chip.addEventListener('pointercancel', up);
+    });
+  }
+
+  function build() {
+    ok = 0; bad = 0; selected = null;
+    bank.innerHTML = '';
+    Object.keys(zoneEls).forEach(function (k) { zoneEls[k].querySelector('.drop').innerHTML = ''; });
+    shuffle(CLUES.slice()).forEach(function (c) { bank.appendChild(makeChip(c[0], c[1])); });
+    update();
+  }
+
+  document.getElementById('reset').addEventListener('click', build);
+  document.getElementById('shuffle').addEventListener('click', function () {
+    var chips = Array.prototype.slice.call(bank.querySelectorAll('.chip'));
+    shuffle(chips).forEach(function (c) { bank.appendChild(c); });
+  });
+
+  build();
+})();
+</script>
+<div class="atin-logo" aria-label="Made by Atin">
+<svg viewBox="104 28 172 134" width="64" height="50" role="img" aria-hidden="true">
+<text x="139" y="112" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="72" fill="currentColor">A</text>
+<rect x="177" y="83" width="24" height="6" rx="1" fill="currentColor"/>
+<path d="M216 66 L216 106 A25 7 0 0 0 266 106 L266 66" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+<ellipse cx="241" cy="66" rx="25" ry="7" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="216" y1="80" x2="266" y2="80" stroke="currentColor" stroke-width="1.5"/>
+<line x1="216" y1="94" x2="266" y2="94" stroke="currentColor" stroke-width="1.5"/>
+<ellipse cx="241" cy="47" rx="23" ry="5" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="114" y1="128" x2="266" y2="128" stroke="currentColor" stroke-width="1"/>
+<text x="190" y="152" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" letter-spacing="2" fill="currentColor">made by Atin</text>
+</svg>
+</div>
+<style>
+.atin-logo{position:fixed;left:calc(6px + env(safe-area-inset-left,0px));bottom:calc(6px + env(safe-area-inset-bottom,0px));z-index:2147483000;pointer-events:none;color:#1F3A5F;background:rgba(255,255,255,.92);border:1px solid #C9D3DF;border-radius:8px;padding:3px 5px;line-height:0}
+.atin-logo svg{display:block}
+@media print{.atin-logo{position:fixed;left:auto;right:6mm;bottom:5mm;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
