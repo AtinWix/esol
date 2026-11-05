@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>E3 Reading – Hostel Garden and Computer Classes – Timed Online Practice Paper</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Lexend:wght@400;600&display=swap">
+<style>
+:root{--bg:#eef1f5;--paper:#fff;--ink:#152238;--muted:#56627a;--line:#cfd6e2;--hi:#ffe14d;--red:#d23c2a;--ok:#1d7a4b;--ok-bg:#dcf2e5;--bad:#b3261e;--bad-bg:#fbe2df;--sel:#2453a6;--sel-bg:#e3ecfb;
+--display:"Bricolage Grotesque","Arial Narrow",Arial,sans-serif;--body:"Lexend",Verdana,Arial,sans-serif;color-scheme:light}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.5}
+button{font-family:var(--body)}
+button:focus-visible,input:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+.app{height:100vh;display:flex;flex-direction:column;padding:10px 16px 12px;gap:10px}
+.top{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.top h1{font-family:var(--display);font-weight:800;font-size:clamp(20px,2.4vw,30px);line-height:1.05;margin:0;flex:1;min-width:220px}
+.timer{font:800 clamp(24px,3vw,38px) var(--display);background:var(--ink);color:#fff;border-radius:8px;padding:4px 14px;min-width:120px;text-align:center}
+.timer.warn{background:#b8860b}.timer.last{background:var(--bad)}
+.nav{display:flex;gap:6px;flex-wrap:wrap}
+.nav button{width:38px;height:38px;border-radius:6px;border:2px solid var(--line);background:var(--paper);font-weight:600;font-size:16px;cursor:pointer;color:var(--ink)}
+.nav button.ans{background:var(--sel-bg);border-color:var(--sel)}
+.nav button.cur{background:var(--ink);border-color:var(--ink);color:#fff}
+.main{flex:1;min-height:0;display:grid;grid-template-columns:1.15fr 1fr;gap:14px}
+.pane{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:16px 20px;overflow:auto;min-height:0}
+.pane h2{font-family:var(--display);font-weight:800;font-size:24px;margin:0 0 6px}
+.tag{display:inline-block;font-size:14px;font-weight:600;color:var(--muted);margin-bottom:6px}
+.txt p{margin:0 0 10px}
+.txt .pn{display:inline-block;min-width:22px;font-weight:800;color:var(--muted)}
+.email-head{font-size:16px;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:6px;margin-bottom:10px}
+.qnum{font:800 20px var(--display);color:var(--muted)}
+.qtext{font-size:20px;font-weight:600;margin:4px 0 14px}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{text-align:left;font-size:18px;padding:10px 14px 10px 50px;border:2px solid var(--line);background:var(--paper);border-radius:6px;cursor:pointer;position:relative;color:var(--ink)}
+.opt b{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:26px;height:26px;border-radius:50%;border:2px solid var(--ink);display:grid;place-items:center;font-size:15px}
+.opt.on{border-color:var(--sel);background:var(--sel-bg)}
+.opt.on b{background:var(--sel);border-color:var(--sel);color:#fff}
+.slots{display:flex;flex-direction:column;gap:6px;margin:0 0 12px}
+.slot{display:flex;gap:10px;align-items:center;border:2px dashed var(--line);border-radius:6px;padding:6px 10px;min-height:42px}
+.slot span:first-child{font:800 18px var(--display);width:24px}
+.slot.fixed{border-style:solid;background:#f5f6f9;color:var(--muted)}
+.pool{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:17px;padding:8px 12px;border:2px solid var(--ink);background:var(--paper);border-radius:6px;cursor:pointer;color:var(--ink);text-align:left}
+.chip[disabled]{opacity:.25;cursor:default}
+.small{font:600 15px var(--body);padding:6px 12px;border:2px solid var(--ink);background:var(--paper);border-radius:6px;cursor:pointer;color:var(--ink)}
+.wr label{display:block;font-weight:600;margin:8px 0 4px}
+.wr input{width:100%;font:18px var(--body);padding:8px 10px;border:2px solid var(--line);border-radius:6px}
+.foot{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding-left:80px}
+.big{font:600 18px var(--body);padding:10px 20px;border-radius:6px;border:2px solid var(--ink);background:var(--paper);cursor:pointer;color:var(--ink)}
+.big.go{background:var(--ink);color:#fff}
+.left{color:var(--muted);font-size:16px}
+.screen{max-width:900px;margin:0 auto;padding:30px 16px 90px}
+.screen h1{font-family:var(--display);font-weight:800;font-size:clamp(30px,5vw,48px);line-height:1.05;margin:0 0 10px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:18px 22px;margin:0 0 16px}
+.card ol{margin:6px 0 0;padding-left:22px}
+.card input{font:20px var(--body);padding:8px 12px;border:2px solid var(--line);border-radius:6px;width:min(420px,100%)}
+.modal{position:fixed;inset:0;background:rgba(21,34,56,.55);display:grid;place-items:center;z-index:10;padding:16px}
+.modal[hidden]{display:none}
+.modal .card{max-width:520px}
+.score{font:800 clamp(48px,8vw,80px) var(--display);line-height:1;margin:0}
+table{border-collapse:collapse;width:100%}
+th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top;font-size:17px}
+th{font-size:15px;color:var(--muted)}
+.ok{color:var(--ok);font-weight:600}.no{color:var(--bad);font-weight:600}
+.weak{background:var(--bad-bg)}
+.proof{color:var(--muted);font-size:15px}
+@media (max-width:820px){.app{height:auto;min-height:100vh}.main{grid-template-columns:1fr}.pane{overflow:visible}}
+</style></head><body>
+
+<div id="start" class="screen">
+<h1>Timed reading practice paper</h1>
+<p>E3 Reading · two texts · 16 questions · 40 minutes</p>
+<div class="card">
+<p><b>Exam rules today</b></p>
+<ol>
+<li>Work alone. No talking, no phones, no translation.</li>
+<li>Read the title and the first sentence of each paragraph. Then read the whole text once.</li>
+<li>Answer the easy questions first. You can go back and change any answer.</li>
+<li>There are no marks lost for a wrong answer. Never leave a question blank.</li>
+<li>You will see your score and the answers when you finish.</li>
+</ol>
+</div>
+<div class="card">
+<label for="nm"><b>Your first name</b></label><br>
+<input id="nm" autocomplete="off" maxlength="30"><br><br>
+<button class="big go" id="go" type="button">Start – 40 minutes</button>
+</div>
+</div>
+
+<div id="test" class="app" hidden>
+<div class="top">
+<h1>E3 Reading – Timed practice paper</h1>
+<div class="timer" id="clock" aria-live="off">40:00</div>
+</div>
+<div class="nav" id="nav" aria-label="Questions"></div>
+<div class="main">
+<section class="pane txt" id="textPane"></section>
+<section class="pane" id="qPane" aria-live="polite"></section>
+</div>
+<div class="foot">
+<div><button class="big" id="prev" type="button">‹ Back</button> <button class="big" id="next" type="button">Next ›</button></div>
+<span class="left" id="left"></span>
+<button class="big go" id="finish" type="button">Finish</button>
+</div>
+</div>
+
+<div class="modal" id="confirm" hidden>
+<div class="card" role="dialog" aria-modal="true" aria-labelledby="ct">
+<p id="ct"><b>Finish the paper?</b></p>
+<p id="cmsg"></p>
+<button class="big" id="cno" type="button">Go back</button> <button class="big go" id="cyes" type="button">Yes, finish</button>
+</div>
+</div>
+
+<div id="results" class="screen" hidden></div>
+
+<script>
+(function(){
+const TEXTS={
+A:{title:"Text A – The Garden Behind the Hostel",html:
+"<p><span class='pn'>1</span>Behind a hostel in Hackney there is a small garden. Two years ago it was only a yard full of rubbish. Today it grows tomatoes, beans, herbs and flowers. The people who live in the hostel made it themselves.</p>"+
+"<p><span class='pn'>2</span>The idea came from Lucia Moreno. She moved into the hostel in January and missed her mother’s garden in Colombia. In March she asked the manager, Mr Bailey, if residents could use the yard. He agreed, but he said there was no money for it.</p>"+
+"<p><span class='pn'>3</span>First, Lucia and five neighbours cleared the rubbish. It took them two weekends. Then a local garden centre gave them soil and some old tools. In April they planted the first seeds in wooden boxes. They watered them every evening after dinner.</p>"+
+"<p><span class='pn'>4</span>The summer was difficult. In June, snails ate most of the young plants, and the group had to start again. In July there was no rain for three weeks. However, nobody gave up. By September they had enough vegetables to cook a meal for the whole hostel.</p>"+
+"<p><span class='pn'>5</span>The garden has done more than produce food. Residents who never spoke to each other now work side by side. Children help with the watering. “People are calmer,” says Mr Bailey. “They have something to look after.”</p>"+
+"<p><span class='pn'>6</span>Next year the group plans to build a small greenhouse. Lucia could move to a flat soon, but she will come back to visit. “I planted this garden,” she says. “I want to see it grow.”</p>"},
+B:{title:"Text B – Free Computer Classes",html:
+"<div class='email-head'><b>From:</b> Hackney Learning Centre<br><b>To:</b> All ESOL learners<br><b>Subject:</b> Free computer classes</div>"+
+"<p>Dear learners,</p>"+
+"<p><span class='pn'>1</span>Next term, Hackney Learning Centre is starting free computer classes for adults. The classes are for beginners, so you do not need any experience. You will learn how to send emails, fill in online forms and book appointments with your GP.</p>"+
+"<p><span class='pn'>2</span>The classes take place every Tuesday from 6pm to 8pm in Room 12. Each course lasts eight weeks. There are only fifteen places, so please book soon.</p>"+
+"<p><span class='pn'>3</span>To book a place, come to reception between 9am and 5pm. Please bring a photo ID and a letter with your address on it, for example a bank statement or a bill. If you cannot come in person, you can phone us on 020 7946 0321.</p>"+
+"<p><span class='pn'>4</span>Learners who finish the course will get a certificate. Many past learners have used it to apply for jobs.</p>"+
+"<p>Best wishes,<br>Grace Mensah<br>Course Organiser</p>"}};
+
+// type: mc | order | alpha | write
+const Q=[
+{t:"A",k:"mc",s:"Pronouns",q:"Who is ‘He’ in paragraph 2?",o:["Lucia’s father","Mr Bailey","A neighbour","A worker at the garden centre"],a:1,p:"Para 2: “she asked the manager, Mr Bailey … He agreed”"},
+{t:"A",k:"mc",s:"Main point",q:"What is the main point of paragraph 4?",o:["London usually has bad weather.","The group had problems but carried on.","Snails are dangerous for vegetables.","The hostel cooked dinner together every week."],a:1,p:"Para 4: “The summer was difficult … However, nobody gave up.”"},
+{t:"A",k:"order",s:"Time order",q:"Put these events in the order they happened. The first one is done for you. Tap the events in order.",fixed:"Lucia came to live at the hostel.",o:["Lucia asked for permission to use the yard.","The neighbours took the rubbish away.","The group put seeds into boxes.","Snails destroyed many plants.","Everyone in the hostel shared food from the garden."],p:"January → March → two weekends → April → June → September"},
+{t:"A",k:"mc",s:"Finding details",q:"How did the group get their soil?",o:["Mr Bailey paid for it.","They bought it at a market.","A business near them gave it for free.","Lucia’s family sent it."],a:2,p:"Para 3: “a local garden centre gave them soil”"},
+{t:"A",k:"mc",s:"Word meaning",q:"In paragraph 4, what does ‘gave up’ mean?",o:["stopped trying","went home","got angry","felt tired"],a:0,p:"Para 4: problems, “However, nobody gave up” – they carried on"},
+{t:"A",k:"mc",s:"Purpose",q:"The text:",o:["advertises a garden centre","describes how some neighbours built a garden","warns people about snails","advises readers how to grow tomatoes"],a:1,p:"The whole text tells the story of the garden"},
+{t:"A",k:"alpha",s:"Alphabetical order",q:"Put these words in alphabetical order. Tap the words from A to Z.",o:["flowers","food","garden","greenhouse","group"],p:"f-l, f-o, g-a, g-r-e, g-r-o"},
+{t:"A",k:"mc",s:"Word meaning",q:"In paragraph 6, what does ‘could’ mean?",o:["must","might","wants to","did"],a:1,p:"Para 6: “Lucia could move to a flat soon” – it is possible, not sure"},
+{t:"A",k:"mc",s:"Finding details",q:"Which sentence is correct?",o:["The garden cost the hostel a lot of money.","Lucia built the garden alone.","There was a dry period in the summer.","The first seeds went in during January."],a:2,p:"Para 4: “In July there was no rain for three weeks.”"},
+{t:"A",k:"write",s:"Finding details",q:"Write two problems the gardeners had in the summer.",keys:[/snail|slug|plants?\s+(were\s+)?(eaten|died|destroyed)|ate\s+(the|most|their)/i,/rain|dry|water|hot|sun/i],ans:"Snails ate the plants. / There was no rain for three weeks.",p:"Para 4"},
+{t:"B",k:"mc",s:"Purpose",q:"Why did Grace Mensah write this email?",o:["to say sorry for a problem","to give information about a course","to give advice about jobs","to ask learners to work for free"],a:1,p:"Para 1: “Hackney Learning Centre is starting free computer classes”"},
+{t:"B",k:"mc",s:"Pronouns",q:"In paragraph 4, what is ‘it’?",o:["the course","the certificate","the job","the letter"],a:1,p:"Para 4: “will get a certificate … have used it to apply for jobs”"},
+{t:"B",k:"mc",s:"Word meaning",q:"‘You do not need any experience’ means:",o:["you do not need to pay","you do not need to have done it before","you do not need your own computer","you do not need to book"],a:1,p:"Para 1: “The classes are for beginners”"},
+{t:"B",k:"mc",s:"Finding details",q:"Which sentence is correct?",o:["The classes are on two days a week.","There are eight lessons in each course.","Any number of people can join.","You can only book by phone."],a:1,p:"Para 2: “every Tuesday … Each course lasts eight weeks”"},
+{t:"B",k:"write",s:"Finding details",q:"Write two things you must take to reception to book a place.",keys:[/\bid\b|identi|passport|photo/i,/letter|address|bill|bank|statement/i],ans:"a photo ID / a letter with your address (e.g. a bank statement or a bill)",p:"Para 3"},
+{t:"B",k:"alpha",s:"Alphabetical order",q:"Put these words in alphabetical order. Tap the words from A to Z.",o:["beginners","bill","book","certificate","classes"],p:"b-e, b-i, b-o, c-e, c-l"}];
+
+// fixed display shuffles (same for everyone)
+const SHOW={2:[3,1,4,0,2],6:[2,4,0,3,1],15:[3,1,4,0,2]};
+const ans=Q.map(q=>q.k==='mc'?null:q.k==='write'?['','']:[]);
+let cur=0,endAt=0,tick=null,name='',done=false;
+const $=id=>document.getElementById(id);
+const KEY='e3-garden-computer-paper';
+function save(){try{localStorage.setItem(KEY,JSON.stringify({ans,endAt,name,cur}))}catch(e){}}
+function load(){try{const s=JSON.parse(localStorage.getItem(KEY)||'null');if(s&&s.endAt>Date.now()){s.ans.forEach((v,i)=>ans[i]=v);endAt=s.endAt;name=s.name;cur=s.cur||0;return true}}catch(e){}return false}
+function clear(){try{localStorage.removeItem(KEY)}catch(e){}}
+function answered(i){const q=Q[i],v=ans[i];if(q.k==='mc')return v!==null;if(q.k==='write')return v[0].trim()&&v[1].trim();return v.length===q.o.length}
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+
+function nav(){const n=$('nav');n.innerHTML='';Q.forEach((q,i)=>{const b=document.createElement('button');b.type='button';b.textContent=i+1;b.className=(answered(i)?'ans ':'')+(i===cur?'cur':'');b.setAttribute('aria-label','Question '+(i+1)+(answered(i)?', answered':''));b.onclick=()=>go(i);n.append(b)});
+ const left=Q.filter((q,i)=>!answered(i)).length;$('left').textContent=left?left+' question'+(left>1?'s':'')+' not answered':'All answered – check them, then Finish';}
+function go(i){cur=i;render();save()}
+function render(){
+ const q=Q[cur],t=TEXTS[q.t];
+ const tp=$('textPane');if(tp.dataset.t!==q.t){tp.dataset.t=q.t;tp.innerHTML='<h2>'+t.title+'</h2>'+t.html;tp.scrollTop=0}
+ const qp=$('qPane');qp.innerHTML='<div class="qnum">Question '+(cur+1)+' of '+Q.length+'</div><div class="tag">Text '+q.t+'</div><div class="qtext">'+q.q+'</div>';
+ if(q.k==='mc'){const o=document.createElement('div');o.className='opts';q.o.forEach((x,j)=>{const b=document.createElement('button');b.type='button';b.className='opt'+(ans[cur]===j?' on':'');b.innerHTML='<b>'+'ABCD'[j]+'</b>'+esc(x);b.onclick=()=>{ans[cur]=j;save();render()};o.append(b)});qp.append(o)}
+ else if(q.k==='write'){const w=document.createElement('div');w.className='wr';[0,1].forEach(j=>{const l=document.createElement('label');l.textContent=(j+1)+'.';l.htmlFor='w'+j;const inp=document.createElement('input');inp.id='w'+j;inp.value=ans[cur][j];inp.autocomplete='off';inp.oninput=()=>{ans[cur][j]=inp.value;save();nav()};w.append(l,inp)});qp.append(w)}
+ else{const show=SHOW[cur],v=ans[cur],sl=document.createElement('div');sl.className='slots';let n=1;
+  if(q.fixed){sl.innerHTML+='<div class="slot fixed"><span>1</span><span>'+esc(q.fixed)+'</span></div>';n=2}
+  for(let j=0;j<q.o.length;j++){const d=document.createElement('div');d.className='slot';d.innerHTML='<span>'+(j+n)+'</span><span>'+(v[j]!==undefined?esc(q.o[v[j]]):'')+'</span>';sl.append(d)}
+  const pool=document.createElement('div');pool.className='pool';show.forEach(j=>{const b=document.createElement('button');b.type='button';b.className='chip';b.textContent=q.o[j];if(v.includes(j))b.disabled=true;b.onclick=()=>{v.push(j);save();render()};pool.append(b)});
+  const r=document.createElement('button');r.type='button';r.className='small';r.textContent='Start this question again';r.style.marginTop='12px';r.onclick=()=>{ans[cur]=[];save();render()};
+  qp.append(sl,pool,r)}
+ $('prev').disabled=cur===0;$('next').disabled=cur===Q.length-1;nav();
+}
+function clock(){const ms=endAt-Date.now();if(ms<=0){finish();return}const s=Math.ceil(ms/1000),m=Math.floor(s/60);const c=$('clock');c.textContent=m+':'+String(s%60).padStart(2,'0');c.className='timer'+(m<5?' last':m<20?' warn':'')}
+function begin(){$('start').hidden=true;$('test').hidden=false;render();clock();tick=setInterval(clock,500)}
+$('go').onclick=()=>{name=$('nm').value.trim();endAt=Date.now()+40*60000;save();begin()};
+$('prev').onclick=()=>go(cur-1);$('next').onclick=()=>go(cur+1);
+$('finish').onclick=()=>{const left=Q.filter((q,i)=>!answered(i)).length;$('cmsg').textContent=left?'You have '+left+' question'+(left>1?'s':'')+' with no answer. There are no marks lost for a guess.':'All questions answered.';$('confirm').hidden=false;$('cyes').focus()};
+$('cno').onclick=()=>{$('confirm').hidden=true};$('cyes').onclick=()=>{$('confirm').hidden=true;finish()};
+
+function mark(i){const q=Q[i],v=ans[i];if(q.k==='mc')return v===q.a?1:0;
+ if(q.k==='write'){const a=v[0]+' ',b=v[1]+' ';return ((q.keys[0].test(a)&&q.keys[1].test(b))||(q.keys[0].test(b)&&q.keys[1].test(a)))?1:0}
+ return v.length===q.o.length&&v.every((x,j)=>x===j)?1:0}
+function shown(i){const q=Q[i],v=ans[i];if(q.k==='mc')return v===null?'—':'ABCD'[v]+'. '+esc(q.o[v]);if(q.k==='write')return esc(v[0]||'—')+'<br>'+esc(v[1]||'—');return v.length?v.map(j=>esc(q.o[j])).join(', '):'—'}
+function right(i){const q=Q[i];if(q.k==='mc')return 'ABCD'[q.a]+'. '+esc(q.o[q.a]);if(q.k==='write')return esc(q.ans);return q.o.map(esc).join(', ')}
+function finish(){if(done)return;done=true;clearInterval(tick);clear();
+ const used=Math.max(0,40*60000-(endAt-Date.now())),um=Math.min(40,Math.round(used/60000));
+ const m=Q.map((q,i)=>mark(i)),tot=m.reduce((a,b)=>a+b,0);
+ const sk={};Q.forEach((q,i)=>{sk[q.s]=sk[q.s]||[0,0];sk[q.s][0]+=m[i];sk[q.s][1]++});
+ let h='<h1>'+(name?esc(name)+' – ':'')+'your results</h1><div class="card"><p class="score">'+tot+' / '+Q.length+'</p><p>Time used: '+um+' minute'+(um===1?'':'s')+'</p></div>';
+ h+='<div class="card"><p><b>By skill</b> – red rows are the ones to practise.</p><table><tr><th>Skill</th><th>Score</th></tr>';
+ Object.keys(sk).forEach(k=>{const [g,n]=sk[k];h+='<tr class="'+(g<n?'weak':'')+'"><td>'+k+'</td><td>'+g+' / '+n+'</td></tr>'});
+ h+='</table></div><div class="card"><p><b>Check your answers.</b> Find the proof in the text.</p><table><tr><th>Q</th><th>Your answer</th><th>Correct answer</th></tr>';
+ Q.forEach((q,i)=>{h+='<tr><td>'+(i+1)+'<br><span class="proof">'+q.s+'</span></td><td class="'+(m[i]?'ok':'no')+'">'+(m[i]?'✓ ':'✗ ')+shown(i)+'</td><td>'+right(i)+'<br><span class="proof">Proof: '+esc(q.p)+'</span></td></tr>'});
+ h+='</table></div><div class="card"><p><b>Next time I will …</b> Tell your teacher one thing.</p></div>';
+ $('test').hidden=true;const r=$('results');r.innerHTML=h;r.hidden=false;scrollTo(0,0);
+}
+if(load()){begin()}
+})();
+</script>
+<div class="atin-logo" aria-label="Made by Atin">
+<svg viewBox="104 28 172 134" width="64" height="50" role="img" aria-hidden="true">
+<text x="139" y="112" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="72" fill="currentColor">A</text>
+<rect x="177" y="83" width="24" height="6" rx="1" fill="currentColor"/>
+<path d="M216 66 L216 106 A25 7 0 0 0 266 106 L266 66" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+<ellipse cx="241" cy="66" rx="25" ry="7" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="216" y1="80" x2="266" y2="80" stroke="currentColor" stroke-width="1.5"/>
+<line x1="216" y1="94" x2="266" y2="94" stroke="currentColor" stroke-width="1.5"/>
+<ellipse cx="241" cy="47" rx="23" ry="5" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="114" y1="128" x2="266" y2="128" stroke="currentColor" stroke-width="1"/>
+<text x="190" y="152" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" letter-spacing="2" fill="currentColor">made by Atin</text>
+</svg>
+</div>
+<style>
+.atin-logo{position:fixed;left:calc(6px + env(safe-area-inset-left,0px));bottom:calc(6px + env(safe-area-inset-bottom,0px));z-index:2147483000;pointer-events:none;color:#1F3A5F;background:rgba(255,255,255,.92);border:1px solid #C9D3DF;border-radius:8px;padding:3px 5px;line-height:0}
+.atin-logo svg{display:block}
+@media print{.atin-logo{position:fixed;left:auto;right:6mm;bottom:5mm;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style></body></html>

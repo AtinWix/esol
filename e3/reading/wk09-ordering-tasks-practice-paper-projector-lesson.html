@@ -61,6 +61,7 @@ button:focus-visible{outline:3px solid var(--red);outline-offset:2px}
 .a .hide{filter:blur(9px);transition:filter .2s}
 .a.show .hide{filter:none}
 .a{cursor:pointer}
+.tight{gap:6px 18px}.tight .a{font-size:18px;padding:6px 12px}
 /* timer */
 .timer{display:flex;gap:30px;align-items:center}
 #clock{font-family:var(--display);font-weight:800;font-size:150px;line-height:1;font-variant-numeric:tabular-nums}
@@ -78,10 +79,10 @@ a{color:var(--ink)}
 <div id="stage">
 
 <section class="slide">
-  <div class="eyebrow">E3 Reading · Week 9 · Exam skills</div>
+  <div class="eyebrow">E3 Reading · Exam skills · PC room</div>
   <h1>Put it in <span class="mark">order</span></h1>
-  <p class="lede">Today: what happened first? Words in alphabetical order. Then a practice paper, against the clock.</p>
-  <p class="lede">Handouts 3A, 3B and 3C.</p>
+  <p class="lede">Today: what happened first? Words in alphabetical order. Then a practice paper against the clock.</p>
+  <p class="lede">Everything is on screen today: online practice, then a timed paper on the PC.</p>
 </section>
 
 <section class="slide" hidden>
@@ -110,10 +111,11 @@ a{color:var(--ink)}
 </section>
 
 <section class="slide" hidden>
-  <div class="eyebrow">Handout 3A · Hawa’s Morning · Check</div>
+  <div class="eyebrow">Activity 1 · Hawa’s Morning</div>
   <h2>Prove it with a time word</h2>
-  <p>Click each line to show the answer.</p>
-  <div class="ans" style="grid-template-columns:1fr">
+  <p style="font-size:22px;background:#fff8d6;padding:10px 14px;border-radius:6px">Hawa got up at six o’clock. Before breakfast, she washed her son’s school shirt. After they ate, she took him to school. Then she caught the bus to college. She arrived late because the bus broke down on the way. At lunchtime she phoned the school to check on her son.</p>
+  <p>Say the order and the time word. Click each line to check.</p>
+  <div class="ans" style="grid-template-columns:repeat(2,1fr)">
     <div class="a"><b>1</b> Hawa got out of bed. <span class="hide">– “at six o’clock”</span></div>
     <div class="a"><b>2</b> Hawa washed a shirt. <span class="hide">– “<span class="l">Before</span> breakfast”</span></div>
     <div class="a"><b>3</b> Hawa and her son ate breakfast. <span class="hide">– “<span class="l">After</span> they ate…”</span></div>
@@ -164,11 +166,23 @@ a{color:var(--ink)}
     <li>Cross off each word when you use it.</li>
     <li>Count: you must have <b>five</b> words at the end.</li>
   </ol>
-  <p>Now do Handout 3B on your own.</p>
+  <p>The exam is on paper. Today you practise on screen.</p>
 </section>
 
 <section class="slide" hidden>
-  <div class="eyebrow">Activity 3 · Handout 3C · The Garden Behind the Hostel</div>
+  <div class="eyebrow">PCs · Online practice · on your own</div>
+  <h2>Practise on your PC</h2>
+  <ol class="steps">
+    <li>Open the <b>online practice</b> link from Teams.</li>
+    <li>Do tab <b>1</b> and tab <b>2</b>: what happened first, time order.</li>
+    <li>Do tab <b>3</b>: alphabetical order.</li>
+    <li>Finished? Tab <b>4</b>: pronouns, word meaning, purpose.</li>
+  </ol>
+  <p>Score goes up only when everything is in the right order. Finished? Help your neighbour.</p>
+</section>
+
+<section class="slide" hidden>
+  <div class="eyebrow">Activity 3 · Timed online paper · two texts · 16 questions</div>
   <div class="two">
     <div class="timer">
       <div><div id="clock">40:00</div><div id="clockNote">Read the title and first sentences first.</div></div>
@@ -177,15 +191,15 @@ a{color:var(--ink)}
       <button class="btn" id="tStart">Start 40 minutes</button>
       <button class="btn" id="tPause">Pause</button>
       <button class="btn" id="tReset">Reset</button>
-      <ul style="padding-left:24px;margin:8px 0 0"><li>Desks apart, phones away.</li><li>No talking. No dictionaries.</li><li>Answer every question.</li><li>Finished? Write the paragraph number next to each answer.</li></ul>
+      <ul style="padding-left:24px;margin:8px 0 0"><li>Open the <b>timed paper</b> link. Type your first name.</li><li>Press Start when I say. Phones away. No talking. No translation.</li><li>Answer every question. You can go back.</li><li>Finished early? Check every answer in the text, then press Finish.</li></ul>
     </div>
   </div>
 </section>
 
 <section class="slide" hidden>
   <div class="eyebrow">Activity 4 · Prove it · Click to show each answer</div>
-  <h2 style="font-size:36px">Give the letter – then the line that proves it</h2>
-  <div class="ans">
+  <h2 style="font-size:32px">Give the letter – then the line that proves it</h2>
+  <div class="ans tight">
     <div class="a"><b>1 B</b> <span class="hide">Mr Bailey – para 2: “asked the manager, Mr Bailey … He agreed”</span></div>
     <div class="a"><b>2</b> <span class="hide"><b>B</b> – para 4: problems (snails, no rain) but “nobody gave up”</span></div>
     <div class="a"><b>3</b> <span class="hide">came to live 1 · asked permission 2 · rubbish away 3 · seeds in boxes 4 · snails 5 · shared food 6</span></div>
@@ -196,6 +210,12 @@ a{color:var(--ink)}
     <div class="a"><b>8</b> <span class="hide"><b>B</b> might – para 6: “could move to a flat soon”</span></div>
     <div class="a"><b>9</b> <span class="hide"><b>C</b> – para 4: “no rain for three weeks”</span></div>
     <div class="a"><b>10</b> <span class="hide">snails ate the young plants · no rain for three weeks</span></div>
+    <div class="a"><b>11</b> <span class="hide"><b>B</b> to give information about a course</span></div>
+    <div class="a"><b>12</b> <span class="hide"><b>B</b> the certificate – para 4</span></div>
+    <div class="a"><b>13</b> <span class="hide"><b>B</b> not done it before – “for beginners”</span></div>
+    <div class="a"><b>14</b> <span class="hide"><b>B</b> eight lessons – every Tuesday, eight weeks</span></div>
+    <div class="a"><b>15</b> <span class="hide">photo ID · a letter with your address (bank statement or bill)</span></div>
+    <div class="a"><b>16</b> <span class="hide">beginners, bill, book, certificate, classes</span></div>
   </div>
 </section>
 
@@ -209,14 +229,14 @@ a{color:var(--ink)}
     <li>Answer the easy questions first.</li>
     <li>Check each answer in the text. <span class="mark">Never leave a question blank.</span></li>
   </ol>
-  <p>Write on your paper: <b>“Next time I will …”</b></p>
+  <p>Tell your partner: <b>“Next time I will …”</b></p>
 </section>
 
 <section class="slide" hidden>
   <div class="eyebrow">Links</div>
   <h2>Today’s materials</h2>
-  <p><a href="https://atinwix.github.io/esol/e3/reading/exam-prep/lesson-03-handouts.pdf">Handouts 3A, 3B, 3C (PDF)</a></p>
-  <p><a href="https://atinwix.github.io/esol/e3/reading/wk09-time-order-alphabetical-order-practice.html">Online practice: time order and alphabetical order</a></p>
+  <p><a href="https://atinwix.github.io/esol/e3/reading/wk09-time-order-alphabetical-order-practice.html">Online practice: time order, alphabetical order, pronouns and word meaning</a></p>
+  <p><a href="https://atinwix.github.io/esol/e3/reading/hostel-garden-and-computer-classes-timed-online-practice-paper.html">Timed online practice paper (16 questions, 40 minutes)</a></p>
   <p><a href="https://atinwix.github.io/esol/e3/reading/exam-prep/lesson-03-plan.pdf">Lesson 3 plan and answers (teacher)</a></p>
 </section>
 

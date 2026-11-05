@@ -129,8 +129,9 @@ Word documents:
 - [E3 Reading – ESB Mock Exam – Set O](e3/reading/wk08-esb-mock-exam-set-o.html)
 - [E3 Reading – Purpose, Pronouns & Word Meaning – Projector Lesson](e3/reading/wk08-purpose-pronouns-word-meaning-projector-lesson.html)
 - [E3 Reading – Too Cold to Learn – Exam Practice (PC Room)](e3/reading/wk08-too-cold-to-learn-exam-practice.html)
-- [E3 Reading – Ordering Tasks and Practice Paper – Projector Lesson](e3/reading/wk09-ordering-tasks-practice-paper-projector-lesson.html) – Exam Prep Lesson 3: time order, alphabetical order, 40-minute timer and answers
-- [E3 Reading – Time Order and Alphabetical Order – Online Practice](e3/reading/wk09-time-order-alphabetical-order-practice.html) – What happened first?, four time-order texts and six alphabetical sets – PC or phone
+- [E3 Reading – Hostel Garden and Computer Classes – Timed Online Practice Paper](e3/reading/hostel-garden-and-computer-classes-timed-online-practice-paper.html) – Two texts, 16 ESB-style questions, 40-minute clock, marks itself and shows score by skill – PC or phone
+- [E3 Reading – Ordering Tasks and Practice Paper – Projector Lesson](e3/reading/wk09-ordering-tasks-practice-paper-projector-lesson.html) – Time order, alphabetical order, online practice, timed online paper and answers – all on screen (PC room)
+- [E3 Reading – Time Order, Alphabetical Order, Pronouns and Word Meaning – Online Practice](e3/reading/wk09-time-order-alphabetical-order-practice.html) – What happened first?, eight time-order texts, 14 alphabetical sets, 18 pronoun / word meaning / purpose questions – PC or phone
 - [E3 Reading Skills – Hackney Bugle](e3/reading/wk17-reading-skills-hackney-bugle.html)
 - [E3 Reading – Purpose Clues – Drag and Sort Activity](e3/reading/purpose-clues-drag-sort-activity.html) – Drag each clue onto its purpose: warn, advise, instruct, advertise, inform, describe
 
@@ -145,6 +146,7 @@ Word documents:
 - [Extra – Picnic emails – reading practice from learners' writing (21 questions) – answers (teacher)](e3/reading/docs/extra-picnic-emails-reading-practice-from-learners-writing-answers.pdf) (PDF) · [Word](e3/reading/docs/extra-picnic-emails-reading-practice-from-learners-writing-answers.docx)
 - [Extra – Picnic emails – reading practice from learners' writing (21 questions)](e3/reading/docs/extra-picnic-emails-reading-practice-from-learners-writing.pdf) (PDF) · [Word](e3/reading/docs/extra-picnic-emails-reading-practice-from-learners-writing.docx)
 - [Exam Prep Lesson 1 – Activity 5 secret purpose cards (cut out)](e3/reading/docs/lesson-01-activity5-secret-purpose-cards.pdf) (PDF) · [Word](e3/reading/docs/lesson-01-activity5-secret-purpose-cards.docx)
+- [E3 Reading – Pronouns, Word Meaning and Ordering – Kahoot Quiz](e3/reading/docs/pronouns-word-meaning-ordering-kahoot.pdf) (PDF) · [Word](e3/reading/docs/pronouns-word-meaning-ordering-kahoot.xlsx)
 - [Wk 1 Exam question types – sort activity – answers (teacher)](e3/reading/docs/wk01-exam-question-types-sort-activity-answers.pdf) (PDF) · [Word](e3/reading/docs/wk01-exam-question-types-sort-activity-answers.docx)
 - [Wk 1 Exam question types – sort activity](e3/reading/docs/wk01-exam-question-types-sort-activity.pdf) (PDF) · [Word](e3/reading/docs/wk01-exam-question-types-sort-activity.docx)
 - [Wk 1 Exam question words – reference sheet](e3/reading/docs/wk01-exam-question-words-reference-sheet.pdf) (PDF) · [Word](e3/reading/docs/wk01-exam-question-words-reference-sheet.docx)

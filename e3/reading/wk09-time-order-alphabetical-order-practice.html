@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>E3 Reading – Time Order and Alphabetical Order – Online Practice</title>
+<title>E3 Reading – Time Order, Alphabetical Order, Pronouns and Word Meaning – Online Practice</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Lexend:wght@400;600&display=swap">
 <style>
@@ -47,12 +47,13 @@ button:focus-visible{outline:3px solid var(--red);outline-offset:2px}
 </style></head><body><main>
 <header>
 <h1>Put it in order</h1>
-<p class="sub">E3 Reading · Week 9 · Practise for the exam. Tap or click. No sound.</p>
+<p class="sub">E3 Reading · Practise for the exam. Tap or click. No sound.</p>
 </header>
 <div class="tabs" role="tablist">
 <button class="tab" role="tab" aria-selected="true" data-p="p1">1 · What happened first?</button>
 <button class="tab" role="tab" aria-selected="false" data-p="p2">2 · Time order</button>
 <button class="tab" role="tab" aria-selected="false" data-p="p3">3 · Alphabetical order</button>
+<button class="tab" role="tab" aria-selected="false" data-p="p4">4 · Pronouns, word meaning, purpose</button>
 </div>
 
 <section class="part" id="p1">
@@ -67,6 +68,10 @@ button:focus-visible{outline:3px solid var(--red);outline-offset:2px}
 <div class="box"><h2>Alphabetical order</h2><p class="how">Tap the words from A to Z. Same first letter? Look at the second letter. Same again? Look at the third.</p></div>
 <div id="alpha"></div>
 </section>
+
+<section class="part" id="p4" hidden>
+<div class="box"><h2>Pronouns, word meaning, purpose</h2><p class="how">Pronouns: look back, singular or plural, person or thing. New word: read the sentence before and after. Purpose: why was it written?</p><div id="mixed"></div></div>
+</section>
 <div id="score">0 / 0</div>
 </main>
 <script>
@@ -78,7 +83,13 @@ const F=[["<b>Before</b> she cooked dinner, Mariam went to the shop.",["She cook
 ["Kofi read the letter <b>when</b> he got home.",["Kofi read the letter.","Kofi got home."],1],
 ["I had already eaten <b>when</b> my friend called.",["I ate.","My friend called."],0],
 ["<b>By the time</b> the doctor arrived, the baby was asleep.",["The doctor arrived.","The baby fell asleep."],1],
-["Leila paid the rent <b>after</b> she got her money.",["Leila paid the rent.","Leila got her money."],1]];
+["Leila paid the rent <b>after</b> she got her money.",["Leila paid the rent.","Leila got her money."],1],
+["<b>Before</b> the class started, the teacher turned on the computer.",["The class started.","The teacher turned on the computer."],1],
+["We went to the park <b>after</b> we had lunch.",["We went to the park.","We had lunch."],1],
+["<b>When</b> the bus arrived, everyone got on.",["The bus arrived.","Everyone got on."],0],
+["Musa locked the door <b>before</b> he went to bed.",["Musa locked the door.","Musa went to bed."],0],
+["<b>By the time</b> we got to the shop, it was closed.",["We got to the shop.","The shop closed."],1],
+["She had finished her homework <b>when</b> her friend called.",["She finished her homework.","Her friend called."],0]];
 const fl=document.getElementById('firstList');
 F.forEach(f=>{total++;const r=document.createElement('div');r.className='q';r.innerHTML='<p>'+f[0]+'</p>';const o=document.createElement('div');o.className='opts';
  f[1].forEach((l,i)=>{const b=document.createElement('button');b.type='button';b.className='opt';b.textContent=l;b.onclick=()=>{if(r.classList.contains('done'))return;
@@ -92,7 +103,15 @@ const T=[
 {t:"A new room",x:"In September, Daniel moved into a hostel in Dalston. His room was very small. In October, he asked his key worker for a bigger room. She told him he had to wait. In December, a room on the second floor was free. Daniel cleaned his old room, and then he moved upstairs just before Christmas.",
  e:["Daniel arrived at the hostel.","Daniel asked for a bigger room.","Daniel heard that he had to wait.","Daniel cleaned his old room.","Daniel went to live on the second floor."],s:[3,0,4,2,1]},
 {t:"The football match",x:"After the match, the players had a picnic in London Fields. The match started at two o’clock. Before it started, the coach gave a short talk. Ahmed scored the only goal ten minutes before the end.",
- e:["The coach spoke to the team.","The game began.","Ahmed got a goal.","The team ate outside in the park."],s:[2,3,0,1]}];
+ e:["The coach spoke to the team.","The game began.","Ahmed got a goal.","The team ate outside in the park."],s:[2,3,0,1]},
+{t:"At the GP surgery",x:"Amina felt ill on Monday, so she phoned her GP surgery. The receptionist gave her an appointment for Wednesday morning. When she saw the doctor, he gave her a prescription. After that, she took it to the chemist next door. By Friday she felt much better.",
+ e:["Amina called the surgery.","Amina got a time to see the doctor.","The doctor gave Amina a prescription.","Amina went to the chemist.","Amina was well again."],s:[2,4,0,3,1]},
+{t:"Moving to London",x:"Tomasz came to London in 2023. Before that, he worked in a factory in Poland. In his first month he stayed with his cousin in Walthamstow. Then he found a job in a café. He started English classes after he moved into his own flat in 2024.",
+ e:["Tomasz worked in a factory.","Tomasz arrived in London.","Tomasz lived at his cousin’s home.","Tomasz got a job in a café.","Tomasz moved into his own flat.","Tomasz started learning English."],s:[3,5,0,2,4,1]},
+{t:"A birthday cake",x:"On Friday Lina made a cake for her daughter’s birthday. First she bought eggs, flour and sugar. She mixed everything in a big bowl, and then she put the cake in the oven for forty minutes. While it was cooling, she washed the bowls. Finally, she wrote her daughter’s name on the top.",
+ e:["Lina did the shopping.","Lina mixed the cake.","The cake was in the oven.","Lina did the washing up.","Lina wrote a name on the cake."],s:[4,1,3,0,2]},
+{t:"Lost phone",x:"Yusuf found out his phone was missing when he got home from work. He remembered that he last used it on the bus. The next morning he phoned the bus company. They told him that a driver had found it. In the afternoon he collected it from the bus garage.",
+ e:["Yusuf used his phone on the bus.","Yusuf noticed his phone was not there.","Yusuf called the bus company.","Yusuf went to get his phone."],s:[2,0,3,1]}];
 const tb=document.getElementById('texts');
 function orderBox(parent,items,show,fmt){
   const box=document.createElement('div');box.className='order'+(fmt?' row':'');parent.append(box);
@@ -117,9 +136,41 @@ const A=[["Look at the first letter",["bank","doctor","job","pharmacy","rent"],[
 ["All start with p",["paper","phone","plate","price","pupil"],[3,4,1,0,2]],
 ["All start with br",["brave","bread","bring","brown","brush"],[2,4,0,3,1]],
 ["All start with sh",["share","shelter","shirt","shop","shut"],[1,3,4,0,2]],
-["Harder: all start with tr",["trade","train","travel","tree","trip"],[1,4,3,0,2]]];
+["Harder: all start with tr",["trade","train","travel","tree","trip"],[1,4,3,0,2]],
+["Mixed first letters",["apple","council","library","money","water"],[3,0,4,2,1]],
+["All start with s",["safe","school","shop","sister","sugar"],[4,2,0,3,1]],
+["All start with c",["cake","chemist","clinic","cousin","cup"],[3,1,4,0,2]],
+["All start with b",["bag","bed","bike","bowl","bus"],[2,4,0,3,1]],
+["All start with f",["factory","family","field","flat","flour"],[3,0,4,2,1]],
+["All start with m",["machine","market","meal","milk","month"],[2,4,0,3,1]],
+["All start with g",["garage","gate","glass","green","guest"],[4,2,0,3,1]],
+["Harder: all start with ch",["chair","chance","cheap","child","chips"],[3,1,4,0,2]]];
 const al=document.getElementById('alpha');
 A.forEach(a=>{const d=document.createElement('div');d.className='box';d.innerHTML='<h2>'+a[0]+'</h2>';al.append(d);orderBox(d,a[1],a[2],hl2)});
+// Part 4: mixed MC with instant feedback
+const M=[
+["Kemal bought a new coat. <b>It</b> was very warm. – <b>It</b> means:",["Kemal","the coat","the shop"],1],
+["My neighbours have two dogs. <b>They</b> bark every night. – <b>They</b> means:",["my neighbours","the dogs","the nights"],1],
+["Sara phoned her mother and told <b>her</b> the good news. – <b>her</b> means:",["Sara","Sara’s mother","the news"],1],
+["The students gave the teacher a card. <b>She</b> put it on her desk. – <b>She</b> means:",["the teacher","a student","the card"],0],
+["Ali and his wife visited the museum. <b>They</b> loved <b>it</b>. – <b>it</b> means:",["Ali","the museum","his wife"],1],
+["The manager spoke to the cleaners. <b>He</b> asked <b>them</b> to start early. – <b>them</b> means:",["the manager","the cleaners","the rooms"],1],
+["The café was <b>packed</b>. We could not find a seat. – <b>packed</b> means:",["very full","very clean","closed"],0],
+["The flat is <b>spacious</b>. It has big rooms and a large kitchen. – <b>spacious</b> means:",["expensive","with a lot of space","old"],1],
+["The train was <b>delayed</b>, so we arrived one hour late. – <b>delayed</b> means:",["late","early","full"],0],
+["Please keep the medicine out of reach of children. It could be <b>harmful</b>. – <b>harmful</b> means:",["cheap","dangerous","sweet"],1],
+["Entry is <b>free of charge</b>. You do not need to pay. – <b>free of charge</b> means:",["at no cost","very busy","for children only"],0],
+["Rosa was <b>exhausted</b> after working for twelve hours. – <b>exhausted</b> means:",["very tired","very happy","very hungry"],0],
+["Wet floor. Please walk carefully. – Why was this written?",["to advertise","to warn","to describe"],1],
+["50% off all shoes this weekend only! – Why was this written?",["to advertise","to advise","to warn"],0],
+["Fill in the form and give it to reception. – Why was this written?",["to describe","to instruct","to complain"],1],
+["I think you should see a doctor about your cough. – Why was this written?",["to advise","to advertise","to inform"],0],
+["The library is closed on Monday 4th because of building work. – Why was this written?",["to advertise","to inform","to describe"],1],
+["The room was small but bright, with a big window and a blue carpet. – Why was this written?",["to describe","to warn","to instruct"],0]];
+const mx=document.getElementById('mixed');
+M.forEach(f=>{total++;const r=document.createElement('div');r.className='q';r.innerHTML='<p>'+f[0]+'</p>';const o=document.createElement('div');o.className='opts';
+ f[1].forEach((l,i)=>{const b=document.createElement('button');b.type='button';b.className='opt';b.textContent=l;b.onclick=()=>{if(r.classList.contains('done'))return;
+  if(i===f[2]){b.classList.add('right');r.classList.add('done');got++;up()}else{b.classList.remove('wrong');void b.offsetWidth;b.classList.add('wrong')}};o.append(b)});r.append(o);mx.append(r)});
 up();
 document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.setAttribute('aria-selected',x===t));document.querySelectorAll('.part').forEach(p=>p.hidden=p.id!==t.dataset.p);scrollTo(0,0)});
 })();
