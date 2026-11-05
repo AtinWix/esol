@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>E2 Superlatives – Likes and Reasons – Projector Lesson</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@500;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<style>
+:root{--bg:#F4F6F8;--surface:#FFFFFF;--ink:#141D28;--muted:#4F5B69;--line:#D3D9E0;--accent:#0E6B6B;--accent-ink:#FFFFFF;--accent-soft:#DCEFEE;--mark:#E3A008;--mark-soft:#FCEFCC;--learn:#2F5DA8;--learn-soft:#E2EAF7;--prac:#0E6B6B;--prac-soft:#DCEFEE;--talk:#A3461F;--talk-soft:#F7E4DA;--bad:#B3261E;--display:"Lexend","Segoe UI",Arial,sans-serif;--body:"Atkinson Hyperlegible",Verdana,Arial,sans-serif;color-scheme:light}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#10151B;--surface:#19212A;--ink:#EEF2F6;--muted:#A2ADBA;--line:#2B3642;--accent:#4FB8B3;--accent-ink:#08201F;--accent-soft:#163533;--mark:#F0B940;--mark-soft:#3A2F14;--learn:#86A8E6;--learn-soft:#1C2A42;--prac:#4FB8B3;--prac-soft:#163533;--talk:#EE9A74;--talk-soft:#3B2318;--bad:#F08A82;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#10151B;--surface:#19212A;--ink:#EEF2F6;--muted:#A2ADBA;--line:#2B3642;--accent:#4FB8B3;--accent-ink:#08201F;--accent-soft:#163533;--mark:#F0B940;--mark-soft:#3A2F14;--learn:#86A8E6;--learn-soft:#1C2A42;--prac:#4FB8B3;--prac-soft:#163533;--talk:#EE9A74;--talk-soft:#3B2318;--bad:#F08A82;color-scheme:dark}
+*{box-sizing:border-box}html,body{height:100%;margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:clamp(18px,1.8vw,28px);line-height:1.45}
+.app{height:100%;display:grid;grid-template-rows:auto 1fr auto}
+.pad{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header{padding-block:12px 10px;border-bottom:1px solid var(--line);background:var(--surface)}
+.hrow{display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap;max-width:1500px;margin:0 auto}
+.where{display:flex;gap:12px;align-items:center;min-width:0}
+.tag{font:700 .62em/1 var(--display);letter-spacing:.08em;text-transform:uppercase;padding:.5em .7em;border-radius:6px;white-space:nowrap}
+.tag.learn{background:var(--learn-soft);color:var(--learn)}.tag.prac{background:var(--prac-soft);color:var(--prac)}.tag.talk{background:var(--talk-soft);color:var(--talk)}
+.stitle{font:700 1em/1.2 var(--display);margin:0}
+.dots{display:flex;gap:5px;flex-wrap:wrap}
+.dot{width:14px;height:14px;border-radius:50%;border:2px solid var(--line);background:transparent;padding:0;cursor:pointer}
+.dot.done{background:var(--line)}.dot.now{background:var(--accent);border-color:var(--accent)}
+main{overflow:auto;padding-block:20px}
+.stage{max-width:1500px;margin:0 auto;display:flex;flex-direction:column;gap:.8em}
+h2{font:700 clamp(1.5em,3.2vw,2.3em)/1.1 var(--display);margin:0;text-wrap:balance}
+p{margin:0}.lead{font-size:1.1em;max-width:46em}.muted{color:var(--muted)}
+.grid{display:grid;gap:.7em}.g2{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(3,minmax(0,1fr))}.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.box{background:var(--surface);border:2px solid var(--line);border-radius:14px;padding:.6em 1em;min-width:0}
+.box h3{font:700 1em/1.2 var(--display);margin:0 0 .25em}.box .big{font:700 1.35em/1.2 var(--display)}
+.box.hl{border-color:var(--accent);background:var(--accent-soft)}
+.rv{transition:opacity .25s}.rv.off{opacity:0;pointer-events:none}
+.ans{color:var(--accent);font-weight:700}.bad{color:var(--bad)}
+.ex{background:var(--surface);border:2px solid var(--line);border-radius:14px;padding:.6em 1em}.ex b{color:var(--accent)}
+ul.l,ol.l{margin:0;padding-left:1.3em;display:grid;gap:.3em}
+.steps{display:grid;gap:.45em;counter-reset:s;margin:0;padding:0}
+.steps li{list-style:none;position:relative;padding-left:2.2em;min-height:1.6em}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:.05em;width:1.6em;height:1.6em;border-radius:50%;background:var(--talk);color:var(--surface);display:grid;place-items:center;font:700 .85em var(--display)}
+.tw{overflow-x:auto}table.t{border-collapse:collapse;background:var(--surface)}
+table.t th,table.t td{border:2px solid var(--line);padding:.3em .8em;text-align:left}table.t th{background:var(--accent-soft);font-family:var(--display)}
+.linkbtn{display:inline-block;font:700 .9em/1.2 var(--display);padding:.6em 1em;border-radius:12px;background:var(--accent);color:var(--accent-ink);text-decoration:none}
+.scale{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:.4em}
+.scale div{border-radius:12px;padding:.5em .3em;text-align:center;font:700 .95em/1.15 var(--display);color:#fff}
+footer{border-top:1px solid var(--line);background:var(--surface);padding-block:10px calc(10px + env(safe-area-inset-bottom,0px))}
+.frow{max-width:1500px;margin:0 auto;display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.fgroup{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.btn{font:700 .85em/1 var(--display);padding:.75em 1.1em;border-radius:12px;border:2px solid var(--accent);background:var(--accent);color:var(--accent-ink);cursor:pointer;min-height:48px}
+.btn.ghost{background:transparent;color:var(--accent)}.btn.mark{background:var(--mark);border-color:var(--mark);color:#1b1400}
+.btn:disabled{opacity:.35;cursor:default}
+.btn:focus-visible,.dot:focus-visible{outline:3px solid var(--mark);outline-offset:2px}
+.clock{font:700 1.5em/1 var(--display);font-variant-numeric:tabular-nums;min-width:3.3em;text-align:center}
+.clock.run{color:var(--accent)}.clock.end{color:var(--bad);animation:fl .5s 6}@keyframes fl{50%{opacity:.2}}
+.timeup{position:fixed;left:0;right:0;top:30%;text-align:center;pointer-events:none}
+.timeup span{display:inline-block;background:var(--bad);color:#fff;font:700 clamp(2em,6vw,4em)/1 var(--display);padding:.4em .8em;border-radius:20px}
+.tnote{background:var(--mark-soft);border-radius:12px;padding:.6em .9em;font-size:.8em}
+.keys{color:var(--muted);font-size:.7em}
+.atin-logo{color:#1F3A5F;background:rgba(255,255,255,.92);border:1px solid #C9D3DF;border-radius:8px;padding:3px 5px;line-height:0;flex:none}.atin-logo svg{display:block}
+@media (prefers-reduced-motion:reduce){.clock.end{animation:none}.rv{transition:none}}
+@media (max-width:760px){.g3,.g4{grid-template-columns:repeat(2,minmax(0,1fr))}.g2{grid-template-columns:1fr}.scale{grid-template-columns:repeat(3,minmax(0,1fr))}.keys,.dots{display:none}}
+</style></head><body>
+<div class="app">
+<header class="pad"><div class="hrow"><div class="where"><div class="atin-logo" aria-label="Made by Atin"><svg viewBox="104 28 172 134" width="64" height="50" role="img" aria-hidden="true">
+<text x="139" y="112" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="72" fill="currentColor">A</text>
+<rect x="177" y="83" width="24" height="6" rx="1" fill="currentColor"/>
+<path d="M216 66 L216 106 A25 7 0 0 0 266 106 L266 66" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+<ellipse cx="241" cy="66" rx="25" ry="7" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="216" y1="80" x2="266" y2="80" stroke="currentColor" stroke-width="1.5"/>
+<line x1="216" y1="94" x2="266" y2="94" stroke="currentColor" stroke-width="1.5"/>
+<ellipse cx="241" cy="47" rx="23" ry="5" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="114" y1="128" x2="266" y2="128" stroke="currentColor" stroke-width="1"/>
+<text x="190" y="152" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" letter-spacing="2" fill="currentColor">made by Atin</text>
+</svg>
+</div><span class="tag" id="h-tag"></span><p class="stitle" id="h-title"></p></div><div class="dots" id="dots" aria-label="Lesson steps"></div></div></header>
+<main class="pad"><div class="stage" id="stage"></div></main>
+<footer class="pad"><div class="frow">
+<div class="fgroup"><button class="btn ghost" id="back" type="button">← Back</button><button class="btn mark" id="show" type="button">Show answer</button></div>
+<div class="fgroup"><span class="clock" id="clock" hidden>0:00</span><button class="btn ghost" id="tbtn" type="button" hidden>Start timer</button><button class="btn ghost" id="note" type="button">Teacher note</button><span class="keys">Space = next · ← back · A answer · T timer</span></div>
+<div class="fgroup"><button class="btn" id="next" type="button">Next →</button></div>
+</div></footer></div>
+<div class="timeup" id="timeup" hidden><span>Time's up!</span></div>
+<script>const S=[{"tag": "learn", "title": "Today", "html": "<h2>The best, the biggest, the cheapest</h2>\n<p class=\"lead\">Today we compare <b>three or more</b> things, say what we like <b>best</b> and give a <b>reason</b>. This helps in the speaking exam: Task 1 (questions about you) and the Task 4 discussion.</p>\n<div class=\"grid g3\"><div class=\"box\"><h3>1. Remember</h3>bigger, cheaper, more expensive … than</div><div class=\"box\"><h3>2. Learn</h3>the biggest, the cheapest, the most expensive</div><div class=\"box\"><h3>3. Speak</h3>Which is the best? Why?</div></div>\n<p><a class=\"linkbtn\" href=\"https://atinwix.github.io/esol/e2/speaking-listening/docs/superlatives-likes-reasons-student-handout.pdf\" target=\"_blank\" rel=\"noopener\">Handout (PDF)</a></p>", "note": "Hand out the student handout now. Learners keep the cut-out question cards face down until step 9."}, {"tag": "talk", "title": "Warm-up: shout it out", "timer": 300, "reveal": true, "html": "<h2>Compare the two. Shout out a sentence!</h2><p class=\"muted\">Use <b>-er … than</b> or <b>more … than</b>.</p><div class=\"grid g3\"><div class=\"box\"><div class=\"big\">the bus / the tube</div><p class=\"rv ans\">The tube is faster than the bus.</p></div><div class=\"box\"><div class=\"big\">Hackney / a small village</div><p class=\"rv ans\">Hackney is busier than a small village.</p></div><div class=\"box\"><div class=\"big\">summer / winter</div><p class=\"rv ans\">Summer is warmer than winter.</p></div><div class=\"box\"><div class=\"big\">a market / a supermarket</div><p class=\"rv ans\">A market is cheaper than a supermarket.</p></div><div class=\"box\"><div class=\"big\">a park / the high street</div><p class=\"rv ans\">A park is quieter than the high street.</p></div><div class=\"box\"><div class=\"big\">my country / London</div><p class=\"rv ans\">London is more expensive than my country.</p></div></div>", "note": "Same idea as last week's SmartBoard \"shout it out\": take several sentences for each pair, write the best ones up. Accept any correct sentence – the models are examples only."}, {"tag": "prac", "title": "Fix it", "reveal": true, "html": "<h2>One mistake in each sentence. Can you fix it?</h2><div class=\"grid g2\" data-step>\n<div class=\"box\"><div class=\"big\">A bike is more cheaper than a car.</div><p class=\"rv ans\">A bike is cheaper than a car.</p></div>\n<div class=\"box\"><div class=\"big\">The park is quieter then the street.</div><p class=\"rv ans\">The park is quieter than the street.</p></div>\n<div class=\"box\"><div class=\"big\">The weather is badder today.</div><p class=\"rv ans\">The weather is worse today.</p></div>\n<div class=\"box\"><div class=\"big\">My new room is more big than my old room.</div><p class=\"rv ans\">My new room is bigger than my old room.</p></div></div>", "note": "These are the most common mistakes from last week's find-the-error practice. \"Show answer\" reveals one at a time."}, {"tag": "learn", "title": "Two things or three?", "reveal": true, "html": "<h2>Three ways to get to college</h2>\n<div class=\"tw\"><table class=\"t\"><tr><th></th><th>Time</th><th>Cost</th></tr><tr><td>Walking</td><td>40 minutes</td><td>free</td></tr><tr><td>Bus</td><td>20 minutes</td><td>one fare</td></tr><tr><td>Bike</td><td>15 minutes</td><td>free (own bike)</td></tr></table></div>\n<div class=\"grid g2\"><div class=\"box\"><h3>Two things → comparative</h3>The bus is <b>faster than</b> walking.</div>\n<div class=\"box hl\"><h3>Three or more → superlative</h3><span class=\"rv\">The bike is <b>the fastest</b>.<br>Walking is <b>the slowest</b>.<br>The bus is <b>the most expensive</b>.</span></div></div>", "note": "Ask: Which is the fastest? Which is the slowest? Which costs the most? Elicit before you reveal. Point out \"the\" every time."}, {"tag": "learn", "title": "How to make it", "reveal": true, "html": "<h2>Superlatives: always <span style=\"color:var(--accent)\">the</span></h2>\n<div class=\"tw\"><table class=\"t\"><tr><th>Word</th><th>Rule</th><th>Example</th></tr>\n<tr><td>cheap, fast, quiet</td><td>the + -est</td><td>the cheapest</td></tr>\n<tr><td>nice, safe</td><td>the + -st</td><td>the nicest</td></tr>\n<tr><td>big, hot</td><td>double letter + -est</td><td>the biggest</td></tr>\n<tr><td>busy, easy</td><td>y → -iest</td><td>the busiest</td></tr>\n<tr><td>expensive, comfortable</td><td>the most + word</td><td>the most expensive</td></tr>\n<tr><td>good / bad</td><td>new word</td><td>the best / the worst</td></tr></table></div>\n<p><b>Your turn:</b> cold · happy · beautiful · wet · large</p>\n<p class=\"rv ans\">the coldest · the happiest · the most beautiful · the wettest · the largest</p>", "note": "Drill each example three times: whole class, then individuals."}, {"tag": "prac", "title": "Handout Tasks 1–3", "timer": 900, "reveal": true, "html": "<h2>Handout: Tasks 1, 2 and 3</h2><p>Work alone, then check with a partner.</p>\n<div class=\"grid g3\"><div class=\"box\"><h3>Task 1</h3><span class=\"rv\">the cheapest · the biggest · the busiest · the nicest · the most expensive · the most comfortable · the best · the worst · the quietest · the easiest</span></div>\n<div class=\"box\"><h3>Task 2</h3><span class=\"rv\">1 the fastest · 2 the busiest · 3 the most expensive · 4 the best · 5 the worst · 6 the quietest · 7 the biggest · 8 the most difficult</span></div>\n<div class=\"box\"><h3>Task 3</h3><span class=\"rv\">1 faster · 2 the cheapest · 3 smaller · 4 the best · 5 more expensive · 6 the easiest</span></div></div>\n<p class=\"muted\">Task 3 clue: <b>than</b> → comparative. <b>the</b> → superlative.</p>", "note": "Fast finishers: write two sentences about your class or your street with the superlative."}, {"tag": "learn", "title": "How much do you like it?", "reveal": true, "html": "<h2>Say how much – then say why</h2>\n<div class=\"scale\"><div style=\"background:#1D7A3A\">I love</div><div style=\"background:#3F9A55\">I really like</div><div style=\"background:#7FA83A\">I like</div><div style=\"background:#8A8F98\">I don't mind</div><div style=\"background:#C2672D\">I don't like</div><div style=\"background:#B3261E\">I hate</div></div>\n<div class=\"grid g2\"><div class=\"ex\">Do you like the tube?<br><b>I really like the tube because it's the fastest way to get to work.</b></div>\n<div class=\"ex\">Do you like the London weather?<br><b>I don't like it because winter is colder than in my country.</b></div></div>\n<p class=\"rv\"><b>Exam tip:</b> the assessor wants more than \"Yes\" or \"No\". Give a like word + <b>because</b> + a reason.</p>", "note": "Handout Task 4: learners number the six phrases 1–6 (answers: I love 1, I really like 2, I like 3, I don't mind 4, I don't like 5, I hate 6)."}, {"tag": "talk", "title": "Ask round the class", "timer": 420, "html": "<h2>Do you like …? Why?</h2>\n<div class=\"grid g3\"><div class=\"box big\">cooking</div><div class=\"box big\">the tube</div><div class=\"box big\">rain</div><div class=\"box big\">football</div><div class=\"box big\">shopping at the market</div><div class=\"box big\">winter in London</div></div>\n<p>Answer with a like word + <b>because</b>. Then write two of your sentences in Task 4.</p>", "note": "Chain drill: learner A asks B, B answers and asks C. Push for a reason every time."}, {"tag": "talk", "title": "Which is the best? (cards)", "timer": 1200, "reveal": true, "html": "<h2>Which is the best? Groups of three</h2>\n<ol class=\"steps\"><li><b>Speaker</b> takes a card and answers for 30 seconds: the ___est / the most … + like word + because.</li>\n<li><b>Partner</b> asks one more question: Why? / How often …? / What about …?</li>\n<li><b>Assessor</b> listens and ticks: superlative ✓ like word ✓ because ✓ question answered ✓</li><li>Change roles. Next card.</li></ol>\n<div class=\"ex\">Card: <b>What is the best place in London for a day out?</b><span class=\"rv\"><br>\"I think the best place is the South Bank. I really like it because you can walk by the river and it's free. It's the most beautiful place in London for me.\"</span></div>", "note": "Model the first card with a strong learner. Before speaking, learners can plan two cards in Task 5 (words only). Monitor and note mistakes with the/most for the feedback slide."}, {"tag": "prac", "title": "Feedback", "html": "<h2>Good sentences and mistakes I heard</h2>\n<div class=\"grid g2\"><div class=\"box hl\"><h3>Good!</h3><p class=\"muted\">(write on the board)</p></div><div class=\"box\"><h3>Fix it</h3><p class=\"muted\">(write on the board)</p></div></div>\n<p><b>Exit sentence:</b> The best thing about my week was … because …</p>", "note": "Write 3 good sentences and 3 mistakes from the card activity on the board. Class fixes the mistakes. Each learner says the exit sentence before the break."}];
+
+(function(){
+const $=id=>document.getElementById(id);let i=0,shown=false,left=0,tick=null,noteOn=false;
+const TAGS={learn:'Learn',prac:'Practise',talk:'Speak'};
+function dots(){$('dots').innerHTML='';S.forEach((s,k)=>{const b=document.createElement('button');b.type='button';b.className='dot'+(k<i?' done':'')+(k===i?' now':'');b.setAttribute('aria-label','Step '+(k+1)+': '+s.title);b.onclick=()=>go(k);$('dots').appendChild(b);});}
+function stop(){clearInterval(tick);tick=null;$('clock').classList.remove('run');}
+function fmt(n){return Math.floor(n/60)+':'+String(n%60).padStart(2,'0');}
+function go(k){i=Math.max(0,Math.min(S.length-1,k));const s=S[i];shown=false;noteOn=false;stop();
+ $('h-tag').className='tag '+s.tag;$('h-tag').textContent=TAGS[s.tag];$('h-title').textContent=s.title;
+ $('stage').innerHTML=s.html+(s.note?'<div class="tnote" id="tn" hidden><b>Teacher note:</b> '+s.note+'</div>':'');
+ $('stage').querySelectorAll('.rv').forEach(e=>e.classList.add('off'));
+ $('show').hidden=!s.reveal;$('show').textContent='Show answer';$('note').hidden=!s.note;
+ const t=s.timer||0;$('clock').hidden=!t;$('tbtn').hidden=!t;left=t;$('clock').textContent=fmt(t);$('clock').className='clock';$('tbtn').textContent='Start timer';
+ $('back').disabled=i===0;$('next').disabled=i===S.length-1;dots();$('stage').parentElement.scrollTop=0;}
+function reveal(){const r=[...$('stage').querySelectorAll('.rv.off')];if(!r.length){$('stage').querySelectorAll('.rv').forEach(e=>e.classList.add('off'));$('show').textContent='Show answer';return;}
+ const step=$('stage').querySelector('[data-step]')?1:r.length;r.slice(0,step).forEach(e=>e.classList.remove('off'));if(r.length<=step)$('show').textContent='Hide answers';}
+function timer(){if(tick){stop();$('tbtn').textContent='Start timer';return;}if(left<=0)left=S[i].timer;$('clock').classList.add('run');$('clock').classList.remove('end');$('tbtn').textContent='Pause';
+ tick=setInterval(()=>{left--;$('clock').textContent=fmt(left);if(left<=0){stop();$('clock').classList.add('end');$('tbtn').textContent='Start timer';$('timeup').hidden=false;setTimeout(()=>$('timeup').hidden=true,2500);}},1000);}
+$('next').onclick=()=>go(i+1);$('back').onclick=()=>go(i-1);$('show').onclick=reveal;$('tbtn').onclick=timer;
+$('note').onclick=()=>{const n=$('tn');if(n)n.hidden=!n.hidden;};
+document.addEventListener('keydown',e=>{if(e.target.closest('input,textarea'))return;if(e.key===' '||e.key==='ArrowRight'||e.key==='PageDown'){e.preventDefault();go(i+1);}else if(e.key==='ArrowLeft'||e.key==='PageUp')go(i-1);else if(e.key==='t'||e.key==='T'){if(S[i].timer)timer();}else if(e.key==='a'||e.key==='A'){if(S[i].reveal)reveal();}});
+go(0);})();
+</script>
+</body></html>

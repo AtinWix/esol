@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>E2 Superlatives – Task 4 Listening and Discussion – Projector Lesson</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@500;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<style>
+:root{--bg:#F4F6F8;--surface:#FFFFFF;--ink:#141D28;--muted:#4F5B69;--line:#D3D9E0;--accent:#0E6B6B;--accent-ink:#FFFFFF;--accent-soft:#DCEFEE;--mark:#E3A008;--mark-soft:#FCEFCC;--learn:#2F5DA8;--learn-soft:#E2EAF7;--prac:#0E6B6B;--prac-soft:#DCEFEE;--talk:#A3461F;--talk-soft:#F7E4DA;--bad:#B3261E;--display:"Lexend","Segoe UI",Arial,sans-serif;--body:"Atkinson Hyperlegible",Verdana,Arial,sans-serif;color-scheme:light}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#10151B;--surface:#19212A;--ink:#EEF2F6;--muted:#A2ADBA;--line:#2B3642;--accent:#4FB8B3;--accent-ink:#08201F;--accent-soft:#163533;--mark:#F0B940;--mark-soft:#3A2F14;--learn:#86A8E6;--learn-soft:#1C2A42;--prac:#4FB8B3;--prac-soft:#163533;--talk:#EE9A74;--talk-soft:#3B2318;--bad:#F08A82;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#10151B;--surface:#19212A;--ink:#EEF2F6;--muted:#A2ADBA;--line:#2B3642;--accent:#4FB8B3;--accent-ink:#08201F;--accent-soft:#163533;--mark:#F0B940;--mark-soft:#3A2F14;--learn:#86A8E6;--learn-soft:#1C2A42;--prac:#4FB8B3;--prac-soft:#163533;--talk:#EE9A74;--talk-soft:#3B2318;--bad:#F08A82;color-scheme:dark}
+*{box-sizing:border-box}html,body{height:100%;margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:clamp(18px,1.8vw,28px);line-height:1.45}
+.app{height:100%;display:grid;grid-template-rows:auto 1fr auto}
+.pad{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header{padding-block:12px 10px;border-bottom:1px solid var(--line);background:var(--surface)}
+.hrow{display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap;max-width:1500px;margin:0 auto}
+.where{display:flex;gap:12px;align-items:center;min-width:0}
+.tag{font:700 .62em/1 var(--display);letter-spacing:.08em;text-transform:uppercase;padding:.5em .7em;border-radius:6px;white-space:nowrap}
+.tag.learn{background:var(--learn-soft);color:var(--learn)}.tag.prac{background:var(--prac-soft);color:var(--prac)}.tag.talk{background:var(--talk-soft);color:var(--talk)}
+.stitle{font:700 1em/1.2 var(--display);margin:0}
+.dots{display:flex;gap:5px;flex-wrap:wrap}
+.dot{width:14px;height:14px;border-radius:50%;border:2px solid var(--line);background:transparent;padding:0;cursor:pointer}
+.dot.done{background:var(--line)}.dot.now{background:var(--accent);border-color:var(--accent)}
+main{overflow:auto;padding-block:20px}
+.stage{max-width:1500px;margin:0 auto;display:flex;flex-direction:column;gap:.8em}
+h2{font:700 clamp(1.5em,3.2vw,2.3em)/1.1 var(--display);margin:0;text-wrap:balance}
+p{margin:0}.lead{font-size:1.1em;max-width:46em}.muted{color:var(--muted)}
+.grid{display:grid;gap:.7em}.g2{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(3,minmax(0,1fr))}.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.box{background:var(--surface);border:2px solid var(--line);border-radius:14px;padding:.6em 1em;min-width:0}
+.box h3{font:700 1em/1.2 var(--display);margin:0 0 .25em}.box .big{font:700 1.35em/1.2 var(--display)}
+.box.hl{border-color:var(--accent);background:var(--accent-soft)}
+.rv{transition:opacity .25s}.rv.off{opacity:0;pointer-events:none}
+.ans{color:var(--accent);font-weight:700}.bad{color:var(--bad)}
+.ex{background:var(--surface);border:2px solid var(--line);border-radius:14px;padding:.6em 1em}.ex b{color:var(--accent)}
+ul.l,ol.l{margin:0;padding-left:1.3em;display:grid;gap:.3em}
+.steps{display:grid;gap:.45em;counter-reset:s;margin:0;padding:0}
+.steps li{list-style:none;position:relative;padding-left:2.2em;min-height:1.6em}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:.05em;width:1.6em;height:1.6em;border-radius:50%;background:var(--talk);color:var(--surface);display:grid;place-items:center;font:700 .85em var(--display)}
+.tw{overflow-x:auto}table.t{border-collapse:collapse;background:var(--surface)}
+table.t th,table.t td{border:2px solid var(--line);padding:.3em .8em;text-align:left}table.t th{background:var(--accent-soft);font-family:var(--display)}
+.linkbtn{display:inline-block;font:700 .9em/1.2 var(--display);padding:.6em 1em;border-radius:12px;background:var(--accent);color:var(--accent-ink);text-decoration:none}
+.scale{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:.4em}
+.scale div{border-radius:12px;padding:.5em .3em;text-align:center;font:700 .95em/1.15 var(--display);color:#fff}
+footer{border-top:1px solid var(--line);background:var(--surface);padding-block:10px calc(10px + env(safe-area-inset-bottom,0px))}
+.frow{max-width:1500px;margin:0 auto;display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.fgroup{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.btn{font:700 .85em/1 var(--display);padding:.75em 1.1em;border-radius:12px;border:2px solid var(--accent);background:var(--accent);color:var(--accent-ink);cursor:pointer;min-height:48px}
+.btn.ghost{background:transparent;color:var(--accent)}.btn.mark{background:var(--mark);border-color:var(--mark);color:#1b1400}
+.btn:disabled{opacity:.35;cursor:default}
+.btn:focus-visible,.dot:focus-visible{outline:3px solid var(--mark);outline-offset:2px}
+.clock{font:700 1.5em/1 var(--display);font-variant-numeric:tabular-nums;min-width:3.3em;text-align:center}
+.clock.run{color:var(--accent)}.clock.end{color:var(--bad);animation:fl .5s 6}@keyframes fl{50%{opacity:.2}}
+.timeup{position:fixed;left:0;right:0;top:30%;text-align:center;pointer-events:none}
+.timeup span{display:inline-block;background:var(--bad);color:#fff;font:700 clamp(2em,6vw,4em)/1 var(--display);padding:.4em .8em;border-radius:20px}
+.tnote{background:var(--mark-soft);border-radius:12px;padding:.6em .9em;font-size:.8em}
+.keys{color:var(--muted);font-size:.7em}
+.atin-logo{color:#1F3A5F;background:rgba(255,255,255,.92);border:1px solid #C9D3DF;border-radius:8px;padding:3px 5px;line-height:0;flex:none}.atin-logo svg{display:block}
+@media (prefers-reduced-motion:reduce){.clock.end{animation:none}.rv{transition:none}}
+@media (max-width:760px){.g3,.g4{grid-template-columns:repeat(2,minmax(0,1fr))}.g2{grid-template-columns:1fr}.scale{grid-template-columns:repeat(3,minmax(0,1fr))}.keys,.dots{display:none}}
+</style></head><body>
+<div class="app">
+<header class="pad"><div class="hrow"><div class="where"><div class="atin-logo" aria-label="Made by Atin"><svg viewBox="104 28 172 134" width="64" height="50" role="img" aria-hidden="true">
+<text x="139" y="112" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="72" fill="currentColor">A</text>
+<rect x="177" y="83" width="24" height="6" rx="1" fill="currentColor"/>
+<path d="M216 66 L216 106 A25 7 0 0 0 266 106 L266 66" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+<ellipse cx="241" cy="66" rx="25" ry="7" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="216" y1="80" x2="266" y2="80" stroke="currentColor" stroke-width="1.5"/>
+<line x1="216" y1="94" x2="266" y2="94" stroke="currentColor" stroke-width="1.5"/>
+<ellipse cx="241" cy="47" rx="23" ry="5" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="114" y1="128" x2="266" y2="128" stroke="currentColor" stroke-width="1"/>
+<text x="190" y="152" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" letter-spacing="2" fill="currentColor">made by Atin</text>
+</svg>
+</div><span class="tag" id="h-tag"></span><p class="stitle" id="h-title"></p></div><div class="dots" id="dots" aria-label="Lesson steps"></div></div></header>
+<main class="pad"><div class="stage" id="stage"></div></main>
+<footer class="pad"><div class="frow">
+<div class="fgroup"><button class="btn ghost" id="back" type="button">← Back</button><button class="btn mark" id="show" type="button">Show answer</button></div>
+<div class="fgroup"><span class="clock" id="clock" hidden>0:00</span><button class="btn ghost" id="tbtn" type="button" hidden>Start timer</button><button class="btn ghost" id="note" type="button">Teacher note</button><span class="keys">Space = next · ← back · A answer · T timer</span></div>
+<div class="fgroup"><button class="btn" id="next" type="button">Next →</button></div>
+</div></footer></div>
+<div class="timeup" id="timeup" hidden><span>Time's up!</span></div>
+<script>const S=[{"tag": "learn", "title": "This afternoon", "html": "<h2>Superlatives on screen, then exam listening and discussion</h2>\n<div class=\"grid g4\"><div class=\"box\"><h3>1</h3>Online practice</div><div class=\"box\"><h3>2</h3>Three places, one winner (TfL Journey Planner + Teams)</div><div class=\"box\"><h3>3</h3>Task 4: listen and discuss</div><div class=\"box\"><h3>4</h3>Kahoot</div></div>\n<p><a class=\"linkbtn\" href=\"https://atinwix.github.io/esol/e2/speaking-listening/comparatives-superlatives-choose-and-build-interactive-practice.html\" target=\"_blank\" rel=\"noopener\">Online practice</a> <a class=\"linkbtn\" href=\"https://tfl.gov.uk/plan-a-journey/\" target=\"_blank\" rel=\"noopener\">TfL Journey Planner</a></p>", "note": "Post both links in Teams General before the lesson."}, {"tag": "prac", "title": "Online practice", "timer": 900, "html": "<h2>Comparatives and superlatives: choose and build</h2>\n<p class=\"lead\">Part A: choose the right word (16 sentences). Part B: put the words in order (8 sentences). Try to get every one right first time.</p>\n<p><a class=\"linkbtn\" href=\"https://atinwix.github.io/esol/e2/speaking-listening/comparatives-superlatives-choose-and-build-interactive-practice.html\" target=\"_blank\" rel=\"noopener\">Open the practice</a></p>", "note": "Walk round. When most learners finish, ask for the question they found hardest and do it together on the projector."}, {"tag": "talk", "title": "Three places, one winner", "timer": 1500, "reveal": true, "html": "<h2>Three places, one winner</h2>\n<ol class=\"steps\"><li>With a partner, choose <b>three places</b> in London you like or want to visit.</li>\n<li>Use the TfL Journey Planner. From: <b>college</b>. To: each place. Write down the time.</li>\n<li>In Teams General, post four sentences:<br>The nearest place is … · The quickest journey is to … · The longest journey is to … · My favourite place is … because …</li></ol>\n<div class=\"ex rv\">Example: <b>The nearest place is Hackney Central. The quickest journey is to Hackney Central. The longest journey is to Wembley. My favourite place is Victoria Park because it's the biggest green space near my home.</b></div>", "note": "Show the example only if a pair is stuck. Places do not need to be famous: a mosque, a market, a friend's area or a football ground are fine. No home addresses."}, {"tag": "talk", "title": "Share", "timer": 300, "html": "<h2>Read one sentence. The class asks: Why?</h2>\n<p class=\"lead\">Read your favourite place sentence. The class asks <b>Why?</b> or <b>How do you get there?</b> Answer with a full sentence.</p>", "note": "Pick 4–5 pairs from the Teams posts. Correct the/most on the projector."}, {"tag": "learn", "title": "Task 4: how it works", "html": "<h2>Exam Task 4: listen, answer, discuss</h2>\n<ol class=\"steps\"><li>Read the two questions <b>before</b> you listen.</li><li>Listen. Question 1 is about the main idea: <b>Yes</b> or <b>No</b>.</li><li>Question 2 is a detail: a time, a place, a number.</li><li>Then talk together about the topic.</li></ol>", "note": "You read the scripts aloud (they are in the day plan). Read each one twice, at natural speed, like the assessor's recording."}, {"tag": "prac", "title": "Listening 1: a phone message", "reveal": true, "html": "<h2>Listening 1: a phone message</h2>\n<div class=\"grid g2\"><div class=\"box\"><h3>1. Is Nadia at the supermarket?</h3><p class=\"rv ans\">No – she's at the market on Ridley Road.</p></div>\n<div class=\"box\"><h3>2. When should Sam call her back?</h3><p class=\"rv ans\">Before twelve o'clock.</p></div></div>\n<p class=\"muted\">Extra: How much are the mangoes? <span class=\"rv ans\">Three for two pounds.</span></p>", "note": "Script: \"Hi Sam, it's Nadia. I'm at the market on Ridley Road. The fruit here is cheaper than at the supermarket, and the mangoes are the best I've seen this year. Do you want some? They're three for two pounds. Call me back before twelve o'clock. Bye!\""}, {"tag": "prac", "title": "Listening 2: two friends", "reveal": true, "html": "<h2>Listening 2: Hana and Leo</h2>\n<div class=\"grid g2\"><div class=\"box\"><h3>1. Does Hana want to buy a phone?</h3><p class=\"rv ans\">Yes.</p></div>\n<div class=\"box\"><h3>2. How long does it take to walk to the shop?</h3><p class=\"rv ans\">About ten minutes.</p></div></div>\n<p class=\"muted\">Extra: Why does Leo like the shop on Mare Street? <span class=\"rv ans\">It's cheaper than the big shops in town.</span></p>", "note": "Script: HANA: I need a new phone. Where's the best place to buy one? / LEO: Try the shop on Mare Street. It's cheaper than the big shops in town. / HANA: Is it far? / LEO: No, it's the nearest phone shop to college. About ten minutes on foot. / HANA: Great. I'll go after class."}, {"tag": "talk", "title": "Discussion", "timer": 480, "html": "<h2>Discuss in threes: What is the best way to shop in London?</h2>\n<div class=\"grid g2\"><div class=\"box\"><h3>Give your opinion</h3>I think … is the best because …<br>For me, the cheapest place is …</div>\n<div class=\"box\"><h3>Agree or disagree</h3>I agree, because … · I'm not sure. I think …</div>\n<div class=\"box\"><h3>Bring others in</h3>What do you think, …? · Do you agree?</div>\n<div class=\"box\"><h3>Check</h3>Sorry, can you say that again?</div></div>", "note": "Each learner should speak at least three times and ask one question. Second topic if time: What is the best way to travel in London?"}, {"tag": "prac", "title": "Kahoot", "html": "<h2>Kahoot: comparatives and superlatives</h2><p class=\"lead\">15 questions. Use your PC or your phone.</p>", "note": "Import superlatives-kahoot.xlsx into Kahoot (Create → Import spreadsheet) before the lesson, then host it here. Go back over any question most people got wrong."}, {"tag": "talk", "title": "Next week", "html": "<h2>Next week: plans and the future</h2><p class=\"lead\">Think about this: <b>What are you going to do at the weekend?</b> Tell a partner one plan.</p>", "note": "Next lesson starts future forms (going to for plans) – Exam Prep Lesson 5."}];
+
+(function(){
+const $=id=>document.getElementById(id);let i=0,shown=false,left=0,tick=null,noteOn=false;
+const TAGS={learn:'Learn',prac:'Practise',talk:'Speak'};
+function dots(){$('dots').innerHTML='';S.forEach((s,k)=>{const b=document.createElement('button');b.type='button';b.className='dot'+(k<i?' done':'')+(k===i?' now':'');b.setAttribute('aria-label','Step '+(k+1)+': '+s.title);b.onclick=()=>go(k);$('dots').appendChild(b);});}
+function stop(){clearInterval(tick);tick=null;$('clock').classList.remove('run');}
+function fmt(n){return Math.floor(n/60)+':'+String(n%60).padStart(2,'0');}
+function go(k){i=Math.max(0,Math.min(S.length-1,k));const s=S[i];shown=false;noteOn=false;stop();
+ $('h-tag').className='tag '+s.tag;$('h-tag').textContent=TAGS[s.tag];$('h-title').textContent=s.title;
+ $('stage').innerHTML=s.html+(s.note?'<div class="tnote" id="tn" hidden><b>Teacher note:</b> '+s.note+'</div>':'');
+ $('stage').querySelectorAll('.rv').forEach(e=>e.classList.add('off'));
+ $('show').hidden=!s.reveal;$('show').textContent='Show answer';$('note').hidden=!s.note;
+ const t=s.timer||0;$('clock').hidden=!t;$('tbtn').hidden=!t;left=t;$('clock').textContent=fmt(t);$('clock').className='clock';$('tbtn').textContent='Start timer';
+ $('back').disabled=i===0;$('next').disabled=i===S.length-1;dots();$('stage').parentElement.scrollTop=0;}
+function reveal(){const r=[...$('stage').querySelectorAll('.rv.off')];if(!r.length){$('stage').querySelectorAll('.rv').forEach(e=>e.classList.add('off'));$('show').textContent='Show answer';return;}
+ const step=$('stage').querySelector('[data-step]')?1:r.length;r.slice(0,step).forEach(e=>e.classList.remove('off'));if(r.length<=step)$('show').textContent='Hide answers';}
+function timer(){if(tick){stop();$('tbtn').textContent='Start timer';return;}if(left<=0)left=S[i].timer;$('clock').classList.add('run');$('clock').classList.remove('end');$('tbtn').textContent='Pause';
+ tick=setInterval(()=>{left--;$('clock').textContent=fmt(left);if(left<=0){stop();$('clock').classList.add('end');$('tbtn').textContent='Start timer';$('timeup').hidden=false;setTimeout(()=>$('timeup').hidden=true,2500);}},1000);}
+$('next').onclick=()=>go(i+1);$('back').onclick=()=>go(i-1);$('show').onclick=reveal;$('tbtn').onclick=timer;
+$('note').onclick=()=>{const n=$('tn');if(n)n.hidden=!n.hidden;};
+document.addEventListener('keydown',e=>{if(e.target.closest('input,textarea'))return;if(e.key===' '||e.key==='ArrowRight'||e.key==='PageDown'){e.preventDefault();go(i+1);}else if(e.key==='ArrowLeft'||e.key==='PageUp')go(i-1);else if(e.key==='t'||e.key==='T'){if(S[i].timer)timer();}else if(e.key==='a'||e.key==='A'){if(S[i].reveal)reveal();}});
+go(0);})();
+</script>
+</body></html>

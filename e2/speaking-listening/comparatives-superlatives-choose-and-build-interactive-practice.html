@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>E2 Comparatives and Superlatives – Choose and Build – Interactive Practice</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@500;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<style>
+:root{--bg:#F3F5F7;--surface:#FFFFFF;--ink:#18222E;--muted:#556170;--line:#D9DEE5;--accent:#0E6B6B;--accent-ink:#FFFFFF;--accent-soft:#DDEFEE;--mark:#E8A317;--mark-soft:#FCF0D2;--good:#1D7A3A;--good-soft:#DDF1E3;--bad:#B3261E;--bad-soft:#F8DEDC;--display:"Lexend","Segoe UI",Arial,sans-serif;--body:"Atkinson Hyperlegible",Verdana,Arial,sans-serif;color-scheme:light}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#11161C;--surface:#1A222B;--ink:#E9EEF3;--muted:#9AA6B3;--line:#2C3743;--accent:#4FB8B3;--accent-ink:#08201F;--accent-soft:#163533;--mark:#F0B940;--mark-soft:#3A2F14;--good:#5FCB82;--good-soft:#163222;--bad:#F08A82;--bad-soft:#3A1A18;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#11161C;--surface:#1A222B;--ink:#E9EEF3;--muted:#9AA6B3;--line:#2C3743;--accent:#4FB8B3;--accent-ink:#08201F;--accent-soft:#163533;--mark:#F0B940;--mark-soft:#3A2F14;--good:#5FCB82;--good-soft:#163222;--bad:#F08A82;--bad-soft:#3A1A18;color-scheme:dark}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:clamp(17px,1.6vw,22px);line-height:1.45;padding:env(safe-area-inset-top,0) env(safe-area-inset-right,0) env(safe-area-inset-bottom,0) env(safe-area-inset-left,0)}
+.app{max-width:1400px;margin:0 auto;padding:clamp(12px,2vh,24px) 16px;display:flex;flex-direction:column;gap:12px}
+header{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+h1{font:700 clamp(20px,2.3vw,32px) var(--display);margin:0;flex:1 1 auto}
+.score{font:500 1em var(--display);color:var(--muted);white-space:nowrap}
+.tabs{display:flex;gap:8px;flex-wrap:wrap}
+.tab{font:700 .9em var(--display);border:2px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:8px 16px;cursor:pointer}
+.tab[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.dots{display:flex;flex-wrap:wrap;gap:6px}
+.dot{width:36px;height:36px;border-radius:50%;border:2px solid var(--line);background:var(--surface);color:var(--muted);font:700 .75em var(--display);cursor:pointer;display:grid;place-items:center;padding:0}
+.dot.cur{border-color:var(--accent);color:var(--accent)}.dot.ok{background:var(--good);border-color:var(--good);color:#fff}.dot.no{background:var(--mark);border-color:var(--mark);color:#1b1300}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:clamp(16px,3vw,40px);display:flex;flex-direction:column;gap:clamp(12px,2vh,22px);min-height:55vh}
+.step{font:500 .9em var(--display);color:var(--accent)}
+.sent{font:700 clamp(22px,3.2vw,46px)/1.4 var(--display)}
+.gap{display:inline-block;min-width:4em;border-bottom:4px solid var(--accent);text-align:center;color:var(--accent)}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.opt,.wd{font:700 clamp(18px,2vw,28px) var(--display);border:2px solid var(--line);background:var(--bg);color:var(--ink);border-radius:14px;padding:14px;cursor:pointer;min-height:56px}
+.opt.good{background:var(--good-soft);border-color:var(--good);color:var(--good)}.opt.bad{background:var(--bad-soft);border-color:var(--bad);color:var(--bad)}
+.opt:disabled{cursor:default}
+.bank,.line{display:flex;flex-wrap:wrap;gap:8px;min-height:64px}
+.line{border:2px dashed var(--line);border-radius:14px;padding:8px}
+.line.good{border-color:var(--good);background:var(--good-soft)}.line.bad{border-color:var(--bad);background:var(--bad-soft)}
+.wd{padding:10px 14px}
+.msg{min-height:1.5em;font-weight:700}.msg.good{color:var(--good)}.msg.bad{color:var(--bad)}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:auto;flex-wrap:wrap}
+button.b{font:700 1em var(--display);border:0;border-radius:12px;padding:12px 22px;cursor:pointer;background:var(--accent);color:var(--accent-ink)}
+button.b.sec{background:var(--surface);color:var(--ink);border:2px solid var(--line)}
+button.b:disabled{opacity:.45;cursor:default}
+button:focus-visible{outline:3px solid var(--mark);outline-offset:2px}
+.foot{display:flex;align-items:center;gap:12px;color:var(--muted);font-size:.8em}
+.atin-logo{color:#1F3A5F;background:rgba(255,255,255,.92);border:1px solid #C9D3DF;border-radius:8px;padding:3px 5px;line-height:0;flex:none}.atin-logo svg{display:block}
+</style></head><body>
+<div class="app">
+<header><h1>Comparatives and superlatives</h1><span class="score" id="score"></span></header>
+<div class="tabs" role="tablist"><button class="tab" role="tab" id="tA" type="button">Part A: choose</button><button class="tab" role="tab" id="tB" type="button">Part B: build the sentence</button></div>
+<nav class="dots" id="dots" aria-label="Questions"></nav>
+<main class="card" id="card"></main>
+<div class="foot"><div class="atin-logo" aria-label="Made by Atin"><svg viewBox="104 28 172 134" width="64" height="50" role="img" aria-hidden="true">
+<text x="139" y="112" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="72" fill="currentColor">A</text>
+<rect x="177" y="83" width="24" height="6" rx="1" fill="currentColor"/>
+<path d="M216 66 L216 106 A25 7 0 0 0 266 106 L266 66" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+<ellipse cx="241" cy="66" rx="25" ry="7" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="216" y1="80" x2="266" y2="80" stroke="currentColor" stroke-width="1.5"/>
+<line x1="216" y1="94" x2="266" y2="94" stroke="currentColor" stroke-width="1.5"/>
+<ellipse cx="241" cy="47" rx="23" ry="5" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="114" y1="128" x2="266" y2="128" stroke="currentColor" stroke-width="1"/>
+<text x="190" y="152" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" letter-spacing="2" fill="currentColor">made by Atin</text>
+</svg>
+</div><span>Clue: <b>than</b> → comparative (faster than). <b>the</b> → superlative (the fastest).</span></div>
+</div>
+<script>
+const A=[["The tube is ___ than the bus.", ["fast", "faster", "the fastest"], 1], ["Cycling is ___ way to get to college.", ["the fastest", "faster", "fastest"], 0], ["December is ___ month in the shops.", ["busier", "the busiest", "the most busy"], 1], ["A taxi is ___ way to travel in London.", ["the expensivest", "more expensive", "the most expensive"], 2], ["My mum makes ___ food in the world!", ["the best", "the goodest", "better"], 0], ["Monday morning is ___ time to take the bus.", ["the baddest", "the worst", "worse"], 1], ["The park is ___ than the high street.", ["the quietest", "quieter", "more quiet"], 1], ["This is ___ supermarket in our area.", ["the bigest", "the biggest", "bigger"], 1], ["For me, writing is ___ than speaking.", ["more difficult", "the most difficult", "difficulter"], 0], ["Is London ___ than your city?", ["the most expensive", "expensiver", "more expensive"], 2], ["This is ___ question on the page.", ["the easyest", "the easiest", "easier"], 1], ["Summer is ___ time of year in London.", ["the nicest", "the most nice", "nicer"], 0], ["My room is ___ than my sister's room.", ["the smallest", "smaller", "more small"], 1], ["What is ___ place you know in London?", ["the most beautiful", "the beautifulest", "more beautiful"], 0], ["The market is ___ than the supermarket.", ["cheaper", "the cheapest", "more cheap"], 0], ["I think January is ___ month of the year.", ["the coldest", "colder", "the most cold"], 0]];
+const B=["The bike is the fastest way to college.", "Walking is the cheapest way to travel.", "Saturday is the busiest day at the market.", "My favourite place is the park because it is quiet.", "The tube is faster than the bus.", "Which is the best place for a day out?", "I really like cooking because it is relaxing.", "This is the most comfortable chair in the room."];
+const $=id=>document.getElementById(id);
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;};
+const sa=A.map(()=>({pick:null,first:null}));
+const sb=B.map(s=>{const w=s.split(' ');let sh;do{sh=shuffle(w);}while(sh.join(' ')===s);return {words:w,bank:sh.map((t,k)=>({t,k})),line:[],done:null,tries:0};});
+let part='A',cur=0;
+function score(){const a=sa.filter(x=>x.first===true).length,b=sb.filter(x=>x.done===true&&x.tries===1).length;$('score').textContent='Right first time: '+(a+b)+' / '+(A.length+B.length);}
+function dots(){const arr=part==='A'?sa:sb;$('dots').innerHTML='';arr.forEach((x,i)=>{const d=document.createElement('button');d.type='button';const ok=part==='A'?x.pick!==null&&x.first:x.done&&x.tries===1;const no=part==='A'?x.pick!==null&&!x.first:x.done&&x.tries>1;
+ d.className='dot'+(i===cur?' cur':'')+(ok?' ok':no?' no':'');d.textContent=i+1;d.setAttribute('aria-label','Question '+(i+1));d.onclick=()=>{cur=i;show();};$('dots').appendChild(d);});
+ $('tA').setAttribute('aria-selected',part==='A');$('tB').setAttribute('aria-selected',part==='B');score();}
+function nav(n){return `<div class="nav"><button class="b sec" type="button" id="pv" ${cur===0?'disabled':''}>← Back</button><button class="b" type="button" id="nx">${cur===n-1?(part==='A'?'Go to Part B →':'Finish'):'Next →'}</button></div>`;}
+function wire(n){$('pv').onclick=()=>{cur--;show();};$('nx').onclick=()=>{if(cur<n-1){cur++;show();}else if(part==='A'){part='B';cur=0;show();}else end();};}
+function show(){const c=$('card');
+ if(part==='A'){const [s,o,k]=A[cur],st=sa[cur];const filled=st.pick===null?'':(st.first===false&&st.pick!==k?'':o[k]);
+  c.innerHTML=`<div class="step">Part A · ${cur+1} of ${A.length} · Choose the right word</div><div class="sent">${s.replace('___','<span class="gap">'+(st.pick===k?o[k]:'&nbsp;')+'</span>')}</div><div class="opts" id="opts"></div><div class="msg" id="msg" aria-live="polite"></div>`+nav(A.length);
+  o.forEach((t,i)=>{const b=document.createElement('button');b.type='button';b.className='opt';b.textContent=t;
+   if(st.pick===k&&i===k)b.classList.add('good');if(st.pick!==null&&st.pick!==k&&i===st.pick)b.classList.add('bad');if(st.pick===k)b.disabled=true;
+   b.onclick=()=>{if(st.first===null)st.first=(i===k);st.pick=i;show();};$('opts').appendChild(b);});
+  const m=$('msg');if(st.pick===k){m.className='msg good';m.textContent=st.first?'Correct!':'Yes – that\'s it.';}else if(st.pick!==null){m.className='msg bad';m.textContent='Not quite. Look for than or the. Try again.';}
+  wire(A.length);}
+ else{const st=sb[cur];
+  c.innerHTML=`<div class="step">Part B · ${cur+1} of ${B.length} · Tap the words in the right order</div><div class="line" id="line"></div><div class="bank" id="bank"></div><div class="msg" id="msg" aria-live="polite"></div><div style="display:flex;gap:10px;flex-wrap:wrap"><button class="b" type="button" id="ck">Check</button><button class="b sec" type="button" id="cl">Clear</button></div>`+nav(B.length);
+  if(st.done===true)$('line').classList.add('good');
+  st.line.forEach((w,i)=>{const b=document.createElement('button');b.type='button';b.className='wd';b.textContent=w.t;b.onclick=()=>{if(st.done)return;st.line.splice(i,1);st.bank.push(w);show();};$('line').appendChild(b);});
+  st.bank.forEach((w,i)=>{const b=document.createElement('button');b.type='button';b.className='wd';b.textContent=w.t;b.onclick=()=>{st.bank.splice(i,1);st.line.push(w);show();};$('bank').appendChild(b);});
+  const m=$('msg');if(st.done){m.className='msg good';m.textContent=st.tries===1?'Correct first time!':'Correct!';$('ck').disabled=true;$('cl').disabled=true;}
+  $('ck').onclick=()=>{if(st.bank.length){m.className='msg bad';m.textContent='Use all the words.';return;}st.tries++;
+   if(st.line.map(w=>w.t).join(' ')===B[cur]){st.done=true;show();}else{$('line').classList.add('bad');m.className='msg bad';m.textContent=st.tries>=2?'Answer: '+B[cur]:'Not yet. Try again.';}};
+  $('cl').onclick=()=>{st.bank=st.bank.concat(st.line);st.line=[];show();};
+  wire(B.length);}
+ dots();}
+function end(){const a=sa.filter(x=>x.first===true).length,b=sb.filter(x=>x.done&&x.tries===1).length;
+ $('card').innerHTML=`<h2 style="font-family:var(--display);margin:0">${a+b} out of ${A.length+B.length} right first time</h2><p>Part A: ${a} / ${A.length} · Part B: ${b} / ${B.length}</p><p>Now write two sentences of your own with <b>the …est</b> or <b>the most …</b>.</p><div class="nav"><button class="b sec" type="button" id="ra">Back to Part A</button><button class="b" type="button" id="again">Start again</button></div>`;
+ $('ra').onclick=()=>{part='A';cur=0;show();};$('again').onclick=()=>location.reload();}
+$('tA').onclick=()=>{part='A';cur=0;show();};$('tB').onclick=()=>{part='B';cur=0;show();};
+show();
+</script></body></html>

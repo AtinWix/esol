@@ -70,6 +70,9 @@ Word documents:
 ## e2/speaking-listening
 - [E2 Comparatives – Find the Error – Interactive Practice](e2/speaking-listening/comparatives-find-the-error-interactive-practice.html) – 20 sentences: tap the mistake, then write the sentence correctly. Works on phones and PCs.
 - [E2 Comparatives – Speaking Task 3 Two Pictures – Projector Lesson](e2/speaking-listening/comparatives-task3-two-pictures-projector-lesson.html)
+- [E2 Comparatives and Superlatives – Choose and Build – Interactive Practice](e2/speaking-listening/comparatives-superlatives-choose-and-build-interactive-practice.html) – 16 choose-the-word and 8 build-the-sentence questions. Works on phones and PCs.
+- [E2 Superlatives – Likes and Reasons – Projector Lesson](e2/speaking-listening/superlatives-likes-reasons-projector-lesson.html) – Comparatives warm-up, superlative rules, like scale with reasons, Which is the best? card speaking.
+- [E2 Superlatives – Task 4 Listening and Discussion – Projector Lesson](e2/speaking-listening/superlatives-task4-listening-discussion-projector-lesson.html) – PC room: online practice, TfL journey superlatives in Teams, two Task 4 listenings (teacher reads), discussion, Kahoot.
 - [E2 Past Simple – Speaking Tasks 1 & 2 – Interactive Practice](e2/speaking-listening/past-simple-tasks1-2-interactive-practice-1.html)
 - [E2 Past Simple – Speaking Tasks 1 & 2 – Interactive Practice 2](e2/speaking-listening/past-simple-tasks1-2-interactive-practice-2.html)
 - [E2 Past Simple – Speaking Tasks 1 & 2 – Projector Lesson](e2/speaking-listening/past-simple-tasks1-2-projector-lesson-1.html)
@@ -88,8 +91,12 @@ Word documents:
 - [Past simple – more practice (irregular verbs, negatives, time words, questions, mistake hunt)](e2/speaking-listening/docs/past-simple-more-practice-verbs-negatives-time-words-questions.pdf) (PDF) · [Word](e2/speaking-listening/docs/past-simple-more-practice-verbs-negatives-time-words-questions.docx)
 - [Past simple Tasks 1–2 – worksheets – answers (teacher)](e2/speaking-listening/docs/past-simple-tasks1-2-worksheets-answers.pdf) (PDF) · [Word](e2/speaking-listening/docs/past-simple-tasks1-2-worksheets-answers.docx)
 - [Past simple Tasks 1–2 – worksheets](e2/speaking-listening/docs/past-simple-tasks1-2-worksheets.pdf) (PDF) · [Word](e2/speaking-listening/docs/past-simple-tasks1-2-worksheets.docx)
+- [E2 Superlatives, Likes and Reasons – Speaking and Task 4 Listening – Day Plan and Answers](e2/speaking-listening/docs/superlatives-likes-reasons-day-plan.pdf) (PDF) · [Word](e2/speaking-listening/docs/superlatives-likes-reasons-day-plan.docx)
+- [E2 Superlatives, Likes and Reasons – Student Handout](e2/speaking-listening/docs/superlatives-likes-reasons-student-handout.pdf) (PDF) · [Word](e2/speaking-listening/docs/superlatives-likes-reasons-student-handout.docx)
+- [E2 Superlatives – Which is the Best? – Question Cards (Cut-out)](e2/speaking-listening/docs/superlatives-which-is-the-best-question-cards.pdf) (PDF) · [Word](e2/speaking-listening/docs/superlatives-which-is-the-best-question-cards.docx)
 - [Task 2 Talk about your day – Leila's day – ordering and cut-out cards – answers (teacher)](e2/speaking-listening/docs/task2-leilas-day-ordering-and-cut-out-cards-answers.pdf) (PDF) · [Word](e2/speaking-listening/docs/task2-leilas-day-ordering-and-cut-out-cards-answers.docx)
 - [Task 2 Talk about your day – Leila's day – ordering and cut-out cards](e2/speaking-listening/docs/task2-leilas-day-ordering-and-cut-out-cards.pdf) (PDF) · [Word](e2/speaking-listening/docs/task2-leilas-day-ordering-and-cut-out-cards.docx)
+- [E2 Comparatives and Superlatives – Kahoot Quiz](e2/speaking-listening/superlatives-kahoot.pdf) (PDF) · [Word](e2/speaking-listening/superlatives-kahoot.xlsx)
 - [Lesson 1: Personal information and the short talk – student handouts](e2/speaking-listening/exam-prep/lesson-01-handouts.pdf) (PDF) · [Word](e2/speaking-listening/exam-prep/lesson-01-handouts.docx)
 - [Lesson 1: Personal information and the short talk – plan and answers](e2/speaking-listening/exam-prep/lesson-01-plan.pdf) (PDF) · [Word](e2/speaking-listening/exam-prep/lesson-01-plan.docx)
 - [Lesson 2: Describing people, places and things – student handouts](e2/speaking-listening/exam-prep/lesson-02-handouts.pdf) (PDF) · [Word](e2/speaking-listening/exam-prep/lesson-02-handouts.docx)
