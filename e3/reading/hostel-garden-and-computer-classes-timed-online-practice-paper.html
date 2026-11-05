@@ -137,27 +137,27 @@ B:{title:"Text B – Free Computer Classes",html:
 const Q=[
 {t:"A",k:"mc",s:"Pronouns",q:"Who is ‘He’ in paragraph 2?",o:["Lucia’s father","Mr Bailey","A neighbour","A worker at the garden centre"],a:1,p:"Para 2: “she asked the manager, Mr Bailey … He agreed”"},
 {t:"A",k:"mc",s:"Main point",q:"What is the main point of paragraph 4?",o:["London usually has bad weather.","The group had problems but carried on.","Snails are dangerous for vegetables.","The hostel cooked dinner together every week."],a:1,p:"Para 4: “The summer was difficult … However, nobody gave up.”"},
-{t:"A",k:"order",s:"Time order",q:"Put these events in the order they happened. The first one is done for you. Tap the events in order.",fixed:"Lucia came to live at the hostel.",o:["Lucia asked for permission to use the yard.","The neighbours took the rubbish away.","The group put seeds into boxes.","Snails destroyed many plants.","Everyone in the hostel shared food from the garden."],p:"January → March → two weekends → April → June → September"},
+{t:"A",k:"order",s:"Time order",q:"Put these events in the order they happened. The first one is done for you. Tap the events in order.",fixed:"Lucia came to live at the hostel.",o:["Lucia asked for permission to use the yard.","The neighbours took the rubbish away.","The group put seeds into boxes.","Snails destroyed many plants."],p:"January → March → two weekends → April → June"},
 {t:"A",k:"mc",s:"Finding details",q:"How did the group get their soil?",o:["Mr Bailey paid for it.","They bought it at a market.","A business near them gave it for free.","Lucia’s family sent it."],a:2,p:"Para 3: “a local garden centre gave them soil”"},
 {t:"A",k:"mc",s:"Word meaning",q:"In paragraph 4, what does ‘gave up’ mean?",o:["stopped trying","went home","got angry","felt tired"],a:0,p:"Para 4: problems, “However, nobody gave up” – they carried on"},
 {t:"A",k:"mc",s:"Purpose",q:"The text:",o:["advertises a garden centre","describes how some neighbours built a garden","warns people about snails","advises readers how to grow tomatoes"],a:1,p:"The whole text tells the story of the garden"},
 {t:"A",k:"alpha",s:"Alphabetical order",q:"Put these words in alphabetical order. Tap the words from A to Z.",o:["flowers","food","garden","greenhouse","group"],p:"f-l, f-o, g-a, g-r-e, g-r-o"},
 {t:"A",k:"mc",s:"Word meaning",q:"In paragraph 6, what does ‘could’ mean?",o:["must","might","wants to","did"],a:1,p:"Para 6: “Lucia could move to a flat soon” – it is possible, not sure"},
 {t:"A",k:"mc",s:"Finding details",q:"Which sentence is correct?",o:["The garden cost the hostel a lot of money.","Lucia built the garden alone.","There was a dry period in the summer.","The first seeds went in during January."],a:2,p:"Para 4: “In July there was no rain for three weeks.”"},
-{t:"A",k:"write",s:"Finding details",q:"Write two problems the gardeners had in the summer.",keys:[/snail|slug|plants?\s+(were\s+)?(eaten|died|destroyed)|ate\s+(the|most|their)/i,/rain|dry|water|hot|sun/i],ans:"Snails ate the plants. / There was no rain for three weeks.",p:"Para 4"},
+{t:"A",k:"write",s:"Finding details",q:"Write two problems the gardeners had in the summer.",keys:[/snail|slug|plants?\s+(were\s+)?(eaten|died|destroyed)|ate\s+(the|most|their)/i,/rain|dry/i],ans:"Snails ate the plants. / There was no rain for three weeks.",p:"Para 4"},
 {t:"B",k:"mc",s:"Purpose",q:"Why did Grace Mensah write this email?",o:["to say sorry for a problem","to give information about a course","to give advice about jobs","to ask learners to work for free"],a:1,p:"Para 1: “Hackney Learning Centre is starting free computer classes”"},
 {t:"B",k:"mc",s:"Pronouns",q:"In paragraph 4, what is ‘it’?",o:["the course","the certificate","the job","the letter"],a:1,p:"Para 4: “will get a certificate … have used it to apply for jobs”"},
 {t:"B",k:"mc",s:"Word meaning",q:"‘You do not need any experience’ means:",o:["you do not need to pay","you do not need to have done it before","you do not need your own computer","you do not need to book"],a:1,p:"Para 1: “The classes are for beginners”"},
-{t:"B",k:"mc",s:"Finding details",q:"Which sentence is correct?",o:["The classes are on two days a week.","There are eight lessons in each course.","Any number of people can join.","You can only book by phone."],a:1,p:"Para 2: “every Tuesday … Each course lasts eight weeks”"},
+{t:"B",k:"mc",s:"Finding details",q:"Which sentence is correct?",o:["The classes are on two days a week.","A course finishes after eight weeks.","Any number of people can join.","You can only book by phone."],a:1,p:"Para 2: “Each course lasts eight weeks”"},
 {t:"B",k:"write",s:"Finding details",q:"Write two things you must take to reception to book a place.",keys:[/\bid\b|identi|passport|photo/i,/letter|address|bill|bank|statement/i],ans:"a photo ID / a letter with your address (e.g. a bank statement or a bill)",p:"Para 3"},
 {t:"B",k:"alpha",s:"Alphabetical order",q:"Put these words in alphabetical order. Tap the words from A to Z.",o:["beginners","bill","book","certificate","classes"],p:"b-e, b-i, b-o, c-e, c-l"}];
 
 // fixed display shuffles (same for everyone)
-const SHOW={2:[3,1,4,0,2],6:[2,4,0,3,1],15:[3,1,4,0,2]};
+const SHOW={2:[2,0,3,1],6:[2,4,0,3,1],15:[3,1,4,0,2]};
 const ans=Q.map(q=>q.k==='mc'?null:q.k==='write'?['','']:[]);
 let cur=0,endAt=0,tick=null,name='',done=false;
 const $=id=>document.getElementById(id);
-const KEY='e3-garden-computer-paper';
+const KEY='e3-garden-computer-paper-v2';
 function save(){try{localStorage.setItem(KEY,JSON.stringify({ans,endAt,name,cur}))}catch(e){}}
 function load(){try{const s=JSON.parse(localStorage.getItem(KEY)||'null');if(s&&s.endAt>Date.now()){s.ans.forEach((v,i)=>ans[i]=v);endAt=s.endAt;name=s.name;cur=s.cur||0;return true}}catch(e){}return false}
 function clear(){try{localStorage.removeItem(KEY)}catch(e){}}

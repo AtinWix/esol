@@ -35,6 +35,7 @@ button:focus-visible{outline:3px solid var(--red);outline-offset:2px}
 .order.row{flex-direction:row;flex-wrap:wrap;gap:14px}
 .ev{font-size:25px;text-align:left;padding:10px 16px 10px 60px;border:2px solid var(--line);background:var(--paper);border-radius:6px;color:var(--ink);position:relative;min-height:54px}
 .order.row .ev{font-size:34px;padding:12px 22px 12px 62px}
+.order.row[data-set=hawa]{gap:10px}.order.row[data-set=hawa] .ev{font-size:24px;padding:8px 16px 8px 56px;min-height:48px}
 .ev::before{content:attr(data-n);position:absolute;left:12px;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;border:2px dashed var(--line);display:grid;place-items:center;font-family:var(--display);font-size:20px}
 .ev.done{border-color:var(--ok);background:var(--ok-bg);cursor:default}
 .ev.done::before{background:var(--ok);border:2px solid var(--ok);color:#fff}
@@ -112,16 +113,17 @@ a{color:var(--ink)}
 
 <section class="slide" hidden>
   <div class="eyebrow">Activity 1 · Hawa’s Morning</div>
-  <h2>Prove it with a time word</h2>
-  <p style="font-size:22px;background:#fff8d6;padding:10px 14px;border-radius:6px">Hawa got up at six o’clock. Before breakfast, she washed her son’s school shirt. After they ate, she took him to school. Then she caught the bus to college. She arrived late because the bus broke down on the way. At lunchtime she phoned the school to check on her son.</p>
-  <p>Say the order and the time word. Click each line to check.</p>
-  <div class="ans" style="grid-template-columns:repeat(2,1fr)">
-    <div class="a"><b>1</b> Hawa got out of bed. <span class="hide">– “at six o’clock”</span></div>
-    <div class="a"><b>2</b> Hawa washed a shirt. <span class="hide">– “<span class="l">Before</span> breakfast”</span></div>
-    <div class="a"><b>3</b> Hawa and her son ate breakfast. <span class="hide">– “<span class="l">After</span> they ate…”</span></div>
-    <div class="a"><b>4</b> Hawa left her son at school. <span class="hide">– “took him to school. <span class="l">Then</span>…”</span></div>
-    <div class="a"><b>5</b> The bus stopped working. <span class="hide">– “broke down on the way” to college</span></div>
-    <div class="a"><b>6</b> Hawa phoned the school. <span class="hide">– “At lunchtime”</span></div>
+  <h2>Put Hawa’s morning in order</h2>
+  <p style="font-size:20px;background:#fff8d6;padding:8px 14px;border-radius:6px;margin:6px 0">Hawa got up at six o’clock. Before breakfast, she washed her son’s school shirt. After they ate, she took him to school. Then she caught the bus to college. She arrived late because the bus broke down on the way. At lunchtime she phoned the school to check on her son.</p>
+  <p style="margin:6px 0">Tap the events in time order. Then click 1–5 to show the proof.</p>
+  <div class="order row" data-set="hawa"></div>
+  <div class="bar"><button class="btn" data-reset="hawa">Start again</button><span class="msg" data-msg="hawa"></span></div>
+  <div class="ans tight" style="grid-template-columns:repeat(5,1fr);margin-top:10px">
+    <div class="a"><b>1</b> <span class="hide">“got up at <span class="l">six o’clock</span>”</span></div>
+    <div class="a"><b>2</b> <span class="hide">“<span class="l">Before</span> breakfast, she washed…”</span></div>
+    <div class="a"><b>3</b> <span class="hide">“<span class="l">After</span> they ate, she took him to school”</span></div>
+    <div class="a"><b>4</b> <span class="hide">“<span class="l">Then</span> she caught the bus”</span></div>
+    <div class="a"><b>5</b> <span class="hide">“<span class="l">At lunchtime</span> she phoned”</span></div>
   </div>
 </section>
 
@@ -130,7 +132,7 @@ a{color:var(--ink)}
   <h2>Three steps</h2>
   <ol class="steps">
     <li><span class="mark">Underline</span> every date, month and time word in the text.</li>
-    <li>Number the events lightly in <b>pencil</b>.</li>
+    <li>Write <b>1, 2, 3…</b> next to each event. Use <b>pen</b> – no pencil in the exam.</li>
     <li>Check: does your number 1 match the first event the exam gives you?</li>
   </ol>
 </section>
@@ -145,7 +147,7 @@ a{color:var(--ink)}
 
 <section class="slide" hidden>
   <div class="eyebrow">Activity 2 · Set 2 · All start with c</div>
-  <h2>Same first letter? Look at the <span class="mark">second</span> letter</h2>
+  <h2>Same first letter? Look at the <span class="mark">second</span> letter – then the third</h2>
   <div class="order row" data-set="a2"></div>
   <div class="bar"><button class="btn" data-reset="a2">Start again</button><span class="msg" data-msg="a2"></span></div>
 </section>
@@ -164,7 +166,7 @@ a{color:var(--ink)}
   <ol class="steps">
     <li>Write the alphabet across the top of the page: a b c d e f g h i j k l m n o p q r s t u v w x y z</li>
     <li>Cross off each word when you use it.</li>
-    <li>Count: you must have <b>five</b> words at the end.</li>
+    <li>Count: you must have the <b>same number</b> of words you started with.</li>
   </ol>
   <p>The exam is on paper. Today you practise on screen.</p>
 </section>
@@ -202,7 +204,7 @@ a{color:var(--ink)}
   <div class="ans tight">
     <div class="a"><b>1 B</b> <span class="hide">Mr Bailey – para 2: “asked the manager, Mr Bailey … He agreed”</span></div>
     <div class="a"><b>2</b> <span class="hide"><b>B</b> – para 4: problems (snails, no rain) but “nobody gave up”</span></div>
-    <div class="a"><b>3</b> <span class="hide">came to live 1 · asked permission 2 · rubbish away 3 · seeds in boxes 4 · snails 5 · shared food 6</span></div>
+    <div class="a"><b>3</b> <span class="hide">came to live 1 · asked permission 2 · rubbish away 3 · seeds in boxes 4 · snails 5</span></div>
     <div class="a"><b>4</b> <span class="hide"><b>C</b> – para 3: “a local garden centre gave them soil”</span></div>
     <div class="a"><b>5</b> <span class="hide"><b>A</b> stopped trying – they did not stop</span></div>
     <div class="a"><b>6</b> <span class="hide"><b>B</b> describes how some neighbours built a garden</span></div>
@@ -213,7 +215,7 @@ a{color:var(--ink)}
     <div class="a"><b>11</b> <span class="hide"><b>B</b> to give information about a course</span></div>
     <div class="a"><b>12</b> <span class="hide"><b>B</b> the certificate – para 4</span></div>
     <div class="a"><b>13</b> <span class="hide"><b>B</b> not done it before – “for beginners”</span></div>
-    <div class="a"><b>14</b> <span class="hide"><b>B</b> eight lessons – every Tuesday, eight weeks</span></div>
+    <div class="a"><b>14</b> <span class="hide"><b>B</b> a course finishes after eight weeks – “Each course lasts eight weeks”</span></div>
     <div class="a"><b>15</b> <span class="hide">photo ID · a letter with your address (bank statement or bill)</span></div>
     <div class="a"><b>16</b> <span class="hide">beginners, bill, book, certificate, classes</span></div>
   </div>
@@ -237,7 +239,7 @@ a{color:var(--ink)}
   <h2>Today’s materials</h2>
   <p><a href="https://atinwix.github.io/esol/e3/reading/wk09-time-order-alphabetical-order-practice.html">Online practice: time order, alphabetical order, pronouns and word meaning</a></p>
   <p><a href="https://atinwix.github.io/esol/e3/reading/hostel-garden-and-computer-classes-timed-online-practice-paper.html">Timed online practice paper (16 questions, 40 minutes)</a></p>
-  <p><a href="https://atinwix.github.io/esol/e3/reading/exam-prep/lesson-03-plan.pdf">Lesson 3 plan and answers (teacher)</a></p>
+  <p><a href="https://atinwix.github.io/esol/e3/reading/docs/wk09-mon-pronouns-word-meaning-ordering-day-plan.pdf">Day plan and answers (teacher)</a></p>
 </section>
 
 <div id="nav"><span id="count"></span><button id="prev" aria-label="Previous slide">‹</button><button id="next" aria-label="Next slide">›</button></div>
@@ -245,12 +247,13 @@ a{color:var(--ink)}
 <script>
 (function(){
 const SETS={
+ hawa:["Hawa got out of bed.","Hawa cleaned some clothes.","Hawa left her son at school.","Hawa got on a bus.","Hawa called the school."],
  story:["I woke up.","I couldn’t find my keys.","I missed my bus.","I got to college at nine."],
  a1:["bus","garden","hostel","market","teacher"],
  a2:["canal","card","class","college","cycle"],
  a3:["stall","station","stop","street","student"]
 };
-const SHOW={story:["I got to college at nine.","I missed my bus.","I couldn’t find my keys.","I woke up."],
+const SHOW={hawa:["Hawa got on a bus.","Hawa called the school.","Hawa cleaned some clothes.","Hawa left her son at school.","Hawa got out of bed."],story:["I got to college at nine.","I missed my bus.","I couldn’t find my keys.","I woke up."],
  a1:["market","bus","hostel","teacher","garden"],a2:["college","class","canal","card","cycle"],a3:["street","station","stop","student","stall"]};
 function mark(set,w){if(set==='a2')return w[0]+'<span class="l">'+w[1]+'</span>'+w.slice(2);if(set==='a3')return w.slice(0,2)+'<span class="l">'+w[2]+'</span>'+w.slice(3);return w}
 function build(set){
@@ -266,7 +269,7 @@ document.querySelectorAll('[data-reset]').forEach(b=>b.addEventListener('click',
 const F=[["<b>Before breakfast</b>, she washed the uniform.",["breakfast","washing the uniform"],1],
 ["She phoned the school <b>after</b> she arrived.",["phoning the school","arriving"],1],
 ["<b>When</b> the rain stopped, we went to the park.",["the rain stopped","going to the park"],0],
-["<b>After</b> the class, Amir went to the library.",["the class","the library"],0],
+["<b>After</b> the class, Amir went to the library.",["the class","going to the library"],0],
 ["<b>Before</b> she went to bed, Hana locked the door.",["going to bed","locking the door"],1]];
 const fl=document.getElementById('firstList');
 F.forEach(f=>{const r=document.createElement('div');r.className='q';r.innerHTML='<p>'+f[0]+'</p>';const o=document.createElement('div');o.className='opts';
