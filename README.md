@@ -75,6 +75,10 @@ Word documents:
 - [E2 Past Simple – Speaking Tasks 1 & 2 – Projector Lesson 2](e2/speaking-listening/past-simple-tasks1-2-projector-lesson-2.html)
 
 Word documents:
+- [E2 Comparatives – Kahoot Quiz](e2/speaking-listening/comparatives-kahoot.pdf) (PDF) · [Word](e2/speaking-listening/comparatives-kahoot.xlsx)
+- [E2 Comparatives – Speaking – Projector Slides](e2/speaking-listening/comparatives-speaking-projector-slides.pdf) (PDF) · [Word](e2/speaking-listening/comparatives-speaking-projector-slides.pptx)
+- [E2 Comparatives – Speaking – Student Worksheet](e2/speaking-listening/docs/comparatives-speaking-student-worksheet.pdf) (PDF) · [Word](e2/speaking-listening/docs/comparatives-speaking-student-worksheet.docx)
+- [E2 Comparatives – Speaking – Teacher Plan](e2/speaking-listening/docs/comparatives-speaking-teacher-plan.pdf) (PDF) · [Word](e2/speaking-listening/docs/comparatives-speaking-teacher-plan.docx)
 - [ESB exam prep, all tasks – lesson plan and answers](e2/speaking-listening/docs/esb-exam-prep-all-tasks-lesson-plan-and-answers.pdf) (PDF) · [Word](e2/speaking-listening/docs/esb-exam-prep-all-tasks-lesson-plan-and-answers.docx)
 - [ESB exam prep, all tasks – student handouts](e2/speaking-listening/docs/esb-exam-prep-all-tasks-student-handouts.pdf) (PDF) · [Word](e2/speaking-listening/docs/esb-exam-prep-all-tasks-student-handouts.docx)
 - [ESB exam Tasks 1–4 – practice worksheet – answers and listening script (teacher)](e2/speaking-listening/docs/esb-exam-tasks-1-4-practice-student-worksheet-answers.pdf) (PDF) · [Word](e2/speaking-listening/docs/esb-exam-tasks-1-4-practice-student-worksheet-answers.docx)
