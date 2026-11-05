@@ -62,6 +62,7 @@ details .card{margin-top:10px}
     [["Morning",x.morning],["Afternoon",x.afternoon],["Print",x.print]].forEach(function(p){if(p[1]){r.appendChild(el("b",null,p[0]));r.appendChild(el("span",null,p[1]))}});
     c.appendChild(r);
     if(x.prep)c.appendChild(el("div","prep","Prep: "+x.prep));
+    if(!(x.links&&x.links.filter(function(k){return k&&/^https:\/\//.test(k.url||"")}).length)&&x.date>=today)c.appendChild(el("div","prep","Materials not in the library yet"+(x.prep?"":" – ask Claude to file them")));
     if(x.links&&x.links.length){var l=el("div","links");x.links.forEach(function(k){if(!k||!/^https:\/\//.test(k.url||""))return;var a=el("a",null,k.label||"Link");a.href=k.url;l.appendChild(a)});c.appendChild(l)}
     return c}
   fetch("coming-up.json",{cache:"no-store"}).then(function(r){return r.json()}).then(function(all){
