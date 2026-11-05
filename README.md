@@ -7,13 +7,13 @@ Live site: https://atinwix.github.io/esol/
 Each level has three strands: Reading, Writing, Speaking & Listening.
 
 ## all-levels
-- [E1–L2 Speaking & Listening – ESB Exam Tasks 1–4 – Interactive Quiz](all-levels/speaking-listening-esb-exam-tasks-1-4-quiz.html)
 - [ESOL All Levels – Classroom Tool – A–D / 1–4 Vote Card](all-levels/classroom-tool-vote-card.html)
 - [ESOL All Levels – My Story – Student Bio Form (E1–L2)](all-levels/student-bio-my-story.html) – Learners tell their story; answers go to a Microsoft Form
 - [ESOL All Levels – Too Cold to Learn – Complaint Emails – PC Room Lesson](all-levels/complaint-email-too-cold-to-learn.html)
 - [ESOL Citizenship – Life in the UK, London & Hackney – Quiz](all-levels/citizenship-life-in-the-uk-london-hackney-quiz.html)
-- [ESOL Speaking – Task 2 Talk Builder (E1–L2)](all-levels/speaking-task2-talk-builder.html)
+- [E1–L2 Speaking & Listening – ESB Exam Tasks 1–4 – Interactive Quiz](all-levels/speaking-listening-esb-exam-tasks-1-4-quiz.html)
 - [My Story – Student Bio Form – Teacher Setup](all-levels/student-bio-my-story-teacher-setup.html) – Teachers: send answers to your own Form
+- [ESOL Speaking – Task 2 Talk Builder (E1–L2)](all-levels/speaking-task2-talk-builder.html)
 
 Word documents:
 - [Too Cold to Learn – complaint emails – plan and answers (teacher)](all-levels/docs/complaint-email-too-cold-to-learn-teacher-plan.pdf) (PDF) · [Word](all-levels/docs/complaint-email-too-cold-to-learn-teacher-plan.docx)
@@ -22,13 +22,13 @@ Word documents:
 - [Induction E2/E3 – classroom rules and safety words – preteaching (before the RARPA form)](all-levels/docs/induction-e2-e3-classroom-rules-and-safety-words-preteaching.pdf) (PDF) · [Word](all-levels/docs/induction-e2-e3-classroom-rules-and-safety-words-preteaching.docx)
 
 ## e1/speaking-listening
-- [E1 & E2 Listening – Task 4 – Put It in Order](e1/speaking-listening/task4-listening-put-it-in-order.html)
 - [E1 & E2 Speaking – Task 1 Talk About You – Put It in Order](e1/speaking-listening/task1-talk-about-you-put-it-in-order.html)
 - [E1 & E2 Speaking – Task 2 Short Talk – Put It in Order](e1/speaking-listening/task2-short-talk-put-it-in-order.html)
 - [E1 & E2 Speaking – Task 3 Describe the Photo – Put It in Order](e1/speaking-listening/task3-describe-the-photo-put-it-in-order.html)
 - [E1 Speaking – Task 3 Describe the Picture – Interactive Worksheets](e1/speaking-listening/task3-describe-the-picture-interactive-worksheets.html)
 - [E1 Speaking – Task 3 Describe the Picture – Pair Practice](e1/speaking-listening/task3-describe-the-picture-pair-practice.html)
 - [E1 Speaking – Task 3 In the Kitchen – Drag Match](e1/speaking-listening/task3-in-the-kitchen-drag-match.html)
+- [E1 & E2 Listening – Task 4 – Put It in Order](e1/speaking-listening/task4-listening-put-it-in-order.html)
 
 Word documents:
 - [Induction – timetable, classroom and safety words – preteaching (before the RARPA form)](e1/speaking-listening/docs/induction-timetable-classroom-and-safety-words-preteaching.pdf) (PDF) · [Word](e1/speaking-listening/docs/induction-timetable-classroom-and-safety-words-preteaching.docx)
@@ -121,9 +121,9 @@ Word documents:
 - [E3 Reading – Text Types – Matching Activity](e3/reading/wk04-text-types-matching-activity.html)
 - [E3 & L1 Reading – Freecycle – Comprehension Quiz](e3/reading/wk05-freecycle-comprehension-quiz.html)
 - [E3 Reading – Hackney Leaflet, Email & Review – Practice Questions](e3/reading/wk06-hackney-leaflet-email-review-practice.html)
+- [E3 Reading – Graffiti Warning – Mixed Tenses Online Lesson](e3/reading/wk07-graffiti-warning-mixed-tenses-online-lesson.html)
 - [E3 Mixed Tenses – Graffiti Notice – Answer Key (teacher)](e3/reading/wk07-graffiti-notice-multiple-choice-answer-key-teacher.html)
 - [E3 Mixed Tenses – Graffiti Notice – Multiple Choice Poster](e3/reading/wk07-graffiti-notice-multiple-choice-poster.html)
-- [E3 Reading – Graffiti Warning – Mixed Tenses Online Lesson](e3/reading/wk07-graffiti-warning-mixed-tenses-online-lesson.html)
 - [E3 Mixed Tenses – Graffiti News – Error Hunt](e3/reading/wk08-graffiti-news-error-hunt.html)
 - [E3 Reading – ESB Mock Exam – Set O](e3/reading/wk08-esb-mock-exam-set-o.html)
 - [E3 Reading – Purpose, Pronouns & Word Meaning – Projector Lesson](e3/reading/wk08-purpose-pronouns-word-meaning-projector-lesson.html)
@@ -196,10 +196,10 @@ Word documents:
 - [Lesson 13: Full mock paper and review – plan and answers](e3/reading/exam-prep/lesson-13-plan.pdf) (PDF) · [Word](e3/reading/exam-prep/lesson-13-plan.docx)
 
 ## games
+- [ESOL All Levels – Who Wants to Be a Millionaire – Projector Quiz Game](games/millionaire-quiz.html) – E1–E3 question sets; Ask the Audience uses the Vote Card
 - [Block Drop (work in progress)](games/block-drop.html)
 - [Blockbusters ABC Quiz](games/blockbusters-abc-quiz.html) – Projector team game
 - [E2–L1 Family Fortunes Game](games/family-fortunes.html) – Projector team game
-- [ESOL All Levels – Who Wants to Be a Millionaire – Projector Quiz Game](games/millionaire-quiz.html) – E1–E3 question sets; Ask the Audience uses the Vote Card
 - [Grammar Blast](games/grammar-blast.html)
 - [Phone Games – Scan and Play (QR codes for early finishers)](games/phone-games-qr.html)
 - [Verb Catcher](games/verb-catcher.html)
