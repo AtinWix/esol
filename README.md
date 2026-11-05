@@ -68,6 +68,7 @@ Word documents:
 - [Lesson 13: Full mock exam – plan and answers](e1/speaking-listening/exam-prep/lesson-13-plan.pdf) (PDF) · [Word](e1/speaking-listening/exam-prep/lesson-13-plan.docx)
 
 ## e2/speaking-listening
+- [E2 Comparatives – Find the Error – Interactive Practice](e2/speaking-listening/comparatives-find-the-error-interactive-practice.html) – 20 sentences: tap the mistake, then write the sentence correctly. Works on phones and PCs.
 - [E2 Comparatives – Speaking Task 3 Two Pictures – Projector Lesson](e2/speaking-listening/comparatives-task3-two-pictures-projector-lesson.html)
 - [E2 Past Simple – Speaking Tasks 1 & 2 – Interactive Practice](e2/speaking-listening/past-simple-tasks1-2-interactive-practice-1.html)
 - [E2 Past Simple – Speaking Tasks 1 & 2 – Interactive Practice 2](e2/speaking-listening/past-simple-tasks1-2-interactive-practice-2.html)
