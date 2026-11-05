@@ -46,8 +46,29 @@
   "morning": "Comparatives – form and use: -er / more / good–better, bad–worse; sorting and gap-fill; pair speaking on market vs supermarket prices and bus/tube/bike",
   "afternoon": "PC room: TfL Journey Planner comparison, 3 sentences posted in Teams General; picture comparison (describe, compare, prefer); Comparatives Kahoot",
   "print": "Student worksheet (2 sides)",
-  "prep": "Slides, worksheet, plan and Kahoot were made in the Claude chat of 4 Nov – not yet in the library",
-  "links": []
+  "prep": "",
+  "links": [
+   {
+    "label": "Projector slides (PDF)",
+    "url": "https://atinwix.github.io/esol/e2/speaking-listening/comparatives-speaking-projector-slides.pdf"
+   },
+   {
+    "label": "Projector slides (PowerPoint)",
+    "url": "https://atinwix.github.io/esol/e2/speaking-listening/comparatives-speaking-projector-slides.pptx"
+   },
+   {
+    "label": "Student worksheet",
+    "url": "https://atinwix.github.io/esol/e2/speaking-listening/docs/comparatives-speaking-student-worksheet.pdf"
+   },
+   {
+    "label": "Teacher plan",
+    "url": "https://atinwix.github.io/esol/e2/speaking-listening/docs/comparatives-speaking-teacher-plan.pdf"
+   },
+   {
+    "label": "Kahoot import file",
+    "url": "https://atinwix.github.io/esol/e2/speaking-listening/comparatives-kahoot.xlsx"
+   }
+  ]
  },
  {
   "date": "2026-11-09",
