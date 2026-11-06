@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow,noarchive"><meta name="referrer" content="no-referrer">
+<title>Teacher Hub</title></head><body>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&display=swap">
+<style>
+/* Layout: one column. "Next lesson" big card, then "This week" – one row per teaching day (built card or status line), then system checks, then quick links. */
+:root{
+  --bg:#f3f5f8; --card:#ffffff; --ink:#16243a; --muted:#56627a; --line:#d6dce6;
+  --accent:#1f5f8b; --soft:#e4eef6; --warn:#8a5300; --warn-soft:#fbefdc;
+  --bad:#a23a2a; --bad-soft:#f9e2de; --ok:#1f7a4d; --ok-soft:#e1f3ea;
+  --font:"Lexend",Verdana,Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#11161d; --card:#19212b; --ink:#e6ecf3; --muted:#9aa8ba; --line:#2a3542;
+  --accent:#7db7e3; --soft:#1d2d3c; --warn:#f0b35a; --warn-soft:#3a2c14;
+  --bad:#f19a8b; --bad-soft:#3d1f1a; --ok:#6fd3a0; --ok-soft:#16342a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#11161d; --card:#19212b; --ink:#e6ecf3; --muted:#9aa8ba; --line:#2a3542;
+  --accent:#7db7e3; --soft:#1d2d3c; --warn:#f0b35a; --warn-soft:#3a2c14;
+  --bad:#f19a8b; --bad-soft:#3d1f1a; --ok:#6fd3a0; --ok-soft:#16342a; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 var(--font)}
+.wrap{max-width:900px;margin:0 auto;padding-block:20px 90px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:22px}
+h1{font-size:1.7rem;margin:0}
+h2{font-size:1.05rem;margin:0 0 10px;color:var(--muted);letter-spacing:.04em;text-transform:uppercase}
+.sub{margin:2px 0 0;color:var(--muted)}
+.cards{display:flex;flex-direction:column;gap:12px}
+.lesson{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.lesson.next{border-color:var(--accent);box-shadow:0 0 0 2px var(--soft);padding:20px 22px}
+.lesson.next h3{font-size:1.3rem}
+.when{font-size:.85rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.05em}
+.lesson h3{margin:0;font-size:1.1rem;text-wrap:balance}
+.row{display:grid;grid-template-columns:6.5em 1fr;gap:2px 10px;font-size:.95rem}
+.row b{color:var(--muted);font-weight:600}
+.prep{background:var(--warn-soft);color:var(--warn);border-radius:8px;padding:6px 10px;font-weight:600;font-size:.92rem}
+.links{display:flex;flex-wrap:wrap;gap:8px}
+.links a{font-size:.88rem;padding:5px 11px;border-radius:999px;background:var(--soft);color:var(--ink);text-decoration:none;border:1px solid transparent}
+.links a:hover{border-color:var(--accent)}
+.slot{background:var(--card);border:1px dashed var(--line);border-radius:12px;padding:12px 16px;display:flex;flex-direction:column;gap:2px}
+.slot .when{color:var(--muted)}
+.slot p{margin:0;font-size:.95rem}
+.slot.wait{border-color:var(--line)}
+.slot.bad{border:1px solid var(--bad);background:var(--bad-soft)}
+.slot.bad p{color:var(--bad);font-weight:600}
+.slot.off p{color:var(--muted)}
+.checks{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;display:flex;flex-direction:column;gap:6px;font-size:.92rem}
+.checks .c{display:flex;gap:8px;align-items:baseline}
+.dot{width:10px;height:10px;border-radius:50%;flex:none;transform:translateY(1px)}
+.dot.ok{background:var(--ok)} .dot.bad{background:var(--bad)} .dot.wait{background:var(--warn)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:2px;min-width:0}
+.tile b{font-size:1.02rem}
+.tile span{font-size:.85rem;color:var(--muted)}
+.tile:hover{border-color:var(--accent)}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 16px}
+details summary{cursor:pointer;color:var(--muted);font-weight:600}
+details .cards{margin-top:10px}
+.logo{display:flex;align-items:center;gap:6px;color:var(--muted);font-size:.8rem}
+header{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+#toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);max-width:min(92vw,560px);background:var(--ink);color:var(--bg);border-radius:10px;padding:10px 14px;font-size:.9rem;box-shadow:0 4px 16px rgba(0,0,0,.25);overflow-wrap:anywhere}
+</style>
+
+<div class="wrap">
+  <header>
+    <div><h1>Teacher Hub</h1><p class="sub">Your next lesson, the rest of the week, and whether the background checks are happy.</p></div>
+    <div class="logo" aria-label="made by Atin"><svg viewBox="104 28 172 134" width="54" height="42" aria-hidden="true"><text x="139" y="112" text-anchor="middle" font-family="Arial" font-weight="700" font-size="72" fill="currentColor">A</text><rect x="177" y="83" width="24" height="6" fill="currentColor"/><path d="M216 66 L216 106 A25 7 0 0 0 266 106 L266 66" fill="none" stroke="currentColor" stroke-width="3"/><ellipse cx="241" cy="66" rx="25" ry="7" fill="none" stroke="currentColor" stroke-width="3"/><ellipse cx="241" cy="47" rx="23" ry="5" fill="none" stroke="currentColor" stroke-width="3"/><text x="190" y="152" text-anchor="middle" font-family="Arial" font-size="18" letter-spacing="2" fill="currentColor">made by Atin</text></svg></div>
+  </header>
+
+  <section>
+    <h2>Next lesson</h2>
+    <div class="cards" id="next"><div class="slot"><p>Loading…</p></div></div>
+  </section>
+
+  <section>
+    <h2>Rest of the next 7 days</h2>
+    <div class="cards" id="week"></div>
+  </section>
+
+  <section>
+    <h2>Background checks</h2>
+    <div class="checks" id="checks"><div class="c"><span class="dot wait"></span><span>Waiting for the first daily check.</span></div></div>
+  </section>
+
+  <section>
+    <h2>Quick links</h2>
+    <div class="grid">
+      <a class="tile" href="https://claude.ai/artifact/9hm8WZXWiu3U16Cxxq32NK" target="_blank" rel="noopener noreferrer"><b>Lesson Log</b><span>Fill in after each teaching day. The next lesson for that class is built from it.</span></a>
+      <a class="tile" href="https://atinwix.github.io/esol/" target="_blank" rel="noopener noreferrer"><b>ESOL Library</b><span>All materials, by level. Share this with colleagues.</span></a>
+      <a class="tile" href="https://claude.ai/artifact/FsxDCiz3xH2yRJynJhP2qu" target="_blank" rel="noopener noreferrer"><b>Lesson Ideas</b><span>Add notes, photos and files for future lessons.</span></a>
+      <a class="tile" href="https://atinwix.github.io/esol/games/phone-games-qr.html" target="_blank" rel="noopener noreferrer"><b>Phone games QR</b><span>Project for early finishers.</span></a>
+      <a class="tile" href="https://claude.ai/artifact/7AWMTsbT5LZCLTDc6mFSiC" target="_blank" rel="noopener noreferrer"><b>Smart Targets</b><span>Learner targets (private).</span></a>
+      <a class="tile" href="https://kahoot.com/" target="_blank" rel="noopener noreferrer"><b>Kahoot</b><span>Create → Add question → Import → Import spreadsheet.</span></a>
+    </div>
+  </section>
+
+  <details id="pastBox" hidden><summary>Recent lessons (as taught)</summary><div class="cards" id="past"></div></details>
+</div>
+
+<script>
+(function(){
+  // Timetable. Keep in step with teaching/classes-2026-27.md (personal repo).
+  var CLS={e1:"E1 Speaking & Listening",e2:"E2 Speaking & Listening",e3:"E3 Reading"};
+  var SPRING={e1:"E1 Writing",e3:"E3 Speaking & Listening"};
+  var MODE2="2027-02-22"; // from spring half term: no Thursday class
+  var CLOSED=[["2026-12-21","2027-01-01"],["2027-01-27","2027-01-27"],["2027-02-15","2027-02-19"],["2027-03-26","2027-04-09"],["2027-05-03","2027-05-03"],["2027-05-31","2027-06-04"],["2027-07-03","2027-09-05"]];
+  function pad(n){return (n<10?"0":"")+n}
+  function iso(d){return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate())}
+  function addDays(s,n){var d=new Date(s+"T12:00:00");d.setDate(d.getDate()+n);return iso(d)}
+  function closed(s){return CLOSED.some(function(r){return s>=r[0]&&s<=r[1]})}
+  function classOn(s){var w=new Date(s+"T12:00:00").getDay();
+    if(w===1||w===3) return "e3"; if(w===2) return "e1"; if(w===4) return s<MODE2?"e2":null; return null}
+  function clsName(k,s){return (s>=MODE2&&SPRING[k])||CLS[k]||k}
+  function prevLesson(s,k){var d=s;for(var i=0;i<40;i++){d=addDays(d,-1);if(!closed(d)&&classOn(d)===k)return d}return null}
+  var fmt=function(d){return new Date(d+"T12:00:00").toLocaleDateString("en-GB",{weekday:"long",day:"numeric",month:"long"})};
+  var short=function(d){return new Date(d+"T12:00:00").toLocaleDateString("en-GB",{weekday:"short",day:"numeric",month:"short"})};
+  var today=iso(new Date());
+
+  function el(tag,cls,text){var e=document.createElement(tag);if(cls)e.className=cls;if(text!=null)e.textContent=text;return e}
+  function card(x,big){
+    var c=el("article","lesson"+(big?" next":""));
+    c.append(el("div","when",(x.date===today?"Today · ":"")+fmt(x.date)+" · "+(x.cls||"")));
+    c.append(el("h3",null,x.title||"Lessons"));
+    var r=el("div","row");
+    [["Morning",x.morning],["Afternoon",x.afternoon],["Print",x.print]].forEach(function(p){if(p[1]){r.append(el("b",null,p[0]));r.append(el("span",null,p[1]))}});
+    c.append(r);
+    if(x.prep)c.append(el("div","prep","Prep: "+x.prep));
+    if(Array.isArray(x.links)&&x.links.length){var l=el("div","links");x.links.forEach(function(k){if(!k||!/^https:\/\//.test(k.url||""))return;var a=el("a",null,k.label||"Link");a.href=k.url;a.target="_blank";a.rel="noopener";l.append(a)});c.append(l)}
+    return c}
+  function slot(date,k,st,big){
+    var c=el("div","slot"), p=el("p");
+    c.append(el("div","when",(date===today?"Today · ":"")+fmt(date)+" · "+clsName(k,date)));
+    var prev=prevLesson(date,k);
+    if(st&&st.state==="failed"){c.classList.add("bad");p.textContent="Not built – "+(st.note||"the build failed")+". Ask Claude in the ESOL project: \"build "+short(date)+"\"."}
+    else if(st&&st.state==="building"){p.textContent="Being built now…"}
+    else{c.classList.add("wait");p.textContent=prev?"Not built yet. It's built after you fill in the Lesson Log for "+short(prev)+".":"Not built yet."}
+    c.append(p);return c}
+  function render(cards,status,health){
+    var days=[];for(var i=0;i<8;i++){var d=addDays(today,i);var k=classOn(d);if(k&&!closed(d))days.push([d,k])}
+    var keyOf=function(x){var m=/^E([123])/i.exec(x.cls||"");return x.date+"_"+(m?"e"+m[1]:"")};
+    var byId={};cards.forEach(function(x){if(x&&x.date){byId[keyOf(x)]=x;if(x.id)byId[x.id]=x}});
+    var stById={};status.forEach(function(x){stById[x.id]=x});
+    var nx=document.getElementById("next"),wk=document.getElementById("week");
+    nx.replaceChildren();wk.replaceChildren();
+    function note(t,cls){var s=el("div","slot "+(cls||"off"));s.append(el("p",null,t));return s}
+    if(!days.length){nx.append(note("No teaching in the next 7 days."))}
+    days.forEach(function(p,i){
+      var id=p[0]+"_"+p[1], x=byId[id], target=i===0?nx:wk;
+      target.append(x?card(x,i===0):slot(p[0],p[1],stById[id],i===0));
+    });
+    if(days.length<2)wk.append(note("Nothing else this week."));
+    var past=cards.filter(function(x){return x.date<today}).sort(function(a,b){return b.date.localeCompare(a.date)}).slice(0,6);
+    var pb=document.getElementById("pastBox");pb.hidden=!past.length;document.getElementById("past").replaceChildren.apply(document.getElementById("past"),past.map(function(x){return card(x)}));
+    var ch=document.getElementById("checks");
+    if(health){ch.replaceChildren();
+      var head=el("div","c");head.append(el("span","dot "+(health.ok?"ok":"bad")));head.append(el("span",null,(health.ok?"All fine":"Needs attention")+" – last checked "+(health.checkedAt?new Date(health.checkedAt).toLocaleString("en-GB",{weekday:"short",day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"}):"?")));ch.append(head);
+      (health.items||[]).forEach(function(it){var r=el("div","c");r.append(el("span","dot "+(it.ok?"ok":"bad")));r.append(el("span",null,it.text||""));ch.append(r)});
+      if(health.checkedAt&&(Date.now()-new Date(health.checkedAt).getTime())>36*3600e3){var r=el("div","c");r.append(el("span","dot bad"));r.append(el("span",null,"The daily check hasn't run for over a day – it may have hit the usage limit."));ch.append(r)}
+    }
+  }
+  (function(){
+    var nx=document.getElementById("next");
+    var cards=[],status=[],health=null,updated=null;
+    function msg(t,c){var s=el("div","slot "+(c||""));s.append(el("p",null,t));nx.replaceChildren(s)}
+    function draw(){
+      var h=health;
+      if(updated&&(Date.now()-new Date(updated).getTime())>36*3600e3){
+        h=Object.assign({ok:false,items:[]},health||{});h.ok=false;h.items=(h.items||[]).concat([{ok:false,text:"This page hasn't been refreshed for over a day. The lessons below may be out of date."}])}
+      render(cards,status,h)}
+    function load(){
+      fetch("data.json?"+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){
+        cards=Object.keys(d.upcoming||{}).map(function(k){return Object.assign({},d.upcoming[k],{id:k})});
+        status=Object.keys(d.status||{}).map(function(k){return Object.assign({},d.status[k],{id:k})});
+        health=d.health||null;updated=d.updatedAt||null;draw()
+      }).catch(function(){msg("Could not load your lessons. Reload the page.","bad")})}
+    load();setInterval(load,300000);
+  })();
+})();
+</script>
+
+</body></html>
