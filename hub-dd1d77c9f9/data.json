@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-06T10:11:36Z",
+ "updatedAt": "2026-11-06T10:35:55Z",
  "upcoming": {
   "2026-11-02_e3": {
    "afternoon": "PC room: Too Cold to Learn – complaint emails",
@@ -102,52 +102,52 @@
    "amended": "2026-11-05T13:03:42Z"
   },
   "2026-11-09_e3": {
-   "afternoon": "PC room, all on screen: time order and ABC order on the projector; online practice (4 tabs); 16-question timed online paper (40 min, self-marking, score by skill); prove it",
+   "afternoon": "PC room: adjective or adverb? input and board choice task; Find the error (20, online); Google Maps check of the morning place; write 4–5 sentences and post in Teams General, reply to two posts; Millionaire (copy questions from slide 8)",
    "cls": "E3 Reading",
    "date": "2026-11-09",
    "links": [
     {
      "label": "Day plan and answers",
-     "url": "https://atinwix.github.io/esol/e3/reading/docs/wk09-mon-pronouns-word-meaning-ordering-day-plan.pdf"
+     "url": "https://atinwix.github.io/esol/e3/reading/docs/wk09-mon-hackney-places-adjectives-adverbs-day-plan.pdf"
     },
     {
      "label": "AM projector lesson",
-     "url": "https://atinwix.github.io/esol/e3/reading/wk08-purpose-pronouns-word-meaning-projector-lesson.html"
+     "url": "https://atinwix.github.io/esol/e3/reading/hackney-places-adjectives-jigsaw-reading-projector-lesson.html"
+    },
+    {
+     "label": "Texts and questions A–D",
+     "url": "https://atinwix.github.io/esol/e3/reading/docs/hackney-places-jigsaw-reading-texts-and-questions.pdf"
+    },
+    {
+     "label": "Information grid",
+     "url": "https://atinwix.github.io/esol/e3/reading/docs/hackney-places-jigsaw-reading-information-grid.pdf"
+    },
+    {
+     "label": "Kahoot import file",
+     "url": "https://atinwix.github.io/esol/e3/reading/docs/hackney-places-adjectives-adverbs-kahoot.xlsx"
     },
     {
      "label": "Hangman Paragraphs",
      "url": "https://atinwix.github.io/Hangman-Paragraphs-Game"
     },
     {
-     "label": "Lesson 2 handouts",
-     "url": "https://atinwix.github.io/esol/e3/reading/exam-prep/lesson-02-handouts.pdf"
-    },
-    {
-     "label": "Kahoot – play (20 Qs)",
-     "url": "https://create.kahoot.it/details/dd7af437-b489-46e0-ab13-11e41689ee6e"
-    },
-    {
      "label": "PM projector lesson",
-     "url": "https://atinwix.github.io/esol/e3/reading/wk09-ordering-tasks-practice-paper-projector-lesson.html"
+     "url": "https://atinwix.github.io/esol/e3/reading/describing-hackney-adjectives-adverbs-projector-lesson.html"
     },
     {
-     "label": "Online practice",
-     "url": "https://atinwix.github.io/esol/e3/reading/wk09-time-order-alphabetical-order-practice.html"
+     "label": "Find the error (PCs and phones)",
+     "url": "https://atinwix.github.io/esol/e3/reading/adjectives-adverbs-find-the-error-interactive-practice.html"
     },
     {
-     "label": "Timed online paper",
-     "url": "https://atinwix.github.io/esol/e3/reading/hostel-garden-and-computer-classes-timed-online-practice-paper.html"
-    },
-    {
-     "label": "Lesson 2 plan + answers",
-     "url": "https://atinwix.github.io/esol/e3/reading/exam-prep/lesson-02-plan.pdf"
+     "label": "Millionaire game",
+     "url": "https://atinwix.github.io/esol/games/millionaire-quiz.html"
     }
    ],
-   "morning": "Hangman Paragraphs settle-in; Exam Prep Lesson 2 – pronouns, word meaning, finding details (2A–2C); 20-question Kahoot at 11:00; Be the examiner (25 min)",
-   "prep": "Log the PCs in before 12:30; post the online practice and timed paper links in Teams. No cutting out.",
-   "print": "Handouts 2A–2C (one each). Nothing for the afternoon.",
-   "title": "Pronouns, word meaning and ordering tasks – all-screen PC afternoon",
-   "amended": "2026-11-05T16:12:18Z"
+   "morning": "Hangman Paragraphs settle-in; four Hackney places lead-in; match 12 adjectives; predict; expert groups A–D read and answer 1–5; jigsaw regroup to complete the grid; word meaning in context (8 exam-style); 20-question Kahoot",
+   "prep": "Arrange four tables (A–D) and import the Kahoot file before 9:30. Log PCs in before 12:30 and post the Find the error link in Teams. No cutting out. Last amended 6 Nov 2026 – replaces the earlier pronouns/ordering plan (moved to Wed 11 and Mon 16 Nov).",
+   "print": "Texts A–D (one side per group – a copy for each learner in that group) and the information grid (landscape, one each). Nothing for the afternoon.",
+   "title": "Hackney Places – adjectives, adverbs and jigsaw reading (observed lesson)",
+   "amended": "2026-11-06T10:35:10Z"
   },
   "2026-11-10_e1": {
    "afternoon": "PC room, all on screen: Task 4 exam mode (texts 3–4, no writing); our own listening in Teams General; online practice; Talk Builder from 'Your plan' to a one-minute talk; Kahoot (12 Qs)",
