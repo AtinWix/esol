@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-06T10:35:55Z",
+ "updatedAt": "2026-11-06T17:04:44Z",
  "upcoming": {
   "2026-11-02_e3": {
    "afternoon": "PC room: Too Cold to Learn – complaint emails",
@@ -102,7 +102,7 @@
    "amended": "2026-11-05T13:03:42Z"
   },
   "2026-11-09_e3": {
-   "afternoon": "PC room: adjective or adverb? input and board choice task; Find the error (20, online); Google Maps check of the morning place; write 4–5 sentences and post in Teams General, reply to two posts; Millionaire (copy questions from slide 8)",
+   "afternoon": "PC room: adjective or adverb? input and board choice task; Find the error (20, online); Google Maps check of the morning place; write 4–5 sentences and post in Teams General, reply to two posts; Millionaire, whole class, run by you on the projector – class votes, you click (slide 8 opens it with the questions loaded)",
    "cls": "E3 Reading",
    "date": "2026-11-09",
    "links": [
@@ -139,8 +139,8 @@
      "url": "https://atinwix.github.io/esol/e3/reading/adjectives-adverbs-find-the-error-interactive-practice.html"
     },
     {
-     "label": "Millionaire game",
-     "url": "https://atinwix.github.io/esol/games/millionaire-quiz.html"
+     "label": "Millionaire game (questions loaded)",
+     "url": "https://atinwix.github.io/esol/games/millionaire-quiz.html?set=e3-hackney"
     }
    ],
    "morning": "Hangman Paragraphs settle-in; four Hackney places lead-in; match 12 adjectives; predict; expert groups A–D read and answer 1–5; jigsaw regroup to complete the grid; word meaning in context (8 exam-style); 20-question Kahoot",
