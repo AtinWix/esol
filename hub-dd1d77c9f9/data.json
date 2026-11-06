@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-06T19:14:59Z",
+ "updatedAt": "2026-11-06T19:19:36Z",
  "upcoming": {
   "2026-11-02_e3": {
    "afternoon": "PC room: Too Cold to Learn – complaint emails",
@@ -107,8 +107,8 @@
    "date": "2026-11-09",
    "links": [
     {
-     "label": "PRINT PACK – class of 21 (print once, single-sided)",
-     "url": "https://atinwix.github.io/esol/e3/reading/docs/hackney-places-print-pack-class-of-21.pdf"
+     "label": "STUDENT PRINT PACK – class of 21 (print once, single-sided)",
+     "url": "https://atinwix.github.io/esol/e3/reading/docs/hackney-places-student-print-pack-class-of-21.pdf"
     },
     {
      "label": "Teacher script – what to do and say (print for you)",
@@ -149,9 +149,9 @@
    ],
    "morning": "Hangman Paragraphs settle-in; four Hackney places lead-in; match 12 adjectives; predict; expert groups A–D read and answer 1–5; jigsaw regroup to complete the grid; word meaning in context (8 exam-style); 20-question Kahoot",
    "prep": "Arrange four tables (A–D) before 9:30. Log PCs in before 12:30 and post the Find the error link in Teams. No cutting out. Learners need phones for the Vote card (QR on the voting slides). Last amended 6 Nov 2026 – replaces the earlier pronouns/ordering plan (moved to Wed 11 and Mon 16 Nov).",
-   "print": "Print the print pack once, single-sided – nothing else. It has the teacher script, then the texts in group piles (A ×6, B ×5, C ×5, D ×5), then 21 grids. Nothing for the afternoon.",
+   "print": "Student print pack once, single-sided (42 sheets): texts in group piles (A ×6, B ×5, C ×5, D ×5), then 21 grids. For you: the teacher script (1 sheet, double-sided). Nothing for the afternoon.",
    "title": "Hackney Places – adjectives, adverbs and jigsaw reading (observed lesson)",
-   "amended": "2026-11-06T19:14:47Z"
+   "amended": "2026-11-06T19:19:26Z"
   },
   "2026-11-10_e1": {
    "afternoon": "PC room, all on screen: Task 4 exam mode (texts 3–4, no writing); our own listening in Teams General; online practice; Talk Builder from 'Your plan' to a one-minute talk; Kahoot (12 Qs)",
