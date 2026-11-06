@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>E1 Listening – Days, Times and Prices – Interactive Practice</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@500;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<style>
+:root{--bg:#F4F6F8;--surface:#fff;--ink:#141D28;--muted:#4F5B69;--line:#D3D9E0;--accent:#0E6B6B;--accent-ink:#fff;--soft:#DCEFEE;--ok:#1f7a4d;--ok-soft:#e1f3ea;--bad:#a23a2a;--bad-soft:#f9e2de;--d:"Lexend",Verdana,sans-serif;--b:"Atkinson Hyperlegible",Verdana,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10151B;--surface:#19212A;--ink:#EEF2F6;--muted:#A2ADBA;--line:#2B3642;--accent:#4FB8B3;--accent-ink:#08201F;--soft:#163533;--ok:#6fd3a0;--ok-soft:#16342a;--bad:#f19a8b;--bad-soft:#3d1f1a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#10151B;--surface:#19212A;--ink:#EEF2F6;--muted:#A2ADBA;--line:#2B3642;--accent:#4FB8B3;--accent-ink:#08201F;--soft:#163533;--ok:#6fd3a0;--ok-soft:#16342a;--bad:#f19a8b;--bad-soft:#3d1f1a;color-scheme:dark}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:clamp(17px,1.6vw,24px)/1.45 var(--b)}
+.wrap{max-width:1100px;margin:0 auto;padding:16px max(16px,env(safe-area-inset-left,0px)) 100px}
+h1{font:700 1.4em/1.15 var(--d);margin:0 0 .2em}p{margin:0}.muted{color:var(--muted)}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
+.tab{font:700 .9em var(--d);padding:.6em 1em;border-radius:12px;border:2px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;min-height:48px}
+.tab[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.card{background:var(--surface);border:2px solid var(--line);border-radius:16px;padding:18px 20px;display:flex;flex-direction:column;gap:14px}
+.q{font:700 1.25em/1.3 var(--d)}.text{background:var(--soft);border-radius:12px;padding:12px 16px;white-space:pre-line}
+.opts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+@media(max-width:560px){.opts{grid-template-columns:1fr}}
+.opt{font:700 1em var(--d);text-align:left;padding:.8em 1em;border-radius:12px;border:2px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer;min-height:52px}
+.opt.right{background:var(--ok-soft);border-color:var(--ok);color:var(--ok)}.opt.wrong{background:var(--bad-soft);border-color:var(--bad);color:var(--bad)}
+.bar{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.btn{font:700 .9em var(--d);padding:.7em 1.2em;border-radius:12px;border:2px solid var(--accent);background:var(--accent);color:var(--accent-ink);cursor:pointer;min-height:48px}
+.btn:disabled{opacity:.35}.fb{font-weight:700;min-height:1.4em}
+button:focus-visible{outline:3px solid #E3A008;outline-offset:2px}
+</style></head><body>
+<div class="wrap">
+<h1>Days, times and prices</h1>
+<p class="muted">E1 Listening practice for Task 4. Choose the answer. Read the message, then answer like in the exam.</p>
+<div class="tabs" role="tablist" id="tabs"></div>
+<div class="card" id="card"></div>
+</div>
+<div class="atin-logo" aria-label="Made by Atin">
+<svg viewBox="104 28 172 134" width="64" height="50" role="img" aria-hidden="true">
+<text x="139" y="112" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="72" fill="currentColor">A</text>
+<rect x="177" y="83" width="24" height="6" rx="1" fill="currentColor"/>
+<path d="M216 66 L216 106 A25 7 0 0 0 266 106 L266 66" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+<ellipse cx="241" cy="66" rx="25" ry="7" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="216" y1="80" x2="266" y2="80" stroke="currentColor" stroke-width="1.5"/>
+<line x1="216" y1="94" x2="266" y2="94" stroke="currentColor" stroke-width="1.5"/>
+<ellipse cx="241" cy="47" rx="23" ry="5" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="114" y1="128" x2="266" y2="128" stroke="currentColor" stroke-width="1"/>
+<text x="190" y="152" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" letter-spacing="2" fill="currentColor">made by Atin</text>
+</svg>
+</div>
+<style>
+.atin-logo{position:fixed;left:calc(6px + env(safe-area-inset-left,0px));bottom:calc(6px + env(safe-area-inset-bottom,0px));z-index:2147483000;pointer-events:none;color:#1F3A5F;background:rgba(255,255,255,.92);border:1px solid #C9D3DF;border-radius:8px;padding:3px 5px;line-height:0}
+.atin-logo svg{display:block}
+@media print{.atin-logo{position:fixed;left:auto;right:6mm;bottom:5mm;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+<script>
+(function(){
+var SETS={
+ days:{name:"1. Days",qs:[
+  ["Monday, ____, Wednesday",["Tuesday","Thursday","Sunday"],0],
+  ["Wednesday, ____, Friday",["Tuesday","Thursday","Saturday"],1],
+  ["Friday, ____, Sunday",["Monday","Saturday","Thursday"],1],
+  ["The day after Sunday is…",["Saturday","Monday","Tuesday"],1],
+  ["The day before Thursday is…",["Wednesday","Friday","Tuesday"],0],
+  ["Which two days are the weekend?",["Monday and Tuesday","Saturday and Sunday","Thursday and Friday"],1]]},
+ prices:{name:"2. Prices",qs:[
+  ["£1.50",["one pound fifteen","one pound fifty","fifteen pounds"],1],
+  ["90p",["nineteen p","nine pounds","ninety p"],2],
+  ["£3.20",["three pounds twenty","three pounds twelve","thirty-two pounds"],0],
+  ["£10",["ten p","ten pounds","one pound"],1],
+  ["50p",["fifty p","fifteen p","five pounds"],0],
+  ["two pounds fifty",["£2.15","£2.50","£25"],1]]},
+ times:{name:"3. Times",qs:[
+  ["10:00",["ten o'clock","two o'clock","ten past"],0],
+  ["9:30",["half past nine","half past ten","nine o'clock"],0],
+  ["4:00",["four o'clock","fourteen o'clock","forty"],0],
+  ["12:00",["twelve o'clock","two o'clock","twenty o'clock"],0],
+  ["half past two",["2:30","3:30","2:00"],0],
+  ["quarter past eleven",["11:15","11:45","10:15"],0]]},
+ read:{name:"4. Read and answer",qs:[
+  ["Is the appointment on Monday?",["Yes, it is.","No, it isn't."],1,"Hello. This is the doctor's surgery. Your appointment is on Tuesday at ten o'clock. Thank you."],
+  ["What time is the appointment?",["Twelve o'clock","Ten o'clock","Two o'clock"],1,"Hello. This is the doctor's surgery. Your appointment is on Tuesday at ten o'clock. Thank you."],
+  ["Is the bread two pounds?",["Yes, it is.","No, it isn't."],1,"A: How much is the bread?\nB: It's one pound fifty.\nA: And the milk?\nB: The milk is ninety p."],
+  ["How much is the milk?",["Ninety p","Nineteen p","One pound fifty"],0,"A: How much is the bread?\nB: It's one pound fifty.\nA: And the milk?\nB: The milk is ninety p."],
+  ["Is the class on Thursday?",["Yes, it is.","No, it isn't."],0,"My English class is on Monday and Thursday. It starts at half past nine. It finishes at twelve o'clock."],
+  ["What time does the class start?",["Twelve o'clock","Half past nine","Nine o'clock"],1,"My English class is on Monday and Thursday. It starts at half past nine. It finishes at twelve o'clock."],
+  ["Is it bus number five?",["Yes, it is.","No, it isn't."],1,"A: What time is the bus?\nB: It's at four o'clock.\nA: Is it bus number five?\nB: No, it's number eight."],
+  ["What time is the bus?",["Five o'clock","Eight o'clock","Four o'clock"],2,"A: What time is the bus?\nB: It's at four o'clock.\nA: Is it bus number five?\nB: No, it's number eight."]]}
+};
+var cur="days",i=0,score=0,done=false;
+var $=function(id){return document.getElementById(id)};
+function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+function tabs(){$("tabs").replaceChildren.apply($("tabs"),Object.keys(SETS).map(function(k){var b=el("button","tab",SETS[k].name);b.type="button";b.setAttribute("role","tab");b.setAttribute("aria-selected",k===cur);b.onclick=function(){cur=k;i=0;score=0;tabs();show()};return b}))}
+function show(){var s=SETS[cur],c=$("card");c.replaceChildren();done=false;
+ if(i>=s.qs.length){c.append(el("p","q","Well done! "+score+" out of "+s.qs.length+"."));var b=el("button","btn","Try again");b.type="button";b.onclick=function(){i=0;score=0;show()};c.append(b);return}
+ var q=s.qs[i];c.append(el("p","muted","Question "+(i+1)+" of "+s.qs.length));
+ if(q[3])c.append(el("div","text",q[3]));
+ c.append(el("p","q",q[0]));
+ var o=el("div","opts"),fb=el("p","fb");
+ q[1].forEach(function(t,k){var b=el("button","opt",t);b.type="button";b.onclick=function(){if(done)return;done=true;
+  if(k===q[2]){b.classList.add("right");score++;fb.textContent="Yes! Well done.";fb.style.color="var(--ok)"}
+  else{b.classList.add("wrong");o.children[q[2]].classList.add("right");fb.textContent="The answer is: "+q[1][q[2]];fb.style.color="var(--bad)"}
+  nx.disabled=false;nx.focus()};o.append(b)});
+ c.append(o);var bar=el("div","bar");bar.append(fb);var nx=el("button","btn","Next →");nx.type="button";nx.disabled=true;nx.onclick=function(){i++;show()};bar.append(nx);c.append(bar)}
+tabs();show();
+})();
+</script>
+</body></html>

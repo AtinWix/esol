@@ -22,6 +22,9 @@ Word documents:
 - [Induction E2/E3 – classroom rules and safety words – preteaching (before the RARPA form)](all-levels/docs/induction-e2-e3-classroom-rules-and-safety-words-preteaching.pdf) (PDF) · [Word](all-levels/docs/induction-e2-e3-classroom-rules-and-safety-words-preteaching.docx)
 
 ## e1/speaking-listening
+- [E1 Listening – Days, Times and Prices – Interactive Practice](e1/speaking-listening/listening-days-times-prices-interactive-practice.html) – Days, prices, times, and read-and-answer Task 4 questions. Works on PCs and phones.
+- [E1 Listening – Days, Times and Prices – Task 4 Projector Lesson](e1/speaking-listening/listening-days-times-prices-projector-lesson.html) – Days, prices and times; listen for one thing; Task 4 texts with yes/no and detail questions.
+- [E1 Speaking & Listening – Task 4 Exam Mode and Task 2 Talk – PC Room Projector Lesson](e1/speaking-listening/task4-exam-mode-task2-talk-pc-room-projector-lesson.html) – PC room: Task 4 in exam mode, our own listening in Teams, online practice, finish the Task 2 talk, Kahoot.
 - [E1 & E2 Speaking – Task 1 Talk About You – Put It in Order](e1/speaking-listening/task1-talk-about-you-put-it-in-order.html)
 - [E1 & E2 Speaking – Task 2 Short Talk – Put It in Order](e1/speaking-listening/task2-short-talk-put-it-in-order.html)
 - [E1 & E2 Speaking – Task 3 Describe the Photo – Put It in Order](e1/speaking-listening/task3-describe-the-photo-put-it-in-order.html)
@@ -31,7 +34,9 @@ Word documents:
 - [E1 & E2 Listening – Task 4 – Put It in Order](e1/speaking-listening/task4-listening-put-it-in-order.html)
 
 Word documents:
+- [E1 Days of the Week and Yes/No Cards – Cut-out Sheet](e1/speaking-listening/docs/days-yes-no-cards-cut-out.pdf) (PDF) · [Word](e1/speaking-listening/docs/days-yes-no-cards-cut-out.docx)
 - [Induction – timetable, classroom and safety words – preteaching (before the RARPA form)](e1/speaking-listening/docs/induction-timetable-classroom-and-safety-words-preteaching.pdf) (PDF) · [Word](e1/speaking-listening/docs/induction-timetable-classroom-and-safety-words-preteaching.docx)
+- [E1 Days, Times and Prices – Task 4 Listening and Task 2 Talk – Day Plan and Answers](e1/speaking-listening/docs/listening-days-times-prices-day-plan.pdf) (PDF) · [Word](e1/speaking-listening/docs/listening-days-times-prices-day-plan.docx)
 - [Quiet tasks – mixed skills worksheet](e1/speaking-listening/docs/quiet-tasks-mixed-skills-worksheet.pdf) (PDF) · [Word](e1/speaking-listening/docs/quiet-tasks-mixed-skills-worksheet.docx)
 - [Task 1 Personal information – exam conversation gap-fill](e1/speaking-listening/docs/task1-personal-information-exam-conversation-gap-fill.pdf) (PDF) · [Word](e1/speaking-listening/docs/task1-personal-information-exam-conversation-gap-fill.docx)
 - [Task 3 Describe the photo – model scripts](e1/speaking-listening/docs/task3-describe-the-photo-model-scripts.pdf) (PDF) · [Word](e1/speaking-listening/docs/task3-describe-the-photo-model-scripts.docx)
@@ -40,6 +45,7 @@ Word documents:
 - [Task 3 In the Kitchen – questions and answers – answers (teacher)](e1/speaking-listening/docs/task3-in-the-kitchen-questions-and-answers-answers.pdf) (PDF) · [Word](e1/speaking-listening/docs/task3-in-the-kitchen-questions-and-answers-answers.docx)
 - [Task 3 In the Kitchen – questions and answers](e1/speaking-listening/docs/task3-in-the-kitchen-questions-and-answers.pdf) (PDF) · [Word](e1/speaking-listening/docs/task3-in-the-kitchen-questions-and-answers.docx)
 - [Task 4 Listening – recording transcripts (teacher)](e1/speaking-listening/docs/task4-listening-recording-transcripts-teacher.pdf) (PDF) · [Word](e1/speaking-listening/docs/task4-listening-recording-transcripts-teacher.docx)
+- [E1 Days, Times and Prices – Kahoot Quiz](e1/speaking-listening/listening-days-times-prices-kahoot.pdf) (PDF) · [Word](e1/speaking-listening/listening-days-times-prices-kahoot.xlsx)
 - [Lesson 1: Asking for personal information – student handouts](e1/speaking-listening/exam-prep/lesson-01-handouts.pdf) (PDF) · [Word](e1/speaking-listening/exam-prep/lesson-01-handouts.docx)
 - [Lesson 1: Asking for personal information – plan and answers](e1/speaking-listening/exam-prep/lesson-01-plan.pdf) (PDF) · [Word](e1/speaking-listening/exam-prep/lesson-01-plan.docx)
 - [Lesson 2: The short talk and describing a picture – student handouts](e1/speaking-listening/exam-prep/lesson-02-handouts.pdf) (PDF) · [Word](e1/speaking-listening/exam-prep/lesson-02-handouts.docx)
