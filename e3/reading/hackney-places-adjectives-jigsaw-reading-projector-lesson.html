@@ -98,6 +98,8 @@ table.grid th,table.grid td{border:2px solid var(--line);padding:6px 8px;vertica
 table.grid th{font-family:var(--display);font-size:17px;background:#f1f4f8}
 table.grid td.a{border-radius:0;font-size:15px}
 table.grid td.a .hide{filter:blur(7px)}
+table.grid td.a.show .hide{filter:none}
+table.grid td.a{cursor:pointer}
 .say{display:flex;flex-wrap:wrap;gap:10px}.say span{font-size:22px;border:2px dashed var(--line);border-radius:6px;padding:6px 14px}
 .tm{display:flex;align-items:center;gap:14px}.tm .clk{font-family:var(--display);font-weight:800;font-size:54px;font-variant-numeric:tabular-nums;min-width:4ch}
 .pred{display:grid;grid-template-columns:1fr 1fr;gap:10px 22px}
@@ -156,7 +158,7 @@ table.grid td.a .hide{filter:blur(7px)}
 <section class="slide" hidden>
   <div class="eyebrow">Activity 2 · Check</div>
   <h2>Check the grid</h2>
-  <p style="font-size:20px">Click a box to show the answer. The expert for each place says it first.</p>
+  <div class="bar"><p style="font-size:20px">Click a box to show the answer. The expert for each place says it first.</p><button class="btn" style="margin-left:auto" onclick="this.closest('.slide').querySelectorAll('td.a').forEach(c=>c.classList.add('show'))">Show all answers</button></div>
   <table class="grid"><tr><th>Place</th><th>Where is it?</th><th>What can you do or buy there?</th><th>Does it cost money?</th><th>When is a good time to go?</th><th>Two adjectives that describe it</th></tr><tr><th>🍉 Ridley Road Market</th><td class="a"><span class="hide">In Dalston, near Dalston Kingsland station</span></td><td class="a"><span class="hide">Buy fruit, vegetables, fish, meat, fabrics, kitchen things, food from other countries</span></td><td class="a"><span class="hide">Yes – but cheaper than the supermarket</span></td><td class="a"><span class="hide">Early for the best fish; end of the day for low prices</span></td><td class="a"><span class="hide">busy, noisy, old, colourful (any two)</span></td></tr><tr><th>🏊 London Fields and the Lido</th><td class="a"><span class="hide">Between Hackney Central and Broadway Market</span></td><td class="a"><span class="hide">Picnics, playground, football, table tennis, barbecue; swim in the lido</span></td><td class="a"><span class="hide">Park free; lido not free</span></td><td class="a"><span class="hide">Sunny days; the lido all year</span></td><td class="a"><span class="hide">large, green, full of people (any two)</span></td></tr><tr><th>🥐 Broadway Market</th><td class="a"><span class="hide">Near London Fields and the Regent’s Canal</span></td><td class="a"><span class="hide">Buy bread, cheese, cakes, flowers, hot food; sit by the canal</span></td><td class="a"><span class="hide">Yes – often expensive</span></td><td class="a"><span class="hide">Saturday, early (before 11 o’clock)</span></td><td class="a"><span class="hide">quiet (weekdays), crowded (Saturdays), delicious, expensive (any two)</span></td></tr><tr><th>🦆 The Regent’s Canal</th><td class="a"><span class="hide">Through Hackney, past Broadway Market and Victoria Park</span></td><td class="a"><span class="hide">Walk or cycle on the towpath; see boats and birds</span></td><td class="a"><span class="hide">Free</span></td><td class="a"><span class="hide">A sunny afternoon</span></td><td class="a"><span class="hide">peaceful, narrow, lovely (any two)</span></td></tr></table>
 </section>
 <section class="slide" hidden>
