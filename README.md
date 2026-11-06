@@ -164,6 +164,7 @@ Word documents:
 - [E3 Reading – Hackney Places – Adjectives and Adverbs – Kahoot Quiz](e3/reading/docs/hackney-places-adjectives-adverbs-kahoot.pdf) (PDF) · [Word](e3/reading/docs/hackney-places-adjectives-adverbs-kahoot.xlsx)
 - [E3 Reading – Hackney Places – Jigsaw Reading – Information Grid](e3/reading/docs/hackney-places-jigsaw-reading-information-grid.pdf) (PDF) · [Word](e3/reading/docs/hackney-places-jigsaw-reading-information-grid.docx)
 - [E3 Reading – Hackney Places – Jigsaw Reading – Texts and Questions A–D](e3/reading/docs/hackney-places-jigsaw-reading-texts-and-questions.pdf) (PDF) · [Word](e3/reading/docs/hackney-places-jigsaw-reading-texts-and-questions.docx)
+- [E3 Reading – Hackney Places – Teacher Script (Do and Say, Slide by Slide)](e3/reading/docs/hackney-places-teacher-script.pdf) (PDF) · [Word](e3/reading/docs/hackney-places-teacher-script.docx)
 - [Exam Prep Lesson 1 – Activity 5 secret purpose cards (cut out)](e3/reading/docs/lesson-01-activity5-secret-purpose-cards.pdf) (PDF) · [Word](e3/reading/docs/lesson-01-activity5-secret-purpose-cards.docx)
 - [E3 Reading – Pronouns, Word Meaning and Ordering – Kahoot Quiz](e3/reading/docs/pronouns-word-meaning-ordering-kahoot.pdf) (PDF) · [Word](e3/reading/docs/pronouns-word-meaning-ordering-kahoot.xlsx)
 - [Wk 1 Exam question types – sort activity – answers (teacher)](e3/reading/docs/wk01-exam-question-types-sort-activity-answers.pdf) (PDF) · [Word](e3/reading/docs/wk01-exam-question-types-sort-activity-answers.docx)
