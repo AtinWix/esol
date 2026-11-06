@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-06T19:09:13Z",
+ "updatedAt": "2026-11-06T19:11:34Z",
  "upcoming": {
   "2026-11-02_e3": {
    "afternoon": "PC room: Too Cold to Learn – complaint emails",
@@ -131,8 +131,12 @@
      "url": "https://create.kahoot.it/share/hackney-adverbs/49b15cf9-dd40-4151-8b4b-d75d05d5d4f2"
     },
     {
+     "label": "Hangman paragraph – text to read aloud (don't project)",
+     "url": "https://atinwix.github.io/esol/e3/reading/hackney-places-hangman-paragraph-read-aloud-text.html"
+    },
+    {
      "label": "Hangman Paragraphs (paragraph loaded)",
-     "url": "https://atinwix.github.io/Hangman-Paragraphs-Game/?p=VmljdG9yaWEgUGFyayBpcyBhIGxhcmdlLCBncmVlbiBwYXJrIGluIEhhY2tuZXkuIEl0IGlzIHF1aWV0IGluIHRoZSBtb3JuaW5nLCBidXQgaXQgaXMgYnVzeSBhdCB0aGUgd2Vla2VuZC4gUGVvcGxlIHdhbGsgc2xvd2x5IHJvdW5kIHRoZSBsYWtlIGFuZCBjaGlsZHJlbiBwbGF5IGhhcHBpbHkgaW4gdGhlIHBsYXlncm91bmQu"
+     "url": "https://atinwix.github.io/Hangman-Paragraphs-Game/?p=VmljdG9yaWEgUGFyayBpcyBhIGxhcmdlLCBncmVlbiBwYXJrIGluIHRoZSBlYXN0IG9mIEhhY2tuZXkuIExvY2FsIHBlb3BsZSBjYWxsIGl0IHRoZSBQZW9wbGXigJlzIFBhcmsuIEluIHRoZSBtb3JuaW5nIGl0IGlzIHF1aWV0IGFuZCBwZWFjZWZ1bC4gUGVvcGxlIHdhbGsgc2xvd2x5IHJvdW5kIHRoZSBsYWtlIGFuZCB3YXRjaCB0aGUgZHVja3MuIEF0IHRoZSB3ZWVrZW5kIGl0IGlzIHZlcnkgYnVzeS4gQ2hpbGRyZW4gcGxheSBoYXBwaWx5IGluIHRoZSBwbGF5Z3JvdW5kLCBhbmQgZmFtaWxpZXMgaGF2ZSBwaWNuaWNzIG9uIHRoZSBncmFzcy4gVGhlcmUgaXMgYSBsb3ZlbHkgY2Fmw6kgYnkgdGhlIHdhdGVyLCB3aGVyZSB0aGUgY29mZmVlIGlzIGdvb2QgYW5kIHRoZSBjYWtlcyBhcmUgZGVsaWNpb3VzLiBJbiBzdW1tZXIsIHBlb3BsZSBzaXQgcXVpZXRseSBpbiB0aGUgc3VuIGFuZCByZWFkLg"
     },
     {
      "label": "PM projector lesson (press T for script)",
@@ -151,7 +155,7 @@
    "prep": "Arrange four tables (A–D) before 9:30. Log PCs in before 12:30 and post the Find the error link in Teams. No cutting out. Learners need phones for the Vote card (QR on the voting slides). Last amended 6 Nov 2026 – replaces the earlier pronouns/ordering plan (moved to Wed 11 and Mon 16 Nov).",
    "print": "Texts A–D (one side per group – a copy for each learner in that group) and the information grid (landscape, one each). For you: the teacher script (2 sides). Nothing for the afternoon.",
    "title": "Hackney Places – adjectives, adverbs and jigsaw reading (observed lesson)",
-   "amended": "2026-11-06T19:08:54Z"
+   "amended": "2026-11-06T19:11:14Z"
   },
   "2026-11-10_e1": {
    "afternoon": "PC room, all on screen: Task 4 exam mode (texts 3–4, no writing); our own listening in Teams General; online practice; Talk Builder from 'Your plan' to a one-minute talk; Kahoot (12 Qs)",
