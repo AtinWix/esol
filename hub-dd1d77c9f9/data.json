@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-06T19:11:34Z",
+ "updatedAt": "2026-11-06T19:12:40Z",
  "upcoming": {
   "2026-11-02_e3": {
    "afternoon": "PC room: Too Cold to Learn – complaint emails",
@@ -119,12 +119,20 @@
      "url": "https://atinwix.github.io/esol/e3/reading/hackney-places-adjectives-jigsaw-reading-projector-lesson.html"
     },
     {
-     "label": "Texts and questions A–D",
-     "url": "https://atinwix.github.io/esol/e3/reading/docs/hackney-places-jigsaw-reading-texts-and-questions.pdf"
+     "label": "Group A sheet – text + grid (double-sided)",
+     "url": "https://atinwix.github.io/esol/e3/reading/docs/hackney-places-jigsaw-reading-group-a-text-and-grid.pdf"
     },
     {
-     "label": "Information grid",
-     "url": "https://atinwix.github.io/esol/e3/reading/docs/hackney-places-jigsaw-reading-information-grid.pdf"
+     "label": "Group B sheet – text + grid (double-sided)",
+     "url": "https://atinwix.github.io/esol/e3/reading/docs/hackney-places-jigsaw-reading-group-b-text-and-grid.pdf"
+    },
+    {
+     "label": "Group C sheet – text + grid (double-sided)",
+     "url": "https://atinwix.github.io/esol/e3/reading/docs/hackney-places-jigsaw-reading-group-c-text-and-grid.pdf"
+    },
+    {
+     "label": "Group D sheet – text + grid (double-sided)",
+     "url": "https://atinwix.github.io/esol/e3/reading/docs/hackney-places-jigsaw-reading-group-d-text-and-grid.pdf"
     },
     {
      "label": "Kahoot – ready to play",
@@ -153,9 +161,9 @@
    ],
    "morning": "Hangman Paragraphs settle-in; four Hackney places lead-in; match 12 adjectives; predict; expert groups A–D read and answer 1–5; jigsaw regroup to complete the grid; word meaning in context (8 exam-style); 20-question Kahoot",
    "prep": "Arrange four tables (A–D) before 9:30. Log PCs in before 12:30 and post the Find the error link in Teams. No cutting out. Learners need phones for the Vote card (QR on the voting slides). Last amended 6 Nov 2026 – replaces the earlier pronouns/ordering plan (moved to Wed 11 and Mon 16 Nov).",
-   "print": "Texts A–D (one side per group – a copy for each learner in that group) and the information grid (landscape, one each). For you: the teacher script (2 sides). Nothing for the afternoon.",
+   "print": "One sheet per learner, double-sided: Group A, B, C and D files (their place's text on the front, the grid on the back) – one copy per learner in that group, plus spares. For you: the teacher script (2 sides). Nothing for the afternoon.",
    "title": "Hackney Places – adjectives, adverbs and jigsaw reading (observed lesson)",
-   "amended": "2026-11-06T19:11:14Z"
+   "amended": "2026-11-06T19:12:30Z"
   },
   "2026-11-10_e1": {
    "afternoon": "PC room, all on screen: Task 4 exam mode (texts 3–4, no writing); our own listening in Teams General; online practice; Talk Builder from 'Your plan' to a one-minute talk; Kahoot (12 Qs)",
