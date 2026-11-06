@@ -35,7 +35,7 @@ button:focus-visible{outline:3px solid var(--red);outline-offset:2px}
 .order.row{flex-direction:row;flex-wrap:wrap;gap:14px}
 .ev{font-size:25px;text-align:left;padding:10px 16px 10px 60px;border:2px solid var(--line);background:var(--paper);border-radius:6px;color:var(--ink);position:relative;min-height:54px}
 .order.row .ev{font-size:34px;padding:12px 22px 12px 62px}
-.order.row[data-set=hawa]{gap:10px}.order.row[data-set=hawa] .ev{font-size:24px;padding:8px 16px 8px 56px;min-height:48px}
+.order[data-set=hawa]{gap:8px}.order[data-set=hawa] .ev{font-size:23px;padding:7px 16px 7px 56px;min-height:46px}.ev .pf{color:var(--muted);font-size:19px;margin-left:10px}#hawaText span.lit{background:#ffd54a;border-radius:3px;box-shadow:0 0 0 2px #ffd54a}
 .ev::before{content:attr(data-n);position:absolute;left:12px;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;border:2px dashed var(--line);display:grid;place-items:center;font-family:var(--display);font-size:20px}
 .ev.done{border-color:var(--ok);background:var(--ok-bg);cursor:default}
 .ev.done::before{background:var(--ok);border:2px solid var(--ok);color:#fff}
@@ -114,17 +114,10 @@ a{color:var(--ink)}
 <section class="slide" hidden>
   <div class="eyebrow">Activity 1 · Hawa’s Morning</div>
   <h2>Put Hawa’s morning in order</h2>
-  <p style="font-size:20px;background:#fff8d6;padding:8px 14px;border-radius:6px;margin:6px 0">Hawa got up at six o’clock. Before breakfast, she washed her son’s school shirt. After they ate, she took him to school. Then she caught the bus to college. She arrived late because the bus broke down on the way. At lunchtime she phoned the school to check on her son.</p>
-  <p style="margin:6px 0">Tap the events in time order. Then click 1–5 to show the proof.</p>
-  <div class="order row" data-set="hawa"></div>
+  <p id="hawaText" style="font-size:22px;background:#fff8d6;padding:10px 14px;border-radius:6px;margin:6px 0;line-height:1.5"><span data-p="0">Hawa got up at six o’clock.</span> <span data-p="1">Before breakfast, she washed her son’s school shirt.</span> <span data-p="2">After they ate, she took him to school.</span> <span data-p="3">Then she caught the bus to college.</span> She arrived late because the bus broke down on the way. <span data-p="4">At lunchtime she phoned the school</span> to check on her son.</p>
+  <p style="margin:6px 0"><b>Which happened first?</b> A learner says the event <b>and</b> the words in the text that prove it. Then tap it.</p>
+  <div class="order" data-set="hawa"></div>
   <div class="bar"><button class="btn" data-reset="hawa">Start again</button><span class="msg" data-msg="hawa"></span></div>
-  <div class="ans tight" style="grid-template-columns:repeat(5,1fr);margin-top:10px">
-    <div class="a"><b>1</b> <span class="hide">“got up at <span class="l">six o’clock</span>”</span></div>
-    <div class="a"><b>2</b> <span class="hide">“<span class="l">Before</span> breakfast, she washed…”</span></div>
-    <div class="a"><b>3</b> <span class="hide">“<span class="l">After</span> they ate, she took him to school”</span></div>
-    <div class="a"><b>4</b> <span class="hide">“<span class="l">Then</span> she caught the bus”</span></div>
-    <div class="a"><b>5</b> <span class="hide">“<span class="l">At lunchtime</span> she phoned”</span></div>
-  </div>
 </section>
 
 <section class="slide" hidden>
@@ -256,12 +249,14 @@ const SETS={
 const SHOW={hawa:["Hawa got on a bus.","Hawa called the school.","Hawa cleaned some clothes.","Hawa left her son at school.","Hawa got out of bed."],story:["I got to college at nine.","I missed my bus.","I couldn’t find my keys.","I woke up."],
  a1:["market","bus","hostel","teacher","garden"],a2:["college","class","canal","card","cycle"],a3:["street","station","stop","student","stall"]};
 function mark(set,w){if(set==='a2')return w[0]+'<span class="l">'+w[1]+'</span>'+w.slice(2);if(set==='a3')return w.slice(0,2)+'<span class="l">'+w[2]+'</span>'+w.slice(3);return w}
+const PROOF=['at six o’clock','Before breakfast','After they ate','Then she caught the bus','At lunchtime'];
 function build(set){
+  if(set==='hawa')document.querySelectorAll('#hawaText .lit').forEach(x=>x.classList.remove('lit'));
   const box=document.querySelector('[data-set="'+set+'"]');box.innerHTML='';let n=0;
   const msg=document.querySelector('[data-msg="'+set+'"]');msg.textContent='';
   SHOW[set].forEach(t=>{const b=document.createElement('button');b.type='button';b.className='ev';b.dataset.n='';b.innerHTML=t;
     b.addEventListener('click',()=>{if(b.classList.contains('done'))return;
-      if(t===SETS[set][n]){n++;b.dataset.n=n;b.classList.add('done');if(set!=='story')b.innerHTML=mark(set,t);if(n===SETS[set].length)msg.textContent='Well done – all in order.'}
+      if(t===SETS[set][n]){n++;b.dataset.n=n;b.classList.add('done');if(set==='hawa'){b.innerHTML=t+' <span class="pf">– “'+PROOF[n-1]+'”</span>';const sp=document.querySelector('#hawaText [data-p="'+(n-1)+'"]');if(sp)sp.classList.add('lit')}else if(set!=='story')b.innerHTML=mark(set,t);if(n===SETS[set].length)msg.textContent='Well done – all in order.'}
       else{b.classList.remove('wrong');void b.offsetWidth;b.classList.add('wrong')}});box.append(b)});
 }
 Object.keys(SETS).forEach(build);
