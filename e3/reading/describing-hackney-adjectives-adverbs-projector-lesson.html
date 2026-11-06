@@ -227,6 +227,12 @@ $$('.qr').forEach(q=>{const n=q.classList.contains('sm')?110:220;try{new QRCode(
 // copy buttons
 $$('[data-copy]').forEach(b=>b.onclick=()=>{const t=document.getElementById(b.dataset.copy).value;
  (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>{b.textContent='Copied ✓'},()=>{const el=document.getElementById(b.dataset.copy);el.hidden=false;el.select();b.textContent='Press Ctrl+C'})});
+
+// copy hidden text (no line breaks) without showing it
+$$('[data-copytext]').forEach(b=>b.onclick=()=>{const t=b.dataset.copytext.replace(/\s+/g,' ').trim(),m=b.parentNode.querySelector('.cpmsg');
+ const done=()=>{if(m)m.textContent='Copied ✓ – paste into NaturalReader'};
+ const old=()=>{const ta=document.createElement('textarea');ta.value=t;ta.style.position='fixed';ta.style.left='-9999px';document.body.append(ta);ta.select();try{document.execCommand('copy');done()}catch(e){if(m)m.textContent='Copy failed'}ta.remove()};
+ if(navigator.clipboard)navigator.clipboard.writeText(t).then(done,old);else old()});
 // slides
 const slides=$$('.slide');let cur=0;
 const prev=document.getElementById('prev'),next=document.getElementById('next'),count=document.getElementById('count');
