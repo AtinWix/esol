@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-06T17:04:44Z",
+ "updatedAt": "2026-11-06T18:11:11Z",
  "upcoming": {
   "2026-11-02_e3": {
    "afternoon": "PC room: Too Cold to Learn – complaint emails",
@@ -107,11 +107,15 @@
    "date": "2026-11-09",
    "links": [
     {
+     "label": "Teacher script – what to do and say (print for you)",
+     "url": "https://atinwix.github.io/esol/e3/reading/docs/hackney-places-teacher-script.pdf"
+    },
+    {
      "label": "Day plan and answers",
      "url": "https://atinwix.github.io/esol/e3/reading/docs/wk09-mon-hackney-places-adjectives-adverbs-day-plan.pdf"
     },
     {
-     "label": "AM projector lesson",
+     "label": "AM projector lesson (press T for script)",
      "url": "https://atinwix.github.io/esol/e3/reading/hackney-places-adjectives-jigsaw-reading-projector-lesson.html"
     },
     {
@@ -131,7 +135,7 @@
      "url": "https://atinwix.github.io/Hangman-Paragraphs-Game"
     },
     {
-     "label": "PM projector lesson",
+     "label": "PM projector lesson (press T for script)",
      "url": "https://atinwix.github.io/esol/e3/reading/describing-hackney-adjectives-adverbs-projector-lesson.html"
     },
     {
@@ -145,9 +149,9 @@
    ],
    "morning": "Hangman Paragraphs settle-in; four Hackney places lead-in; match 12 adjectives; predict; expert groups A–D read and answer 1–5; jigsaw regroup to complete the grid; word meaning in context (8 exam-style); 20-question Kahoot",
    "prep": "Arrange four tables (A–D) and import the Kahoot file before 9:30. Log PCs in before 12:30 and post the Find the error link in Teams. No cutting out. Last amended 6 Nov 2026 – replaces the earlier pronouns/ordering plan (moved to Wed 11 and Mon 16 Nov).",
-   "print": "Texts A–D (one side per group – a copy for each learner in that group) and the information grid (landscape, one each). Nothing for the afternoon.",
+   "print": "Texts A–D (one side per group – a copy for each learner in that group) and the information grid (landscape, one each). For you: the teacher script (2 sides). Nothing for the afternoon.",
    "title": "Hackney Places – adjectives, adverbs and jigsaw reading (observed lesson)",
-   "amended": "2026-11-06T10:35:10Z"
+   "amended": "2026-11-06T18:10:41Z"
   },
   "2026-11-10_e1": {
    "afternoon": "PC room, all on screen: Task 4 exam mode (texts 3–4, no writing); our own listening in Teams General; online practice; Talk Builder from 'Your plan' to a one-minute talk; Kahoot (12 Qs)",
