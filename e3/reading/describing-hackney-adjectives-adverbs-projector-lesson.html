@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>E3 Reading – Describing Hackney – Adjectives and Adverbs – Projector Lesson</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Lexend:wght@400;600&display=swap">
+<style>
+/* One fixed 16:9 stage (1280x720) scaled to the window; arrows, buttons or swipe change slides. */
+:root{--desk:#e4e8ee;--paper:#fff;--ink:#152238;--muted:#56627a;--line:#cfd6e2;--hi:#ffe14d;--red:#d23c2a;
+--ok:#1d7a4b;--ok-bg:#dcf2e5;--bad:#b3261e;--bad-bg:#fbe2df;
+--display:"Bricolage Grotesque","Arial Narrow",Arial,sans-serif;--body:"Lexend",Verdana,Arial,sans-serif;color-scheme:light}
+html,body{height:100%}
+body{margin:0;background:var(--desk);color:var(--ink);font-family:var(--body);overflow:hidden}
+#stage{width:1280px;height:720px;position:absolute;left:50%;top:50%;transform-origin:center center}
+.slide{position:absolute;inset:0;background:var(--paper);border-radius:6px;box-shadow:0 18px 40px rgba(21,34,56,.18);padding:44px 60px 80px;display:flex;flex-direction:column;gap:18px;overflow:hidden}
+.slide[hidden]{display:none!important}
+.eyebrow{font-size:17px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+h1,h2{font-family:var(--display);font-weight:800;margin:0;line-height:1.05}
+h1{font-size:80px} h2{font-size:44px}
+p,li{font-size:26px;line-height:1.45;margin:0}
+.lede{font-size:28px;color:var(--muted);max-width:32em}
+.mark{background:linear-gradient(transparent 55%,var(--hi) 55%);padding:0 3px}
+.red{color:var(--red);font-weight:600}
+.steps{display:flex;flex-direction:column;gap:16px;counter-reset:s;list-style:none;padding:0;margin:0}
+.steps li{position:relative;padding-left:62px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:-2px;width:44px;height:44px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-family:var(--display);font-size:24px}
+button{font-family:var(--body);cursor:pointer}
+button:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+.btn{font-size:20px;font-weight:600;padding:8px 18px;border:2px solid var(--ink);background:var(--paper);color:var(--ink);border-radius:6px}
+.btn:hover{background:var(--hi)}
+.words{display:flex;flex-wrap:wrap;gap:12px}
+.w{font-size:28px;padding:10px 20px;border:2px solid var(--line);border-radius:6px}
+.w.key{border-color:var(--red);color:var(--red);font-weight:600}
+/* tap-in-order */
+.order{display:flex;flex-direction:column;gap:10px}
+.order.row{flex-direction:row;flex-wrap:wrap;gap:14px}
+.ev{font-size:25px;text-align:left;padding:10px 16px 10px 60px;border:2px solid var(--line);background:var(--paper);border-radius:6px;color:var(--ink);position:relative;min-height:54px}
+.order.row .ev{font-size:34px;padding:12px 22px 12px 62px}
+.order[data-set=hawa]{gap:8px}.order[data-set=hawa] .ev{font-size:23px;padding:7px 16px 7px 56px;min-height:46px}.ev .pf{color:var(--muted);font-size:19px;margin-left:10px}#hawaText span.lit{background:#ffd54a;border-radius:3px;box-shadow:0 0 0 2px #ffd54a}
+.ev::before{content:attr(data-n);position:absolute;left:12px;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;border:2px dashed var(--line);display:grid;place-items:center;font-family:var(--display);font-size:20px}
+.ev.done{border-color:var(--ok);background:var(--ok-bg);cursor:default}
+.ev.done::before{background:var(--ok);border:2px solid var(--ok);color:#fff}
+.ev.wrong{border-color:var(--bad);background:var(--bad-bg);animation:shake .3s}
+@keyframes shake{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+@media (prefers-reduced-motion:reduce){.ev.wrong,.opt.wrong{animation:none}}
+.l{color:var(--red);font-weight:600;text-decoration:underline}
+.bar{display:flex;gap:12px;align-items:center}
+.msg{font-size:20px;color:var(--ok);font-weight:600}
+/* which came first */
+.q{display:grid;grid-template-columns:1fr auto;gap:10px 20px;align-items:center;padding:10px 16px;border:2px solid var(--line);border-radius:6px}
+.q p{font-size:24px}
+.opts{display:flex;gap:8px}
+.opt{font-size:19px;padding:7px 14px;border:2px solid var(--ink);background:var(--paper);color:var(--ink);border-radius:6px}
+.opt:hover{background:var(--hi)}
+.opt.right{background:var(--ok);border-color:var(--ok);color:#fff}
+.opt.wrong{background:var(--bad-bg);border-color:var(--bad);color:var(--bad);animation:shake .3s}
+.q.done{border-color:var(--ok);background:var(--ok-bg)}
+.q.done .opt:not(.right){display:none}
+/* answers */
+.ans{display:grid;grid-template-columns:repeat(2,1fr);gap:10px 22px}
+.a{border:2px solid var(--line);border-radius:6px;padding:9px 14px;font-size:21px;line-height:1.35}
+.a b{font-family:var(--display);font-size:22px}
+.a .hide{filter:blur(9px);transition:filter .2s}
+.a.show .hide{filter:none}
+.a{cursor:pointer}
+.tight{gap:6px 18px}.tight .a{font-size:18px;padding:6px 12px}
+/* timer */
+.timer{display:flex;gap:30px;align-items:center}
+#clock{font-family:var(--display);font-weight:800;font-size:150px;line-height:1;font-variant-numeric:tabular-nums}
+#clockNote{font-size:28px;font-weight:600}
+.tbtns{display:flex;flex-direction:column;gap:10px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.card{border:2px solid var(--line);border-radius:6px;padding:16px 20px;display:flex;flex-direction:column;gap:8px}
+.card b{font-family:var(--display);font-size:30px}
+a{color:var(--ink)}
+#nav{position:absolute;right:24px;bottom:18px;display:flex;align-items:center;gap:12px}
+#nav button{font-size:22px;font-weight:600;border:2px solid var(--ink);background:var(--paper);color:var(--ink);border-radius:6px;padding:6px 18px}
+#nav button:disabled{opacity:.3;cursor:default}
+#count{font-size:18px;color:var(--muted)}
+
+.cards4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.pc{border:2px solid var(--line);border-radius:8px;padding:18px;display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.pc .ic{font-size:70px;line-height:1}.pc b{font-family:var(--display);font-size:28px;line-height:1.1}
+.pc .g{font-family:var(--display);font-size:22px;color:#fff;background:var(--ink);border-radius:4px;padding:0 10px}
+.mt{display:flex;flex-direction:column;gap:22px}
+.mt .L{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}.mt .L .mi{font-family:var(--display);font-size:24px;font-weight:600;text-align:center}
+.mt .R{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.mt .R .mi{font-size:19px}
+.mi{font-size:22px;text-align:left;padding:7px 14px;border:2px solid var(--line);background:var(--paper);border-radius:6px;color:var(--ink)}
+.mi.sel{border-color:var(--ink);background:var(--hi)}
+.mi.ok{border-color:var(--ok);background:var(--ok-bg);color:var(--ok);cursor:default}
+.mi.no{border-color:var(--bad);background:var(--bad-bg);animation:shake .3s}
+.score{font-family:var(--display);font-size:24px;color:var(--muted);margin-left:auto}
+.qs{display:flex;flex-direction:column;gap:10px}
+.qs .q p{font-size:22px}.qs .opt{font-size:18px}
+.q2{display:grid;grid-template-columns:1fr 1fr;gap:8px 18px}
+.q2 .q{padding:6px 12px}.q2 .q p{font-size:20px}.q2 .opt{font-size:18px;padding:5px 12px}
+table.grid{border-collapse:collapse;width:100%;font-size:15px;line-height:1.3}
+table.grid th,table.grid td{border:2px solid var(--line);padding:6px 8px;vertical-align:top;text-align:left}
+table.grid th{font-family:var(--display);font-size:17px;background:#f1f4f8}
+table.grid td.a{border-radius:0;font-size:15px}
+table.grid td.a .hide{filter:blur(7px)}
+.say{display:flex;flex-wrap:wrap;gap:10px}.say span{font-size:22px;border:2px dashed var(--line);border-radius:6px;padding:6px 14px}
+.tm{display:flex;align-items:center;gap:14px}.tm .clk{font-family:var(--display);font-weight:800;font-size:54px;font-variant-numeric:tabular-nums;min-width:4ch}
+.pred{display:grid;grid-template-columns:1fr 1fr;gap:10px 22px}
+.big{font-size:30px}
+.qrbox{display:flex;gap:30px;align-items:center}.qr{width:220px;height:220px;flex:none;font-size:13px;overflow-wrap:anywhere}.qr img,.qr canvas{width:220px!important;height:220px!important}
+.model{font-size:24px;background:#fff8d6;padding:14px 18px;border-radius:6px;line-height:1.5}
+.model .adj{background:linear-gradient(transparent 55%,#ffd54a 55%)}.model .adv{text-decoration:underline 3px var(--red);text-underline-offset:5px}
+.rule{border:2px solid var(--line);border-radius:8px;padding:16px 20px;display:flex;flex-direction:column;gap:8px}
+.rule h3{font-family:var(--display);font-size:32px;margin:0}
+</style></head><body>
+<div id="stage">
+<section class="slide">
+  <div class="eyebrow">E3 Reading · Adjectives and adverbs · PC room</div>
+  <h1>Describing <span class="mark">Hackney</span></h1>
+  <p class="lede">Adjective or adverb? Find the mistakes on your PC, check your place on the map, then write about your favourite place.</p>
+</section>
+<section class="slide" hidden>
+  <div class="eyebrow">Adjective or adverb?</div>
+  <h2>What does the word describe?</h2>
+  <div class="two"><div class="rule"><h3>Adjective → a thing or a place</h3><p>a <span class="mark">busy</span> market</p><p>The water is <span class="mark">warm</span>.</p><p style="font-size:22px;color:var(--muted)">After <b>be</b>: is, was, are …</p></div><div class="rule"><h3>Adverb → how we do it</h3><p>Traders shout <span class="mark">loudly</span>.</p><p>Ride <span class="mark">slowly</span>.</p><p style="font-size:22px;color:var(--muted)">After the action: shout, ride, walk …</p></div></div>
+  <div class="words"><span class="w">quick → quick<b class="red">ly</b></span><span class="w">careful → careful<b class="red">ly</b></span><span class="w">happy → happ<b class="red">ily</b></span><span class="w">easy → eas<b class="red">ily</b></span><span class="w key">good → well</span><span class="w key">fast → fast</span><span class="w key">hard → hard</span></div>
+</section>
+<section class="slide" hidden>
+  <div class="eyebrow">Adjective or adverb? · Come to the board</div>
+  <h2>Choose the right word <span class="score"></span></h2>
+  <div class="q2" data-mcq="[[&quot;Ridley Road is a very ___ market.&quot;, [&quot;busy&quot;, &quot;busily&quot;], 0, 1], [&quot;Traders shout ___ about their prices.&quot;, [&quot;loud&quot;, &quot;loudly&quot;], 1, 1], [&quot;Please walk ___ – the floor is wet.&quot;, [&quot;careful&quot;, &quot;carefully&quot;], 1, 1], [&quot;The children played ___ in the park.&quot;, [&quot;happy&quot;, &quot;happily&quot;], 1, 1], [&quot;The water in the lido is ___ all year.&quot;, [&quot;warm&quot;, &quot;warmly&quot;], 0, 1], [&quot;She speaks English very ___.&quot;, [&quot;good&quot;, &quot;well&quot;], 1, 1], [&quot;He is a ___ swimmer.&quot;, [&quot;good&quot;, &quot;well&quot;], 0, 1], [&quot;The bus driver drove very ___.&quot;, [&quot;fast&quot;, &quot;fastly&quot;], 0, 1], [&quot;It was a ___ afternoon by the canal.&quot;, [&quot;quiet&quot;, &quot;quietly&quot;], 0, 1], [&quot;Cyclists should ride ___ on the towpath.&quot;, [&quot;slow&quot;, &quot;slowly&quot;], 1, 1], [&quot;I waited ___ for the doctor.&quot;, [&quot;patient&quot;, &quot;patiently&quot;], 1, 1], [&quot;Amina works very ___ every day.&quot;, [&quot;hard&quot;, &quot;hardly&quot;], 0, 1]]"></div>
+</section>
+<section class="slide" hidden>
+  <div class="eyebrow">PCs · On your own</div>
+  <h2>Find the error</h2>
+  <div class="qrbox"><div><ol class="steps"><li>Open <b>Find the error</b> from the Teams post (or scan the code with your phone).</li><li>Tap the word that is wrong.</li><li>Type the correct sentence.</li><li>20 sentences. Finished? Help your neighbour.</li></ol><p style="font-size:20px;margin-top:14px"><a href="https://atinwix.github.io/esol/e3/reading/adjectives-adverbs-find-the-error-interactive-practice.html" target="_blank" rel="noopener">atinwix.github.io/esol/e3/reading/adjectives-adverbs-find-the-error-interactive-practice.html</a></p></div><div class="qr" data-url="https://atinwix.github.io/esol/e3/reading/adjectives-adverbs-find-the-error-interactive-practice.html"></div></div>
+</section>
+<section class="slide" hidden>
+  <div class="eyebrow">PCs · Online maps</div>
+  <h2>Check your place on the map</h2>
+  <ol class="steps"><li>Open <b>Google Maps</b>. Search for your place from this morning (A, B, C or D).</li><li>Find: the nearest station, and the opening times if it has them.</li><li>How long does it take to walk there from college?</li><li>Read three reviews. Write down two <b>adjectives</b> people use.</li><li>Does the map say the same as your text? Find one thing that is the same and one new thing.</li></ol>
+</section>
+<section class="slide" hidden>
+  <div class="eyebrow">PCs · Write and post</div>
+  <h2>Write about your favourite place</h2>
+  <p class="model">My favourite place is Victoria Park. It is a <span class="adj">large</span>, <span class="adj">green</span> park near Hackney Wick. In the morning it is very <span class="adj">quiet</span>. I walk <span class="adv">slowly</span> round the lake and watch the ducks. There is a <span class="adj">lovely</span> café, and the coffee is <span class="adj">cheap</span>.</p>
+  <ol class="steps"><li>Write 4–5 sentences about a place you like in London.</li><li>Use <span class="mark">three adjectives</span> and <span style="text-decoration:underline 3px var(--red);text-underline-offset:5px">one adverb</span>.</li><li>Post it in <b>Teams → General</b>. Start with the name of the place.</li></ol>
+</section>
+<section class="slide" hidden>
+  <div class="eyebrow">PCs · Read and reply</div>
+  <h2>Read two posts and reply</h2>
+  <ol class="steps"><li>Read two classmates’ posts.</li><li>Reply to each one with <b>one question</b>.</li><li>Answer the questions people ask you.</li></ol>
+  <div class="say"><span>Is it expensive?</span><span>How do you get there?</span><span>When is it open?</span><span>Who do you go with?</span><span>Is it busy at the weekend?</span></div>
+</section>
+<section class="slide" hidden>
+  <div class="eyebrow">Game · Whole class</div>
+  <h2>Who Wants to Be a Millionaire?</h2>
+  <ol class="steps"><li>Teacher: click <b>Copy the questions</b>.</li><li>Open <a href="https://atinwix.github.io/esol/games/millionaire-quiz.html" target="_blank" rel="noopener">the Millionaire game</a>, choose <b>My questions</b> and paste.</li><li>Teams of three. One team plays at a time – the class can help with a lifeline.</li></ol>
+  <div class="bar"><button class="btn" data-copy="mbank">Copy the questions (15)</button></div>
+  <textarea id="mbank" hidden readonly style="width:100%;height:140px;font-size:14px">Which word is an adjective? | quickly | noisy | slowly | happily | B
+Which word is an adverb? | careful | quiet | carefully | busy | C
+The opposite of &#x27;cheap&#x27; is… | expensive | quiet | fresh | famous | A
+The opposite of &#x27;noisy&#x27; is… | busy | crowded | quiet | colourful | C
+&#x27;Please walk ___.&#x27; | careful | carefully | care | carefuly | B
+&#x27;The canal is very ___ in the morning.&#x27; | peacefully | peaceful | peace | peaces | B
+The adverb from &#x27;happy&#x27; is… | happyly | happily | happly | happy | B
+The adverb from &#x27;good&#x27; is… | goodly | well | better | best | B
+&#x27;My son runs very ___.&#x27; | fastly | fast | faster | fasting | B
+A place full of people is… | narrow | crowded | heated | slippery | B
+Narrowboats are… | wide | long and thin | very fast | grey | B
+London Fields Lido is… | an indoor pool | an outdoor pool | a lake | a river | B
+Ridley Road Market is near… | Dalston Kingsland station | Victoria station | King&#x27;s Cross | Stratford | A
+At Broadway Market, a coffee and a cake can cost… | £1 or £2 | £3 or £4 | £8 or £9 | £20 | C
+Which sentence is correct? | She sings beautiful. | She sings beautifully. | She beautiful sings. | She sings beautifuly. | B</textarea>
+</section>
+<section class="slide" hidden>
+  <div class="eyebrow">Before you go · Pairs</div>
+  <h2>Quiet or quietly?</h2>
+  <ol class="steps"><li>Say one sentence with <b>quiet</b> and one with <b>quietly</b>.</li><li>Say one sentence with <b>good</b> and one with <b>well</b>.</li><li>Tell your partner: “Next time I read a new word, I will …”</li></ol>
+</section>
+<div id="nav"><span id="count"></span><button id="prev" aria-label="Previous slide">‹</button><button id="next" aria-label="Next slide">›</button></div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+(function(){
+const $$=(s,r=document)=>[...r.querySelectorAll(s)];
+// click-to-reveal
+$$('.a').forEach(a=>a.addEventListener('click',()=>a.classList.toggle('show')));
+// matching: tap left then right
+$$('[data-match]').forEach(box=>{
+ const pairs=JSON.parse(box.dataset.match),order=JSON.parse(box.dataset.order);
+ const L=box.querySelector('.L'),Rr=box.querySelector('.R'),sc=box.closest('.slide').querySelector('.score');let sel=null,got=0;
+ function up(){sc.textContent=got+' / '+pairs.length}
+ pairs.forEach((p,i)=>{const b=document.createElement('button');b.type='button';b.className='mi';b.textContent=p[0];b.dataset.i=i;
+  b.onclick=()=>{if(b.classList.contains('ok'))return;$$('.mi.sel',L).forEach(x=>x.classList.remove('sel'));b.classList.add('sel');sel=b};L.append(b)});
+ order.forEach(i=>{const b=document.createElement('button');b.type='button';b.className='mi';b.textContent=pairs[i][1];
+  b.onclick=()=>{if(!sel||b.classList.contains('ok'))return;
+   if(+sel.dataset.i===i){sel.classList.remove('sel');sel.classList.add('ok');b.classList.add('ok');sel=null;got++;up()}
+   else{b.classList.remove('no');void b.offsetWidth;b.classList.add('no')}};Rr.append(b)});
+ up();
+});
+// multiple choice rows
+$$('[data-mcq]').forEach(box=>{
+ const items=JSON.parse(box.dataset.mcq),sc=box.closest('.slide').querySelector('.score');let got=0;
+ function up(){if(sc)sc.textContent=got+' / '+items.length}
+ items.forEach(it=>{const r=document.createElement('div');r.className='q';const p=document.createElement('p');p.innerHTML=it[0];r.append(p);
+  const o=document.createElement('div');o.className='opts';
+  it[1].forEach((l,i)=>{const b=document.createElement('button');b.type='button';b.className='opt';b.textContent=l;
+   b.onclick=()=>{if(r.classList.contains('done'))return;
+    if(i===it[2]){b.classList.add('right');r.classList.add('done');got++;up();if(it[3])p.innerHTML=it[0].replace('___','<b class="red">'+l+'</b>')}
+    else{b.classList.remove('wrong');void b.offsetWidth;b.classList.add('wrong')}};o.append(b)});
+  r.append(o);box.append(r)});
+ up();
+});
+// timers
+$$('.tm').forEach(t=>{const m=+t.dataset.min,clk=t.querySelector('.clk');let left=m*60,h=null;
+ const draw=()=>{clk.textContent=Math.floor(left/60)+':'+String(left%60).padStart(2,'0');clk.style.color=left===0?'var(--bad)':left<=120?'var(--red)':''};
+ t.querySelector('[data-go]').onclick=()=>{if(h)return;h=setInterval(()=>{if(left>0){left--;draw()}else{clearInterval(h);h=null}},1000)};
+ t.querySelector('[data-stop]').onclick=()=>{clearInterval(h);h=null};
+ t.querySelector('[data-reset]').onclick=()=>{clearInterval(h);h=null;left=m*60;draw()};draw()});
+// QR codes
+$$('.qr').forEach(q=>{try{new QRCode(q,{text:q.dataset.url,width:220,height:220})}catch(e){q.textContent=q.dataset.url}});
+// copy buttons
+$$('[data-copy]').forEach(b=>b.onclick=()=>{const t=document.getElementById(b.dataset.copy).value;
+ (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>{b.textContent='Copied ✓'},()=>{const el=document.getElementById(b.dataset.copy);el.hidden=false;el.select();b.textContent='Press Ctrl+C'})});
+// slides
+const slides=$$('.slide');let cur=0;
+const prev=document.getElementById('prev'),next=document.getElementById('next'),count=document.getElementById('count');
+function show(n){cur=Math.max(0,Math.min(slides.length-1,n));slides.forEach((s,i)=>s.hidden=i!==cur);prev.disabled=cur===0;next.disabled=cur===slides.length-1;count.textContent=(cur+1)+' / '+slides.length}
+prev.onclick=()=>show(cur-1);next.onclick=()=>show(cur+1);
+document.addEventListener('keydown',e=>{if(e.target.matches('textarea,input'))return;if(e.key==='ArrowRight'||e.key==='PageDown'){e.preventDefault();show(cur+1)}if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();show(cur-1)}});
+let sx=null;document.addEventListener('touchstart',e=>{sx=e.touches[0].clientX},{passive:true});
+document.addEventListener('touchend',e=>{if(sx===null)return;const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>60)show(cur+(dx<0?1:-1));sx=null});
+const stage=document.getElementById('stage');
+function fit(){const s=Math.min((innerWidth-16)/1280,(innerHeight-16)/720);stage.style.transform='translate(-50%,-50%) scale('+Math.max(s,0.2)+')'}
+addEventListener('resize',fit);fit();show(0);
+})();
+</script>
+<div class="atin-logo" aria-label="Made by Atin">
+<svg viewBox="104 28 172 134" width="64" height="50" role="img" aria-hidden="true">
+<text x="139" y="112" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="72" fill="currentColor">A</text>
+<rect x="177" y="83" width="24" height="6" rx="1" fill="currentColor"/>
+<path d="M216 66 L216 106 A25 7 0 0 0 266 106 L266 66" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+<ellipse cx="241" cy="66" rx="25" ry="7" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="216" y1="80" x2="266" y2="80" stroke="currentColor" stroke-width="1.5"/>
+<line x1="216" y1="94" x2="266" y2="94" stroke="currentColor" stroke-width="1.5"/>
+<ellipse cx="241" cy="47" rx="23" ry="5" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="114" y1="128" x2="266" y2="128" stroke="currentColor" stroke-width="1"/>
+<text x="190" y="152" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" letter-spacing="2" fill="currentColor">made by Atin</text>
+</svg>
+</div>
+<style>
+.atin-logo{position:fixed;left:calc(6px + env(safe-area-inset-left,0px));bottom:calc(6px + env(safe-area-inset-bottom,0px));z-index:2147483000;pointer-events:none;color:#1F3A5F;background:rgba(255,255,255,.92);border:1px solid #C9D3DF;border-radius:8px;padding:3px 5px;line-height:0}
+.atin-logo svg{display:block}
+@media print{.atin-logo{position:fixed;left:auto;right:6mm;bottom:5mm;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style></body></html>

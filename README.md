@@ -142,6 +142,9 @@ Word documents:
 - [E3 Reading – ESB Mock Exam – Set O](e3/reading/wk08-esb-mock-exam-set-o.html)
 - [E3 Reading – Purpose, Pronouns & Word Meaning – Projector Lesson](e3/reading/wk08-purpose-pronouns-word-meaning-projector-lesson.html)
 - [E3 Reading – Too Cold to Learn – Exam Practice (PC Room)](e3/reading/wk08-too-cold-to-learn-exam-practice.html)
+- [E3 Adjectives and Adverbs – Find the Error – Interactive Practice](e3/reading/adjectives-adverbs-find-the-error-interactive-practice.html) – 20 sentences: tap the mistake, then type the correct sentence. Works on PCs and phones.
+- [E3 Reading – Describing Hackney – Adjectives and Adverbs – Projector Lesson](e3/reading/describing-hackney-adjectives-adverbs-projector-lesson.html) – Adjective or adverb, find the error, online maps task, write and post in Teams, Millionaire.
+- [E3 Reading – Hackney Places – Adjectives and Jigsaw Reading – Projector Lesson](e3/reading/hackney-places-adjectives-jigsaw-reading-projector-lesson.html) – Adjectives for places, predict, expert groups and jigsaw grid, word meaning in context, Kahoot.
 - [E3 Reading – Hostel Garden and Computer Classes – Timed Online Practice Paper](e3/reading/hostel-garden-and-computer-classes-timed-online-practice-paper.html) – Two texts, 16 ESB-style questions, 40-minute clock, marks itself and shows score by skill – PC or phone
 - [E3 Reading – Ordering Tasks and Practice Paper – Projector Lesson](e3/reading/wk09-ordering-tasks-practice-paper-projector-lesson.html) – Time order, alphabetical order, online practice, timed online paper and answers – all on screen (PC room)
 - [E3 Reading – Time Order, Alphabetical Order, Pronouns and Word Meaning – Online Practice](e3/reading/wk09-time-order-alphabetical-order-practice.html) – What happened first?, eight time-order texts, 14 alphabetical sets, 18 pronoun / word meaning / purpose questions – PC or phone
@@ -158,6 +161,9 @@ Word documents:
 - [Extra – Picnic emails – exam practice (27 questions)](e3/reading/docs/extra-picnic-emails-exam-practice.pdf) (PDF) · [Word](e3/reading/docs/extra-picnic-emails-exam-practice.docx)
 - [Extra – Picnic emails – reading practice from learners' writing (21 questions) – answers (teacher)](e3/reading/docs/extra-picnic-emails-reading-practice-from-learners-writing-answers.pdf) (PDF) · [Word](e3/reading/docs/extra-picnic-emails-reading-practice-from-learners-writing-answers.docx)
 - [Extra – Picnic emails – reading practice from learners' writing (21 questions)](e3/reading/docs/extra-picnic-emails-reading-practice-from-learners-writing.pdf) (PDF) · [Word](e3/reading/docs/extra-picnic-emails-reading-practice-from-learners-writing.docx)
+- [E3 Reading – Hackney Places – Adjectives and Adverbs – Kahoot Quiz](e3/reading/docs/hackney-places-adjectives-adverbs-kahoot.pdf) (PDF) · [Word](e3/reading/docs/hackney-places-adjectives-adverbs-kahoot.xlsx)
+- [E3 Reading – Hackney Places – Jigsaw Reading – Information Grid](e3/reading/docs/hackney-places-jigsaw-reading-information-grid.pdf) (PDF) · [Word](e3/reading/docs/hackney-places-jigsaw-reading-information-grid.docx)
+- [E3 Reading – Hackney Places – Jigsaw Reading – Texts and Questions A–D](e3/reading/docs/hackney-places-jigsaw-reading-texts-and-questions.pdf) (PDF) · [Word](e3/reading/docs/hackney-places-jigsaw-reading-texts-and-questions.docx)
 - [Exam Prep Lesson 1 – Activity 5 secret purpose cards (cut out)](e3/reading/docs/lesson-01-activity5-secret-purpose-cards.pdf) (PDF) · [Word](e3/reading/docs/lesson-01-activity5-secret-purpose-cards.docx)
 - [E3 Reading – Pronouns, Word Meaning and Ordering – Kahoot Quiz](e3/reading/docs/pronouns-word-meaning-ordering-kahoot.pdf) (PDF) · [Word](e3/reading/docs/pronouns-word-meaning-ordering-kahoot.xlsx)
 - [Wk 1 Exam question types – sort activity – answers (teacher)](e3/reading/docs/wk01-exam-question-types-sort-activity-answers.pdf) (PDF) · [Word](e3/reading/docs/wk01-exam-question-types-sort-activity-answers.docx)
@@ -183,7 +189,8 @@ Word documents:
 - [Wk 8 Too Cold to Learn – exam practice – teacher notes and answers (teacher)](e3/reading/docs/wk08-too-cold-to-learn-exam-practice-answers.pdf) (PDF) · [Word](e3/reading/docs/wk08-too-cold-to-learn-exam-practice-answers.docx)
 - [Wk 8 Wed Purpose, main points, pronouns and word meaning – day plan (teacher)](e3/reading/docs/wk08-wed-purpose-pronouns-word-meaning-day-plan.pdf) (PDF) · [Word](e3/reading/docs/wk08-wed-purpose-pronouns-word-meaning-day-plan.docx)
 - [Wk 9 Alphabetical order word cards – cut-outs (Exam Prep Lesson 3)](e3/reading/docs/wk09-mon-alphabetical-order-word-cards.pdf) (PDF) · [Word](e3/reading/docs/wk09-mon-alphabetical-order-word-cards.docx)
-- [Wk 9 Mon Pronouns, word meaning and ordering tasks – day plan (teacher)](e3/reading/docs/wk09-mon-pronouns-word-meaning-ordering-day-plan.pdf) (PDF) · [Word](e3/reading/docs/wk09-mon-pronouns-word-meaning-ordering-day-plan.docx)
+- [E3 Reading – Hackney Places – Adjectives, Adverbs and Jigsaw Reading – Day Plan and Answers](e3/reading/docs/wk09-mon-hackney-places-adjectives-adverbs-day-plan.pdf) (PDF) · [Word](e3/reading/docs/wk09-mon-hackney-places-adjectives-adverbs-day-plan.docx)
+- [E3 Reading – Pronouns, Word Meaning and Ordering Tasks – Day Plan and Answers](e3/reading/docs/wk09-mon-pronouns-word-meaning-ordering-day-plan.pdf) (PDF) · [Word](e3/reading/docs/wk09-mon-pronouns-word-meaning-ordering-day-plan.docx)
 - [Lesson 1: Main points and purpose – student handouts](e3/reading/exam-prep/lesson-01-handouts.pdf) (PDF) · [Word](e3/reading/exam-prep/lesson-01-handouts.docx)
 - [Lesson 1: Main points and purpose – plan and answers](e3/reading/exam-prep/lesson-01-plan.pdf) (PDF) · [Word](e3/reading/exam-prep/lesson-01-plan.docx)
 - [Lesson 2: Pronouns, word meaning and finding details – student handouts](e3/reading/exam-prep/lesson-02-handouts.pdf) (PDF) · [Word](e3/reading/exam-prep/lesson-02-handouts.docx)

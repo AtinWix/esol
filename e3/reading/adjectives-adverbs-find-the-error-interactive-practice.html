@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>E3 Adjectives and Adverbs – Find the Error – Interactive Practice</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@500;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<style>
+:root{
+  --bg:#F3F5F7; --surface:#FFFFFF; --ink:#18222E; --muted:#556170; --line:#D9DEE5;
+  --accent:#0E6B6B; --accent-ink:#FFFFFF; --accent-soft:#DDEFEE;
+  --mark:#E8A317; --mark-soft:#FCF0D2;
+  --good:#1D7A3A; --good-soft:#DDF1E3; --bad:#B3261E; --bad-soft:#F8DEDC;
+  --display:"Lexend","Segoe UI",Arial,sans-serif;
+  --body:"Atkinson Hyperlegible",Verdana,Arial,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#11161C; --surface:#1A222B; --ink:#E9EEF3; --muted:#9AA6B3; --line:#2C3743;
+  --accent:#4FB8B3; --accent-ink:#08201F; --accent-soft:#163533;
+  --mark:#F0B940; --mark-soft:#3A2F14;
+  --good:#5FCB82; --good-soft:#163222; --bad:#F08A82; --bad-soft:#3A1A18; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#11161C; --surface:#1A222B; --ink:#E9EEF3; --muted:#9AA6B3; --line:#2C3743;
+  --accent:#4FB8B3; --accent-ink:#08201F; --accent-soft:#163533;
+  --mark:#F0B940; --mark-soft:#3A2F14;
+  --good:#5FCB82; --good-soft:#163222; --bad:#F08A82; --bad-soft:#3A1A18; color-scheme:dark}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:clamp(17px,1.6vw,22px);line-height:1.45;
+  padding:env(safe-area-inset-top,0) env(safe-area-inset-right,0) env(safe-area-inset-bottom,0) env(safe-area-inset-left,0)}
+.app{min-height:100%;display:flex;flex-direction:column;max-width:1400px;margin:0 auto;padding:clamp(12px,2vh,24px) 16px}
+header{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(20px,2.3vw,32px);margin:0;flex:1 1 auto}
+.score{font-family:var(--display);font-weight:500;color:var(--muted);white-space:nowrap}
+.qrbtn{font:inherit;font-size:.8em;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:6px 14px;cursor:pointer}
+.dots{display:flex;flex-wrap:wrap;gap:6px;margin:clamp(10px,1.6vh,18px) 0}
+.dot{width:clamp(30px,2.6vw,40px);height:clamp(30px,2.6vw,40px);border-radius:50%;border:2px solid var(--line);background:var(--surface);color:var(--muted);
+  font:700 .75em var(--display);cursor:pointer;display:grid;place-items:center;padding:0}
+.dot.cur{border-color:var(--accent);color:var(--accent)}
+.dot.ok{background:var(--good);border-color:var(--good);color:#fff}
+.dot.part{background:var(--mark);border-color:var(--mark);color:#1b1300}
+.dot.no{background:var(--bad);border-color:var(--bad);color:#fff}
+.card{flex:1;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:clamp(16px,3vw,44px);display:flex;flex-direction:column;gap:clamp(10px,2vh,22px)}
+.step{font-family:var(--display);font-weight:500;color:var(--accent);font-size:.9em;letter-spacing:.02em}
+.sent{font-size:clamp(24px,3.4vw,52px);line-height:1.6;font-weight:700}
+.w{word-spacing:.44em;display:inline-block;padding:0 .18em;margin:.06em .04em;border-radius:10px;border:2px solid transparent;cursor:pointer;user-select:none;transition:background .15s}
+.w:hover{background:var(--accent-soft)}
+.w:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.w.miss{background:var(--bad-soft);color:var(--bad);animation:shake .3s}
+.w.found{background:var(--mark-soft);border-color:var(--mark);text-decoration:line-through;text-decoration-color:var(--bad);text-decoration-thickness:3px}
+.pn{margin-left:-.22em}
+.locked .w{cursor:default}.locked .w:hover:not(.found){background:none}
+@keyframes shake{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+.msg{min-height:1.5em;font-weight:700}
+.msg.good{color:var(--good)}.msg.bad{color:var(--bad)}.msg.info{color:var(--muted);font-weight:400}
+.fix{display:none;flex-direction:column;gap:10px}
+.fix.on{display:flex}
+.fix label{font-family:var(--display);font-weight:500}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.row input{flex:1 1 320px;min-width:0;font:inherit;font-size:clamp(18px,2vw,28px);padding:12px 14px;border:2px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink)}
+.row input:focus{outline:none;border-color:var(--accent)}
+.row input.good{border-color:var(--good);background:var(--good-soft)}
+.row input.bad{border-color:var(--bad);background:var(--bad-soft)}
+button.b{font:700 1em var(--display);border:0;border-radius:12px;padding:12px 22px;cursor:pointer;background:var(--accent);color:var(--accent-ink)}
+button.b.sec{background:var(--surface);color:var(--ink);border:2px solid var(--line)}
+button.b:disabled{opacity:.45;cursor:default}
+.model{font-size:1.05em}
+.model b{color:var(--good)}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:auto;padding-top:6px;align-items:center}
+.end{display:none}
+.end.on{display:flex}
+.end h2{font-family:var(--display);margin:0;font-size:clamp(24px,3vw,44px)}
+.review{columns:2 320px;column-gap:28px;margin:0;padding-left:1.4em}
+.review li{break-inside:avoid;margin-bottom:8px}
+.review .bad{color:var(--bad)}
+.foot{display:flex;justify-content:space-between;align-items:center;margin-top:12px;gap:10px;color:var(--muted);font-size:.8em}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;place-items:center;z-index:50;padding:16px}
+.overlay.on{display:grid}
+.qrbox{background:#fff;color:#18222E;border-radius:18px;padding:24px;text-align:center;max-width:92vw}
+.qrbox p{margin:12px 0 0;font-family:var(--display)}
+#qr img,#qr canvas{margin:0 auto;display:block;max-width:70vmin;height:auto}
+.atin-logo{color:#1F3A5F;background:rgba(255,255,255,.92);border:1px solid #C9D3DF;border-radius:8px;padding:3px 5px;line-height:0;pointer-events:none;flex:none}
+.atin-logo svg{display:block}
+@media (max-width:640px){.sent{line-height:1.7}.nav button.b{padding:12px 16px}.qrbtn{display:none}}
+</style>
+</head>
+<body>
+<div class="app">
+  <header>
+    <h1>Adjective or adverb? Find the mistake</h1>
+    <span class="score" id="score">Correct: 0 / 20</span>
+    <button class="qrbtn" id="qrbtn" type="button">Open on your phone</button>
+  </header>
+  <nav class="dots" id="dots" aria-label="Sentences"></nav>
+
+  <main class="card" id="card">
+    <div class="step" id="step"></div>
+    <div class="sent" id="sent"></div>
+    <div class="msg" id="msg" aria-live="polite"></div>
+    <div class="fix" id="fix">
+      <label for="ans">Write the correct sentence.</label>
+      <div class="row">
+        <input id="ans" autocomplete="off" autocapitalize="sentences" spellcheck="false" placeholder="Write the whole sentence here">
+        <button class="b" id="check" type="button">Check</button>
+      </div>
+      <div class="model" id="model"></div>
+    </div>
+    <div class="nav">
+      <button class="b sec" id="prev" type="button">← Back</button>
+      <button class="b" id="next" type="button">Next →</button>
+    </div>
+  </main>
+
+  <main class="card end" id="end">
+    <h2 id="endTitle"></h2>
+    <p id="endText" style="margin:0"></p>
+    <ol class="review" id="review"></ol>
+    <div class="nav">
+      <button class="b sec" id="backTo" type="button">← Back to the sentences</button>
+      <button class="b" id="again" type="button">Start again</button>
+    </div>
+  </main>
+
+  <div class="foot">
+    <div class="atin-logo" aria-label="Made by Atin">
+<svg viewBox="104 28 172 134" width="64" height="50" role="img" aria-hidden="true">
+<text x="139" y="112" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="72" fill="currentColor">A</text>
+<rect x="177" y="83" width="24" height="6" rx="1" fill="currentColor"/>
+<path d="M216 66 L216 106 A25 7 0 0 0 266 106 L266 66" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+<ellipse cx="241" cy="66" rx="25" ry="7" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="216" y1="80" x2="266" y2="80" stroke="currentColor" stroke-width="1.5"/>
+<line x1="216" y1="94" x2="266" y2="94" stroke="currentColor" stroke-width="1.5"/>
+<ellipse cx="241" cy="47" rx="23" ry="5" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="114" y1="128" x2="266" y2="128" stroke="currentColor" stroke-width="1"/>
+<text x="190" y="152" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" letter-spacing="2" fill="currentColor">made by Atin</text>
+</svg>
+    </div>
+    <span>Each sentence has one mistake. Tap it, then write the sentence correctly.</span>
+  </div>
+</div>
+
+<div class="overlay" id="ov" role="dialog" aria-label="QR code">
+  <div class="qrbox"><div id="qr"></div><p>Scan to do this on your phone</p></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+// [ ] marks the mistake. ok = the correct sentence(s). fix = the corrected words.
+const DATA = [
+ ["Traders shout [loud] at the market.", ["Traders shout loudly at the market."], "loudly"],
+ ["The children played [happy] in the park.", ["The children played happily in the park."], "happily"],
+ ["Please drive [careful] near the school.", ["Please drive carefully near the school."], "carefully"],
+ ["She speaks English very [good].", ["She speaks English very well."], "well"],
+ ["My brother is a [well] cook.", ["My brother is a good cook."], "good"],
+ ["The bus was very [slowly] today.", ["The bus was very slow today."], "slow"],
+ ["Ridley Road is a [noisily] market.", ["Ridley Road is a noisy market."], "noisy"],
+ ["I waited [patient] for my appointment.", ["I waited patiently for my appointment."], "patiently"],
+ ["The canal is very [peacefully] in the morning.", ["The canal is very peaceful in the morning."], "peaceful"],
+ ["My son runs very [fastly].", ["My son runs very fast."], "fast"],
+ ["Amina works [hardly] every day.", ["Amina works hard every day."], "hard"],
+ ["The water in the lido is [warmly] all year.", ["The water in the lido is warm all year."], "warm"],
+ ["Please speak [quiet] in the library.", ["Please speak quietly in the library."], "quietly"],
+ ["He answered all the questions [correct].", ["He answered all the questions correctly."], "correctly"],
+ ["We walked [slow] along the towpath.", ["We walked slowly along the towpath."], "slowly"],
+ ["The cakes at Broadway Market are [deliciously].", ["The cakes at Broadway Market are delicious."], "delicious"],
+ ["Our teacher explains things very [clear].", ["Our teacher explains things very clearly."], "clearly"],
+ ["The street was very [crowd] on Saturday.", ["The street was very crowded on Saturday."], "crowded"],
+ ["She sang [beautiful] at the party.", ["She sang beautifully at the party."], "beautifully"],
+ ["The fish at the market is very [freshly].", ["The fish at the market is very fresh."], "fresh"]
+];
+const N = DATA.length;
+const items = DATA.map(([raw, ok, fix]) => {
+  const parts = []; const re = /\[([^\]]+)\]|(\S+)/g; let m;
+  while ((m = re.exec(raw))) {
+    if (m[1]) parts.push({t: m[1], err: true});
+    else {
+      let t = m[2], p = "";
+      const pm = t.match(/^(.*?)([.,!?]+)$/); if (pm) { t = pm[1]; p = pm[2]; }
+      parts.push({t, err: false, p});
+    }
+  }
+  return {parts, ok, fix, found: false, misses: 0, revealed: false, typed: "", result: null};
+});
+let cur = 0;
+const $ = id => document.getElementById(id);
+const norm = s => s.toLowerCase().replace(/[’']/g, "'").replace(/[^a-z' ]+/g, " ").replace(/\s+/g, " ").trim();
+
+function dots() {
+  $("dots").innerHTML = "";
+  items.forEach((it, i) => {
+    const b = document.createElement("button");
+    b.className = "dot" + (i === cur && !$("end").classList.contains("on") ? " cur" : "") +
+      (it.result === true ? (it.misses || it.revealed ? " part" : " ok") : it.result === false ? " no" : "");
+    b.textContent = i + 1; b.type = "button"; b.setAttribute("aria-label", "Sentence " + (i + 1));
+    b.onclick = () => show(i); $("dots").appendChild(b);
+  });
+  const done = items.filter(x => x.result === true).length;
+  $("score").textContent = "Correct: " + done + " / " + N;
+}
+
+function show(i) {
+  cur = i; $("end").classList.remove("on"); $("card").style.display = "";
+  const it = items[i];
+  $("step").textContent = "Sentence " + (i + 1) + " of " + N + " · " + (it.found ? "Step 2: write the correct sentence" : "Step 1: tap the mistake");
+  const s = $("sent"); s.innerHTML = ""; s.classList.toggle("locked", it.found);
+  it.parts.forEach((p, k) => {
+    const w = document.createElement("span");
+    w.className = "w" + (it.found && p.err ? " found" : "");
+    w.textContent = p.t; w.tabIndex = it.found ? -1 : 0; w.setAttribute("role", "button");
+    w.onclick = () => tap(it, p, w);
+    w.onkeydown = e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); tap(it, p, w); } };
+    s.appendChild(w);
+    if (p.p) { const q = document.createElement("span"); q.className = "pn"; q.textContent = p.p; s.appendChild(q); }
+    if (k < it.parts.length - 1) s.appendChild(document.createTextNode(" "));
+  });
+  const msg = $("msg"); msg.className = "msg info";
+  msg.textContent = it.found ? (it.revealed ? "Here is the mistake." : "Well done – you found it!") : "Tap the word or words that are wrong.";
+  if (it.found && !it.revealed) msg.className = "msg good";
+  $("fix").classList.toggle("on", it.found);
+  const a = $("ans"); a.value = it.typed; a.className = it.result === true ? "good" : it.result === false ? "bad" : "";
+  a.disabled = it.result !== null; $("check").disabled = it.result !== null;
+  $("model").innerHTML = it.result === null ? "" :
+    (it.result ? "✓ Correct." : "Correct answer: <b>" + it.ok[0] + "</b>");
+  $("prev").disabled = i === 0;
+  $("next").textContent = i === N - 1 ? "Finish →" : "Next →";
+  dots();
+  if (it.found && it.result === null && window.matchMedia("(pointer:fine)").matches) setTimeout(() => a.focus(), 50);
+}
+
+function tap(it, p, w) {
+  if (it.found) return;
+  if (p.err) { it.found = true; show(cur); return; }
+  it.misses++; w.classList.remove("miss"); void w.offsetWidth; w.classList.add("miss");
+  const msg = $("msg");
+  if (it.misses >= 2) { it.found = true; it.revealed = true; show(cur); return; }
+  msg.className = "msg bad"; msg.textContent = "Not that one. Try again.";
+}
+
+function check() {
+  const it = items[cur]; const v = $("ans").value;
+  if (!v.trim()) { $("ans").focus(); return; }
+  it.typed = v;
+  it.result = it.ok.some(o => norm(o) === norm(v));
+  show(cur);
+}
+
+function finish() {
+  $("card").style.display = "none"; $("end").classList.add("on");
+  const right = items.filter(x => x.result === true).length;
+  const firstTry = items.filter(x => x.found && !x.misses && !x.revealed).length;
+  $("endTitle").textContent = right + " out of " + N + " correct";
+  $("endText").textContent = "You found " + firstTry + " mistakes on your first try. Check the sentences below.";
+  const r = $("review"); r.innerHTML = "";
+  items.forEach((it, i) => {
+    const li = document.createElement("li");
+    const status = it.result === true ? "✓ " : it.result === false ? "✗ " : "– ";
+    li.innerHTML = '<span class="' + (it.result === true ? "" : "bad") + '">' + status + "</span>" + it.ok[0];
+    r.appendChild(li);
+  });
+  dots();
+}
+
+$("check").onclick = check;
+$("ans").addEventListener("keydown", e => { if (e.key === "Enter") check(); });
+$("prev").onclick = () => { if (cur > 0) show(cur - 1); };
+$("next").onclick = () => { if (cur < N - 1) show(cur + 1); else finish(); };
+$("backTo").onclick = () => show(0);
+$("again").onclick = () => { items.forEach(it => Object.assign(it, {found: false, misses: 0, revealed: false, typed: "", result: null})); show(0); };
+$("qrbtn").onclick = () => {
+  const q = $("qr"); q.innerHTML = "";
+  try { new QRCode(q, {text: location.href, width: 320, height: 320}); } catch (e) { q.textContent = location.href; }
+  $("ov").classList.add("on");
+};
+$("ov").onclick = () => $("ov").classList.remove("on");
+show(0);
+</script>
+</body>
+</html>
