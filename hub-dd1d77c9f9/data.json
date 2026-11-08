@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-06T19:21:26Z",
+ "updatedAt": "2026-11-08T07:15:09Z",
  "upcoming": {
   "2026-11-02_e3": {
    "afternoon": "PC room: Too Cold to Learn – complaint emails",
@@ -147,11 +147,11 @@
      "url": "https://atinwix.github.io/esol/games/millionaire-quiz.html?set=e3-hackney"
     }
    ],
-   "morning": "Hangman Paragraphs settle-in; four Hackney places lead-in; match 12 adjectives; predict; expert groups A–D read and answer 1–5; jigsaw regroup to complete the grid; word meaning in context (8 exam-style); 20-question Kahoot",
+   "morning": "Hangman Paragraphs settle-in; four Hackney places lead-in; match 12 adjectives; predict; expert groups A–D answer their own section of the shared question sheet and underline the proof; jigsaw – experts give and prove answers, others record all 20; class check of all 20 (non-expert answers, expert proves); word meaning in context (8 exam-style); 20-question Kahoot",
    "prep": "Arrange four tables (A–D) before 9:30. Log PCs in before 12:30 and post the Find the error link in Teams. No cutting out. Learners need phones for the Vote card (QR on the voting slides). Last amended 6 Nov 2026 – replaces the earlier pronouns/ordering plan (moved to Wed 11 and Mon 16 Nov).",
-   "print": "Print one file once, double-sided (43 sheets): your teacher script, then texts in group piles (A ×6, B ×5, C ×5, D ×5), then 21 grids – each handout on its own sheet. Nothing for the afternoon.",
+   "print": "Print one file once, double-sided (43 sheets): your teacher script, then expert texts in group piles (A ×6, B ×5, C ×5, D ×5, each on its own sheet), then 21 question sheets (all four places, both sides). Nothing for the afternoon.",
    "title": "Hackney Places – adjectives, adverbs and jigsaw reading (observed lesson)",
-   "amended": "2026-11-06T19:21:16Z"
+   "amended": "2026-11-07T14:47:17Z"
   },
   "2026-11-10_e1": {
    "afternoon": "PC room, all on screen: Task 4 exam mode (texts 3–4, no writing); our own listening in Teams General; online practice; Talk Builder from 'Your plan' to a one-minute talk; Kahoot (12 Qs)",
@@ -248,21 +248,37 @@
  },
  "status": {},
  "health": {
-  "checkedAt": "2026-11-06T09:55:00Z",
+  "checkedAt": "2026-11-08T07:20:00Z",
   "items": [
    {
     "ok": true,
-    "text": "Mon 9 E3, Tue 10 E1 and Thu 12 E2 are built. Wed 11 E3 is built after your Mon 9 log."
+    "text": "Mon 9 E3, Tue 10 E1 and Thu 12 E2 are built. Wed 11 E3 is correctly waiting for your Mon 9 log."
    },
    {
     "ok": true,
-    "text": "Tue 3 Nov ROW snippet and progress notes filled in (were missing)."
+    "text": "Mon 2, Tue 3, Wed 4 and Thu 5 are logged, with ROW snippets, Covered/Next and 'As taught' cards in place."
    },
    {
     "ok": true,
-    "text": "Daily check scheduled: Sun–Fri about 7:12am. It updates this panel."
+    "text": "Fixed: garbled E3 'Covered so far' line in the classes file (Hackney places moved to the Mon 9 planned entry)."
+   },
+   {
+    "ok": false,
+    "text": "Thu night 'Weekly ESOL lesson build' failed on 5 Nov: usage limit reached (fallback task, nothing outstanding)."
+   },
+   {
+    "ok": false,
+    "text": "Thursday evening 'update past activities' failed on 5 Nov: usage limit reached (non-essential, skipped)."
+   },
+   {
+    "ok": true,
+    "text": "Drive inbox is empty. All Hub card links are https and point at existing files."
+   },
+   {
+    "ok": true,
+    "text": "Public Hub page re-synced today."
    }
   ],
-  "ok": true
+  "ok": false
  }
 }
