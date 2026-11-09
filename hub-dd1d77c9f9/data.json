@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-09T18:57:40Z",
+ "updatedAt": "2026-11-09T19:14:34Z",
  "upcoming": {
   "2026-11-02_e3": {
    "afternoon": "PC room: Too Cold to Learn – complaint emails",
@@ -191,18 +191,19 @@
      "url": "https://atinwix.github.io/esol/all-levels/speaking-task2-talk-builder.html"
     },
     {
+     "label": "Kahoot – ready to play",
+     "url": "https://create.kahoot.it/details/e1-days-times-and-prices/9d05db81-f213-4f40-832f-0c35900b2c81"
+    },
+    {
      "label": "Kahoot import file (20 Qs)",
      "url": "https://atinwix.github.io/esol/e1/speaking-listening/listening-days-times-prices-kahoot.xlsx"
     }
    ],
    "morning": "Weekend warm-up talk; Exam Prep Lesson 11 – days, prices, times; Task 4 texts 1–2 with YES/NO cards; handout sections A–D",
-   "prep": "Cut out the day cards and YES/NO cards (one pair each). Import the Kahoot file. Log the PCs in and post the online practice, Talk Builder and Task 4 Put It in Order links in Teams General before the afternoon.",
+   "prep": "Cut out the day cards and YES/NO cards (one pair each). Log the PCs in and post the online practice, Talk Builder and Task 4 Put It in Order links in Teams General before the afternoon.",
    "print": "Lesson 11 Handout E1-11A (1 side, one each); cut-out sheet (2 sides). Nothing for the afternoon.",
    "title": "Days, times and prices for Task 4 – finish the Task 2 talk",
-   "todo": [
-    "Kahoot not made live yet – sign in to Kahoot in the Claude app's browser (or Chrome) and ask Claude to \"make the Kahoots\". Until then, import the file."
-   ],
-   "amended": "2026-11-06T09:35:44Z"
+   "amended": "2026-11-09T18:57:40Z"
   },
   "2026-11-11_e3": {
    "afternoon": "Classroom, paper: time order with Hawa's Morning (3A); alphabetical order with word cards (3B); then ESB Set L Tasks 1 and 2 (14 questions) under timed conditions, swap-and-mark with proof from the text",
@@ -254,7 +255,7 @@
    "prep": "Cut out the alphabetical word cards (one set, 4 pages). Print Set L Tasks 1–2 from the ESB sample paper file. Have the Kahoot ready and the timer slide open before 12:30.",
    "print": "Lesson 2 handouts (2 pages, one each); Lesson 3 handouts page 1 only – 3A and 3B (one each); word cards (once, cut out); Set L Tasks 1 and 2 (one each, from your ESB sample paper file).",
    "title": "Pronouns, word meaning, ordering tasks and an ESB paper (Set L Tasks 1–2)",
-   "amended": "2026-11-09T13:21:07Z"
+   "amended": "2026-11-09T18:57:40Z"
   },
   "2026-11-12_e2": {
    "afternoon": "PC room: online choose-and-build practice; Three places, one winner (TfL Journey Planner, 4 superlative sentences in Teams General); Task 4 listenings – you read the two scripts (in the day plan); three-way discussion: best way to shop in London; Kahoot (20 Qs)",
@@ -286,6 +287,10 @@
      "url": "https://atinwix.github.io/esol/e2/speaking-listening/comparatives-superlatives-choose-and-build-interactive-practice.html"
     },
     {
+     "label": "Kahoot – ready to play",
+     "url": "https://create.kahoot.it/details/e2-comparatives-and-superlatives/ad7a0988-4bf8-43cf-bbbb-ae5ab24a76fc"
+    },
+    {
      "label": "Kahoot import file (20 Qs)",
      "url": "https://atinwix.github.io/esol/e2/speaking-listening/superlatives-kahoot.xlsx"
     },
@@ -295,13 +300,10 @@
     }
    ],
    "morning": "Comparatives shout-it-out and fix-it; superlatives (the …est, the most, best/worst); handout Tasks 1–3; like scale + because (Task 4); Which is the best? cards in threes with an assessor (Task 5)",
-   "prep": "Cut up the question cards (6 sets, A–F). Import superlatives-kahoot.xlsx into Kahoot. Log in the PCs and post the online practice and TfL Journey Planner links in Teams General before the afternoon.",
+   "prep": "Cut up the question cards (6 sets, A–F). Log in the PCs and post the online practice and TfL Journey Planner links in Teams General before the afternoon.",
    "print": "Student handout (2 sides, one each); question cards (3 sides = 6 sets). Nothing for the afternoon.",
    "title": "Superlatives, likes and reasons – Task 4 listening and discussion",
-   "todo": [
-    "Kahoot not made live yet – sign in to Kahoot in the Claude app's browser (or Chrome) and ask Claude to \"make the Kahoots\". Until then, import the file."
-   ],
-   "amended": "2026-11-05T16:22:01Z"
+   "amended": "2026-11-09T18:57:40Z"
   }
  },
  "status": {},
