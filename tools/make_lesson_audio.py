@@ -1,7 +1,9 @@
 """Lesson audio maker for the ESOL library - made by Atin.
 
 For every */audio/*/scripts.json in the repo:
-  - makes an MP3 for each script that doesn't have one yet (Google Gemini speech)
+  - makes an MP3 for each script that doesn't have one yet
+    Voices: Google Gemini (if the key works) -> Microsoft Edge voices -> Piper (always free)
+    Scripts made by a fallback are remade with Gemini when Gemini works again.
   - writes index.html: one page with a player for each script
 
 Run by .github/workflows/lesson-audio.yml. Needs the GEMINI_API_KEY secret.
@@ -60,6 +62,74 @@ def speak(lines, voices, style):
     if not a:
         raise RuntimeError("No audio in reply")
     return base64.b64decode(a)
+
+
+FEMALE = {"kore", "aoede", "leda", "zephyr", "callirrhoe", "despina", "erinome", "laomedeia",
+          "achernar", "gacrux", "pulcherrima", "vindemiatrix", "sulafat", "autonoe"}
+EDGE = {"f": "en-GB-SoniaNeural", "m": "en-GB-RyanNeural"}
+PIPER = {"f": "en_GB-jenny_dioco-medium", "m": "en_GB-alan-medium"}
+PIPER_DIR = os.path.join(tempfile.gettempdir(), "piper-voices")
+
+
+def gender(d, name):
+    g = d.get("genders", {}).get(name)
+    if g:
+        return g[0].lower()
+    return "f" if d["voices"][name].lower() in FEMALE else "m"
+
+
+def run(cmd, **kw):
+    subprocess.run(cmd, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.PIPE, **kw)
+
+
+def join(parts, wav_out, gap=0.7):
+    """Join line recordings into one WAV with a short pause between turns."""
+    tmp = tempfile.mkdtemp()
+    norm = []
+    for i, p in enumerate(parts):
+        n = os.path.join(tmp, f"{i}.wav")
+        run(["ffmpeg", "-y", "-i", p, "-ar", "24000", "-ac", "1", n])
+        norm.append(n)
+    sil = os.path.join(tmp, "sil.wav")
+    run(["ffmpeg", "-y", "-f", "lavfi", "-i", "anullsrc=r=24000:cl=mono", "-t", str(gap), sil])
+    lst = os.path.join(tmp, "list.txt")
+    with open(lst, "w") as f:
+        for i, n in enumerate(norm):
+            if i:
+                f.write(f"file '{sil}'\n")
+            f.write(f"file '{n}'\n")
+    run(["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", lst, wav_out])
+
+
+def speak_edge(lines, d):
+    tmp = tempfile.mkdtemp()
+    parts = []
+    for i, (who, text) in enumerate(lines):
+        out = os.path.join(tmp, f"{i}.mp3")
+        run(["edge-tts", "--voice", EDGE[gender(d, who)], "--rate=-8%", "--text", text,
+             "--write-media", out], timeout=120)
+        parts.append(out)
+    wav = os.path.join(tmp, "all.wav")
+    join(parts, wav)
+    return open(wav, "rb").read()
+
+
+def speak_piper(lines, d):
+    tmp = tempfile.mkdtemp()
+    os.makedirs(PIPER_DIR, exist_ok=True)
+    parts = []
+    for i, (who, text) in enumerate(lines):
+        voice = PIPER[gender(d, who)]
+        model = os.path.join(PIPER_DIR, voice + ".onnx")
+        if not os.path.exists(model):
+            run([sys.executable, "-m", "piper.download_voices", "--download-dir", PIPER_DIR, voice])
+        out = os.path.join(tmp, f"{i}.wav")
+        run([sys.executable, "-m", "piper", "-m", model, "-f", out, "--length-scale", "1.1"],
+            input=text.encode())
+        parts.append(out)
+    wav = os.path.join(tmp, "all.wav")
+    join(parts, wav)
+    return open(wav, "rb").read()
 
 
 def to_mp3(wav_bytes, mp3_path):
@@ -165,19 +235,32 @@ def main():
         folder = os.path.dirname(job)
         d = json.load(open(job, encoding="utf-8"))
         style = d.get("style", DEFAULT_STYLE)
+        rec_path = os.path.join(folder, "engines.json")
+        rec = json.load(open(rec_path)) if os.path.exists(rec_path) else {}
         for s in d["scripts"]:
             mp3 = os.path.join(folder, s["id"] + ".mp3")
-            if os.path.exists(mp3):
+            have = os.path.exists(mp3)
+            made_by = rec.get(s["id"], "gemini" if have else None)
+            if have and (made_by == "gemini" or not KEY):
                 continue
-            if not KEY:
-                print("No GEMINI_API_KEY - skipping audio for", mp3)
-                continue
-            print("Making", os.path.relpath(mp3, ROOT))
-            try:
-                to_mp3(speak(s["lines"], d["voices"], style), mp3)
-            except Exception as e:
-                print("  ERROR:", e)
-                failed = True
+            rel = os.path.relpath(mp3, ROOT)
+            engines = [("gemini", lambda: speak(s["lines"], d["voices"], style))] if KEY else []
+            if not have:
+                engines += [("edge", lambda: speak_edge(s["lines"], d)),
+                            ("piper", lambda: speak_piper(s["lines"], d))]
+            for name, fn in engines:
+                try:
+                    to_mp3(fn(), mp3)
+                    rec[s["id"]] = name
+                    print(f"Made {rel} with {name}")
+                    break
+                except Exception as e:
+                    err = getattr(e, "stderr", b"") or b""
+                    print(f"  {name} failed for {rel}: {str(e)[:300]} {err[-300:]!r}")
+            else:
+                if not have:
+                    failed = True
+        json.dump(rec, open(rec_path, "w"), indent=1)
         open(os.path.join(folder, "index.html"), "w", encoding="utf-8").write(page(d, folder))
     sys.exit(1 if failed else 0)
 
