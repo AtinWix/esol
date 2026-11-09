@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>E3 Reading – Cycling in Hackney – Hangman Paragraph – Text to Read Aloud (Teacher)</title>
+<style>
+:root{--ink:#152238;--muted:#56627a;--line:#cfd6e2;--hi:#ffe14d}
+body{margin:0;background:#e4e8ee;color:var(--ink);font-family:Verdana,Arial,sans-serif}
+main{max-width:900px;margin:30px auto;background:#fff;border-radius:8px;padding:28px 34px 80px;box-shadow:0 10px 30px rgba(0,0,0,.12)}
+h1{font-size:20px;margin:0 0 6px} .note{color:var(--muted);font-size:15px;margin:0 0 18px}
+#txt{font-size:26px;line-height:1.6;border:2px dashed var(--line);border-radius:8px;padding:18px 22px;user-select:all}
+button{font-size:18px;font-weight:600;padding:8px 18px;border:2px solid var(--ink);background:#fff;border-radius:6px;cursor:pointer;margin-top:16px}
+button:hover{background:var(--hi)}
+</style></head><body><main>
+<h1>Hangman Paragraphs – text to read aloud</h1>
+<p class="note">For the teacher – don’t project this page. Click the text to select it all (or press Copy), then paste it into NaturalReader or read it aloud twice before the game.</p>
+<div id="txt">Many people in Hackney ride a bike to work or college. Cycling is cheap, quick and good for your health. If you do not have a bike, you can borrow one from a community project. Volunteers there repair old bikes and teach new riders how to stay safe on busy roads. Some people join a group ride on Sunday mornings. It is a friendly way to meet neighbours and see new parts of the city.</div>
+<button id="copy" type="button">Copy the text</button> <span id="ok" class="note"></span>
+<p class="note" style="margin-top:22px">Game link with this paragraph loaded: <a href="https://atinwix.github.io/Hangman-Paragraphs-Game/?p=TWFueSBwZW9wbGUgaW4gSGFja25leSByaWRlIGEgYmlrZSB0byB3b3JrIG9yIGNvbGxlZ2UuIEN5Y2xpbmcgaXMgY2hlYXAsIHF1aWNrIGFuZCBnb29kIGZvciB5b3VyIGhlYWx0aC4gSWYgeW91IGRvIG5vdCBoYXZlIGEgYmlrZSwgeW91IGNhbiBib3Jyb3cgb25lIGZyb20gYSBjb21tdW5pdHkgcHJvamVjdC4gVm9sdW50ZWVycyB0aGVyZSByZXBhaXIgb2xkIGJpa2VzIGFuZCB0ZWFjaCBuZXcgcmlkZXJzIGhvdyB0byBzdGF5IHNhZmUgb24gYnVzeSByb2Fkcy4gU29tZSBwZW9wbGUgam9pbiBhIGdyb3VwIHJpZGUgb24gU3VuZGF5IG1vcm5pbmdzLiBJdCBpcyBhIGZyaWVuZGx5IHdheSB0byBtZWV0IG5laWdoYm91cnMgYW5kIHNlZSBuZXcgcGFydHMgb2YgdGhlIGNpdHku" target="_blank" rel="noopener">Hangman Paragraphs</a></p>
+</main>
+<script>
+document.getElementById('copy').onclick=()=>{const t=document.getElementById('txt').textContent;
+ const sel=()=>{const r=document.createRange();r.selectNodeContents(document.getElementById('txt'));const s=getSelection();s.removeAllRanges();s.addRange(r)};
+ (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>{document.getElementById('ok').textContent='Copied ✓'},()=>{sel();document.getElementById('ok').textContent='Selected – press Ctrl+C'})};
+</script>
+<div class="atin-logo" aria-label="Made by Atin">
+<svg viewBox="104 28 172 134" width="64" height="50" role="img" aria-hidden="true">
+<text x="139" y="112" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="72" fill="currentColor">A</text>
+<rect x="177" y="83" width="24" height="6" rx="1" fill="currentColor"/>
+<path d="M216 66 L216 106 A25 7 0 0 0 266 106 L266 66" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+<ellipse cx="241" cy="66" rx="25" ry="7" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="216" y1="80" x2="266" y2="80" stroke="currentColor" stroke-width="1.5"/>
+<line x1="216" y1="94" x2="266" y2="94" stroke="currentColor" stroke-width="1.5"/>
+<ellipse cx="241" cy="47" rx="23" ry="5" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="114" y1="128" x2="266" y2="128" stroke="currentColor" stroke-width="1"/>
+<text x="190" y="152" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" letter-spacing="2" fill="currentColor">made by Atin</text>
+</svg>
+</div>
+<style>
+.atin-logo{position:fixed;left:calc(6px + env(safe-area-inset-left,0px));bottom:calc(6px + env(safe-area-inset-bottom,0px));z-index:2147483000;pointer-events:none;color:#1F3A5F;background:rgba(255,255,255,.92);border:1px solid #C9D3DF;border-radius:8px;padding:3px 5px;line-height:0}
+.atin-logo svg{display:block}
+@media print{.atin-logo{position:fixed;left:auto;right:6mm;bottom:5mm;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style></body></html>

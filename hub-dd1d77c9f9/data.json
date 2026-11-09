@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-09T13:21:40Z",
+ "updatedAt": "2026-11-09T18:57:40Z",
  "upcoming": {
   "2026-11-02_e3": {
    "afternoon": "PC room: Too Cold to Learn – complaint emails",
@@ -154,7 +154,7 @@
    "amended": "2026-11-07T14:47:17Z"
   },
   "2026-11-10_e1": {
-   "afternoon": "PC room, all on screen: Task 4 exam mode (texts 3–4, no writing); our own listening in Teams General; online practice; Talk Builder from 'Your plan' to a one-minute talk; Kahoot (12 Qs)",
+   "afternoon": "PC room, all on screen: Task 4 exam mode (texts 3–4, no writing); our own listening in Teams General; online practice; Talk Builder from 'Your plan' to a one-minute talk; Kahoot (20 Qs)",
    "cls": "E1 Speaking & Listening",
    "date": "2026-11-10",
    "links": [
@@ -175,10 +175,6 @@
      "url": "https://atinwix.github.io/esol/e1/speaking-listening/exam-prep/lesson-11-plan.pdf"
     },
     {
-     "label": "Lesson 11 audio (Scripts A–D)",
-     "url": "https://atinwix.github.io/esol/e1/speaking-listening/exam-prep/audio/lesson-11/"
-    },
-    {
      "label": "Cut-out cards",
      "url": "https://atinwix.github.io/esol/e1/speaking-listening/docs/days-yes-no-cards-cut-out.pdf"
     },
@@ -195,7 +191,7 @@
      "url": "https://atinwix.github.io/esol/all-levels/speaking-task2-talk-builder.html"
     },
     {
-     "label": "Kahoot import file (12 Qs)",
+     "label": "Kahoot import file (20 Qs)",
      "url": "https://atinwix.github.io/esol/e1/speaking-listening/listening-days-times-prices-kahoot.xlsx"
     }
    ],
@@ -203,6 +199,9 @@
    "prep": "Cut out the day cards and YES/NO cards (one pair each). Import the Kahoot file. Log the PCs in and post the online practice, Talk Builder and Task 4 Put It in Order links in Teams General before the afternoon.",
    "print": "Lesson 11 Handout E1-11A (1 side, one each); cut-out sheet (2 sides). Nothing for the afternoon.",
    "title": "Days, times and prices for Task 4 – finish the Task 2 talk",
+   "todo": [
+    "Kahoot not made live yet – sign in to Kahoot in the Claude app's browser (or Chrome) and ask Claude to \"make the Kahoots\". Until then, import the file."
+   ],
    "amended": "2026-11-06T09:35:44Z"
   },
   "2026-11-11_e3": {
@@ -213,6 +212,14 @@
     {
      "label": "Day plan and answers (incl. Set L answers)",
      "url": "https://atinwix.github.io/esol/e3/reading/docs/wk09-mon-pronouns-word-meaning-ordering-day-plan.pdf"
+    },
+    {
+     "label": "Hangman Paragraphs (paragraph loaded)",
+     "url": "https://atinwix.github.io/Hangman-Paragraphs-Game/?p=TWFueSBwZW9wbGUgaW4gSGFja25leSByaWRlIGEgYmlrZSB0byB3b3JrIG9yIGNvbGxlZ2UuIEN5Y2xpbmcgaXMgY2hlYXAsIHF1aWNrIGFuZCBnb29kIGZvciB5b3VyIGhlYWx0aC4gSWYgeW91IGRvIG5vdCBoYXZlIGEgYmlrZSwgeW91IGNhbiBib3Jyb3cgb25lIGZyb20gYSBjb21tdW5pdHkgcHJvamVjdC4gVm9sdW50ZWVycyB0aGVyZSByZXBhaXIgb2xkIGJpa2VzIGFuZCB0ZWFjaCBuZXcgcmlkZXJzIGhvdyB0byBzdGF5IHNhZmUgb24gYnVzeSByb2Fkcy4gU29tZSBwZW9wbGUgam9pbiBhIGdyb3VwIHJpZGUgb24gU3VuZGF5IG1vcm5pbmdzLiBJdCBpcyBhIGZyaWVuZGx5IHdheSB0byBtZWV0IG5laWdoYm91cnMgYW5kIHNlZSBuZXcgcGFydHMgb2YgdGhlIGNpdHku"
+    },
+    {
+     "label": "Hangman paragraph – text to read aloud (don't project)",
+     "url": "https://atinwix.github.io/esol/e3/reading/cycling-in-hackney-hangman-paragraph-read-aloud-text.html"
     },
     {
      "label": "AM projector lesson (Reading Detectives)",
@@ -229,10 +236,6 @@
     {
      "label": "Kahoot import file",
      "url": "https://atinwix.github.io/esol/e3/reading/docs/pronouns-word-meaning-ordering-kahoot.xlsx"
-    },
-    {
-     "label": "Hangman Paragraphs",
-     "url": "https://atinwix.github.io/Hangman-Paragraphs-Game"
     },
     {
      "label": "PM projector lesson (timer and Set L answers)",
@@ -254,7 +257,7 @@
    "amended": "2026-11-09T13:21:07Z"
   },
   "2026-11-12_e2": {
-   "afternoon": "PC room: online choose-and-build practice; Three places, one winner (TfL Journey Planner, 4 superlative sentences in Teams General); Task 4 listenings – you read the two scripts (in the day plan); three-way discussion: best way to shop in London; Kahoot (15 Qs)",
+   "afternoon": "PC room: online choose-and-build practice; Three places, one winner (TfL Journey Planner, 4 superlative sentences in Teams General); Task 4 listenings – you read the two scripts (in the day plan); three-way discussion: best way to shop in London; Kahoot (20 Qs)",
    "cls": "E2 Speaking & Listening",
    "date": "2026-11-12",
    "links": [
@@ -283,7 +286,7 @@
      "url": "https://atinwix.github.io/esol/e2/speaking-listening/comparatives-superlatives-choose-and-build-interactive-practice.html"
     },
     {
-     "label": "Kahoot import file (15 Qs)",
+     "label": "Kahoot import file (20 Qs)",
      "url": "https://atinwix.github.io/esol/e2/speaking-listening/superlatives-kahoot.xlsx"
     },
     {
@@ -295,6 +298,9 @@
    "prep": "Cut up the question cards (6 sets, A–F). Import superlatives-kahoot.xlsx into Kahoot. Log in the PCs and post the online practice and TfL Journey Planner links in Teams General before the afternoon.",
    "print": "Student handout (2 sides, one each); question cards (3 sides = 6 sets). Nothing for the afternoon.",
    "title": "Superlatives, likes and reasons – Task 4 listening and discussion",
+   "todo": [
+    "Kahoot not made live yet – sign in to Kahoot in the Claude app's browser (or Chrome) and ask Claude to \"make the Kahoots\". Until then, import the file."
+   ],
    "amended": "2026-11-05T16:22:01Z"
   }
  },

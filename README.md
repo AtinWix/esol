@@ -151,6 +151,7 @@ Word documents:
 - [E3 Reading – Ordering Tasks and an ESB Paper – Projector Lesson](e3/reading/wk09-wed-ordering-tasks-exam-paper-projector-lesson.html) – Time order, alphabetical order, a timed ESB paper (Set L Tasks 1–2) and answers with proof – projector, no PCs needed
 - [E3 Reading – Ordering Tasks and Practice Paper – Projector Lesson](e3/reading/wk09-ordering-tasks-practice-paper-projector-lesson.html) – Time order, alphabetical order, online practice, timed online paper and answers – all on screen (PC room)
 - [E3 Reading – Time Order, Alphabetical Order, Pronouns and Word Meaning – Online Practice](e3/reading/wk09-time-order-alphabetical-order-practice.html) – What happened first?, eight time-order texts, 14 alphabetical sets, 18 pronoun / word meaning / purpose questions – PC or phone
+- [E3 Reading – Cycling in Hackney – Hangman Paragraph – Text to Read Aloud (Teacher)](e3/reading/cycling-in-hackney-hangman-paragraph-read-aloud-text.html) – Teacher page: the settle-in paragraph to read aloud, with the game link that opens it ready to play.
 - [E3 Reading Skills – Hackney Bugle](e3/reading/wk17-reading-skills-hackney-bugle.html)
 - [E3 Reading – Purpose Clues – Drag and Sort Activity](e3/reading/purpose-clues-drag-sort-activity.html) – Drag each clue onto its purpose: warn, advise, instruct, advertise, inform, describe
 

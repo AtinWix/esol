@@ -127,6 +127,7 @@ header{display:flex;justify-content:space-between;align-items:flex-start;gap:12p
     [["Morning",x.morning],["Afternoon",x.afternoon],["Print",x.print]].forEach(function(p){if(p[1]){r.append(el("b",null,p[0]));r.append(el("span",null,p[1]))}});
     c.append(r);
     if(x.prep)c.append(el("div","prep","Prep: "+x.prep));
+    if(Array.isArray(x.todo))x.todo.forEach(function(t){if(t)c.append(el("div","prep","To do: "+t))});
     if(Array.isArray(x.links)&&x.links.length){var l=el("div","links");x.links.forEach(function(k){if(!k||!/^https:\/\//.test(k.url||""))return;var a=el("a",null,k.label||"Link");a.href=k.url;a.target="_blank";a.rel="noopener";l.append(a)});c.append(l)}
     var am=x.amended?new Date(x.amended):null;
     c.append(el("div","amend","Last amended: "+(am&&!isNaN(am)?am.toLocaleString("en-GB",{weekday:"short",day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"}):"not recorded")));
