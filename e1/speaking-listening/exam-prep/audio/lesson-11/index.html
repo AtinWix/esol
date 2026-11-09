@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en-GB"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>E1 Listening for Numbers, Days, Times and Prices – Lesson Audio</title>
+<style>
+:root{--ink:#1F2A37;--muted:#5B6776;--line:#D5DCE4;--card:#fff;--bg:#F3F5F8;--accent:#1F5FA8;--accent-ink:#fff;--soft:#E7EFF9}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif;font-size:18px;line-height:1.45}
+main{max-width:900px;margin:0 auto;padding:20px 16px 110px}
+h1{font-size:clamp(22px,3.4vw,32px);margin:4px 0 6px}
+.top{display:flex;flex-wrap:wrap;gap:10px;align-items:center;color:var(--muted);font-size:16px;margin-bottom:18px}
+.plan{color:var(--accent)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:0 0 14px}
+.card.playing{border-color:var(--accent);box-shadow:0 0 0 3px var(--soft)}
+h2{font-size:clamp(19px,2.6vw,24px);margin:0 0 12px}
+.row{display:flex;flex-wrap:wrap;gap:10px}
+button{font:inherit;font-size:18px;border-radius:10px;border:1px solid var(--line);background:#fff;color:var(--ink);padding:12px 18px;min-height:48px;cursor:pointer}
+button.main{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);font-weight:700}
+button:disabled{opacity:.5;cursor:default}
+.status{color:var(--muted);font-size:16px;margin-top:8px;min-height:1.4em}
+.box{display:none;margin-top:12px;padding:12px 14px;background:var(--soft);border-radius:10px}
+.box.open{display:block}
+.box p{margin:4px 0}
+.who{font-weight:700}
+.ans{display:none;color:#0B6B3A;font-weight:700}
+.show-ans .ans{display:inline}
+audio{display:none}
+@media (max-width:520px){button{flex:1 1 calc(50% - 10px)}}
+</style></head><body>
+<main>
+<h1>E1 Listening for Numbers, Days, Times and Prices – Lesson Audio</h1>
+<div class="top"><span>Use “Play twice” to play a script, pause, then play it again.</span><a class="plan" href="../../lesson-11-plan.pdf">Lesson plan</a></div>
+<div id="list"></div>
+</main>
+<script>
+const SCRIPTS = [{"id": "a", "label": "Script A – Doctor's surgery message", "lines": [["Ann", "Hello. This is the doctor's surgery. Your appointment is on Tuesday at ten o'clock. Thank you."]], "questions": ["Is the appointment on Monday? (No, it isn't.)", "What time is the appointment? (Ten o'clock.)"]}, {"id": "b", "label": "Script B – At the shop", "lines": [["Ann", "How much is the bread?"], ["Ben", "It's one pound fifty."], ["Ann", "And the milk?"], ["Ben", "The milk is ninety p."]], "questions": ["Is the bread two pounds? (No, it isn't.)", "How much is the milk? (Ninety p.)"]}, {"id": "c", "label": "Script C – My English class", "lines": [["Ben", "My English class is on Monday and Thursday. It starts at half past nine. It finishes at twelve o'clock."]], "questions": ["Is the class on Thursday? (Yes, it is.)", "What time does it start? (Half past nine.)"]}, {"id": "d", "label": "Script D – The bus", "lines": [["Ann", "What time is the bus?"], ["Ben", "It's at four o'clock."], ["Ann", "Is it bus number five?"], ["Ben", "No, it's number eight."]], "questions": ["Is it bus number five? (No, it isn't.)", "What time is the bus? (Four o'clock.)"]}];
+const list = document.getElementById('list');
+let current = null;
+function stopAll(){ document.querySelectorAll('audio').forEach(a=>{a.pause();a.currentTime=0;a.onended=null;});
+  document.querySelectorAll('.card').forEach(c=>c.classList.remove('playing'));
+  document.querySelectorAll('.status').forEach(s=>s.textContent=s.dataset.base||''); clearTimeout(window._gap); }
+SCRIPTS.forEach(s=>{
+  const c=document.createElement('section'); c.className='card';
+  const lines=s.lines.map(([w,t])=>`<p><span class="who">${w}:</span> ${t}</p>`).join('');
+  const qs=(s.questions||[]).map(q=>{const m=q.match(/^(.*?)\s*\((.*)\)\s*$/);
+    return m?`<p>${m[1]} <span class="ans">→ ${m[2]}</span></p>`:`<p>${q}</p>`;}).join('');
+  c.innerHTML=`<h2>${s.label}</h2>
+  <audio preload="none" src="${s.id}.mp3"></audio>
+  <div class="row">
+    <button class="main" data-act="once">▶ Play</button>
+    <button data-act="twice">▶▶ Play twice</button>
+    <button data-act="stop">■ Stop</button>
+    <button data-act="script">Show script</button>
+    ${qs?'<button data-act="qs">Questions</button><button data-act="ans">Answers</button>':''}
+  </div>
+  <div class="status"></div>
+  <div class="box b-script">${lines}</div>
+  ${qs?`<div class="box b-qs">${qs}</div>`:''}`;
+  list.appendChild(c);
+  const a=c.querySelector('audio'), st=c.querySelector('.status');
+  a.addEventListener('error',()=>{st.dataset.base='Audio not ready yet – it is made automatically a few minutes after upload.';st.textContent=st.dataset.base;});
+  function play(times){ stopAll(); c.classList.add('playing'); let n=1;
+    const go=()=>{st.textContent=times>1?`Playing (${n} of ${times})…`:'Playing…'; a.currentTime=0; a.play().catch(()=>{});};
+    a.onended=()=>{ if(n<times){n++; st.textContent='Short pause…'; window._gap=setTimeout(go,3000);} else {c.classList.remove('playing'); st.textContent='Finished.';} };
+    go(); }
+  c.addEventListener('click',e=>{const b=e.target.closest('button'); if(!b) return;
+    const act=b.dataset.act;
+    if(act==='once') play(1); else if(act==='twice') play(2); else if(act==='stop') stopAll();
+    else if(act==='script'){const x=c.querySelector('.b-script'); x.classList.toggle('open'); b.textContent=x.classList.contains('open')?'Hide script':'Show script';}
+    else if(act==='qs'){c.querySelector('.b-qs').classList.toggle('open');}
+    else if(act==='ans'){const x=c.querySelector('.b-qs'); x.classList.add('open'); x.classList.toggle('show-ans');}
+  });
+});
+</script>
+<div class="atin-logo" aria-label="Made by Atin">
+<svg viewBox="104 28 172 134" width="64" height="50" role="img" aria-hidden="true">
+<text x="139" y="112" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="72" fill="currentColor">A</text>
+<rect x="177" y="83" width="24" height="6" rx="1" fill="currentColor"/>
+<path d="M216 66 L216 106 A25 7 0 0 0 266 106 L266 66" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+<ellipse cx="241" cy="66" rx="25" ry="7" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="216" y1="80" x2="266" y2="80" stroke="currentColor" stroke-width="1.5"/>
+<line x1="216" y1="94" x2="266" y2="94" stroke="currentColor" stroke-width="1.5"/>
+<ellipse cx="241" cy="47" rx="23" ry="5" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="114" y1="128" x2="266" y2="128" stroke="currentColor" stroke-width="1"/>
+<text x="190" y="152" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" letter-spacing="2" fill="currentColor">made by Atin</text>
+</svg>
+</div>
+<style>
+.atin-logo{position:fixed;left:calc(6px + env(safe-area-inset-left,0px));bottom:calc(6px + env(safe-area-inset-bottom,0px));z-index:2147483000;pointer-events:none;color:#1F3A5F;background:rgba(255,255,255,.92);border:1px solid #C9D3DF;border-radius:8px;padding:3px 5px;line-height:0}
+.atin-logo svg{display:block}
+@media print{.atin-logo{position:fixed;left:auto;right:6mm;bottom:5mm;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+
+</body></html>
