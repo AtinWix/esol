@@ -137,7 +137,7 @@ header{display:flex;justify-content:space-between;align-items:flex-start;gap:12p
     var prev=prevLesson(date,k);
     if(st&&st.state==="failed"){c.classList.add("bad");p.textContent="Not built – "+(st.note||"the build failed")+". Ask Claude in the ESOL project: \"build "+short(date)+"\"."}
     else if(st&&st.state==="building"){p.textContent="Being built now…"}
-    else{c.classList.add("wait");p.textContent=prev?"Not built yet. It's built after you fill in the Lesson Log for "+short(prev)+".":"Not built yet."}
+    else{c.classList.add("wait");p.textContent=prev?"Not built yet. It's built automatically after you fill in the Lesson Log for "+short(prev)+" – the build runs at about 4pm and 7pm that day (or at 7am the next morning).":"Not built yet."}
     c.append(p);return c}
   function render(cards,status,health){
     var days=[];for(var i=0;i<8;i++){var d=addDays(today,i);var k=classOn(d);if(k&&!closed(d))days.push([d,k])}
