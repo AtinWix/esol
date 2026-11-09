@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-09T07:23:00Z",
+ "updatedAt": "2026-11-09T13:21:40Z",
  "upcoming": {
   "2026-11-02_e3": {
    "afternoon": "PC room: Too Cold to Learn – complaint emails",
@@ -150,7 +150,7 @@
    "morning": "Hangman Paragraphs settle-in; four Hackney places lead-in; match 12 adjectives; predict; expert groups A–D answer their own section of the shared question sheet and underline the proof; jigsaw – experts give and prove answers, others record all 20; class check of all 20 (non-expert answers, expert proves); word meaning in context (8 exam-style); 20-question Kahoot",
    "prep": "Arrange four tables (A–D) before 9:30. Log PCs in before 12:30 and post the Find the error link in Teams. No cutting out. Learners need phones for the Vote card (QR on the voting slides). Last amended 6 Nov 2026 – replaces the earlier pronouns/ordering plan (moved to Wed 11 and Mon 16 Nov).",
    "print": "Print one file once, double-sided (43 sheets): your teacher script, then expert texts in group piles (A ×6, B ×5, C ×5, D ×5, each on its own sheet), then 21 question sheets (all four places, both sides). Nothing for the afternoon.",
-   "title": "Hackney Places – adjectives, adverbs and jigsaw reading (observed lesson)",
+   "title": "As taught: Hackney Places – adjectives, adverbs and jigsaw reading (observed lesson)",
    "amended": "2026-11-07T14:47:17Z"
   },
   "2026-11-10_e1": {
@@ -200,6 +200,54 @@
    "print": "Lesson 11 Handout E1-11A (1 side, one each); cut-out sheet (2 sides). Nothing for the afternoon.",
    "title": "Days, times and prices for Task 4 – finish the Task 2 talk",
    "amended": "2026-11-06T09:35:44Z"
+  },
+  "2026-11-11_e3": {
+   "afternoon": "Classroom, paper: time order with Hawa's Morning (3A); alphabetical order with word cards (3B); then ESB Set L Tasks 1 and 2 (14 questions) under timed conditions, swap-and-mark with proof from the text",
+   "cls": "E3 Reading",
+   "date": "2026-11-11",
+   "links": [
+    {
+     "label": "Day plan and answers (incl. Set L answers)",
+     "url": "https://atinwix.github.io/esol/e3/reading/docs/wk09-mon-pronouns-word-meaning-ordering-day-plan.pdf"
+    },
+    {
+     "label": "AM projector lesson (Reading Detectives)",
+     "url": "https://atinwix.github.io/esol/e3/reading/wk08-purpose-pronouns-word-meaning-projector-lesson.html"
+    },
+    {
+     "label": "Lesson 2 handouts",
+     "url": "https://atinwix.github.io/esol/e3/reading/exam-prep/lesson-02-handouts.pdf"
+    },
+    {
+     "label": "Kahoot – ready to play",
+     "url": "https://create.kahoot.it/details/dd7af437-b489-46e0-ab13-11e41689ee6e"
+    },
+    {
+     "label": "Kahoot import file",
+     "url": "https://atinwix.github.io/esol/e3/reading/docs/pronouns-word-meaning-ordering-kahoot.xlsx"
+    },
+    {
+     "label": "Hangman Paragraphs",
+     "url": "https://atinwix.github.io/Hangman-Paragraphs-Game"
+    },
+    {
+     "label": "PM projector lesson (timer and Set L answers)",
+     "url": "https://atinwix.github.io/esol/e3/reading/wk09-wed-ordering-tasks-exam-paper-projector-lesson.html"
+    },
+    {
+     "label": "Lesson 3 handouts (print page 1 only)",
+     "url": "https://atinwix.github.io/esol/e3/reading/exam-prep/lesson-03-handouts.pdf"
+    },
+    {
+     "label": "Alphabetical word cards (cut out)",
+     "url": "https://atinwix.github.io/esol/e3/reading/docs/wk09-mon-alphabetical-order-word-cards.pdf"
+    }
+   ],
+   "morning": "Exam Prep Lesson 2: Hangman Paragraphs settle-in; who is 'he'? what is 'it'? (2A); read Two Wheels and a New Start and track pronouns (2B, 2C A); guess words from context (2C B); find details (2C C); 20-question Kahoot; be the examiner – learners write two exam questions each pair",
+   "prep": "Cut out the alphabetical word cards (one set, 4 pages). Print Set L Tasks 1–2 from the ESB sample paper file. Have the Kahoot ready and the timer slide open before 12:30.",
+   "print": "Lesson 2 handouts (2 pages, one each); Lesson 3 handouts page 1 only – 3A and 3B (one each); word cards (once, cut out); Set L Tasks 1 and 2 (one each, from your ESB sample paper file).",
+   "title": "Pronouns, word meaning, ordering tasks and an ESB paper (Set L Tasks 1–2)",
+   "amended": "2026-11-09T13:21:07Z"
   },
   "2026-11-12_e2": {
    "afternoon": "PC room: online choose-and-build practice; Three places, one winner (TfL Journey Planner, 4 superlative sentences in Teams General); Task 4 listenings – you read the two scripts (in the day plan); three-way discussion: best way to shop in London; Kahoot (15 Qs)",
