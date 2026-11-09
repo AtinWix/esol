@@ -12,7 +12,7 @@ To remake one script's audio, delete its MP3 and push.
 import base64, glob, html, json, os, subprocess, sys, tempfile
 import urllib.request, urllib.error
 
-MODEL = "gemini-3.8-flash-tts"
+MODELS = ["gemini-3.8-flash-tts", "gemini-3.1-flash-tts-preview"]  # second has its own free quota
 URL = "https://generativelanguage.googleapis.com/v1beta/interactions"
 DEFAULT_STYLE = ("clear British accent, natural classroom pace, just slightly slower "
                  "than normal conversation, short natural pause between turns")
@@ -48,7 +48,18 @@ def speak(lines, voices, style):
                     "annotations": [{"type": "speech_metadata", "speaker": s, "style": style}]}
                    for s, t in lines]
         speech = {"speakers": [{"speaker": n, "voice": voices[n]} for n in names]}
-    body = json.dumps({"model": MODEL, "input": [{"type": "user_input", "content": content}],
+    err = None
+    for model in MODELS:
+        try:
+            return _speak(model, content, speech)
+        except RuntimeError as e:
+            err = e
+            print(f"  {model}: {str(e)[:200]}")
+    raise err
+
+
+def _speak(model, content, speech):
+    body = json.dumps({"model": model, "input": [{"type": "user_input", "content": content}],
                        "response_format": {"type": "audio"},
                        "generation_config": {"speech_config": speech}}).encode()
     req = urllib.request.Request(URL, data=body, method="POST", headers={
