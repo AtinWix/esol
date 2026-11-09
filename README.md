@@ -143,6 +143,7 @@ Word documents:
 - [E3 Reading – Purpose, Pronouns & Word Meaning – Projector Lesson](e3/reading/wk08-purpose-pronouns-word-meaning-projector-lesson.html)
 - [E3 Reading – Too Cold to Learn – Exam Practice (PC Room)](e3/reading/wk08-too-cold-to-learn-exam-practice.html)
 - [E3 Adjectives and Adverbs – Find the Error – Interactive Practice](e3/reading/adjectives-adverbs-find-the-error-interactive-practice.html) – 20 sentences: tap the mistake, then type the correct sentence. Works on PCs and phones.
+- [E3 Adjectives and Adverbs – Gap Fill – Interactive Reading Activity](e3/reading/adjectives-adverbs-gap-fill-interactive-reading-activity.html) – Two short texts, 8 gaps each: tap a word, then tap its gap. One answer per gap, two extra words. Works on PCs and phones, with a QR code for the phone version.
 - [E3 Reading – Describing Hackney – Adjectives and Adverbs – Projector Lesson](e3/reading/describing-hackney-adjectives-adverbs-projector-lesson.html) – Adjective or adverb, find the error, online maps task, write and post in Teams, Millionaire.
 - [E3 Reading – Hackney Places – Adjectives and Jigsaw Reading – Projector Lesson](e3/reading/hackney-places-adjectives-jigsaw-reading-projector-lesson.html) – Adjectives for places, predict, expert groups and jigsaw grid, word meaning in context, Kahoot.
 - [E3 Reading – Hackney Places – Hangman Paragraph – Text to Read Aloud (Teacher)](e3/reading/hackney-places-hangman-paragraph-read-aloud-text.html) – Copy-and-paste text for NaturalReader, plus the game link with the paragraph loaded. Don't project.

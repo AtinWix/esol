@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>E3 Adjectives and Adverbs Gap Fill</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Lexend:wght@500;700&display=swap">
+<style>
+/* Layout: one reading column. Sticky word bank on top, two short texts below, result panel at the end. Large type for the projector. */
+:root{
+  --bg:#eef2f6; --surface:#ffffff; --ink:#16212c; --muted:#4f5c6a; --line:#c7d1db;
+  --accent:#1c5fb8; --accent-ink:#ffffff; --sel:#ffe9a8; --sel-ink:#2b2100;
+  --good:#146c43; --good-bg:#dcf2e5; --bad:#b3261e; --bad-bg:#fbe1de; --chip:#f6f8fb;
+  --font-display:'Lexend',system-ui,sans-serif; --font-body:'Atkinson Hyperlegible',system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#10161d; --surface:#18212b; --ink:#e8eef4; --muted:#a2b0be; --line:#33414f;
+    --accent:#6aa6f0; --accent-ink:#06182e; --sel:#5a4a12; --sel-ink:#fff3cf;
+    --good:#6fd39b; --good-bg:#16382a; --bad:#ff8f86; --bad-bg:#3d1c1a; --chip:#1f2a36; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#10161d; --surface:#18212b; --ink:#e8eef4; --muted:#a2b0be; --line:#33414f;
+  --accent:#6aa6f0; --accent-ink:#06182e; --sel:#5a4a12; --sel-ink:#fff3cf;
+  --good:#6fd39b; --good-bg:#16382a; --bad:#ff8f86; --bad-bg:#3d1c1a; --chip:#1f2a36; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{font-size:112.5%}
+html.big{font-size:140%}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);line-height:1.55;
+  padding-block:0 2.5rem;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+.wrap{max-width:60rem;margin-inline:auto}
+header{display:flex;flex-wrap:wrap;gap:.75rem 1.5rem;align-items:center;justify-content:space-between;padding-block:1rem .75rem}
+h1{font-family:var(--font-display);font-size:1.5rem;line-height:1.2;margin:0;text-wrap:balance}
+.sub{margin:.25rem 0 0;color:var(--muted);font-size:.95rem}
+.logo{display:flex;align-items:center;gap:.5rem;color:var(--ink)}
+.logo small{font-size:.8rem;color:var(--muted);font-weight:700;letter-spacing:.04em}
+.tools{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.tab,.tool{border:2px solid var(--line);background:var(--surface);border-radius:.5rem;padding:.35rem .8rem;font-weight:700}
+.tab[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.how{background:var(--surface);border:1px solid var(--line);border-radius:.6rem;padding:.7rem 1rem;margin-block:.5rem 1rem;font-size:.95rem}
+.how b{font-family:var(--font-display);font-weight:500}
+.bank{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--surface);border:2px solid var(--line);border-radius:.7rem;padding:.7rem .8rem .8rem;box-shadow:0 6px 14px -10px rgba(0,0,0,.45)}
+.bank h2{font-family:var(--font-display);font-size:.8rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 .5rem;display:flex;justify-content:space-between;gap:1rem}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem}
+.chip{background:var(--chip);border:2px solid var(--line);border-radius:.5rem;padding:.3rem .85rem;font-size:1.1rem;font-weight:700;min-width:5.2rem}
+.chip.sel{background:var(--sel);color:var(--sel-ink);border-color:#c79a00}
+.chip.used{opacity:.35;text-decoration:line-through;cursor:default}
+.chip.shake,.gap.shake{animation:shake .35s}
+@keyframes shake{20%{transform:translateX(-5px)}40%{transform:translateX(5px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}
+@media (prefers-reduced-motion:reduce){.chip.shake,.gap.shake{animation:none;outline:3px solid var(--bad)}}
+.text{background:var(--surface);border:1px solid var(--line);border-radius:.7rem;padding:1.1rem 1.25rem;margin-top:1rem}
+.text p{font-size:1.2rem;line-height:2.1;margin:0 0 1rem;max-width:42rem}
+.text p:last-child{margin-bottom:0}
+.gap{display:inline-block;min-width:7.2rem;text-align:center;font:inherit;font-weight:700;padding:0 .5rem;margin-inline:.1rem;
+  border:0;border-bottom:3px dashed var(--accent);background:transparent;color:var(--ink);border-radius:.25rem .25rem 0 0;line-height:1.5;vertical-align:baseline}
+.gap .n{font-size:.7rem;color:var(--muted);font-weight:700;margin-right:.35rem}
+.gap.target{background:var(--sel);color:var(--sel-ink)}
+.gap.ok{border-bottom:3px solid var(--good);background:var(--good-bg);color:var(--good);cursor:default}
+.gap.no{border-bottom-color:var(--bad);background:var(--bad-bg)}
+.msg{min-height:1.6rem;margin:.6rem 0 0;font-weight:700;color:var(--muted)}
+.msg.bad{color:var(--bad)}.msg.good{color:var(--good)}
+.score{display:flex;flex-wrap:wrap;gap:1rem;font-weight:700;font-size:.95rem;color:var(--muted)}
+.result{margin-top:1rem;background:var(--surface);border:2px solid var(--good);border-radius:.7rem;padding:1rem 1.25rem}
+.result h2{font-family:var(--font-display);font-size:1.25rem;margin:0 0 .5rem}
+.result ol{margin:.5rem 0 0;padding-left:1.4rem}
+.result li{margin-bottom:.4rem}
+.result li b{color:var(--good)}
+.row{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.8rem}
+.primary{background:var(--accent);color:var(--accent-ink);border:2px solid var(--accent);border-radius:.5rem;padding:.45rem 1rem;font-weight:700}
+.qr{margin-top:1rem;background:var(--surface);border:1px solid var(--line);border-radius:.7rem;padding:1rem 1.25rem;display:flex;flex-wrap:wrap;gap:1rem;align-items:center}
+.qr .box{background:#fff;padding:10px;border-radius:.5rem;line-height:0}
+.qr p{margin:0;max-width:24rem}
+footer{margin-top:1.5rem;display:flex;justify-content:center}
+@media (max-width:520px){.gap{min-width:5.6rem}.text p{font-size:1.1rem}}
+[hidden]{display:none!important}
+body{margin:0}
+</style></head><body>
+
+<div class="wrap">
+  <header>
+    <div>
+      <h1>Adjectives and Adverbs</h1>
+      <p class="sub">Entry 3 reading · gap fill</p>
+    </div>
+    <div class="logo" aria-label="made by Atin">
+      <svg width="86" height="38" viewBox="0 0 86 38" role="img" aria-hidden="true">
+        <text x="2" y="30" font-family="Lexend, sans-serif" font-size="30" font-weight="700" fill="currentColor">A</text>
+        <rect x="26" y="19" width="10" height="3.5" rx="1.5" fill="currentColor"/>
+        <ellipse cx="58" cy="10" rx="13" ry="4.5" fill="none" stroke="currentColor" stroke-width="2.4"/>
+        <path d="M45 10 V30 C45 33.5 71 33.5 71 30 V10" fill="none" stroke="currentColor" stroke-width="2.4"/>
+        <path d="M45 17 C45 20.5 71 20.5 71 17 M45 24 C45 27.5 71 27.5 71 24" fill="none" stroke="currentColor" stroke-width="1.6" opacity=".55"/>
+        <path d="M66 7 L74 2" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+      </svg>
+      <small>made by Atin</small>
+    </div>
+  </header>
+
+  <div class="tools">
+    <button class="tab" id="tab0" aria-pressed="true">Text 1 · The market</button>
+    <button class="tab" id="tab1" aria-pressed="false">Text 2 · The flat</button>
+    <button class="tool" id="sizeBtn" aria-pressed="false">Bigger text</button>
+    <button class="tool" id="resetBtn">Start again</button>
+    <button class="tool" id="qrBtn" aria-expanded="false">Phone version</button>
+  </div>
+
+  <div class="qr" id="qrPanel" hidden>
+    <div class="box" id="qrBox"></div>
+    <p><b>Scan with your phone</b> to open this activity on your own phone. Tap a word, then tap a gap.</p>
+  </div>
+
+  <div class="how">
+    <b>How to play:</b> tap a word in the box, then tap the gap where it fits. Each word fits <b>one</b> gap only. Read the whole sentence first. Some words are extra.
+  </div>
+
+  <section class="bank" aria-label="Word box">
+    <h2><span>Word box</span><span class="score"><span id="scoreTxt">0 / 8 correct</span><span id="missTxt">0 mistakes</span></span></h2>
+    <div class="chips" id="chips"></div>
+  </section>
+
+  <div class="msg" id="msg" role="status" aria-live="polite">Choose a word, then choose a gap.</div>
+
+  <article class="text" id="text"></article>
+
+  <div class="result" id="result" hidden>
+    <h2 id="resTitle"></h2>
+    <p id="resSub" class="sub"></p>
+    <ol id="resList"></ol>
+    <div class="row"><button class="primary" id="againBtn">Try again</button><button class="tool" id="otherBtn">Next text</button></div>
+  </div>
+</div>
+
+<footer><div class="logo"><small>made by Atin</small></div></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+(function(){
+  function g(a,why){return {a:a,why:why};}
+  var TEXTS=[
+    { title:'A busy Saturday at the market',
+      extra:['empty','badly'],
+      paras:[
+        ['Amira sells fruit at a market in London. She gets up ',g('early','"Still dark" tells us it is a very early time.'),' every Saturday, when it is still dark. The boxes of apples are ',g('heavy','The son helps her carry the boxes, so they are heavy.'),', so her son helps her to carry them. She puts the tomatoes on the table ',g('carefully','She does not want to drop them, so she is careful.'),' because she does not want to drop them.'],
+        ['By nine o’clock the market is ',g('crowded','"So many people" means the market is crowded.'),' because there are so many people. Amira always says thank you ',g('politely','She is nice "even when a customer is rude": politely.'),', even when a customer is rude to her. Her fruit is always ',g('fresh','It comes from the farm that morning, so it is fresh.'),' because it comes from the farm that morning. At twelve o’clock a bus arrives and many tourists want to buy fruit, so Amira works ',g('quickly','Many tourists want fruit, so she must work fast.'),'. By five o’clock she is ',g('tired','She wants to go home after a long day: she is tired.'),' and she wants to go home.']
+      ]},
+    { title:'Tomasz looks for a flat',
+      extra:['clean','angrily'],
+      paras:[
+        ['Tomasz needed a flat that was ',g('cheap','He does not earn much money, so he needs a cheap flat.'),' because he does not earn much money. The first flat was on a busy road, so it was too ',g('noisy','A busy road makes noise at night.'),' at night to sleep. The second flat had old food on the floor and the kitchen was very ',g('dirty','Old food on the floor means the kitchen is dirty.'),'.'],
+        ['The third flat had a big soft bed and a good sofa, so it was ',g('comfortable','A soft bed and a good sofa are comfortable.'),'. Tomasz ran to the bus stop and ',g('nearly','He got on "just in time", so he nearly missed it.'),' missed the bus, but he got on just in time. While he was looking at the kitchen, the lights ',g('suddenly','"Without any warning" means suddenly.'),' went out without any warning. Tomasz was very pleased with the flat, so he walked home ',g('happily','He was pleased, so he walked home happily.'),'. In his old room the bed was hard, so he slept ',g('badly','A hard bed means he did not sleep well: badly.'),' every night.']
+      ]}
+  ];
+
+  var cur=0, state=null, selWord=null, selGap=null;
+  var $=function(id){return document.getElementById(id);};
+
+  function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+
+  function load(i){
+    cur=i; var T=TEXTS[i], answers=[];
+    var html='', n=0;
+    T.paras.forEach(function(p){
+      html+='<p>';
+      p.forEach(function(x){
+        if(typeof x==='string'){html+=esc(x);}
+        else{html+='<button class="gap" data-i="'+n+'" aria-label="Gap '+(n+1)+', empty"><span class="n">'+(n+1)+'</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>';answers.push(x);n++;}
+      });
+      html+='</p>';
+    });
+    $('text').innerHTML=html;
+    state={answers:answers,filled:[],missed:[],used:{},misses:0,done:0,bank:shuffle(answers.map(function(a){return a.a;}).concat(T.extra))};
+    answers.forEach(function(){state.filled.push(false);state.missed.push(false);});
+    selWord=null;selGap=null;
+    renderBank();
+    $('result').hidden=true;
+    updScore();
+    say('Choose a word, then choose a gap.','');
+    $('tab0').setAttribute('aria-pressed',i===0);$('tab1').setAttribute('aria-pressed',i===1);
+    document.querySelectorAll('.gap').forEach(function(b){b.addEventListener('click',function(){gapClick(+b.dataset.i,b);});});
+  }
+  function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+
+  function renderBank(){
+    var c=$('chips');c.innerHTML='';
+    state.bank.forEach(function(w){
+      var b=document.createElement('button');b.className='chip'+(state.used[w]?' used':'');b.textContent=w;b.dataset.w=w;
+      if(state.used[w])b.disabled=true;
+      b.addEventListener('click',function(){wordClick(w,b);});
+      c.appendChild(b);
+    });
+  }
+  function chipEl(w){return document.querySelector('.chip[data-w="'+w+'"]');}
+  function gapEl(i){return document.querySelector('.gap[data-i="'+i+'"]');}
+
+  function say(t,k){var m=$('msg');m.textContent=t;m.className='msg'+(k?' '+k:'');}
+  function updScore(){$('scoreTxt').textContent=state.done+' / '+state.answers.length+' correct';$('missTxt').textContent=state.misses+(state.misses===1?' mistake':' mistakes');}
+
+  function clearSel(){
+    selWord=null;selGap=null;
+    document.querySelectorAll('.chip.sel').forEach(function(e){e.classList.remove('sel');});
+    document.querySelectorAll('.gap.target').forEach(function(e){e.classList.remove('target');});
+  }
+  function wordClick(w,b){
+    if(state.used[w])return;
+    document.querySelectorAll('.chip.sel').forEach(function(e){e.classList.remove('sel');});
+    selWord=w;b.classList.add('sel');
+    if(selGap!==null){attempt(w,selGap);}else{say('Now tap the gap for “'+w+'”.','');}
+  }
+  function gapClick(i,b){
+    if(state.filled[i])return;
+    document.querySelectorAll('.gap.target').forEach(function(e){e.classList.remove('target');});
+    selGap=i;b.classList.add('target');
+    if(selWord!==null){attempt(selWord,i);}else{say('Now choose a word for gap '+(i+1)+'.','');}
+  }
+  function attempt(w,i){
+    var gb=gapEl(i), cb=chipEl(w), A=state.answers[i];
+    if(w===A.a){
+      state.filled[i]=true;state.used[w]=true;state.done++;
+      gb.className='gap ok';gb.innerHTML='<span class="n">'+(i+1)+'</span>'+esc(w);gb.setAttribute('aria-label','Gap '+(i+1)+': '+w+', correct');gb.disabled=true;
+      clearSel();renderBank();updScore();
+      say('Correct.','good');
+      if(state.done===state.answers.length)finish();
+    }else{
+      state.missed[i]=true;state.misses++;
+      gb.classList.add('no','shake');if(cb)cb.classList.add('shake');
+      setTimeout(function(){gb.classList.remove('shake','no');if(cb)cb.classList.remove('shake');},420);
+      clearSel();updScore();
+      say('Not that one. Read the whole sentence again and look for the clue.','bad');
+    }
+  }
+  function finish(){
+    var first=state.missed.filter(function(m){return !m;}).length, tot=state.answers.length;
+    $('resTitle').textContent='All gaps filled';
+    $('resSub').textContent=first+' of '+tot+' correct at the first try. Extra words: '+TEXTS[cur].extra.join(', ')+'.';
+    var li='';state.answers.forEach(function(a,i){li+='<li><b>'+esc(a.a)+'</b> – '+esc(a.why)+'</li>';});
+    $('resList').innerHTML=li;
+    $('result').hidden=false;
+    say('Well done. Read why each word fits below.','good');
+    setTimeout(function(){$('result').scrollIntoView({behavior:'smooth',block:'nearest'});},200);
+  }
+
+  $('tab0').addEventListener('click',function(){load(0);});
+  $('tab1').addEventListener('click',function(){load(1);});
+  $('resetBtn').addEventListener('click',function(){load(cur);});
+  $('againBtn').addEventListener('click',function(){load(cur);window.scrollTo(0,0);});
+  $('otherBtn').addEventListener('click',function(){load(cur===0?1:0);window.scrollTo(0,0);});
+  $('sizeBtn').addEventListener('click',function(){
+    var on=document.documentElement.classList.toggle('big');
+    this.setAttribute('aria-pressed',on);this.textContent=on?'Normal text':'Bigger text';
+  });
+  var qrMade=false;
+  $('qrBtn').addEventListener('click',function(){
+    var p=$('qrPanel'), open=p.hidden;p.hidden=!open;this.setAttribute('aria-expanded',open);
+    if(open&&!qrMade){
+      try{new QRCode($('qrBox'),{text:location.href.split('#')[0],width:168,height:168,correctLevel:QRCode.CorrectLevel.M});qrMade=true;}
+      catch(e){$('qrBox').textContent='QR code unavailable. Open this page on your phone from the class link.';}
+    }
+  });
+  load(0);
+})();
+</script>
+</body></html>
