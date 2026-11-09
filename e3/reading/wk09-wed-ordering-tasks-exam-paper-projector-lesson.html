@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>E3 Reading – Ordering Tasks and an ESB Paper – Projector Lesson</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Lexend:wght@400;600&display=swap">
+<style>
+/* One fixed 16:9 stage (1280x720) scaled to the window; arrows, buttons or swipe change slides. */
+:root{--desk:#e4e8ee;--paper:#fff;--ink:#152238;--muted:#56627a;--line:#cfd6e2;--hi:#ffe14d;--red:#d23c2a;
+--ok:#1d7a4b;--ok-bg:#dcf2e5;--bad:#b3261e;--bad-bg:#fbe2df;
+--display:"Bricolage Grotesque","Arial Narrow",Arial,sans-serif;--body:"Lexend",Verdana,Arial,sans-serif;color-scheme:light}
+html,body{height:100%}
+body{margin:0;background:var(--desk);color:var(--ink);font-family:var(--body);overflow:hidden}
+#stage{width:1280px;height:720px;position:absolute;left:50%;top:50%;transform-origin:center center}
+.slide{position:absolute;inset:0;background:var(--paper);border-radius:6px;box-shadow:0 18px 40px rgba(21,34,56,.18);padding:44px 60px 80px;display:flex;flex-direction:column;gap:18px;overflow:hidden}
+.slide[hidden]{display:none!important}
+.eyebrow{font-size:17px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+h1,h2{font-family:var(--display);font-weight:800;margin:0;line-height:1.05}
+h1{font-size:80px} h2{font-size:44px}
+p,li{font-size:26px;line-height:1.45;margin:0}
+.lede{font-size:28px;color:var(--muted);max-width:32em}
+.mark{background:linear-gradient(transparent 55%,var(--hi) 55%);padding:0 3px}
+.red{color:var(--red);font-weight:600}
+.steps{display:flex;flex-direction:column;gap:16px;counter-reset:s;list-style:none;padding:0;margin:0}
+.steps li{position:relative;padding-left:62px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:-2px;width:44px;height:44px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font-family:var(--display);font-size:24px}
+button{font-family:var(--body);cursor:pointer}
+button:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+.btn{font-size:20px;font-weight:600;padding:8px 18px;border:2px solid var(--ink);background:var(--paper);color:var(--ink);border-radius:6px}
+.btn:hover{background:var(--hi)}
+.words{display:flex;flex-wrap:wrap;gap:12px}
+.w{font-size:28px;padding:10px 20px;border:2px solid var(--line);border-radius:6px}
+.w.key{border-color:var(--red);color:var(--red);font-weight:600}
+/* tap-in-order */
+.order{display:flex;flex-direction:column;gap:10px}
+.order.row{flex-direction:row;flex-wrap:wrap;gap:14px}
+.ev{font-size:25px;text-align:left;padding:10px 16px 10px 60px;border:2px solid var(--line);background:var(--paper);border-radius:6px;color:var(--ink);position:relative;min-height:54px}
+.order.row .ev{font-size:34px;padding:12px 22px 12px 62px}
+.order[data-set=hawa]{gap:8px}.order[data-set=hawa] .ev{font-size:23px;padding:7px 16px 7px 56px;min-height:46px}.ev .pf{color:var(--muted);font-size:19px;margin-left:10px}#hawaText span.lit{background:#ffd54a;border-radius:3px;box-shadow:0 0 0 2px #ffd54a}
+.ev::before{content:attr(data-n);position:absolute;left:12px;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;border:2px dashed var(--line);display:grid;place-items:center;font-family:var(--display);font-size:20px}
+.ev.done{border-color:var(--ok);background:var(--ok-bg);cursor:default}
+.ev.done::before{background:var(--ok);border:2px solid var(--ok);color:#fff}
+.ev.wrong{border-color:var(--bad);background:var(--bad-bg);animation:shake .3s}
+@keyframes shake{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+@media (prefers-reduced-motion:reduce){.ev.wrong,.opt.wrong{animation:none}}
+.l{color:var(--red);font-weight:600;text-decoration:underline}
+.bar{display:flex;gap:12px;align-items:center}
+.msg{font-size:20px;color:var(--ok);font-weight:600}
+/* which came first */
+.q{display:grid;grid-template-columns:1fr auto;gap:10px 20px;align-items:center;padding:10px 16px;border:2px solid var(--line);border-radius:6px}
+.q p{font-size:24px}
+.opts{display:flex;gap:8px}
+.opt{font-size:19px;padding:7px 14px;border:2px solid var(--ink);background:var(--paper);color:var(--ink);border-radius:6px}
+.opt:hover{background:var(--hi)}
+.opt.right{background:var(--ok);border-color:var(--ok);color:#fff}
+.opt.wrong{background:var(--bad-bg);border-color:var(--bad);color:var(--bad);animation:shake .3s}
+.q.done{border-color:var(--ok);background:var(--ok-bg)}
+.q.done .opt:not(.right){display:none}
+/* answers */
+.ans{display:grid;grid-template-columns:repeat(2,1fr);gap:10px 22px}
+.a{border:2px solid var(--line);border-radius:6px;padding:9px 14px;font-size:21px;line-height:1.35}
+.a b{font-family:var(--display);font-size:22px}
+.a .hide{filter:blur(9px);transition:filter .2s}
+.a.show .hide{filter:none}
+.a{cursor:pointer}
+.tight{gap:6px 18px}.tight .a{font-size:18px;padding:6px 12px}
+/* timer */
+.timer{display:flex;gap:30px;align-items:center}
+#clock{font-family:var(--display);font-weight:800;font-size:150px;line-height:1;font-variant-numeric:tabular-nums}
+#clockNote{font-size:28px;font-weight:600}
+.tbtns{display:flex;flex-direction:column;gap:10px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.card{border:2px solid var(--line);border-radius:6px;padding:16px 20px;display:flex;flex-direction:column;gap:8px}
+.card b{font-family:var(--display);font-size:30px}
+a{color:var(--ink)}
+#nav{position:absolute;right:24px;bottom:18px;display:flex;align-items:center;gap:12px}
+#nav button{font-size:22px;font-weight:600;border:2px solid var(--ink);background:var(--paper);color:var(--ink);border-radius:6px;padding:6px 18px}
+#nav button:disabled{opacity:.3;cursor:default}
+#count{font-size:18px;color:var(--muted)}
+</style></head><body>
+<div id="stage">
+
+<section class="slide">
+  <div class="eyebrow">E3 Reading · Exam skills</div>
+  <h1>Put it in <span class="mark">order</span></h1>
+  <p class="lede">Today: what happened first? Words in alphabetical order. Then a real exam paper against the clock.</p>
+</section>
+
+<section class="slide" hidden>
+  <div class="eyebrow">Warm-up · Listen to my morning</div>
+  <h2>What happened first?</h2>
+  <p>Tap the events in the order they <b>happened</b>.</p>
+  <div class="order" data-set="story"></div>
+  <div class="bar"><button class="btn" data-reset="story">Start again</button><span class="msg" data-msg="story"></span></div>
+</section>
+
+<section class="slide" hidden>
+  <div class="eyebrow">Activity 1 · Time words</div>
+  <h2>These words tell you the order</h2>
+  <div class="words">
+    <span class="w">first</span><span class="w">then</span><span class="w">next</span><span class="w">after that</span><span class="w">later</span><span class="w">finally</span><span class="w">when</span><span class="w">by September</span><span class="w">at six o’clock</span><span class="w">in July</span>
+  </div>
+  <div class="words"><span class="w key">before</span><span class="w key">after</span></div>
+  <p><span class="red">Before</span> and <span class="red">after</span> cause most mistakes. Dates, months and times help too.</p>
+</section>
+
+<section class="slide" hidden>
+  <div class="eyebrow">Activity 1 · Careful!</div>
+  <h2>The first event in the sentence is not always first in time</h2>
+  <p>Which happened first? Click.</p>
+  <div class="list" id="firstList" style="display:flex;flex-direction:column;gap:10px"></div>
+</section>
+
+<section class="slide" hidden>
+  <div class="eyebrow">Activity 1 · Hawa’s Morning</div>
+  <h2>Put Hawa’s morning in order</h2>
+  <p id="hawaText" style="font-size:22px;background:#fff8d6;padding:10px 14px;border-radius:6px;margin:6px 0;line-height:1.5"><span data-p="0">Hawa got up at six o’clock.</span> <span data-p="1">Before breakfast, she washed her son’s school shirt.</span> <span data-p="2">After they ate, she took him to school.</span> <span data-p="3">Then she caught the bus to college.</span> She arrived late because the bus broke down on the way. <span data-p="4">At lunchtime she phoned the school</span> to check on her son.</p>
+  <p style="margin:6px 0"><b>Which happened first?</b> A learner says the event <b>and</b> the words in the text that prove it. Then tap it.</p>
+  <div class="order" data-set="hawa"></div>
+  <div class="bar"><button class="btn" data-reset="hawa">Start again</button><span class="msg" data-msg="hawa"></span></div>
+</section>
+
+<section class="slide" hidden>
+  <div class="eyebrow">Exam routine · Ordering questions</div>
+  <h2>Three steps</h2>
+  <ol class="steps">
+    <li><span class="mark">Underline</span> every date, month and time word in the text.</li>
+    <li>Write <b>1, 2, 3…</b> next to each event. Use <b>pen</b> – no pencil in the exam.</li>
+    <li>Check: does your number 1 match the first event the exam gives you?</li>
+  </ol>
+</section>
+
+<section class="slide" hidden>
+  <div class="eyebrow">Activity 2 · Alphabetical order · Set 1</div>
+  <h2>Look at the first letter</h2>
+  <p>Tap the words in alphabetical order.</p>
+  <div class="order row" data-set="a1"></div>
+  <div class="bar"><button class="btn" data-reset="a1">Start again</button><span class="msg" data-msg="a1"></span></div>
+</section>
+
+<section class="slide" hidden>
+  <div class="eyebrow">Activity 2 · Set 2 · All start with c</div>
+  <h2>Same first letter? Look at the <span class="mark">second</span> letter – then the third</h2>
+  <div class="order row" data-set="a2"></div>
+  <div class="bar"><button class="btn" data-reset="a2">Start again</button><span class="msg" data-msg="a2"></span></div>
+</section>
+
+<section class="slide" hidden>
+  <div class="eyebrow">Activity 2 · Set 3 · All start with st</div>
+  <h2>Look at the <span class="mark">third</span> letter – or the fourth</h2>
+  <div class="order row" data-set="a3"></div>
+  <div class="bar"><button class="btn" data-reset="a3">Start again</button><span class="msg" data-msg="a3"></span></div>
+  <p style="font-size:22px;color:var(--muted)">st<b>a</b>ll and st<b>a</b>tion: the third letter is the same, so look at the fourth: sta<b class="red">l</b>l, sta<b class="red">t</b>ion.</p>
+</section>
+
+<section class="slide" hidden>
+  <div class="eyebrow">Exam routine · Alphabetical order</div>
+  <h2>On paper in the exam</h2>
+  <ol class="steps">
+    <li>Write the alphabet across the top of the page: a b c d e f g h i j k l m n o p q r s t u v w x y z</li>
+    <li>Cross off each word when you use it.</li>
+    <li>Count: you must have the <b>same number</b> of words you started with.</li>
+  </ol>
+  <p>The exam is on paper. Today you practise on screen.</p>
+</section>
+
+<section class="slide" hidden>
+  <div class="eyebrow">Activity 3 · ESB paper · Set L · Tasks 1 and 2 · 14 questions</div>
+  <div class="two">
+    <div class="timer">
+      <div><div id="clock">40:00</div><div id="clockNote">Read the title and first sentences first.</div></div>
+    </div>
+    <div class="tbtns">
+      <button class="btn" id="tStart">Start 40 minutes</button>
+      <button class="btn" id="tPause">Pause</button>
+      <button class="btn" id="tReset">Reset</button>
+      <ul style="padding-left:24px;margin:8px 0 0"><li>Blue or black pen. Phones away. No talking. No dictionary.</li><li>Read the title and the first sentences. Read the whole text once. Then answer.</li><li>Answer every question. You can go back.</li><li>Finished early? Write the line that proves each answer.</li></ul>
+    </div>
+  </div>
+</section>
+
+<section class="slide" hidden>
+  <div class="eyebrow">Activity 4 · Prove it · Task 1 · Click to show each answer</div>
+  <h2 style="font-size:32px">Give the answer – then the words that prove it</h2>
+  <div class="ans">
+    <div class="a"><b>1</b> <span class="hide"><b>False</b> – “Travellers … feel the train fares are too high”</span></div>
+    <div class="a"><b>2</b> <span class="hide">any two: houses are cheaper · travel is cheaper · living expenses are cheaper (in the north)</span></div>
+    <div class="a"><b>3</b> <span class="hide"><b>C Companies</b> – “Some companies are moving there because <i>they</i> pay lower rent”</span></div>
+    <div class="a"><b>4</b> <span class="hide"><b>B</b> a list of questions</span></div>
+    <div class="a"><b>5</b> <span class="hide"><b>C reports</b> – “Transport Research Results”: it tells us what a survey found</span></div>
+    <div class="a"><b>6</b> <span class="hide">they pay lower rent · they get staff more easily</span></div>
+    <div class="a"><b>7</b> <span class="hide">fare · film · music · podcast</span></div>
+  </div>
+</section>
+
+<section class="slide" hidden>
+  <div class="eyebrow">Activity 4 · Prove it · Task 2 · Click to show each answer</div>
+  <h2 style="font-size:32px">Give the answer – then the words that prove it</h2>
+  <div class="ans">
+    <div class="a"><b>8</b> <span class="hide"><b>B</b> wanting a job – “I would like to apply for the job of a postman”</span></div>
+    <div class="a"><b>9</b> <span class="hide"><b>Leeds</b> – “when I moved to Leeds … I work in a newsagent shop at the moment”</span></div>
+    <div class="a"><b>10</b> <span class="hide"><b>C James Turner</b> – he signs Text B (“I” = the writer)</span></div>
+    <div class="a"><b>11</b> <span class="hide"><b>False</b> – “similar” means nearly the same</span></div>
+    <div class="a"><b>12</b> <span class="hide"><b>A offer an interview</b> – “I have arranged an interview for you”</span></div>
+    <div class="a"><b>13</b> <span class="hide"><b>Debbie Seymour</b> – “contact Debbie Seymour by email”</span></div>
+    <div class="a"><b>14</b> <span class="hide"><b>attend</b> – accounts · apply · arranged · <span class="red">attend</span></span></div>
+  </div>
+  <p style="font-size:22px;color:var(--muted)">One mark each. Questions 2 and 6 need both reasons. Marks out of 14.</p>
+</section>
+
+<section class="slide" hidden>
+  <div class="eyebrow">Activity 5 · Exam day</div>
+  <h2>My exam routine</h2>
+  <ol class="steps">
+    <li>Read the title.</li>
+    <li>Read the first sentence of each paragraph.</li>
+    <li>Read everything once.</li>
+    <li>Answer the easy questions first.</li>
+    <li>Check each answer in the text. <span class="mark">Never leave a question blank.</span></li>
+  </ol>
+  <p>Tell your partner: <b>“Next time I will …”</b></p>
+</section>
+
+<section class="slide" hidden>
+  <div class="eyebrow">Links</div>
+  <h2>Today’s materials</h2>
+  <p><a href="https://atinwix.github.io/esol/e3/reading/docs/wk09-mon-pronouns-word-meaning-ordering-day-plan.pdf">Day plan and answers (teacher)</a></p>
+  <p><a href="https://atinwix.github.io/esol/e3/reading/exam-prep/lesson-03-handouts.pdf">Lesson 3 handouts (3A, 3B)</a></p>
+</section>
+
+<div id="nav"><span id="count"></span><button id="prev" aria-label="Previous slide">‹</button><button id="next" aria-label="Next slide">›</button></div>
+</div>
+<script>
+(function(){
+const SETS={
+ hawa:["Hawa got out of bed.","Hawa cleaned some clothes.","Hawa left her son at school.","Hawa got on a bus.","Hawa called the school."],
+ story:["I woke up.","I couldn’t find my keys.","I missed my bus.","I got to college at nine."],
+ a1:["bus","garden","hostel","market","teacher"],
+ a2:["canal","card","class","college","cycle"],
+ a3:["stall","station","stop","street","student"]
+};
+const SHOW={hawa:["Hawa got on a bus.","Hawa called the school.","Hawa cleaned some clothes.","Hawa left her son at school.","Hawa got out of bed."],story:["I got to college at nine.","I missed my bus.","I couldn’t find my keys.","I woke up."],
+ a1:["market","bus","hostel","teacher","garden"],a2:["college","class","canal","card","cycle"],a3:["street","station","stop","student","stall"]};
+function mark(set,w){if(set==='a2')return w[0]+'<span class="l">'+w[1]+'</span>'+w.slice(2);if(set==='a3')return w.slice(0,2)+'<span class="l">'+w[2]+'</span>'+w.slice(3);return w}
+const PROOF=['at six o’clock','Before breakfast','After they ate','Then she caught the bus','At lunchtime'];
+function build(set){
+  if(set==='hawa')document.querySelectorAll('#hawaText .lit').forEach(x=>x.classList.remove('lit'));
+  const box=document.querySelector('[data-set="'+set+'"]');box.innerHTML='';let n=0;
+  const msg=document.querySelector('[data-msg="'+set+'"]');msg.textContent='';
+  SHOW[set].forEach(t=>{const b=document.createElement('button');b.type='button';b.className='ev';b.dataset.n='';b.innerHTML=t;
+    b.addEventListener('click',()=>{if(b.classList.contains('done'))return;
+      if(t===SETS[set][n]){n++;b.dataset.n=n;b.classList.add('done');if(set==='hawa'){b.innerHTML=t+' <span class="pf">– “'+PROOF[n-1]+'”</span>';const sp=document.querySelector('#hawaText [data-p="'+(n-1)+'"]');if(sp)sp.classList.add('lit')}else if(set!=='story')b.innerHTML=mark(set,t);if(n===SETS[set].length)msg.textContent='Well done – all in order.'}
+      else{b.classList.remove('wrong');void b.offsetWidth;b.classList.add('wrong')}});box.append(b)});
+}
+Object.keys(SETS).forEach(build);
+document.querySelectorAll('[data-reset]').forEach(b=>b.addEventListener('click',()=>build(b.dataset.reset)));
+const F=[["<b>Before breakfast</b>, she washed the uniform.",["breakfast","washing the uniform"],1],
+["She phoned the school <b>after</b> she arrived.",["phoning the school","arriving"],1],
+["<b>When</b> the rain stopped, we went to the park.",["the rain stopped","going to the park"],0],
+["<b>After</b> the class, Amir went to the library.",["the class","going to the library"],0],
+["<b>Before</b> she went to bed, Hana locked the door.",["going to bed","locking the door"],1]];
+const fl=document.getElementById('firstList');
+F.forEach(f=>{const r=document.createElement('div');r.className='q';r.innerHTML='<p>'+f[0]+'</p>';const o=document.createElement('div');o.className='opts';
+ f[1].forEach((l,i)=>{const b=document.createElement('button');b.type='button';b.className='opt';b.textContent=l;b.addEventListener('click',()=>{if(r.classList.contains('done'))return;
+  if(i===f[2]){b.classList.add('right');r.classList.add('done')}else{b.classList.remove('wrong');void b.offsetWidth;b.classList.add('wrong')}});o.append(b)});r.append(o);fl.append(r)});
+document.querySelectorAll('.a').forEach(a=>a.addEventListener('click',()=>a.classList.toggle('show')));
+// timer
+let left=2400,tick=null;const clock=document.getElementById('clock'),note=document.getElementById('clockNote');
+function draw(){const m=Math.floor(left/60),s=left%60;clock.textContent=m+':'+String(s).padStart(2,'0');
+ const used=2400-left;note.textContent=left===0?'Time is up. Pens down.':used>=2100?'5 minutes left – check your answers.':used>=1200?'20 minutes gone – keep going.':'Read the title and first sentences first.';
+ clock.style.color=left<=300?'var(--red)':'var(--ink)'}
+document.getElementById('tStart').onclick=()=>{if(tick)return;tick=setInterval(()=>{if(left>0){left--;draw()}else{clearInterval(tick);tick=null}},1000)};
+document.getElementById('tPause').onclick=()=>{clearInterval(tick);tick=null};
+document.getElementById('tReset').onclick=()=>{clearInterval(tick);tick=null;left=2400;draw()};draw();
+// slides
+const slides=[...document.querySelectorAll('.slide')];let cur=0;
+const prev=document.getElementById('prev'),next=document.getElementById('next'),count=document.getElementById('count');
+function show(n){cur=Math.max(0,Math.min(slides.length-1,n));slides.forEach((s,i)=>s.hidden=i!==cur);prev.disabled=cur===0;next.disabled=cur===slides.length-1;count.textContent=(cur+1)+' / '+slides.length}
+prev.onclick=()=>show(cur-1);next.onclick=()=>show(cur+1);
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='PageDown'){e.preventDefault();show(cur+1)}if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();show(cur-1)}});
+let sx=null;document.addEventListener('touchstart',e=>{sx=e.touches[0].clientX},{passive:true});
+document.addEventListener('touchend',e=>{if(sx===null)return;const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>60)show(cur+(dx<0?1:-1));sx=null});
+const stage=document.getElementById('stage');
+function fit(){const s=Math.min((innerWidth-16)/1280,(innerHeight-16)/720);stage.style.transform='translate(-50%,-50%) scale('+Math.max(s,0.2)+')'}
+addEventListener('resize',fit);fit();show(0);
+})();
+</script>
+<div class="atin-logo" aria-label="Made by Atin">
+<svg viewBox="104 28 172 134" width="64" height="50" role="img" aria-hidden="true">
+<text x="139" y="112" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="72" fill="currentColor">A</text>
+<rect x="177" y="83" width="24" height="6" rx="1" fill="currentColor"/>
+<path d="M216 66 L216 106 A25 7 0 0 0 266 106 L266 66" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+<ellipse cx="241" cy="66" rx="25" ry="7" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="216" y1="80" x2="266" y2="80" stroke="currentColor" stroke-width="1.5"/>
+<line x1="216" y1="94" x2="266" y2="94" stroke="currentColor" stroke-width="1.5"/>
+<ellipse cx="241" cy="47" rx="23" ry="5" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="114" y1="128" x2="266" y2="128" stroke="currentColor" stroke-width="1"/>
+<text x="190" y="152" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" letter-spacing="2" fill="currentColor">made by Atin</text>
+</svg>
+</div>
+<style>
+.atin-logo{position:fixed;left:calc(6px + env(safe-area-inset-left,0px));bottom:calc(6px + env(safe-area-inset-bottom,0px));z-index:2147483000;pointer-events:none;color:#1F3A5F;background:rgba(255,255,255,.92);border:1px solid #C9D3DF;border-radius:8px;padding:3px 5px;line-height:0}
+.atin-logo svg{display:block}
+@media print{.atin-logo{position:fixed;left:auto;right:6mm;bottom:5mm;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style></body></html>
