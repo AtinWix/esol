@@ -34,6 +34,7 @@ h2{font-size:1.05rem;margin:0 0 10px;color:var(--muted);letter-spacing:.04em;tex
 .row{display:grid;grid-template-columns:6.5em 1fr;gap:2px 10px;font-size:.95rem}
 .row b{color:var(--muted);font-weight:600}
 .amend{font-size:.8rem;color:var(--muted)}
+.kbox{background:var(--warn-soft);color:var(--warn);border-radius:8px;padding:10px 12px;display:flex;flex-direction:column;gap:6px;font-size:.92rem}.kbox p{margin:0;color:var(--ink)}.kbox textarea{width:100%;font:inherit;font-size:.82rem;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:6px;padding:6px;resize:vertical}.kbox button{align-self:flex-start;font:inherit;font-weight:600;padding:6px 14px;border-radius:8px;border:1px solid var(--warn);background:var(--card);color:var(--warn);cursor:pointer}
 .prep{background:var(--warn-soft);color:var(--warn);border-radius:8px;padding:6px 10px;font-weight:600;font-size:.92rem}
 .links{display:flex;flex-wrap:wrap;gap:8px}
 .links a{font-size:.88rem;padding:5px 11px;border-radius:999px;background:var(--soft);color:var(--ink);text-decoration:none;border:1px solid transparent}
@@ -127,7 +128,20 @@ header{display:flex;justify-content:space-between;align-items:flex-start;gap:12p
     [["Morning",x.morning],["Afternoon",x.afternoon],["Print",x.print]].forEach(function(p){if(p[1]){r.append(el("b",null,p[0]));r.append(el("span",null,p[1]))}});
     c.append(r);
     if(x.prep)c.append(el("div","prep","Prep: "+x.prep));
-    if(Array.isArray(x.todo))x.todo.forEach(function(t){if(t)c.append(el("div","prep","To do: "+t))});
+    var kx=(x.links||[]).filter(function(k){return k&&/kahoot/i.test(k.label||"")&&/\.xlsx$/i.test(k.url||"")})[0];
+    var klive=(x.links||[]).some(function(k){return k&&/ready to play/i.test(k.label||"")});
+    if(Array.isArray(x.todo))x.todo.forEach(function(t){if(t&&!(kx&&!klive&&/kahoot/i.test(t)))c.append(el("div","prep","To do: "+t))});
+    if(kx&&!klive&&x.date>=today){
+      var fname=kx.url.split("/").pop(), ktitle=(x.cls||"")+" – "+(x.title||"Kahoot");
+      var msg="Make a Kahoot in my Kahoot account (I'm signed in). Title: \""+ktitle+"\". Don't use the file picker: on create.kahoot.it start a new Kahoot, then Add question → Import → Import spreadsheet. Then use javascript to fetch "+kx.url+" as a blob, make a File named "+fname+" (type application/vnd.openxmlformats-officedocument.spreadsheetml.sheet), put it into the dialog's <input type=\"file\"> with a DataTransfer and dispatch a change event. Check that 20 questions came in, set the title, save, then click Share → Copy link and give me the link. Don't change any questions.";
+      var kb=el("div","kbox");
+      kb.append(el("b",null,"Kahoot not made yet."));
+      kb.append(el("p",null,"Open Claude in Chrome (signed in to Kahoot), paste this message, then paste the link it gives you into the ESOL project chat and say it's for "+fmt(x.date)+"."));
+      var ta=el("textarea");ta.readOnly=true;ta.value=msg;ta.rows=4;kb.append(ta);
+      var cb=el("button",null,"Copy message");cb.type="button";
+      cb.onclick=function(){var done=function(){cb.textContent="Copied ✓";setTimeout(function(){cb.textContent="Copy message"},2000)};
+        try{navigator.clipboard.writeText(msg).then(done,function(){ta.select();cb.textContent="Selected – press Ctrl+C"})}catch(_){ta.select();cb.textContent="Selected – press Ctrl+C"}};
+      kb.append(cb);c.append(kb)}
     if(Array.isArray(x.links)&&x.links.length){var l=el("div","links");x.links.forEach(function(k){if(!k||!/^https:\/\//.test(k.url||""))return;var a=el("a",null,k.label||"Link");a.href=k.url;a.target="_blank";a.rel="noopener";l.append(a)});c.append(l)}
     var am=x.amended?new Date(x.amended):null;
     c.append(el("div","amend","Last amended: "+(am&&!isNaN(am)?am.toLocaleString("en-GB",{weekday:"short",day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"}):"not recorded")));
