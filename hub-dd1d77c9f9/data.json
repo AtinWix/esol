@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-08T07:15:09Z",
+ "updatedAt": "2026-11-09T07:23:00Z",
  "upcoming": {
   "2026-11-02_e3": {
    "afternoon": "PC room: Too Cold to Learn – complaint emails",
@@ -248,7 +248,7 @@
  },
  "status": {},
  "health": {
-  "checkedAt": "2026-11-08T07:20:00Z",
+  "checkedAt": "2026-11-09T07:30:00Z",
   "items": [
    {
     "ok": true,
@@ -259,16 +259,16 @@
     "text": "Mon 2, Tue 3, Wed 4 and Thu 5 are logged, with ROW snippets, Covered/Next and 'As taught' cards in place."
    },
    {
+    "ok": false,
+    "text": "Thu night 'Weekly ESOL lesson build' last run (5 Nov) failed: usage limit reached (fallback task, nothing outstanding)."
+   },
+   {
+    "ok": false,
+    "text": "Thursday evening 'update past activities' last run (5 Nov) failed: usage limit reached (non-essential, skipped)."
+   },
+   {
     "ok": true,
-    "text": "Fixed: garbled E3 'Covered so far' line in the classes file (Hackney places moved to the Mon 9 planned entry)."
-   },
-   {
-    "ok": false,
-    "text": "Thu night 'Weekly ESOL lesson build' failed on 5 Nov: usage limit reached (fallback task, nothing outstanding)."
-   },
-   {
-    "ok": false,
-    "text": "Thursday evening 'update past activities' failed on 5 Nov: usage limit reached (non-essential, skipped)."
+    "text": "Build-after-log, 2:35pm summary and feedback check last runs succeeded."
    },
    {
     "ok": true,
