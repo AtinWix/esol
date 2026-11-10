@@ -151,6 +151,55 @@
         "Is it bus number five? (No, it isn't.)",
         "What time is the bus? (Four o'clock.)"
       ]
+    },
+    {
+      "id": "script-g",
+      "label": "Script G – The swimming class (Copy and complete slide on the projector)",
+      "lines": [
+        [
+          "Ann",
+          "Hello. What day is the swimming class?"
+        ],
+        [
+          "Ben",
+          "It's on Thursday."
+        ],
+        [
+          "Ann",
+          "What time does it start?"
+        ],
+        [
+          "Ben",
+          "It starts at half past six."
+        ],
+        [
+          "Ann",
+          "And when does it finish?"
+        ],
+        [
+          "Ben",
+          "It finishes at seven o'clock."
+        ],
+        [
+          "Ann",
+          "How much is it?"
+        ],
+        [
+          "Ben",
+          "It's four pounds fifty for adults and two pounds for children."
+        ],
+        [
+          "Ann",
+          "Is there a class on Saturday too?"
+        ],
+        [
+          "Ben",
+          "Yes. On Saturday it starts at ten o'clock."
+        ]
+      ],
+      "questions": [
+        "1 Thursday · 2 time · 3 half · 4 seven · 5 How · 6 £4.50 · 7 pounds · 8 Saturday"
+      ]
     }
   ]
 }
