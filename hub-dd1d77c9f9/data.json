@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-10T11:20:38Z",
+ "updatedAt": "2026-11-10T11:41:10Z",
  "upcoming": {
   "2026-11-02_e3": {
    "afternoon": "PC room: Too Cold to Learn – complaint emails",
@@ -157,60 +157,72 @@
    "amended": "2026-11-10T08:52:33Z"
   },
   "2026-11-10_e1": {
-   "afternoon": "PC room, all on screen: Task 4 exam mode (texts 3–4, no writing); our own listening in Teams General; online practice; Talk Builder from 'Your plan' to a one-minute talk; Kahoot (20 Qs)",
-   "amended": "2026-11-10T11:19:57Z",
+   "afternoon": "REPLANNED: one community-centre timetable all afternoon, present simple only – read it and vote yes/no on phones; ask What day / What time / How much; Task 4 Scripts A–B together and C–F on PCs; Partner A/B information gap; find the mistake; Hangman Paragraphs; build Sara's talk together, then each learner's 'My week' talk in pairs; Kahoot",
+   "amended": "2026-11-10T11:39:34Z",
    "cls": "E1 Speaking & Listening",
    "date": "2026-11-10",
    "links": [
     {
-     "label": "Day plan and answers",
-     "url": "https://atinwix.github.io/esol/e1/speaking-listening/docs/listening-days-times-prices-day-plan.pdf"
+     "label": "PM day plan and answers",
+     "url": "https://atinwix.github.io/esol/e1/speaking-listening/docs/community-centre-days-times-prices-day-plan-and-answers.pdf"
     },
     {
-     "label": "Lesson audio – all scripts to play",
-     "url": "https://atinwix.github.io/esol/e1/speaking-listening/exam-prep/audio/lesson-11/"
+     "label": "PM print pack (print once, double-sided)",
+     "url": "https://atinwix.github.io/esol/e1/speaking-listening/docs/community-centre-days-times-prices-print-pack.pdf"
+    },
+    {
+     "label": "PM projector lesson",
+     "url": "https://atinwix.github.io/esol/e1/speaking-listening/community-centre-days-times-prices-projector-lesson.html"
+    },
+    {
+     "label": "PM learners' page (PC / phone)",
+     "url": "https://atinwix.github.io/esol/e1/speaking-listening/community-centre-days-times-prices-interactive-practice.html"
+    },
+    {
+     "label": "PM lesson audio – Scripts A–F",
+     "url": "https://atinwix.github.io/esol/e1/speaking-listening/audio/community-centre/"
+    },
+    {
+     "label": "PM Hangman text to read aloud",
+     "url": "https://atinwix.github.io/esol/e1/speaking-listening/community-centre-hangman-paragraph-read-aloud-text.html"
+    },
+    {
+     "label": "PM Hangman game (loaded)",
+     "url": "https://atinwix.github.io/Hangman-Paragraphs-Game/?p=Uml2ZXJzaWRlIENvbW11bml0eSBDZW50cmUgaXMgb3BlbiBldmVyeSBkYXkuIE9uIE1vbmRheSB0aGVyZSBpcyBhbiBFbmdsaXNoIGNsdWIsIGFuZCBpdCBpcyBmcmVlLiBUaGUgY29tcHV0ZXIgY2xhc3MgaXMgb24gVHVlc2RheSBhdCB0d28gbydjbG9jay4gSXQgY29zdHMgdHdvIHBvdW5kcy4gT24gVGh1cnNkYXkgZXZlbmluZyBwZW9wbGUgcGxheSBmb290YmFsbC4gVGhlIGNhZsOpIHNlbGxzIHRlYSBhbmQgY29mZmVlLCBhbmQgYSB0ZWEgaXMgZWlnaHR5IHAuIE1hbnkgcGVvcGxlIGdvIHRvIHRoZSBjZW50cmUgZXZlcnkgd2VlaywgYW5kIHRoZXkgbWFrZSBuZXcgZnJpZW5kcyB0aGVyZS4"
     },
     {
      "label": "Vote card – Yes/No (phones)",
      "url": "https://atinwix.github.io/esol/all-levels/classroom-tool-vote-card.html?mode=yn"
     },
     {
-     "label": "AM projector lesson",
-     "url": "https://atinwix.github.io/esol/e1/speaking-listening/listening-days-times-prices-projector-lesson.html"
-    },
-    {
-     "label": "Lesson 11 handout",
-     "url": "https://atinwix.github.io/esol/e1/speaking-listening/exam-prep/lesson-11-handouts.pdf"
-    },
-    {
-     "label": "Lesson 11 plan + scripts",
-     "url": "https://atinwix.github.io/esol/e1/speaking-listening/exam-prep/lesson-11-plan.pdf"
-    },
-    {
-     "label": "PM projector lesson",
-     "url": "https://atinwix.github.io/esol/e1/speaking-listening/task4-exam-mode-task2-talk-pc-room-projector-lesson.html"
-    },
-    {
-     "label": "Online practice",
-     "url": "https://atinwix.github.io/esol/e1/speaking-listening/listening-days-times-prices-interactive-practice.html"
-    },
-    {
-     "label": "Talk Builder",
-     "url": "https://atinwix.github.io/esol/all-levels/speaking-task2-talk-builder.html"
-    },
-    {
      "label": "Kahoot – ready to play",
      "url": "https://create.kahoot.it/details/e1-days-times-and-prices/9d05db81-f213-4f40-832f-0c35900b2c81"
     },
     {
-     "label": "Kahoot import file (20 Qs)",
-     "url": "https://atinwix.github.io/esol/e1/speaking-listening/listening-days-times-prices-kahoot.xlsx"
+     "label": "Kahoot import file (20 Qs) – PM community centre",
+     "url": "https://atinwix.github.io/esol/e1/speaking-listening/docs/community-centre-days-times-prices-kahoot.xlsx"
+    },
+    {
+     "label": "AM day plan and answers",
+     "url": "https://atinwix.github.io/esol/e1/speaking-listening/docs/listening-days-times-prices-day-plan.pdf"
+    },
+    {
+     "label": "AM projector lesson",
+     "url": "https://atinwix.github.io/esol/e1/speaking-listening/listening-days-times-prices-projector-lesson.html"
+    },
+    {
+     "label": "AM lesson audio",
+     "url": "https://atinwix.github.io/esol/e1/speaking-listening/exam-prep/audio/lesson-11/"
+    },
+    {
+     "label": "Lesson 11 handout",
+     "url": "https://atinwix.github.io/esol/e1/speaking-listening/exam-prep/lesson-11-handouts.pdf"
     }
    ],
    "morning": "My week warm-up (present simple); Exam Prep Lesson 11 – days, prices, times; Task 4 texts 1–2 with Yes/No on phones (vote card); handout sections A–D; copy-and-complete dialogue from the board (AM slide 13, Script G)",
-   "prep": "Set up a WordWall spinning wheel with the seven days (list in the day plan's Prep line). Log the PCs in and post the online practice, Talk Builder and Task 4 Put It in Order links in Teams General before the afternoon.",
-   "print": "Lesson 11 Handout E1-11A (1 side, one each). Nothing to cut out. Nothing for the afternoon.",
-   "title": "Days, times and prices for Task 4 – finish the Task 2 talk"
+   "prep": "Check the projector sound for the PM scripts. Learners need phones for the Vote Card.",
+   "print": "AM: Lesson 11 Handout E1-11A (1 side, one each). PM: print pack below – plan at the front, then one talk-frame sheet per learner (21), double-sided, blank backs already in. Nothing to cut out.",
+   "title": "Days, times and prices for Task 4 – community centre (PM replanned)"
   },
   "2026-11-11_e3": {
    "afternoon": "Classroom, paper: time order with Hawa's Morning (3A); alphabetical order on the projector – learners come up and tap the words in order (slides 7–9), then 3B; then ESB Set L Tasks 1 and 2 (14 questions) under timed conditions, swap-and-mark with proof from the text",
