@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-10T11:59:19Z",
+ "updatedAt": "2026-11-10T16:18:48Z",
  "upcoming": {
   "2026-11-02_e3": {
    "afternoon": "PC room: Too Cold to Learn – complaint emails",
@@ -159,6 +159,7 @@
   "2026-11-10_e1": {
    "afternoon": "REPLANNED, learners on their own PCs for most of the lesson: one community-centre timetable, present simple only – timetable tasks and partner questions on the PC; Task 4 Scripts A–F answered on the PC as you play them; Partner A/B information gap; find the mistake; Hangman Paragraphs; Sara's talk gap-fill, then each learner's 'My week' talk on screen and given to a partner; Kahoot. Projector only for instructions and checking.",
    "amended": "2026-11-10T11:58:32Z",
+   "asTaught": "As taught: AM Task 4 days, times and prices with a gapfill added; PM (PC room) replanned community-centre timetable tasks, Scripts, information gap and present simple corrections. The Kahoot and the paired talk preparation were not finished and are carried to Tue 17 Nov.",
    "cls": "E1 Speaking & Listening",
    "date": "2026-11-10",
    "links": [
@@ -218,7 +219,7 @@
    "morning": "My week warm-up (present simple); Exam Prep Lesson 11 – days, prices, times; Task 4 texts 1–2 with Yes/No on phones (vote card); handout sections A–D; copy-and-complete dialogue from the board (AM slide 13, Script G)",
    "prep": "Post the PM learners' page link in Teams General. Check the projector sound for the scripts.",
    "print": "AM: Lesson 11 Handout E1-11A (1 side, one each). PM: nothing to print – all on the PCs. Nothing to cut out.",
-   "title": "Days, times and prices for Task 4 – community centre (PM replanned)"
+   "title": "As taught: Days, times and prices for Task 4 – community centre (PM replanned)"
   },
   "2026-11-11_e3": {
    "afternoon": "Classroom, paper: time order with Hawa's Morning (3A); alphabetical order on the projector – learners come up and tap the words in order (slides 7–9), then 3B; then ESB Set L Tasks 1 and 2 (14 questions) under timed conditions, swap-and-mark with proof from the text",
@@ -323,6 +324,73 @@
    "print": "Student handout (2 sides, one each); question cards (3 sides = 6 sets). Nothing for the afternoon.",
    "title": "Superlatives, likes and reasons – Task 4 listening and discussion",
    "amended": "2026-11-10T10:02:56Z"
+  },
+  "2026-11-17_e1": {
+   "afternoon": "PC room: Kahoot (days, times, prices); Task 3 recap on the PC; Task 1 and Task 4 practice on the PC; the whole exam in pairs (Tasks 1–4, candidate and assessor, two rounds); True/False feedback on what is still difficult",
+   "cls": "E1 Speaking & Listening",
+   "date": "2026-11-17",
+   "links": [
+    {
+     "label": "Print pack – print once, double-sided (50 pages)",
+     "url": "https://atinwix.github.io/esol/e1/speaking-listening/docs/print-pack-2026-11-17.pdf"
+    },
+    {
+     "label": "Day plan and answers (teach from this)",
+     "url": "https://atinwix.github.io/esol/e1/speaking-listening/docs/short-conversations-task1-questions-day-plan-and-answers.pdf"
+    },
+    {
+     "label": "AM projector lesson",
+     "url": "https://atinwix.github.io/esol/e1/speaking-listening/short-conversations-task1-questions-projector-lesson.html"
+    },
+    {
+     "label": "PM projector lesson",
+     "url": "https://atinwix.github.io/esol/e1/speaking-listening/exam-run-through-tasks-1-to-4-pc-room-projector-lesson.html"
+    },
+    {
+     "label": "Learners' page (PC / phone)",
+     "url": "https://atinwix.github.io/esol/e1/speaking-listening/task1-task4-exam-run-through-interactive-practice.html"
+    },
+    {
+     "label": "Lesson audio – Scripts A–J",
+     "url": "https://atinwix.github.io/esol/e1/speaking-listening/audio/short-conversations/"
+    },
+    {
+     "label": "Kahoot import file (20 Qs)",
+     "url": "https://atinwix.github.io/esol/e1/speaking-listening/docs/short-conversations-task1-questions-kahoot.xlsx"
+    },
+    {
+     "label": "Last Tuesday's quiz (days, times, prices) – play link for the PM warm-up",
+     "url": "https://create.kahoot.it/details/e1-days-times-and-prices/9d05db81-f213-4f40-832f-0c35900b2c81"
+    },
+    {
+     "label": "Vote card – Yes/No (phones)",
+     "url": "https://atinwix.github.io/esol/all-levels/classroom-tool-vote-card.html?mode=yn"
+    },
+    {
+     "label": "Vote card – A–D (phones)",
+     "url": "https://atinwix.github.io/esol/all-levels/classroom-tool-vote-card.html?mode=abcd"
+    },
+    {
+     "label": "Vote card – True/False (phones)",
+     "url": "https://atinwix.github.io/esol/all-levels/classroom-tool-vote-card.html?mode=tf"
+    },
+    {
+     "label": "Task 3 pair practice (PC)",
+     "url": "https://atinwix.github.io/esol/e1/speaking-listening/task3-describe-the-picture-pair-practice.html"
+    },
+    {
+     "label": "Lesson 12 handout E1-12A (single page)",
+     "url": "https://atinwix.github.io/esol/e1/speaking-listening/exam-prep/lesson-12-handouts.pdf"
+    }
+   ],
+   "morning": "Finish the My week talk in pairs; Where are they? (Vote Card A–D); Exam Prep Lesson 12 – two short conversations with yes/no and detail questions (Handout E1-12A); say the dialogues in pairs; Task 1 questions: word order on the board, question words, spelling and phone numbers; Task 1 in pairs; 20-question Kahoot",
+   "prep": "None beyond printing. Post the learners' page link in Teams General before the PM lesson. Check the projector sound.",
+   "print": "Print pack only (50 pages, double-sided)",
+   "title": "Task 4 short conversations, Task 1 questions and a full Tasks 1–4 run-through",
+   "todo": [
+    "Kahoot not made live yet – sign in to Kahoot in the Claude app's browser (or Chrome) and ask Claude to \"make the Kahoots\". Until then, import the file."
+   ],
+   "amended": "2026-11-10T16:18:21Z"
   }
  },
  "status": {},
