@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-10T10:05:00Z",
+ "updatedAt": "2026-11-10T10:15:00Z",
  "upcoming": {
   "2026-11-02_e3": {
    "afternoon": "PC room: Too Cold to Learn – complaint emails",
@@ -166,6 +166,10 @@
      "url": "https://atinwix.github.io/esol/e1/speaking-listening/docs/listening-days-times-prices-day-plan.pdf"
     },
     {
+     "label": "Vote card – Yes/No (phones)",
+     "url": "https://atinwix.github.io/esol/all-levels/classroom-tool-vote-card.html?mode=yn"
+    },
+    {
      "label": "AM projector lesson",
      "url": "https://atinwix.github.io/esol/e1/speaking-listening/listening-days-times-prices-projector-lesson.html"
     },
@@ -176,10 +180,6 @@
     {
      "label": "Lesson 11 plan + scripts",
      "url": "https://atinwix.github.io/esol/e1/speaking-listening/exam-prep/lesson-11-plan.pdf"
-    },
-    {
-     "label": "Cut-out cards",
-     "url": "https://atinwix.github.io/esol/e1/speaking-listening/docs/days-yes-no-cards-cut-out.pdf"
     },
     {
      "label": "PM projector lesson",
@@ -202,11 +202,11 @@
      "url": "https://atinwix.github.io/esol/e1/speaking-listening/listening-days-times-prices-kahoot.xlsx"
     }
    ],
-   "morning": "Weekend warm-up talk; Exam Prep Lesson 11 – days, prices, times; Task 4 texts 1–2 with YES/NO cards; handout sections A–D",
-   "prep": "Cut out the day cards and YES/NO cards (one pair each). Log the PCs in and post the online practice, Talk Builder and Task 4 Put It in Order links in Teams General before the afternoon.",
-   "print": "Lesson 11 Handout E1-11A (1 side, one each); cut-out sheet (2 sides). Nothing for the afternoon.",
+   "morning": "Weekend warm-up talk; Exam Prep Lesson 11 – days, prices, times; Task 4 texts 1–2 with Yes/No on phones (vote card); handout sections A–D",
+   "prep": "Set up a WordWall spinning wheel with the seven days (list in chat). Log the PCs in and post the online practice, Talk Builder and Task 4 Put It in Order links in Teams General before the afternoon.",
+   "print": "Lesson 11 Handout E1-11A (1 side, one each). Nothing to cut out. Nothing for the afternoon.",
    "title": "Days, times and prices for Task 4 – finish the Task 2 talk",
-   "amended": "2026-11-09T19:14:37Z"
+   "amended": "2026-11-10T10:15:00Z"
   },
   "2026-11-11_e3": {
    "afternoon": "Classroom, paper: time order with Hawa's Morning (3A); alphabetical order on the projector – learners come up and tap the words in order (slides 7–9), then 3B; then ESB Set L Tasks 1 and 2 (14 questions) under timed conditions, swap-and-mark with proof from the text",
