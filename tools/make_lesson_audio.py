@@ -6,6 +6,10 @@ For every */audio/*/scripts.json in the repo:
     Scripts made by a fallback are remade with Gemini when Gemini works again.
   - writes index.html: one page with a player for each script
 
+Labelling rule: give scripts ids script-a, script-b ... in lesson order and labels
+"Script A – <topic> (Handout Section X)", and put "(Script A)" on the matching
+listening task in the worksheet, so the audio and the handout always match.
+
 Run by .github/workflows/lesson-audio.yml. Needs the GEMINI_API_KEY secret.
 To remake one script's audio, delete its MP3 and push.
 """
@@ -175,6 +179,7 @@ h1{{font-size:clamp(22px,3.4vw,32px);margin:4px 0 6px}}
 .card{{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:0 0 14px}}
 .card.playing{{border-color:var(--accent);box-shadow:0 0 0 3px var(--soft)}}
 h2{{font-size:clamp(19px,2.6vw,24px);margin:0 0 12px}}
+.tag{{display:inline-block;background:var(--accent);color:var(--accent-ink);border-radius:8px;padding:2px 10px;margin-right:8px}}
 .row{{display:flex;flex-wrap:wrap;gap:10px}}
 button{{font:inherit;font-size:18px;border-radius:10px;border:1px solid var(--line);background:#fff;color:var(--ink);padding:12px 18px;min-height:48px;cursor:pointer}}
 button.main{{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);font-weight:700}}
@@ -208,7 +213,8 @@ SCRIPTS.forEach(s=>{{
   const lines=s.lines.map(([w,t])=>`<p><span class="who">${{w}}:</span> ${{t}}</p>`).join('');
   const qs=(s.questions||[]).map(q=>{{const m=q.match(/^(.*?)\\s*\\((.*)\\)\\s*$/);
     return m?`<p>${{m[1]}} <span class="ans">→ ${{m[2]}}</span></p>`:`<p>${{q}}</p>`;}}).join('');
-  c.innerHTML=`<h2>${{s.label}}</h2>
+  const lm=s.label.match(/^(Script \\w+)\\s*[–-]\\s*(.*)$/);
+  c.innerHTML=`<h2>${{lm?`<span class="tag">${{lm[1]}}</span>${{lm[2]}}`:s.label}}</h2>
   <audio preload="none" src="${{s.id}}.mp3"></audio>
   <div class="row">
     <button class="main" data-act="once">▶ Play</button>

@@ -7,8 +7,8 @@
   },
   "scripts": [
     {
-      "id": "e",
-      "label": "Tuesday or Thursday? – six sentences (2 or 4 fingers)",
+      "id": "script-a",
+      "label": "Script A – Tuesday or Thursday? Six sentences (no worksheet – learners show 2 or 4 fingers)",
       "lines": [
         [
           "Ann",
@@ -40,8 +40,8 @@
       ]
     },
     {
-      "id": "f",
-      "label": "Section B – listen and write the price (each said twice)",
+      "id": "script-b",
+      "label": "Script B – Prices (Handout Section B)",
       "lines": [
         [
           "Ben",
@@ -73,8 +73,8 @@
       ]
     },
     {
-      "id": "a",
-      "label": "Script A – Doctor's surgery message",
+      "id": "script-c",
+      "label": "Script C – Doctor's surgery message (Handout Sections C and D)",
       "lines": [
         [
           "Ann",
@@ -87,8 +87,8 @@
       ]
     },
     {
-      "id": "b",
-      "label": "Script B – At the shop",
+      "id": "script-d",
+      "label": "Script D – At the shop (Handout Sections C and D)",
       "lines": [
         [
           "Ann",
@@ -113,8 +113,8 @@
       ]
     },
     {
-      "id": "c",
-      "label": "Script C – My English class",
+      "id": "script-e",
+      "label": "Script E – My English class (exam practice – no writing)",
       "lines": [
         [
           "Ben",
@@ -127,8 +127,8 @@
       ]
     },
     {
-      "id": "d",
-      "label": "Script D – The bus",
+      "id": "script-f",
+      "label": "Script F – The bus (exam practice – no writing)",
       "lines": [
         [
           "Ann",
