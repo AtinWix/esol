@@ -38,7 +38,9 @@ Word documents:
 - [E1 & E2 Listening – Task 4 – Put It in Order](e1/speaking-listening/task4-listening-put-it-in-order.html)
 
 Word documents:
+- [E1 Days, Times and Prices – Community Centre Timetable – Task 4 Listening and Task 2 Talk – Day Plan and Answers](e1/speaking-listening/docs/community-centre-days-times-prices-day-plan-and-answers.pdf) (PDF) · [Word](e1/speaking-listening/docs/community-centre-days-times-prices-day-plan-and-answers.docx)
 - [E1 Days, Times and Prices – Community Centre Timetable – Kahoot Quiz (20 Qs)](e1/speaking-listening/docs/community-centre-days-times-prices-kahoot.pdf) (PDF) · [Word](e1/speaking-listening/docs/community-centre-days-times-prices-kahoot.xlsx)
+- [E1 Task 2 Talk – My Week – Community Centre Timetable and Talk Frame – Handout](e1/speaking-listening/docs/community-centre-days-times-prices-talk-frame-handout.pdf) (PDF) · [Word](e1/speaking-listening/docs/community-centre-days-times-prices-talk-frame-handout.docx)
 - [E1 Days of the Week and Yes/No Cards – Cut-out Sheet](e1/speaking-listening/docs/days-yes-no-cards-cut-out.pdf) (PDF) · [Word](e1/speaking-listening/docs/days-yes-no-cards-cut-out.docx)
 - [Induction – timetable, classroom and safety words – preteaching (before the RARPA form)](e1/speaking-listening/docs/induction-timetable-classroom-and-safety-words-preteaching.pdf) (PDF) · [Word](e1/speaking-listening/docs/induction-timetable-classroom-and-safety-words-preteaching.docx)
 - [E1 Days, Times and Prices – Task 4 Listening and Task 2 Talk – Day Plan and Answers](e1/speaking-listening/docs/listening-days-times-prices-day-plan.pdf) (PDF) · [Word](e1/speaking-listening/docs/listening-days-times-prices-day-plan.docx)
