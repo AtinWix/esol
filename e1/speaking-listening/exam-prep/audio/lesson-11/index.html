@@ -29,7 +29,7 @@ audio{display:none}
 </style></head><body>
 <main>
 <h1>E1 Listening for Numbers, Days, Times and Prices – Lesson Audio</h1>
-<div class="top"><span>Use “Play twice” to play a script, pause, then play it again. “Pause” stops and carries on from the same place.</span><a class="plan" href="../../lesson-11-plan.pdf">Lesson plan</a></div>
+<div class="top"><span>Use “Play twice” to play a script, pause, then play it again. Press ▶ Play again to pause; press it again to carry on.</span><a class="plan" href="../../lesson-11-plan.pdf">Lesson plan</a></div>
 <div id="list"></div>
 </main>
 <script>
@@ -39,7 +39,7 @@ let current = null;
 function stopAll(){ document.querySelectorAll('audio').forEach(a=>{a.pause();a.currentTime=0;a.onended=null;});
   document.querySelectorAll('.card').forEach(c=>c.classList.remove('playing'));
   document.querySelectorAll('.status').forEach(s=>s.textContent=s.dataset.base||''); clearTimeout(window._gap);
-  document.querySelectorAll('[data-act="pause"]').forEach(b=>{b.textContent='⏸ Pause';b.disabled=true;});
+  document.querySelectorAll('[data-act="once"]').forEach(b=>{b.textContent='▶ Play';});
   document.querySelectorAll('.card').forEach(c=>{c._paused=false;c._resume=null;c._gapWaiting=false;}); }
 SCRIPTS.forEach(s=>{
   const c=document.createElement('section'); c.className='card';
@@ -51,7 +51,6 @@ SCRIPTS.forEach(s=>{
   <div class="row">
     <button class="main" data-act="once">▶ Play</button>
     <button data-act="twice">▶▶ Play twice</button>
-    <button data-act="pause" disabled>⏸ Pause</button>
     <button data-act="stop">■ Stop</button>
     <button data-act="script">Show script</button>
     ${qs?'<button data-act="qs">Questions</button><button data-act="ans">Answers</button>':''}
@@ -62,10 +61,10 @@ SCRIPTS.forEach(s=>{
   list.appendChild(c);
   const a=c.querySelector('audio'), st=c.querySelector('.status');
   a.addEventListener('error',()=>{st.dataset.base='Audio not ready yet – it is made automatically a few minutes after upload.';st.textContent=st.dataset.base;});
-  const pb=c.querySelector('[data-act="pause"]');
-  function play(times){ stopAll(); c.classList.add('playing'); pb.disabled=false; let n=1;
+  const pb=c.querySelector('[data-act="once"]');
+  function play(times){ stopAll(); c.classList.add('playing'); pb.textContent='⏸ Pause'; let n=1;
     const go=()=>{c._gapWaiting=false; st.textContent=times>1?`Playing (${n} of ${times})…`:'Playing…'; a.currentTime=0; a.play().catch(()=>{});};
-    a.onended=()=>{ if(n<times){n++; st.textContent='Short pause…'; c._gapWaiting=true; window._gap=setTimeout(go,3000);} else {c.classList.remove('playing'); pb.disabled=true; st.textContent='Finished.';} };
+    a.onended=()=>{ if(n<times){n++; st.textContent='Short pause…'; c._gapWaiting=true; window._gap=setTimeout(go,3000);} else {c.classList.remove('playing'); pb.textContent='▶ Play'; st.textContent='Finished.';} };
     c._go=go; go(); }
   function togglePause(){ if(!c.classList.contains('playing')) return;
     if(!c._paused){ c._paused=true; pb.textContent='▶ Resume'; c._st=st.textContent;
@@ -74,7 +73,7 @@ SCRIPTS.forEach(s=>{
     else { c._paused=false; pb.textContent='⏸ Pause'; st.textContent=c._st||''; const r=c._resume; c._resume=null; if(r) r(); } }
   c.addEventListener('click',e=>{const b=e.target.closest('button'); if(!b) return;
     const act=b.dataset.act;
-    if(act==='once') play(1); else if(act==='twice') play(2); else if(act==='stop') stopAll(); else if(act==='pause') togglePause();
+    if(act==='once'){ if(c.classList.contains('playing')) togglePause(); else play(1); } else if(act==='twice') play(2); else if(act==='stop') stopAll();
     else if(act==='script'){const x=c.querySelector('.b-script'); x.classList.toggle('open'); b.textContent=x.classList.contains('open')?'Hide script':'Show script';}
     else if(act==='qs'){c.querySelector('.b-qs').classList.toggle('open');}
     else if(act==='ans'){const x=c.querySelector('.b-qs'); x.classList.add('open'); x.classList.toggle('show-ans');}
