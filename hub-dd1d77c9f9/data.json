@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-10T10:40:00Z",
+ "updatedAt": "2026-11-10T10:28:05Z",
  "upcoming": {
   "2026-11-02_e3": {
    "afternoon": "PC room: Too Cold to Learn – complaint emails",
@@ -154,10 +154,11 @@
    "todo": [
     "Live Kahoot question 12 still says the big Broadway Market is on Saturday only. Next time you are signed in to Kahoot, change the answer to \"Saturday and Sunday\" (or ask Claude to re-import the updated file)."
    ],
-   "amended": "2026-11-07T14:47:17Z"
+   "amended": "2026-11-10T08:52:33Z"
   },
   "2026-11-10_e1": {
    "afternoon": "PC room, all on screen: Task 4 exam mode (texts 3–4, no writing); our own listening in Teams General; online practice; Talk Builder from 'Your plan' to a one-minute talk; Kahoot (20 Qs)",
+   "amended": "2026-11-10T10:21:47Z",
    "cls": "E1 Speaking & Listening",
    "date": "2026-11-10",
    "links": [
@@ -207,13 +208,13 @@
     }
    ],
    "morning": "My week warm-up (present simple); Exam Prep Lesson 11 – days, prices, times; Task 4 texts 1–2 with Yes/No on phones (vote card); handout sections A–D",
-   "prep": "Set up a WordWall spinning wheel with the seven days (list in chat). Log the PCs in and post the online practice, Talk Builder and Task 4 Put It in Order links in Teams General before the afternoon.",
+   "prep": "Set up a WordWall spinning wheel with the seven days (list in the day plan's Prep line). Log the PCs in and post the online practice, Talk Builder and Task 4 Put It in Order links in Teams General before the afternoon.",
    "print": "Lesson 11 Handout E1-11A (1 side, one each). Nothing to cut out. Nothing for the afternoon.",
-   "title": "Days, times and prices for Task 4 – finish the Task 2 talk",
-   "amended": "2026-11-10T10:40:00Z"
+   "title": "Days, times and prices for Task 4 – finish the Task 2 talk"
   },
   "2026-11-11_e3": {
    "afternoon": "Classroom, paper: time order with Hawa's Morning (3A); alphabetical order on the projector – learners come up and tap the words in order (slides 7–9), then 3B; then ESB Set L Tasks 1 and 2 (14 questions) under timed conditions, swap-and-mark with proof from the text",
+   "amended": "2026-11-10T10:08:20Z",
    "cls": "E3 Reading",
    "date": "2026-11-11",
    "links": [
@@ -265,8 +266,7 @@
    "morning": "Exam Prep Lesson 2: Hangman Paragraphs settle-in; who is 'he'? what is 'it'? (2A); read Two Wheels and a New Start and track pronouns (2B, 2C A); guess words from context (2C B); find details (2C C); 20-question Kahoot; be the examiner – learners write two exam questions each pair",
    "prep": "Print Set L Tasks 1–2 from the ESB sample paper file. Have the Kahoot ready and the timer slide open before 12:30. No cutting out.",
    "print": "Print pack only (94 pages, double-sided) – day plan, What to say script, Lesson 2 handouts ×21, Lesson 3 page 1 ×21. Plus Set L Tasks 1 and 2 (one each, from your ESB sample paper file).",
-   "title": "Pronouns, word meaning, ordering tasks and an ESB paper (Set L Tasks 1–2)",
-   "amended": "2026-11-10T10:05:00Z"
+   "title": "Pronouns, word meaning, ordering tasks and an ESB paper (Set L Tasks 1–2)"
   },
   "2026-11-12_e2": {
    "afternoon": "PC room: online choose-and-build practice; Three places, one winner (TfL Journey Planner, 4 superlative sentences in Teams General); Task 4 listenings – you read the two scripts (in the day plan); three-way discussion: best way to shop in London; Kahoot (20 Qs)",
@@ -314,7 +314,7 @@
    "prep": "Cut up the question cards (6 sets, A–F). Log in the PCs and post the online practice and TfL Journey Planner links in Teams General before the afternoon.",
    "print": "Student handout (2 sides, one each); question cards (3 sides = 6 sets). Nothing for the afternoon.",
    "title": "Superlatives, likes and reasons – Task 4 listening and discussion",
-   "amended": "2026-11-09T19:14:37Z"
+   "amended": "2026-11-10T10:02:56Z"
   }
  },
  "status": {},
