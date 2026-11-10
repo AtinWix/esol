@@ -22,6 +22,10 @@ Word documents:
 - [Induction E2/E3 – classroom rules and safety words – preteaching (before the RARPA form)](all-levels/docs/induction-e2-e3-classroom-rules-and-safety-words-preteaching.pdf) (PDF) · [Word](all-levels/docs/induction-e2-e3-classroom-rules-and-safety-words-preteaching.docx)
 
 ## e1/speaking-listening
+- [E1 Community Centre – Days, Times and Prices – Lesson Audio (Scripts A–F)](e1/speaking-listening/audio/community-centre/index.html) – Audio for the six Task 4 scripts, one player each, play/pause on one button.
+- [E1 Community Centre – Hangman Paragraph – Text to Read Aloud (Teacher)](e1/speaking-listening/community-centre-hangman-paragraph-read-aloud-text.html) – Teacher page: the settle-in paragraph to read aloud, with the game link that opens it ready to play.
+- [E1 Days, Times and Prices – Community Centre Timetable – Listening, Partner A/B, Find the Mistake and My Talk – Interactive Practice](e1/speaking-listening/community-centre-days-times-prices-interactive-practice.html) – Learners' PC/phone page: Task 4 answers for Scripts C–F with script gap-fills, a Partner A / Partner B information gap, ten present simple mistakes to find and correct, and a 'My week' talk frame that checks days, times and prices.
+- [E1 Days, Times and Prices – Community Centre Timetable – Task 4 Listening and Task 2 Talk – Projector Lesson](e1/speaking-listening/community-centre-days-times-prices-projector-lesson.html) – One community-centre timetable all lesson: Vote Card yes/no, asking about days, times and prices, six Task 4 scripts (audio built in), information gap, find the mistake, building a one-minute 'My week' talk together, Kahoot.
 - [E1 Listening – Days, Times and Prices – Interactive Practice](e1/speaking-listening/listening-days-times-prices-interactive-practice.html) – Days, prices, times, and read-and-answer Task 4 questions. Works on PCs and phones.
 - [E1 Listening – Days, Times and Prices – Task 4 Projector Lesson](e1/speaking-listening/listening-days-times-prices-projector-lesson.html) – Days, prices and times; listen for one thing; Task 4 texts with yes/no and detail questions.
 - [E1 Speaking & Listening – Task 4 Exam Mode and Task 2 Talk – PC Room Projector Lesson](e1/speaking-listening/task4-exam-mode-task2-talk-pc-room-projector-lesson.html) – PC room: Task 4 in exam mode, our own listening in Teams, online practice, finish the Task 2 talk, Kahoot.
@@ -34,6 +38,7 @@ Word documents:
 - [E1 & E2 Listening – Task 4 – Put It in Order](e1/speaking-listening/task4-listening-put-it-in-order.html)
 
 Word documents:
+- [E1 Days, Times and Prices – Community Centre Timetable – Kahoot Quiz (20 Qs)](e1/speaking-listening/docs/community-centre-days-times-prices-kahoot.pdf) (PDF) · [Word](e1/speaking-listening/docs/community-centre-days-times-prices-kahoot.xlsx)
 - [E1 Days of the Week and Yes/No Cards – Cut-out Sheet](e1/speaking-listening/docs/days-yes-no-cards-cut-out.pdf) (PDF) · [Word](e1/speaking-listening/docs/days-yes-no-cards-cut-out.docx)
 - [Induction – timetable, classroom and safety words – preteaching (before the RARPA form)](e1/speaking-listening/docs/induction-timetable-classroom-and-safety-words-preteaching.pdf) (PDF) · [Word](e1/speaking-listening/docs/induction-timetable-classroom-and-safety-words-preteaching.docx)
 - [E1 Days, Times and Prices – Task 4 Listening and Task 2 Talk – Day Plan and Answers](e1/speaking-listening/docs/listening-days-times-prices-day-plan.pdf) (PDF) · [Word](e1/speaking-listening/docs/listening-days-times-prices-day-plan.docx)

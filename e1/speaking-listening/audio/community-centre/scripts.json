@@ -1,0 +1,142 @@
+{
+  "title": "E1 Riverside Community Centre – Days, Times and Prices – Lesson Audio",
+  "plan": "../../docs/community-centre-days-times-prices-day-plan-and-answers.pdf",
+  "voices": {
+    "Ann": "Kore",
+    "Ben": "Puck"
+  },
+  "scripts": [
+    {
+      "id": "script-a",
+      "label": "Script A – Phone message (projector, together)",
+      "lines": [
+        [
+          "Ann",
+          "Hello. This is Riverside Community Centre. We have a new yoga class. It is on Wednesday. It starts at seven o'clock. It costs three pounds. Thank you. Goodbye."
+        ]
+      ],
+      "questions": [
+        "Is the yoga class on Wednesday? (Yes, it is.)",
+        "What time does the yoga class start? (Seven o'clock)"
+      ]
+    },
+    {
+      "id": "script-b",
+      "label": "Script B – Conversation (projector, together)",
+      "lines": [
+        [
+          "Ben",
+          "Hello. Is there a music class?"
+        ],
+        [
+          "Ann",
+          "Yes, there is. It's on Friday."
+        ],
+        [
+          "Ben",
+          "What time does it start?"
+        ],
+        [
+          "Ann",
+          "It starts at four o'clock."
+        ],
+        [
+          "Ben",
+          "How much is it?"
+        ],
+        [
+          "Ann",
+          "It's two pounds."
+        ]
+      ],
+      "questions": [
+        "Is the music class on Thursday? (No, it isn't. It's on Friday.)",
+        "How much is the music class? (Two pounds (£2))"
+      ]
+    },
+    {
+      "id": "script-c",
+      "label": "Script C – Phone message (activity: 1 Listening)",
+      "lines": [
+        [
+          "Ann",
+          "Hi Maria. It's Lina. The art class is on Monday. It starts at half past one. It costs one pound fifty. See you there. Bye."
+        ]
+      ],
+      "questions": [
+        "Is the art class on Monday? (Yes, it is.)",
+        "How much is the art class? (One pound fifty (£1.50))"
+      ]
+    },
+    {
+      "id": "script-d",
+      "label": "Script D – Conversation (activity: 1 Listening)",
+      "lines": [
+        [
+          "Ann",
+          "Excuse me. Is the library open on Sunday?"
+        ],
+        [
+          "Ben",
+          "No, it isn't. It's open Monday to Saturday."
+        ],
+        [
+          "Ann",
+          "What time does it close?"
+        ],
+        [
+          "Ben",
+          "It closes at six o'clock."
+        ]
+      ],
+      "questions": [
+        "Is the library open on Sunday? (No, it isn't.)",
+        "What time does the library close? (Six o'clock)"
+      ]
+    },
+    {
+      "id": "script-e",
+      "label": "Script E – Phone message (activity: 1 Listening)",
+      "lines": [
+        [
+          "Ben",
+          "Hello, Ali. This is Joe. The football match is on Saturday. It starts at two o'clock. Bring some water. See you!"
+        ]
+      ],
+      "questions": [
+        "Is the football match on Sunday? (No, it isn't. It's on Saturday.)",
+        "What time does the match start? (Two o'clock)"
+      ]
+    },
+    {
+      "id": "script-f",
+      "label": "Script F – Conversation (activity: 1 Listening)",
+      "lines": [
+        [
+          "Ben",
+          "Hello. What day is the dance class?"
+        ],
+        [
+          "Ann",
+          "It's on Tuesday."
+        ],
+        [
+          "Ben",
+          "And how much is it?"
+        ],
+        [
+          "Ann",
+          "It's free."
+        ],
+        [
+          "Ben",
+          "Great. Thank you!"
+        ]
+      ],
+      "questions": [
+        "Is the dance class on Tuesday? (Yes, it is.)",
+        "How much is the dance class? (It's free)"
+      ]
+    }
+  ]
+}

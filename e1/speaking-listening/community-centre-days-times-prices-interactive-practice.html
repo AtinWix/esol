@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>E1 Days, Times and Prices – Community Centre – Task 4 Listening and Task 2 Talk – Interactive Practice</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@500;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+:root{--bg:#F4F6F8;--surface:#fff;--ink:#141D28;--muted:#4F5B69;--line:#D3D9E0;--accent:#1F5FA8;--accent-ink:#fff;--soft:#E2EBF7;--ok:#1C7F46;--ok-bg:#E3F4EA;--bad:#B3261E;--bad-bg:#FBE7E5;--mark:#FCEFCC;--display:"Lexend","Segoe UI",Arial,sans-serif;--body:"Atkinson Hyperlegible",Verdana,Arial,sans-serif}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#10151B;--surface:#19212A;--ink:#EEF2F6;--muted:#A2ADBA;--line:#2B3642;--accent:#86A8E6;--accent-ink:#0B1424;--soft:#1C2A42;--ok:#5BD08C;--ok-bg:#16301F;--bad:#F08A82;--bad-bg:#3A1E1B;--mark:#3A2F14;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#10151B;--surface:#19212A;--ink:#EEF2F6;--muted:#A2ADBA;--line:#2B3642;--accent:#86A8E6;--accent-ink:#0B1424;--soft:#1C2A42;--ok:#5BD08C;--ok-bg:#16301F;--bad:#F08A82;--bad-bg:#3A1E1B;--mark:#3A2F14;color-scheme:dark}
+*{box-sizing:border-box}html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:clamp(16px,1.25vw,21px);line-height:1.45;padding-bottom:30px}
+.pad{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header{background:var(--surface);border-bottom:1px solid var(--line);padding-block:8px}
+.hrow{max-width:1500px;margin:0 auto;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+h1{font:700 1.05em/1.2 var(--display);margin:0;flex:1;min-width:12em}
+.tabs{max-width:1500px;margin:10px auto 0;display:flex;gap:6px;flex-wrap:wrap}
+.tab{font:700 .9em/1 var(--display);padding:.7em 1em;border-radius:10px;border:2px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;min-height:44px}
+.tab[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+main{max-width:1500px;margin:14px auto 0}
+h2{font:700 1.35em/1.2 var(--display);margin:0 0 .3em}
+.how{color:var(--muted);margin:0 0 .8em}
+.grid{display:grid;gap:12px}.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 16px;min-width:0}
+.card h3{font:700 1em/1.2 var(--display);margin:0 0 .4em}
+.lab{display:inline-block;background:var(--accent);color:var(--accent-ink);border-radius:6px;padding:.15em .55em;font:700 .85em var(--display);margin-right:.4em}
+.q{margin:.5em 0 .2em;font-weight:700}
+.yn{display:flex;gap:8px;flex-wrap:wrap}
+.yn button,.btn{font:700 .9em/1 var(--display);padding:.6em 1em;border-radius:10px;border:2px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer;min-height:44px}
+.yn button[aria-pressed="true"]{border-color:var(--accent);background:var(--soft)}
+.btn.main{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+input[type=text],select,textarea{font:inherit;color:var(--ink);background:var(--bg);border:2px solid var(--line);border-radius:8px;padding:.35em .55em;min-width:0}
+input[type=text]{width:100%}
+.good{border-color:var(--ok)!important;background:var(--ok-bg)!important}.badx{border-color:var(--bad)!important;background:var(--bad-bg)!important}
+.fb{min-height:1.3em;font-weight:700;margin:.3em 0 0}.fb.ok{color:var(--ok)}.fb.no{color:var(--bad)}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:10px}
+.script{margin-top:.6em;padding:.6em .8em;background:var(--soft);border-radius:10px;display:none;line-height:2}
+.script.open{display:block}
+table.t{border-collapse:collapse;width:100%;background:var(--surface)}table.t th,table.t td{border:2px solid var(--line);padding:.35em .6em;text-align:left}table.t th{background:var(--soft);font-family:var(--display)}
+table.t td.gap input{width:100%}
+.askme{color:var(--muted);font-size:.85em}
+.sent{font-size:1.2em;line-height:2}.w{cursor:pointer;border-radius:5px;padding:0 .12em}.w:hover{background:var(--mark)}
+.w.hit{background:var(--bad-bg);color:var(--bad);text-decoration:line-through}.w.miss{animation:sh .4s}@keyframes sh{25%{transform:translateX(-3px)}75%{transform:translateX(3px)}}
+.ecard.done{border-color:var(--ok);background:var(--ok-bg)}
+.frame{display:grid;gap:.5em;font-size:1.05em}.frame .line{display:flex;gap:.4em;align-items:center;flex-wrap:wrap}
+.frame input[type=text]{width:auto;flex:1 1 9em}
+.frame select{flex:0 1 auto}
+.final{font-size:1.25em;line-height:1.7;background:var(--surface);border:2px solid var(--accent);border-radius:14px;padding:.8em 1.1em;display:none}.final.open{display:block}
+.qrb{display:flex;gap:8px;align-items:center;font-size:.75em;color:var(--muted)}.qrb .qr{background:#fff;padding:3px;border-radius:4px}
+.atin-logo{color:#1F3A5F;background:rgba(255,255,255,.92);border:1px solid #C9D3DF;border-radius:8px;padding:3px 5px;line-height:0;flex:none}.atin-logo svg{display:block}
+.score{font:700 1.1em var(--display);color:var(--accent)}
+[hidden]{display:none!important}
+@media (max-width:820px){.g2{grid-template-columns:1fr}.qrb{display:none}}
+</style></head><body>
+<header class="pad"><div class="hrow"><div class="atin-logo" aria-label="Made by Atin"><svg viewBox="104 28 172 134" width="64" height="50" role="img" aria-hidden="true">
+<text x="139" y="112" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="72" fill="currentColor">A</text>
+<rect x="177" y="83" width="24" height="6" rx="1" fill="currentColor"/>
+<path d="M216 66 L216 106 A25 7 0 0 0 266 106 L266 66" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+<ellipse cx="241" cy="66" rx="25" ry="7" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="216" y1="80" x2="266" y2="80" stroke="currentColor" stroke-width="1.5"/>
+<line x1="216" y1="94" x2="266" y2="94" stroke="currentColor" stroke-width="1.5"/>
+<ellipse cx="241" cy="47" rx="23" ry="5" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="114" y1="128" x2="266" y2="128" stroke="currentColor" stroke-width="1"/>
+<text x="190" y="152" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" letter-spacing="2" fill="currentColor">made by Atin</text>
+</svg></div><h1>E1 Riverside Community Centre – Days, Times and Prices</h1><div class="qrb"><div class="qr" id="pq" data-size="70"></div><span>Open on<br>your phone</span></div></div>
+<div class="tabs" role="tablist">
+<button class="tab" role="tab" data-t="listen">1 Listening</button><button class="tab" role="tab" data-t="a">2 Partner A</button><button class="tab" role="tab" data-t="b">2 Partner B</button><button class="tab" role="tab" data-t="err">3 Find the mistake</button><button class="tab" role="tab" data-t="talk">4 My talk</button></div></header>
+<main class="pad">
+<section id="t-listen" hidden><h2>1 Listening – Scripts C, D, E, F</h2><p class="how">Your teacher plays each script two times. Read the questions first. Answer: <b>Yes, it is</b> or <b>No, it isn't</b>, then type the day, time or price. Then press <b>Check</b>.</p>
+<div class="grid g2" id="lgrid"></div><div class="row"><button class="btn main" id="lcheck" type="button">Check</button><span class="score" id="lscore"></span></div></section>
+<section id="t-ab" hidden><h2 id="abh"></h2><p class="how">Don't look at your partner's screen! Ask your partner and type the missing information in the white boxes. Then press <b>Check</b>.</p>
+<div class="card"><h3>Riverside Centre – Clubs and Sports</h3><table class="t" id="abt"></table>
+<p class="askme">Ask: <b>What day is …?</b> · <b>What time does … start?</b> · <b>How much is …?</b> &nbsp; Answer: <b>It's on …</b> · <b>It starts at …</b> · <b>It's …</b> / <b>It's free.</b></p></div>
+<div class="row"><button class="btn main" id="abcheck" type="button">Check</button><span class="score" id="abscore"></span></div></section>
+<section id="t-err" hidden><h2>3 Find the mistake</h2><p class="how">There is one mistake in each sentence. <b>Tap the wrong word.</b> Then type the correct sentence and press <b>Check</b>.</p>
+<div class="grid g2" id="egrid"></div><p class="score" id="escore"></p></section>
+<section id="t-talk" hidden><h2>4 My talk – My week</h2><p class="how">Choose two activities from the timetable. Type the day, the time and the price – the box goes green when it's right. Then press <b>Show my talk</b>, read it two times, and say it to your partner.</p>
+<div class="grid g2"><div class="card frame" id="frame"></div><div class="card"><h3>Riverside Community Centre</h3><table class="t" id="tt"></table></div></div>
+<div class="row"><button class="btn main" id="show" type="button">Show my talk</button><button class="btn" id="copy" type="button">Copy my talk</button><span id="cmsg" class="askme"></span></div>
+<div class="final" id="final"></div>
+<div class="card" style="margin-top:12px"><h3>Your partner asks 2 questions. Choose from:</h3><p id="pql"></p></div></section>
+</main>
+<script>
+const D={"scripts": [{"id": "script-c", "L": "C", "kind": "Phone message", "yn": ["Is the art class on Monday?", true, "Yes, it is."], "det": ["How much is the art class?", "One pound fifty (£1.50)", ["one pound fifty", "£1.50", "1.50", "1 pound 50", "1 pound fifty", "£1 50", "1.5", "£1.5"]], "lines": [["Ann", "Hi Maria. It's Lina. The art class is on Monday. It starts at half past one. It costs one pound fifty. See you there. Bye."]], "gaps": [["Monday", ["Monday", "Sunday", "Tuesday"]], ["half past one", ["half past one", "one o'clock", "half past two"]], ["one pound fifty", ["one pound fifty", "fifty p", "five pounds"]]]}, {"id": "script-d", "L": "D", "kind": "Conversation", "yn": ["Is the library open on Sunday?", false, "No, it isn't."], "det": ["What time does the library close?", "Six o'clock", ["six o'clock", "6 o'clock", "6", "six", "6.00", "6:00", "6pm", "6 pm"]], "lines": [["Ann", "Excuse me. Is the library open on Sunday?"], ["Ben", "No, it isn't. It's open Monday to Saturday."], ["Ann", "What time does it close?"], ["Ben", "It closes at six o'clock."]], "gaps": [["Sunday", ["Sunday", "Saturday", "Monday"]], ["Saturday", ["Saturday", "Friday", "Sunday"]], ["six o'clock", ["six o'clock", "seven o'clock", "half past six"]]]}, {"id": "script-e", "L": "E", "kind": "Phone message", "yn": ["Is the football match on Sunday?", false, "No, it isn't. It's on Saturday."], "det": ["What time does the match start?", "Two o'clock", ["two o'clock", "2 o'clock", "2", "two", "2.00", "2:00", "2pm", "2 pm"]], "lines": [["Ben", "Hello, Ali. This is Joe. The football match is on Saturday. It starts at two o'clock. Bring some water. See you!"]], "gaps": [["Saturday", ["Saturday", "Sunday", "Thursday"]], ["two o'clock", ["two o'clock", "ten o'clock", "half past two"]], ["water", ["water", "food", "money"]]]}, {"id": "script-f", "L": "F", "kind": "Conversation", "yn": ["Is the dance class on Tuesday?", true, "Yes, it is."], "det": ["How much is the dance class?", "It's free", ["free", "it's free", "its free", "it is free", "nothing", "£0", "0"]], "lines": [["Ben", "Hello. What day is the dance class?"], ["Ann", "It's on Tuesday."], ["Ben", "And how much is it?"], ["Ann", "It's free."], ["Ben", "Great. Thank you!"]], "gaps": [["Tuesday", ["Tuesday", "Thursday", "Wednesday"]], ["free", ["free", "three pounds", "fifty p"]], ["Thank you", ["Thank you", "Goodbye", "Sorry"]]]}], "sports": [["Swimming", "Monday", "7 o'clock", "£3"], ["Chess club", "Tuesday", "5 o'clock", "free"], ["Basketball", "Wednesday", "4 o'clock", "£1"], ["Gardening club", "Thursday", "10 o'clock", "£2"], ["Bingo", "Friday", "3 o'clock", "50p"], ["Walking group", "Sunday", "9 o'clock", "free"]], "gapA": [2, 3, 1, 2, 3, 1], "gapB": [3, 1, 2, 3, 1, 2], "errors": [{"s": "The computer class start at two o'clock.", "i": [3], "ok": ["The computer class starts at two o'clock."], "why": "he / she / it + s: starts"}, {"s": "Football are on Thursday.", "i": [1], "ok": ["Football is on Thursday."], "why": "one thing: is"}, {"s": "I goes to the English club on Monday.", "i": [1], "ok": ["I go to the English club on Monday."], "why": "I + go (no s)"}, {"s": "The family film is in Saturday.", "i": [4], "ok": ["The family film is on Saturday."], "why": "days: on Saturday"}, {"s": "My friend like the cooking class.", "i": [2], "ok": ["My friend likes the cooking class."], "why": "he / she + s: likes"}, {"s": "The café open at nine o'clock.", "i": [2], "ok": ["The café opens at nine o'clock."], "why": "it + s: opens"}, {"s": "Is the sewing class on Friday? Yes, it are.", "i": [8], "ok": ["Is the sewing class on Friday? Yes, it is."], "why": "it is"}, {"s": "We doesn't go to football on Sunday.", "i": [1], "ok": ["We don't go to football on Sunday.", "We do not go to football on Sunday."], "why": "we + don't"}, {"s": "The English club is free. It cost nothing.", "i": [6], "ok": ["The English club is free. It costs nothing."], "why": "it + s: costs"}, {"s": "What time it starts?", "i": [2, 3], "ok": ["What time does it start?"], "why": "questions: What time does it start?"}], "tt": [["English club", "Monday", "10 o'clock", "12 o'clock", "free"], ["Computer class", "Tuesday", "2 o'clock", "4 o'clock", "£2"], ["Cooking class", "Wednesday", "11 o'clock", "1 o'clock", "£3"], ["Football", "Thursday", "6 o'clock", "8 o'clock", "£1"], ["Sewing class", "Friday", "half past 10", "half past 12", "£2.50"], ["Family film", "Saturday", "3 o'clock", "5 o'clock", "50p"], ["Café", "Every day", "9 o'clock", "5 o'clock", "tea 80p"]], "pq": ["What time does it start?", "What time does it finish?", "How much is it?", "Who do you go with?", "Do you like it?", "How do you go there?"]};
+(function(){
+const $=id=>document.getElementById(id);
+const norm=s=>s.toLowerCase().replace(/[’']/g,"'").replace(/[.,!?£]/g,m=>m==='£'?'£':'').replace(/\s+/g,' ').trim();
+const normp=s=>s.toLowerCase().replace(/[’]/g,"'").replace(/\s+/g,' ').replace(/\s([?.!,])/g,'$1').trim();
+try{new QRCode($('pq'),{text:location.href.split('#')[0],width:70,height:70});}catch(e){}
+/* tabs */
+function show(t){document.querySelectorAll('.tab').forEach(b=>b.setAttribute('aria-selected',b.dataset.t===t));
+ ['listen','err','talk'].forEach(k=>$('t-'+k).hidden=k!==t);$('t-ab').hidden=!(t==='a'||t==='b');if(t==='a'||t==='b')buildAB(t);}
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{history.replaceState(null,'','#'+b.dataset.t);show(b.dataset.t);});
+/* 1 listening */
+const L=$('lgrid');
+D.scripts.forEach((s,k)=>{const c=document.createElement('div');c.className='card';
+ c.innerHTML='<h3><span class="lab">Script '+s.L+'</span>'+s.kind+'</h3><p class="q">1 '+s.yn[0]+'</p><div class="yn"><button type="button" data-v="1">Yes, it is.</button><button type="button" data-v="0">No, it isn\'t.</button></div><p class="fb" data-f="1"></p>'+
+ '<p class="q">2 '+s.det[0]+'</p><input type="text" autocomplete="off" aria-label="Answer 2"><p class="fb" data-f="2"></p><button class="btn" type="button" data-rs>Read the script</button><div class="script"></div>';
+ c.querySelectorAll('.yn button').forEach(b=>b.onclick=()=>{c.querySelectorAll('.yn button').forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');});
+ let gi=0;const sc=c.querySelector('.script');
+ sc.innerHTML=s.lines.map(([w,t])=>{let h=t;s.gaps.forEach(g=>{});return '<p><b>'+w+':</b> '+t+'</p>';}).join('');
+ // make gaps: replace first occurrence of each gap word with a select
+ let htmlS=sc.innerHTML;s.gaps.forEach(([ans,opts],j)=>{const o=[...opts].sort(()=>Math.random()-.5).map(x=>'<option>'+x+'</option>').join('');htmlS=htmlS.replace(ans,'<select data-a="'+ans+'"><option value="">…</option>'+o+'</select>');});sc.innerHTML=htmlS+'<p class="fb" data-f="g"></p>';
+ sc.querySelectorAll('select').forEach(sel=>sel.onchange=()=>{sel.classList.remove('good','badx');if(sel.value)sel.classList.add(sel.value===sel.dataset.a?'good':'badx');
+   const all=[...sc.querySelectorAll('select')];if(all.every(x=>x.value===x.dataset.a)){sc.querySelector('[data-f="g"]').textContent='All correct ✓ Now read it with your partner.';sc.querySelector('[data-f="g"]').className='fb ok';}});
+ c.querySelector('[data-rs]').onclick=()=>sc.classList.toggle('open');
+ c.dataset.k=k;L.appendChild(c);});
+$('lcheck').onclick=()=>{let sc=0;[...L.children].forEach(c=>{const s=D.scripts[+c.dataset.k];const p=c.querySelector('.yn [aria-pressed="true"]');const f1=c.querySelector('[data-f="1"]'),f2=c.querySelector('[data-f="2"]');
+ if(!p){f1.textContent='Choose Yes or No.';f1.className='fb no';}else if((p.dataset.v==='1')===s.yn[1]){f1.textContent='✓ '+s.yn[2];f1.className='fb ok';sc++;}else{f1.textContent='✗ Try again.';f1.className='fb no';}
+ const inp=c.querySelector('input');const v=norm(inp.value).replace(/^(it's|its|it is|at|it starts at|it closes at|it costs|on)\s+/,'');const ok=s.det[2].some(a=>norm(a)===v);
+ inp.classList.remove('good','badx');if(!inp.value.trim()){f2.textContent='Type your answer.';f2.className='fb no';}else if(ok){inp.classList.add('good');f2.textContent='✓ '+s.det[1];f2.className='fb ok';sc++;}else{inp.classList.add('badx');f2.textContent='✗ Listen again.';f2.className='fb no';}});
+ $('lscore').textContent=sc+' / 8 correct';};
+/* 2 partner A / B */
+const COL=['','day','time','price'];
+function buildAB(t){$('abh').textContent='2 Partner '+t.toUpperCase();const gaps=t==='a'?D.gapA:D.gapB;
+ let h='<tr><th>Activity</th><th>Day</th><th>Time</th><th>Price</th></tr>';
+ D.sports.forEach((r,ri)=>{h+='<tr><td><b>'+r[0]+'</b></td>';for(let c=1;c<4;c++){h+=c===gaps[ri]?'<td class="gap"><input type="text" autocomplete="off" data-r="'+ri+'" data-c="'+c+'" aria-label="'+r[0]+' '+COL[c]+'"></td>':'<td>'+r[c]+'</td>';}h+='</tr>';});
+ $('abt').innerHTML=h;$('abscore').textContent='';}
+function okCell(ans,v){v=norm(v).replace(/^(it's|its|it is|on|at|it starts at|it costs)\s+/,'');const a=norm(ans);
+ const nums={'1':'one','2':'two','3':'three','4':'four','5':'five','6':'six','7':'seven','8':'eight','9':'nine','10':'ten'};
+ const alts=new Set([a]);const m=a.match(/^(\d+) o'clock$/);if(m){alts.add(m[1]);alts.add(nums[m[1]]+" o'clock");alts.add(nums[m[1]]);alts.add(m[1]+'.00');alts.add(m[1]+':00');}
+ const p=a.match(/^£(\d+)$/);if(p){alts.add(p[1]+' pounds');alts.add(nums[p[1]]+' pounds');alts.add(nums[p[1]]+(p[1]==='1'?' pound':' pounds'));alts.add(p[1]);alts.add('£'+p[1]+'.00');}
+ if(a==='50p'){alts.add('fifty p');alts.add('50 p');alts.add('fifty pence');alts.add('50 pence');}
+ if(a==='free'){alts.add("it's free");alts.add('nothing');}
+ return alts.has(v);}
+$('abcheck').onclick=()=>{let n=0,t=0;$('abt').querySelectorAll('input').forEach(inp=>{t++;const ans=D.sports[+inp.dataset.r][+inp.dataset.c];inp.classList.remove('good','badx');if(okCell(ans,inp.value)){inp.classList.add('good');n++;}else inp.classList.add('badx');});
+ $('abscore').textContent=n+' / '+t+(n===t?' – well done! Now ask: "What time does it finish?"':' – ask again: red boxes are not right yet.');};
+/* 3 errors */
+let edone=0;
+D.errors.forEach((e,k)=>{const c=document.createElement('div');c.className='card ecard';const words=e.s.split(' ');
+ c.innerHTML='<h3>'+(k+1)+'</h3><p class="sent">'+words.map((w,j)=>'<span class="w" data-j="'+j+'">'+w+'</span>').join(' ')+'</p><div class="fix" hidden><input type="text" autocomplete="off" aria-label="Correct sentence" value=""><div class="row"><button class="btn main" type="button">Check</button></div></div><p class="fb"></p>';
+ const fb=c.querySelector('.fb'),fix=c.querySelector('.fix'),inp=fix.querySelector('input');let found=false;
+ c.querySelectorAll('.w').forEach(sp=>sp.onclick=()=>{if(found)return;if(e.i.includes(+sp.dataset.j)){found=true;e.i.forEach(j=>c.querySelector('[data-j="'+j+'"]').classList.add('hit'));fix.hidden=false;inp.value=e.s;inp.focus();fb.textContent='Yes! Now type the correct sentence.';fb.className='fb ok';}else{sp.classList.remove('miss');void sp.offsetWidth;sp.classList.add('miss');fb.textContent='Not this word. Try again.';fb.className='fb no';}});
+ fix.querySelector('button').onclick=()=>{if(e.ok.some(a=>normp(a)===normp(inp.value))){inp.classList.add('good');inp.classList.remove('badx');fb.textContent='✓ Correct! ('+e.why+')';fb.className='fb ok';if(!c.classList.contains('done')){c.classList.add('done');edone++;$('escore').textContent=edone+' / '+D.errors.length+' done';}}
+  else{inp.classList.add('badx');fb.textContent='Not yet. Check the word you tapped.';fb.className='fb no';}};
+ inp.addEventListener('keydown',ev=>{if(ev.key==='Enter')fix.querySelector('button').click();});
+ $('egrid').appendChild(c);});
+/* 4 talk */
+const acts=D.tt.filter(r=>r[1]!=='Every day');
+$('tt').innerHTML='<tr><th>Activity</th><th>Day</th><th>Starts</th><th>Price</th></tr>'+D.tt.map(r=>'<tr><td><b>'+r[0]+'</b></td><td>'+r[1]+'</td><td>'+r[2]+'</td><td>'+r[4]+'</td></tr>').join('');
+const opt='<option value="">choose…</option>'+acts.map((r,k)=>'<option value="'+k+'">'+r[0].toLowerCase()+'</option>').join('');
+function block(n){return '<div class="line">On <input type="text" data-k="day'+n+'" placeholder="day" style="flex:0 1 8em"> I go to the <select data-k="act'+n+'">'+opt+'</select>.</div>'+
+ '<div class="line">It starts at <input type="text" data-k="time'+n+'" placeholder="time"> .</div>'+
+ '<div class="line"><select data-k="pv'+n+'"><option value="costs">It costs</option><option value="free">It is free.</option></select><input type="text" data-k="price'+n+'" placeholder="price"> .</div>';}
+$('frame').innerHTML='<div class="line">Hello. My name is <input type="text" data-k="name" placeholder="name"> . I want to talk about my week.</div>'+block(1)+'<hr style="width:100%;border:0;border-top:1px dashed var(--line)">'+block(2)+
+ '<div class="line">I like the <select data-k="like">'+opt+'</select> because <input type="text" data-k="why" placeholder="I meet people / I learn …"> .</div>'+
+ '<div class="line">I don\'t like <input type="text" data-k="dl" placeholder="Monday mornings / the rain …"> because <input type="text" data-k="dlw" placeholder="…"> .</div><div class="line">Thank you.</div>';
+const F=k=>$('frame').querySelector('[data-k="'+k+'"]');
+function times(r){const t=r[2];return[t,t.replace(/^(\d+) o'clock$/,'$1'),t.replace("half past 10","half past ten"),t.replace(/^(\d+) o'clock$/,(m,d)=>['','one','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve'][+d]+" o'clock")];}
+function check(){for(const n of [1,2]){const a=F('act'+n).value;const d=F('day'+n),t=F('time'+n),p=F('price'+n),pv=F('pv'+n);[d,t,p].forEach(x=>x.classList.remove('good','badx'));
+ if(a===''){continue;}const r=acts[+a];const free=r[4]==='free';p.hidden=pv.value==='free';
+ if(d.value.trim())d.classList.add(norm(d.value)===norm(r[1])?'good':'badx');
+ if(t.value.trim())t.classList.add(times(r).some(x=>norm(x)===norm(t.value))?'good':'badx');
+ if(pv.value==='free'){pv.classList.remove('good','badx');pv.classList.add(free?'good':'badx');}else{pv.classList.remove('good','badx');if(free)pv.classList.add('badx');else if(p.value.trim())p.classList.add(okCell(r[4],p.value)?'good':'badx');}}}
+$('frame').addEventListener('input',check);$('frame').addEventListener('change',check);
+function talk(){const v=k=>(F(k).value||'').trim();const an=k=>{const x=F(k).value;return x===''?'…':acts[+x][0].toLowerCase();};
+ const lines=['Hello. My name is '+(v('name')||'…')+'. I want to talk about my week.'];
+ for(const n of [1,2]){lines.push('On '+(v('day'+n)||'…')+' I go to the '+an('act'+n)+'. It starts at '+((v('time'+n)||'…').replace(/^(\d{1,2})$/,"$1 o'clock"))+'. '+(F('pv'+n).value==='free'?'It is free.':'It costs '+(v('price'+n)||'…')+'.'));}
+ lines.push('I like the '+an('like')+' because '+(v('why')||'…')+'.');lines.push("I don't like "+(v('dl')||'…')+' because '+(v('dlw')||'…')+'.');lines.push('Thank you.');return lines;}
+$('show').onclick=()=>{$('final').innerHTML=talk().map(l=>'<p style="margin:0 0 .3em">'+l.replace(/</g,'&lt;')+'</p>').join('');$('final').classList.add('open');$('final').scrollIntoView({behavior:'smooth',block:'nearest'});};
+$('copy').onclick=()=>{const t=talk().join(' ');(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>$('cmsg').textContent='Copied ✓ You can paste it in Teams (General).',()=>$('cmsg').textContent='Press Show my talk, then select and copy it.');};
+$('pql').innerHTML=D.pq.map(q=>'<b>'+q+'</b>').join(' · ');
+const h=(location.hash||'#listen').slice(1);show(['listen','a','b','err','talk'].includes(h)?h:'listen');
+window.addEventListener('hashchange',()=>{const h=location.hash.slice(1);if(['listen','a','b','err','talk'].includes(h))show(h);});
+})();
+</script>
+</body></html>
