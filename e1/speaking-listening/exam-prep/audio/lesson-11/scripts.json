@@ -1,19 +1,156 @@
 {
   "title": "E1 Listening for Numbers, Days, Times and Prices – Lesson Audio",
   "plan": "../../lesson-11-plan.pdf",
-  "voices": {"Ann": "Kore", "Ben": "Puck"},
+  "voices": {
+    "Ann": "Kore",
+    "Ben": "Puck"
+  },
   "scripts": [
-    {"id": "a", "label": "Script A – Doctor's surgery message",
-     "lines": [["Ann", "Hello. This is the doctor's surgery. Your appointment is on Tuesday at ten o'clock. Thank you."]],
-     "questions": ["Is the appointment on Monday? (No, it isn't.)", "What time is the appointment? (Ten o'clock.)"]},
-    {"id": "b", "label": "Script B – At the shop",
-     "lines": [["Ann", "How much is the bread?"], ["Ben", "It's one pound fifty."], ["Ann", "And the milk?"], ["Ben", "The milk is ninety p."]],
-     "questions": ["Is the bread two pounds? (No, it isn't.)", "How much is the milk? (Ninety p.)"]},
-    {"id": "c", "label": "Script C – My English class",
-     "lines": [["Ben", "My English class is on Monday and Thursday. It starts at half past nine. It finishes at twelve o'clock."]],
-     "questions": ["Is the class on Thursday? (Yes, it is.)", "What time does it start? (Half past nine.)"]},
-    {"id": "d", "label": "Script D – The bus",
-     "lines": [["Ann", "What time is the bus?"], ["Ben", "It's at four o'clock."], ["Ann", "Is it bus number five?"], ["Ben", "No, it's number eight."]],
-     "questions": ["Is it bus number five? (No, it isn't.)", "What time is the bus? (Four o'clock.)"]}
+    {
+      "id": "e",
+      "label": "Tuesday or Thursday? – six sentences (2 or 4 fingers)",
+      "lines": [
+        [
+          "Ann",
+          "Number one. The class is on Tuesday."
+        ],
+        [
+          "Ann",
+          "Number two. The doctor is on Thursday."
+        ],
+        [
+          "Ann",
+          "Number three. I go to the market on Thursday."
+        ],
+        [
+          "Ann",
+          "Number four. The bus is late on Tuesday."
+        ],
+        [
+          "Ann",
+          "Number five. My birthday is on Tuesday."
+        ],
+        [
+          "Ann",
+          "Number six. We play football on Thursday."
+        ]
+      ],
+      "questions": [
+        "1 Tuesday · 2 Thursday · 3 Thursday · 4 Tuesday · 5 Tuesday · 6 Thursday"
+      ]
+    },
+    {
+      "id": "f",
+      "label": "Section B – listen and write the price (each said twice)",
+      "lines": [
+        [
+          "Ben",
+          "Number one. Two pounds. … Two pounds."
+        ],
+        [
+          "Ben",
+          "Number two. One pound fifty. … One pound fifty."
+        ],
+        [
+          "Ben",
+          "Number three. Ninety p. … Ninety p."
+        ],
+        [
+          "Ben",
+          "Number four. Three pounds twenty. … Three pounds twenty."
+        ],
+        [
+          "Ben",
+          "Number five. Fifty p. … Fifty p."
+        ],
+        [
+          "Ben",
+          "Number six. Ten pounds. … Ten pounds."
+        ]
+      ],
+      "questions": [
+        "1 £2 · 2 £1.50 · 3 90p · 4 £3.20 · 5 50p · 6 £10"
+      ]
+    },
+    {
+      "id": "a",
+      "label": "Script A – Doctor's surgery message",
+      "lines": [
+        [
+          "Ann",
+          "Hello. This is the doctor's surgery. Your appointment is on Tuesday at ten o'clock. Thank you."
+        ]
+      ],
+      "questions": [
+        "Is the appointment on Monday? (No, it isn't.)",
+        "What time is the appointment? (Ten o'clock.)"
+      ]
+    },
+    {
+      "id": "b",
+      "label": "Script B – At the shop",
+      "lines": [
+        [
+          "Ann",
+          "How much is the bread?"
+        ],
+        [
+          "Ben",
+          "It's one pound fifty."
+        ],
+        [
+          "Ann",
+          "And the milk?"
+        ],
+        [
+          "Ben",
+          "The milk is ninety p."
+        ]
+      ],
+      "questions": [
+        "Is the bread two pounds? (No, it isn't.)",
+        "How much is the milk? (Ninety p.)"
+      ]
+    },
+    {
+      "id": "c",
+      "label": "Script C – My English class",
+      "lines": [
+        [
+          "Ben",
+          "My English class is on Monday and Thursday. It starts at half past nine. It finishes at twelve o'clock."
+        ]
+      ],
+      "questions": [
+        "Is the class on Thursday? (Yes, it is.)",
+        "What time does it start? (Half past nine.)"
+      ]
+    },
+    {
+      "id": "d",
+      "label": "Script D – The bus",
+      "lines": [
+        [
+          "Ann",
+          "What time is the bus?"
+        ],
+        [
+          "Ben",
+          "It's at four o'clock."
+        ],
+        [
+          "Ann",
+          "Is it bus number five?"
+        ],
+        [
+          "Ben",
+          "No, it's number eight."
+        ]
+      ],
+      "questions": [
+        "Is it bus number five? (No, it isn't.)",
+        "What time is the bus? (Four o'clock.)"
+      ]
+    }
   ]
 }
