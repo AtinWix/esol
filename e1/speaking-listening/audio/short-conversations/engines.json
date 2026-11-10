@@ -1,0 +1,12 @@
+{
+ "script-a": "gemini",
+ "script-b": "gemini",
+ "script-c": "gemini",
+ "script-d": "edge",
+ "script-e": "gemini",
+ "script-f": "gemini",
+ "script-g": "edge",
+ "script-h": "edge",
+ "script-i": "edge",
+ "script-j": "gemini"
+}
