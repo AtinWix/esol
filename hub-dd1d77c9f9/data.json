@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-10T08:52:25Z",
+ "updatedAt": "2026-11-10T10:05:00Z",
  "upcoming": {
   "2026-11-02_e3": {
    "afternoon": "PC room: Too Cold to Learn – complaint emails",
@@ -209,13 +209,21 @@
    "amended": "2026-11-09T19:14:37Z"
   },
   "2026-11-11_e3": {
-   "afternoon": "Classroom, paper: time order with Hawa's Morning (3A); alphabetical order with word cards (3B); then ESB Set L Tasks 1 and 2 (14 questions) under timed conditions, swap-and-mark with proof from the text",
+   "afternoon": "Classroom, paper: time order with Hawa's Morning (3A); alphabetical order on the projector – learners come up and tap the words in order (slides 7–9), then 3B; then ESB Set L Tasks 1 and 2 (14 questions) under timed conditions, swap-and-mark with proof from the text",
    "cls": "E3 Reading",
    "date": "2026-11-11",
    "links": [
     {
+     "label": "Print pack – print once, double-sided (94 pages)",
+     "url": "https://atinwix.github.io/esol/e3/reading/docs/print-pack-2026-11-11.pdf"
+    },
+    {
      "label": "Day plan and answers (incl. Set L answers)",
      "url": "https://atinwix.github.io/esol/e3/reading/docs/wk09-mon-pronouns-word-meaning-ordering-day-plan.pdf"
+    },
+    {
+     "label": "What to say – teacher script",
+     "url": "https://atinwix.github.io/esol/e3/reading/docs/wk09-mon-pronouns-word-meaning-ordering-what-to-say.pdf"
     },
     {
      "label": "Hangman Paragraphs (paragraph loaded)",
@@ -246,19 +254,15 @@
      "url": "https://atinwix.github.io/esol/e3/reading/wk09-wed-ordering-tasks-exam-paper-projector-lesson.html"
     },
     {
-     "label": "Lesson 3 handouts (print page 1 only)",
+     "label": "Lesson 3 handouts (3A, 3B on page 1)",
      "url": "https://atinwix.github.io/esol/e3/reading/exam-prep/lesson-03-handouts.pdf"
-    },
-    {
-     "label": "Alphabetical word cards (cut out)",
-     "url": "https://atinwix.github.io/esol/e3/reading/docs/wk09-mon-alphabetical-order-word-cards.pdf"
     }
    ],
    "morning": "Exam Prep Lesson 2: Hangman Paragraphs settle-in; who is 'he'? what is 'it'? (2A); read Two Wheels and a New Start and track pronouns (2B, 2C A); guess words from context (2C B); find details (2C C); 20-question Kahoot; be the examiner – learners write two exam questions each pair",
-   "prep": "Cut out the alphabetical word cards (one set, 4 pages). Print Set L Tasks 1–2 from the ESB sample paper file. Have the Kahoot ready and the timer slide open before 12:30.",
-   "print": "Lesson 2 handouts (2 pages, one each); Lesson 3 handouts page 1 only – 3A and 3B (one each); word cards (once, cut out); Set L Tasks 1 and 2 (one each, from your ESB sample paper file).",
+   "prep": "Print Set L Tasks 1–2 from the ESB sample paper file. Have the Kahoot ready and the timer slide open before 12:30. No cutting out.",
+   "print": "Print pack only (94 pages, double-sided) – day plan, What to say script, Lesson 2 handouts ×21, Lesson 3 page 1 ×21. Plus Set L Tasks 1 and 2 (one each, from your ESB sample paper file).",
    "title": "Pronouns, word meaning, ordering tasks and an ESB paper (Set L Tasks 1–2)",
-   "amended": "2026-11-09T18:57:40Z"
+   "amended": "2026-11-10T10:05:00Z"
   },
   "2026-11-12_e2": {
    "afternoon": "PC room: online choose-and-build practice; Three places, one winner (TfL Journey Planner, 4 superlative sentences in Teams General); Task 4 listenings – you read the two scripts (in the day plan); three-way discussion: best way to shop in London; Kahoot (20 Qs)",
