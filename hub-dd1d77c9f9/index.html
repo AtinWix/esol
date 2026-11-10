@@ -4,7 +4,7 @@
 <title>Teacher Hub</title></head><body>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&display=swap">
 <style>
-/* Layout: one column. "Next lesson" big card, then "This week" – one row per teaching day (built card or status line), then system checks, then quick links. */
+/* Layout: one column. "Next lesson" big card, then "This week" – one row per teaching day (built card or status line), quick links at top. */
 :root{
   --bg:#f3f5f8; --card:#ffffff; --ink:#16243a; --muted:#56627a; --line:#d6dce6;
   --accent:#1f5f8b; --soft:#e4eef6; --warn:#8a5300; --warn-soft:#fbefdc;
@@ -71,6 +71,16 @@ header{display:flex;justify-content:space-between;align-items:flex-start;gap:12p
   </header>
 
   <section>
+    <h2>Quick links</h2>
+    <div class="grid">
+      <a class="tile" href="https://claude.ai/artifact/9hm8WZXWiu3U16Cxxq32NK" target="_blank" rel="noopener noreferrer"><b>Lesson Log</b><span>Fill in after each teaching day. The next lesson for that class is built from it.</span></a>
+      <a class="tile" href="https://atinwix.github.io/esol/" target="_blank" rel="noopener noreferrer"><b>ESOL Library</b><span>All materials, by level. Share this with colleagues.</span></a>
+      <a class="tile" href="https://claude.ai/artifact/FsxDCiz3xH2yRJynJhP2qu" target="_blank" rel="noopener noreferrer"><b>Lesson Ideas</b><span>Add notes, photos and files for future lessons.</span></a>
+      <a class="tile" href="https://atinwix.github.io/esol/games/phone-games-qr.html" target="_blank" rel="noopener noreferrer"><b>Phone games QR</b><span>Project for early finishers.</span></a>
+    </div>
+  </section>
+
+  <section>
     <h2>Next lesson</h2>
     <div class="cards" id="next"><div class="slot"><p>Loading…</p></div></div>
   </section>
@@ -85,17 +95,6 @@ header{display:flex;justify-content:space-between;align-items:flex-start;gap:12p
     <div class="checks" id="checks"><div class="c"><span class="dot wait"></span><span>Waiting for the first daily check.</span></div></div>
   </section>
 
-  <section>
-    <h2>Quick links</h2>
-    <div class="grid">
-      <a class="tile" href="https://claude.ai/artifact/9hm8WZXWiu3U16Cxxq32NK" target="_blank" rel="noopener noreferrer"><b>Lesson Log</b><span>Fill in after each teaching day. The next lesson for that class is built from it.</span></a>
-      <a class="tile" href="https://atinwix.github.io/esol/" target="_blank" rel="noopener noreferrer"><b>ESOL Library</b><span>All materials, by level. Share this with colleagues.</span></a>
-      <a class="tile" href="https://claude.ai/artifact/FsxDCiz3xH2yRJynJhP2qu" target="_blank" rel="noopener noreferrer"><b>Lesson Ideas</b><span>Add notes, photos and files for future lessons.</span></a>
-      <a class="tile" href="https://atinwix.github.io/esol/games/phone-games-qr.html" target="_blank" rel="noopener noreferrer"><b>Phone games QR</b><span>Project for early finishers.</span></a>
-      <a class="tile" href="https://claude.ai/artifact/7AWMTsbT5LZCLTDc6mFSiC" target="_blank" rel="noopener noreferrer"><b>Smart Targets</b><span>Learner targets (private).</span></a>
-      <a class="tile" href="https://kahoot.com/" target="_blank" rel="noopener noreferrer"><b>Kahoot</b><span>Create → Add question → Import → Import spreadsheet.</span></a>
-    </div>
-  </section>
 
   <details id="pastBox" hidden><summary>Recent lessons (as taught)</summary><div class="cards" id="past"></div></details>
 </div>
