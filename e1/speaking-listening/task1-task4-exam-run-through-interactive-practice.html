@@ -1,0 +1,60 @@
+<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>E1 Speaking and Listening – Task 1 and Task 4 Practice and Exam Card</title>
+<style>
+:root{--bg:#F4F6F8;--surface:#fff;--ink:#141D28;--muted:#4F5B69;--line:#D3D9E0;--accent:#0E6B6B;--soft:#DCEFEE;--ok:#1E7A3C;--bad:#B3261E;--mark:#E3A008;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#10151B;--surface:#19212A;--ink:#EEF2F6;--muted:#A2ADBA;--line:#2B3642;--accent:#4FB8B3;--soft:#163533;--ok:#6FD28F;--bad:#F08A82;color-scheme:dark}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.45 "Atkinson Hyperlegible",Verdana,Arial,sans-serif}
+header{display:flex;gap:12px;align-items:center;background:var(--surface);border-bottom:1px solid var(--line);padding:10px 16px;flex-wrap:wrap}
+.logo{color:#1F3A5F;background:#fff;border:1px solid #C9D3DF;border-radius:8px;padding:3px 5px;line-height:0}.logo svg{display:block}
+h1{font-size:1.15em;margin:0}nav{display:flex;gap:6px;flex-wrap:wrap;margin-left:auto}
+nav button{font:700 .9em Arial;padding:.6em 1em;border-radius:10px;border:2px solid var(--accent);background:var(--surface);color:var(--accent);cursor:pointer;min-height:44px}
+nav button.on{background:var(--accent);color:#fff}
+main{max-width:980px;margin:0 auto;padding:16px}section{display:none}section.on{display:block}
+h2{margin:.2em 0 .5em}h3{margin:1em 0 .3em}.card{background:var(--surface);border:2px solid var(--line);border-radius:14px;padding:12px 14px;margin:10px 0}
+.words{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}.words button,.opt button{font:700 1em Arial;padding:.5em .9em;border-radius:10px;border:2px solid var(--accent);background:var(--soft);color:var(--ink);cursor:pointer;min-height:44px}
+.words button:disabled{opacity:.3}.line{min-height:2em;font-weight:700;border-bottom:3px solid var(--line);padding:.2em 0}
+.act button.go{font:700 .9em Arial;padding:.5em 1em;border-radius:10px;border:2px solid var(--accent);background:var(--accent);color:#fff;cursor:pointer;min-height:44px;margin-right:6px}
+.act button.ghost{background:transparent;color:var(--accent)}
+.res{font-weight:700;margin-top:6px}.res.ok{color:var(--ok)}.res.no{color:var(--bad)}
+.opt{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0}.opt button.sel{background:var(--accent);color:#fff}
+textarea{width:100%;font:1em Arial;padding:.5em;border:2px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink)}
+.big{font-size:1.4em;font-weight:700}.muted{color:var(--muted)}
+</style></head><body>
+<header><div class="logo" aria-label="Made by Atin"><svg viewBox="104 28 172 134" width="64" height="50" role="img" aria-hidden="true"><text x="139" y="112" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="72" fill="currentColor">A</text><rect x="177" y="83" width="24" height="6" rx="1" fill="currentColor"/><path d="M216 66 L216 106 A25 7 0 0 0 266 106 L266 66" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><ellipse cx="241" cy="66" rx="25" ry="7" fill="none" stroke="currentColor" stroke-width="3"/><line x1="216" y1="80" x2="266" y2="80" stroke="currentColor" stroke-width="1.5"/><line x1="216" y1="94" x2="266" y2="94" stroke="currentColor" stroke-width="1.5"/><ellipse cx="241" cy="47" rx="23" ry="5" fill="none" stroke="currentColor" stroke-width="3"/><line x1="114" y1="128" x2="266" y2="128" stroke="currentColor" stroke-width="1"/><text x="190" y="152" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" letter-spacing="2" fill="currentColor">made by Atin</text></svg></div>
+<h1>E1 Speaking and Listening – Task 1, Task 4 and Exam card</h1>
+<nav><button data-t="t1" class="on">1 Task 1</button><button data-t="t4">2 Task 4</button><button data-t="t3">3 Exam card</button></nav></header>
+<main>
+<section id="t1" class="on"><h2>1 Task 1: questions</h2>
+<h3>A. Put the words in order</h3><div id="wo"></div>
+<h3>B. Choose the question word</h3><div id="qw"></div>
+<h3>C. Answer about you</h3><p class="muted">Write a full sentence. Then say your answers to your partner.</p><div id="ca"></div></section>
+<section id="t4"><h2>2 Task 4: listen and answer</h2><p class="muted">Your teacher plays each script two times. Choose your answers. Press Check.</p><div id="li"></div></section>
+<section id="t3"><h2>3 Exam card</h2><p class="muted">Press <b>New card</b>. The assessor (B) uses the card. The candidate (A) answers. No writing.</p>
+<div class="act"><button class="go" id="nc" type="button">New card</button></div><div id="card" class="card muted">Press New card.</div></section>
+</main>
+<script>
+const WO=[["live|where|you|do", "Where do you live?"], ["name|your|is|what", "What is your name?"], ["do|spell|you|how|your name", "How do you spell your name?"], ["get up|when|do|you", "When do you get up?"], ["with|live|who|you|do", "Who do you live with?"], ["your|what's|phone number", "What's your phone number?"], ["like|you|do|football", "Do you like football?"], ["from|you|are|where", "Where are you from?"]],QW=[["In Hackney.", "Where"], ["On Monday.", "When"], ["My sister.", "Who"], ["Rice.", "What"], ["At seven o'clock.", "When"], ["My teacher.", "Who"], ["In the kitchen.", "Where"], ["A pen.", "What"]],LIS=[["Script E – in the street", "script-e", ["Is Sara going to college?", ["Yes, she is.", "No, she isn't."], 1, "What does she want to buy?", ["Fish and rice", "Fish and tea", "Meat and rice"], 0]], ["Script F – at home", "script-f", ["Does the speaker live with a brother?", ["Yes, he does.", "No, he doesn't."], 0, "What do they do on Sunday?", ["They cook together", "They play football", "They go to the market"], 0]], ["Script G – a phone message", "script-g", ["Is the picnic on Saturday?", ["Yes, it is.", "No, it isn't."], 1, "What time do they meet?", ["Ten o'clock", "Twelve o'clock", "Two o'clock"], 1]], ["Script H – in the shop", "script-h", ["Does the shop have milk?", ["Yes, it does.", "No, it doesn't."], 0, "How much is the milk?", ["£1.20", "£2.20", "£1.50"], 0]]],T1Q=["Where do you live?", "Who do you live with?", "What is your name?", "How do you spell your name?", "What's your phone number?", "When do you get up?", "Do you like football?", "Where are you from?", "What do you do on Sunday?", "Do you like tea?"],TOP=[["My week", ["What do you do on Monday?", "What time do you get up?", "Do you like Saturday?"]], ["My home", ["Where do you live?", "Who do you live with?", "Do you like your home?"]], ["My food", ["What do you eat for breakfast?", "Do you like rice?", "Where do you buy food?"]], ["My free time", ["What do you do on Sunday?", "Do you like football?", "Who do you play with?"]], ["My college", ["What day is your class?", "What time does it start?", "Do you like your teacher?"]], ["My family", ["Who do you live with?", "Do you like cooking?", "What does your brother do?"]]],PIC=["a kitchen", "a street", "a classroom", "a market", "a park", "a living room"];
+const $=id=>document.getElementById(id);
+function sh(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function norm(s){return s.toLowerCase().replace(/[?.]/g,'').replace(/\s+/g,' ').trim();}
+document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>{document.querySelectorAll('nav button').forEach(x=>x.classList.toggle('on',x===b));document.querySelectorAll('section').forEach(s=>s.classList.toggle('on',s.id===b.dataset.t));history.replaceState(null,'','#'+b.dataset.t);});
+if(location.hash){const b=document.querySelector('nav button[data-t="'+location.hash.slice(1)+'"]');if(b)b.click();}
+WO.forEach((w,k)=>{const d=document.createElement('div');d.className='card';const words=sh(w[0].split('|'));let ans=[];
+ d.innerHTML='<div class="line"></div><div class="words"></div><div class="act"><button class="go chk" type="button">Check</button><button class="go ghost rs" type="button">Start again</button></div><div class="res"></div>';
+ const line=d.querySelector('.line'),wb=d.querySelector('.words'),res=d.querySelector('.res');
+ words.forEach(x=>{const b=document.createElement('button');b.type='button';b.textContent=x;b.onclick=()=>{ans.push(x);b.disabled=true;line.textContent=ans.join(' ');res.textContent='';};wb.appendChild(b);});
+ d.querySelector('.chk').onclick=()=>{if(ans.length<words.length){res.className='res no';res.textContent='Use all the words.';return;}if(norm(ans.join(' '))===norm(w[1])){res.className='res ok';res.textContent='✓ '+w[1];}else{res.className='res no';res.textContent='Not yet. Try again.';}};
+ d.querySelector('.rs').onclick=()=>{ans=[];line.textContent='';res.textContent='';wb.querySelectorAll('button').forEach(b=>b.disabled=false);};
+ $('wo').appendChild(d);});
+QW.forEach(q=>{const d=document.createElement('div');d.className='card';d.innerHTML='<div class="big">“'+q[0]+'”</div><div class="opt"></div><div class="res"></div>';
+ ['What','Where','When','Who'].forEach(o=>{const b=document.createElement('button');b.type='button';b.textContent=o;b.onclick=()=>{const r=d.querySelector('.res');if(o===q[1]){r.className='res ok';r.textContent='✓ '+o+'?';}else{r.className='res no';r.textContent='Not '+o+'. Try again.';}};d.querySelector('.opt').appendChild(b);});$('qw').appendChild(d);});
+['Where do you live?','Who do you live with?','How do you spell your name?','What\'s your phone number?'].forEach(q=>{const d=document.createElement('div');d.className='card';d.innerHTML='<div class="big">'+q+'</div><textarea rows="2" aria-label="Your answer"></textarea>';$('ca').appendChild(d);});
+LIS.forEach(L=>{const d=document.createElement('div');d.className='card';const x=L[2];let c1=null,c2=null;
+ d.innerHTML='<h3>'+L[0]+'</h3><p><b>1.</b> '+x[0]+'</p><div class="opt o1"></div><p><b>2.</b> '+x[3]+'</p><div class="opt o2"></div><div class="act"><button class="go" type="button">Check</button></div><div class="res"></div>';
+ function mk(sel,opts,set){opts.forEach((o,i)=>{const b=document.createElement('button');b.type='button';b.textContent=o;b.onclick=()=>{set(i);d.querySelectorAll(sel+' button').forEach(y=>y.classList.remove('sel'));b.classList.add('sel');};d.querySelector(sel).appendChild(b);});}
+ mk('.o1',x[1],i=>c1=i);mk('.o2',x[4],i=>c2=i);
+ d.querySelector('.go').onclick=()=>{const r=d.querySelector('.res');if(c1===null||c2===null){r.className='res no';r.textContent='Answer both questions.';return;}const n=(c1===x[2]?1:0)+(c2===x[5]?1:0);r.className='res '+(n===2?'ok':'no');r.textContent=n===2?'✓ Both correct.':(n+' of 2 correct. Listen again and try again.');};
+ $('li').appendChild(d);});
+$('nc').onclick=()=>{const q=sh(T1Q).slice(0,4),t=TOP[Math.floor(Math.random()*TOP.length)],p=PIC[Math.floor(Math.random()*PIC.length)];
+ $('card').className='card';$('card').innerHTML='<h3>Task 1 – assessor asks</h3><ol>'+q.map(x=>'<li>'+x+'</li>').join('')+'</ol><h3>Task 2 – talk for one minute: '+t[0]+'</h3><p class="muted">Assessor asks two questions, for example:</p><ul>'+t[1].slice(0,2).map(x=>'<li>'+x+'</li>').join('')+'</ul><h3>Task 3 – describe a picture</h3><p>Assessor shows a picture of '+p+' (open <a href="https://atinwix.github.io/esol/e1/speaking-listening/task3-describe-the-picture-pair-practice.html" target="_blank" rel="noopener">Task 3 pair practice</a> and use one picture) and asks: “What can you see?”</p><h3>Task 4</h3><p>The teacher plays a script. The assessor asks the two questions. The candidate answers aloud.</p>';};
+</script></body></html>

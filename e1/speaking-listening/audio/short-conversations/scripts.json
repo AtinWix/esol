@@ -1,0 +1,256 @@
+{
+ "title": "E1 Short Conversations and Exam Run-Through – Lesson Audio",
+ "plan": "../../docs/short-conversations-task1-questions-day-plan-and-answers.pdf",
+ "voices": {
+  "Ann": "Kore",
+  "Ben": "Puck"
+ },
+ "scripts": [
+  {
+   "id": "script-a",
+   "label": "Script A – Where are they? Eight sentences (AM slide 3)",
+   "lines": [
+    [
+     "Ann",
+     "One. Your class is in Room 6."
+    ],
+    [
+     "Ben",
+     "Two. What is the problem?"
+    ],
+    [
+     "Ann",
+     "Three. How much are the apples?"
+    ],
+    [
+     "Ben",
+     "Four. Dinner is ready."
+    ],
+    [
+     "Ann",
+     "Five. Take this medicine."
+    ],
+    [
+     "Ben",
+     "Six. Two kilos of rice, please."
+    ],
+    [
+     "Ann",
+     "Seven. Open your books."
+    ],
+    [
+     "Ben",
+     "Eight. Sit on the sofa."
+    ]
+   ],
+   "questions": [
+    "1 college; 2 doctor; 3 market; 4 home; 5 doctor; 6 market; 7 college; 8 home"
+   ]
+  },
+  {
+   "id": "script-b",
+   "label": "Script B – College conversation (Handout 12A Section A, Text 1)",
+   "lines": [
+    [
+     "Ann",
+     "Hello. Are you a new student?"
+    ],
+    [
+     "Ben",
+     "Yes, I am. My name is Hana."
+    ],
+    [
+     "Ann",
+     "Welcome, Hana. Your class is in Room 6."
+    ],
+    [
+     "Ben",
+     "Thank you. Is it upstairs?"
+    ],
+    [
+     "Ann",
+     "Yes, it is."
+    ]
+   ],
+   "questions": [
+    "Is Hana a new student? (Yes, she is.)",
+    "Which room is her class in? (Room 6)"
+   ]
+  },
+  {
+   "id": "script-c",
+   "label": "Script C – Doctor conversation (Handout 12A Section A, Text 2)",
+   "lines": [
+    [
+     "Ann",
+     "Good morning. What is the problem?"
+    ],
+    [
+     "Ben",
+     "I have a bad cough."
+    ],
+    [
+     "Ann",
+     "Take this medicine two times a day."
+    ],
+    [
+     "Ben",
+     "Thank you, doctor."
+    ]
+   ],
+   "questions": [
+    "Does the man have a headache? (No, he doesn't.)",
+    "How many times a day does he take the medicine? (Two times)"
+   ]
+  },
+  {
+   "id": "script-d",
+   "label": "Script D – Spell it and say the number (AM slide 11)",
+   "lines": [
+    [
+     "Ann",
+     "Number one. K, H, A, N. Khan."
+    ],
+    [
+     "Ann",
+     "Number two. G, R, A, C, E. Grace."
+    ],
+    [
+     "Ann",
+     "Number three. My phone number is oh seven seven double oh, nine double oh, four six one."
+    ]
+   ],
+   "questions": [
+    "1 Khan; 2 Grace; 3 07700 900461"
+   ]
+  },
+  {
+   "id": "script-e",
+   "label": "Script E – In the street (PM slide 5)",
+   "lines": [
+    [
+     "Ben",
+     "Hi Sara. Where are you going?"
+    ],
+    [
+     "Ann",
+     "I'm going to the market."
+    ],
+    [
+     "Ben",
+     "What do you want to buy?"
+    ],
+    [
+     "Ann",
+     "Fish and rice."
+    ]
+   ],
+   "questions": [
+    "Is Sara going to college? (No, she isn't.)",
+    "What does she want to buy? (Fish and rice)"
+   ]
+  },
+  {
+   "id": "script-f",
+   "label": "Script F – At home, one speaker (PM slide 5)",
+   "lines": [
+    [
+     "Ben",
+     "I live in a small flat. I live with my brother. He is a bus driver. On Sunday we cook together. I like Sunday."
+    ]
+   ],
+   "questions": [
+    "Does the speaker live with a brother? (Yes, he does.)",
+    "What do they do on Sunday? (They cook together.)"
+   ]
+  },
+  {
+   "id": "script-g",
+   "label": "Script G – Phone message about a picnic (PM slide 5)",
+   "lines": [
+    [
+     "Ann",
+     "Hello, Sam. This is Anna. The picnic is on Sunday. We meet at the park at twelve o'clock. Bring some food and a drink. See you there!"
+    ]
+   ],
+   "questions": [
+    "Is the picnic on Saturday? (No, it isn't. It's on Sunday.)",
+    "What time do they meet? (Twelve o'clock)"
+   ]
+  },
+  {
+   "id": "script-h",
+   "label": "Script H – In the shop (PM slide 5)",
+   "lines": [
+    [
+     "Ben",
+     "Excuse me. Do you have milk?"
+    ],
+    [
+     "Ann",
+     "Yes, we do. It's by the door."
+    ],
+    [
+     "Ben",
+     "How much is it?"
+    ],
+    [
+     "Ann",
+     "It's one pound twenty."
+    ],
+    [
+     "Ben",
+     "Thank you."
+    ]
+   ],
+   "questions": [
+    "Does the shop have milk? (Yes, it does.)",
+    "How much is the milk? (£1.20)"
+   ]
+  },
+  {
+   "id": "script-i",
+   "label": "Script I – At the bus stop (PM run-through, Round 1)",
+   "lines": [
+    [
+     "Ben",
+     "Excuse me. Is this the bus to the station?"
+    ],
+    [
+     "Ann",
+     "No, it isn't. This is the bus to the market."
+    ],
+    [
+     "Ben",
+     "Which bus goes to the station?"
+    ],
+    [
+     "Ann",
+     "The number twelve."
+    ],
+    [
+     "Ben",
+     "Thank you."
+    ]
+   ],
+   "questions": [
+    "Is this the bus to the station? (No, it isn't.)",
+    "Which bus goes to the station? (The number twelve)"
+   ]
+  },
+  {
+   "id": "script-j",
+   "label": "Script J – Message from the college (PM run-through, Round 2)",
+   "lines": [
+    [
+     "Ann",
+     "Hello, this is Hackney College. Your English class is in Room eight. It starts at ten o'clock. Please bring a pen. Thank you."
+    ]
+   ],
+   "questions": [
+    "Is the English class in Room six? (No, it isn't. It's Room eight.)",
+    "What time does it start? (Ten o'clock)"
+   ]
+  }
+ ]
+}
