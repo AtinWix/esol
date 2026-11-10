@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-09T19:14:34Z",
+ "updatedAt": "2026-11-10T07:22:59Z",
  "upcoming": {
   "2026-11-02_e3": {
    "afternoon": "PC room: Too Cold to Learn – complaint emails",
@@ -203,7 +203,7 @@
    "prep": "Cut out the day cards and YES/NO cards (one pair each). Log the PCs in and post the online practice, Talk Builder and Task 4 Put It in Order links in Teams General before the afternoon.",
    "print": "Lesson 11 Handout E1-11A (1 side, one each); cut-out sheet (2 sides). Nothing for the afternoon.",
    "title": "Days, times and prices for Task 4 – finish the Task 2 talk",
-   "amended": "2026-11-09T18:57:40Z"
+   "amended": "2026-11-09T19:14:37Z"
   },
   "2026-11-11_e3": {
    "afternoon": "Classroom, paper: time order with Hawa's Morning (3A); alphabetical order with word cards (3B); then ESB Set L Tasks 1 and 2 (14 questions) under timed conditions, swap-and-mark with proof from the text",
@@ -303,36 +303,36 @@
    "prep": "Cut up the question cards (6 sets, A–F). Log in the PCs and post the online practice and TfL Journey Planner links in Teams General before the afternoon.",
    "print": "Student handout (2 sides, one each); question cards (3 sides = 6 sets). Nothing for the afternoon.",
    "title": "Superlatives, likes and reasons – Task 4 listening and discussion",
-   "amended": "2026-11-09T18:57:40Z"
+   "amended": "2026-11-09T19:14:37Z"
   }
  },
  "status": {},
  "health": {
-  "checkedAt": "2026-11-09T07:30:00Z",
+  "checkedAt": "2026-11-10T07:30:00Z",
   "items": [
    {
     "ok": true,
-    "text": "Mon 9 E3, Tue 10 E1 and Thu 12 E2 are built. Wed 11 E3 is correctly waiting for your Mon 9 log."
+    "text": "Tue 10 E1, Wed 11 E3 and Thu 12 E2 are built. Mon 16 E3 and Tue 17 E1 are correctly waiting for your Wed 11 and Tue 10 logs."
    },
    {
     "ok": true,
-    "text": "Mon 2, Tue 3, Wed 4 and Thu 5 are logged, with ROW snippets, Covered/Next and 'As taught' cards in place."
+    "text": "Mon 2, Tue 3, Wed 4, Thu 5 and Mon 9 are logged, with ROW snippets, Covered/Next and 'As taught' cards in place."
    },
    {
     "ok": false,
-    "text": "Thu night 'Weekly ESOL lesson build' last run (5 Nov) failed: usage limit reached (fallback task, nothing outstanding)."
+    "text": "Thu night 'Weekly ESOL lesson build' and Thursday 'update past activities' last runs (5 Nov) failed: usage limit reached. Both are fallback or non-essential, nothing outstanding."
+   },
+   {
+    "ok": true,
+    "text": "Build-after-log (9 Nov), 2:35pm summary and feedback check last runs succeeded."
    },
    {
     "ok": false,
-    "text": "Thursday evening 'update past activities' last run (5 Nov) failed: usage limit reached (non-essential, skipped)."
+    "text": "Drive inbox still holds folder 2026-11-09_e3 (gap-fill activity). It is already filed in the library, so the folder can be deleted."
    },
    {
     "ok": true,
-    "text": "Build-after-log, 2:35pm summary and feedback check last runs succeeded."
-   },
-   {
-    "ok": true,
-    "text": "Drive inbox is empty. All Hub card links are https and point at existing files."
+    "text": "All three built days have 20-question Kahoot files; live Kahoot links and loaded word-game links are in place. All card links are https and point at existing files."
    },
    {
     "ok": true,
