@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-10T16:18:48Z",
+ "updatedAt": "2026-11-11T07:15:33Z",
  "upcoming": {
   "2026-11-02_e3": {
    "afternoon": "PC room: Too Cold to Learn – complaint emails",
@@ -390,36 +390,40 @@
    "todo": [
     "Kahoot not made live yet – sign in to Kahoot in the Claude app's browser (or Chrome) and ask Claude to \"make the Kahoots\". Until then, import the file."
    ],
-   "amended": "2026-11-10T16:18:21Z"
+   "amended": "2026-11-10T16:20:23Z"
   }
  },
  "status": {},
  "health": {
-  "checkedAt": "2026-11-10T07:30:00Z",
+  "checkedAt": "2026-11-11T07:20:00Z",
   "items": [
    {
     "ok": true,
-    "text": "Tue 10 E1, Wed 11 E3 and Thu 12 E2 are built. Mon 16 E3 and Tue 17 E1 are correctly waiting for your Wed 11 and Tue 10 logs."
+    "text": "Wed 11 E3, Thu 12 E2 and Tue 17 E1 are built. Mon 16 E3 (waits for your Wed 11 log) and Thu 19 E2 (waits for your Thu 12 log) are correctly not built yet. No faults."
    },
    {
     "ok": true,
-    "text": "Mon 2, Tue 3, Wed 4, Thu 5 and Mon 9 are logged, with ROW snippets, Covered/Next and 'As taught' cards in place."
+    "text": "Thu 5, Mon 9 and Tue 10 are logged, with ROW snippets, Covered/Next and 'As taught' cards in place."
    },
    {
     "ok": false,
-    "text": "Thu night 'Weekly ESOL lesson build' and Thursday 'update past activities' last runs (5 Nov) failed: usage limit reached. Both are fallback or non-essential, nothing outstanding."
+    "text": "Thu 5 Nov runs of 'Weekly ESOL lesson build' and 'Thursday evening: update past activities' still show FAILED (usage limit reached). Both are fallback/non-essential; nothing outstanding. Next runs: Thu 12 Nov evening."
    },
    {
     "ok": true,
-    "text": "Build-after-log (9 Nov), 2:35pm summary and feedback check last runs succeeded."
+    "text": "Build-after-log (10 Nov 7pm), 2:35pm summary and feedback check last runs succeeded."
    },
    {
     "ok": false,
-    "text": "Drive inbox still holds folder 2026-11-09_e3 (gap-fill activity). It is already filed in the library, so the folder can be deleted."
+    "text": "Drive inbox holds two folders: 2026-11-10_e1 (E1 'Talk Before Class' warm-up, NOT yet in the library or lists – needs filing) and 2026-11-09_e3 (already filed, can be deleted)."
+   },
+   {
+    "ok": false,
+    "text": "Kahoot gaps: Tue 17 E1 Kahoot not live yet (todo on card, import file has 20 Qs); Mon 9 E3 live Kahoot Q12 still says Saturday only (should be Saturday and Sunday)."
    },
    {
     "ok": true,
-    "text": "All three built days have 20-question Kahoot files; live Kahoot links and loaded word-game links are in place. All card links are https and point at existing files."
+    "text": "Kahoot files for Wed 11, Thu 12 and Tue 17 have exactly 20 questions; word-game links on cards are the loaded ?p= links; all card links are https and point at existing files."
    },
    {
     "ok": true,
