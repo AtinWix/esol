@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en-GB"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>E3 Reading – Pronouns, Word Meaning and Ordering – Lesson Audio</title>
+<style>
+:root{--ink:#1F2A37;--muted:#5B6776;--line:#D5DCE4;--card:#fff;--bg:#F3F5F8;--accent:#1F5FA8;--accent-ink:#fff;--soft:#E7EFF9}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif;font-size:18px;line-height:1.45}
+main{max-width:900px;margin:0 auto;padding:20px 16px 110px}
+h1{font-size:clamp(22px,3.4vw,32px);margin:4px 0 6px}
+.top{display:flex;flex-wrap:wrap;gap:10px;align-items:center;color:var(--muted);font-size:16px;margin-bottom:18px}
+.plan{color:var(--accent)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:0 0 14px}
+.card.playing{border-color:var(--accent);box-shadow:0 0 0 3px var(--soft)}
+h2{font-size:clamp(19px,2.6vw,24px);margin:0 0 12px}
+.tag{display:inline-block;background:var(--accent);color:var(--accent-ink);border-radius:8px;padding:2px 10px;margin-right:8px}
+.row{display:flex;flex-wrap:wrap;gap:10px}
+button{font:inherit;font-size:18px;border-radius:10px;border:1px solid var(--line);background:#fff;color:var(--ink);padding:12px 18px;min-height:48px;cursor:pointer}
+button.main{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);font-weight:700}
+button:disabled{opacity:.5;cursor:default}
+.status{color:var(--muted);font-size:16px;margin-top:8px;min-height:1.4em}
+.box{display:none;margin-top:12px;padding:12px 14px;background:var(--soft);border-radius:10px}
+.box.open{display:block}
+.box p{margin:4px 0}
+.who{font-weight:700}
+.ans{display:none;color:#0B6B3A;font-weight:700}
+.show-ans .ans{display:inline}
+audio{display:none}
+@media (max-width:520px){button{flex:1 1 calc(50% - 10px)}}
+</style></head><body>
+<main>
+<h1>E3 Reading – Pronouns, Word Meaning and Ordering – Lesson Audio</h1>
+<div class="top"><span>Use “Play twice” to play a script, pause, then play it again. Press ▶ Play again to pause; press it again to carry on.</span><a class="plan" href="../../docs/wk09-mon-pronouns-word-meaning-ordering-day-plan.pdf">Lesson plan</a></div>
+<div id="list"></div>
+</main>
+<script>
+const SCRIPTS = [{"id": "script-a", "label": "Script A – Cycling in Hackney (Hangman Paragraphs)", "lines": [["Reader", "Many people in Hackney ride a bike to work or college. Cycling is cheap, quick and good for your health. If you do not have a bike, you can borrow one from a community project. Volunteers there repair old bikes and teach new riders how to stay safe on busy roads. Some people join a group ride on Sunday mornings. It is a friendly way to meet neighbours and see new parts of the city."]], "questions": ["You can borrow one from a community project. One what? (A bike)", "Volunteers there repair old bikes. Where is “there”? (The community project)", "When is the group ride? (Sunday mornings)"]}, {"id": "script-b", "label": "Script B – Two Wheels and a New Start (Handout 2B)", "lines": [["Reader", "When Farid Rahimi arrived in London two years ago, he knew nobody. He lived in a hostel in Dalston and spent most of his money on bus fares. His English class was four miles away, so he travelled for nearly an hour each way."], ["Reader", "One day his teacher, Mrs Okafor, told him about a bicycle workshop near the canal. It gives old bikes to people who need them. She wrote the address on a piece of paper and gave it to him. He went there the next Saturday."], ["Reader", "The workshop was noisy and crowded. A mechanic called Rosa showed Farid a rusty blue bicycle. “It is yours,” she said, “but first you must repair it.” Farid had never fixed anything before. Rosa was patient. She taught him how to change a tyre and mend the brakes. After three Saturdays, it was ready."], ["Reader", "The bicycle changed Farid’s life. He now gets to college in twenty minutes and he saves about fifteen pounds a week. He also feels healthier. At first, the busy roads frightened him, so he took a free cycling lesson from the council. Now he rides with confidence."], ["Reader", "Farid still goes to the workshop every Saturday, but these days he is a volunteer. He helps new visitors choose a bike and shows them how to look after it. “Rosa gave me more than a bicycle,” he says. “She gave me a skill. I want to pass it on.”"]], "questions": ["Who is the story about? (Farid Rahimi)", "What problem did he have at first? (His journey to class was long and cost a lot of money.)", "Is the end happy or sad? (Happy)"]}, {"id": "script-c", "label": "Script C – My morning, in the wrong order (Warm-up)", "lines": [["Reader", "I got to college at nine. That was late, because I missed my bus. I missed my bus because I couldn’t find my keys. And all that was after I woke up."]], "questions": ["Put the events in order. (I woke up → I couldn’t find my keys → I missed my bus → I got to college at nine)", "What time did I get to college? (Nine o’clock)"]}, {"id": "script-d", "label": "Script D – Hawa’s Morning (Handout 3A)", "lines": [["Reader", "Hawa got up at six o’clock. Before breakfast, she washed her son’s school shirt. After they ate, she took him to school. Then she caught the bus to college. She arrived late because the bus broke down on the way. At lunchtime she phoned the school to check on her son."]], "questions": ["What did Hawa do first? (She got up – at six o’clock)", "What did she do before breakfast? (She washed her son’s school shirt)", "When did she phone the school? (At lunchtime)"]}];
+const list = document.getElementById('list');
+let current = null;
+function stopAll(){ document.querySelectorAll('audio').forEach(a=>{a.pause();a.currentTime=0;a.onended=null;});
+  document.querySelectorAll('.card').forEach(c=>c.classList.remove('playing'));
+  document.querySelectorAll('.status').forEach(s=>s.textContent=s.dataset.base||''); clearTimeout(window._gap);
+  document.querySelectorAll('[data-act="once"]').forEach(b=>{b.textContent='▶ Play';});
+  document.querySelectorAll('.card').forEach(c=>{c._paused=false;c._resume=null;c._gapWaiting=false;}); }
+SCRIPTS.forEach(s=>{
+  const c=document.createElement('section'); c.className='card';
+  const lines=s.lines.map(([w,t])=>`<p><span class="who">${w}:</span> ${t}</p>`).join('');
+  const qs=(s.questions||[]).map(q=>{const m=q.match(/^(.*?)\s*\((.*)\)\s*$/);
+    return m?`<p>${m[1]} <span class="ans">→ ${m[2]}</span></p>`:`<p>${q}</p>`;}).join('');
+  const lm=s.label.match(/^(Script \w+)\s*[–-]\s*(.*)$/);
+  c.innerHTML=`<h2>${lm?`<span class="tag">${lm[1]}</span>${lm[2]}`:s.label}</h2>
+  <audio preload="none" src="${s.id}.mp3"></audio>
+  <div class="row">
+    <button class="main" data-act="once">▶ Play</button>
+    <button data-act="twice">▶▶ Play twice</button>
+    <button data-act="stop">■ Stop</button>
+    <button data-act="script">Show script</button>
+    ${qs?'<button data-act="qs">Questions</button><button data-act="ans">Answers</button>':''}
+  </div>
+  <div class="status"></div>
+  <div class="box b-script">${lines}</div>
+  ${qs?`<div class="box b-qs">${qs}</div>`:''}`;
+  list.appendChild(c);
+  const a=c.querySelector('audio'), st=c.querySelector('.status');
+  a.addEventListener('error',()=>{st.dataset.base='Audio not ready yet – it is made automatically a few minutes after upload.';st.textContent=st.dataset.base;});
+  const pb=c.querySelector('[data-act="once"]');
+  function play(times){ stopAll(); c.classList.add('playing'); pb.textContent='⏸ Pause'; let n=1;
+    const go=()=>{c._gapWaiting=false; st.textContent=times>1?`Playing (${n} of ${times})…`:'Playing…'; a.currentTime=0; a.play().catch(()=>{});};
+    a.onended=()=>{ if(n<times){n++; st.textContent='Short pause…'; c._gapWaiting=true; window._gap=setTimeout(go,3000);} else {c.classList.remove('playing'); pb.textContent='▶ Play'; st.textContent='Finished.';} };
+    c._go=go; go(); }
+  function togglePause(){ if(!c.classList.contains('playing')) return;
+    if(!c._paused){ c._paused=true; pb.textContent='▶ Resume'; c._st=st.textContent;
+      if(c._gapWaiting){ clearTimeout(window._gap); c._resume=c._go; } else { a.pause(); c._resume=()=>{a.play().catch(()=>{});}; }
+      st.textContent='Paused.'; }
+    else { c._paused=false; pb.textContent='⏸ Pause'; st.textContent=c._st||''; const r=c._resume; c._resume=null; if(r) r(); } }
+  c.addEventListener('click',e=>{const b=e.target.closest('button'); if(!b) return;
+    const act=b.dataset.act;
+    if(act==='once'){ if(c.classList.contains('playing')) togglePause(); else play(1); } else if(act==='twice') play(2); else if(act==='stop') stopAll();
+    else if(act==='script'){const x=c.querySelector('.b-script'); x.classList.toggle('open'); b.textContent=x.classList.contains('open')?'Hide script':'Show script';}
+    else if(act==='qs'){c.querySelector('.b-qs').classList.toggle('open');}
+    else if(act==='ans'){const x=c.querySelector('.b-qs'); x.classList.add('open'); x.classList.toggle('show-ans');}
+  });
+});
+</script>
+<div class="atin-logo" aria-label="Made by Atin">
+<svg viewBox="104 28 172 134" width="64" height="50" role="img" aria-hidden="true">
+<text x="139" y="112" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="72" fill="currentColor">A</text>
+<rect x="177" y="83" width="24" height="6" rx="1" fill="currentColor"/>
+<path d="M216 66 L216 106 A25 7 0 0 0 266 106 L266 66" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+<ellipse cx="241" cy="66" rx="25" ry="7" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="216" y1="80" x2="266" y2="80" stroke="currentColor" stroke-width="1.5"/>
+<line x1="216" y1="94" x2="266" y2="94" stroke="currentColor" stroke-width="1.5"/>
+<ellipse cx="241" cy="47" rx="23" ry="5" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="114" y1="128" x2="266" y2="128" stroke="currentColor" stroke-width="1"/>
+<text x="190" y="152" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" letter-spacing="2" fill="currentColor">made by Atin</text>
+</svg>
+</div>
+<style>
+.atin-logo{position:fixed;left:calc(6px + env(safe-area-inset-left,0px));bottom:calc(6px + env(safe-area-inset-bottom,0px));z-index:2147483000;pointer-events:none;color:#1F3A5F;background:rgba(255,255,255,.92);border:1px solid #C9D3DF;border-radius:8px;padding:3px 5px;line-height:0}
+.atin-logo svg{display:block}
+@media print{.atin-logo{position:fixed;left:auto;right:6mm;bottom:5mm;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+
+</body></html>

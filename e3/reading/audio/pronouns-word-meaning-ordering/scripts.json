@@ -1,0 +1,84 @@
+{
+  "title": "E3 Reading – Pronouns, Word Meaning and Ordering – Lesson Audio",
+  "plan": "../../docs/wk09-mon-pronouns-word-meaning-ordering-day-plan.pdf",
+  "voices": {
+    "Reader": "Kore"
+  },
+  "scripts": [
+    {
+      "id": "script-a",
+      "label": "Script A – Cycling in Hackney (Hangman Paragraphs)",
+      "lines": [
+        [
+          "Reader",
+          "Many people in Hackney ride a bike to work or college. Cycling is cheap, quick and good for your health. If you do not have a bike, you can borrow one from a community project. Volunteers there repair old bikes and teach new riders how to stay safe on busy roads. Some people join a group ride on Sunday mornings. It is a friendly way to meet neighbours and see new parts of the city."
+        ]
+      ],
+      "questions": [
+        "You can borrow one from a community project. One what? (A bike)",
+        "Volunteers there repair old bikes. Where is “there”? (The community project)",
+        "When is the group ride? (Sunday mornings)"
+      ]
+    },
+    {
+      "id": "script-b",
+      "label": "Script B – Two Wheels and a New Start (Handout 2B)",
+      "lines": [
+        [
+          "Reader",
+          "When Farid Rahimi arrived in London two years ago, he knew nobody. He lived in a hostel in Dalston and spent most of his money on bus fares. His English class was four miles away, so he travelled for nearly an hour each way."
+        ],
+        [
+          "Reader",
+          "One day his teacher, Mrs Okafor, told him about a bicycle workshop near the canal. It gives old bikes to people who need them. She wrote the address on a piece of paper and gave it to him. He went there the next Saturday."
+        ],
+        [
+          "Reader",
+          "The workshop was noisy and crowded. A mechanic called Rosa showed Farid a rusty blue bicycle. “It is yours,” she said, “but first you must repair it.” Farid had never fixed anything before. Rosa was patient. She taught him how to change a tyre and mend the brakes. After three Saturdays, it was ready."
+        ],
+        [
+          "Reader",
+          "The bicycle changed Farid’s life. He now gets to college in twenty minutes and he saves about fifteen pounds a week. He also feels healthier. At first, the busy roads frightened him, so he took a free cycling lesson from the council. Now he rides with confidence."
+        ],
+        [
+          "Reader",
+          "Farid still goes to the workshop every Saturday, but these days he is a volunteer. He helps new visitors choose a bike and shows them how to look after it. “Rosa gave me more than a bicycle,” he says. “She gave me a skill. I want to pass it on.”"
+        ]
+      ],
+      "questions": [
+        "Who is the story about? (Farid Rahimi)",
+        "What problem did he have at first? (His journey to class was long and cost a lot of money.)",
+        "Is the end happy or sad? (Happy)"
+      ]
+    },
+    {
+      "id": "script-c",
+      "label": "Script C – My morning, in the wrong order (Warm-up)",
+      "lines": [
+        [
+          "Reader",
+          "I got to college at nine. That was late, because I missed my bus. I missed my bus because I couldn’t find my keys. And all that was after I woke up."
+        ]
+      ],
+      "questions": [
+        "Put the events in order. (I woke up → I couldn’t find my keys → I missed my bus → I got to college at nine)",
+        "What time did I get to college? (Nine o’clock)"
+      ]
+    },
+    {
+      "id": "script-d",
+      "label": "Script D – Hawa’s Morning (Handout 3A)",
+      "lines": [
+        [
+          "Reader",
+          "Hawa got up at six o’clock. Before breakfast, she washed her son’s school shirt. After they ate, she took him to school. Then she caught the bus to college. She arrived late because the bus broke down on the way. At lunchtime she phoned the school to check on her son."
+        ]
+      ],
+      "questions": [
+        "What did Hawa do first? (She got up – at six o’clock)",
+        "What did she do before breakfast? (She washed her son’s school shirt)",
+        "When did she phone the school? (At lunchtime)"
+      ]
+    }
+  ]
+}
