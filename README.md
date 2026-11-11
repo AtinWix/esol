@@ -165,6 +165,8 @@ Word documents:
 - [E3 Reading – Ordering Tasks and Practice Paper – Projector Lesson](e3/reading/wk09-ordering-tasks-practice-paper-projector-lesson.html) – Time order, alphabetical order, online practice, timed online paper and answers – all on screen (PC room)
 - [E3 Reading – Time Order, Alphabetical Order, Pronouns and Word Meaning – Online Practice](e3/reading/wk09-time-order-alphabetical-order-practice.html) – What happened first?, eight time-order texts, 14 alphabetical sets, 18 pronoun / word meaning / purpose questions – PC or phone
 - [E3 Reading – Cycling in Hackney – Hangman Paragraph – Text to Read Aloud (Teacher)](e3/reading/cycling-in-hackney-hangman-paragraph-read-aloud-text.html) – Teacher page: the settle-in paragraph to read aloud, with the game link that opens it ready to play.
+- [E3 Reading – Set L Exam Practice – Lesson Audio (Script A)](e3/reading/audio/set-l-exam-practice/index.html) – Audio for the Hangman Paragraphs text, play/pause on one button.
+- [E3 Reading – Using a Public Library – Hangman Paragraph – Text to Read Aloud (Teacher)](e3/reading/public-library-hangman-paragraph-read-aloud-text.html) – Teacher page: the settle-in paragraph to read aloud, with the game link that opens it ready to play.
 - [E3 Reading Skills – Hackney Bugle](e3/reading/wk17-reading-skills-hackney-bugle.html)
 - [E3 Reading – Purpose Clues – Drag and Sort Activity](e3/reading/purpose-clues-drag-sort-activity.html) – Drag each clue onto its purpose: warn, advise, instruct, advertise, inform, describe
 
@@ -184,6 +186,7 @@ Word documents:
 - [E3 Reading – Hackney Places – Teacher Script (Do and Say, Slide by Slide)](e3/reading/docs/hackney-places-teacher-script.pdf) (PDF) · [Word](e3/reading/docs/hackney-places-teacher-script.docx)
 - [Exam Prep Lesson 1 – Activity 5 secret purpose cards (cut out)](e3/reading/docs/lesson-01-activity5-secret-purpose-cards.pdf) (PDF) · [Word](e3/reading/docs/lesson-01-activity5-secret-purpose-cards.docx)
 - [E3 Reading – Pronouns, Word Meaning and Ordering – Kahoot Quiz](e3/reading/docs/pronouns-word-meaning-ordering-kahoot.pdf) (PDF) · [Word](e3/reading/docs/pronouns-word-meaning-ordering-kahoot.xlsx)
+- [E3 Reading – Set L Exam Practice and Ordering – Kahoot Quiz](e3/reading/docs/set-l-exam-practice-kahoot.pdf) (PDF) · [Word](e3/reading/docs/set-l-exam-practice-kahoot.xlsx)
 - [Wk 1 Exam question types – sort activity – answers (teacher)](e3/reading/docs/wk01-exam-question-types-sort-activity-answers.pdf) (PDF) · [Word](e3/reading/docs/wk01-exam-question-types-sort-activity-answers.docx)
 - [Wk 1 Exam question types – sort activity](e3/reading/docs/wk01-exam-question-types-sort-activity.pdf) (PDF) · [Word](e3/reading/docs/wk01-exam-question-types-sort-activity.docx)
 - [Wk 1 Exam question words – reference sheet](e3/reading/docs/wk01-exam-question-words-reference-sheet.pdf) (PDF) · [Word](e3/reading/docs/wk01-exam-question-words-reference-sheet.docx)
@@ -209,6 +212,7 @@ Word documents:
 - [Wk 9 Alphabetical order word cards – cut-outs (Exam Prep Lesson 3)](e3/reading/docs/wk09-mon-alphabetical-order-word-cards.pdf) (PDF) · [Word](e3/reading/docs/wk09-mon-alphabetical-order-word-cards.docx)
 - [E3 Reading – Hackney Places – Adjectives, Adverbs and Jigsaw Reading – Day Plan and Answers](e3/reading/docs/wk09-mon-hackney-places-adjectives-adverbs-day-plan.pdf) (PDF) · [Word](e3/reading/docs/wk09-mon-hackney-places-adjectives-adverbs-day-plan.docx)
 - [E3 Reading – Pronouns, Word Meaning, Ordering Tasks and an ESB Paper – Day Plan and Answers](e3/reading/docs/wk09-mon-pronouns-word-meaning-ordering-day-plan.pdf) (PDF) · [Word](e3/reading/docs/wk09-mon-pronouns-word-meaning-ordering-day-plan.docx)
+- [E3 Reading – ESB Set L Exam Practice, Ordering Tasks and a Timed Online Paper – Day Plan and Answers](e3/reading/docs/wk10-mon-set-l-exam-practice-timed-papers-day-plan.pdf) (PDF) · [Word](e3/reading/docs/wk10-mon-set-l-exam-practice-timed-papers-day-plan.docx)
 - [Lesson 1: Main points and purpose – student handouts](e3/reading/exam-prep/lesson-01-handouts.pdf) (PDF) · [Word](e3/reading/exam-prep/lesson-01-handouts.docx)
 - [Lesson 1: Main points and purpose – plan and answers](e3/reading/exam-prep/lesson-01-plan.pdf) (PDF) · [Word](e3/reading/exam-prep/lesson-01-plan.docx)
 - [Lesson 2: Pronouns, word meaning and finding details – student handouts](e3/reading/exam-prep/lesson-02-handouts.pdf) (PDF) · [Word](e3/reading/exam-prep/lesson-02-handouts.docx)

@@ -1,0 +1,24 @@
+{
+  "title": "E3 Reading – Set L Exam Practice – Lesson Audio",
+  "plan": "../../docs/wk10-mon-set-l-exam-practice-timed-papers-day-plan.pdf",
+  "voices": {
+    "Reader": "Kore"
+  },
+  "scripts": [
+    {
+      "id": "script-a",
+      "label": "Script A – Using a Public Library (Hangman Paragraphs)",
+      "lines": [
+        [
+          "Reader",
+          "A public library is a useful place for new learners of English. Anyone can join for free. You can borrow books, read newspapers and use a computer. Many libraries have a quiet room where students can study. If you cannot find the book you want, a librarian will help you. It is a warm, friendly place to practise your reading."
+        ]
+      ],
+      "questions": [
+        "“If you cannot find the book you want, a librarian will help you.” Who helps? (A librarian)",
+        "“It is a warm, friendly place to practise your reading.” What is “It”? (A public library)",
+        "“Anyone can join for free.” What does “for free” mean? (It costs no money)"
+      ]
+    }
+  ]
+}
