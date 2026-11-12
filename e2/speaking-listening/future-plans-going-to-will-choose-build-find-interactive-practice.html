@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>E2 Future Plans – going to or will? Choose, Build, Find the Mistake – Interactive Practice</title>
+<style>
+:root{--bg:#F4F6F8;--surface:#fff;--ink:#141D28;--muted:#4F5B69;--line:#D3D9E0;--accent:#0E6B6B;--accent-ink:#fff;--soft:#DCEFEE;--ok:#1B7F3B;--okbg:#DFF3E4;--bad:#B3261E;--badbg:#FBE3E1}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10151B;--surface:#19212A;--ink:#EEF2F6;--muted:#A2ADBA;--line:#2B3642;--accent:#4FB8B3;--accent-ink:#08201F;--soft:#163533;--ok:#7BD99A;--okbg:#17321F;--bad:#FF9A92;--badbg:#3A1B19}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:clamp(17px,1.6vw,24px)/1.45 "Atkinson Hyperlegible",Arial,sans-serif}
+main{max-width:980px;margin:0 auto;padding:16px max(16px,env(safe-area-inset-left)) 90px}
+h1{font-size:1.5em;margin:.2em 0}h2{font-size:1.2em;margin:1.2em 0 .3em}.muted{color:var(--muted)}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+button{font:inherit;cursor:pointer;border-radius:12px;border:2px solid var(--line);background:var(--surface);color:var(--ink);padding:.5em .9em;min-height:46px}
+button:hover{border-color:var(--accent)}button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.tabs button[aria-pressed=true]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);font-weight:700}
+.q{background:var(--surface);border:2px solid var(--line);border-radius:14px;padding:.7em 1em;margin:.7em 0}
+.q.right{border-color:var(--ok);background:var(--okbg)}.q.wrong{border-color:var(--bad)}
+.q .t{font-weight:700;margin-bottom:.4em}.opts{display:flex;gap:8px;flex-wrap:wrap}
+.opts button.pick{font-weight:700}.fb{margin-top:.4em;min-height:1.4em}.fb.ok{color:var(--ok)}.fb.no{color:var(--bad)}
+.tiles,.answer{display:flex;gap:8px;flex-wrap:wrap;min-height:54px;padding:8px;border:2px dashed var(--line);border-radius:12px;margin:.4em 0}
+.tile{background:var(--soft);border-color:var(--accent);font-weight:700}
+.score{position:fixed;left:0;right:0;bottom:0;background:var(--surface);border-top:2px solid var(--line);padding:10px 16px;display:flex;justify-content:space-between;align-items:center;gap:10px;z-index:5}
+.score b{color:var(--accent)}
+.hide{display:none}
+@media print{.score{display:none}}
+</style></head><body>
+<main>
+<h1>E2 Future plans: going to or will?</h1>
+<p class="muted">Three parts. Choose, build, find. Try to get every one right the first time. No sound – you do not need headphones.</p>
+<div class="tabs" id="tabs">
+<button data-t="A" aria-pressed="true">A · Choose (12)</button><button data-t="B" aria-pressed="false">B · Build the question (6)</button><button data-t="C" aria-pressed="false">C · Find the correct sentence (8)</button></div>
+<div id="stage"></div>
+</main>
+<div class="score" role="status"><span>Part <b id="pn">A</b>: <b id="sc">0</b> right first time · <b id="dn">0</b> done of <b id="tt">12</b></span><button id="reset">Start this part again</button></div>
+<div class="atin-logo" aria-label="Made by Atin">
+<svg viewBox="104 28 172 134" width="64" height="50" role="img" aria-hidden="true">
+<text x="139" y="112" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="72" fill="currentColor">A</text>
+<rect x="177" y="83" width="24" height="6" rx="1" fill="currentColor"/>
+<path d="M216 66 L216 106 A25 7 0 0 0 266 106 L266 66" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+<ellipse cx="241" cy="66" rx="25" ry="7" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="216" y1="80" x2="266" y2="80" stroke="currentColor" stroke-width="1.5"/>
+<line x1="216" y1="94" x2="266" y2="94" stroke="currentColor" stroke-width="1.5"/>
+<ellipse cx="241" cy="47" rx="23" ry="5" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="114" y1="128" x2="266" y2="128" stroke="currentColor" stroke-width="1"/>
+<text x="190" y="152" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" letter-spacing="2" fill="currentColor">made by Atin</text>
+</svg>
+</div>
+<style>
+.atin-logo{position:fixed;left:calc(6px + env(safe-area-inset-left,0px));bottom:calc(6px + env(safe-area-inset-bottom,0px));z-index:2147483000;pointer-events:none;color:#1F3A5F;background:rgba(255,255,255,.92);border:1px solid #C9D3DF;border-radius:8px;padding:3px 5px;line-height:0}
+.atin-logo svg{display:block}
+@media print{.atin-logo{position:fixed;left:auto;right:6mm;bottom:5mm;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+<script>
+const D={"A": [["Look at the sky. It ___ rain.", "going to", "It is going to rain.", "You can see it now: use going to."], ["I've got a ticket to Paris. I ___ visit my uncle.", "going to", "I am going to visit my uncle.", "A plan you made before now: going to."], ["That bag looks heavy. I ___ help you.", "will", "I will help you.", "An offer: will."], ["A: There's no sugar. B: OK, I ___ buy some.", "will", "I will buy some.", "You decide at this moment: will."], ["I promise I ___ call you tonight.", "will", "I will call you tonight.", "A promise: will."], ["She wants to be a nurse. She ___ study at college next year.", "going to", "She is going to study at college next year.", "A plan: going to."], ["I think the test ___ be easy.", "will", "I think the test will be easy.", "Your opinion: I think … will."], ["The glass is on the edge of the table. It ___ fall!", "going to", "It is going to fall!", "You can see it now: going to."], ["A: I'm cold. B: I ___ close the window.", "will", "I will close the window.", "A decision now (and an offer): will."], ["We have a plan. We ___ have a party on Friday.", "going to", "We are going to have a party on Friday.", "A plan: going to."], ["The phone is ringing. I ___ answer it.", "will", "I will answer it.", "A decision now: will."], ["He has bought paint. He ___ paint his room.", "going to", "He is going to paint his room.", "A plan: going to."]], "B": [["What are you going to do on Saturday?", ["are", "you", "going", "to", "do", "on", "Saturday", "What"]], ["Are you going to visit your family?", ["Are", "you", "going", "to", "visit", "your", "family"]], ["Where is she going to live?", ["Where", "is", "she", "going", "to", "live"]], ["When are they going to arrive?", ["When", "are", "they", "going", "to", "arrive"]], ["Is he going to cook dinner tonight?", ["Is", "he", "going", "to", "cook", "dinner", "tonight"]], ["Why are you going to study English?", ["Why", "are", "you", "going", "to", "study", "English"]]], "C": [[["I going to visit my friend.", "I'm going to visit my friend.", "I'm going visit my friend."], 1, "Use am / is / are + going to + verb."], [["She isn't going to cook tonight.", "She doesn't going to cook tonight.", "She not going to cook tonight."], 0, "Negative: isn't / aren't / I'm not + going to."], [["Are you going to cooking tonight?", "Do you going to cook tonight?", "Are you going to cook tonight?"], 2, "Question: Are you going to + verb?"], [["I will helps you.", "I will help you.", "I will to help you."], 1, "After will we use the verb without to or s."], [["Yesterday I'm going to the park.", "Yesterday I went to the park.", "Yesterday I go to the park."], 1, "Yesterday = past simple: went."], [["Tomorrow I saw the doctor.", "Tomorrow I'm going to see the doctor.", "Tomorrow I seeing the doctor."], 1, "Tomorrow = future: I'm going to see."], [["Where you are going to go?", "Where are you going to go?", "Where do you going to go?"], 1, "Wh- question: Where are you going to go?"], [["He won't be late.", "He willn't be late.", "He no will be late."], 0, "Negative of will: won't."]]};
+const $=s=>document.querySelector(s);let part="A",first={},done={};
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function setScore(){const n=Object.keys(done).length;$("#pn").textContent=part;$("#dn").textContent=n;$("#tt").textContent=D[part].length;
+ $("#sc").textContent=Object.values(first).filter(Boolean).length}
+function render(){first={};done={};const st=$("#stage");st.innerHTML="";setScore();
+ if(part==="A"){D.A.forEach((it,i)=>{const q=document.createElement("div");q.className="q";q.innerHTML=`<div class="t">${i+1}. ${it[0].replace("___","<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>")}</div><div class="opts"><button class="pick" data-v="going to">going to</button><button class="pick" data-v="will">will</button></div><div class="fb" aria-live="polite"></div>`;
+  q.querySelectorAll(".pick").forEach(b=>b.onclick=()=>{if(done[i])return;const ok=b.dataset.v===it[1];if(!(i in first))first[i]=ok;
+   const fb=q.querySelector(".fb");if(ok){done[i]=1;q.className="q right";fb.className="fb ok";fb.textContent="✓ "+it[2]+" "+it[3]}else{q.classList.add("wrong");fb.className="fb no";fb.textContent="Not this one. Think: "+(it[1]==="will"?"decision now, offer, promise or opinion?":"plan, or can you see it now?")}setScore()});st.appendChild(q)})}
+ if(part==="B"){D.B.forEach((it,i)=>{const q=document.createElement("div");q.className="q";const words=shuffle(it[1]);
+  q.innerHTML=`<div class="t">${i+1}. Tap the words in the right order.</div><div class="answer" aria-label="your question"></div><div class="tiles"></div><div class="opts"><button class="chk">Check</button><button class="clr">Clear</button></div><div class="fb" aria-live="polite"></div>`;
+  const ans=q.querySelector(".answer"),tl=q.querySelector(".tiles"),fb=q.querySelector(".fb");
+  const mk=w=>{const b=document.createElement("button");b.className="tile";b.textContent=w;b.onclick=()=>{if(done[i])return;if(b.parentNode===tl)ans.appendChild(b);else tl.appendChild(b)};return b};
+  words.forEach(w=>tl.appendChild(mk(w)));
+  q.querySelector(".clr").onclick=()=>{if(done[i])return;[...ans.children].forEach(b=>tl.appendChild(b))};
+  q.querySelector(".chk").onclick=()=>{if(done[i])return;const s=[...ans.children].map(b=>b.textContent).join(" ").replace(/\s+\?/,"?");
+   const target=it[0].replace(/\?$/,"");const got=s.replace(/\?$/,"");const ok=got===target;if(!(i in first))first[i]=ok;
+   if(ok){done[i]=1;q.className="q right";fb.className="fb ok";fb.textContent="✓ "+it[0]}else{q.classList.add("wrong");fb.className="fb no";fb.textContent="Not yet. Start with the question word or am / is / are, then the subject."}setScore()};
+  st.appendChild(q)})}
+ if(part==="C"){D.C.forEach((it,i)=>{const q=document.createElement("div");q.className="q";const order=shuffle(it[0].map((t,k)=>[t,k]));
+  q.innerHTML=`<div class="t">${i+1}. Which sentence is correct?</div><div class="opts" style="flex-direction:column;align-items:stretch"></div><div class="fb" aria-live="polite"></div>`;
+  const o=q.querySelector(".opts"),fb=q.querySelector(".fb");
+  order.forEach(([t,k])=>{const b=document.createElement("button");b.className="pick";b.textContent=t;b.onclick=()=>{if(done[i])return;const ok=k===it[1];if(!(i in first))first[i]=ok;
+   if(ok){done[i]=1;q.className="q right";fb.className="fb ok";fb.textContent="✓ "+it[2]}else{q.classList.add("wrong");fb.className="fb no";fb.textContent="Not this one. Try again."}setScore()};o.appendChild(b)});
+  st.appendChild(q)})}
+ setScore()}
+document.querySelectorAll("#tabs button").forEach(b=>b.onclick=()=>{part=b.dataset.t;document.querySelectorAll("#tabs button").forEach(x=>x.setAttribute("aria-pressed",x===b));render()});
+$("#reset").onclick=render;render();
+</script></body></html>

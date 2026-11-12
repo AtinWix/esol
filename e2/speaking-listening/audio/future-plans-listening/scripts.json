@@ -1,0 +1,28 @@
+{
+ "title": "E2 Task 4 Listening – A Weekend Plan (going to) – Lesson Audio",
+ "plan": "../../docs/future-plans-going-to-will-day-plan.pdf",
+ "voices": {
+  "Reader": "Kore"
+ },
+ "scripts": [
+  {
+   "id": "script-a",
+   "label": "Script A – A phone message about Saturday (Task 4a)",
+   "lines": [
+    [
+     "Reader",
+     "Hello Marta, it's Joe. I'm phoning about Saturday. I'm going to meet Ben at Hackney Central station at ten o'clock, and we're going to take the bus to Victoria Park. The weather is going to be warm and sunny, so wear a hat. We are going to have a picnic there. I'll bring the sandwiches and the drinks. Can you bring some fruit? Please call me back before nine o'clock tonight. Thanks. Bye!"
+    ]
+   ],
+   "questions": [
+    "What is it about? A a plan for Saturday / B a problem at work / C a new shop (Answer: A)",
+    "1. Where are Joe and Ben going to meet? (At Hackney Central station)",
+    "2. What time are they going to meet? (Ten o'clock / 10.00)",
+    "3. How are they going to get to the park? (By bus)",
+    "4. What is Joe going to bring? (The sandwiches and the drinks)",
+    "5. What does Joe ask Marta to bring? (Some fruit)",
+    "6. When must Marta call Joe back? (Before nine o'clock tonight)"
+   ]
+  }
+ ]
+}
