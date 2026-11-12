@@ -96,7 +96,7 @@ Word documents:
 - [E2 Past Simple – Speaking Tasks 1 & 2 – Interactive Practice 2](e2/speaking-listening/past-simple-tasks1-2-interactive-practice-2.html)
 - [E2 Past Simple – Speaking Tasks 1 & 2 – Projector Lesson](e2/speaking-listening/past-simple-tasks1-2-projector-lesson-1.html)
 - [E2 Past Simple – Speaking Tasks 1 & 2 – Projector Lesson 2](e2/speaking-listening/past-simple-tasks1-2-projector-lesson-2.html)
-- [E2 Questions, Articles & Plurals – Referee Interviews – Speaking Wheels](e2/speaking-listening/questions-articles-plurals-referee-interviews-speaking-wheels.html) – Groups of 3: spin, ask, referee shows 1/2/3 fingers for helper verb, a/an/the, plural sound. Phone version via QR.
+- [E2 Questions, Articles & Plurals – Build, Say, Check – Speaking Wheels](e2/speaking-listening/questions-articles-plurals-referee-interviews-speaking-wheels.html) – Pairs spin, build a sentence from word cues, say it, then press Check: helper verbs, a/an/the and plural endings are coloured. Warm-up with audio. Phone version via QR.
 
 Word documents:
 - [E2 Comparatives – Kahoot Quiz](e2/speaking-listening/comparatives-kahoot.pdf) (PDF) · [Word](e2/speaking-listening/comparatives-kahoot.xlsx)
