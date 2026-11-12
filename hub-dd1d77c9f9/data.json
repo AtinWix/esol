@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-12T09:47:37Z",
+ "updatedAt": "2026-11-12T19:21:42Z",
  "upcoming": {
   "2026-11-02_e3": {
    "afternoon": "PC room: Too Cold to Learn – complaint emails",
@@ -287,60 +287,86 @@
    "title": "Pronouns, word meaning, ordering tasks and an ESB paper (Set L Tasks 1–2)"
   },
   "2026-11-12_e2": {
-   "afternoon": "PC room: online choose-and-build practice; Three places, one winner (TfL Journey Planner, 4 superlative sentences in Teams General); Task 4 listenings – you read the two scripts (in the day plan); three-way discussion: best way to shop in London; Kahoot (20 Qs)",
+   "afternoon": "PC room, students on own PCs throughout: Hangman Paragraphs in pairs (p10); A going to or will? (p11); B build the question + ask a neighbour (p12); C find and correct the mistake (p13); D 4 sentences posted in Teams (p14); E Task 4b answers posted in Teams (p16); Kahoot on PCs (p15)",
+   "amended": "2026-11-10T10:06:06Z",
+   "asTaught": "As taught: AM ESB Exam Practice worksheet Tasks 1–4 with new Task 3 images and a new Task 4a audio page, done up to section D (Task 3). PM (PC room) the Future Plans (going to and will) lesson page up to slide 8. Task 4a and 4b (worksheet sections E and F) and the remaining PC activities carry to Thu 19 Nov.",
    "cls": "E2 Speaking & Listening",
    "date": "2026-11-12",
+   "lastAmended": "2026-11-12 – will corrected (decide now incl. offers / promise / prediction; evidence = going to), page 5 answer 8 fixed, handout Task 2 updated; afternoon reworked for own PCs; replaced superlatives lesson",
    "links": [
     {
-     "label": "PM lesson audio – Script A (Task 4a library listening)",
-     "url": "https://atinwix.github.io/esol/e2/speaking-listening/audio/superlatives-task4/"
+     "label": "Lesson audio – Scripts A, B, C",
+     "url": "https://claude.ai/artifact/VSuo6dJoXpbBMZZtQyaB13"
     },
     {
-     "label": "Day plan and answers",
-     "url": "https://atinwix.github.io/esol/e2/speaking-listening/docs/superlatives-likes-reasons-day-plan.pdf"
+     "label": "Hangman Paragraphs – Amina's week (loaded)",
+     "url": "https://atinwix.github.io/Hangman-Paragraphs-Game/?p=TmV4dCB3ZWVrIGlzIGdvaW5nIHRvIGJlIGJ1c3kgZm9yIEFtaW5hLiBPbiBNb25kYXkgc2hlIGlzIGdvaW5nIHRvIHZpc2l0IHRoZSBsaWJyYXJ5IGluIERhbHN0b24gYW5kIGpvaW4gYSBmcmVlIEVuZ2xpc2ggY2x1Yi4gT24gV2VkbmVzZGF5IHNoZSBpcyBnb2luZyB0byBtZWV0IGhlciBmcmllbmQgUm9zYSBhdCBSaWRsZXkgUm9hZCBNYXJrZXQuIFRoZXkgYXJlIGdvaW5nIHRvIGJ1eSB2ZWdldGFibGVzIGFuZCBjb29rIGRpbm5lciB0b2dldGhlci4gU2hlIGlzIG5vdCBnb2luZyB0byBnbyB0byB0aGUgZ3ltIGJlY2F1c2Ugc2hlIGhhcyBhIGJhZCBiYWNrLiBPbiBTYXR1cmRheSBzaGUgaXMgZ29pbmcgdG8gd2FsayB0byBWaWN0b3JpYSBQYXJrIHdpdGggaGVyIHNvbi4gU2hlIHRoaW5rcyBoZSB3aWxsIGxvdmUgdGhlIG5ldyBwbGF5Z3JvdW5kLg"
     },
     {
-     "label": "AM projector lesson",
-     "url": "https://atinwix.github.io/esol/e2/speaking-listening/superlatives-likes-reasons-projector-lesson.html"
-    },
-    {
-     "label": "Student handout",
-     "url": "https://atinwix.github.io/esol/e2/speaking-listening/docs/superlatives-likes-reasons-student-handout.pdf"
-    },
-    {
-     "label": "Question cards (cut-out)",
-     "url": "https://atinwix.github.io/esol/e2/speaking-listening/docs/superlatives-which-is-the-best-question-cards.pdf"
-    },
-    {
-     "label": "PM projector lesson",
-     "url": "https://atinwix.github.io/esol/e2/speaking-listening/superlatives-task4-listening-discussion-projector-lesson.html"
-    },
-    {
-     "label": "Online practice",
-     "url": "https://atinwix.github.io/esol/e2/speaking-listening/comparatives-superlatives-choose-and-build-interactive-practice.html"
-    },
-    {
-     "label": "Kahoot – ready to play",
-     "url": "https://create.kahoot.it/details/e2-comparatives-and-superlatives/ad7a0988-4bf8-43cf-bbbb-ae5ab24a76fc"
-    },
-    {
-     "label": "Kahoot import file (20 Qs)",
-     "url": "https://atinwix.github.io/esol/e2/speaking-listening/superlatives-kahoot.xlsx"
-    },
-    {
-     "label": "TfL Journey Planner",
-     "url": "https://tfl.gov.uk/plan-a-journey/"
+     "label": "Vote Card (A–D)",
+     "url": "https://atinwix.github.io/esol/all-levels/classroom-tool-vote-card.html?mode=abcd"
     }
    ],
-   "morning": "Comparatives shout-it-out and fix-it; superlatives (the …est, the most, best/worst); handout Tasks 1–3; like scale + because (Task 4); Which is the best? cards in threes with an assessor (Task 5)",
-   "prep": "Cut up the question cards (6 sets, A–F). Log in the PCs and post the online practice and TfL Journey Planner links in Teams General before the afternoon.",
-   "print": "Student handout (2 sides, one each); question cards (3 sides = 6 sets). Nothing for the afternoon.",
-   "title": "Superlatives, likes and reasons – Task 4 listening and discussion",
-   "amended": "2026-11-12T09:46:49Z"
+   "morning": "Weekend-plans warmer; Amina's busy week (reading, find going to); going to form drill; will for decide-now and offers with Vote Card; handout Tasks 1–2; Task 2 talk 'My plans for next weekend'; Task 4a-style listening (you read the script – in the day plan); find-the-mistake at the board; Task 4b discussion in threes",
+   "prep": "Post the UPDATED lesson page in Teams General before the afternoon. Import the Kahoot spreadsheet. Updated page, day plan and Kahoot were sent in the 12 Nov 'Is this fixed?' chat; inbox copy updated, library filing by the 7:12am check on 13 Nov.",
+   "print": "Student handout (2 sides, one each). Nothing for the afternoon.",
+   "title": "Future plans – going to and will – Speaking Tasks 2 and 4 (replaces superlatives)"
   },
   "2026-11-16_e3": {
    "afternoon": "PC room: warm-up (time words, projector slides 2–3); online practice – time order, alphabetical order, pronouns and word meaning; 16-question timed online paper (Hostel Garden and Computer Classes), 40 minutes; prove it with results screens; exam routine and personal target",
+   "amended": "2026-11-12T15:36:47Z",
    "cls": "E3 Reading",
+   "data": {
+    "links": [
+     {
+      "label": "Kahoot – 20 questions (live, in your Kahoot library)",
+      "url": "https://create.kahoot.it/details/8495c24b-4445-46ed-8547-33c6d2ea5ebb"
+     },
+     {
+      "label": "Print pack – print once, double-sided (46 pages: day plan + 21 × Set L) · last amended 12 Nov 2026",
+      "url": "https://atinwix.github.io/esol/e3/reading/docs/print-pack-2026-11-16.pdf"
+     },
+     {
+      "label": "Set L handout – Tasks 1 and 2, one copy (already in the print pack) · last amended 12 Nov 2026",
+      "url": "https://atinwix.github.io/esol/e3/reading/docs/set-l-tasks-1-2-student-handout.pdf"
+     },
+     {
+      "label": "Day plan and answers (incl. Kahoot list) · last amended 12 Nov 2026",
+      "url": "https://atinwix.github.io/esol/e3/reading/docs/wk10-mon-set-l-exam-practice-timed-papers-day-plan.pdf"
+     },
+     {
+      "label": "Hangman Paragraphs (paragraph loaded; play button reads it aloud)",
+      "url": "https://atinwix.github.io/Hangman-Paragraphs-Game/?p=QSBwdWJsaWMgbGlicmFyeSBpcyBhIHVzZWZ1bCBwbGFjZSBmb3IgbmV3IGxlYXJuZXJzIG9mIEVuZ2xpc2guIEFueW9uZSBjYW4gam9pbiBmb3IgZnJlZS4gWW91IGNhbiBib3Jyb3cgYm9va3MsIHJlYWQgbmV3c3BhcGVycyBhbmQgdXNlIGEgY29tcHV0ZXIuIE1hbnkgbGlicmFyaWVzIGhhdmUgYSBxdWlldCByb29tIHdoZXJlIHN0dWRlbnRzIGNhbiBzdHVkeS4gSWYgeW91IGNhbm5vdCBmaW5kIHRoZSBib29rIHlvdSB3YW50LCBhIGxpYnJhcmlhbiB3aWxsIGhlbHAgeW91LiBJdCBpcyBhIHdhcm0sIGZyaWVuZGx5IHBsYWNlIHRvIHByYWN0aXNlIHlvdXIgcmVhZGluZy4"
+     },
+     {
+      "label": "Hangman paragraph – text to read aloud (don't project)",
+      "url": "https://atinwix.github.io/esol/e3/reading/public-library-hangman-paragraph-read-aloud-text.html"
+     },
+     {
+      "label": "Kahoot import file (20 Qs) – backup",
+      "url": "https://atinwix.github.io/esol/e3/reading/docs/set-l-exam-practice-kahoot.xlsx"
+     },
+     {
+      "label": "AM projector lesson (timer, Set L answers, routine – slides 11–14)",
+      "url": "https://atinwix.github.io/esol/e3/reading/wk09-wed-ordering-tasks-exam-paper-projector-lesson.html"
+     },
+     {
+      "label": "PM projector lesson (PC room)",
+      "url": "https://atinwix.github.io/esol/e3/reading/wk09-ordering-tasks-practice-paper-projector-lesson.html"
+     },
+     {
+      "label": "Online practice – time order, alphabetical order, pronouns",
+      "url": "https://atinwix.github.io/esol/e3/reading/wk09-time-order-alphabetical-order-practice.html"
+     },
+     {
+      "label": "Timed online paper (16 questions, 40 minutes)",
+      "url": "https://atinwix.github.io/esol/e3/reading/hostel-garden-and-computer-classes-timed-online-practice-paper.html"
+     }
+    ],
+    "todo": [
+     "Kahoot is live in Kahoot (20 questions) – open it from the Kahoot link on the card."
+    ]
+   },
    "date": "2026-11-16",
    "links": [
     {
@@ -390,8 +416,7 @@
    "title": "ESB Set L exam practice, Kahoot, online practice and a timed online paper",
    "todo": [
     "Kahoot not made live yet – sign in to Kahoot in the Claude app's browser (or Chrome) and ask Claude to \"make the Kahoots\". Until then, import the file."
-   ],
-   "amended": "2026-11-12T15:45:00Z"
+   ]
   },
   "2026-11-17_e1": {
    "afternoon": "PC room: Kahoot (days, times, prices); Task 3 recap on the PC; Task 1 and Task 4 practice on the PC; the whole exam in pairs (Tasks 1–4, candidate and assessor, two rounds); True/False feedback on what is still difficult",
@@ -459,6 +484,73 @@
     "Kahoot not made live yet – sign in to Kahoot in the Claude app's browser (or Chrome) and ask Claude to \"make the Kahoots\". Until then, import the file."
    ],
    "amended": "2026-11-11T12:28:44Z"
+  },
+  "2026-11-19_e2": {
+   "afternoon": "PC room: online practice A–C (going to or will, build the question, find the correct sentence); handout Task 3 + five sentences in Teams (yesterday, now, tomorrow, opinion, offer); Task 4a-style listening (weekend plan, audio page); Referee Interviews wheels; Kahoot (20 Qs)",
+   "amended": "2026-11-12T10:18:37Z",
+   "cls": "E2 Speaking & Listening",
+   "date": "2026-11-19",
+   "links": [
+    {
+     "label": "Print pack – print once, double-sided (50 pages: day plan + 21 × handout)",
+     "url": "https://atinwix.github.io/esol/e2/speaking-listening/docs/print-pack-2026-11-19.pdf"
+    },
+    {
+     "label": "Day plan and answers (teacher)",
+     "url": "https://atinwix.github.io/esol/e2/speaking-listening/docs/future-plans-going-to-will-day-plan.pdf"
+    },
+    {
+     "label": "Projector lesson – morning slides 1–10, afternoon slides 11–17",
+     "url": "https://atinwix.github.io/esol/e2/speaking-listening/future-plans-going-to-will-task4-projector-lesson.html"
+    },
+    {
+     "label": "Student handout (2 sides – already in the print pack)",
+     "url": "https://atinwix.github.io/esol/e2/speaking-listening/docs/future-plans-going-to-will-student-handout.pdf"
+    },
+    {
+     "label": "Online practice – post in Teams (phones and PCs)",
+     "url": "https://atinwix.github.io/esol/e2/speaking-listening/future-plans-going-to-will-choose-build-find-interactive-practice.html"
+    },
+    {
+     "label": "Lesson audio – Task 4a-style listening, weekend plan (afternoon; page is built by the audio workflow after the push)",
+     "url": "https://atinwix.github.io/esol/e2/speaking-listening/audio/future-plans-listening/index.html"
+    },
+    {
+     "label": "Lesson audio – Task 4a library announcement (morning, Script A)",
+     "url": "https://atinwix.github.io/esol/e2/speaking-listening/audio/superlatives-task4/index.html"
+    },
+    {
+     "label": "Hangman Paragraphs – Tariq's weekend (loaded)",
+     "url": "https://atinwix.github.io/Hangman-Paragraphs-Game/?p=TmV4dCB3ZWVrZW5kIGlzIGdvaW5nIHRvIGJlIGJ1c3kgZm9yIFRhcmlxLiBPbiBTYXR1cmRheSBtb3JuaW5nIGhlIGlzIGdvaW5nIHRvIHBsYXkgZm9vdGJhbGwgd2l0aCBoaXMgZnJpZW5kcyBpbiBIYWNrbmV5IE1hcnNoZXMuIEluIHRoZSBhZnRlcm5vb24gaGUgaXMgZ29pbmcgdG8gY2xlYW4gaGlzIHJvb20gYmVjYXVzZSBpdCBpcyB2ZXJ5IGRpcnR5LiBPbiBTdW5kYXkgaGUgaXMgbWVldGluZyBoaXMgc2lzdGVyIGF0IERhbHN0b24gSnVuY3Rpb24gYXQgZWxldmVuIG8nY2xvY2suIFRoZXkgYXJlIGdvaW5nIHRvIGhhdmUgbHVuY2ggaW4gYSBUdXJraXNoIHJlc3RhdXJhbnQuIEluIHRoZSBldmVuaW5nIGhlIGlzIGdvaW5nIHRvIHBob25lIGhpcyBtb3RoZXIgaW4gSXN0YW5idWwuIEhlIHRoaW5rcyBzaGUgd2lsbCBiZSB2ZXJ5IGhhcHB5Lg"
+    },
+    {
+     "label": "Hangman paragraph – text to read aloud (don't project)",
+     "url": "https://atinwix.github.io/esol/e2/speaking-listening/future-plans-hangman-paragraph-read-aloud-text.html"
+    },
+    {
+     "label": "Vote Card (A–D)",
+     "url": "https://atinwix.github.io/esol/all-levels/classroom-tool-vote-card.html?mode=abcd"
+    },
+    {
+     "label": "Referee Interviews speaking wheels",
+     "url": "https://atinwix.github.io/esol/e2/speaking-listening/questions-articles-plurals-referee-interviews-speaking-wheels.html"
+    },
+    {
+     "label": "Kahoot import file (20 Qs)",
+     "url": "https://atinwix.github.io/esol/e2/speaking-listening/docs/future-plans-going-to-will-kahoot.xlsx"
+    },
+    {
+     "label": "Exam Practice worksheet Tasks 1–4 (from 12 Nov – only if lost)",
+     "url": "https://atinwix.github.io/esol/e2/speaking-listening/docs/esb-exam-tasks-1-4-practice-student-worksheet.pdf"
+    }
+   ],
+   "morning": "Hangman Paragraphs (Tariq's weekend); worksheet section E Task 4a (listen twice, audio page); section F Task 4b group discussion in threes (two topics); going to or will? rules; Vote Card A/B (QR); handout Task 1; Task 2 talk 'My plans for next weekend'",
+   "prep": "Before 12:30: post the online practice link in Teams General. The Kahoot is not live yet: import the file (link below). Hangman link and read-aloud page are ready. No cutting out.",
+   "print": "Print pack only (50 pages, double-sided: day plan + 21 × student handout). Plus the Exam Practice worksheet from 12 Nov only if learners have lost theirs (link below).",
+   "title": "Finish Task 4 (4a and 4b), then Future plans – going to and will",
+   "todo": [
+    "Kahoot not made live yet – sign in to Kahoot in the Claude app's browser (or Chrome) and ask Claude to \"make the Kahoots\". Until then, import the file."
+   ]
   }
  },
  "status": {},
