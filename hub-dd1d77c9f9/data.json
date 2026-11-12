@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-11T16:13:57Z",
+ "updatedAt": "2026-11-12T07:15:01Z",
  "upcoming": {
   "2026-11-02_e3": {
    "afternoon": "PC room: Too Cold to Learn – complaint emails",
@@ -463,41 +463,37 @@
  },
  "status": {},
  "health": {
-  "checkedAt": "2026-11-11T07:20:00Z",
+  "ok": false,
+  "checkedAt": "2026-11-12T07:14:42Z",
   "items": [
    {
     "ok": true,
-    "text": "Wed 11 E3, Thu 12 E2 and Tue 17 E1 are built. Mon 16 E3 (waits for your Wed 11 log) and Thu 19 E2 (waits for your Thu 12 log) are correctly not built yet. No faults."
+    "text": "Next teaching days: Thu 12 E2, Mon 16 E3 and Tue 17 E1 are built. Wed 18 E3 (waits for your Mon 16 log) and Thu 19 E2 (waits for your Thu 12 log) are correctly not built yet. No faults."
    },
    {
     "ok": true,
-    "text": "Thu 5, Mon 9 and Tue 10 are logged, with ROW snippets, Covered/Next and 'As taught' cards in place."
+    "text": "Thu 5, Mon 9, Tue 10 and Wed 11 are logged, with ROW snippets, Covered/Next and 'As taught' cards in place."
    },
    {
     "ok": false,
-    "text": "Thu 5 Nov runs of 'Weekly ESOL lesson build' and 'Thursday evening: update past activities' still show FAILED (usage limit reached). Both are fallback/non-essential; nothing outstanding. Next runs: Thu 12 Nov evening."
-   },
-   {
-    "ok": true,
-    "text": "Build-after-log (10 Nov 7pm), 2:35pm summary and feedback check last runs succeeded."
+    "text": "Drive inbox: 2026-11-10_e1 (E1 'Talk Before Class' warm-up) and 2026-11-11_e3 (Transport Research Task 1 handout, wanted on the Wed 11 card) are still not in the library. 2026-11-09_e3 is already filed and can be deleted. GitHub could not be cloned this run, so nothing was filed."
    },
    {
     "ok": false,
-    "text": "Drive inbox holds two folders: 2026-11-10_e1 (E1 'Talk Before Class' warm-up, NOT yet in the library or lists – needs filing) and 2026-11-09_e3 (already filed, can be deleted)."
+    "text": "Kahoot gaps: Mon 16 E3 and Tue 17 E1 Kahoots are not live yet (todo on cards, import files have 20 Qs); Mon 9 E3 live Kahoot Q12 still says Saturday only (should be Saturday and Sunday)."
    },
    {
     "ok": false,
-    "text": "Kahoot gaps: Tue 17 E1 Kahoot not live yet (todo on card, import file has 20 Qs); Mon 9 E3 live Kahoot Q12 still says Saturday only (should be Saturday and Sunday)."
+    "text": "Last runs of 'Weekly ESOL lesson build (Thu night)' and 'Thursday evening: update past activities' still show FAILED (usage limit, 5 Nov). Both run again tonight; nothing outstanding because of them."
    },
    {
     "ok": true,
-    "text": "Kahoot files for Wed 11, Thu 12 and Tue 17 have exactly 20 questions; word-game links on cards are the loaded ?p= links; all card links are https and point at existing files."
+    "text": "Build-after-log (11 Nov 7pm), 2:35pm summary, feedback check and Lesson Log fixes last runs succeeded."
    },
    {
     "ok": true,
-    "text": "Public Hub page re-synced today."
+    "text": "Word-game links on cards are the loaded ?p= links; card links are all https; no Hub status docs to clear. Public Hub page re-synced today."
    }
-  ],
-  "ok": false
+  ]
  }
 }
