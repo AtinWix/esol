@@ -1,0 +1,109 @@
+{
+ "title": "E2 Referee Interviews – Spot the Slip – Lesson Audio",
+ "style": "clear British accent, natural classroom pace, say the sentence exactly as written including its grammar mistake, do not correct it",
+ "voices": {
+  "Reader": "Kore"
+ },
+ "scripts": [
+  {
+   "id": "script-a",
+   "label": "Script A – Slip 1 (Page 1 warm-up)",
+   "lines": [
+    [
+     "Reader",
+     "Yesterday I went to shop."
+    ]
+   ]
+  },
+  {
+   "id": "script-b",
+   "label": "Script B – Slip 2 (Page 1 warm-up)",
+   "lines": [
+    [
+     "Reader",
+     "I bought two orange."
+    ]
+   ]
+  },
+  {
+   "id": "script-c",
+   "label": "Script C – Slip 3 (Page 1 warm-up)",
+   "lines": [
+    [
+     "Reader",
+     "You like oranges?"
+    ]
+   ]
+  },
+  {
+   "id": "script-d",
+   "label": "Script D – Slip 4 (Page 1 warm-up)",
+   "lines": [
+    [
+     "Reader",
+     "I not like bananas."
+    ]
+   ]
+  },
+  {
+   "id": "script-e",
+   "label": "Script E – Slip 5 (Page 1 warm-up)",
+   "lines": [
+    [
+     "Reader",
+     "I need a umbrella."
+    ]
+   ]
+  },
+  {
+   "id": "script-f",
+   "label": "Script F – Slip 6 (Page 1 warm-up)",
+   "lines": [
+    [
+     "Reader",
+     "I saw three bus outside."
+    ]
+   ]
+  },
+  {
+   "id": "script-g",
+   "label": "Script G – Slip 7 (Page 1 warm-up)",
+   "lines": [
+    [
+     "Reader",
+     "Where you live?"
+    ]
+   ]
+  },
+  {
+   "id": "script-h",
+   "label": "Script H – Slip 8 (Page 1 warm-up)",
+   "lines": [
+    [
+     "Reader",
+     "My sister is nurse."
+    ]
+   ]
+  },
+  {
+   "id": "script-i",
+   "label": "Script I – Slip 9 (Page 1 warm-up)",
+   "lines": [
+    [
+     "Reader",
+     "She has two cat."
+    ]
+   ]
+  },
+  {
+   "id": "script-j",
+   "label": "Script J – Slip 10 (Page 1 warm-up)",
+   "lines": [
+    [
+     "Reader",
+     "Why he is late?"
+    ]
+   ]
+  }
+ ]
+}

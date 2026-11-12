@@ -46,10 +46,14 @@ h2{margin:0;font-size:2em;line-height:1.1;text-wrap:balance}
 .sig b{display:block;font-size:1.6em}
 .s1{background:var(--red)} .s2{background:var(--blue)} .s3{background:var(--yellow);color:#2a2000!important}
 .slips{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.slip{text-align:left;display:flex;gap:12px;align-items:center;padding:.5em .8em;font-size:1.05em;min-width:0}
+.slip{display:flex;gap:8px;align-items:stretch;min-width:0}
+.slip .rev{flex:1;text-align:left;display:flex;gap:12px;align-items:center;padding:.5em .8em;font-size:1.05em;min-width:0}
+.slip .play{flex:0 0 auto;width:3em;font-size:1.1em;font-weight:800;background:var(--accent);color:var(--panel);border-color:var(--accent)}
+.slip .play.on{background:var(--red);border-color:var(--red)}
+.playall{align-self:flex-start;font-weight:800}
 .slip .n{font-weight:800;color:var(--muted);min-width:1.6em}
 .slip .hid{color:var(--muted);font-style:italic}
-.slip.done{border-width:3px}
+.slip.done .rev{border-width:3px}
 .slip .fix{font-weight:600}
 .k1{border-color:var(--red)!important} .k2{border-color:var(--blue)!important} .k3{border-color:var(--yellow)!important}
 .chip{display:inline-block;font-size:.75em;font-weight:800;color:#fff;border-radius:6px;padding:.1em .5em;margin-left:.4em;white-space:nowrap}
@@ -120,14 +124,15 @@ body.phone .qr{display:none}
 <section class="page whole" data-p="1" data-note="Projector only – students listen and show fingers">
   <span class="tag">Whole class – eyes on the board</span>
   <h2><span class="pnum">1</span> Warm-up: Spot the slip</h2>
-  <p style="margin:0">Listen to the teacher. Hear a mistake? Show your fingers.</p>
+  <p style="margin:0">Listen. Hear a mistake? Show your fingers.</p>
   <div class="sig">
     <div class="s1"><b>☝ 1 finger</b>Helper verb missing or wrong<br>do · does · did · is · are</div>
     <div class="s2"><b>✌ 2 fingers</b>a · an · the</div>
     <div class="s3"><b>3 fingers</b>Plural sound<br>cats /s/ · bags /z/ · boxes /ɪz/</div>
   </div>
+  <button class="playall" id="playAll">▶ Play all 10</button>
   <div class="slips" id="slips"></div>
-  <p class="t-only" style="margin:0;font-size:.8em;color:var(--wholeInk)">Teacher: read each sentence aloud with the mistake. Students show fingers. Then click to show the sentence and the fix. Students say the correct sentence together, fast.</p>
+  <p class="t-only" style="margin:0;font-size:.8em;color:var(--wholeInk)">Teacher: press ▶ to play each sentence (or read it yourself if the sound fails). Students show fingers. Then click the sentence once to show it, again to show the fix. Students say the correct sentence together, fast.</p>
 </section>
 
 <section class="page whole" data-p="2" data-note="Projector only – explain roles before groups start">
@@ -236,20 +241,36 @@ const SLIPS=[
 ];
 const CHIP={1:"☝ helper verb",2:"✌ a/an/the",3:"3 · plural sound"};
 const slips=$("#slips");
+const AUD="audio/referee-interviews/script-";
+const player=new Audio(); let playing=null, queue=[];
+function setBtn(b,on){b.textContent=on?"❚❚":"▶";b.classList.toggle("on",on);b.setAttribute("aria-label",(on?"Pause":"Play")+" sentence "+b.dataset.n)}
+function stopAll(){player.pause();if(playing)setBtn(playing,false);playing=null}
+function playSlip(i){
+  const b=slipBtns[i];
+  if(playing===b){ if(player.paused){player.play().catch(()=>{});setBtn(b,true)} else {player.pause();setBtn(b,false)} return }
+  stopAll(); playing=b;
+  player.src=AUD+"abcdefghij"[i]+".mp3"; player.play().then(()=>setBtn(b,true)).catch(()=>{setBtn(b,false);b.textContent="✕";b.title="Sound not available – read the sentence (Teacher mode shows it)";playing=null;queue=[]});
+}
+player.addEventListener("ended",()=>{if(playing)setBtn(playing,false);playing=null;if(queue.length){const n=queue.shift();setTimeout(()=>playSlip(n),2500)}});
+const slipBtns=[];
 SLIPS.forEach((s,i)=>{
-  const b=document.createElement("button");b.className="slip";
+  const row=document.createElement("div");row.className="slip";
+  const p=document.createElement("button");p.className="play";p.dataset.n=i+1;setBtn(p,false);
+  p.addEventListener("click",()=>{queue=[];playSlip(i)});slipBtns.push(p);
+  const b=document.createElement("button");b.className="rev";
   const draw=st=>{
-    b.className="slip"+(st===2?" done k"+s[2]:"");
+    row.className="slip"+(st===2?" done":"");b.className="rev"+(st===2?" k"+s[2]:"");
     b.innerHTML=`<span class="n">${i+1}</span><span>`+
-      (st===0?`<span class="hid">Listen…</span><span class="t-only" style="display:${body.classList.contains("teacher")?"inline":"none"};font-size:.8em;color:var(--muted)"> (say: ${s[0]})</span>`:
+      (st===0?`<span class="hid">Listen…</span><span style="display:${body.classList.contains("teacher")?"inline":"none"};font-size:.8em;color:var(--muted)"> (${s[0]})</span>`:
        st===1?`<s style="text-decoration-color:var(--red)">${s[0]}</s>`:
        `<span class="fix">${s[1]}</span><span class="chip c${s[2]}">${CHIP[s[2]]}</span>`)+`</span>`;
   };
   let st=0;draw(0);
   b.addEventListener("click",()=>{st=(st+1)%3;draw(st)});
   b._redraw=()=>draw(st);
-  slips.appendChild(b);
+  row.append(p,b);slips.appendChild(row);
 });
+$("#playAll").addEventListener("click",()=>{queue=[1,2,3,4,5,6,7,8,9];playSlip(0)});
 
 /* ---------- wheel data ---------- */
 const W1=[
@@ -447,6 +468,7 @@ if(PHONE){
   $("#tbtn").hidden=true;
 }
 function go(n){
+  queue=[];stopAll();
   cur=Math.max(1,Math.min(total,n));
   pages.forEach(p=>p.hidden=+p.dataset.p!==cur);
   $$(".dot").forEach((d,i)=>d.setAttribute("aria-current",i+1===cur?"true":"false"));
@@ -456,7 +478,7 @@ function go(n){
 }
 $("#prev").addEventListener("click",()=>go(cur-1));
 $("#next").addEventListener("click",()=>go(cur+1));
-function toggleTeacher(){body.classList.toggle("teacher");$("#tbtn").setAttribute("aria-pressed",body.classList.contains("teacher"));$$(".slip").forEach(b=>b._redraw&&b._redraw())}
+function toggleTeacher(){body.classList.toggle("teacher");$("#tbtn").setAttribute("aria-pressed",body.classList.contains("teacher"));$$(".slip .rev").forEach(b=>b._redraw&&b._redraw())}
 $("#tbtn").addEventListener("click",toggleTeacher);
 addEventListener("keydown",e=>{
   if(e.target.closest("input,textarea")) return;
