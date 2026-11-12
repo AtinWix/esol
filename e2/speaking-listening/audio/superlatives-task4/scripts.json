@@ -1,0 +1,28 @@
+{
+ "title": "E2 Task 4 Listening – Library Activities – Lesson Audio",
+ "plan": "../../docs/superlatives-likes-reasons-day-plan.pdf",
+ "voices": {
+  "Reader": "Kore"
+ },
+ "scripts": [
+  {
+   "id": "script-a",
+   "label": "Script A – Free activities at a library (Task 4a)",
+   "lines": [
+    [
+     "Reader",
+     "Hello, and welcome to Dalston Library. We have free activities for everyone this month. Adults can learn about computers on Mondays and Wednesdays at ten o'clock. Please bring a USB stick to the computer class. On Tuesdays there is story time for children. It starts at four o'clock. Adults can practise English at our conversation club. It begins at half past six on Thursday evenings. All of the activities are free. To get a place, please phone the library on oh two oh, seven nine four six, oh one two three, or ask at the front desk. Thank you for listening."
+    ]
+   ],
+   "questions": [
+    "What is it about? A new library opening / B free activities at a library / C a library closing for repairs (Answer: B)",
+    "1. Which days can adults learn about computers? (Mondays and Wednesdays)",
+    "2. Who is the Tuesday activity for? (Children)",
+    "3. What should adults take to the computer class? (A USB stick)",
+    "4. What time does the conversation club begin? (Half past six / 6.30)",
+    "5. How much do the activities cost? (Nothing / they are free)",
+    "6. How can you get a place? Give one way. (Phone the library OR ask at the front desk)"
+   ]
+  }
+ ]
+}
