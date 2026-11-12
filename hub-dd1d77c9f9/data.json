@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-12T07:15:01Z",
+ "updatedAt": "2026-11-12T09:47:37Z",
  "upcoming": {
   "2026-11-02_e3": {
    "afternoon": "PC room: Too Cold to Learn – complaint emails",
@@ -292,6 +292,10 @@
    "date": "2026-11-12",
    "links": [
     {
+     "label": "PM lesson audio – Script A (Task 4a library listening)",
+     "url": "https://atinwix.github.io/esol/e2/speaking-listening/audio/superlatives-task4/"
+    },
+    {
      "label": "Day plan and answers",
      "url": "https://atinwix.github.io/esol/e2/speaking-listening/docs/superlatives-likes-reasons-day-plan.pdf"
     },
@@ -332,7 +336,7 @@
    "prep": "Cut up the question cards (6 sets, A–F). Log in the PCs and post the online practice and TfL Journey Planner links in Teams General before the afternoon.",
    "print": "Student handout (2 sides, one each); question cards (3 sides = 6 sets). Nothing for the afternoon.",
    "title": "Superlatives, likes and reasons – Task 4 listening and discussion",
-   "amended": "2026-11-10T10:02:56Z"
+   "amended": "2026-11-12T09:46:49Z"
   },
   "2026-11-16_e3": {
    "afternoon": "PC room: warm-up (time words, projector slides 2–3); online practice – time order, alphabetical order, pronouns and word meaning; 16-question timed online paper (Hostel Garden and Computer Classes), 40 minutes; prove it with results screens; exam routine and personal target",
@@ -463,7 +467,6 @@
  },
  "status": {},
  "health": {
-  "ok": false,
   "checkedAt": "2026-11-12T07:14:42Z",
   "items": [
    {
@@ -494,6 +497,7 @@
     "ok": true,
     "text": "Word-game links on cards are the loaded ?p= links; card links are all https; no Hub status docs to clear. Public Hub page re-synced today."
    }
-  ]
+  ],
+  "ok": false
  }
 }
