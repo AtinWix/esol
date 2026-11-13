@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-12T19:21:42Z",
+ "updatedAt": "2026-11-13T07:14:31Z",
  "upcoming": {
   "2026-11-02_e3": {
    "afternoon": "PC room: Too Cold to Learn – complaint emails",
@@ -295,6 +295,22 @@
    "lastAmended": "2026-11-12 – will corrected (decide now incl. offers / promise / prediction; evidence = going to), page 5 answer 8 fixed, handout Task 2 updated; afternoon reworked for own PCs; replaced superlatives lesson",
    "links": [
     {
+     "label": "Lesson page – AM projector + PM PC room (one file)",
+     "url": "https://atinwix.github.io/esol/e2/speaking-listening/future-plans-going-to-will-speaking-tasks-2-and-4-projector-and-pc-lesson.html"
+    },
+    {
+     "label": "Day plan and answers (teacher)",
+     "url": "https://atinwix.github.io/esol/e2/speaking-listening/docs/future-plans-going-to-will-speaking-tasks-2-and-4-day-plan-and-answers.pdf"
+    },
+    {
+     "label": "Student handout (2 sides)",
+     "url": "https://atinwix.github.io/esol/e2/speaking-listening/docs/future-plans-going-to-will-speaking-tasks-2-and-4-student-handout.pdf"
+    },
+    {
+     "label": "Kahoot import file (20 Qs)",
+     "url": "https://atinwix.github.io/esol/e2/speaking-listening/docs/future-plans-going-to-will-speaking-tasks-2-and-4-kahoot.xlsx"
+    },
+    {
      "label": "Lesson audio – Scripts A, B, C",
      "url": "https://claude.ai/artifact/VSuo6dJoXpbBMZZtQyaB13"
     },
@@ -308,9 +324,12 @@
     }
    ],
    "morning": "Weekend-plans warmer; Amina's busy week (reading, find going to); going to form drill; will for decide-now and offers with Vote Card; handout Tasks 1–2; Task 2 talk 'My plans for next weekend'; Task 4a-style listening (you read the script – in the day plan); find-the-mistake at the board; Task 4b discussion in threes",
-   "prep": "Post the UPDATED lesson page in Teams General before the afternoon. Import the Kahoot spreadsheet. Updated page, day plan and Kahoot were sent in the 12 Nov 'Is this fixed?' chat; inbox copy updated, library filing by the 7:12am check on 13 Nov.",
+   "prep": "Filed in the library on 13 Nov (this was the lesson taught on 12 Nov). The Kahoot is an import file only.",
    "print": "Student handout (2 sides, one each). Nothing for the afternoon.",
-   "title": "Future plans – going to and will – Speaking Tasks 2 and 4 (replaces superlatives)"
+   "title": "Future plans – going to and will – Speaking Tasks 2 and 4 (replaces superlatives)",
+   "todo": [
+    "Kahoot not made live yet – sign in to Kahoot in the Claude app's browser (or Chrome) and ask Claude to \"make the Kahoots\". Until then, import the file."
+   ]
   },
   "2026-11-16_e3": {
    "afternoon": "PC room: warm-up (time words, projector slides 2–3); online practice – time order, alphabetical order, pronouns and word meaning; 16-question timed online paper (Hostel Garden and Computer Classes), 40 minutes; prove it with results screens; exam routine and personal target",
@@ -487,7 +506,7 @@
   },
   "2026-11-19_e2": {
    "afternoon": "PC room: online practice A–C (going to or will, build the question, find the correct sentence); handout Task 3 + five sentences in Teams (yesterday, now, tomorrow, opinion, offer); Task 4a-style listening (weekend plan, audio page); Referee Interviews wheels; Kahoot (20 Qs)",
-   "amended": "2026-11-12T10:18:37Z",
+   "amended": "2026-11-12T19:23:12Z",
    "cls": "E2 Speaking & Listening",
    "date": "2026-11-19",
    "links": [
@@ -555,35 +574,35 @@
  },
  "status": {},
  "health": {
-  "checkedAt": "2026-11-12T07:14:42Z",
+  "checkedAt": "2026-11-13T07:14:10Z",
   "items": [
    {
     "ok": true,
-    "text": "Next teaching days: Thu 12 E2, Mon 16 E3 and Tue 17 E1 are built. Wed 18 E3 (waits for your Mon 16 log) and Thu 19 E2 (waits for your Thu 12 log) are correctly not built yet. No faults."
+    "text": "Next teaching days: Mon 16 E3, Tue 17 E1 and Thu 19 E2 are built. Wed 18 E3 correctly waits for your Mon 16 log. No faults."
    },
    {
     "ok": true,
-    "text": "Thu 5, Mon 9, Tue 10 and Wed 11 are logged, with ROW snippets, Covered/Next and 'As taught' cards in place."
-   },
-   {
-    "ok": false,
-    "text": "Drive inbox: 2026-11-10_e1 (E1 'Talk Before Class' warm-up) and 2026-11-11_e3 (Transport Research Task 1 handout, wanted on the Wed 11 card) are still not in the library. 2026-11-09_e3 is already filed and can be deleted. GitHub could not be cloned this run, so nothing was filed."
-   },
-   {
-    "ok": false,
-    "text": "Kahoot gaps: Mon 16 E3 and Tue 17 E1 Kahoots are not live yet (todo on cards, import files have 20 Qs); Mon 9 E3 live Kahoot Q12 still says Saturday only (should be Saturday and Sunday)."
-   },
-   {
-    "ok": false,
-    "text": "Last runs of 'Weekly ESOL lesson build (Thu night)' and 'Thursday evening: update past activities' still show FAILED (usage limit, 5 Nov). Both run again tonight; nothing outstanding because of them."
+    "text": "Thu 9, Tue 10, Wed 11 and Thu 12 Nov are logged, with ROW snippets, Covered/Next and 'As taught' cards in place."
    },
    {
     "ok": true,
-    "text": "Build-after-log (11 Nov 7pm), 2:35pm summary, feedback check and Lesson Log fixes last runs succeeded."
+    "text": "Inbox artifact: 12 Nov E2 Future Plans (going to and will) was pending; checksums matched and it is now filed in the library, with its Hub card links updated. The Drive folder 2026-11-12_e2 (old manifest only) can be deleted."
+   },
+   {
+    "ok": false,
+    "text": "Drive inbox still has unfiled folders: 2026-11-10_e1 (E1 Talk Before Class page), 2026-11-11_e3 (Transport Research Task 1 handout, Set L Tasks 1-2 handout, Exam Prep Lesson 3 answer key) and 2026-11-12_e3 (E3 Articles a/an/the SMART Notebook test). 2026-11-09_e3 is already filed and can be deleted. Not filed by this check."
+   },
+   {
+    "ok": false,
+    "text": "Kahoot not live yet: Mon 16 E3, Tue 17 E1, Thu 19 E2 and the filed Thu 12 E2 file (import files, 20 Qs each, todo on cards). Earlier gap still open: Mon 9 E3 live Kahoot Q12 should say Saturday and Sunday."
+   },
+   {
+    "ok": false,
+    "text": "'Weekly ESOL lesson build (Thu night)' last run FAILED (usage limit, 12 Nov 10pm). It is only a fallback and next week's days are covered, so nothing outstanding."
    },
    {
     "ok": true,
-    "text": "Word-game links on cards are the loaded ?p= links; card links are all https; no Hub status docs to clear. Public Hub page re-synced today."
+    "text": "Other ESOL tasks last ran fine. Card links are https and the Hangman links are the loaded ?p= ones. No Hub status docs to clear."
    }
   ],
   "ok": false
