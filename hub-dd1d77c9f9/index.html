@@ -143,7 +143,7 @@ header{display:flex;justify-content:space-between;align-items:flex-start;gap:12p
       var msg="Make a Kahoot in my Kahoot account (I'm signed in). Title: \""+ktitle+"\". Don't use the file picker: on create.kahoot.it start a new Kahoot, then Add question → Import → Import spreadsheet. Then use javascript to fetch "+kx.url+" as a blob, make a File named "+fname+" (type application/vnd.openxmlformats-officedocument.spreadsheetml.sheet), put it into the dialog's <input type=\"file\"> with a DataTransfer and dispatch a change event. Delete the empty slide 1 left from the blank Kahoot, check that exactly 20 questions came in, set the title, save, then give me the Kahoot's page address (create.kahoot.it/details/…). Don't change any questions.";
       var kb=el("div","kbox");
       kb.append(el("b",null,"Kahoot: not yet in Kahoot."+(K.note?" ("+K.note+")":"")));
-      kb.append(el("p",null,"It is added automatically in the evening when your home PC is on. To do it now (1 minute): download the file below → Kahoot → Add question → Import → Import spreadsheet → pick the file."+(K.quiz?" Or use the Quiz game link – same 20 questions, no Kahoot needed.":"")));
+      kb.append(el("p",null,"It is added automatically in the evening when your home PC is on. To do it now (1 minute): download the file below → Kahoot → Add question → Import → Import spreadsheet → pick the file."));
       var dl=el("a",null,"Download the Kahoot file");dl.href=kx.url;dl.target="_blank";dl.rel="noopener";kb.append(dl);
       kb.append(el("p",null,"Or open Claude in Chrome (signed in to Kahoot) and paste this message:"));
       var ta=el("textarea");ta.readOnly=true;ta.value=msg;ta.rows=4;kb.append(ta);
@@ -153,7 +153,6 @@ header{display:flex;justify-content:space-between;align-items:flex-start;gap:12p
       kb.append(cb);c.append(kb)}
     var LK=(x.links||[]).slice();
     if(K.details&&!LK.some(function(k){return k&&k.url===K.details}))LK.push({label:"Kahoot – ready to play",url:K.details});
-    if(K.quiz&&!LK.some(function(k){return k&&k.url===K.quiz}))LK.push({label:"Quiz game (same 20 questions – no Kahoot needed)",url:K.quiz});
     if(LK.length){var l=el("div","links");LK.forEach(function(k){if(!k||!/^https:\/\//.test(k.url||""))return;var a=el("a",null,k.label||"Link");a.href=k.url;a.target="_blank";a.rel="noopener";l.append(a)});c.append(l)}
     var la=x.lastAmended&&/^\d{4}-\d\d-\d\d/.test(x.lastAmended)?new Date(x.lastAmended.slice(0,10)+"T12:00:00"):null;
     var am=x.amended?new Date(x.amended):null, txt;

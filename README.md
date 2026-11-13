@@ -232,7 +232,6 @@ Word documents:
 - [Lesson 13: Full mock paper and review – plan and answers](e3/reading/exam-prep/lesson-13-plan.pdf) (PDF) · [Word](e3/reading/exam-prep/lesson-13-plan.docx)
 
 ## games
-- [ESOL All Levels – Quiz Game (20 Questions) – Projector and Phones](games/quiz-game.html) – Kahoot-free quiz: project it, learners scan the QR and answer on their phones. Question sets are made from each lesson's Kahoot file (add ?set=… or open it to choose)
 - [ESOL All Levels – Who Wants to Be a Millionaire – Projector Quiz Game](games/millionaire-quiz.html) – E1–E3 question sets; Ask the Audience uses the Vote Card
 - [Block Drop (work in progress)](games/block-drop.html)
 - [Blockbusters ABC Quiz](games/blockbusters-abc-quiz.html) – Projector team game

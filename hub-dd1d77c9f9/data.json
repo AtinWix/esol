@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-13T12:12:11Z",
+ "updatedAt": "2026-11-13T17:28:19Z",
  "upcoming": {
   "2026-11-02_e3": {
    "afternoon": "PC room: Too Cold to Learn – complaint emails",
@@ -154,7 +154,7 @@
    "todo": [
     "Live Kahoot question 12 still says the big Broadway Market is on Saturday only. Next time you are signed in to Kahoot, change the answer to \"Saturday and Sunday\" (or ask Claude to re-import the updated file)."
    ],
-   "amended": "2026-11-10T08:52:33Z"
+   "amended": "2026-11-13T12:22:28Z"
   },
   "2026-11-10_e1": {
    "afternoon": "REPLANNED, learners on their own PCs for most of the lesson: one community-centre timetable, present simple only – timetable tasks and partner questions on the PC; Task 4 Scripts A–F answered on the PC as you play them; Partner A/B information gap; find the mistake; Hangman Paragraphs; Sara's talk gap-fill, then each learner's 'My week' talk on screen and given to a partner; Kahoot. Projector only for instructions and checking.",
@@ -329,8 +329,7 @@
    "title": "Future plans – going to and will – Speaking Tasks 2 and 4 (replaces superlatives)",
    "kahoot": {
     "status": "not yet in Kahoot",
-    "xlsx": "https://atinwix.github.io/esol/e2/speaking-listening/docs/future-plans-going-to-will-speaking-tasks-2-and-4-kahoot.xlsx",
-    "quiz": "https://atinwix.github.io/esol/games/quiz-game.html?set=future-plans-going-to-will-speaking-tasks-2-and-4"
+    "xlsx": "https://atinwix.github.io/esol/e2/speaking-listening/docs/future-plans-going-to-will-speaking-tasks-2-and-4-kahoot.xlsx"
    }
   },
   "2026-11-16_e3": {
@@ -391,8 +390,7 @@
    "kahoot": {
     "status": "ready",
     "xlsx": "https://atinwix.github.io/esol/e3/reading/docs/set-l-exam-practice-kahoot.xlsx",
-    "details": "https://create.kahoot.it/details/8495c24b-4445-46ed-8547-33c6d2ea5ebb",
-    "quiz": "https://atinwix.github.io/esol/games/quiz-game.html?set=set-l-exam-practice"
+    "details": "https://create.kahoot.it/details/8495c24b-4445-46ed-8547-33c6d2ea5ebb"
    },
    "flags": [],
    "created": "2026-11-11",
@@ -472,8 +470,7 @@
    "amended": "2026-11-13T08:00:12Z",
    "kahoot": {
     "status": "not yet in Kahoot",
-    "xlsx": "https://atinwix.github.io/esol/e1/speaking-listening/docs/short-conversations-task1-questions-kahoot.xlsx",
-    "quiz": "https://atinwix.github.io/esol/games/quiz-game.html?set=short-conversations-task1-questions"
+    "xlsx": "https://atinwix.github.io/esol/e1/speaking-listening/docs/short-conversations-task1-questions-kahoot.xlsx"
    },
    "pack": {
     "url": "https://atinwix.github.io/esol/e1/speaking-listening/docs/print-pack-2026-11-17.pdf",
@@ -554,8 +551,7 @@
    "title": "Finish Task 4 (4a and 4b), then Future plans – going to and will",
    "kahoot": {
     "status": "not yet in Kahoot",
-    "xlsx": "https://atinwix.github.io/esol/e2/speaking-listening/docs/future-plans-going-to-will-kahoot.xlsx",
-    "quiz": "https://atinwix.github.io/esol/games/quiz-game.html?set=future-plans-going-to-will"
+    "xlsx": "https://atinwix.github.io/esol/e2/speaking-listening/docs/future-plans-going-to-will-kahoot.xlsx"
    },
    "pack": {
     "url": "https://atinwix.github.io/esol/e2/speaking-listening/docs/print-pack-2026-11-19.pdf",
