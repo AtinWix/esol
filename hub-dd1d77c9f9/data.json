@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-13T08:00:52Z",
+ "updatedAt": "2026-11-13T12:12:11Z",
  "upcoming": {
   "2026-11-02_e3": {
    "afternoon": "PC room: Too Cold to Learn – complaint emails",
@@ -223,7 +223,7 @@
   },
   "2026-11-11_e3": {
    "afternoon": "Classroom, paper: time order with Hawa's Morning (3A); alphabetical order on the projector – learners come up and tap the words in order (slides 7–9), then 3B; then ESB Set L Tasks 1 and 2 (14 questions) under timed conditions, swap-and-mark with proof from the text",
-   "amended": "2026-11-11T11:43:22Z",
+   "amended": "2026-11-13T12:12:11Z",
    "asTaught": "As taught: AM Exam Prep Lesson 2 as planned. PM time order (3A) and alphabetical order on the projector with 3B; the projector slides and the Set L paper (Tasks 1–2) were not finished and move to Mon 16 Nov.",
    "cls": "E3 Reading",
    "date": "2026-11-11",
@@ -270,7 +270,7 @@
     },
     {
      "label": "Set L handout – Tasks 1 and 2 (Q1–14), 2 pages, print double-sided",
-     "url": "https://drive.google.com/file/d/14X3-EsqiTuHXxuxZYqqMxx2rAijSHZXR/view"
+     "url": "https://atinwix.github.io/esol/e3/reading/docs/set-l-tasks-1-2-student-handout.pdf"
     },
     {
      "label": "Lesson 3 handouts (3A, 3B on page 1)",
@@ -278,7 +278,7 @@
     },
     {
      "label": "Lesson 3 answer key (3A, 3B, 3C Q1–10) – teacher only",
-     "url": "https://drive.google.com/file/d/1yxDK4Md0zxgaPofhxYSe5cWwrAGi0Mo4/view"
+     "url": "https://atinwix.github.io/esol/e3/reading/exam-prep/lesson-03-ordering-tasks-practice-paper-answer-key.pdf"
     }
    ],
    "morning": "Exam Prep Lesson 2: Hangman Paragraphs settle-in; who is 'he'? what is 'it'? (2A); read Two Wheels and a New Start and track pronouns (2B, 2C A); guess words from context (2C B); find details (2C C); 20-question Kahoot; be the examiner – learners write two exam questions each pair",
@@ -574,11 +574,12 @@
  },
  "status": {},
  "health": {
-  "checkedAt": "2026-11-13T07:14:10Z",
+  "ok": true,
+  "checkedAt": "2026-11-13T08:10:00Z",
   "items": [
    {
     "ok": true,
-    "text": "Next teaching days: Mon 16 E3, Tue 17 E1 and Thu 19 E2 are built. Wed 18 E3 correctly waits for your Mon 16 log. No faults."
+    "text": "Next teaching days: Mon 16 E3, Tue 17 E1 and Thu 19 E2 are built. Wed 18 E3 correctly waits for your Mon 16 log. No faults, no flags on any card."
    },
    {
     "ok": true,
@@ -586,25 +587,16 @@
    },
    {
     "ok": true,
-    "text": "Inbox artifact: 12 Nov E2 Future Plans (going to and will) was pending; checksums matched and it is now filed in the library, with its Hub card links updated. The Drive folder 2026-11-12_e2 (old manifest only) can be deleted."
-   },
-   {
-    "ok": false,
-    "text": "Drive inbox still has unfiled folders: 2026-11-10_e1 (E1 Talk Before Class page), 2026-11-11_e3 (Transport Research Task 1 handout, Set L Tasks 1-2 handout, Exam Prep Lesson 3 answer key) and 2026-11-12_e3 (E3 Articles a/an/the SMART Notebook test). 2026-11-09_e3 is already filed and can be deleted. Not filed by this check."
-   },
-   {
-    "ok": false,
-    "text": "Kahoot not live yet: Mon 16 E3, Tue 17 E1, Thu 19 E2 and the filed Thu 12 E2 file (import files, 20 Qs each, todo on cards). Earlier gap still open: Mon 9 E3 live Kahoot Q12 should say Saturday and Sunday."
-   },
-   {
-    "ok": false,
-    "text": "'Weekly ESOL lesson build (Thu night)' last run FAILED (usage limit, 12 Nov 10pm). It is only a fallback and next week's days are covered, so nothing outstanding."
+    "text": "Kahoot: Mon 16 E3 is ready in Kahoot. Tue 17 E1 and Thu 19 E2 are not yet in Kahoot – each card has the import file and a quiz game with the same 20 questions."
    },
    {
     "ok": true,
-    "text": "Other ESOL tasks last ran fine. Card links are https and the Hangman links are the loaded ?p= ones. No Hub status docs to clear."
+    "text": "Google Drive is no longer used. The leftover inbox items are filed in the library (13 Nov); the old Drive folders can be deleted."
+   },
+   {
+    "ok": true,
+    "text": "System rebuilt 13 Nov: one runbook, this page is pushed after every change. 'Weekly ESOL lesson build' failed on Thu 12 Nov (usage limit) but nothing was outstanding."
    }
-  ],
-  "ok": false
+  ]
  }
 }
