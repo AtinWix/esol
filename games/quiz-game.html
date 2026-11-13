@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en-GB"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>ESOL Quiz Game – 20 Questions</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+:root{--bg:#10233f;--ink:#fff;--panel:#1b3a66;--line:#35598f;--a:#d1344b;--b:#1f6fd6;--c:#c98a00;--d:#23864a;--ok:#2fbf71;--bad:#e2566b;--font:Verdana,Arial,sans-serif}
+*{box-sizing:border-box}html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.35 var(--font);overflow:hidden}
+button{font:inherit;cursor:pointer;border:0;border-radius:12px;color:#fff}
+.screen{position:fixed;inset:0;display:none;flex-direction:column;padding:2.2vh 2.5vw 9vh;gap:1.6vh}
+.screen.on{display:flex}
+h1{margin:0;font-size:clamp(22px,4.2vh,44px)}
+.sub{opacity:.85;font-size:clamp(14px,2.3vh,22px)}
+.center{align-items:center;justify-content:center;text-align:center}
+.big{font-size:clamp(20px,3.4vh,34px);padding:.6em 1.4em;background:var(--b);font-weight:700}
+.ghost{background:transparent;border:2px solid var(--line);padding:.45em 1em;font-size:clamp(14px,2.2vh,20px)}
+.row{display:flex;gap:2vw;align-items:center;justify-content:center;flex-wrap:wrap}
+#qr{background:#fff;padding:12px;border-radius:12px;line-height:0}
+.top{display:flex;justify-content:space-between;align-items:center;gap:2vw}
+.pill{background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:.2em .9em;font-size:clamp(14px,2.4vh,22px);white-space:nowrap}
+#timer{font-variant-numeric:tabular-nums;min-width:3.2em;text-align:center;font-weight:700}
+#timer.low{background:var(--bad)}
+.q{flex:1 1 30%;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:700;font-size:clamp(22px,5.2vh,58px);background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:1.5vh 2vw;overflow:hidden}
+.ans{flex:1 1 44%;display:grid;grid-template-columns:1fr 1fr;gap:1.6vh 1.4vw}
+.ans button{display:flex;align-items:center;gap:1vw;text-align:left;padding:1vh 1.4vw;font-size:clamp(17px,3.5vh,38px);font-weight:600;min-height:0}
+.ans .l{flex:none;width:1.7em;height:1.7em;border-radius:50%;background:rgba(255,255,255,.22);display:flex;align-items:center;justify-content:center;font-weight:700}
+.A{background:var(--a)}.B{background:var(--b)}.C{background:var(--c)}.D{background:var(--d)}
+.ans button.dim{opacity:.22}
+.ans button.right{outline:6px solid #fff;box-shadow:0 0 0 12px var(--ok)}
+.ans button.picked{outline:5px solid #fff}
+.bar{display:flex;justify-content:center;gap:1.5vw;flex-wrap:wrap}
+.tnote{position:fixed;left:84px;right:12px;bottom:6px;font-size:9px;line-height:1.35;color:#b9c7dc}
+.list{flex:1;overflow:auto;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:1.5vh 2vw;font-size:clamp(14px,2.3vh,22px)}
+.list p{margin:.35em 0}.list b{color:#9fe3bf}
+input{font:inherit;font-size:22px;padding:.5em .7em;border-radius:10px;border:2px solid var(--line);width:min(88vw,360px);text-align:center}
+.score{font-size:clamp(60px,16vh,150px);font-weight:700;line-height:1}
+.fb{font-size:clamp(22px,4vh,40px);font-weight:700}
+.fb.ok{color:var(--ok)}.fb.no{color:var(--bad)}
+@media (max-width:700px){.ans{grid-template-columns:1fr}.q{flex:0 0 auto;min-height:22vh;font-size:clamp(18px,3.2vh,26px)}.ans button{font-size:clamp(16px,2.7vh,22px);padding:1.4vh 3vw;gap:3vw}.screen{padding-bottom:70px}.tnote{display:none}}
+.atin-logo{position:fixed;left:calc(6px + env(safe-area-inset-left,0px));bottom:calc(6px + env(safe-area-inset-bottom,0px));z-index:50;pointer-events:none;color:#1F3A5F;background:rgba(255,255,255,.92);border:1px solid #C9D3DF;border-radius:8px;padding:3px 5px;line-height:0}
+</style></head><body>
+
+<!-- start (projector) -->
+<div class="screen center" id="sStart">
+  <h1 id="title">Quiz</h1>
+  <div class="sub" id="count"></div>
+  <div class="row">
+    <div><div id="qr"></div><div class="sub" style="margin-top:8px">Scan to play on your phone</div></div>
+    <div style="max-width:34vw;text-align:left" class="sub">
+      <p><b>On your phone:</b> type your name. For each question, press <b>Start</b> when the teacher says "Go", then tap A, B, C or D.</p>
+      <p><b>No phone?</b> Play with a partner, or call out the letter.</p>
+    </div>
+  </div>
+  <button class="big" id="go">Start the quiz</button>
+  <div class="tnote">Teacher: project this page. Say: "Scan the code with your phone camera. Type your name." Learners look at: the projector, then their phones. When everyone is in, click Start the quiz. Read each question aloud, say "Go", and click Show answer when the timer ends. Phones keep their own score – there is no live leaderboard.</div>
+</div>
+
+<!-- question (projector) -->
+<div class="screen" id="sQ">
+  <div class="top"><span class="pill" id="num"></span><span class="pill" id="timer">20</span></div>
+  <div class="q" id="qtext"></div>
+  <div class="ans" id="answers"></div>
+  <div class="bar"><button class="ghost" id="back">◀ Back</button><button class="big" id="reveal">Show answer</button><button class="ghost" id="pause">Pause timer</button></div>
+  <div class="tnote" id="qnote">Teacher: read the question aloud, then say "Go". Learners look at: the projector, then tap on their phones. One click on Show answer shows the correct answer; the next click moves on.</div>
+</div>
+
+<!-- end (projector) -->
+<div class="screen" id="sEnd">
+  <h1>Finished – hold up your phones!</h1>
+  <div class="sub">Who has the highest score? Check the answers below.</div>
+  <div class="list" id="review"></div>
+  <div class="bar"><button class="ghost" id="again">Play again</button></div>
+  <div class="tnote">Teacher: say "Hold up your phones. Who has more than 15,000 points?" Then go through any questions most learners got wrong. Learners look at: the projector.</div>
+</div>
+
+<!-- phone -->
+<div class="screen center" id="pName">
+  <h1 id="ptitle">Quiz</h1>
+  <p class="sub">Type your name</p>
+  <input id="name" maxlength="20" autocomplete="off">
+  <button class="big" id="pjoin">Join</button>
+</div>
+<div class="screen center" id="pWait">
+  <div class="pill" id="pnum"></div>
+  <p class="fb" id="pfb"></p>
+  <p class="sub" id="pscoreline"></p>
+  <p class="sub">Look at the board. When your teacher says "Go", press Start.</p>
+  <button class="big" id="pstart">Start</button>
+</div>
+<div class="screen" id="pQ">
+  <div class="top"><span class="pill" id="pnum2"></span><span class="pill" id="ptimer">20</span></div>
+  <div class="q" id="pqtext"></div>
+  <div class="ans" id="panswers"></div>
+</div>
+<div class="screen center" id="pEnd">
+  <p class="sub" id="pwho"></p>
+  <div class="score" id="pscore">0</div>
+  <p class="sub" id="pright"></p>
+  <p class="sub">Hold up your phone!</p>
+</div>
+
+<div class="atin-logo" aria-label="Made by Atin"><svg viewBox="104 28 172 134" width="64" height="50" aria-hidden="true"><text x="139" y="112" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="72" fill="currentColor">A</text><rect x="177" y="83" width="24" height="6" rx="1" fill="currentColor"/><path d="M216 66 L216 106 A25 7 0 0 0 266 106 L266 66" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><ellipse cx="241" cy="66" rx="25" ry="7" fill="none" stroke="currentColor" stroke-width="3"/><line x1="216" y1="80" x2="266" y2="80" stroke="currentColor" stroke-width="1.5"/><line x1="216" y1="94" x2="266" y2="94" stroke="currentColor" stroke-width="1.5"/><ellipse cx="241" cy="47" rx="23" ry="5" fill="none" stroke="currentColor" stroke-width="3"/><line x1="114" y1="128" x2="266" y2="128" stroke="currentColor" stroke-width="1"/><text x="190" y="152" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" letter-spacing="2" fill="currentColor">made by Atin</text></svg></div>
+
+<script>
+(function(){
+  var P=new URLSearchParams(location.search), setId=P.get("set")||"", phone=P.get("phone")==="1";
+  var L=["A","B","C","D"], $=function(i){return document.getElementById(i)};
+  function show(id){document.querySelectorAll(".screen").forEach(function(s){s.classList.toggle("on",s.id===id)})}
+  function fail(t){show(phone?"pName":"sStart");$(phone?"ptitle":"title").textContent=t;$("go").hidden=true;$("pjoin").hidden=true;$("name").hidden=true}
+  function buttons(box,q,onPick){box.replaceChildren();q.a.forEach(function(t,i){var b=document.createElement("button");b.className=L[i];var l=document.createElement("span");l.className="l";l.textContent=L[i];var s=document.createElement("span");s.textContent=t;b.append(l,s);if(onPick)b.onclick=function(){onPick(i,b)};box.append(b)})}
+
+  fetch("quiz-sets.json?"+Date.now(),{cache:"no-store"}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(all){
+    var set=all[setId];
+    if(!set){var ids=Object.keys(all);fail(setId?"Quiz not found":"Choose a quiz");
+      if(!phone){var c=$("count");c.replaceChildren();ids.forEach(function(k){var a=document.createElement("a");a.href="?set="+encodeURIComponent(k);a.textContent=(all[k].level?all[k].level+" – ":"")+all[k].title;a.style.cssText="display:block;color:#fff;margin:.3em 0";c.append(a)});$("qr").parentNode.hidden=true}
+      return}
+    var Q=set.questions; document.title=set.title+" – Quiz Game";
+    phone?runPhone(set,Q):runHost(set,Q);
+  }).catch(function(){fail("Could not load the quiz. Reload the page.")});
+
+  function runHost(set,Q){
+    var i=0, shown=false, left=0, tick=null, paused=false;
+    $("title").textContent=set.title; $("count").textContent=Q.length+" questions";
+    var u=location.origin+location.pathname+"?set="+encodeURIComponent(setId)+"&phone=1";
+    try{new QRCode($("qr"),{text:u,width:Math.round(Math.min(innerHeight*.34,300)),height:Math.round(Math.min(innerHeight*.34,300)),correctLevel:QRCode.CorrectLevel.M})}catch(e){$("qr").textContent=u}
+    function stop(){clearInterval(tick);tick=null}
+    function time(){var t=$("timer");t.textContent=left;t.classList.toggle("low",left<=5)}
+    function start(){stop();tick=setInterval(function(){if(paused)return;left=Math.max(0,left-1);time();if(left===0)stop()},1000)}
+    function ask(){var q=Q[i];shown=false;paused=false;$("pause").textContent="Pause timer";
+      $("num").textContent="Question "+(i+1)+" of "+Q.length;$("qtext").textContent=q.q;buttons($("answers"),q,null);
+      $("reveal").textContent="Show answer";left=q.t||20;time();start();show("sQ")}
+    function reveal(){var q=Q[i];stop();shown=true;[].forEach.call($("answers").children,function(b,k){b.classList.toggle("right",k===q.c);b.classList.toggle("dim",k!==q.c)});
+      $("reveal").textContent=i<Q.length-1?"Next question ▶":"Finish ▶"}
+    function end(){stop();var r=$("review");r.replaceChildren();Q.forEach(function(q,k){var p=document.createElement("p");p.append(document.createTextNode((k+1)+". "+q.q+" – "));var b=document.createElement("b");b.textContent=L[q.c]+" "+q.a[q.c];p.append(b);r.append(p)});show("sEnd")}
+    $("go").onclick=function(){i=0;ask()};
+    $("reveal").onclick=function(){if(!shown)reveal();else if(i<Q.length-1){i++;ask()}else end()};
+    $("back").onclick=function(){if(i>0){i--;ask()}else{stop();show("sStart")}};
+    $("pause").onclick=function(){paused=!paused;this.textContent=paused?"Resume timer":"Pause timer"};
+    $("again").onclick=function(){show("sStart")};
+    document.addEventListener("keydown",function(e){if(!$("sQ").classList.contains("on"))return;if(e.key===" "||e.key==="ArrowRight"||e.key==="Enter"){e.preventDefault();$("reveal").click()}if(e.key==="ArrowLeft")$("back").click()});
+    show("sStart");
+  }
+
+  function runPhone(set,Q){
+    var i=0, score=0, right=0, who="", left=0, tick=null, picked=-1, pickedAt=0;
+    $("ptitle").textContent=set.title;
+    function wait(msg,cls){$("pnum").textContent="Question "+(i+1)+" of "+Q.length;$("pfb").textContent=msg||"";$("pfb").className="fb "+(cls||"");$("pscoreline").textContent=who+" · "+score+" points";show("pWait")}
+    function finish(){clearInterval(tick);var q=Q[i],ok=picked===q.c,msg;
+      if(ok){var pts=500+Math.round(500*pickedAt/(q.t||20));score+=pts;right++;msg="Correct! +"+pts}
+      else msg=(picked<0?"No answer. ":"Not this time. ")+"Answer: "+L[q.c];
+      i++; if(i>=Q.length){$("pwho").textContent=who;$("pscore").textContent=score;$("pright").textContent=right+" correct out of "+Q.length;show("pEnd")}
+      else wait(msg,ok?"ok":"no")}
+    function ask(){var q=Q[i];picked=-1;pickedAt=0;left=q.t||20;$("pnum2").textContent="Question "+(i+1);$("pqtext").textContent=q.q;$("ptimer").textContent=left;
+      buttons($("panswers"),q,function(k,b){if(picked>=0)return;picked=k;pickedAt=left;[].forEach.call($("panswers").children,function(x){x.classList.add("dim")});b.classList.remove("dim");b.classList.add("picked")});
+      show("pQ");clearInterval(tick);tick=setInterval(function(){left--;$("ptimer").textContent=Math.max(0,left);if(left<=0)finish()},1000)}
+    $("pjoin").onclick=function(){who=$("name").value.trim()||"Player";wait("")};
+    $("pstart").onclick=ask;
+    show("pName");
+  }
+})();
+</script>
+</body></html>

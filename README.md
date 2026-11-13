@@ -176,7 +176,6 @@ Word documents:
 - [E3 Reading – Ordering Tasks and Practice Paper – Projector Lesson](e3/reading/wk09-ordering-tasks-practice-paper-projector-lesson.html) – Time order, alphabetical order, online practice, timed online paper and answers – all on screen (PC room)
 - [E3 Reading – Time Order, Alphabetical Order, Pronouns and Word Meaning – Online Practice](e3/reading/wk09-time-order-alphabetical-order-practice.html) – What happened first?, eight time-order texts, 14 alphabetical sets, 18 pronoun / word meaning / purpose questions – PC or phone
 - [E3 Reading – Cycling in Hackney – Hangman Paragraph – Text to Read Aloud (Teacher)](e3/reading/cycling-in-hackney-hangman-paragraph-read-aloud-text.html) – Teacher page: the settle-in paragraph to read aloud, with the game link that opens it ready to play.
-- [E3 Reading – Set L Exam Practice – Lesson Audio (Script A)](e3/reading/audio/set-l-exam-practice/index.html) – Audio for the Hangman Paragraphs text, play/pause on one button.
 - [E3 Reading – Using a Public Library – Hangman Paragraph – Text to Read Aloud (Teacher)](e3/reading/public-library-hangman-paragraph-read-aloud-text.html) – Teacher page: the settle-in paragraph to read aloud, with the game link that opens it ready to play.
 - [E3 Reading Skills – Hackney Bugle](e3/reading/wk17-reading-skills-hackney-bugle.html)
 - [E3 Reading – Purpose Clues – Drag and Sort Activity](e3/reading/purpose-clues-drag-sort-activity.html) – Drag each clue onto its purpose: warn, advise, instruct, advertise, inform, describe
@@ -252,6 +251,7 @@ Word documents:
 - [Lesson 13: Full mock paper and review – plan and answers](e3/reading/exam-prep/lesson-13-plan.pdf) (PDF) · [Word](e3/reading/exam-prep/lesson-13-plan.docx)
 
 ## games
+- [ESOL All Levels – Quiz Game (20 Questions) – Projector and Phones](games/quiz-game.html) – Kahoot-free quiz: project it, learners scan the QR and answer on their phones. Question sets are made from each lesson's Kahoot file (add ?set=… or open it to choose)
 - [ESOL All Levels – Who Wants to Be a Millionaire – Projector Quiz Game](games/millionaire-quiz.html) – E1–E3 question sets; Ask the Audience uses the Vote Card
 - [Block Drop (work in progress)](games/block-drop.html)
 - [Blockbusters ABC Quiz](games/blockbusters-abc-quiz.html) – Projector team game
