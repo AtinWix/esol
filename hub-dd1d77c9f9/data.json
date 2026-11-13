@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-13T07:48:59Z",
+ "updatedAt": "2026-11-13T08:00:52Z",
  "upcoming": {
   "2026-11-02_e3": {
    "afternoon": "PC room: Too Cold to Learn – complaint emails",
@@ -288,7 +288,7 @@
   },
   "2026-11-12_e2": {
    "afternoon": "PC room, students on own PCs throughout: Hangman Paragraphs in pairs (p10); A going to or will? (p11); B build the question + ask a neighbour (p12); C find and correct the mistake (p13); D 4 sentences posted in Teams (p14); E Task 4b answers posted in Teams (p16); Kahoot on PCs (p15)",
-   "amended": "2026-11-10T10:06:06Z",
+   "amended": "2026-11-13T07:14:32Z",
    "asTaught": "As taught: AM ESB Exam Practice worksheet Tasks 1–4 with new Task 3 images and a new Task 4a audio page, done up to section D (Task 3). PM (PC room) the Future Plans (going to and will) lesson page up to slide 8. Task 4a and 4b (worksheet sections E and F) and the remaining PC activities carry to Thu 19 Nov.",
    "cls": "E2 Speaking & Listening",
    "date": "2026-11-12",
@@ -327,9 +327,11 @@
    "prep": "Filed in the library on 13 Nov (this was the lesson taught on 12 Nov). The Kahoot is an import file only.",
    "print": "Student handout (2 sides, one each). Nothing for the afternoon.",
    "title": "Future plans – going to and will – Speaking Tasks 2 and 4 (replaces superlatives)",
-   "todo": [
-    "Kahoot not made live yet – sign in to Kahoot in the Claude app's browser (or Chrome) and ask Claude to \"make the Kahoots\". Until then, import the file."
-   ]
+   "kahoot": {
+    "status": "not yet in Kahoot",
+    "xlsx": "https://atinwix.github.io/esol/e2/speaking-listening/docs/future-plans-going-to-will-speaking-tasks-2-and-4-kahoot.xlsx",
+    "quiz": "https://atinwix.github.io/esol/games/quiz-game.html?set=future-plans-going-to-will-speaking-tasks-2-and-4"
+   }
   },
   "2026-11-16_e3": {
    "afternoon": "PC room: warm-up (time words, projector slides 2–3); online practice – time order, alphabetical order, pronouns and word meaning; 16-question timed online paper (Hostel Garden and Computer Classes), 40 minutes; prove it with results screens; exam routine and personal target",
@@ -385,7 +387,25 @@
    "morning": "Hangman Paragraphs settle-in (Using a Public Library); exam set-up and routine; ESB Set L Tasks 1 and 2 (14 questions) timed, 40 minutes (held over from Wed 11 Nov); swap-and-mark with proof from the text; fix two wrong answers; 20-question Kahoot",
    "prep": "None beyond printing. Before 12:30 log the PCs in and post the online practice and timed paper links in Teams.",
    "print": "Print pack only – print once, double-sided, no settings changes (46 pages): day plan with answers and Kahoot list, then 21 copies of the Set L handout (Tasks 1 and 2). Nothing else to print.",
-   "title": "ESB Set L exam practice, Kahoot, online practice and a timed online paper"
+   "title": "ESB Set L exam practice, Kahoot, online practice and a timed online paper",
+   "kahoot": {
+    "status": "ready",
+    "xlsx": "https://atinwix.github.io/esol/e3/reading/docs/set-l-exam-practice-kahoot.xlsx",
+    "details": "https://create.kahoot.it/details/8495c24b-4445-46ed-8547-33c6d2ea5ebb",
+    "quiz": "https://atinwix.github.io/esol/games/quiz-game.html?set=set-l-exam-practice"
+   },
+   "flags": [],
+   "created": "2026-11-11",
+   "lastAmended": "2026-11-12",
+   "pack": {
+    "url": "https://atinwix.github.io/esol/e3/reading/docs/print-pack-2026-11-16.pdf",
+    "pages": 46,
+    "issued": "2026-11-12"
+   },
+   "plan": {
+    "am": "AM: Learners sat a real ESB sample paper (Set L, Tasks 1 and 2) under timed exam conditions, then swapped papers, marked them and gave the words in the text that prove each answer. They corrected two wrong answers and did a 20-question Kahoot on pronouns, word meaning, time order, alphabetical order, purpose and details.",
+    "pm": "PM, PC room: Learners practised time order, alphabetical order, pronouns and word meaning online, then sat a 16-question timed online paper on the PC. They used their results screens to find the skills to practise and gave the answers with proof from the text."
+   }
   },
   "2026-11-17_e1": {
    "afternoon": "PC room: Kahoot (days, times, prices); Task 3 recap on the PC; Task 1 and Task 4 practice on the PC; the whole exam in pairs (Tasks 1–4, candidate and assessor, two rounds); True/False feedback on what is still difficult",
@@ -449,14 +469,29 @@
    "prep": "None beyond printing. Post the learners' page link in Teams General before the PM lesson. Check the projector sound.",
    "print": "Print pack only (50 pages, double-sided)",
    "title": "Task 4 short conversations, Task 1 questions and a full Tasks 1–4 run-through",
-   "todo": [
-    "Kahoot not made live yet – sign in to Kahoot in the Claude app's browser (or Chrome) and ask Claude to \"make the Kahoots\". Until then, import the file."
-   ],
-   "amended": "2026-11-11T12:28:44Z"
+   "amended": "2026-11-13T08:00:12Z",
+   "kahoot": {
+    "status": "not yet in Kahoot",
+    "xlsx": "https://atinwix.github.io/esol/e1/speaking-listening/docs/short-conversations-task1-questions-kahoot.xlsx",
+    "quiz": "https://atinwix.github.io/esol/games/quiz-game.html?set=short-conversations-task1-questions"
+   },
+   "pack": {
+    "url": "https://atinwix.github.io/esol/e1/speaking-listening/docs/print-pack-2026-11-17.pdf",
+    "pages": 50,
+    "issued": "2026-11-10"
+   },
+   "created": "2026-11-10",
+   "lastAmended": "2026-11-10",
+   "lastAmendedNote": "13 Nov: header added to every side of the print pack; quiz game added. Lesson content unchanged",
+   "plan": {
+    "am": "AM: Exam skills lesson on Task 4 short conversations and Task 1 questions. Learners finish their \"My week\" talk in pairs, listen to sentences to decide where people are, answer a yes/no and a detail question about two short conversations and say them in pairs. They then put Task 1 questions in order, choose question words, write spellings and a phone number from dictation and ask and answer in pairs, finishing with a Kahoot.",
+    "pm": "PM, PC room: Learners recap Task 3 by describing a picture with a partner, then practise Task 1 questions and Task 4 listening on their own computers. They do the whole speaking and listening exam in pairs, taking turns as candidate and assessor for Tasks 1 to 4, and say which parts are still difficult before the final mock."
+   },
+   "flags": []
   },
   "2026-11-19_e2": {
    "afternoon": "PC room: online practice A–C (going to or will, build the question, find the correct sentence); handout Task 3 + five sentences in Teams (yesterday, now, tomorrow, opinion, offer); Task 4a-style listening (weekend plan, audio page); Referee Interviews wheels; Kahoot (20 Qs)",
-   "amended": "2026-11-12T19:23:12Z",
+   "amended": "2026-11-13T08:00:12Z",
    "cls": "E2 Speaking & Listening",
    "date": "2026-11-19",
    "links": [
@@ -514,12 +549,27 @@
     }
    ],
    "morning": "Hangman Paragraphs (Tariq's weekend); worksheet section E Task 4a (listen twice, audio page); section F Task 4b group discussion in threes (two topics); going to or will? rules; Vote Card A/B (QR); handout Task 1; Task 2 talk 'My plans for next weekend'",
-   "prep": "Before 12:30: post the online practice link in Teams General. The Kahoot is not live yet: import the file (link below). Hangman link and read-aloud page are ready. No cutting out.",
+   "prep": "Before 12:30: post the online practice link in Teams General. Hangman link is ready. No cutting out.",
    "print": "Print pack only (50 pages, double-sided: day plan + 21 × student handout). Plus the Exam Practice worksheet from 12 Nov only if learners have lost theirs (link below).",
    "title": "Finish Task 4 (4a and 4b), then Future plans – going to and will",
-   "todo": [
-    "Kahoot not made live yet – sign in to Kahoot in the Claude app's browser (or Chrome) and ask Claude to \"make the Kahoots\". Until then, import the file."
-   ]
+   "kahoot": {
+    "status": "not yet in Kahoot",
+    "xlsx": "https://atinwix.github.io/esol/e2/speaking-listening/docs/future-plans-going-to-will-kahoot.xlsx",
+    "quiz": "https://atinwix.github.io/esol/games/quiz-game.html?set=future-plans-going-to-will"
+   },
+   "pack": {
+    "url": "https://atinwix.github.io/esol/e2/speaking-listening/docs/print-pack-2026-11-19.pdf",
+    "pages": 50,
+    "issued": "2026-11-12"
+   },
+   "created": "2026-11-12",
+   "lastAmended": "2026-11-12",
+   "lastAmendedNote": "13 Nov: header added to the handout copies in the print pack; quiz game added. Lesson content unchanged",
+   "plan": {
+    "am": "AM: Learners finished the ESB Exam Practice worksheet. In Task 4a they listened twice to a library announcement and answered a main-idea question and six detail questions, then in threes they discussed free things to do in London (Task 4b) using phrases for opinions, agreeing and taking turns. They reviewed going to for plans and will for decisions, offers, promises and opinions, voted on their phones with the Vote Card, circled the right form on the handout and gave a one-minute talk about their plans for next weekend.",
+    "pm": "PM, PC room: Learners practised choosing going to or will, building questions and finding the correct sentence online, then sorted time words by tense and wrote five sentences in Teams about yesterday, now, tomorrow, an opinion and an offer. They did a Task 4a-style listening about a weekend plan, practised asking and answering in threes with the Referee Interviews wheels and finished with a 20-question Kahoot."
+   },
+   "flags": []
   }
  },
  "status": {},
