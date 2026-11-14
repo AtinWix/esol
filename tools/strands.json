@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-14",
- "purpose": "Controlled vocabulary + restructure action list for the ESOL library. \"strand\" replaces the title-derived Topic label on the library page, which produced 91 topics for 147 items. Consumed by home.py once AtinWix/personal is reachable. See the project doc \"ESOL Library - Restructure Plan\".",
+ "purpose": "Controlled vocabulary + restructure action list for the ESOL library. \"strand\" replaces the title-derived Topic label on the library page, which produced 91 topics for 147 items. Consumed by home.py once AtinWix/personal is reachable. See the project doc \"ESOL Library - Restructure Plan\". CORRECTION 14 Nov 2026: the earlier \"supersede\" verdicts on the E1 listening-days-times-prices set, the E2 future-plans-going-to-will set and the wk09 Monday ordering page were WRONG. They were reached from file similarity and names, not from the Hub cards. Runbook 2 is explicit: folder and file names are never used to work out what a lesson was about - read the card. All of them are live or retained lesson material. Check every Hub card before proposing any deletion.",
  "strands": [
   "Adjectives & adverbs",
   "Assessment & placement",
@@ -399,9 +399,9 @@
    "skill": "Speaking &amp; Listening",
    "kind": "word",
    "strand": "Numbers, days, times & prices",
-   "action": "supersede",
-   "note": "superseded by the community-centre Days, Times and Prices set (fuller lesson, same objectives)",
-   "status": "blocked: needs esol.json/docs.json in AtinWix/personal"
+   "action": "keep",
+   "note": "KEEP - this is the 10 Nov AM lesson; the community-centre set is the same day PM. Two lessons, not two versions. Hub card 2026-11-10_e1 links both.",
+   "status": "verdict corrected 14 Nov 2026"
   },
   {
    "path": "e1/speaking-listening/docs/print-pack-2026-11-17.pdf",
@@ -530,9 +530,9 @@
    "skill": "Speaking &amp; Listening",
    "kind": "online",
    "strand": "Numbers, days, times & prices",
-   "action": "supersede",
-   "note": "superseded by the community-centre Days, Times and Prices set (fuller lesson, same objectives)",
-   "status": "blocked: needs esol.json/docs.json in AtinWix/personal"
+   "action": "keep",
+   "note": "KEEP - this is the 10 Nov AM lesson; the community-centre set is the same day PM. Two lessons, not two versions. Hub card 2026-11-10_e1 links both.",
+   "status": "verdict corrected 14 Nov 2026"
   },
   {
    "path": "e1/speaking-listening/listening-days-times-prices-kahoot.xlsx",
@@ -541,9 +541,9 @@
    "skill": "Speaking &amp; Listening",
    "kind": "kahoot",
    "strand": "Numbers, days, times & prices",
-   "action": "supersede",
-   "note": "superseded by the community-centre Days, Times and Prices set (fuller lesson, same objectives)",
-   "status": "blocked: needs esol.json/docs.json in AtinWix/personal"
+   "action": "keep",
+   "note": "KEEP - this is the 10 Nov AM lesson; the community-centre set is the same day PM. Two lessons, not two versions. Hub card 2026-11-10_e1 links both.",
+   "status": "verdict corrected 14 Nov 2026"
   },
   {
    "path": "e1/speaking-listening/listening-days-times-prices-projector-lesson.html",
@@ -552,9 +552,9 @@
    "skill": "Speaking &amp; Listening",
    "kind": "projector",
    "strand": "Numbers, days, times & prices",
-   "action": "supersede",
-   "note": "superseded by the community-centre Days, Times and Prices set (fuller lesson, same objectives)",
-   "status": "blocked: needs esol.json/docs.json in AtinWix/personal"
+   "action": "keep",
+   "note": "KEEP - this is the 10 Nov AM lesson; the community-centre set is the same day PM. Two lessons, not two versions. Hub card 2026-11-10_e1 links both.",
+   "status": "verdict corrected 14 Nov 2026"
   },
   {
    "path": "e1/speaking-listening/short-conversations-task1-questions-projector-lesson.html",
@@ -815,9 +815,9 @@
    "skill": "Speaking &amp; Listening",
    "kind": "word",
    "strand": "Future forms",
-   "action": "supersede",
-   "note": "superseded by the Speaking Tasks 2 and 4 day plan and answers",
-   "status": "blocked: needs esol.json/docs.json in AtinWix/personal"
+   "action": "keep",
+   "note": "KEEP - this is the 19 Nov lesson set; the speaking-tasks-2-and-4 set is the 12 Nov lesson. Hub card 2026-11-19_e2 links it.",
+   "status": "verdict corrected 14 Nov 2026"
   },
   {
    "path": "e2/speaking-listening/docs/future-plans-going-to-will-kahoot.xlsx",
@@ -826,9 +826,9 @@
    "skill": "Speaking &amp; Listening",
    "kind": "kahoot",
    "strand": "Mixed tenses",
-   "action": "supersede",
-   "note": "superseded by the Speaking Tasks 2 and 4 Kahoot",
-   "status": "blocked: needs esol.json/docs.json in AtinWix/personal"
+   "action": "keep",
+   "note": "KEEP - 19 Nov lesson Kahoot (card kahoot.xlsx). Not the 12 Nov one.",
+   "status": "verdict corrected 14 Nov 2026"
   },
   {
    "path": "e2/speaking-listening/docs/future-plans-going-to-will-speaking-tasks-2-and-4-day-plan-and-answers.pdf",
@@ -870,9 +870,9 @@
    "skill": "Speaking &amp; Listening",
    "kind": "word",
    "strand": "Future forms",
-   "action": "supersede",
-   "note": "superseded by the Speaking Tasks 2 and 4 student handout",
-   "status": "blocked: needs esol.json/docs.json in AtinWix/personal"
+   "action": "keep",
+   "note": "KEEP - 19 Nov lesson set, in the 19 Nov print pack. Hub card 2026-11-19_e2 links it.",
+   "status": "verdict corrected 14 Nov 2026"
   },
   {
    "path": "e2/speaking-listening/docs/past-simple-more-practice-verbs-negatives-time-words-questions.pdf",
@@ -1659,9 +1659,9 @@
    "skill": "Reading",
    "kind": "projector",
    "strand": "Ordering & sequence",
-   "action": "supersede",
-   "note": "superseded by the wk09-wed version (same lesson, ESB Set L instead of a timed online paper)",
-   "status": "blocked: needs esol.json/docs.json in AtinWix/personal"
+   "action": "keep",
+   "note": "KEEP - the replaced 16 Nov lesson page. Runbook 10.5: a replaced lesson’s files stay as course material if sound and at the right level.",
+   "status": "verdict corrected 14 Nov 2026"
   },
   {
    "path": "e3/reading/wk09-time-order-alphabetical-order-practice.html",
