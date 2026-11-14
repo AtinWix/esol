@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ESOL All Levels – Classroom Wheel and Picker – Projector Tool</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#1F3A5F;--line:#C9D3DF;--bg:#F7F9FC;--go:#1B7F4B;--no:#B3261E;--hi:#FFD54A}
+html,body{height:100%}
+body{font-family:Verdana,Arial,Helvetica,sans-serif;background:var(--bg);color:var(--ink);
+ display:flex;flex-direction:column;overflow:hidden}
+header{display:flex;flex-wrap:wrap;gap:6px;align-items:center;padding:8px 12px;background:#fff;border-bottom:2px solid var(--line)}
+h1{font-size:clamp(14px,1.6vw,20px);margin-right:auto}
+h1 span{font-weight:400;opacity:.65}
+button{font:inherit;cursor:pointer;border:2px solid var(--line);background:#fff;color:var(--ink);
+ border-radius:8px;padding:6px 12px;font-size:clamp(12px,1.2vw,16px)}
+button:hover{border-color:var(--ink)}
+button[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.big{font-weight:700;background:var(--ink);color:#fff;border-color:var(--ink);padding:10px 22px}
+.big:hover{background:#15406e}
+main{flex:1;display:flex;align-items:center;justify-content:center;padding:10px 14px 0;min-height:0}
+.pane{display:none;width:100%;height:100%;flex-direction:column;align-items:center;justify-content:center;gap:10px}
+.pane.on{display:flex}
+/* WHEEL */
+.wheelwrap{display:flex;gap:min(4vw,40px);align-items:center;justify-content:center;width:100%;height:100%;flex-wrap:wrap}
+#wheel{width:min(42vh,42vw,380px);height:min(42vh,42vw,380px);flex:0 0 auto}
+#wheel g{transition:transform 4s cubic-bezier(.17,.67,.12,1)}
+.ptr{font-size:22px;color:var(--no)}
+.result{flex:1 1 320px;min-width:260px;background:#fff;border:3px solid var(--ink);border-radius:14px;
+ padding:16px 20px;font-size:clamp(18px,2.6vw,38px);font-weight:700;line-height:1.3;min-height:1.4em;text-align:center}
+.result.empty{font-weight:400;opacity:.5;font-size:clamp(14px,1.6vw,22px)}
+/* ORDER */
+.orderwrap{display:flex;gap:14px;width:100%;height:100%;padding-bottom:4px}
+.col{flex:1;display:flex;flex-direction:column;min-width:0}
+.col h2{font-size:clamp(12px,1.3vw,17px);margin-bottom:5px}
+.bank,.slots{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:6px;padding:6px;
+ background:#fff;border:2px dashed var(--line);border-radius:10px}
+.slots{border-style:solid}
+.card{text-align:left;line-height:1.35;padding:8px 10px;font-size:clamp(11px,1.15vw,15px);white-space:normal}
+.slots .card{counter-increment:s;display:flex;gap:9px;align-items:flex-start}
+.slots .card::before{content:counter(s);font-weight:700;background:var(--ink);color:#fff;
+ border-radius:5px;min-width:1.5em;text-align:center;flex:0 0 auto}
+.slots{counter-reset:s}
+.card.ok{border-color:var(--go);background:#EAF6EE}
+.card.bad{border-color:var(--no);background:#FDECEA}
+.card.ex{border-color:var(--ink);background:#FFF8DC}
+/* PICKER */
+.pickface{font-size:clamp(28px,9vw,120px);font-weight:700;text-align:center;line-height:1.1;
+ background:#fff;border:4px solid var(--ink);border-radius:18px;padding:20px 32px;min-width:min(70vw,620px)}
+.left{font-size:clamp(11px,1.1vw,14px);opacity:.7}
+/* custom list */
+dialog{border:3px solid var(--ink);border-radius:12px;padding:16px;max-width:min(92vw,560px);font:inherit;color:var(--ink)}
+dialog h2{font-size:17px;margin-bottom:8px}
+textarea{width:100%;height:34vh;font:14px/1.45 Verdana,Arial,sans-serif;padding:8px;
+ border:2px solid var(--line);border-radius:8px;resize:vertical}
+dialog .row{display:flex;gap:8px;justify-content:flex-end;margin-top:10px}
+#qrbox{position:fixed;right:10px;bottom:10px;background:#fff;border:2px solid var(--line);
+ border-radius:10px;padding:8px;text-align:center;font-size:11px;z-index:5;display:none}
+#qrbox.on{display:block}
+#qrbox svg{width:118px;height:118px;display:block;margin-bottom:3px}
+.tnote{background:#fff;border-top:2px solid var(--line);padding:3px 10px 4px;font-size:9px;line-height:1.35}
+.tnote b{font-size:9px}
+@media (max-width:760px){
+ h1{font-size:13px;width:100%}
+ .orderwrap{flex-direction:column}
+ .wheelwrap{flex-direction:column;gap:12px}
+ #wheel{width:min(54vw,250px);height:min(54vw,250px)}
+ .result{font-size:20px;flex:0 0 auto;width:100%}
+}
+</style></head><body>
+
+<header>
+ <h1>Classroom Wheel and Picker <span id="sub"></span></h1>
+ <button class="pre" data-p="days">Days of the week</button>
+ <button class="pre" data-p="best">Which is the best?</button>
+ <button class="pre" data-p="alpha">Alphabetical order</button>
+ <button class="pre" data-p="leila">Leila's day</button>
+ <button id="mine">My own list</button>
+ <button id="qrbtn" aria-pressed="false" title="Show a QR code so learners can open this on their phones">QR</button>
+</header>
+
+<main>
+ <section class="pane" id="p-wheel">
+  <div class="wheelwrap">
+   <div style="text-align:center">
+    <div class="ptr">▼</div>
+    <svg id="wheel" viewBox="-105 -105 210 210" role="img" aria-label="Spinning wheel"><g id="wg"></g></svg>
+   </div>
+   <div style="flex:1 1 320px;min-width:260px;text-align:center">
+    <div class="result empty" id="wres">Press Spin</div>
+    <div style="margin-top:12px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
+     <button class="big" id="spin">Spin</button>
+     <button id="wdrop" aria-pressed="false">Take it off the wheel</button>
+     <button id="wreset">Put them all back</button>
+    </div>
+    <div class="left" id="wleft"></div>
+   </div>
+  </div>
+ </section>
+
+ <section class="pane" id="p-order">
+  <div class="orderwrap">
+   <div class="col"><h2>Tap in the right order</h2><div class="bank" id="bank"></div></div>
+   <div class="col"><h2 id="slotsh">In order</h2><div class="slots" id="slots"></div>
+    <div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap">
+     <button class="big" id="check">Check</button>
+     <button id="showone">Show answer</button>
+     <button id="oreset">Start again</button>
+     <span class="left" id="oleft"></span>
+    </div>
+   </div>
+  </div>
+ </section>
+
+ <section class="pane" id="p-pick">
+  <div style="text-align:center">
+   <div class="pickface" id="face">Ready</div>
+   <div style="margin-top:14px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
+    <button class="big" id="pick">Pick one</button>
+    <button id="preset2">Put them all back</button>
+   </div>
+   <div class="left" id="pleft"></div>
+  </div>
+ </section>
+</main>
+
+<div class="tnote" id="tnote"><b>Teacher:</b> <span id="tn"></span></div>
+
+<div id="qrbox"><svg viewBox="0 0 37 37" shape-rendering="crispEdges"><rect width="37" height="37" fill="#fff"/><path fill="#1F3A5F" d="M0 0h7v1h-7zM8 0h1v1h-1zM11 0h1v1h-1zM13 0h4v1h-4zM18 0h2v1h-2zM22 0h1v1h-1zM26 0h1v1h-1zM30 0h7v1h-7zM0 1h1v1h-1zM6 1h1v1h-1zM10 1h1v1h-1zM12 1h1v1h-1zM16 1h1v1h-1zM18 1h2v1h-2zM21 1h2v1h-2zM24 1h3v1h-3zM30 1h1v1h-1zM36 1h1v1h-1zM0 2h1v1h-1zM2 2h3v1h-3zM6 2h1v1h-1zM8 2h2v1h-2zM12 2h2v1h-2zM16 2h2v1h-2zM21 2h1v1h-1zM23 2h1v1h-1zM25 2h4v1h-4zM30 2h1v1h-1zM32 2h3v1h-3zM36 2h1v1h-1zM0 3h1v1h-1zM2 3h3v1h-3zM6 3h1v1h-1zM12 3h1v1h-1zM17 3h3v1h-3zM21 3h1v1h-1zM23 3h1v1h-1zM25 3h2v1h-2zM30 3h1v1h-1zM32 3h3v1h-3zM36 3h1v1h-1zM0 4h1v1h-1zM2 4h3v1h-3zM6 4h1v1h-1zM9 4h1v1h-1zM12 4h4v1h-4zM17 4h2v1h-2zM22 4h1v1h-1zM26 4h1v1h-1zM28 4h1v1h-1zM30 4h1v1h-1zM32 4h3v1h-3zM36 4h1v1h-1zM0 5h1v1h-1zM6 5h1v1h-1zM8 5h1v1h-1zM11 5h1v1h-1zM20 5h1v1h-1zM22 5h1v1h-1zM24 5h1v1h-1zM30 5h1v1h-1zM36 5h1v1h-1zM0 6h7v1h-7zM8 6h1v1h-1zM10 6h1v1h-1zM12 6h1v1h-1zM14 6h1v1h-1zM16 6h1v1h-1zM18 6h1v1h-1zM20 6h1v1h-1zM22 6h1v1h-1zM24 6h1v1h-1zM26 6h1v1h-1zM28 6h1v1h-1zM30 6h7v1h-7zM9 7h2v1h-2zM12 7h2v1h-2zM16 7h1v1h-1zM18 7h1v1h-1zM26 7h1v1h-1zM0 8h1v1h-1zM2 8h1v1h-1zM6 8h2v1h-2zM9 8h1v1h-1zM12 8h2v1h-2zM16 8h4v1h-4zM21 8h2v1h-2zM24 8h1v1h-1zM31 8h1v1h-1zM34 8h1v1h-1zM36 8h1v1h-1zM0 9h4v1h-4zM7 9h2v1h-2zM10 9h1v1h-1zM12 9h3v1h-3zM16 9h1v1h-1zM18 9h1v1h-1zM21 9h1v1h-1zM23 9h2v1h-2zM27 9h2v1h-2zM30 9h2v1h-2zM33 9h4v1h-4zM1 10h3v1h-3zM5 10h2v1h-2zM10 10h2v1h-2zM14 10h1v1h-1zM16 10h2v1h-2zM19 10h1v1h-1zM23 10h2v1h-2zM27 10h1v1h-1zM29 10h2v1h-2zM32 10h1v1h-1zM36 10h1v1h-1zM9 11h1v1h-1zM11 11h2v1h-2zM15 11h2v1h-2zM18 11h1v1h-1zM22 11h1v1h-1zM24 11h1v1h-1zM26 11h1v1h-1zM28 11h2v1h-2zM31 11h1v1h-1zM33 11h1v1h-1zM0 12h1v1h-1zM4 12h3v1h-3zM8 12h5v1h-5zM14 12h1v1h-1zM19 12h2v1h-2zM23 12h2v1h-2zM30 12h2v1h-2zM33 12h1v1h-1zM36 12h1v1h-1zM2 13h1v1h-1zM8 13h2v1h-2zM13 13h8v1h-8zM23 13h2v1h-2zM27 13h5v1h-5zM33 13h1v1h-1zM36 13h1v1h-1zM0 14h2v1h-2zM3 14h1v1h-1zM6 14h1v1h-1zM10 14h2v1h-2zM13 14h1v1h-1zM15 14h1v1h-1zM19 14h1v1h-1zM21 14h4v1h-4zM26 14h2v1h-2zM33 14h2v1h-2zM36 14h1v1h-1zM0 15h4v1h-4zM5 15h1v1h-1zM8 15h1v1h-1zM15 15h1v1h-1zM17 15h1v1h-1zM19 15h2v1h-2zM23 15h2v1h-2zM26 15h1v1h-1zM31 15h3v1h-3zM35 15h2v1h-2zM0 16h1v1h-1zM2 16h1v1h-1zM5 16h3v1h-3zM10 16h2v1h-2zM13 16h1v1h-1zM15 16h1v1h-1zM17 16h1v1h-1zM19 16h4v1h-4zM28 16h4v1h-4zM3 17h3v1h-3zM8 17h1v1h-1zM10 17h1v1h-1zM20 17h1v1h-1zM23 17h3v1h-3zM27 17h1v1h-1zM30 17h2v1h-2zM33 17h4v1h-4zM0 18h1v1h-1zM2 18h2v1h-2zM6 18h2v1h-2zM9 18h1v1h-1zM12 18h4v1h-4zM18 18h1v1h-1zM20 18h2v1h-2zM23 18h6v1h-6zM30 18h1v1h-1zM32 18h1v1h-1zM34 18h1v1h-1zM36 18h1v1h-1zM4 19h2v1h-2zM7 19h2v1h-2zM13 19h1v1h-1zM18 19h3v1h-3zM22 19h1v1h-1zM26 19h1v1h-1zM28 19h1v1h-1zM31 19h1v1h-1zM0 20h1v1h-1zM3 20h2v1h-2zM6 20h1v1h-1zM10 20h4v1h-4zM15 20h1v1h-1zM18 20h1v1h-1zM20 20h1v1h-1zM24 20h1v1h-1zM27 20h2v1h-2zM30 20h2v1h-2zM33 20h1v1h-1zM35 20h1v1h-1zM3 21h3v1h-3zM7 21h2v1h-2zM10 21h1v1h-1zM14 21h3v1h-3zM19 21h5v1h-5zM25 21h4v1h-4zM30 21h1v1h-1zM36 21h1v1h-1zM1 22h1v1h-1zM3 22h2v1h-2zM6 22h2v1h-2zM9 22h5v1h-5zM15 22h1v1h-1zM17 22h3v1h-3zM23 22h2v1h-2zM26 22h2v1h-2zM33 22h2v1h-2zM36 22h1v1h-1zM4 23h1v1h-1zM11 23h1v1h-1zM14 23h1v1h-1zM18 23h4v1h-4zM23 23h1v1h-1zM26 23h4v1h-4zM31 23h3v1h-3zM36 23h1v1h-1zM1 24h3v1h-3zM5 24h2v1h-2zM8 24h2v1h-2zM11 24h1v1h-1zM13 24h6v1h-6zM21 24h1v1h-1zM23 24h2v1h-2zM27 24h2v1h-2zM30 24h2v1h-2zM35 24h2v1h-2zM1 25h2v1h-2zM4 25h2v1h-2zM7 25h2v1h-2zM11 25h1v1h-1zM13 25h1v1h-1zM16 25h3v1h-3zM23 25h2v1h-2zM27 25h2v1h-2zM30 25h2v1h-2zM33 25h2v1h-2zM36 25h1v1h-1zM0 26h3v1h-3zM5 26h2v1h-2zM8 26h1v1h-1zM10 26h2v1h-2zM13 26h2v1h-2zM16 26h1v1h-1zM19 26h1v1h-1zM22 26h4v1h-4zM27 26h3v1h-3zM31 26h2v1h-2zM34 26h1v1h-1zM36 26h1v1h-1zM5 27h1v1h-1zM8 27h1v1h-1zM10 27h1v1h-1zM12 27h2v1h-2zM15 27h2v1h-2zM18 27h1v1h-1zM22 27h3v1h-3zM27 27h3v1h-3zM32 27h2v1h-2zM0 28h2v1h-2zM6 28h1v1h-1zM8 28h3v1h-3zM14 28h1v1h-1zM16 28h1v1h-1zM19 28h2v1h-2zM24 28h1v1h-1zM28 28h5v1h-5zM36 28h1v1h-1zM8 29h2v1h-2zM12 29h1v1h-1zM14 29h4v1h-4zM19 29h1v1h-1zM23 29h2v1h-2zM27 29h2v1h-2zM32 29h1v1h-1zM35 29h2v1h-2zM0 30h7v1h-7zM8 30h3v1h-3zM13 30h4v1h-4zM19 30h5v1h-5zM25 30h1v1h-1zM28 30h1v1h-1zM30 30h1v1h-1zM32 30h1v1h-1zM36 30h1v1h-1zM0 31h1v1h-1zM6 31h1v1h-1zM11 31h1v1h-1zM16 31h2v1h-2zM20 31h1v1h-1zM22 31h1v1h-1zM24 31h1v1h-1zM26 31h3v1h-3zM32 31h1v1h-1zM35 31h2v1h-2zM0 32h1v1h-1zM2 32h3v1h-3zM6 32h1v1h-1zM11 32h2v1h-2zM14 32h1v1h-1zM17 32h1v1h-1zM20 32h5v1h-5zM27 32h6v1h-6zM35 32h2v1h-2zM0 33h1v1h-1zM2 33h3v1h-3zM6 33h1v1h-1zM9 33h1v1h-1zM11 33h3v1h-3zM20 33h4v1h-4zM25 33h2v1h-2zM28 33h2v1h-2zM32 33h2v1h-2zM0 34h1v1h-1zM2 34h3v1h-3zM6 34h1v1h-1zM8 34h2v1h-2zM12 34h4v1h-4zM18 34h1v1h-1zM20 34h1v1h-1zM23 34h4v1h-4zM29 34h1v1h-1zM31 34h2v1h-2zM36 34h1v1h-1zM0 35h1v1h-1zM6 35h1v1h-1zM10 35h4v1h-4zM18 35h3v1h-3zM22 35h2v1h-2zM28 35h1v1h-1zM32 35h2v1h-2zM0 36h7v1h-7zM8 36h1v1h-1zM11 36h1v1h-1zM13 36h4v1h-4zM20 36h1v1h-1zM23 36h1v1h-1zM28 36h1v1h-1zM30 36h2v1h-2zM33 36h1v1h-1zM36 36h1v1h-1z"/></svg>Open on a phone</div>
+<div class="atin-logo" aria-label="Made by Atin">
+<svg viewBox="104 28 172 134" width="64" height="50" role="img" aria-hidden="true">
+<text x="139" y="112" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="72" fill="currentColor">A</text>
+<rect x="177" y="83" width="24" height="6" rx="1" fill="currentColor"/>
+<path d="M216 66 L216 106 A25 7 0 0 0 266 106 L266 66" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+<ellipse cx="241" cy="66" rx="25" ry="7" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="216" y1="80" x2="266" y2="80" stroke="currentColor" stroke-width="1.5"/>
+<line x1="216" y1="94" x2="266" y2="94" stroke="currentColor" stroke-width="1.5"/>
+<ellipse cx="241" cy="47" rx="23" ry="5" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="114" y1="128" x2="266" y2="128" stroke="currentColor" stroke-width="1"/>
+<text x="190" y="152" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" letter-spacing="2" fill="currentColor">made by Atin</text>
+</svg>
+</div>
+<style>
+.atin-logo{position:fixed;left:calc(6px + env(safe-area-inset-left,0px));bottom:calc(6px + env(safe-area-inset-bottom,0px));z-index:2147483000;pointer-events:none;color:#1F3A5F;background:rgba(255,255,255,.92);border:1px solid #C9D3DF;border-radius:8px;padding:3px 5px;line-height:0}
+.atin-logo svg{display:block}
+@media print{.atin-logo{position:fixed;left:auto;right:6mm;bottom:5mm;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+
+<dialog id="dlg"><h2>My own list – one item on each line</h2>
+<textarea id="ta" aria-label="Your list, one item per line"></textarea>
+<div class="row"><button id="useWheel">Use on the wheel</button><button id="useOrder">Use for ordering</button>
+<button id="usePick">Use for picking</button><button id="close">Cancel</button></div></dialog>
+
+<script>
+const P = {"days": {"label": "Days of the week", "level": "E1", "mode": "wheel", "note": "Learners look at the BOARD. Spin, read the day aloud together, then ask: What do you do on …?", "items": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "today"]}, "best": {"label": "Which is the best?", "level": "E3", "mode": "wheel", "note": "Learners look at the BOARD. Spin, read the question aloud, learners answer in pairs, then two learners report back.", "items": ["What is the best place in London for a day out? Why?", "What is the cheapest way to travel to college? Do you like it?", "What is the most difficult thing about learning English?", "What is the best food from your country? Why do you like it?", "What is the busiest place you know in Hackney? Do you like it?", "What is the most useful thing on your phone? Why?", "What is the best time of year in London? Why?", "Who is the kindest person you know? Why?"]}, "alpha": {"label": "Alphabetical order", "level": "E3", "mode": "order", "note": "Learners look at the BOARD. Tap the words in alphabetical order. Set 2 and Set 3 need the second and third letter.", "sets": {"Set 1 – first letter": ["bus", "garden", "hostel", "market", "teacher"], "Set 2 – second letter": ["canal", "card", "class", "college", "cycle"], "Set 3 – third letter": ["stall", "station", "stop", "street", "student"]}}, "leila": {"label": "Leila's day", "level": "E2", "mode": "order", "note": "Learners look at the BOARD. Tap the parts of Leila's talk in order. D is done as the example.", "sets": {"Leila's day – put the talk in order": ["When I wake up at seven o'clock, I make breakfast. I cook eggs and bread and drink tea. Then I take my children to school at eight o'clock.", "Then I go to work. I work in a shop from nine to five.", "My job is to help customers find what they want. I stand at the counter and sell things. Sometimes I use the till – I count the money and give change.", "In the afternoon I finish at five o'clock. I pick up my children from their after-school club.", "Then I go home and cook dinner. I prepare vegetables and meat and cook on the stove.", "My family sits down and we eat together and talk about our day. Then I clean the kitchen and wash the dishes.", "Sometimes I read a story before they go to bed.", "Then I go to bed at eleven o'clock."]}}};
+const $ = s => document.querySelector(s);
+let cur = null, items = [], live = [], order = [], shown = 0, mode = 'wheel';
+const COL = ['#1F3A5F','#2E6DA4','#1B7F4B','#4A7C2F','#8A6D1F','#A9471B','#7A2E6B','#3E4A8A'];
+
+function setMode(m){
+  mode = m;
+  ['wheel','order','pick'].forEach(k => $('#p-'+k).classList.toggle('on', k===m));
+}
+function loadPreset(key){
+  cur = key;
+  const p = P[key];
+  document.querySelectorAll('.pre').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.p===key)));
+  $('#sub').textContent = '– ' + p.label + ' (' + p.level + ')';
+  $('#tn').textContent = p.note;
+  if (p.sets){
+    const names = Object.keys(p.sets);
+    let i = (P[key]._i || 0) % names.length;
+    P[key]._i = i;
+    $('#slotsh').textContent = names[i];
+    items = p.sets[names[i]].slice();
+    setMode('order'); buildOrder(key==='leila');
+  } else {
+    items = p.items.slice();
+    setMode(p.mode); live = items.slice(); drawWheel(); resetFace();
+  }
+}
+/* ---------- WHEEL ---------- */
+function drawWheel(){
+  const g = $('#wg'); g.innerHTML = ''; g.style.transform = 'rotate(0deg)';
+  const n = live.length;
+  if (!n){ g.innerHTML = '<text y="4" text-anchor="middle" font-size="11" fill="#1F3A5F">All used</text>';
+           $('#wleft').textContent = ''; return; }
+  const step = 360/n;
+  live.forEach((t,i) => {
+    const a0 = i*step-90, a1 = (i+1)*step-90, r = 100;
+    const rad = d => d*Math.PI/180;
+    const x0 = r*Math.cos(rad(a0)), y0 = r*Math.sin(rad(a0));
+    const x1 = r*Math.cos(rad(a1)), y1 = r*Math.sin(rad(a1));
+    const pa = document.createElementNS('http://www.w3.org/2000/svg','path');
+    pa.setAttribute('d', `M0 0 L${x0.toFixed(2)} ${y0.toFixed(2)} A${r} ${r} 0 ${step>180?1:0} 1 ${x1.toFixed(2)} ${y1.toFixed(2)} Z`);
+    pa.setAttribute('fill', COL[i%COL.length]); pa.setAttribute('stroke','#fff'); pa.setAttribute('stroke-width','1.2');
+    g.appendChild(pa);
+    const tx = document.createElementNS('http://www.w3.org/2000/svg','text');
+    const mid = a0+step/2;
+    tx.setAttribute('transform', `rotate(${mid.toFixed(2)}) translate(58,0) rotate(${mid>90&&mid<270?180:0})`);
+    tx.setAttribute('text-anchor','middle'); tx.setAttribute('dominant-baseline','middle');
+    tx.setAttribute('font-size', n>8?'6':'7.5'); tx.setAttribute('fill','#fff');
+    const w = t.split(' '); let s = t;
+    if (s.length > 22) s = w.slice(0,3).join(' ') + '…';
+    tx.textContent = s;
+    g.appendChild(tx);
+  });
+  $('#wleft').textContent = live.length + ' of ' + items.length + ' left on the wheel';
+}
+let spinning = false, turns = 0;
+$('#spin').onclick = () => {
+  if (spinning || !live.length) return;
+  spinning = true;
+  const n = live.length, step = 360/n, k = Math.floor(Math.random()*n);
+  turns += 4 + Math.floor(Math.random()*3);
+  const target = turns*360 - (k*step + step/2);
+  $('#wg').style.transform = 'rotate(' + target.toFixed(2) + 'deg)';
+  setTimeout(() => {
+    const pickd = live[k];
+    const r = $('#wres'); r.textContent = pickd; r.classList.remove('empty');
+    if ($('#wdrop').getAttribute('aria-pressed') === 'true'){
+      live.splice(k,1);
+      setTimeout(() => { $('#wg').style.transition='none'; drawWheel();
+        requestAnimationFrame(()=>{ $('#wg').style.transition=''; turns=0; }); }, 900);
+    }
+    spinning = false;
+  }, 4050);
+};
+$('#wdrop').onclick = e => { const b = e.currentTarget;
+  b.setAttribute('aria-pressed', b.getAttribute('aria-pressed')==='true' ? 'false' : 'true'); };
+$('#wreset').onclick = () => { live = items.slice(); $('#wg').style.transition='none'; turns=0;
+  drawWheel(); requestAnimationFrame(()=>{ $('#wg').style.transition=''; });
+  const r=$('#wres'); r.textContent='Press Spin'; r.classList.add('empty'); };
+/* ---------- ORDER ---------- */
+function buildOrder(example){
+  order = []; shown = example ? 1 : 0;
+  const bank = $('#bank'), slots = $('#slots');
+  bank.innerHTML = ''; slots.innerHTML = '';
+  let pool = items.map((t,i) => ({t, i}));
+  for (let i = pool.length-1; i > 0; i--){ const j = Math.floor(Math.random()*(i+1)); [pool[i],pool[j]]=[pool[j],pool[i]]; }
+  if (example){
+    const first = pool.findIndex(o => o.i === 0);
+    const ex = pool.splice(first,1)[0];
+    order.push(ex); addSlot(ex, true);
+  }
+  pool.forEach(o => {
+    const b = document.createElement('button');
+    b.className = 'card'; b.textContent = o.t; b.dataset.i = o.i;
+    b.onclick = () => { b.remove(); order.push(o); addSlot(o,false); countLeft(); };
+    bank.appendChild(b);
+  });
+  countLeft();
+}
+function addSlot(o, isEx){
+  const s = document.createElement('button');
+  s.className = 'card' + (isEx ? ' ex' : ''); s.textContent = o.t; s.dataset.i = o.i;
+  if (!isEx) s.onclick = () => {
+    const at = order.indexOf(o); if (at > -1) order.splice(at,1);
+    s.remove();
+    const b = document.createElement('button');
+    b.className='card'; b.textContent=o.t; b.dataset.i=o.i;
+    b.onclick = () => { b.remove(); order.push(o); addSlot(o,false); countLeft(); };
+    $('#bank').appendChild(b); countLeft();
+  };
+  $('#slots').appendChild(s);
+}
+function countLeft(){ $('#oleft').textContent = $('#bank').children.length + ' left'; }
+$('#check').onclick = () => {
+  [...$('#slots').children].forEach((el,idx) => {
+    el.classList.remove('ok','bad');
+    if (el.classList.contains('ex')) return;
+    el.classList.add(Number(el.dataset.i) === idx ? 'ok' : 'bad');
+  });
+};
+$('#showone').onclick = () => {
+  if (shown >= items.length) return;
+  const slots = $('#slots');
+  const want = items[shown];
+  let el = [...slots.children][shown];
+  if (!el || el.textContent !== want){
+    const fromBank = [...$('#bank').children].find(b => b.textContent === want);
+    const fromSlot = [...slots.children].find(b => b.textContent === want);
+    const src = fromBank || fromSlot; if (!src) return;
+    src.remove();
+    const s = document.createElement('button');
+    s.className = 'card ok'; s.textContent = want; s.dataset.i = shown;
+    slots.insertBefore(s, slots.children[shown] || null);
+    order = [...slots.children].map(c => ({t: c.textContent, i: Number(c.dataset.i)}));
+  } else el.classList.add('ok');
+  shown++; countLeft();
+};
+$('#oreset').onclick = () => {
+  const p = P[cur];
+  if (p && p.sets){ const names = Object.keys(p.sets); p._i = ((p._i||0)+1) % names.length;
+    $('#slotsh').textContent = names[p._i]; items = p.sets[names[p._i]].slice(); }
+  buildOrder(cur === 'leila');
+};
+/* ---------- PICKER ---------- */
+function resetFace(){ $('#face').textContent = 'Ready'; $('#pleft').textContent = live.length + ' left'; }
+$('#pick').onclick = () => {
+  if (!live.length){ $('#face').textContent = 'All used'; return; }
+  const k = Math.floor(Math.random()*live.length);
+  $('#face').textContent = live[k];
+  live.splice(k,1); $('#pleft').textContent = live.length + ' left';
+};
+$('#preset2').onclick = () => { live = items.slice(); resetFace(); };
+/* ---------- custom list ---------- */
+$('#mine').onclick = () => { $('#ta').value = items.join('\n'); $('#dlg').showModal(); };
+$('#close').onclick = () => $('#dlg').close();
+function takeList(){ return $('#ta').value.split('\n').map(s => s.trim()).filter(Boolean); }
+function useCustom(m){
+  const l = takeList();
+  if (l.length < 2){ alert('Please type at least two lines.'); return; }
+  items = l; live = l.slice(); cur = null;
+  document.querySelectorAll('.pre').forEach(b => b.setAttribute('aria-pressed','false'));
+  $('#sub').textContent = '– my own list';
+  $('#tn').textContent = 'Learners look at the BOARD.';
+  $('#dlg').close(); setMode(m);
+  if (m === 'wheel') drawWheel();
+  if (m === 'order'){ $('#slotsh').textContent = 'In order'; buildOrder(false); }
+  if (m === 'pick') resetFace();
+}
+$('#useWheel').onclick = () => useCustom('wheel');
+$('#useOrder').onclick = () => useCustom('order');
+$('#usePick').onclick  = () => useCustom('pick');
+/* ---------- wiring ---------- */
+document.querySelectorAll('.pre').forEach(b => b.onclick = () => loadPreset(b.dataset.p));
+$('#qrbtn').onclick = e => { const b = e.currentTarget;
+  const on = b.getAttribute('aria-pressed') !== 'true';
+  b.setAttribute('aria-pressed', String(on)); $('#qrbox').classList.toggle('on', on); };
+document.addEventListener('keydown', e => {
+  if (e.code === 'Space' && mode === 'wheel'){ e.preventDefault(); $('#spin').click(); }
+  if (e.code === 'Space' && mode === 'pick'){ e.preventDefault(); $('#pick').click(); }
+});
+loadPreset('days');
+</script>
+</body></html>
