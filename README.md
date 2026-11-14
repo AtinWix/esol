@@ -21,8 +21,10 @@ Word documents:
 - [Induction E2/E3 – classroom rules and safety words – preteaching (before the RARPA form)](all-levels/docs/induction-e2-e3-classroom-rules-and-safety-words-preteaching.pdf) (PDF) · [Word](all-levels/docs/induction-e2-e3-classroom-rules-and-safety-words-preteaching.docx)
 
 ## assessments
-- [ESOL Digital Skills – ICT Assessment (E1–L2)](https://atinwix.github.io/ict-test/) – Self-access computer skills check; learners' results go to a Microsoft Form.
+- [ESOL Digital Skills – Computer Skills Assessment (E1–L2)](https://atinwix.github.io/new-digital-skills-test/) – Self-access check of basic computer skills; results go to a Microsoft Form with the level the learner is working at.
 - [ESOL RARPA Progress Tasks – My English Check (E1–L2)](https://atinwix.github.io/RARPA/) – Learners do the tasks, practise, then take the check; results go to a Microsoft Form. Teacher view and learner report: add ?teacher to the address.
+- [ESOL Reading Level Check – Placement Assessment (E1–L2)](https://atinwix.github.io/reading_test/) – ESB-style reading only, clicking and ordering – no typing, so learners with few IT skills can still show their English. Results go to a Microsoft Form.
+- [ESOL Writing Level Check – Typed Placement Assessment (E1–L2)](https://atinwix.github.io/WRITING_TEST/) – Typed writing check for learners who can use a keyboard; free writing and answers go to a Microsoft Form.
 
 ## e1/speaking-listening
 - [E1 Days, Times and Prices – Community Centre Timetable – Listening, Partner A/B, Find the Mistake and My Talk – Interactive Practice](e1/speaking-listening/community-centre-days-times-prices-interactive-practice.html) – Learners' PC/phone page: Task 4 answers for Scripts C–F with script gap-fills, a Partner A / Partner B information gap, ten present simple mistakes to find and correct, and a 'My week' talk frame that checks days, times and prices.
