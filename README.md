@@ -160,9 +160,6 @@ Word documents:
 - [E3 Reading – Text Types – Matching Activity](e3/reading/text-types-matching-activity.html)
 - [E3 Mixed Tenses – Graffiti News – Error Hunt](e3/reading/graffiti-news-error-hunt.html)
 - [E3 Reading – Graffiti Warning – Mixed Tenses Online Lesson](e3/reading/graffiti-warning-mixed-tenses-online-lesson.html)
-- [E3 Reading – Linking Words (because, so, although, however) – Main Idea and Detail – Projector and PC Lesson](e3/reading/linking-words-because-so-although-however-main-idea-and-detail-projector-and-pc-lesson.html) – One page for projector and PCs: linking words, an opinion text with 8 questions, main idea or detail, joining sentences, online dictionary, opinion in Teams
-- [E3 Reading – Purpose Clues – Drag and Sort Activity](e3/reading/purpose-clues-drag-sort-activity.html) – Drag each clue onto its purpose: warn, advise, instruct, advertise, inform, describe
-- [E3 Reading – Purpose, Pronouns & Word Meaning – Projector Lesson](e3/reading/purpose-pronouns-word-meaning-projector-lesson.html)
 - [E3 Adjectives and Adverbs – Find the Error – Interactive Practice](e3/reading/adjectives-adverbs-find-the-error-interactive-practice.html) – 20 sentences: tap the mistake, then type the correct sentence. Works on PCs and phones.
 - [E3 Adjectives and Adverbs – Gap Fill – Interactive Reading Activity](e3/reading/adjectives-adverbs-gap-fill-interactive-reading-activity.html) – Two short texts, 8 gaps each: tap a word, then tap its gap. One answer per gap, two extra words. Works on PCs and phones, with a QR code for the phone version.
 - [E3 Reading – Describing Hackney – Adjectives and Adverbs – Projector Lesson](e3/reading/describing-hackney-adjectives-adverbs-projector-lesson.html) – Adjective or adverb, find the error, online maps task, write and post in Teams, Millionaire.
@@ -171,6 +168,9 @@ Word documents:
 - [E3 Reading Skills – Hackney Bugle](e3/reading/reading-skills-hackney-bugle.html)
 - [E3 Reading – Ordering Tasks and an ESB Paper – Projector Lesson](e3/reading/ordering-tasks-exam-paper-projector-lesson.html) – Time order, alphabetical order, a timed ESB paper (Set L Tasks 1–2) and answers with proof – projector, no PCs needed
 - [E3 Reading – Ordering Tasks and Practice Paper – Projector Lesson](e3/reading/ordering-tasks-practice-paper-projector-lesson.html) – Time order, alphabetical order, online practice, timed online paper and answers – all on screen (PC room)
+- [E3 Reading – Linking Words (because, so, although, however) – Main Idea and Detail – Projector and PC Lesson](e3/reading/linking-words-because-so-although-however-main-idea-and-detail-projector-and-pc-lesson.html) – One page for projector and PCs: linking words, an opinion text with 8 questions, main idea or detail, joining sentences, online dictionary, opinion in Teams
+- [E3 Reading – Purpose Clues – Drag and Sort Activity](e3/reading/purpose-clues-drag-sort-activity.html) – Drag each clue onto its purpose: warn, advise, instruct, advertise, inform, describe
+- [E3 Reading – Purpose, Pronouns & Word Meaning – Projector Lesson](e3/reading/purpose-pronouns-word-meaning-projector-lesson.html)
 
 Word documents:
 - [Wk 7 – Camping advice email – reading, writing and modal verbs – answers (teacher)](e3/reading/docs/camping-advice-email-modal-verbs-answers.pdf) (PDF) · [Word](e3/reading/docs/camping-advice-email-modal-verbs-answers.docx)
@@ -203,8 +203,8 @@ Word documents:
 - [Wk 7 – Modal verbs for rules and advice – worksheet](e3/reading/docs/modal-verbs-rules-and-advice-worksheet.pdf) (PDF) · [Word](e3/reading/docs/modal-verbs-rules-and-advice-worksheet.docx)
 - [E3 Reading – Pronouns, Word Meaning, Ordering Tasks and an ESB Paper – Day Plan and Answers](e3/reading/docs/pronouns-word-meaning-ordering-day-plan.pdf) (PDF) · [Word](e3/reading/docs/pronouns-word-meaning-ordering-day-plan.docx)
 - [E3 Reading – Pronouns, Word Meaning and Ordering – Kahoot Quiz](e3/reading/docs/pronouns-word-meaning-ordering-kahoot.pdf) (PDF) · [Word](e3/reading/docs/pronouns-word-meaning-ordering-kahoot.xlsx)
-- [Wk 8 Mon Purpose, main points, pronouns and word meaning – day plan (teacher)](e3/reading/docs/purpose-pronouns-word-meaning-day-plan.pdf) (PDF) · [Word](e3/reading/docs/purpose-pronouns-word-meaning-day-plan.docx)
-- [Wk 8 Wed Purpose, main points, pronouns and word meaning – day plan (teacher)](e3/reading/docs/purpose-pronouns-word-meaning-recap-day-plan.pdf) (PDF) · [Word](e3/reading/docs/purpose-pronouns-word-meaning-recap-day-plan.docx)
+- [E3 Reading – Purpose, Main Points, Pronouns and Word Meaning – Day Plan (teacher)](e3/reading/docs/purpose-pronouns-word-meaning-day-plan.pdf) (PDF) · [Word](e3/reading/docs/purpose-pronouns-word-meaning-day-plan.docx)
+- [E3 Reading – Purpose, Main Points, Pronouns and Word Meaning – Recap – Day Plan (teacher)](e3/reading/docs/purpose-pronouns-word-meaning-recap-day-plan.pdf) (PDF) · [Word](e3/reading/docs/purpose-pronouns-word-meaning-recap-day-plan.docx)
 - [E3 Reading – Set L Exam Practice and Ordering – Kahoot Quiz](e3/reading/docs/set-l-exam-practice-kahoot.pdf) (PDF) · [Word](e3/reading/docs/set-l-exam-practice-kahoot.xlsx)
 - [E3 Reading – ESB Set L Exam Practice, Ordering Tasks and a Timed Online Paper – Day Plan and Answers](e3/reading/docs/set-l-exam-practice-timed-papers-day-plan.pdf) (PDF) · [Word](e3/reading/docs/set-l-exam-practice-timed-papers-day-plan.docx)
 - [E3 Reading – ESB Set L Full Paper, then Linking Words and Main Idea – Day Plan and Answers](e3/reading/docs/set-l-full-paper-and-linking-words-main-idea-day-plan-and-answers.pdf) (PDF) · [Word](e3/reading/docs/set-l-full-paper-and-linking-words-main-idea-day-plan-and-answers.docx)
