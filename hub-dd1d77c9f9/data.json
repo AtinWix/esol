@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-14T08:33:44Z",
+ "updatedAt": "2026-11-14T11:19:36Z",
  "upcoming": {
   "2026-11-02_e3": {
    "afternoon": "PC room: Too Cold to Learn – complaint emails",
@@ -8,7 +8,7 @@
    "links": [
     {
      "label": "Skills Fair paper",
-     "url": "https://atinwix.github.io/esol/e3/reading/docs/wk08-hackney-skills-fair-leaflet-exam-practice.pdf"
+     "url": "https://atinwix.github.io/esol/e3/reading/docs/hackney-skills-fair-leaflet-exam-practice.pdf"
     },
     {
      "label": "Too Cold to Learn",
@@ -17,7 +17,7 @@
    ],
    "morning": "Hackney Community Skills Fair exam practice paper; on-screen text types matching (15 types)",
    "title": "As taught: Skills Fair practice paper, text types, Too Cold to Learn",
-   "amended": "2026-11-02T15:15:42Z"
+   "amended": "2026-11-02T14:02:11Z"
   },
   "2026-11-03_e1": {
    "afternoon": "PC room: some projector speaking extension activities, then the Task 2 Talk Builder up to section 7 (quick notes)",
@@ -116,7 +116,7 @@
     },
     {
      "label": "Day plan and answers",
-     "url": "https://atinwix.github.io/esol/e3/reading/docs/wk09-mon-hackney-places-adjectives-adverbs-day-plan.pdf"
+     "url": "https://atinwix.github.io/esol/e3/reading/docs/hackney-places-adjectives-adverbs-day-plan.pdf"
     },
     {
      "label": "AM projector lesson (press T for script)",
@@ -154,11 +154,11 @@
    "todo": [
     "Live Kahoot question 12 still says the big Broadway Market is on Saturday only. Next time you are signed in to Kahoot, change the answer to \"Saturday and Sunday\" (or ask Claude to re-import the updated file)."
    ],
-   "amended": "2026-11-13T12:22:28Z"
+   "amended": "2026-11-14T08:20:57Z"
   },
   "2026-11-10_e1": {
    "afternoon": "REPLANNED, learners on their own PCs for most of the lesson: one community-centre timetable, present simple only – timetable tasks and partner questions on the PC; Task 4 Scripts A–F answered on the PC as you play them; Partner A/B information gap; find the mistake; Hangman Paragraphs; Sara's talk gap-fill, then each learner's 'My week' talk on screen and given to a partner; Kahoot. Projector only for instructions and checking.",
-   "amended": "2026-11-10T11:58:32Z",
+   "amended": "2026-11-14T08:20:57Z",
    "asTaught": "As taught: AM Task 4 days, times and prices with a gapfill added; PM (PC room) replanned community-centre timetable tasks, Scripts, information gap and present simple corrections. The Kahoot and the paired talk preparation were not finished and are carried to Tue 17 Nov.",
    "cls": "E1 Speaking & Listening",
    "date": "2026-11-10",
@@ -224,7 +224,7 @@
   "2026-11-11_e3": {
    "afternoon": "Classroom, paper: time order with Hawa's Morning (3A); alphabetical order on the projector – learners come up and tap the words in order (slides 7–9), then 3B; then ESB Set L Tasks 1 and 2 (14 questions) under timed conditions, swap-and-mark with proof from the text",
    "amended": "2026-11-13T12:12:11Z",
-   "asTaught": "As taught: AM Exam Prep Lesson 2 as planned. PM time order (3A) and alphabetical order on the projector with 3B; the projector slides and the Set L paper (Tasks 1–2) were not finished and move to Mon 16 Nov.",
+   "asTaught": "As taught: AM Exam Prep Lesson 2 as planned. PM time order (3A) and alphabetical order (3B) on the projector – the projector lesson was covered (slides 1–10). Only the ESB Set L paper (Tasks 1–2) was not sat; it moves to Mon 16 Nov.",
    "cls": "E3 Reading",
    "date": "2026-11-11",
    "links": [
@@ -234,11 +234,11 @@
     },
     {
      "label": "Day plan and answers (incl. Set L answers)",
-     "url": "https://atinwix.github.io/esol/e3/reading/docs/wk09-mon-pronouns-word-meaning-ordering-day-plan.pdf"
+     "url": "https://atinwix.github.io/esol/e3/reading/docs/pronouns-word-meaning-ordering-day-plan.pdf"
     },
     {
      "label": "What to say – teacher script",
-     "url": "https://atinwix.github.io/esol/e3/reading/docs/wk09-mon-pronouns-word-meaning-ordering-what-to-say.pdf"
+     "url": "https://atinwix.github.io/esol/e3/reading/docs/pronouns-word-meaning-ordering-what-to-say.pdf"
     },
     {
      "label": "Hangman Paragraphs (paragraph loaded)",
@@ -250,7 +250,7 @@
     },
     {
      "label": "AM projector lesson (Reading Detectives)",
-     "url": "https://atinwix.github.io/esol/e3/reading/wk08-purpose-pronouns-word-meaning-projector-lesson.html"
+     "url": "https://atinwix.github.io/esol/e3/reading/purpose-pronouns-word-meaning-projector-lesson.html"
     },
     {
      "label": "Lesson 2 handouts",
@@ -266,7 +266,7 @@
     },
     {
      "label": "PM projector lesson (timer and Set L answers)",
-     "url": "https://atinwix.github.io/esol/e3/reading/wk09-wed-ordering-tasks-exam-paper-projector-lesson.html"
+     "url": "https://atinwix.github.io/esol/e3/reading/ordering-tasks-exam-paper-projector-lesson.html"
     },
     {
      "label": "Set L handout – Tasks 1 and 2 (Q1–14), 2 pages, print double-sided",
@@ -288,10 +288,14 @@
   },
   "2026-11-12_e2": {
    "afternoon": "PC room, students on own PCs throughout: Hangman Paragraphs in pairs (p10); A going to or will? (p11); B build the question + ask a neighbour (p12); C find and correct the mistake (p13); D 4 sentences posted in Teams (p14); E Task 4b answers posted in Teams (p16); Kahoot on PCs (p15)",
-   "amended": "2026-11-13T07:14:32Z",
+   "amended": "2026-11-14T08:20:57Z",
    "asTaught": "As taught: AM ESB Exam Practice worksheet Tasks 1–4 with new Task 3 images and a new Task 4a audio page, done up to section D (Task 3). PM (PC room) the Future Plans (going to and will) lesson page up to slide 8. Task 4a and 4b (worksheet sections E and F) and the remaining PC activities carry to Thu 19 Nov.",
    "cls": "E2 Speaking & Listening",
    "date": "2026-11-12",
+   "kahoot": {
+    "status": "not yet in Kahoot",
+    "xlsx": "https://atinwix.github.io/esol/e2/speaking-listening/docs/future-plans-going-to-will-speaking-tasks-2-and-4-kahoot.xlsx"
+   },
    "lastAmended": "2026-11-12 – will corrected (decide now incl. offers / promise / prediction; evidence = going to), page 5 answer 8 fixed, handout Task 2 updated; afternoon reworked for own PCs; replaced superlatives lesson",
    "links": [
     {
@@ -326,69 +330,15 @@
    "morning": "Weekend-plans warmer; Amina's busy week (reading, find going to); going to form drill; will for decide-now and offers with Vote Card; handout Tasks 1–2; Task 2 talk 'My plans for next weekend'; Task 4a-style listening (you read the script – in the day plan); find-the-mistake at the board; Task 4b discussion in threes",
    "prep": "Filed in the library on 13 Nov (this was the lesson taught on 12 Nov). The Kahoot is an import file only.",
    "print": "Student handout (2 sides, one each). Nothing for the afternoon.",
-   "title": "Future plans – going to and will – Speaking Tasks 2 and 4 (replaces superlatives)",
-   "kahoot": {
-    "status": "not yet in Kahoot",
-    "xlsx": "https://atinwix.github.io/esol/e2/speaking-listening/docs/future-plans-going-to-will-speaking-tasks-2-and-4-kahoot.xlsx"
-   }
+   "title": "Future plans – going to and will – Speaking Tasks 2 and 4 (replaces superlatives)"
   },
   "2026-11-16_e3": {
    "afternoon": "PC room, one lesson page on projector and PCs: which do you prefer and why?; four linking words (because, so, although, however); Task A choose the word; Task B read an opinion text and answer; Task C main idea or detail; Task D join the sentences; Task E online dictionary; Task F opinion in Teams; find the mistake",
-   "amended": "2026-11-12T15:36:47Z",
+   "amended": "2026-11-14T08:34:20Z",
    "cls": "E3 Reading",
-   "date": "2026-11-16",
-   "links": [
-    {
-     "label": "Print pack top-up – print once, double-sided (48 pages): new day plan + 21 × Task 3 · last amended 14 Nov 2026",
-     "url": "https://atinwix.github.io/esol/e3/reading/docs/print-pack-2026-11-16-top-up.pdf"
-    },
-    {
-     "label": "Set L Task 3 sheet – one copy · last amended 14 Nov 2026",
-     "url": "https://atinwix.github.io/esol/e3/reading/docs/set-l-task-3-student-handout.pdf"
-    },
-    {
-     "label": "Set L Tasks 1 and 2 – one copy (already printed) · last amended 12 Nov 2026",
-     "url": "https://atinwix.github.io/esol/e3/reading/docs/set-l-tasks-1-2-student-handout.pdf"
-    },
-    {
-     "label": "Day plan and answers · last amended 14 Nov 2026",
-     "url": "https://atinwix.github.io/esol/e3/reading/docs/set-l-full-paper-and-linking-words-main-idea-day-plan-and-answers.pdf"
-    },
-    {
-     "label": "AM projector lesson – Set L full paper (6 pages)",
-     "url": "https://atinwix.github.io/esol/e3/reading/esb-set-l-full-paper-exam-routine-timer-and-prove-it-projector-lesson.html"
-    },
-    {
-     "label": "PM lesson page – projector and PCs (9 pages; post in Teams)",
-     "url": "https://atinwix.github.io/esol/e3/reading/linking-words-because-so-although-however-main-idea-and-detail-projector-and-pc-lesson.html"
-    },
-    {
-     "label": "Full print pack (90 pages) – only if you need to reprint everything",
-     "url": "https://atinwix.github.io/esol/e3/reading/docs/print-pack-2026-11-16.pdf"
-    }
-   ],
-   "morning": "Exam routine; ESB Set L Tasks 1–3 timed, 60 minutes, 21 questions (held over from Wed 11 Nov – now the whole paper, as in the exam); prove it – Tasks 1, 2 and 3; fix two answers, score and target",
-   "prep": "None beyond printing. Before 12:30 log the PCs in and post the PM lesson page link in Teams General.",
-   "print": "Print pack already printed (day plan + 21 × Set L Tasks 1–2). Print the top-up once, double-sided (48 pages): the new day plan + 21 × the Task 3 sheet.",
-   "title": "ESB Set L full paper, then linking words and main idea (because, so, although, however)",
-   "flags": [],
    "created": "2026-11-11",
-   "lastAmended": "2026-11-14",
-   "pack": {
-    "url": "https://atinwix.github.io/esol/e3/reading/docs/print-pack-2026-11-16-top-up.pdf",
-    "pages": 48,
-    "issued": "2026-11-14"
-   },
-   "plan": {
-    "am": "AM: Learners sat the whole ESB sample paper (Set L, Tasks 1–3, 21 questions) in 60 minutes under exam conditions. They swapped papers, marked them and read the words in the text that prove each answer, then corrected two wrong answers and wrote their score and a target for the exam.",
-    "pm": "PM, PC room: Learners practised the linking words because, so, although and however, then read an opinion text about evening opening at a college library and answered questions on its main idea and details. They sorted main ideas from supporting details, joined sentences with the linking words, checked word meanings in an online dictionary and posted their own opinion in Teams General."
-   },
-   "replaced": [
-    {
-     "at": "2026-11-14T08:40:00Z",
-     "title": "ESB Set L exam practice, Kahoot, online practice and a timed online paper"
-    }
-   ],
+   "date": "2026-11-16",
+   "flags": [],
    "items": [
     {
      "id": "am1",
@@ -405,11 +355,11 @@
     {
      "id": "am3",
      "lesson": 1,
-     "text": "Prove it – Tasks 1, 2 and 3: answers with proof",
      "pages": [
       3,
       5
      ],
+     "text": "Prove it – Tasks 1, 2 and 3: answers with proof",
      "url": "https://atinwix.github.io/esol/e3/reading/esb-set-l-full-paper-exam-routine-timer-and-prove-it-projector-lesson.html#p3"
     },
     {
@@ -473,17 +423,169 @@
      "url": "https://atinwix.github.io/esol/e3/reading/linking-words-because-so-although-however-main-idea-and-detail-projector-and-pc-lesson.html#p9"
     }
    ],
-   "scheme": {
-    "wc": "2026-11-16",
-    "focus": "because, so, although, however; main idea and supporting detail; online dictionaries",
-    "note": "AM: the ESB Set L paper owed from Wed 11 Nov, now the whole paper (3 tasks, 60 minutes, as the real exam)"
+   "lastAmended": "2026-11-14",
+   "lastAmendedNote": "replanned 14 Nov: no repeat of Wednesday's teaching; whole Set L paper (Tasks 1–3, 60 min); afternoon = scheme week 11. The Kahoot moves to Wed 18 Nov.",
+   "links": [
+    {
+     "label": "Print pack top-up – print once, double-sided (48 pages): new day plan + 21 × Task 3 · last amended 14 Nov 2026",
+     "url": "https://atinwix.github.io/esol/e3/reading/docs/print-pack-2026-11-16-top-up.pdf"
+    },
+    {
+     "label": "Set L Task 3 sheet – one copy · last amended 14 Nov 2026",
+     "url": "https://atinwix.github.io/esol/e3/reading/docs/set-l-task-3-student-handout.pdf"
+    },
+    {
+     "label": "Set L Tasks 1 and 2 – one copy (already printed) · last amended 12 Nov 2026",
+     "url": "https://atinwix.github.io/esol/e3/reading/docs/set-l-tasks-1-2-student-handout.pdf"
+    },
+    {
+     "label": "Day plan and answers · last amended 14 Nov 2026",
+     "url": "https://atinwix.github.io/esol/e3/reading/docs/set-l-full-paper-and-linking-words-main-idea-day-plan-and-answers.pdf"
+    },
+    {
+     "label": "AM projector lesson – Set L full paper (6 pages)",
+     "url": "https://atinwix.github.io/esol/e3/reading/esb-set-l-full-paper-exam-routine-timer-and-prove-it-projector-lesson.html"
+    },
+    {
+     "label": "PM lesson page – projector and PCs (9 pages; post in Teams)",
+     "url": "https://atinwix.github.io/esol/e3/reading/linking-words-because-so-although-however-main-idea-and-detail-projector-and-pc-lesson.html"
+    },
+    {
+     "label": "Full print pack (90 pages) – only if you need to reprint everything",
+     "url": "https://atinwix.github.io/esol/e3/reading/docs/print-pack-2026-11-16.pdf"
+    }
+   ],
+   "morning": "Exam routine; ESB Set L Tasks 1–3 timed, 60 minutes, 21 questions (held over from Wed 11 Nov – now the whole paper, as in the exam); prove it – Tasks 1, 2 and 3; fix two answers, score and target",
+   "pack": {
+    "issued": "2026-11-14",
+    "pages": 48,
+    "url": "https://atinwix.github.io/esol/e3/reading/docs/print-pack-2026-11-16-top-up.pdf"
    },
-   "lastAmendedNote": "replanned 14 Nov: no repeat of Wednesday's teaching; whole Set L paper (Tasks 1–3, 60 min); afternoon = scheme week 11. The Kahoot moves to Wed 18 Nov."
+   "plan": {
+    "am": "AM: Learners sat the whole ESB sample paper (Set L, Tasks 1–3, 21 questions) in 60 minutes under exam conditions. They swapped papers, marked them and read the words in the text that prove each answer, then corrected two wrong answers and wrote their score and a target for the exam.",
+    "pm": "PM, PC room: Learners practised the linking words because, so, although and however, then read an opinion text about evening opening at a college library and answered questions on its main idea and details. They sorted main ideas from supporting details, joined sentences with the linking words, checked word meanings in an online dictionary and posted their own opinion in Teams General."
+   },
+   "prep": "None beyond printing. Before 12:30 log the PCs in and post the PM lesson page link in Teams General.",
+   "print": "Print pack already printed (day plan + 21 × Set L Tasks 1–2). Print the top-up once, double-sided (48 pages): the new day plan + 21 × the Task 3 sheet.",
+   "replaced": [
+    {
+     "at": "2026-11-14T08:40:00Z",
+     "title": "ESB Set L exam practice, Kahoot, online practice and a timed online paper"
+    }
+   ],
+   "scheme": {
+    "focus": "because, so, although, however; main idea and supporting detail; online dictionaries",
+    "note": "AM: the ESB Set L paper owed from Wed 11 Nov, now the whole paper (3 tasks, 60 minutes, as the real exam)",
+    "wc": "2026-11-16"
+   },
+   "title": "ESB Set L full paper, then linking words and main idea (because, so, although, however)"
   },
   "2026-11-17_e1": {
    "afternoon": "PC room: Kahoot (days, times, prices); Task 3 recap on the PC; Task 1 and Task 4 practice on the PC; the whole exam in pairs (Tasks 1–4, candidate and assessor, two rounds); True/False feedback on what is still difficult",
    "cls": "E1 Speaking & Listening",
+   "created": "2026-11-10",
    "date": "2026-11-17",
+   "flags": [],
+   "items": [
+    {
+     "id": "amp",
+     "lesson": 1,
+     "pages": [
+      1,
+      14
+     ],
+     "text": "AM projector lesson – Task 4 short conversations and Task 1 questions",
+     "url": "https://atinwix.github.io/esol/e1/speaking-listening/short-conversations-task1-questions-projector-lesson.html"
+    },
+    {
+     "id": "am1",
+     "lesson": 1,
+     "text": "Finish the My week talk in pairs",
+     "url": ""
+    },
+    {
+     "id": "am2",
+     "lesson": 1,
+     "text": "Where are they? (Vote Card A–D)",
+     "url": ""
+    },
+    {
+     "id": "am3",
+     "lesson": 1,
+     "text": "Exam Prep Lesson 12 – two short conversations with yes/no and detail questions (Handout E1-12A)",
+     "url": ""
+    },
+    {
+     "id": "am4",
+     "lesson": 1,
+     "text": "Say the dialogues in pairs",
+     "url": ""
+    },
+    {
+     "id": "am5",
+     "lesson": 1,
+     "text": "Task 1 questions: word order on the board, question words, spelling and phone numbers",
+     "url": ""
+    },
+    {
+     "id": "am6",
+     "lesson": 1,
+     "text": "Task 1 in pairs",
+     "url": ""
+    },
+    {
+     "id": "am7",
+     "lesson": 1,
+     "text": "20-question Kahoot",
+     "url": ""
+    },
+    {
+     "id": "pmp",
+     "lesson": 2,
+     "pages": [
+      1,
+      9
+     ],
+     "text": "PM projector lesson – Tasks 1–4 exam run-through (PC room)",
+     "url": "https://atinwix.github.io/esol/e1/speaking-listening/exam-run-through-tasks-1-to-4-pc-room-projector-lesson.html"
+    },
+    {
+     "id": "pm1",
+     "lesson": 2,
+     "text": "Kahoot (days, times, prices)",
+     "url": ""
+    },
+    {
+     "id": "pm2",
+     "lesson": 2,
+     "text": "Task 3 recap on the PC",
+     "url": ""
+    },
+    {
+     "id": "pm3",
+     "lesson": 2,
+     "text": "Task 1 and Task 4 practice on the PC",
+     "url": ""
+    },
+    {
+     "id": "pm4",
+     "lesson": 2,
+     "text": "The whole exam in pairs (Tasks 1–4, candidate and assessor, two rounds)",
+     "url": ""
+    },
+    {
+     "id": "pm5",
+     "lesson": 2,
+     "text": "True/False feedback on what is still difficult",
+     "url": ""
+    }
+   ],
+   "kahoot": {
+    "status": "not yet in Kahoot",
+    "xlsx": "https://atinwix.github.io/esol/e1/speaking-listening/docs/short-conversations-task1-questions-kahoot.xlsx"
+   },
+   "lastAmended": "2026-11-10",
+   "lastAmendedNote": "13 Nov: header added to every side of the print pack; quiz game added. Lesson content unchanged",
    "links": [
     {
      "label": "Print pack – print once, double-sided (50 pages)",
@@ -539,112 +641,132 @@
     }
    ],
    "morning": "Finish the My week talk in pairs; Where are they? (Vote Card A–D); Exam Prep Lesson 12 – two short conversations with yes/no and detail questions (Handout E1-12A); say the dialogues in pairs; Task 1 questions: word order on the board, question words, spelling and phone numbers; Task 1 in pairs; 20-question Kahoot",
-   "prep": "None beyond printing. Post the learners' page link in Teams General before the PM lesson. Check the projector sound.",
-   "print": "Print pack only (50 pages, double-sided)",
-   "title": "Task 4 short conversations, Task 1 questions and a full Tasks 1–4 run-through",
-   "amended": "2026-11-13T08:00:12Z",
-   "kahoot": {
-    "status": "not yet in Kahoot",
-    "xlsx": "https://atinwix.github.io/esol/e1/speaking-listening/docs/short-conversations-task1-questions-kahoot.xlsx"
-   },
    "pack": {
-    "url": "https://atinwix.github.io/esol/e1/speaking-listening/docs/print-pack-2026-11-17.pdf",
+    "issued": "2026-11-10",
     "pages": 50,
-    "issued": "2026-11-10"
+    "url": "https://atinwix.github.io/esol/e1/speaking-listening/docs/print-pack-2026-11-17.pdf"
    },
-   "created": "2026-11-10",
-   "lastAmended": "2026-11-10",
-   "lastAmendedNote": "13 Nov: header added to every side of the print pack; quiz game added. Lesson content unchanged",
    "plan": {
     "am": "AM: Exam skills lesson on Task 4 short conversations and Task 1 questions. Learners finish their \"My week\" talk in pairs, listen to sentences to decide where people are, answer a yes/no and a detail question about two short conversations and say them in pairs. They then put Task 1 questions in order, choose question words, write spellings and a phone number from dictation and ask and answer in pairs, finishing with a Kahoot.",
     "pm": "PM, PC room: Learners recap Task 3 by describing a picture with a partner, then practise Task 1 questions and Task 4 listening on their own computers. They do the whole speaking and listening exam in pairs, taking turns as candidate and assessor for Tasks 1 to 4, and say which parts are still difficult before the final mock."
    },
+   "prep": "None beyond printing. Post the learners' page link in Teams General before the PM lesson. Check the projector sound.",
+   "print": "Print pack only (50 pages, double-sided)",
+   "scheme": {
+    "focus": "Speaking & Listening exam Tasks 1 and 4, then a full run-through of Tasks 1–4",
+    "note": "exam preparation (backfilled 13 Nov, not checked against the class scheme)",
+    "wc": "2026-11-16"
+   },
+   "title": "Task 4 short conversations, Task 1 questions and a full Tasks 1–4 run-through",
+   "amended": "2026-11-14T08:20:57Z"
+  },
+  "2026-11-19_e2": {
+   "afternoon": "PC room: online practice A–C (going to or will, build the question, find the correct sentence); handout Task 3 + five sentences in Teams (yesterday, now, tomorrow, opinion, offer); Task 4a-style listening (weekend plan, audio page); Referee Interviews wheels; Kahoot (20 Qs)",
+   "amended": "2026-11-14T08:20:57Z",
+   "cls": "E2 Speaking & Listening",
+   "created": "2026-11-12",
+   "date": "2026-11-19",
    "flags": [],
    "items": [
     {
+     "id": "amp",
+     "lesson": 1,
+     "pages": [
+      1,
+      10
+     ],
+     "text": "Projector lesson – morning part",
+     "url": "https://atinwix.github.io/esol/e2/speaking-listening/future-plans-going-to-will-task4-projector-lesson.html"
+    },
+    {
      "id": "am1",
      "lesson": 1,
-     "text": "Finish the My week talk in pairs",
+     "text": "Hangman Paragraphs (Tariq's weekend)",
      "url": ""
     },
     {
      "id": "am2",
      "lesson": 1,
-     "text": "Where are they? (Vote Card A–D)",
+     "text": "Worksheet section E Task 4a (listen twice, audio page)",
      "url": ""
     },
     {
      "id": "am3",
      "lesson": 1,
-     "text": "Exam Prep Lesson 12 – two short conversations with yes/no and detail questions (Handout E1-12A)",
+     "text": "Section F Task 4b group discussion in threes (two topics)",
      "url": ""
     },
     {
      "id": "am4",
      "lesson": 1,
-     "text": "Say the dialogues in pairs",
+     "text": "Going to or will? rules",
      "url": ""
     },
     {
      "id": "am5",
      "lesson": 1,
-     "text": "Task 1 questions: word order on the board, question words, spelling and phone numbers",
+     "text": "Vote Card A/B (QR)",
      "url": ""
     },
     {
      "id": "am6",
      "lesson": 1,
-     "text": "Task 1 in pairs",
+     "text": "Handout Task 1",
      "url": ""
     },
     {
      "id": "am7",
      "lesson": 1,
-     "text": "20-question Kahoot",
+     "text": "Task 2 talk 'My plans for next weekend'",
      "url": ""
+    },
+    {
+     "id": "pmp",
+     "lesson": 2,
+     "pages": [
+      11,
+      17
+     ],
+     "text": "Projector lesson – afternoon part",
+     "url": "https://atinwix.github.io/esol/e2/speaking-listening/future-plans-going-to-will-task4-projector-lesson.html"
     },
     {
      "id": "pm1",
      "lesson": 2,
-     "text": "Kahoot (days, times, prices)",
+     "text": "Online practice A–C (going to or will, build the question, find the correct sentence)",
      "url": ""
     },
     {
      "id": "pm2",
      "lesson": 2,
-     "text": "Task 3 recap on the PC",
+     "text": "Handout Task 3 + five sentences in Teams (yesterday, now, tomorrow, opinion, offer)",
      "url": ""
     },
     {
      "id": "pm3",
      "lesson": 2,
-     "text": "Task 1 and Task 4 practice on the PC",
+     "text": "Task 4a-style listening (weekend plan, audio page)",
      "url": ""
     },
     {
      "id": "pm4",
      "lesson": 2,
-     "text": "The whole exam in pairs (Tasks 1–4, candidate and assessor, two rounds)",
+     "text": "Referee Interviews wheels",
      "url": ""
     },
     {
      "id": "pm5",
      "lesson": 2,
-     "text": "True/False feedback on what is still difficult",
+     "text": "Kahoot (20 Qs)",
      "url": ""
     }
    ],
-   "scheme": {
-    "wc": "2026-11-16",
-    "focus": "Speaking & Listening exam Tasks 1 and 4, then a full run-through of Tasks 1–4",
-    "note": "exam preparation (backfilled 13 Nov, not checked against the class scheme)"
-   }
-  },
-  "2026-11-19_e2": {
-   "afternoon": "PC room: online practice A–C (going to or will, build the question, find the correct sentence); handout Task 3 + five sentences in Teams (yesterday, now, tomorrow, opinion, offer); Task 4a-style listening (weekend plan, audio page); Referee Interviews wheels; Kahoot (20 Qs)",
-   "amended": "2026-11-13T08:00:12Z",
-   "cls": "E2 Speaking & Listening",
-   "date": "2026-11-19",
+   "kahoot": {
+    "status": "not yet in Kahoot",
+    "xlsx": "https://atinwix.github.io/esol/e2/speaking-listening/docs/future-plans-going-to-will-kahoot.xlsx"
+   },
+   "lastAmended": "2026-11-12",
+   "lastAmendedNote": "13 Nov: header added to the handout copies in the print pack; quiz game added. Lesson content unchanged",
    "links": [
     {
      "label": "Print pack – print once, double-sided (50 pages: day plan + 21 × handout)",
@@ -700,110 +822,27 @@
     }
    ],
    "morning": "Hangman Paragraphs (Tariq's weekend); worksheet section E Task 4a (listen twice, audio page); section F Task 4b group discussion in threes (two topics); going to or will? rules; Vote Card A/B (QR); handout Task 1; Task 2 talk 'My plans for next weekend'",
-   "prep": "Before 12:30: post the online practice link in Teams General. Hangman link is ready. No cutting out.",
-   "print": "Print pack only (50 pages, double-sided: day plan + 21 × student handout). Plus the Exam Practice worksheet from 12 Nov only if learners have lost theirs (link below).",
-   "title": "Finish Task 4 (4a and 4b), then Future plans – going to and will",
-   "kahoot": {
-    "status": "not yet in Kahoot",
-    "xlsx": "https://atinwix.github.io/esol/e2/speaking-listening/docs/future-plans-going-to-will-kahoot.xlsx"
-   },
    "pack": {
-    "url": "https://atinwix.github.io/esol/e2/speaking-listening/docs/print-pack-2026-11-19.pdf",
+    "issued": "2026-11-12",
     "pages": 50,
-    "issued": "2026-11-12"
+    "url": "https://atinwix.github.io/esol/e2/speaking-listening/docs/print-pack-2026-11-19.pdf"
    },
-   "created": "2026-11-12",
-   "lastAmended": "2026-11-12",
-   "lastAmendedNote": "13 Nov: header added to the handout copies in the print pack; quiz game added. Lesson content unchanged",
    "plan": {
     "am": "AM: Learners finished the ESB Exam Practice worksheet. In Task 4a they listened twice to a library announcement and answered a main-idea question and six detail questions, then in threes they discussed free things to do in London (Task 4b) using phrases for opinions, agreeing and taking turns. They reviewed going to for plans and will for decisions, offers, promises and opinions, voted on their phones with the Vote Card, circled the right form on the handout and gave a one-minute talk about their plans for next weekend.",
     "pm": "PM, PC room: Learners practised choosing going to or will, building questions and finding the correct sentence online, then sorted time words by tense and wrote five sentences in Teams about yesterday, now, tomorrow, an opinion and an offer. They did a Task 4a-style listening about a weekend plan, practised asking and answering in threes with the Referee Interviews wheels and finished with a 20-question Kahoot."
    },
-   "flags": [],
-   "items": [
-    {
-     "id": "am1",
-     "lesson": 1,
-     "text": "Hangman Paragraphs (Tariq's weekend)",
-     "url": ""
-    },
-    {
-     "id": "am2",
-     "lesson": 1,
-     "text": "Worksheet section E Task 4a (listen twice, audio page)",
-     "url": ""
-    },
-    {
-     "id": "am3",
-     "lesson": 1,
-     "text": "Section F Task 4b group discussion in threes (two topics)",
-     "url": ""
-    },
-    {
-     "id": "am4",
-     "lesson": 1,
-     "text": "Going to or will? rules",
-     "url": ""
-    },
-    {
-     "id": "am5",
-     "lesson": 1,
-     "text": "Vote Card A/B (QR)",
-     "url": ""
-    },
-    {
-     "id": "am6",
-     "lesson": 1,
-     "text": "Handout Task 1",
-     "url": ""
-    },
-    {
-     "id": "am7",
-     "lesson": 1,
-     "text": "Task 2 talk 'My plans for next weekend'",
-     "url": ""
-    },
-    {
-     "id": "pm1",
-     "lesson": 2,
-     "text": "Online practice A–C (going to or will, build the question, find the correct sentence)",
-     "url": ""
-    },
-    {
-     "id": "pm2",
-     "lesson": 2,
-     "text": "Handout Task 3 + five sentences in Teams (yesterday, now, tomorrow, opinion, offer)",
-     "url": ""
-    },
-    {
-     "id": "pm3",
-     "lesson": 2,
-     "text": "Task 4a-style listening (weekend plan, audio page)",
-     "url": ""
-    },
-    {
-     "id": "pm4",
-     "lesson": 2,
-     "text": "Referee Interviews wheels",
-     "url": ""
-    },
-    {
-     "id": "pm5",
-     "lesson": 2,
-     "text": "Kahoot (20 Qs)",
-     "url": ""
-    }
-   ],
+   "prep": "Before 12:30: post the online practice link in Teams General. Hangman link is ready. No cutting out.",
+   "print": "Print pack only (50 pages, double-sided: day plan + 21 × student handout). Plus the Exam Practice worksheet from 12 Nov only if learners have lost theirs (link below).",
    "scheme": {
-    "wc": "2026-11-16",
     "focus": "Speaking & Listening exam Task 4 (4a listening, 4b discussion); going to and will for Task 2 talks",
-    "note": "exam preparation (backfilled 13 Nov, not checked against the class scheme)"
-   }
+    "note": "exam preparation (backfilled 13 Nov, not checked against the class scheme)",
+    "wc": "2026-11-16"
+   },
+   "title": "Finish Task 4 (4a and 4b), then Future plans – going to and will"
   }
  },
  "status": {},
  "health": {
-  "ok": true,
   "checkedAt": "2026-11-13T08:10:00Z",
   "items": [
    {
@@ -826,6 +865,7 @@
     "ok": true,
     "text": "System rebuilt 13 Nov: one runbook, this page is pushed after every change. 'Weekly ESOL lesson build' failed on Thu 12 Nov (usage limit) but nothing was outstanding."
    }
-  ]
+  ],
+  "ok": true
  }
 }
