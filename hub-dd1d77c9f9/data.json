@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-14T14:36:55Z",
+ "updatedAt": "2026-11-14T19:36:01Z",
  "upcoming": {
   "2026-11-02_e3": {
    "afternoon": "PC room: Too Cold to Learn – complaint emails",
@@ -45,10 +45,6 @@
     {
      "label": "Lesson 1 handouts",
      "url": "https://atinwix.github.io/esol/e3/reading/exam-prep/lesson-01-handouts.pdf"
-    },
-    {
-     "label": "Purpose cards",
-     "url": "https://atinwix.github.io/esol/e3/reading/docs/lesson-01-activity5-secret-purpose-cards.pdf"
     },
     {
      "label": "Purpose Clues sort",
@@ -115,7 +111,7 @@
      "url": "https://atinwix.github.io/esol/e3/reading/docs/hackney-places-teacher-script.pdf"
     },
     {
-     "label": "Day plan and answers",
+     "label": "Day plan and answers (Hangman paragraph is in here) · last amended 14 Nov 2026",
      "url": "https://atinwix.github.io/esol/e3/reading/docs/hackney-places-adjectives-adverbs-day-plan.pdf"
     },
     {
@@ -125,10 +121,6 @@
     {
      "label": "Kahoot – ready to play",
      "url": "https://create.kahoot.it/share/hackney-adverbs/49b15cf9-dd40-4151-8b4b-d75d05d5d4f2"
-    },
-    {
-     "label": "Hangman paragraph – text to read aloud (don't project)",
-     "url": "https://atinwix.github.io/esol/e3/reading/hackney-places-hangman-paragraph-read-aloud-text.html"
     },
     {
      "label": "Hangman Paragraphs (paragraph loaded)",
@@ -154,7 +146,9 @@
    "todo": [
     "Live Kahoot question 12 still says the big Broadway Market is on Saturday only. Next time you are signed in to Kahoot, change the answer to \"Saturday and Sunday\" (or ask Claude to re-import the updated file)."
    ],
-   "amended": "2026-11-14T11:19:49Z"
+   "amended": "2026-11-14T19:34:46Z",
+   "lastAmended": "2026-11-14",
+   "lastAmendedNote": "Retired the Hangman read-aloud page – the Victoria Park paragraph is now in the Day Plan and Answers, and the game reads it aloud itself."
   },
   "2026-11-10_e1": {
    "afternoon": "REPLANNED, learners on their own PCs for most of the lesson: one community-centre timetable, present simple only – timetable tasks and partner questions on the PC; Task 4 Scripts A–F answered on the PC as you play them; Partner A/B information gap; find the mistake; Hangman Paragraphs; Sara's talk gap-fill, then each learner's 'My week' talk on screen and given to a partner; Kahoot. Projector only for instructions and checking.",
@@ -229,10 +223,10 @@
    "links": [
     {
      "label": "Print pack – print once, double-sided (94 pages)",
-     "url": "https://atinwix.github.io/esol/e3/reading/docs/print-pack-2026-11-11.pdf"
+     "url": "https://atinwix.github.io/esol/_class/print-pack-2026-11-11.pdf"
     },
     {
-     "label": "Day plan and answers (incl. Set L answers)",
+     "label": "Day plan and answers (incl. Set L answers; Hangman paragraph is in here) · last amended 14 Nov 2026",
      "url": "https://atinwix.github.io/esol/e3/reading/docs/pronouns-word-meaning-ordering-day-plan.pdf"
     },
     {
@@ -242,10 +236,6 @@
     {
      "label": "Hangman Paragraphs (paragraph loaded)",
      "url": "https://atinwix.github.io/Hangman-Paragraphs-Game/?p=TWFueSBwZW9wbGUgaW4gSGFja25leSByaWRlIGEgYmlrZSB0byB3b3JrIG9yIGNvbGxlZ2UuIEN5Y2xpbmcgaXMgY2hlYXAsIHF1aWNrIGFuZCBnb29kIGZvciB5b3VyIGhlYWx0aC4gSWYgeW91IGRvIG5vdCBoYXZlIGEgYmlrZSwgeW91IGNhbiBib3Jyb3cgb25lIGZyb20gYSBjb21tdW5pdHkgcHJvamVjdC4gVm9sdW50ZWVycyB0aGVyZSByZXBhaXIgb2xkIGJpa2VzIGFuZCB0ZWFjaCBuZXcgcmlkZXJzIGhvdyB0byBzdGF5IHNhZmUgb24gYnVzeSByb2Fkcy4gU29tZSBwZW9wbGUgam9pbiBhIGdyb3VwIHJpZGUgb24gU3VuZGF5IG1vcm5pbmdzLiBJdCBpcyBhIGZyaWVuZGx5IHdheSB0byBtZWV0IG5laWdoYm91cnMgYW5kIHNlZSBuZXcgcGFydHMgb2YgdGhlIGNpdHku"
-    },
-    {
-     "label": "Hangman paragraph – text to read aloud (don't project)",
-     "url": "https://atinwix.github.io/esol/e3/reading/cycling-in-hackney-hangman-paragraph-read-aloud-text.html"
     },
     {
      "label": "AM projector lesson (Reading Detectives)",
@@ -284,7 +274,9 @@
    "prep": "Print the Set L handout (Tasks 1 and 2, link below). Have the Kahoot ready and the timer slide open before 12:30. No cutting out.",
    "print": "Print pack only (94 pages, double-sided) – day plan, What to say script, Lesson 2 handouts ×21, Lesson 3 page 1 ×21. Plus Set L handout – Tasks 1 and 2 (link below, 2 pages double-sided, one each).",
    "title": "Pronouns, word meaning, ordering tasks and an ESB paper (Set L Tasks 1–2)",
-   "amended": "2026-11-14T11:19:49Z"
+   "amended": "2026-11-14T19:34:46Z",
+   "lastAmended": "2026-11-14",
+   "lastAmendedNote": "Print pack moved to _class/. Retired the Hangman read-aloud page – the cycling paragraph is now in the Day Plan and Answers, and the game reads it aloud itself."
   },
   "2026-11-12_e2": {
    "afternoon": "PC room, students on own PCs throughout: Hangman Paragraphs in pairs (p10); A going to or will? (p11); B build the question + ask a neighbour (p12); C find and correct the mistake (p13); D 4 sentences posted in Teams (p14); E Task 4b answers posted in Teams (p16); Kahoot on PCs (p15)",
@@ -424,7 +416,7 @@
    "links": [
     {
      "label": "Print pack top-up – print once, double-sided (48 pages): new day plan + 21 × Task 3 · last amended 14 Nov 2026",
-     "url": "https://atinwix.github.io/esol/e3/reading/docs/print-pack-2026-11-16-top-up.pdf"
+     "url": "https://atinwix.github.io/esol/_class/print-pack-2026-11-16-top-up.pdf"
     },
     {
      "label": "Set L Task 3 sheet – one copy · last amended 14 Nov 2026",
@@ -448,14 +440,14 @@
     },
     {
      "label": "Full print pack (90 pages) – only if you need to reprint everything",
-     "url": "https://atinwix.github.io/esol/e3/reading/docs/print-pack-2026-11-16.pdf"
+     "url": "https://atinwix.github.io/esol/_class/print-pack-2026-11-16.pdf"
     }
    ],
    "morning": "Exam routine; ESB Set L Tasks 1–3 timed, 60 minutes, 21 questions (held over from Wed 11 Nov – now the whole paper, as in the exam); prove it – Tasks 1, 2 and 3; fix two answers, score and target",
    "pack": {
     "issued": "2026-11-14",
     "pages": 48,
-    "url": "https://atinwix.github.io/esol/e3/reading/docs/print-pack-2026-11-16-top-up.pdf"
+    "url": "https://atinwix.github.io/esol/_class/print-pack-2026-11-16-top-up.pdf"
    },
    "plan": {
     "am": "AM: Learners sat the whole ESB sample paper (Set L, Tasks 1–3, 21 questions) in 60 minutes under exam conditions. They swapped papers, marked them and read the words in the text that prove each answer, then corrected two wrong answers and wrote their score and a target for the exam.",
@@ -475,7 +467,7 @@
     "wc": "2026-11-16"
    },
    "title": "ESB Set L full paper, then linking words and main idea (because, so, although, however)",
-   "amended": "2026-11-14T08:34:20Z"
+   "amended": "2026-11-14T19:34:46Z"
   },
   "2026-11-17_e1": {
    "afternoon": "PC room: Kahoot (days, times, prices); Task 3 recap on the PC; Task 1 and Task 4 practice on the PC; the whole exam in pairs (Tasks 1–4, candidate and assessor, two rounds); True/False feedback on what is still difficult",
@@ -586,7 +578,7 @@
    "links": [
     {
      "label": "Print pack – print once, double-sided (50 pages)",
-     "url": "https://atinwix.github.io/esol/e1/speaking-listening/docs/print-pack-2026-11-17.pdf"
+     "url": "https://atinwix.github.io/esol/_class/print-pack-2026-11-17.pdf"
     },
     {
      "label": "Day plan and answers (teach from this)",
@@ -641,7 +633,7 @@
    "pack": {
     "issued": "2026-11-10",
     "pages": 50,
-    "url": "https://atinwix.github.io/esol/e1/speaking-listening/docs/print-pack-2026-11-17.pdf"
+    "url": "https://atinwix.github.io/esol/_class/print-pack-2026-11-17.pdf"
    },
    "plan": {
     "am": "AM: Exam skills lesson on Task 4 short conversations and Task 1 questions. Learners finish their \"My week\" talk in pairs, listen to sentences to decide where people are, answer a yes/no and a detail question about two short conversations and say them in pairs. They then put Task 1 questions in order, choose question words, write spellings and a phone number from dictation and ask and answer in pairs, finishing with a Kahoot.",
@@ -655,7 +647,7 @@
     "wc": "2026-11-16"
    },
    "title": "Task 4 short conversations, Task 1 questions and a full Tasks 1–4 run-through",
-   "amended": "2026-11-14T08:20:57Z"
+   "amended": "2026-11-14T19:34:46Z"
   },
   "2026-11-19_e2": {
    "afternoon": "PC room: online practice A–C (going to or will, build the question, find the correct sentence); handout Task 3 + five sentences in Teams (yesterday, now, tomorrow, opinion, offer); Task 4a-style listening (weekend plan, audio page); Referee Interviews wheels; Kahoot (20 Qs)",
@@ -761,15 +753,15 @@
     "status": "not yet in Kahoot",
     "xlsx": "https://atinwix.github.io/esol/e2/speaking-listening/docs/future-plans-going-to-will-kahoot.xlsx"
    },
-   "lastAmended": "2026-11-12",
-   "lastAmendedNote": "13 Nov: header added to the handout copies in the print pack; quiz game added. Lesson content unchanged",
+   "lastAmended": "2026-11-14",
+   "lastAmendedNote": "14 Nov: print pack moved to _class/. Retired the Hangman read-aloud page – Tariq's paragraph is now in the Day Plan and Answers, and the game reads it aloud itself. Earlier (13 Nov): header added to the handout copies in the print pack; quiz game added. Lesson content unchanged.",
    "links": [
     {
      "label": "Print pack – print once, double-sided (50 pages: day plan + 21 × handout)",
-     "url": "https://atinwix.github.io/esol/e2/speaking-listening/docs/print-pack-2026-11-19.pdf"
+     "url": "https://atinwix.github.io/esol/_class/print-pack-2026-11-19.pdf"
     },
     {
-     "label": "Day plan and answers (teacher)",
+     "label": "Day plan and answers (teacher; Hangman paragraph is in here) · last amended 14 Nov 2026",
      "url": "https://atinwix.github.io/esol/e2/speaking-listening/docs/future-plans-going-to-will-day-plan.pdf"
     },
     {
@@ -797,10 +789,6 @@
      "url": "https://atinwix.github.io/Hangman-Paragraphs-Game/?p=TmV4dCB3ZWVrZW5kIGlzIGdvaW5nIHRvIGJlIGJ1c3kgZm9yIFRhcmlxLiBPbiBTYXR1cmRheSBtb3JuaW5nIGhlIGlzIGdvaW5nIHRvIHBsYXkgZm9vdGJhbGwgd2l0aCBoaXMgZnJpZW5kcyBpbiBIYWNrbmV5IE1hcnNoZXMuIEluIHRoZSBhZnRlcm5vb24gaGUgaXMgZ29pbmcgdG8gY2xlYW4gaGlzIHJvb20gYmVjYXVzZSBpdCBpcyB2ZXJ5IGRpcnR5LiBPbiBTdW5kYXkgaGUgaXMgbWVldGluZyBoaXMgc2lzdGVyIGF0IERhbHN0b24gSnVuY3Rpb24gYXQgZWxldmVuIG8nY2xvY2suIFRoZXkgYXJlIGdvaW5nIHRvIGhhdmUgbHVuY2ggaW4gYSBUdXJraXNoIHJlc3RhdXJhbnQuIEluIHRoZSBldmVuaW5nIGhlIGlzIGdvaW5nIHRvIHBob25lIGhpcyBtb3RoZXIgaW4gSXN0YW5idWwuIEhlIHRoaW5rcyBzaGUgd2lsbCBiZSB2ZXJ5IGhhcHB5Lg"
     },
     {
-     "label": "Hangman paragraph – text to read aloud (don't project)",
-     "url": "https://atinwix.github.io/esol/e2/speaking-listening/future-plans-hangman-paragraph-read-aloud-text.html"
-    },
-    {
      "label": "Vote Card (A–D)",
      "url": "https://atinwix.github.io/esol/all-levels/classroom-tool-vote-card.html?mode=abcd"
     },
@@ -821,7 +809,7 @@
    "pack": {
     "issued": "2026-11-12",
     "pages": 50,
-    "url": "https://atinwix.github.io/esol/e2/speaking-listening/docs/print-pack-2026-11-19.pdf"
+    "url": "https://atinwix.github.io/esol/_class/print-pack-2026-11-19.pdf"
    },
    "plan": {
     "am": "AM: Learners finished the ESB Exam Practice worksheet. In Task 4a they listened twice to a library announcement and answered a main-idea question and six detail questions, then in threes they discussed free things to do in London (Task 4b) using phrases for opinions, agreeing and taking turns. They reviewed going to for plans and will for decisions, offers, promises and opinions, voted on their phones with the Vote Card, circled the right form on the handout and gave a one-minute talk about their plans for next weekend.",
@@ -835,7 +823,7 @@
     "wc": "2026-11-16"
    },
    "title": "Finish Task 4 (4a and 4b), then Future plans – going to and will",
-   "amended": "2026-11-14T08:20:57Z"
+   "amended": "2026-11-14T19:34:46Z"
   }
  },
  "status": {},
