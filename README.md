@@ -21,6 +21,7 @@ Word documents:
 - [Induction E2/E3 – classroom rules and safety words – preteaching (before the RARPA form)](all-levels/docs/induction-e2-e3-classroom-rules-and-safety-words-preteaching.pdf) (PDF) · [Word](all-levels/docs/induction-e2-e3-classroom-rules-and-safety-words-preteaching.docx)
 
 ## assessments
+- [ESOL Digital Skills – ICT Assessment (E1–L2)](https://atinwix.github.io/ict-test/) – Self-access computer skills check; learners' results go to a Microsoft Form.
 - [ESOL RARPA Progress Tasks – My English Check (E1–L2)](https://atinwix.github.io/RARPA/) – Learners do the tasks, practise, then take the check; results go to a Microsoft Form. Teacher view and learner report: add ?teacher to the address.
 
 ## e1/speaking-listening
