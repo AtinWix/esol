@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>E3 Reading – Linking Words (because, so, although, however) – Main Idea and Detail – Projector and PC Lesson</title>
+<style>
+:root{--bg:#fff;--ink:#1d2433;--muted:#5b6474;--board:#e6f5e6;--boardline:#7cc47c;--accent:#1f5fbf;--good:#1a7f37;--bad:#cf222e;--card:#f4f6fa;--hl:#fff3b0}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Verdana,Arial,Helvetica,sans-serif;font-size:clamp(15px,1.45vw,25px);line-height:1.35}
+header{display:flex;align-items:center;gap:12px;padding:6px 16px;border-bottom:2px solid #dde3ec}
+header .t{font-weight:700;flex:1;font-size:.72em;min-width:0}
+@media(max-width:700px){header .t{display:none}}
+nav{display:flex;align-items:center;gap:8px}
+button{font:inherit;font-size:.8em;padding:.4em .9em;border-radius:10px;border:2px solid var(--accent);background:#fff;color:var(--accent);cursor:pointer}
+button.p{background:var(--accent);color:#fff}
+button:disabled{opacity:.4;cursor:default}
+#pn{font-weight:700;min-width:6.5em;text-align:center;font-size:.8em}
+.tt{display:none;align-items:center;gap:6px;font-size:.7em;font-variant-numeric:tabular-nums}
+body.teacher .tt{display:flex}
+.tt b{min-width:3.2em;text-align:right}.tt.low b{color:var(--bad)}
+main{padding:8px 16px 30px;max-width:1700px;margin:0 auto}
+.page{display:none;border-radius:16px;padding:12px 20px 14px;position:relative}
+.page.on{display:block}
+.page.board{background:var(--board);border:3px solid var(--boardline)}
+.page>.label{float:right;margin:.35em 0 0 .6em}
+.label{display:inline-block;background:#2f7d32;color:#fff;font-weight:700;font-size:.62em;padding:.2em .7em;border-radius:8px;margin-bottom:4px}
+.label.stu{background:var(--accent)}
+h1{font-size:1.45em;margin:.1em 0 .3em}
+h2{font-size:1.1em;margin:.3em 0}
+p{margin:.35em 0}
+.look{display:none;position:absolute;right:14px;bottom:3px;font-size:9px;color:#555}
+body.teacher .look{display:block}
+.tn{display:none;font-size:9px;line-height:1.35;color:#333;background:#fffbe6;border:1px dashed #c9a400;padding:5px 8px;margin-top:10px;border-radius:6px}
+body.teacher .tn{display:block}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.g46{display:grid;grid-template-columns:5fr 6fr;gap:16px}
+@media(max-width:900px){.grid2,.grid3,.g46{grid-template-columns:1fr}}
+.card{background:var(--card);border-radius:12px;padding:10px 14px}
+.board .card{background:#fff}
+table.w{border-collapse:collapse;width:100%;font-size:.9em;background:#fff}
+table.w td,table.w th{border:2px solid #9ab;padding:.3em .55em;text-align:left;vertical-align:top}
+table.w th{background:#dfe9f5}
+.ans{visibility:hidden;color:var(--good);font-weight:700}
+.ans.show{visibility:visible}
+ol.q{margin:.2em 0;padding-left:1.5em}
+ol.q li{margin:.28em 0}
+.timer{font-size:5.2em;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.05}
+.timer.low{color:var(--bad)}
+.lookboard{display:none;text-align:center;padding:14vh 0}
+.lookboard .big{font-size:2.2em}
+body.student .page.board .content{display:none}
+body.student .page.board .lookboard{display:block}
+.tonly{display:none}body.teacher .tonly{display:inline-block}
+.page:not(.board){font-size:.9em}
+.item{padding:.22em 0;border-bottom:1px solid #e3e7ee;display:flex;flex-wrap:wrap;align-items:center;gap:.15em .45em;break-inside:avoid}
+.task.cols{display:grid;grid-template-columns:1fr 1fr;column-gap:26px;align-items:start}
+.task.cols>p{grid-column:1/-1}
+.mcq .item{align-items:baseline;row-gap:.1em}
+.mcq .item .n{flex:0 0 auto}
+.mcq .item .s{flex:1 1 calc(100% - 2.4em)}
+.mcq .item>span:last-child{padding-left:1.95em}
+.mcq .opt{font-size:.8em;padding:.05em .5em}
+.mcq .item{padding:.12em 0}
+.txt.two{font-size:.86em;line-height:1.33;padding:6px 12px}
+.txt.two p{margin:.25em 0}
+.txt.two h2{margin:0 0 .2em;font-size:1.05em}
+header .atin-logo{position:static;border:0;padding:0;background:none;line-height:0}
+header .atin-logo svg{width:52px;height:40px}
+.txt.two{column-count:2;column-gap:26px}
+.txt.two h2{column-span:all}
+@media(max-width:900px){.task.cols{grid-template-columns:1fr}.txt.two{column-count:1}}
+.item .n{font-weight:700;min-width:1.6em}
+.item .s{flex:1 1 20em;min-width:0}
+.opt{display:inline-block;padding:.18em .7em;border:2px solid #9ab;border-radius:10px;background:#fff;cursor:pointer;user-select:none;font-size:.9em}
+.opt.ok{background:#dafbe1;border-color:var(--good);font-weight:700}
+.opt.no{background:#ffebe9;border-color:var(--bad)}
+.item.done .opt{pointer-events:none}
+.gap{display:inline-block;min-width:5em;border-bottom:3px solid var(--accent);text-align:center;font-weight:700;color:var(--good)}
+input[type=text],textarea{font:inherit;font-size:.9em;padding:.25em .5em;border:2px solid #9ab;border-radius:8px;width:100%}
+.fb{font-weight:700;font-size:.85em}.fb.ok{color:var(--good)}.fb.no{color:var(--bad)}
+.score{font-weight:700;color:var(--accent);font-size:.85em}
+.small{font-size:.72em;color:var(--muted)}
+a.btn{display:inline-block;text-decoration:none;font-weight:700;padding:.4em 1em;border-radius:10px;background:var(--accent);color:#fff;font-size:.85em}
+.txt{line-height:1.5;font-size:.95em}
+.txt p{margin:.4em 0}
+.kw{background:var(--hl);font-weight:700;padding:0 .15em;border-radius:4px}
+.steps{font-size:1.35em;line-height:1.5;margin:.2em 0;padding-left:1.3em}
+.mark{background:var(--hl);font-weight:700}
+.foot{position:fixed;right:10px;bottom:6px;font-size:10px}
+.foot a{color:var(--muted)}
+body.student .foot{display:none}
+</style>
+</head>
+<body data-default="student">
+<header>
+  <div class="atin-logo" aria-label="Made by Atin">
+<svg viewBox="104 28 172 134" width="64" height="50" role="img" aria-hidden="true">
+<text x="139" y="112" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="72" fill="currentColor">A</text>
+<rect x="177" y="83" width="24" height="6" rx="1" fill="currentColor"/>
+<path d="M216 66 L216 106 A25 7 0 0 0 266 106 L266 66" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+<ellipse cx="241" cy="66" rx="25" ry="7" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="216" y1="80" x2="266" y2="80" stroke="currentColor" stroke-width="1.5"/>
+<line x1="216" y1="94" x2="266" y2="94" stroke="currentColor" stroke-width="1.5"/>
+<ellipse cx="241" cy="47" rx="23" ry="5" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="114" y1="128" x2="266" y2="128" stroke="currentColor" stroke-width="1"/>
+<text x="190" y="152" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" letter-spacing="2" fill="currentColor">made by Atin</text>
+</svg>
+</div>
+<style>
+.atin-logo{position:fixed;left:calc(6px + env(safe-area-inset-left,0px));bottom:calc(6px + env(safe-area-inset-bottom,0px));z-index:2147483000;pointer-events:none;color:#1F3A5F;background:rgba(255,255,255,.92);border:1px solid #C9D3DF;border-radius:8px;padding:3px 5px;line-height:0}
+.atin-logo svg{display:block}
+@media print{.atin-logo{position:fixed;left:auto;right:6mm;bottom:5mm;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+
+  <div class="t">E3 Reading – Linking words · main idea and detail</div>
+  <div class="tt" id="tt"><span>⏱</span><b>0:00</b><button type="button">Start</button></div>
+  <nav><button id="prev" type="button" aria-label="Previous page">◀</button><span id="pn"></span><button id="next" class="p" type="button" aria-label="Next page">▶</button></nav>
+</header>
+<main>
+
+<!-- 1 -->
+<section class="page board" data-look="Students: projector, then their partner" data-min="10">
+ <span class="label">WHOLE CLASS – eyes on the board</span>
+ <div class="content">
+  <h1>Which do you prefer – and why?</h1>
+  <div class="grid3">
+   <div class="card">🚌 the bus <b>or</b> 🚲 a bike</div><div class="card">🛒 the market <b>or</b> 🏬 the supermarket</div><div class="card">🌅 morning classes <b>or</b> 🌙 evening classes</div>
+   <div class="card">📞 a phone call <b>or</b> 💬 a message</div><div class="card">🌳 the park <b>or</b> 📚 the library</div><div class="card">🍵 tea <b>or</b> ☕ coffee</div>
+  </div>
+  <p style="font-size:1.15em;margin-top:.6em">A: Which do you prefer, the bus or a bike?<br>B: I prefer the bus <span class="kw">because</span> it is warm. What about you?</p>
+  <div class="tn">BEFORE: post this page’s link in Teams General. SAY: “Log in. While we wait, look at the board. Which do you prefer, the bus or a bike? … I prefer the bus because it is warm.” DO: model with one learner, then pairs ask and answer all six (5 minutes). Late arrivals join a pair. Take three answers with ‘because’ from the class. SAY: “Today: four small words that join ideas – because, so, although, however. They are in every exam text.” Learners look at: the projector, then their partner.</div>
+ </div>
+ <div class="lookboard"><p class="big">👀 Look at the board</p><p>Page <span class="num"></span></p></div>
+</section>
+
+<!-- 2 -->
+<section class="page board" data-look="Students: projector" data-min="15">
+ <span class="label">WHOLE CLASS – eyes on the board</span>
+ <div class="content">
+  <h1>Four words that join ideas</h1>
+  <div class="g46">
+   <table class="w"><tr><th>Word</th><th>Its job</th><th>Example</th></tr>
+    <tr><td><span class="kw">because</span></td><td>gives the <b>reason</b></td><td>I was late because the bus did not come.</td></tr>
+    <tr><td><span class="kw">so</span></td><td>gives the <b>result</b></td><td>The bus did not come, so I was late.</td></tr>
+    <tr><td><span class="kw">although</span></td><td>a <b>surprise</b> – in one sentence</td><td>Although I was late, the teacher was happy.</td></tr>
+    <tr><td><span class="kw">however</span></td><td>a <b>different idea</b> – new sentence, then a comma</td><td>I was late. However, I did not miss the test.</td></tr></table>
+   <div class="card"><h2>Which word?</h2><ol class="q"><li>I was hungry, ___ I made a sandwich.<br><span class="ans">I was hungry, <b>so</b> I made a sandwich.</span></li><li>___ it was Sunday, the shop was open.<br><span class="ans"><b>Although</b> it was Sunday, the shop was open.</span></li><li>We stayed inside ___ it was raining.<br><span class="ans">We stayed inside <b>because</b> it was raining.</span></li><li>The room is small. ___, it is warm.<br><span class="ans">The room is small. <b>However</b>, it is warm.</span></li><li>My bus was late, ___ I missed the start of the class.<br><span class="ans">My bus was late, <b>so</b> I missed the start of the class.</span></li><li>___ she is 70, she cycles every day.<br><span class="ans"><b>Although</b> she is 70, she cycles every day.</span></li></ol>
+   <p><button class="reveal p" data-sel=".ans" type="button">Show next answer</button></p></div>
+  </div>
+  <div class="tn">SAY: “Look at the table. ‘I was late because the bus did not come.’ Which part is the reason? (The bus did not come.) ‘The bus did not come, so I was late.’ Which part is the result? (I was late.)” SAY: “Although and however show a surprise or a different idea. Although is inside one sentence. However starts a new sentence, and there is a comma after it.” DO: Which word? – read each sentence with ‘beep’ for the gap; the class calls the word; a learner says the full sentence; THEN click (one answer per click). Answers: so · Although · because · However · so · Although. Learners look at: the projector.</div>
+ </div>
+ <div class="lookboard"><p class="big">👀 Look at the board</p><p>Page <span class="num"></span></p></div>
+</section>
+
+<!-- 3 -->
+<section class="page" data-look="Students: their own PC, this page (Task A)" data-min="15">
+ <span class="label stu">ON YOUR PC – work on this page</span>
+ <div class="content">
+  <h1>Task A · Choose the linking word</h1>
+  <p>Click the best word for each gap. You get the point if your <b>first</b> click is right.</p>
+  <div class="task cols"><script type="application/json">{"type": "choose", "items": [{"s": "I take the bus ___ I do not have a car.", "c": 0}, {"s": "It was raining, ___ we stayed at home.", "c": 1}, {"s": "___ the flat is small, it has three bedrooms.", "c": 2, "fill": "Although"}, {"s": "The library is free. ___, you need a card to borrow books.", "c": 3, "fill": "However"}, {"s": "The bus was full, ___ I walked to college.", "c": 1}, {"s": "He is learning English ___ he wants to find a job.", "c": 0}, {"s": "___ he studies every day, he still finds spelling difficult.", "c": 2, "fill": "Although"}, {"s": "The class starts at 9:30. ___, many learners arrive at 10:00.", "c": 3, "fill": "However"}, {"s": "The shop was closed, ___ I went to the market.", "c": 1}, {"s": "I go to the park every morning ___ I love fresh air.", "c": 0}], "opts": ["because", "so", "although", "however"]}</script></div>
+  <div class="tn">SAY: “Go to page 3 on your computer. Task A. Click the best word. Think first – you only get the point if your first click is right. You have 12 minutes.” DO: walk round. Listen for learners who click ‘although’ and ‘however’ without looking at the comma – ASK: “One sentence or two? Is there a comma after the gap?” CHECK (teacher mode): Show next answer, one per click, a learner reads each full sentence. Answers: 1 because 2 so 3 Although 4 However 5 so 6 because 7 Although 8 However 9 so 10 because. Learners look at: page 3 on their own PC.</div>
+ </div>
+</section>
+
+<!-- 4 -->
+<section class="page" data-look="Students: their own PC, this page (Task B)" data-min="20">
+ <span class="label stu">ON YOUR PC – work on this page</span>
+ <div class="content">
+  <h1>Task B · Read and answer <span class="small">– the point counts only if your first click is right</span></h1>
+  <div class="card txt two"><h2>Should the college library open in the evening?</h2>
+<p><b>1</b> The library at a college in east London is open from 9am to 5pm, Monday to Friday. Some learners want it to stay open until 8pm. We asked three people for their opinion.</p>
+<p><b>2</b> Fatima studies English in the morning. “I have two young children, <span class="lw">so</span> I cannot study at home in the evening,” she says. “<span class="lw">However</span>, I do not need the library at night <span class="lw">because</span> I finish my homework there before lunch. <span class="lw">Although</span> evening opening is a good idea for other people, it will not help me.”</p>
+<p><b>3</b> Daniel works in a warehouse until 5pm. Then he comes to college for his English class at 6pm. “I can never use the library <span class="lw">because</span> it closes before I arrive,” he says. “My flat is small and noisy, <span class="lw">so</span> I need a quiet place to study. Please open in the evening!”</p>
+<p><b>4</b> Grace has worked in the library for ten years. “I understand the problem. <span class="lw">However</span>, the college needs more staff for evening opening, <span class="lw">so</span> it will cost more money,” she says. “<span class="lw">Although</span> I want to help learners like Daniel, I cannot work every evening.”</p>
+<p><b>5</b> What do you think?</p></div>
+  <div class="task cols mcq"><script type="application/json">{"type": "mcq", "items": [{"q": "What is the text mainly about?", "o": ["longer opening hours for the library", "new books for the library", "a new English course"], "c": 0}, {"q": "What time does the library shut at the moment?", "o": ["at lunchtime", "at five in the afternoon", "at eight at night"], "c": 1}, {"q": "What is the main idea of paragraph 2?", "o": ["Fatima wants more books for children.", "Fatima studies at home every night.", "Evening opening would not be useful for Fatima."], "c": 2}, {"q": "When does Fatima do her homework?", "o": ["before her midday meal", "late at night", "at the weekend"], "c": 0}, {"q": "Why can Daniel not use the library?", "o": ["He has no library card.", "It is shut when he gets to college.", "It is too noisy for him."], "c": 1}, {"q": "What is Daniel’s home like?", "o": ["large and far from college", "new and expensive", "not big and not quiet"], "c": 2}, {"q": "What problem does Grace talk about?", "o": ["Longer hours would be more expensive.", "There are not enough books.", "The learners are too noisy."], "c": 0}, {"q": "Who asks for the library to open in the evening?", "o": ["Fatima", "Grace", "Daniel"], "c": 2}]}</script></div>
+  <div class="tn">SAY: “Page 4. First read the title and the first sentence of each paragraph – our exam routine. Then read the whole text once. Then answer the eight questions. The words in the questions are different from the words in the text. 18 minutes.” DO: do not explain words yet (Task E is the dictionary task). Fast finishers: find the nine linking words in the text and say what each one joins. CHECK: Show next answer one per click; for each, a learner reads the words in the text that prove it. Answers: 1 longer opening hours 2 five in the afternoon 3 not useful for Fatima 4 before her midday meal 5 shut when he gets to college 6 not big and not quiet 7 more expensive for the college 8 Daniel. Learners look at: page 4 on their own PC.</div>
+ </div>
+</section>
+
+<!-- 5 -->
+<section class="page" data-look="Students: their own PC, this page (Task C) – the text is on page 4" data-min="15">
+ <span class="label stu">ON YOUR PC – work on this page</span>
+ <div class="content">
+  <h1>Task C · Main idea or detail?</h1>
+  <p>The <b>main idea</b> is what a paragraph is about. A <b>detail</b> is one small fact that helps the main idea. Look at the text on page 4 again, then click.</p>
+  <div class="task cols"><script type="application/json">{"type": "sort", "items": [{"s": "People have different opinions about evening opening.", "c": 0}, {"s": "Fatima has two young children.", "c": 1}, {"s": "Evening opening will not help Fatima.", "c": 0}, {"s": "Fatima finishes her homework before lunch.", "c": 1}, {"s": "Daniel needs the library to open later.", "c": 0}, {"s": "Daniel works in a warehouse.", "c": 1}, {"s": "Daniel’s flat is small and noisy.", "c": 1}, {"s": "Evening opening is difficult for the college.", "c": 0}, {"s": "Grace has worked in the library for ten years.", "c": 1}, {"s": "The library closes at 5pm.", "c": 1}], "opts": ["Main idea", "Detail"]}</script></div>
+  <div class="tn">SAY: “Page 5. Every paragraph has one main idea – what it is about. The other sentences are details: small facts that help. Example: paragraph 3. ‘Daniel needs the library to open later’ – main idea. ‘Daniel works in a warehouse’ – a detail. Do the ten. You can go back to page 4 to read.” DO: pairs may talk. CHECK: Show next answer one per click; ASK “Which paragraph? What is that paragraph about?” Answers: 1 main 2 detail 3 main 4 detail 5 main 6 detail 7 detail 8 main 9 detail 10 detail. SAY: “In the exam, ‘What is the main point?’ is this question.” Learners look at: page 5 on their own PC.</div>
+ </div>
+</section>
+
+<!-- 6 -->
+<section class="page" data-look="Students: their own PC, this page (Task D)" data-min="15">
+ <span class="label stu">ON YOUR PC – work on this page</span>
+ <div class="content">
+  <h1>Task D · Join the sentences</h1>
+  <p>Make <b>one answer</b> with the word in blue. Type it, then click Check. You have two tries.</p>
+  <div class="task cols"><script type="application/json">{"type": "join", "items": [{"s": "The market is cheap. Many people shop there.", "w": "so", "a": ["The market is cheap, so many people shop there."]}, {"s": "I was late. The bus did not come.", "w": "because", "a": ["I was late because the bus did not come.", "Because the bus did not come, I was late."]}, {"s": "It was cold. We played football in the park.", "w": "although", "a": ["Although it was cold, we played football in the park.", "We played football in the park although it was cold."]}, {"s": "The flat is near the station. It is very noisy.", "w": "however", "a": ["The flat is near the station. However, it is very noisy."]}, {"s": "She has two jobs. She is always busy.", "w": "so", "a": ["She has two jobs, so she is always busy."]}, {"s": "He walks to college. He wants to save money.", "w": "because", "a": ["He walks to college because he wants to save money.", "Because he wants to save money, he walks to college."]}, {"s": "The shop is small. It is always full.", "w": "although", "a": ["Although the shop is small, it is always full.", "The shop is always full although it is small."]}, {"s": "The course is free. You must buy your own books.", "w": "however", "a": ["The course is free. However, you must buy your own books."]}]}</script></div>
+  <div class="tn">SAY: “Page 6. Join the two sentences with the word. Type your answer and click Check. Careful: with ‘however’ keep two sentences and put a comma after However.” MODEL number 1 on the board: “The market is cheap, so many people shop there.” DO: walk round; look for ‘Although …, but …’ and ‘Because …, so …’ – two linking words for one job. Answers (first one shown is the model): 1 The market is cheap, so many people shop there. 2 I was late because the bus did not come. 3 Although it was cold, we played football in the park. 4 The flat is near the station. However, it is very noisy. 5 She has two jobs, so she is always busy. 6 He walks to college because he wants to save money. 7 Although the shop is small, it is always full. 8 The course is free. However, you must buy your own books. Learners look at: page 6 on their own PC.</div>
+ </div>
+</section>
+
+<!-- 7 -->
+<section class="page" data-look="Students: their own PC – the online dictionary, then this page (Task E)" data-min="12">
+ <span class="label stu">ON YOUR PC – work on this page</span>
+ <div class="content">
+  <h1>Task E · Use an online dictionary</h1>
+  <div class="card" style="display:flex;flex-wrap:wrap;align-items:center;gap:.4em 1.2em"><a class="btn" href="https://dictionary.cambridge.org/" target="_blank" rel="noopener">Open the Cambridge Dictionary</a><span>1. Type the word. 2. Read the meaning. 3. Come back and choose the meaning that fits the text on page 4.</span></div>
+  <div class="task cols mcq"><script type="application/json">{"type": "mcq", "items": [{"q": "In the text, an ‘opinion’ is…", "o": ["a place to study", "what a person thinks about something", "a kind of homework"], "c": 1}, {"q": "A ‘warehouse’ is…", "o": ["a large building where goods are kept", "a small flat", "a college classroom"], "c": 0}, {"q": "‘Staff’ means…", "o": ["the books in a library", "the learners in a class", "the people who work in a place"], "c": 2}, {"q": "A ‘noisy’ flat is…", "o": ["very clean", "full of loud sounds", "very cold"], "c": 1}, {"q": "If something will ‘cost’ more money, …", "o": ["it is free", "you get more money", "you must pay more"], "c": 2}, {"q": "A ‘quiet’ place has…", "o": ["very little sound", "a lot of people", "no chairs"], "c": 0}]}</script></div>
+  <div class="tn">SAY: “Page 7. Six words from the text. Open the Cambridge Dictionary – the blue button. Type the word, read the meaning, then come back and choose the meaning that fits OUR text.” MODEL ‘opinion’ on the projector: type it, read the first meaning aloud, click the answer. SAY: “In the exam there is no dictionary – so after you check, read the sentence in the text again and see how the words around it help.” Answers: opinion = what a person thinks; warehouse = large building for goods; staff = the people who work in a place; noisy = full of loud sounds; cost = you must pay more; quiet = very little sound. Learners look at: the dictionary and page 7 on their own PC.</div>
+ </div>
+</section>
+
+<!-- 8 -->
+<section class="page" data-look="Students: Teams General on their own PC" data-min="15">
+ <span class="label stu">ON YOUR PC – work on this page</span>
+ <div class="content">
+  <h1>Task F · Your opinion – write in Teams</h1>
+  <div class="grid2">
+   <div class="card"><h2>Should the college library open in the evening?</h2><p>Write <b>four sentences</b> in Teams (General). Use each word once:</p><p><span class="kw">because</span> <span class="kw">so</span> <span class="kw">although</span> <span class="kw">however</span></p>
+    <p class="small">I think the library should / should not open in the evening because …<br>I …, so …<br>Although …, …<br>… . However, …</p></div>
+   <div class="card"><h2>Then</h2><p>Read two classmates’ posts.</p><p>Reply to one:</p><p><b>I agree because …</b><br><b>I disagree because …</b></p><p class="small">Check before you post: capital letter · full stop · comma after However.</p></div>
+  </div>
+  <div class="tn">SAY: “Page 8. Open Teams, General. Write your opinion: should the college library open in the evening? Four sentences. Use because, so, although and however – one time each. Then read two posts and reply to one: I agree because … or I disagree because …” DO: walk round; point at a wrong linking word and ask “Reason, result or surprise?” – don’t correct it for them. Collect two good posts to read aloud on the next page. If short of time: three sentences, no reply. Learners look at: Teams General on their own PC.</div>
+ </div>
+</section>
+
+<!-- 9 -->
+<section class="page board" data-look="Students: projector" data-min="8">
+ <span class="label">WHOLE CLASS – eyes on the board</span>
+ <div class="content">
+  <h1>Find the mistake</h1>
+  <p>One mistake in each sentence. Tell your partner – then tell the class.</p>
+  <ol class="q"><li>I stayed at home so I was ill.<br><span class="ans">I stayed at home <b>because</b> I was ill.</span></li><li>Although it was late, but he finished his homework.<br><span class="ans">Although it was late, he finished his homework. <span class='small'>(no ‘but’)</span></span></li><li>The bus is slow. However it is cheap.<br><span class="ans">The bus is slow. However<b>,</b> it is cheap. <span class='small'>(comma)</span></span></li><li>Because the shop was closed, so I went home.<br><span class="ans">Because the shop was closed, I went home. <span class='small'>(no ‘so’)</span></span></li><li>He was hungry because he ate two sandwiches.<br><span class="ans">He was hungry, <b>so</b> he ate two sandwiches.</span></li><li>She likes tea, however she does not like coffee.<br><span class="ans">She likes tea. <b>However,</b> she does not like coffee. <span class='small'>(new sentence)</span></span></li></ol>
+  <p><button class="reveal p" data-sel=".ans" type="button">Show next answer</button> &nbsp; <b>Before you go:</b> tell your partner one true sentence with <span class="kw">although</span>.</p>
+  <div class="tn">SAY: “Eyes on the board. Each sentence has one mistake. Number 1 – talk to your partner for 20 seconds.” DO: a learner says the correct sentence; THEN click (one per click). Read two good Teams posts aloud. FINISH: “Tell your partner one true sentence with although.” Hear three. SAY: “On Wednesday we use these words to find the main point in exam texts.” Learners look at: the projector.</div>
+ </div>
+ <div class="lookboard"><p class="big">👀 Look at the board</p><p>Page <span class="num"></span></p></div>
+</section>
+
+</main>
+<div class="foot"><a href="../../r.html?f=E3%20Reading%20%E2%80%93%20Linking%20Words%20%28because%2C%20so%2C%20although%2C%20however%29%20%E2%80%93%20Main%20Idea%20and%20Detail%20%E2%80%93%20Projector%20and%20PC%20Lesson" target="_blank" rel="noopener">⚠ Report a problem (teachers)</a></div>
+<script>
+(function(){
+var qs=new URLSearchParams(location.search), D=document, B=D.body;
+var teacher=qs.has('teacher')||(B.dataset.default==='teacher'&&!qs.has('student'));
+function mode(){B.classList.toggle('teacher',teacher);B.classList.toggle('student',!teacher)}
+mode();
+var pages=[].slice.call(D.querySelectorAll('.page')), cur=0;
+pages.forEach(function(p,i){
+  var lk=D.createElement('div');lk.className='look';lk.textContent='Page '+(i+1)+' · '+(p.dataset.look||'');p.appendChild(lk);
+  [].forEach.call(p.querySelectorAll('.num'),function(n){n.textContent=i+1});
+});
+function go(i){cur=Math.max(0,Math.min(pages.length-1,i));pages.forEach(function(p,k){p.classList.toggle('on',k===cur)});
+  D.getElementById('pn').textContent='Page '+(cur+1)+' of '+pages.length;D.getElementById('prev').disabled=cur===0;D.getElementById('next').disabled=cur===pages.length-1;
+  history.replaceState(null,'','#p'+(cur+1));setMin(parseInt(pages[cur].dataset.min||'0',10));window.scrollTo(0,0)}
+D.getElementById('prev').onclick=function(){go(cur-1)};D.getElementById('next').onclick=function(){go(cur+1)};
+D.addEventListener('keydown',function(e){var t=e.target.tagName;if(t==='INPUT'||t==='TEXTAREA')return;
+  if(e.key==='ArrowRight'||e.key==='PageDown')go(cur+1);else if(e.key==='ArrowLeft'||e.key==='PageUp')go(cur-1);
+  else if(e.key==='t'||e.key==='T'){teacher=!teacher;mode()}});
+// small teacher timer in the header (minutes come from each page)
+var tt=D.getElementById('tt'), tl=0, tk=null;
+function fmt(s){return Math.floor(s/60)+':'+('0'+s%60).slice(-2)}
+function show(){tt.querySelector('b').textContent=fmt(tl);tt.classList.toggle('low',tl<=60&&tl>0)}
+function setMin(m){clearInterval(tk);tk=null;tl=m*60;show();tt.style.visibility=m?'visible':'hidden';tt.querySelector('button').textContent='Start'}
+tt.querySelector('button').onclick=function(){if(tk){clearInterval(tk);tk=null;this.textContent='Start'}else{var b=this;b.textContent='Pause';tk=setInterval(function(){tl=Math.max(0,tl-1);show();if(!tl){clearInterval(tk);tk=null;b.textContent='Start'}},1000)}};
+// one answer per click
+[].forEach.call(D.querySelectorAll('button.reveal'),function(b){
+  var pg=b.closest('.page'), label=b.textContent;
+  function left(){return pg.querySelectorAll(b.dataset.sel+':not(.show)').length}
+  function total(){return pg.querySelectorAll(b.dataset.sel).length}
+  function upd(){var l=left();b.textContent=l?label+' ('+(total()-l+1)+' of '+total()+')':'All shown';b.disabled=!l}
+  b.onclick=function(){var n=pg.querySelector(b.dataset.sel+':not(.show)');if(n)n.classList.add('show');upd()};upd();
+});
+// big exam timer
+[].forEach.call(D.querySelectorAll('.bigtimer'),function(box){
+  var total=parseInt(box.dataset.min,10)*60, l=total, iv=null, out=box.querySelector('.timer'), st=box.querySelector('.start');
+  function sh(){out.textContent=fmt(l);out.classList.toggle('low',l<=300)}
+  st.onclick=function(){if(iv){clearInterval(iv);iv=null;st.textContent='Resume'}else{st.textContent='Pause';iv=setInterval(function(){l=Math.max(0,l-1);sh();if(!l){clearInterval(iv);iv=null;st.textContent='Time is up'}},1000)}};
+  box.querySelector('.reset').onclick=function(){clearInterval(iv);iv=null;l=total;sh();st.textContent='Start '+box.dataset.min+' minutes'};sh();
+});
+// ---- self-marking tasks ----
+function el(t,c,x){var e=D.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+function norm(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9 ]+/g,' ').replace(/\s+/g,' ').trim()}
+[].forEach.call(D.querySelectorAll('.task'),function(box){
+  var T=JSON.parse(box.querySelector('script').textContent), right=0, tried=0, rows=[];
+  var sc=el('div','score');
+  function upd(){sc.textContent='Score: '+right+' of '+T.items.length+(tried===T.items.length?(right===T.items.length?' – excellent!':' – finished. Check the red ones with your partner.'):'')}
+  T.items.forEach(function(it,i){
+    var row=el('div','item'), ok=false, fin=false;
+    row.appendChild(el('span','n',(i+1)+'.'));
+    var s=el('span','s'), gap=null;
+    if(T.type==='choose'){var parts=it.s.split('___');s.appendChild(D.createTextNode(parts[0]));gap=el('span','gap',' ');s.appendChild(gap);s.appendChild(D.createTextNode(parts[1]||''))}
+    else s.textContent=it.s||it.q;
+    row.appendChild(s);
+    function finish(good){if(fin)return;fin=true;tried++;if(good)right++;row.classList.add('done');upd()}
+    if(T.type==='join'){
+      var hint=el('span','small','Use: '+it.w);row.appendChild(hint);
+      var inp=el('input');inp.type='text';inp.setAttribute('aria-label','Your sentence for number '+(i+1));inp.autocomplete='off';inp.spellcheck=false;
+      var ck=el('button',null,'Check'), fb=el('span','fb'), n=0;
+      var wrap=el('div');wrap.style.cssText='flex:1 1 100%;display:flex;gap:.5em;align-items:center;flex-wrap:wrap';inp.style.flex='1 1 18em';
+      wrap.appendChild(inp);wrap.appendChild(ck);wrap.appendChild(fb);row.appendChild(wrap);
+      var acc=it.a.map(norm);
+      ck.onclick=function(){if(fin||!inp.value.trim())return;n++;
+        if(acc.indexOf(norm(inp.value))>=0){fb.textContent='✓ Correct';fb.className='fb ok';inp.disabled=ck.disabled=true;finish(true)}
+        else if(n>=2){fb.textContent='Answer: '+it.a[0];fb.className='fb no';inp.disabled=ck.disabled=true;finish(false)}
+        else{fb.textContent='Not yet – check the word order and the linking word. One more try.';fb.className='fb no'}};
+      inp.onkeydown=function(e){if(e.key==='Enter')ck.click()};
+      row.reveal=function(){if(fin)return false;fb.textContent='Answer: '+it.a[0];fb.className='fb ok';inp.disabled=ck.disabled=true;finish(false);return true};
+    } else {
+      var opts=T.opts||it.o, first=true;
+      var ow=el('span');ow.style.cssText='display:inline-flex;gap:.3em;flex-wrap:wrap';
+      opts.forEach(function(o,k){var b=el('span','opt',o);b.tabIndex=0;b.setAttribute('role','button');
+        function pick(){if(fin)return;var good=(k===it.c);
+          if(good){b.classList.add('ok');if(gap){gap.textContent=it.fill||o}finish(first)}
+          else{b.classList.add('no');first=false}}
+        b.onclick=pick;b.onkeydown=function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();pick()}};ow.appendChild(b)});
+      row.appendChild(ow);
+      row.reveal=function(){if(fin)return false;ow.children[it.c].classList.add('ok');if(gap)gap.textContent=it.fill||opts[it.c];finish(false);return true};
+    }
+    rows.push(row);box.appendChild(row);
+  });
+  var bar=el('p');bar.appendChild(sc);
+  var sh=el('button','tonly','Show next answer');sh.style.marginLeft='1em';sh.onclick=function(){for(var i=0;i<rows.length;i++){if(rows[i].reveal())return}};bar.appendChild(sh);
+  box.appendChild(bar);upd();
+});
+[].forEach.call(D.querySelectorAll('[data-qr]'),function(e){try{new QRCode(e,{text:e.dataset.qr,width:150,height:150})}catch(x){e.textContent=e.dataset.qr}});
+function fromHash(){var h=/^#p(\d+)$/.exec(location.hash);if(h&&parseInt(h[1],10)-1!==cur)go(parseInt(h[1],10)-1)}
+var h0=/^#p(\d+)$/.exec(location.hash);go(h0?parseInt(h0[1],10)-1:0);window.addEventListener('hashchange',fromHash);
+})();
+</script>
+</body>
+</html>

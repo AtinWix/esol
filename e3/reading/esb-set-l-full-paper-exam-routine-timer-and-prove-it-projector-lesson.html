@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>E3 Reading – ESB Set L Full Paper (Tasks 1–3) – Exam Routine, Timer and Prove It – Projector Lesson</title>
+<style>
+:root{--bg:#fff;--ink:#1d2433;--muted:#5b6474;--board:#e6f5e6;--boardline:#7cc47c;--accent:#1f5fbf;--good:#1a7f37;--bad:#cf222e;--card:#f4f6fa;--hl:#fff3b0}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Verdana,Arial,Helvetica,sans-serif;font-size:clamp(15px,1.45vw,25px);line-height:1.35}
+header{display:flex;align-items:center;gap:12px;padding:6px 16px;border-bottom:2px solid #dde3ec}
+header .t{font-weight:700;flex:1;font-size:.72em;min-width:0}
+@media(max-width:700px){header .t{display:none}}
+nav{display:flex;align-items:center;gap:8px}
+button{font:inherit;font-size:.8em;padding:.4em .9em;border-radius:10px;border:2px solid var(--accent);background:#fff;color:var(--accent);cursor:pointer}
+button.p{background:var(--accent);color:#fff}
+button:disabled{opacity:.4;cursor:default}
+#pn{font-weight:700;min-width:6.5em;text-align:center;font-size:.8em}
+.tt{display:none;align-items:center;gap:6px;font-size:.7em;font-variant-numeric:tabular-nums}
+body.teacher .tt{display:flex}
+.tt b{min-width:3.2em;text-align:right}.tt.low b{color:var(--bad)}
+main{padding:8px 16px 30px;max-width:1700px;margin:0 auto}
+.page{display:none;border-radius:16px;padding:12px 20px 14px;position:relative}
+.page.on{display:block}
+.page.board{background:var(--board);border:3px solid var(--boardline)}
+.page>.label{float:right;margin:.35em 0 0 .6em}
+.label{display:inline-block;background:#2f7d32;color:#fff;font-weight:700;font-size:.62em;padding:.2em .7em;border-radius:8px;margin-bottom:4px}
+.label.stu{background:var(--accent)}
+h1{font-size:1.45em;margin:.1em 0 .3em}
+h2{font-size:1.1em;margin:.3em 0}
+p{margin:.35em 0}
+.look{display:none;position:absolute;right:14px;bottom:3px;font-size:9px;color:#555}
+body.teacher .look{display:block}
+.tn{display:none;font-size:9px;line-height:1.35;color:#333;background:#fffbe6;border:1px dashed #c9a400;padding:5px 8px;margin-top:10px;border-radius:6px}
+body.teacher .tn{display:block}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.g46{display:grid;grid-template-columns:5fr 6fr;gap:16px}
+@media(max-width:900px){.grid2,.grid3,.g46{grid-template-columns:1fr}}
+.card{background:var(--card);border-radius:12px;padding:10px 14px}
+.board .card{background:#fff}
+table.w{border-collapse:collapse;width:100%;font-size:.9em;background:#fff}
+table.w td,table.w th{border:2px solid #9ab;padding:.3em .55em;text-align:left;vertical-align:top}
+table.w th{background:#dfe9f5}
+.ans{visibility:hidden;color:var(--good);font-weight:700}
+.ans.show{visibility:visible}
+ol.q{margin:.2em 0;padding-left:1.5em}
+ol.q li{margin:.28em 0}
+.timer{font-size:5.2em;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.05}
+.timer.low{color:var(--bad)}
+.lookboard{display:none;text-align:center;padding:14vh 0}
+.lookboard .big{font-size:2.2em}
+body.student .page.board .content{display:none}
+body.student .page.board .lookboard{display:block}
+.tonly{display:none}body.teacher .tonly{display:inline-block}
+.page:not(.board){font-size:.9em}
+.item{padding:.22em 0;border-bottom:1px solid #e3e7ee;display:flex;flex-wrap:wrap;align-items:center;gap:.15em .45em;break-inside:avoid}
+.task.cols{display:grid;grid-template-columns:1fr 1fr;column-gap:26px;align-items:start}
+.task.cols>p{grid-column:1/-1}
+.mcq .item{align-items:baseline;row-gap:.1em}
+.mcq .item .n{flex:0 0 auto}
+.mcq .item .s{flex:1 1 calc(100% - 2.4em)}
+.mcq .item>span:last-child{padding-left:1.95em}
+.mcq .opt{font-size:.8em;padding:.05em .5em}
+.mcq .item{padding:.12em 0}
+.txt.two{font-size:.86em;line-height:1.33;padding:6px 12px}
+.txt.two p{margin:.25em 0}
+.txt.two h2{margin:0 0 .2em;font-size:1.05em}
+header .atin-logo{position:static;border:0;padding:0;background:none;line-height:0}
+header .atin-logo svg{width:52px;height:40px}
+.txt.two{column-count:2;column-gap:26px}
+.txt.two h2{column-span:all}
+@media(max-width:900px){.task.cols{grid-template-columns:1fr}.txt.two{column-count:1}}
+.item .n{font-weight:700;min-width:1.6em}
+.item .s{flex:1 1 20em;min-width:0}
+.opt{display:inline-block;padding:.18em .7em;border:2px solid #9ab;border-radius:10px;background:#fff;cursor:pointer;user-select:none;font-size:.9em}
+.opt.ok{background:#dafbe1;border-color:var(--good);font-weight:700}
+.opt.no{background:#ffebe9;border-color:var(--bad)}
+.item.done .opt{pointer-events:none}
+.gap{display:inline-block;min-width:5em;border-bottom:3px solid var(--accent);text-align:center;font-weight:700;color:var(--good)}
+input[type=text],textarea{font:inherit;font-size:.9em;padding:.25em .5em;border:2px solid #9ab;border-radius:8px;width:100%}
+.fb{font-weight:700;font-size:.85em}.fb.ok{color:var(--good)}.fb.no{color:var(--bad)}
+.score{font-weight:700;color:var(--accent);font-size:.85em}
+.small{font-size:.72em;color:var(--muted)}
+a.btn{display:inline-block;text-decoration:none;font-weight:700;padding:.4em 1em;border-radius:10px;background:var(--accent);color:#fff;font-size:.85em}
+.txt{line-height:1.5;font-size:.95em}
+.txt p{margin:.4em 0}
+.kw{background:var(--hl);font-weight:700;padding:0 .15em;border-radius:4px}
+.steps{font-size:1.35em;line-height:1.5;margin:.2em 0;padding-left:1.3em}
+.mark{background:var(--hl);font-weight:700}
+.foot{position:fixed;right:10px;bottom:6px;font-size:10px}
+.foot a{color:var(--muted)}
+body.student .foot{display:none}
+</style>
+</head>
+<body data-default="teacher">
+<header>
+  <div class="atin-logo" aria-label="Made by Atin">
+<svg viewBox="104 28 172 134" width="64" height="50" role="img" aria-hidden="true">
+<text x="139" y="112" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="72" fill="currentColor">A</text>
+<rect x="177" y="83" width="24" height="6" rx="1" fill="currentColor"/>
+<path d="M216 66 L216 106 A25 7 0 0 0 266 106 L266 66" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+<ellipse cx="241" cy="66" rx="25" ry="7" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="216" y1="80" x2="266" y2="80" stroke="currentColor" stroke-width="1.5"/>
+<line x1="216" y1="94" x2="266" y2="94" stroke="currentColor" stroke-width="1.5"/>
+<ellipse cx="241" cy="47" rx="23" ry="5" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="114" y1="128" x2="266" y2="128" stroke="currentColor" stroke-width="1"/>
+<text x="190" y="152" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" letter-spacing="2" fill="currentColor">made by Atin</text>
+</svg>
+</div>
+<style>
+.atin-logo{position:fixed;left:calc(6px + env(safe-area-inset-left,0px));bottom:calc(6px + env(safe-area-inset-bottom,0px));z-index:2147483000;pointer-events:none;color:#1F3A5F;background:rgba(255,255,255,.92);border:1px solid #C9D3DF;border-radius:8px;padding:3px 5px;line-height:0}
+.atin-logo svg{display:block}
+@media print{.atin-logo{position:fixed;left:auto;right:6mm;bottom:5mm;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+
+  <div class="t">E3 Reading – ESB Set L full paper</div>
+  <div class="tt" id="tt"><span>⏱</span><b>0:00</b><button type="button">Start</button></div>
+  <nav><button id="prev" type="button" aria-label="Previous page">◀</button><span id="pn"></span><button id="next" class="p" type="button" aria-label="Next page">▶</button></nav>
+</header>
+<main>
+
+<!-- 1 -->
+<section class="page board" data-look="Students: projector" data-min="10">
+ <span class="label">WHOLE CLASS – eyes on the board</span>
+ <div class="content">
+  <h1>My exam routine</h1>
+  <div class="grid2">
+   <ol class="steps"><li>Read the title.</li><li>Read the first sentence of each paragraph.</li><li>Read everything once.</li><li>Answer the easy questions first.</li><li>Check each answer in the text. <span class="mark">Never leave a question blank.</span></li></ol>
+   <div class="card"><h2>Today is a real exam paper</h2><p>Desks apart. Phones away. No talking. No dictionary.</p><p>Blue or black pen.</p><p><b>21 questions · 60 minutes</b> – the same as the real exam.</p><p class="small">Three texts. Answer all of them.</p></div>
+  </div>
+  <div class="tn">SAY: “Today is a real exam paper. Desks apart. Phones away. No talking. Blue or black pen.” Read the five steps with the class. SAY: “You lose no marks for a wrong answer, so never leave a question blank. Today is exactly like the exam: three texts, 21 questions, 60 minutes. About 20 minutes for each text.” DO: hand out Set L Tasks 1–2 AND the Task 3 sheet, face down. Write the finish time on the board. Learners look at: the projector.</div>
+ </div>
+ <div class="lookboard"><p class="big">👀 Look at the board</p><p>Page <span class="num"></span></p></div>
+</section>
+
+<!-- 2 -->
+<section class="page board" data-look="Students: Set L paper (print pack + Task 3 sheet)" data-min="0">
+ <span class="label">WHOLE CLASS – eyes on the board</span>
+ <div class="content">
+  <h1>ESB paper · Set L · Tasks 1, 2 and 3</h1>
+  <div class="grid2">
+   <div class="card bigtimer" data-min="60" style="text-align:center"><div class="timer">60:00</div><p><button class="p start" type="button">Start 60 minutes</button> <button class="reset" type="button">Reset</button></p><p class="small">About 20 minutes for each text.</p></div>
+   <div class="card"><ol class="q" style="font-size:1.1em"><li>Read the title and the first sentences.</li><li>Read the whole text once. Then answer.</li><li>Answer every question. You can go back.</li><li>Finished early? Write the line that proves each answer.</li></ol></div>
+  </div>
+  <div class="tn">SAY: “Turn over your paper. You may start. Read the title and first sentences first.” DO: press Start. Do not help with words. Walk round; note who gets stuck and on which question. SAY at 40:00 “Twenty minutes gone – you should be on Task 2.” At 20:00 “Twenty minutes left – start Task 3 now.” At 5:00 “Five minutes left. Answer every question.” The clock turns red for the last five minutes. Learners look at: their Set L paper.</div>
+ </div>
+ <div class="lookboard"><p class="big">👀 Look at the board</p><p>Page <span class="num"></span></p></div>
+</section>
+
+<!-- 3 -->
+<section class="page board" data-look="Students: their partner&#x27;s Set L paper, then the projector" data-min="10">
+ <span class="label">WHOLE CLASS – eyes on the board</span>
+ <div class="content">
+  <h1>Prove it · Task 1 · Transport Research Results</h1>
+  <p>Give the answer – then read the words in the text that prove it.</p>
+  <ol class="q" start="1"><li>True or false? <span class="ans">False – “Travellers … feel the train fares are too high”</span></li><li>Two reasons (need both) <span class="ans">any two: houses are cheaper · travel is cheaper · living expenses are cheaper (in the north)</span></li><li>Who are ‘they’? <span class="ans">C Companies – “Some companies are moving there because they pay lower rent”</span></li><li>‘Questionnaire’ means… <span class="ans">B a list of questions</span></li><li>The purpose of the text <span class="ans">C reports – “Transport Research Results”: it tells us what a survey found</span></li><li>Two reasons (need both) <span class="ans">they pay lower rent · they get staff more easily</span></li><li>Alphabetical order <span class="ans">fare · film · music · podcast</span></li></ol>
+  <p><button class="reveal p" data-sel=".ans" type="button">Show next answer</button> <span class="small">One mark each. Question 2 and question 6 need both reasons.</span></p>
+  <div class="tn">SAY: “Stop writing. Swap papers with your partner. Take a different colour pen. I ask for the answer. Then a different learner reads the words in the text that prove it.” DO: for each question – one learner answers, another reads the proof, THEN click Show next answer (one answer per click). ASK for 3: “Who is ‘they’? Singular or plural? Person or thing?” ASK for 5: “Which wrong answer was tempting? Why is it wrong?” Learners look at: the paper they are marking.</div>
+ </div>
+ <div class="lookboard"><p class="big">👀 Look at the board</p><p>Page <span class="num"></span></p></div>
+</section>
+
+<!-- 4 -->
+<section class="page board" data-look="Students: their partner&#x27;s Set L paper, then the projector" data-min="10">
+ <span class="label">WHOLE CLASS – eyes on the board</span>
+ <div class="content">
+  <h1>Prove it · Task 2 · Ali Khan’s letter and the reply</h1>
+  <p>Give the answer – then read the words in the text that prove it.</p>
+  <ol class="q" start="8"><li>Why is Ali writing? <span class="ans">B wanting a job – “I would like to apply for the job of a postman”</span></li><li>Where does Ali live now? <span class="ans">Leeds – “when I moved to Leeds … I work in a newsagent shop at the moment”</span></li><li>Who is ‘I’ in Text B? <span class="ans">C James Turner – he signs Text B (“I” = the writer)</span></li><li>True or false? <span class="ans">False – “similar” means nearly the same</span></li><li>The purpose of Text B <span class="ans">A offer an interview – “I have arranged an interview for you”</span></li><li>Who must Ali contact? <span class="ans">Debbie Seymour – “contact Debbie Seymour by email”</span></li><li>Alphabetical order – which word is last? <span class="ans">attend – accounts · apply · arranged · attend</span></li></ol>
+  <p><button class="reveal p" data-sel=".ans" type="button">Show next answer</button></p>
+  <div class="tn">DO: the same routine – answer, proof, then click. ASK for 10: “Who is ‘I’? Look at the name at the end of the letter.” ASK for 12: “What is the purpose? Which words tell you?” Learners look at: the paper they are marking.</div>
+ </div>
+ <div class="lookboard"><p class="big">👀 Look at the board</p><p>Page <span class="num"></span></p></div>
+</section>
+
+<!-- 5 -->
+<section class="page board" data-look="Students: their partner&#x27;s Task 3 sheet, then the projector" data-min="10">
+ <span class="label">WHOLE CLASS – eyes on the board</span>
+ <div class="content">
+  <h1>Prove it · Task 3 · What is your favourite fruit?</h1>
+  <p>Give the answer – then read the words in the text that prove it.</p>
+  <ol class="q" start="15"><li>True or false? <span class="ans">False – it is about mangoes in general: where they come from, size, health benefits, how to prepare them</span></li><li>What colour before it is ready to eat? <span class="ans">green – “The skin … is green before it is ready to eat”</span></li><li>Bullet points are used to… <span class="ans">C give a list – the three health benefits</span></li><li>‘Delicious’ means… <span class="ans">A tasty – “Mangoes are delicious and most people enjoy them”</span></li><li>This text… <span class="ans">C informs – it gives facts about mangoes</span></li><li>Two health advantages (need both) <span class="ans">any two: improve eye health · protect against some cancers · help to control blood pressure</span></li><li>Which list is in alphabetical order? <span class="ans">B flavour · fresh · season · smooth (fl before fr; se before sm)</span></li></ol>
+  <p><button class="reveal p" data-sel=".ans" type="button">Show next answer</button> <span class="small">Marks out of 21. Question 20 needs both advantages.</span></p>
+  <div class="tn">DO: the same routine. ASK for 15: “Is the text only about growing mangoes? What else is it about?” ASK for 17: “Why are there bullet points? What do they show?” ASK for 21: “flavour, fresh – which comes first? Look at the second letter. season, smooth – look at the second letter.” SAY: “Count the marks out of 21. Write the number at the top. Give the paper back.” DO: hands up for each question; type the class’s two weakest question numbers on the next page. Learners look at: the Task 3 sheet they are marking.</div>
+ </div>
+ <div class="lookboard"><p class="big">👀 Look at the board</p><p>Page <span class="num"></span></p></div>
+</section>
+
+<!-- 6 -->
+<section class="page board" data-look="Students: their own marked Set L paper" data-min="15">
+ <span class="label">WHOLE CLASS – eyes on the board</span>
+ <div class="content">
+  <h1>Fix it – and your target</h1>
+  <div class="grid2">
+   <ol class="steps" style="font-size:1.15em"><li>Look at the questions you got wrong. <b>Choose two.</b></li><li>Write the correct answer in the margin.</li><li>Write the words in the text that prove it.</li><li>Tell your partner: why was the wrong answer tempting?</li><li>Write at the top: <b>My score: __ / 21. Next time I will …</b></li></ol>
+   <div class="card"><h2>Our two hardest questions</h2><p><input type="text" aria-label="Hardest question 1" placeholder="Question number – type it here"></p><p><input type="text" aria-label="Hardest question 2" placeholder="Question number – type it here"></p><p class="small">Which words in the question are different from the words in the text?</p></div>
+  </div>
+  <div class="tn">SAY: “Look at the questions you got wrong. Choose two. For each one, write the correct answer and the words in the text that prove it. Then tell your partner why the wrong answer was tempting.” DO: type the class’s two weakest question numbers in the boxes. Read the proof sentence for the first one aloud and ASK: “Which words in the question are different from the words in the text?” FINISH: “Write your score out of 21 and one target: Next time I will …” Hear three targets. If short of time: one correction each. Learners look at: their own paper.</div>
+ </div>
+ <div class="lookboard"><p class="big">👀 Look at the board</p><p>Page <span class="num"></span></p></div>
+</section>
+
+</main>
+<div class="foot"><a href="../../r.html?f=E3%20Reading%20%E2%80%93%20ESB%20Set%20L%20Full%20Paper%20%28Tasks%201%E2%80%933%29%20%E2%80%93%20Exam%20Routine%2C%20Timer%20and%20Prove%20It%20%E2%80%93%20Projector%20Lesson" target="_blank" rel="noopener">⚠ Report a problem (teachers)</a></div>
+<script>
+(function(){
+var qs=new URLSearchParams(location.search), D=document, B=D.body;
+var teacher=qs.has('teacher')||(B.dataset.default==='teacher'&&!qs.has('student'));
+function mode(){B.classList.toggle('teacher',teacher);B.classList.toggle('student',!teacher)}
+mode();
+var pages=[].slice.call(D.querySelectorAll('.page')), cur=0;
+pages.forEach(function(p,i){
+  var lk=D.createElement('div');lk.className='look';lk.textContent='Page '+(i+1)+' · '+(p.dataset.look||'');p.appendChild(lk);
+  [].forEach.call(p.querySelectorAll('.num'),function(n){n.textContent=i+1});
+});
+function go(i){cur=Math.max(0,Math.min(pages.length-1,i));pages.forEach(function(p,k){p.classList.toggle('on',k===cur)});
+  D.getElementById('pn').textContent='Page '+(cur+1)+' of '+pages.length;D.getElementById('prev').disabled=cur===0;D.getElementById('next').disabled=cur===pages.length-1;
+  history.replaceState(null,'','#p'+(cur+1));setMin(parseInt(pages[cur].dataset.min||'0',10));window.scrollTo(0,0)}
+D.getElementById('prev').onclick=function(){go(cur-1)};D.getElementById('next').onclick=function(){go(cur+1)};
+D.addEventListener('keydown',function(e){var t=e.target.tagName;if(t==='INPUT'||t==='TEXTAREA')return;
+  if(e.key==='ArrowRight'||e.key==='PageDown')go(cur+1);else if(e.key==='ArrowLeft'||e.key==='PageUp')go(cur-1);
+  else if(e.key==='t'||e.key==='T'){teacher=!teacher;mode()}});
+// small teacher timer in the header (minutes come from each page)
+var tt=D.getElementById('tt'), tl=0, tk=null;
+function fmt(s){return Math.floor(s/60)+':'+('0'+s%60).slice(-2)}
+function show(){tt.querySelector('b').textContent=fmt(tl);tt.classList.toggle('low',tl<=60&&tl>0)}
+function setMin(m){clearInterval(tk);tk=null;tl=m*60;show();tt.style.visibility=m?'visible':'hidden';tt.querySelector('button').textContent='Start'}
+tt.querySelector('button').onclick=function(){if(tk){clearInterval(tk);tk=null;this.textContent='Start'}else{var b=this;b.textContent='Pause';tk=setInterval(function(){tl=Math.max(0,tl-1);show();if(!tl){clearInterval(tk);tk=null;b.textContent='Start'}},1000)}};
+// one answer per click
+[].forEach.call(D.querySelectorAll('button.reveal'),function(b){
+  var pg=b.closest('.page'), label=b.textContent;
+  function left(){return pg.querySelectorAll(b.dataset.sel+':not(.show)').length}
+  function total(){return pg.querySelectorAll(b.dataset.sel).length}
+  function upd(){var l=left();b.textContent=l?label+' ('+(total()-l+1)+' of '+total()+')':'All shown';b.disabled=!l}
+  b.onclick=function(){var n=pg.querySelector(b.dataset.sel+':not(.show)');if(n)n.classList.add('show');upd()};upd();
+});
+// big exam timer
+[].forEach.call(D.querySelectorAll('.bigtimer'),function(box){
+  var total=parseInt(box.dataset.min,10)*60, l=total, iv=null, out=box.querySelector('.timer'), st=box.querySelector('.start');
+  function sh(){out.textContent=fmt(l);out.classList.toggle('low',l<=300)}
+  st.onclick=function(){if(iv){clearInterval(iv);iv=null;st.textContent='Resume'}else{st.textContent='Pause';iv=setInterval(function(){l=Math.max(0,l-1);sh();if(!l){clearInterval(iv);iv=null;st.textContent='Time is up'}},1000)}};
+  box.querySelector('.reset').onclick=function(){clearInterval(iv);iv=null;l=total;sh();st.textContent='Start '+box.dataset.min+' minutes'};sh();
+});
+// ---- self-marking tasks ----
+function el(t,c,x){var e=D.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+function norm(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9 ]+/g,' ').replace(/\s+/g,' ').trim()}
+[].forEach.call(D.querySelectorAll('.task'),function(box){
+  var T=JSON.parse(box.querySelector('script').textContent), right=0, tried=0, rows=[];
+  var sc=el('div','score');
+  function upd(){sc.textContent='Score: '+right+' of '+T.items.length+(tried===T.items.length?(right===T.items.length?' – excellent!':' – finished. Check the red ones with your partner.'):'')}
+  T.items.forEach(function(it,i){
+    var row=el('div','item'), ok=false, fin=false;
+    row.appendChild(el('span','n',(i+1)+'.'));
+    var s=el('span','s'), gap=null;
+    if(T.type==='choose'){var parts=it.s.split('___');s.appendChild(D.createTextNode(parts[0]));gap=el('span','gap',' ');s.appendChild(gap);s.appendChild(D.createTextNode(parts[1]||''))}
+    else s.textContent=it.s||it.q;
+    row.appendChild(s);
+    function finish(good){if(fin)return;fin=true;tried++;if(good)right++;row.classList.add('done');upd()}
+    if(T.type==='join'){
+      var hint=el('span','small','Use: '+it.w);row.appendChild(hint);
+      var inp=el('input');inp.type='text';inp.setAttribute('aria-label','Your sentence for number '+(i+1));inp.autocomplete='off';inp.spellcheck=false;
+      var ck=el('button',null,'Check'), fb=el('span','fb'), n=0;
+      var wrap=el('div');wrap.style.cssText='flex:1 1 100%;display:flex;gap:.5em;align-items:center;flex-wrap:wrap';inp.style.flex='1 1 18em';
+      wrap.appendChild(inp);wrap.appendChild(ck);wrap.appendChild(fb);row.appendChild(wrap);
+      var acc=it.a.map(norm);
+      ck.onclick=function(){if(fin||!inp.value.trim())return;n++;
+        if(acc.indexOf(norm(inp.value))>=0){fb.textContent='✓ Correct';fb.className='fb ok';inp.disabled=ck.disabled=true;finish(true)}
+        else if(n>=2){fb.textContent='Answer: '+it.a[0];fb.className='fb no';inp.disabled=ck.disabled=true;finish(false)}
+        else{fb.textContent='Not yet – check the word order and the linking word. One more try.';fb.className='fb no'}};
+      inp.onkeydown=function(e){if(e.key==='Enter')ck.click()};
+      row.reveal=function(){if(fin)return false;fb.textContent='Answer: '+it.a[0];fb.className='fb ok';inp.disabled=ck.disabled=true;finish(false);return true};
+    } else {
+      var opts=T.opts||it.o, first=true;
+      var ow=el('span');ow.style.cssText='display:inline-flex;gap:.3em;flex-wrap:wrap';
+      opts.forEach(function(o,k){var b=el('span','opt',o);b.tabIndex=0;b.setAttribute('role','button');
+        function pick(){if(fin)return;var good=(k===it.c);
+          if(good){b.classList.add('ok');if(gap){gap.textContent=it.fill||o}finish(first)}
+          else{b.classList.add('no');first=false}}
+        b.onclick=pick;b.onkeydown=function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();pick()}};ow.appendChild(b)});
+      row.appendChild(ow);
+      row.reveal=function(){if(fin)return false;ow.children[it.c].classList.add('ok');if(gap)gap.textContent=it.fill||opts[it.c];finish(false);return true};
+    }
+    rows.push(row);box.appendChild(row);
+  });
+  var bar=el('p');bar.appendChild(sc);
+  var sh=el('button','tonly','Show next answer');sh.style.marginLeft='1em';sh.onclick=function(){for(var i=0;i<rows.length;i++){if(rows[i].reveal())return}};bar.appendChild(sh);
+  box.appendChild(bar);upd();
+});
+[].forEach.call(D.querySelectorAll('[data-qr]'),function(e){try{new QRCode(e,{text:e.dataset.qr,width:150,height:150})}catch(x){e.textContent=e.dataset.qr}});
+function fromHash(){var h=/^#p(\d+)$/.exec(location.hash);if(h&&parseInt(h[1],10)-1!==cur)go(parseInt(h[1],10)-1)}
+var h0=/^#p(\d+)$/.exec(location.hash);go(h0?parseInt(h0[1],10)-1:0);window.addEventListener('hashchange',fromHash);
+})();
+</script>
+</body>
+</html>

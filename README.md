@@ -163,6 +163,8 @@ Word documents:
 - [E3 Reading – Ordering Tasks and an ESB Paper – Projector Lesson](e3/reading/wk09-wed-ordering-tasks-exam-paper-projector-lesson.html) – Time order, alphabetical order, a timed ESB paper (Set L Tasks 1–2) and answers with proof – projector, no PCs needed
 - [E3 Reading – Ordering Tasks and Practice Paper – Projector Lesson](e3/reading/wk09-ordering-tasks-practice-paper-projector-lesson.html) – Time order, alphabetical order, online practice, timed online paper and answers – all on screen (PC room)
 - [E3 Reading – Time Order, Alphabetical Order, Pronouns and Word Meaning – Online Practice](e3/reading/wk09-time-order-alphabetical-order-practice.html) – What happened first?, eight time-order texts, 14 alphabetical sets, 18 pronoun / word meaning / purpose questions – PC or phone
+- [E3 Reading – ESB Set L Full Paper (Tasks 1–3) – Exam Routine, Timer and Prove It – Projector Lesson](e3/reading/esb-set-l-full-paper-exam-routine-timer-and-prove-it-projector-lesson.html) – 60-minute timer, then every answer with the words in the text that prove it, one per click
+- [E3 Reading – Linking Words (because, so, although, however) – Main Idea and Detail – Projector and PC Lesson](e3/reading/linking-words-because-so-although-however-main-idea-and-detail-projector-and-pc-lesson.html) – One page for projector and PCs: linking words, an opinion text with 8 questions, main idea or detail, joining sentences, online dictionary, opinion in Teams
 - [E3 Reading Skills – Hackney Bugle](e3/reading/wk17-reading-skills-hackney-bugle.html)
 - [E3 Reading – Purpose Clues – Drag and Sort Activity](e3/reading/purpose-clues-drag-sort-activity.html) – Drag each clue onto its purpose: warn, advise, instruct, advertise, inform, describe
 
@@ -181,6 +183,8 @@ Word documents:
 - [E3 Reading – Hackney Places – Jigsaw Reading – Question Sheet (all four places)](e3/reading/docs/hackney-places-jigsaw-reading-question-sheet-all-places.pdf) (PDF) · [Word](e3/reading/docs/hackney-places-jigsaw-reading-question-sheet-all-places.docx)
 - [E3 Reading – Pronouns, Word Meaning and Ordering – Kahoot Quiz](e3/reading/docs/pronouns-word-meaning-ordering-kahoot.pdf) (PDF) · [Word](e3/reading/docs/pronouns-word-meaning-ordering-kahoot.xlsx)
 - [E3 Reading – Set L Exam Practice and Ordering – Kahoot Quiz](e3/reading/docs/set-l-exam-practice-kahoot.pdf) (PDF) · [Word](e3/reading/docs/set-l-exam-practice-kahoot.xlsx)
+- [E3 Reading – ESB Set L Full Paper, then Linking Words and Main Idea – Day Plan and Answers](e3/reading/docs/set-l-full-paper-and-linking-words-main-idea-day-plan-and-answers.pdf) (PDF) · [Word](e3/reading/docs/set-l-full-paper-and-linking-words-main-idea-day-plan-and-answers.docx)
+- [E3 Reading – ESB Set L Task 3 (What is your favourite fruit?) – Student Handout](e3/reading/docs/set-l-task-3-student-handout.pdf) (PDF) · [Word](e3/reading/docs/set-l-task-3-student-handout.docx)
 - [Wk 1 Exam question types – sort activity – answers (teacher)](e3/reading/docs/wk01-exam-question-types-sort-activity-answers.pdf) (PDF) · [Word](e3/reading/docs/wk01-exam-question-types-sort-activity-answers.docx)
 - [Wk 1 Exam question types – sort activity](e3/reading/docs/wk01-exam-question-types-sort-activity.pdf) (PDF) · [Word](e3/reading/docs/wk01-exam-question-types-sort-activity.docx)
 - [Wk 1 Exam question words – reference sheet](e3/reading/docs/wk01-exam-question-words-reference-sheet.pdf) (PDF) · [Word](e3/reading/docs/wk01-exam-question-words-reference-sheet.docx)
