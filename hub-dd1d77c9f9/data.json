@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-14T11:19:36Z",
+ "updatedAt": "2026-11-14T14:36:55Z",
  "upcoming": {
   "2026-11-02_e3": {
    "afternoon": "PC room: Too Cold to Learn – complaint emails",
@@ -17,7 +17,7 @@
    ],
    "morning": "Hackney Community Skills Fair exam practice paper; on-screen text types matching (15 types)",
    "title": "As taught: Skills Fair practice paper, text types, Too Cold to Learn",
-   "amended": "2026-11-02T14:02:11Z"
+   "amended": "2026-11-14T11:19:49Z"
   },
   "2026-11-03_e1": {
    "afternoon": "PC room: some projector speaking extension activities, then the Task 2 Talk Builder up to section 7 (quick notes)",
@@ -35,7 +35,7 @@
    ],
    "morning": "Describe the Picture – four scenes (Task 3)",
    "title": "As taught: Describe the Picture, Task 2 Talk Builder to section 7",
-   "amended": "2026-11-02T15:42:28Z"
+   "amended": "2026-11-14T14:32:54Z"
   },
   "2026-11-04_e3": {
    "afternoon": "Extended writing from the secret purpose cards with feedback; purpose clues sort (Exam Prep Lesson 2 moved to Mon 9 Nov)",
@@ -154,11 +154,10 @@
    "todo": [
     "Live Kahoot question 12 still says the big Broadway Market is on Saturday only. Next time you are signed in to Kahoot, change the answer to \"Saturday and Sunday\" (or ask Claude to re-import the updated file)."
    ],
-   "amended": "2026-11-14T08:20:57Z"
+   "amended": "2026-11-14T11:19:49Z"
   },
   "2026-11-10_e1": {
    "afternoon": "REPLANNED, learners on their own PCs for most of the lesson: one community-centre timetable, present simple only – timetable tasks and partner questions on the PC; Task 4 Scripts A–F answered on the PC as you play them; Partner A/B information gap; find the mistake; Hangman Paragraphs; Sara's talk gap-fill, then each learner's 'My week' talk on screen and given to a partner; Kahoot. Projector only for instructions and checking.",
-   "amended": "2026-11-14T08:20:57Z",
    "asTaught": "As taught: AM Task 4 days, times and prices with a gapfill added; PM (PC room) replanned community-centre timetable tasks, Scripts, information gap and present simple corrections. The Kahoot and the paired talk preparation were not finished and are carried to Tue 17 Nov.",
    "cls": "E1 Speaking & Listening",
    "date": "2026-11-10",
@@ -219,11 +218,11 @@
    "morning": "My week warm-up (present simple); Exam Prep Lesson 11 – days, prices, times; Task 4 texts 1–2 with Yes/No on phones (vote card); handout sections A–D; copy-and-complete dialogue from the board (AM slide 13, Script G)",
    "prep": "Post the PM learners' page link in Teams General. Check the projector sound for the scripts.",
    "print": "AM: Lesson 11 Handout E1-11A (1 side, one each). PM: nothing to print – all on the PCs. Nothing to cut out.",
-   "title": "As taught: Days, times and prices for Task 4 – community centre (PM replanned)"
+   "title": "As taught: Days, times and prices for Task 4 – community centre (PM replanned)",
+   "amended": "2026-11-14T08:20:57Z"
   },
   "2026-11-11_e3": {
    "afternoon": "Classroom, paper: time order with Hawa's Morning (3A); alphabetical order on the projector – learners come up and tap the words in order (slides 7–9), then 3B; then ESB Set L Tasks 1 and 2 (14 questions) under timed conditions, swap-and-mark with proof from the text",
-   "amended": "2026-11-13T12:12:11Z",
    "asTaught": "As taught: AM Exam Prep Lesson 2 as planned. PM time order (3A) and alphabetical order (3B) on the projector – the projector lesson was covered (slides 1–10). Only the ESB Set L paper (Tasks 1–2) was not sat; it moves to Mon 16 Nov.",
    "cls": "E3 Reading",
    "date": "2026-11-11",
@@ -284,11 +283,11 @@
    "morning": "Exam Prep Lesson 2: Hangman Paragraphs settle-in; who is 'he'? what is 'it'? (2A); read Two Wheels and a New Start and track pronouns (2B, 2C A); guess words from context (2C B); find details (2C C); 20-question Kahoot; be the examiner – learners write two exam questions each pair",
    "prep": "Print the Set L handout (Tasks 1 and 2, link below). Have the Kahoot ready and the timer slide open before 12:30. No cutting out.",
    "print": "Print pack only (94 pages, double-sided) – day plan, What to say script, Lesson 2 handouts ×21, Lesson 3 page 1 ×21. Plus Set L handout – Tasks 1 and 2 (link below, 2 pages double-sided, one each).",
-   "title": "Pronouns, word meaning, ordering tasks and an ESB paper (Set L Tasks 1–2)"
+   "title": "Pronouns, word meaning, ordering tasks and an ESB paper (Set L Tasks 1–2)",
+   "amended": "2026-11-14T11:19:49Z"
   },
   "2026-11-12_e2": {
    "afternoon": "PC room, students on own PCs throughout: Hangman Paragraphs in pairs (p10); A going to or will? (p11); B build the question + ask a neighbour (p12); C find and correct the mistake (p13); D 4 sentences posted in Teams (p14); E Task 4b answers posted in Teams (p16); Kahoot on PCs (p15)",
-   "amended": "2026-11-14T08:20:57Z",
    "asTaught": "As taught: AM ESB Exam Practice worksheet Tasks 1–4 with new Task 3 images and a new Task 4a audio page, done up to section D (Task 3). PM (PC room) the Future Plans (going to and will) lesson page up to slide 8. Task 4a and 4b (worksheet sections E and F) and the remaining PC activities carry to Thu 19 Nov.",
    "cls": "E2 Speaking & Listening",
    "date": "2026-11-12",
@@ -296,7 +295,7 @@
     "status": "not yet in Kahoot",
     "xlsx": "https://atinwix.github.io/esol/e2/speaking-listening/docs/future-plans-going-to-will-speaking-tasks-2-and-4-kahoot.xlsx"
    },
-   "lastAmended": "2026-11-12 – will corrected (decide now incl. offers / promise / prediction; evidence = going to), page 5 answer 8 fixed, handout Task 2 updated; afternoon reworked for own PCs; replaced superlatives lesson",
+   "lastAmended": "2026-11-14",
    "links": [
     {
      "label": "Lesson page – AM projector + PM PC room (one file)",
@@ -315,10 +314,6 @@
      "url": "https://atinwix.github.io/esol/e2/speaking-listening/docs/future-plans-going-to-will-speaking-tasks-2-and-4-kahoot.xlsx"
     },
     {
-     "label": "Lesson audio – Scripts A, B, C",
-     "url": "https://claude.ai/artifact/VSuo6dJoXpbBMZZtQyaB13"
-    },
-    {
      "label": "Hangman Paragraphs – Amina's week (loaded)",
      "url": "https://atinwix.github.io/Hangman-Paragraphs-Game/?p=TmV4dCB3ZWVrIGlzIGdvaW5nIHRvIGJlIGJ1c3kgZm9yIEFtaW5hLiBPbiBNb25kYXkgc2hlIGlzIGdvaW5nIHRvIHZpc2l0IHRoZSBsaWJyYXJ5IGluIERhbHN0b24gYW5kIGpvaW4gYSBmcmVlIEVuZ2xpc2ggY2x1Yi4gT24gV2VkbmVzZGF5IHNoZSBpcyBnb2luZyB0byBtZWV0IGhlciBmcmllbmQgUm9zYSBhdCBSaWRsZXkgUm9hZCBNYXJrZXQuIFRoZXkgYXJlIGdvaW5nIHRvIGJ1eSB2ZWdldGFibGVzIGFuZCBjb29rIGRpbm5lciB0b2dldGhlci4gU2hlIGlzIG5vdCBnb2luZyB0byBnbyB0byB0aGUgZ3ltIGJlY2F1c2Ugc2hlIGhhcyBhIGJhZCBiYWNrLiBPbiBTYXR1cmRheSBzaGUgaXMgZ29pbmcgdG8gd2FsayB0byBWaWN0b3JpYSBQYXJrIHdpdGggaGVyIHNvbi4gU2hlIHRoaW5rcyBoZSB3aWxsIGxvdmUgdGhlIG5ldyBwbGF5Z3JvdW5kLg"
     },
@@ -330,11 +325,12 @@
    "morning": "Weekend-plans warmer; Amina's busy week (reading, find going to); going to form drill; will for decide-now and offers with Vote Card; handout Tasks 1–2; Task 2 talk 'My plans for next weekend'; Task 4a-style listening (you read the script – in the day plan); find-the-mistake at the board; Task 4b discussion in threes",
    "prep": "Filed in the library on 13 Nov (this was the lesson taught on 12 Nov). The Kahoot is an import file only.",
    "print": "Student handout (2 sides, one each). Nothing for the afternoon.",
-   "title": "Future plans – going to and will – Speaking Tasks 2 and 4 (replaces superlatives)"
+   "title": "Future plans – going to and will – Speaking Tasks 2 and 4 (replaces superlatives)",
+   "lastAmendedNote": "Removed the \"Lesson audio – Scripts A, B, C\" link. It pointed at a Claude artifact whose three play buttons referenced MP3s (script-a-lina-and-sam.mp3 and two others) that were never created, so it had played nothing since 12 Nov. Script A’s audio is embedded on page 7 of the lesson page and all three scripts are in that page and the day plan. Earlier note (12 Nov): will corrected (decide now incl. offers / promise / prediction; evidence = going to), page 5 answer 8 fixed, handout Task 2 updated; afternoon reworked for own PCs; replaced superlatives lesson.",
+   "amended": "2026-11-14T08:20:57Z"
   },
   "2026-11-16_e3": {
    "afternoon": "PC room, one lesson page on projector and PCs: which do you prefer and why?; four linking words (because, so, although, however); Task A choose the word; Task B read an opinion text and answer; Task C main idea or detail; Task D join the sentences; Task E online dictionary; Task F opinion in Teams; find the mistake",
-   "amended": "2026-11-14T08:34:20Z",
    "cls": "E3 Reading",
    "created": "2026-11-11",
    "date": "2026-11-16",
@@ -478,7 +474,8 @@
     "note": "AM: the ESB Set L paper owed from Wed 11 Nov, now the whole paper (3 tasks, 60 minutes, as the real exam)",
     "wc": "2026-11-16"
    },
-   "title": "ESB Set L full paper, then linking words and main idea (because, so, although, however)"
+   "title": "ESB Set L full paper, then linking words and main idea (because, so, although, however)",
+   "amended": "2026-11-14T08:34:20Z"
   },
   "2026-11-17_e1": {
    "afternoon": "PC room: Kahoot (days, times, prices); Task 3 recap on the PC; Task 1 and Task 4 practice on the PC; the whole exam in pairs (Tasks 1–4, candidate and assessor, two rounds); True/False feedback on what is still difficult",
@@ -662,7 +659,6 @@
   },
   "2026-11-19_e2": {
    "afternoon": "PC room: online practice A–C (going to or will, build the question, find the correct sentence); handout Task 3 + five sentences in Teams (yesterday, now, tomorrow, opinion, offer); Task 4a-style listening (weekend plan, audio page); Referee Interviews wheels; Kahoot (20 Qs)",
-   "amended": "2026-11-14T08:20:57Z",
    "cls": "E2 Speaking & Listening",
    "created": "2026-11-12",
    "date": "2026-11-19",
@@ -838,7 +834,8 @@
     "note": "exam preparation (backfilled 13 Nov, not checked against the class scheme)",
     "wc": "2026-11-16"
    },
-   "title": "Finish Task 4 (4a and 4b), then Future plans – going to and will"
+   "title": "Finish Task 4 (4a and 4b), then Future plans – going to and will",
+   "amended": "2026-11-14T08:20:57Z"
   }
  },
  "status": {},
