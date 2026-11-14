@@ -39,6 +39,11 @@ h2{font-size:1.05rem;margin:0 0 10px;color:var(--muted);letter-spacing:.04em;tex
 .flag{background:var(--bad-soft);color:var(--bad);border-radius:8px;padding:6px 10px;font-weight:600;font-size:.92rem}
 .was{font-size:.88rem;color:var(--muted)}.was s{color:var(--muted)}
 .fresh{font-size:.8rem;color:var(--muted);text-align:right}
+.errs{background:var(--bad-soft);border:1px solid var(--bad);border-radius:12px;padding:12px 14px;margin:10px 0}
+.errs h3{margin:0 0 8px;font-size:1rem;color:var(--bad)}
+.errs ul{margin:0;padding-left:18px}
+.errs li{margin:4px 0;font-size:.92rem;line-height:1.4}
+.errs .when{color:var(--muted);font-weight:600}
 .links{display:flex;flex-wrap:wrap;gap:8px}
 .links a{font-size:.88rem;padding:5px 11px;border-radius:999px;background:var(--soft);color:var(--ink);text-decoration:none;border:1px solid transparent}
 .links a:hover{border-color:var(--accent)}
@@ -82,6 +87,8 @@ header{display:flex;justify-content:space-between;align-items:flex-start;gap:12p
       <a class="tile" href="https://atinwix.github.io/esol/games/phone-games-qr.html" target="_blank" rel="noopener noreferrer"><b>Phone games QR</b><span>Project for early finishers.</span></a>
     </div>
   </section>
+
+  <div class="errs" id="errors" hidden></div>
 
   <div class="fresh" id="fresh"></div>
 
@@ -184,6 +191,21 @@ header{display:flex;justify-content:space-between;align-items:flex-start;gap:12p
     if(days.length<2)wk.append(note("Nothing else this week."));
     var past=cards.filter(function(x){return x.date<today}).sort(function(a,b){return b.date.localeCompare(a.date)}).slice(0,6);
     var pb=document.getElementById("pastBox");pb.hidden=!past.length;document.getElementById("past").replaceChildren.apply(document.getElementById("past"),past.map(function(x){return card(x)}));
+    var eb=document.getElementById("errors"),items=[];
+    function when(d){if(d===today)return "Today";var dd=new Date(d+"T00:00:00");return dd.toLocaleDateString("en-GB",{weekday:"short",day:"numeric",month:"short"})}
+    cards.slice().sort(function(a,b){return a.date.localeCompare(b.date)}).forEach(function(x){
+      (Array.isArray(x.flags)?x.flags:[]).forEach(function(f){if(f&&f.text&&f.code!=="kahoot-wait")items.push([when(x.date),f.text])});
+      (Array.isArray(x.todo)?x.todo:[]).forEach(function(t){if(t)items.push([when(x.date),t])});
+    });
+    if(health&&health.ok===false)(health.items||[]).forEach(function(it){if(it&&it.ok===false&&it.text)items.push(["Daily check",it.text])});
+    eb.replaceChildren();
+    if(items.length){
+      eb.hidden=false;
+      eb.append(el("h3",null,items.length===1?"1 error to fix":items.length+" errors to fix"));
+      var ul=document.createElement("ul");
+      items.forEach(function(it){var li=document.createElement("li");li.append(el("span","when",it[0]+": "));li.append(document.createTextNode(it[1]));ul.append(li)});
+      eb.append(ul);
+    } else { eb.hidden=true; }
     var ch=document.getElementById("checks");
     if(health){ch.replaceChildren();
       var head=el("div","c");head.append(el("span","dot "+(health.ok?"ok":"bad")));head.append(el("span",null,(health.ok?"All fine":"Needs attention")+" – last checked "+(health.checkedAt?new Date(health.checkedAt).toLocaleString("en-GB",{weekday:"short",day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"}):"?")));ch.append(head);
