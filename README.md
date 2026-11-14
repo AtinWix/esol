@@ -7,12 +7,12 @@ Live site: https://atinwix.github.io/esol/
 Each level has three strands: Reading, Writing, Speaking & Listening.
 
 ## all-levels
-- [ESOL All Levels – My Story – Student Bio Form (E1–L2)](all-levels/student-bio-my-story.html) – Learners tell their story; answers go to a Microsoft Form
 - [ESOL All Levels – Too Cold to Learn – Complaint Emails – PC Room Lesson](all-levels/complaint-email-too-cold-to-learn.html)
-- [ESOL Citizenship – Life in the UK, London & Hackney – Quiz](all-levels/citizenship-life-in-the-uk-london-hackney-quiz.html)
 - [E1–L2 Speaking & Listening – ESB Exam Tasks 1–4 – Interactive Quiz](all-levels/speaking-listening-esb-exam-tasks-1-4-quiz.html)
-- [My Story – Student Bio Form – Teacher Setup](all-levels/student-bio-my-story-teacher-setup.html) – Teachers: send answers to your own Form
 - [ESOL Speaking – Task 2 Talk Builder (E1–L2)](all-levels/speaking-task2-talk-builder.html)
+- [ESOL All Levels – My Story – Student Bio Form (E1–L2)](all-levels/student-bio-my-story.html) – Learners tell their story; answers go to a Microsoft Form
+- [My Story – Student Bio Form – Teacher Setup](all-levels/student-bio-my-story-teacher-setup.html) – Teachers: send answers to your own Form
+- [ESOL Citizenship – Life in the UK, London & Hackney – Quiz](all-levels/citizenship-life-in-the-uk-london-hackney-quiz.html)
 
 Word documents:
 - [Too Cold to Learn – complaint emails – plan and answers (teacher)](all-levels/docs/complaint-email-too-cold-to-learn-teacher-plan.pdf) (PDF) · [Word](all-levels/docs/complaint-email-too-cold-to-learn-teacher-plan.docx)
@@ -27,22 +27,22 @@ Word documents:
 - [ESOL Writing Level Check – Typed Placement Assessment (E1–L2)](https://atinwix.github.io/WRITING_TEST/) – Typed writing check for learners who can use a keyboard; free writing and answers go to a Microsoft Form.
 
 ## e1/speaking-listening
+- [E1 Small Talk – Talk Before Class – Projector Warmer](e1/speaking-listening/small-talk-talk-before-class-projector-warmer.html) – Rolling warmer for staggered arrivals: 16 question cards (present simple, be, have got, can), ask – answer – react – ask back, change partner every 3 cards
 - [E1 Days, Times and Prices – Community Centre Timetable – Listening, Partner A/B, Find the Mistake and My Talk – Interactive Practice](e1/speaking-listening/community-centre-days-times-prices-interactive-practice.html) – Learners' PC/phone page: Task 4 answers for Scripts C–F with script gap-fills, a Partner A / Partner B information gap, ten present simple mistakes to find and correct, and a 'My week' talk frame that checks days, times and prices.
 - [E1 Days, Times and Prices – Community Centre Timetable – Task 4 Listening and Task 2 Talk – Projector Lesson](e1/speaking-listening/community-centre-days-times-prices-projector-lesson.html) – One community-centre timetable all lesson: Vote Card yes/no, asking about days, times and prices, six Task 4 scripts (audio built in), information gap, find the mistake, building a one-minute 'My week' talk together, Kahoot.
 - [E1 Listening – Days, Times and Prices – Interactive Practice](e1/speaking-listening/listening-days-times-prices-interactive-practice.html) – Days, prices, times, and read-and-answer Task 4 questions. Works on PCs and phones.
 - [E1 Listening – Days, Times and Prices – Task 4 Projector Lesson](e1/speaking-listening/listening-days-times-prices-projector-lesson.html) – Days, prices and times; listen for one thing; Task 4 texts with yes/no and detail questions.
 - [E1 Task 1 Questions, Task 4 Listening and Exam Card – Interactive Practice](e1/speaking-listening/task1-task4-exam-run-through-interactive-practice.html) – For PC or phone: put the Task 1 question in order, choose the question word, answer Task 4 questions, and a random exam card for pair practice. No audio.
 - [E1 Speaking & Listening – Task 4 Exam Mode and Task 2 Talk – PC Room Projector Lesson](e1/speaking-listening/task4-exam-mode-task2-talk-pc-room-projector-lesson.html) – PC room: Task 4 in exam mode, our own listening in Teams, online practice, finish the Task 2 talk, Kahoot.
-- [E1 Task 4 Short Conversations and Task 1 Questions – Projector Lesson](e1/speaking-listening/short-conversations-task1-questions-projector-lesson.html) – Where are they? (Vote Card), two short conversations with yes/no and detail questions, say-it-yourselves, Task 1 word order and question words on the board, spelling and numbers, Kahoot.
 - [E1 Tasks 1–4 Exam Run-Through – PC Room Projector Lesson](e1/speaking-listening/exam-run-through-tasks-1-to-4-pc-room-projector-lesson.html) – Task 3 recap, Task 1 and Task 4 practice on the PC, then the whole speaking and listening exam in pairs (candidate and assessor), with audio built in.
-- [E1 Small Talk – Talk Before Class – Projector Warmer](e1/speaking-listening/small-talk-talk-before-class-projector-warmer.html) – Rolling warmer for staggered arrivals: 16 question cards (present simple, be, have got, can), ask – answer – react – ask back, change partner every 3 cards
+- [E1 & E2 Listening – Task 4 – Put It in Order](e1/speaking-listening/task4-listening-put-it-in-order.html)
 - [E1 & E2 Speaking – Task 1 Talk About You – Put It in Order](e1/speaking-listening/task1-talk-about-you-put-it-in-order.html)
 - [E1 & E2 Speaking – Task 2 Short Talk – Put It in Order](e1/speaking-listening/task2-short-talk-put-it-in-order.html)
+- [E1 Task 4 Short Conversations and Task 1 Questions – Projector Lesson](e1/speaking-listening/short-conversations-task1-questions-projector-lesson.html) – Where are they? (Vote Card), two short conversations with yes/no and detail questions, say-it-yourselves, Task 1 word order and question words on the board, spelling and numbers, Kahoot.
 - [E1 & E2 Speaking – Task 3 Describe the Photo – Put It in Order](e1/speaking-listening/task3-describe-the-photo-put-it-in-order.html)
 - [E1 Speaking – Task 3 Describe the Picture – Interactive Worksheets](e1/speaking-listening/task3-describe-the-picture-interactive-worksheets.html)
 - [E1 Speaking – Task 3 Describe the Picture – Pair Practice](e1/speaking-listening/task3-describe-the-picture-pair-practice.html)
 - [E1 Speaking – Task 3 In the Kitchen – Drag Match](e1/speaking-listening/task3-in-the-kitchen-drag-match.html)
-- [E1 & E2 Listening – Task 4 – Put It in Order](e1/speaking-listening/task4-listening-put-it-in-order.html)
 
 Word documents:
 - [E1 Days, Times and Prices – Community Centre Timetable – Task 4 Listening and Task 2 Talk – Day Plan and Answers](e1/speaking-listening/docs/community-centre-days-times-prices-day-plan-and-answers.pdf) (PDF) · [Word](e1/speaking-listening/docs/community-centre-days-times-prices-day-plan-and-answers.docx)
@@ -94,11 +94,11 @@ Word documents:
 - [E2 Future Plans – going to and will – Speaking Tasks 2 and 4 – Projector and PC Lesson](e2/speaking-listening/future-plans-going-to-will-speaking-tasks-2-and-4-projector-and-pc-lesson.html) – One page: morning projector slides (going to, will, Vote Card, Task 2 plans talk, Task 4a-style listening) and PC-room activities (Hangman Paragraphs, going to or will?, build the question, find the mistake, Teams writing, Kahoot).
 - [E2 Future Plans – going to and will – Task 4 Listening and Discussion – Projector Lesson](e2/speaking-listening/future-plans-going-to-will-task4-projector-lesson.html) – Morning: Task 4a and 4b, going to or will? rules, Vote Card, Task 2 plans talk. Afternoon (PC room): online practice, Teams writing, Task 4a-style listening, Referee Interviews wheels, Kahoot.
 - [E2 Future Plans – going to or will? Choose, Build, Find the Mistake – Interactive Practice](e2/speaking-listening/future-plans-going-to-will-choose-build-find-interactive-practice.html) – 12 choose-going-to-or-will, 6 build-the-question and 8 find-the-correct-sentence questions. Works on phones and PCs.
-- [E2 Past Simple – Speaking Tasks 1 & 2 – Interactive Practice](e2/speaking-listening/past-simple-tasks1-2-interactive-practice-1.html)
-- [E2 Past Simple – Speaking Tasks 1 & 2 – Interactive Practice 2](e2/speaking-listening/past-simple-tasks1-2-interactive-practice-2.html)
-- [E2 Past Simple – Speaking Tasks 1 & 2 – Projector Lesson](e2/speaking-listening/past-simple-tasks1-2-projector-lesson-1.html)
-- [E2 Past Simple – Speaking Tasks 1 & 2 – Projector Lesson 2](e2/speaking-listening/past-simple-tasks1-2-projector-lesson-2.html)
 - [E2 Questions, Articles & Plurals – Build, Say, Check – Speaking Wheels](e2/speaking-listening/questions-articles-plurals-referee-interviews-speaking-wheels.html) – Pairs spin, build a sentence from word cues, say it, then press Check: helper verbs, a/an/the and plural endings are coloured. Warm-up with audio. Phone version via QR.
+- [E2 Past Simple – Introducing the Past and Regular -ed Verbs – Projector Lesson](e2/speaking-listening/past-simple-tasks1-2-projector-lesson-1.html)
+- [E2 Past Simple – Irregular Verbs, -ed Sounds and Story Order – Interactive Practice](e2/speaking-listening/past-simple-tasks1-2-interactive-practice-1.html)
+- [E2 Past Simple – Irregular Verbs, didn’t and Time Words – Projector Lesson](e2/speaking-listening/past-simple-tasks1-2-projector-lesson-2.html)
+- [E2 Past Simple – Verbs, didn’t, Time Words and Mistake Hunt – Interactive Practice](e2/speaking-listening/past-simple-tasks1-2-interactive-practice-2.html)
 
 Word documents:
 - [E2 Comparatives – Kahoot Quiz](e2/speaking-listening/comparatives-kahoot.pdf) (PDF) · [Word](e2/speaking-listening/comparatives-kahoot.xlsx)
@@ -148,28 +148,28 @@ Word documents:
 
 ## e3/reading
 - [E3 Reading – ESB Exam Skills – Interactive Quiz](e3/reading/wk01-esb-exam-skills-interactive-quiz.html)
+- [E3 Reading – ESB Mock Exam – Set O](e3/reading/wk08-esb-mock-exam-set-o.html)
+- [E3 Reading – Too Cold to Learn – Exam Practice (PC Room)](e3/reading/wk08-too-cold-to-learn-exam-practice.html)
+- [E3 Reading – Hostel Garden and Computer Classes – Timed Online Practice Paper](e3/reading/hostel-garden-and-computer-classes-timed-online-practice-paper.html) – Two texts, 16 ESB-style questions, 40-minute clock, marks itself and shows score by skill – PC or phone
+- [E3 Reading – ESB Set L Full Paper (Tasks 1–3) – Exam Routine, Timer and Prove It – Projector Lesson](e3/reading/esb-set-l-full-paper-exam-routine-timer-and-prove-it-projector-lesson.html) – 60-minute timer, then every answer with the words in the text that prove it, one per click
+- [E3 Reading – Time Order, Alphabetical Order, Pronouns and Word Meaning – Online Practice](e3/reading/wk09-time-order-alphabetical-order-practice.html) – What happened first?, eight time-order texts, 14 alphabetical sets, 18 pronoun / word meaning / purpose questions – PC or phone
 - [E3 Reading – Text Types – Matching Activity](e3/reading/wk04-text-types-matching-activity.html)
-- [E3 & L1 Reading – Freecycle – Comprehension Quiz](e3/reading/wk05-freecycle-comprehension-quiz.html)
 - [E3 Reading – Hackney Leaflet, Email & Review – Practice Questions](e3/reading/wk06-hackney-leaflet-email-review-practice.html)
-- [E3 Reading – Graffiti Warning – Mixed Tenses Online Lesson](e3/reading/wk07-graffiti-warning-mixed-tenses-online-lesson.html)
 - [E3 Mixed Tenses – Graffiti Notice – Answer Key (teacher)](e3/reading/wk07-graffiti-notice-multiple-choice-answer-key-teacher.html)
 - [E3 Mixed Tenses – Graffiti Notice – Multiple Choice Poster](e3/reading/wk07-graffiti-notice-multiple-choice-poster.html)
+- [E3 & L1 Reading – Freecycle – Comprehension Quiz](e3/reading/wk05-freecycle-comprehension-quiz.html)
+- [E3 Reading Skills – Hackney Bugle](e3/reading/wk17-reading-skills-hackney-bugle.html)
+- [E3 Reading – Graffiti Warning – Mixed Tenses Online Lesson](e3/reading/wk07-graffiti-warning-mixed-tenses-online-lesson.html)
 - [E3 Mixed Tenses – Graffiti News – Error Hunt](e3/reading/wk08-graffiti-news-error-hunt.html)
-- [E3 Reading – ESB Mock Exam – Set O](e3/reading/wk08-esb-mock-exam-set-o.html)
 - [E3 Reading – Purpose, Pronouns & Word Meaning – Projector Lesson](e3/reading/wk08-purpose-pronouns-word-meaning-projector-lesson.html)
-- [E3 Reading – Too Cold to Learn – Exam Practice (PC Room)](e3/reading/wk08-too-cold-to-learn-exam-practice.html)
+- [E3 Reading – Linking Words (because, so, although, however) – Main Idea and Detail – Projector and PC Lesson](e3/reading/linking-words-because-so-although-however-main-idea-and-detail-projector-and-pc-lesson.html) – One page for projector and PCs: linking words, an opinion text with 8 questions, main idea or detail, joining sentences, online dictionary, opinion in Teams
+- [E3 Reading – Purpose Clues – Drag and Sort Activity](e3/reading/purpose-clues-drag-sort-activity.html) – Drag each clue onto its purpose: warn, advise, instruct, advertise, inform, describe
 - [E3 Adjectives and Adverbs – Find the Error – Interactive Practice](e3/reading/adjectives-adverbs-find-the-error-interactive-practice.html) – 20 sentences: tap the mistake, then type the correct sentence. Works on PCs and phones.
 - [E3 Adjectives and Adverbs – Gap Fill – Interactive Reading Activity](e3/reading/adjectives-adverbs-gap-fill-interactive-reading-activity.html) – Two short texts, 8 gaps each: tap a word, then tap its gap. One answer per gap, two extra words. Works on PCs and phones, with a QR code for the phone version.
 - [E3 Reading – Describing Hackney – Adjectives and Adverbs – Projector Lesson](e3/reading/describing-hackney-adjectives-adverbs-projector-lesson.html) – Adjective or adverb, find the error, online maps task, write and post in Teams, Millionaire.
 - [E3 Reading – Hackney Places – Adjectives and Jigsaw Reading – Projector Lesson](e3/reading/hackney-places-adjectives-jigsaw-reading-projector-lesson.html) – Adjectives for places, predict, expert groups and jigsaw grid, word meaning in context, Kahoot.
-- [E3 Reading – Hostel Garden and Computer Classes – Timed Online Practice Paper](e3/reading/hostel-garden-and-computer-classes-timed-online-practice-paper.html) – Two texts, 16 ESB-style questions, 40-minute clock, marks itself and shows score by skill – PC or phone
 - [E3 Reading – Ordering Tasks and an ESB Paper – Projector Lesson](e3/reading/wk09-wed-ordering-tasks-exam-paper-projector-lesson.html) – Time order, alphabetical order, a timed ESB paper (Set L Tasks 1–2) and answers with proof – projector, no PCs needed
 - [E3 Reading – Ordering Tasks and Practice Paper – Projector Lesson](e3/reading/wk09-ordering-tasks-practice-paper-projector-lesson.html) – Time order, alphabetical order, online practice, timed online paper and answers – all on screen (PC room)
-- [E3 Reading – Time Order, Alphabetical Order, Pronouns and Word Meaning – Online Practice](e3/reading/wk09-time-order-alphabetical-order-practice.html) – What happened first?, eight time-order texts, 14 alphabetical sets, 18 pronoun / word meaning / purpose questions – PC or phone
-- [E3 Reading – ESB Set L Full Paper (Tasks 1–3) – Exam Routine, Timer and Prove It – Projector Lesson](e3/reading/esb-set-l-full-paper-exam-routine-timer-and-prove-it-projector-lesson.html) – 60-minute timer, then every answer with the words in the text that prove it, one per click
-- [E3 Reading – Linking Words (because, so, although, however) – Main Idea and Detail – Projector and PC Lesson](e3/reading/linking-words-because-so-although-however-main-idea-and-detail-projector-and-pc-lesson.html) – One page for projector and PCs: linking words, an opinion text with 8 questions, main idea or detail, joining sentences, online dictionary, opinion in Teams
-- [E3 Reading Skills – Hackney Bugle](e3/reading/wk17-reading-skills-hackney-bugle.html)
-- [E3 Reading – Purpose Clues – Drag and Sort Activity](e3/reading/purpose-clues-drag-sort-activity.html) – Drag each clue onto its purpose: warn, advise, instruct, advertise, inform, describe
 
 Word documents:
 - [Extra – The Camping Group – mock reading paper (18 questions) – answers (teacher)](e3/reading/docs/extra-camping-group-mock-reading-paper-answers.pdf) (PDF) · [Word](e3/reading/docs/extra-camping-group-mock-reading-paper-answers.docx)
@@ -241,11 +241,12 @@ Word documents:
 - [Lesson 13: Full mock paper and review – plan and answers](e3/reading/exam-prep/lesson-13-plan.pdf) (PDF) · [Word](e3/reading/exam-prep/lesson-13-plan.docx)
 
 ## games
-- [ESOL All Levels – Classroom Tool – A–D / 1–4 Vote Card](games/classroom-tool-vote-card.html)
-- [ESOL All Levels – Who Wants to Be a Millionaire – Projector Quiz Game](games/millionaire-quiz.html) – E1–E3 question sets; Ask the Audience uses the Vote Card
 - [Block Drop (work in progress)](games/block-drop.html)
 - [Blockbusters ABC Quiz](games/blockbusters-abc-quiz.html) – Projector team game
 - [E2–L1 Family Fortunes Game](games/family-fortunes.html) – Projector team game
+- [ESOL All Levels – Classroom Tool – A–D / 1–4 Vote Card](games/classroom-tool-vote-card.html)
+- [ESOL All Levels – Classroom Wheel and Picker – Projector Tool](games/classroom-wheel-and-picker.html) – Wheel, tap-to-order and random picker, with presets for days, superlative questions, alphabetical order and Leila's day. Replaces the paper cut-out sheets.
+- [ESOL All Levels – Who Wants to Be a Millionaire – Projector Quiz Game](games/millionaire-quiz.html) – E1–E3 question sets; Ask the Audience uses the Vote Card
 - [Grammar Blast](games/grammar-blast.html)
 - [Phone Games – Scan and Play (QR codes for early finishers)](games/phone-games-qr.html)
 - [Verb Catcher](games/verb-catcher.html)
