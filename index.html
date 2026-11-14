@@ -95,7 +95,7 @@ document.querySelectorAll("section").forEach(function(sec){var shown=0;
 sec.querySelectorAll("li[data-lvl],details[data-lvl]:not(:has(li))").forEach(function(el){
 var ok=(!f.lvl||el.dataset.lvl===f.lvl||el.dataset.lvl==="all")&&(!f.kind||el.dataset.kind.split(" ").indexOf(f.kind)>=0)&&(!f.skill||(el.dataset.skill||"").indexOf(f.skill)>=0)&&(!q||el.dataset.q.indexOf(q)>=0||el.textContent.toLowerCase().indexOf(q)>=0);
 el.hidden=!ok; if(ok)shown++;});
-sec.querySelectorAll("details.course").forEach(function(d){var v=d.querySelectorAll("li:not([hidden])").length;d.hidden=!v;if(v&&q)d.open=true;});
+sec.querySelectorAll("details.course").forEach(function(d){var v=d.querySelectorAll("li:not([hidden])").length;d.hidden=!v;if(v&&q)d.open=true;var c=d.querySelector(".cnt");if(c){if(!c.dataset.full)c.dataset.full=c.textContent;c.textContent=(f.lvl||f.kind||f.skill||q)?(v+(v===1?" lesson matches":" lessons match")):c.dataset.full;}});
 sec.querySelectorAll("h4").forEach(function(h){var u=h.nextElementSibling;h.hidden=u&&!u.querySelector("li:not([hidden])");u&&(u.hidden=h.hidden);});
 var filtering=f.lvl||f.kind||f.skill||q;
 sec.hidden=(f.sec&&sec.id!==f.sec)||(filtering&&!shown);
