@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ESOL Speaking &amp; Listening Placement Interview – teachers only</title>
+<style>
+:root{--bg:#f6f7f4;--card:#fff;--ink:#1f2a24;--muted:#5c6b62;--line:#dde3dc;--accent:#1d6b54;--soft:#e1efe9;--warn:#8a4b00;--warnbg:#fdf3e3;--warnline:#e3b981}
+@media (prefers-color-scheme:dark){:root{--bg:#141a17;--card:#1c2420;--ink:#e7ede9;--muted:#9fb0a6;--line:#2d3833;--accent:#5cc3a0;--soft:#1f3a30;--warn:#f0c48a;--warnbg:#2a2113;--warnline:#6b5223}}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Verdana,Arial,sans-serif}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 120px}
+h1{font-size:1.5rem;margin:0 0 6px}
+h2{font-size:1.1rem;margin:26px 0 8px;border-bottom:2px solid var(--accent);padding-bottom:5px}
+p{margin:0 0 12px}
+.sub{color:var(--muted);margin:0 0 20px}
+.warn{background:var(--warnbg);border:1px solid var(--warnline);border-left:6px solid var(--warnline);border-radius:8px;padding:14px 16px;margin:0 0 22px;color:var(--warn)}
+.warn b{display:block;font-size:1.05rem;margin-bottom:6px}
+.warn ul{margin:8px 0 0;padding-left:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px}
+label{display:block;font-weight:bold;margin:0 0 8px}
+.pinrow{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+input[type=password]{font:inherit;font-size:1.3rem;letter-spacing:.5em;text-align:center;width:150px;padding:10px 12px;border:2px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)}
+input[type=password]:focus{outline:none;border-color:var(--accent)}
+button{font:inherit;font-weight:bold;padding:11px 22px;border:0;border-radius:8px;background:var(--accent);color:#fff;cursor:pointer}
+button:hover{filter:brightness(1.08)}
+.err{color:#b3261e;font-weight:bold;margin:10px 0 0}
+@media (prefers-color-scheme:dark){.err{color:#ff8a80}}
+ol,ul{margin:0 0 12px;padding-left:22px}
+li{margin:0 0 7px}
+.go{display:inline-block;background:var(--accent);color:#fff;font-weight:bold;text-decoration:none;padding:12px 20px;border-radius:8px;margin:4px 0 6px}
+.go:hover{filter:brightness(1.08)}
+.quote{background:var(--soft);border-radius:6px;padding:2px 8px;font-weight:bold}
+table{border-collapse:collapse;width:100%;margin:0 0 12px}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top;font-size:.95rem}
+th{background:var(--soft)}
+.back{display:inline-block;margin-top:28px;color:var(--accent)}
+.atin-logo{position:fixed;left:calc(6px + env(safe-area-inset-left,0px));bottom:calc(6px + env(safe-area-inset-bottom,0px));z-index:2147483000;pointer-events:none;color:#1F3A5F;background:rgba(255,255,255,.92);border:1px solid #C9D3DF;border-radius:8px;padding:3px 5px;line-height:0}
+.atin-logo svg{display:block}
+@media print{.atin-logo{position:fixed;left:auto;right:6mm;bottom:5mm;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style></head>
+<body>
+<div class="wrap">
+<h1>ESOL Speaking &amp; Listening Placement Interview (E1–L2)</h1>
+<p class="sub">A spoken placement interview run by Claude. The learner wears headphones and talks to it directly; it ends with an approximate ESB level.</p>
+
+<div class="warn">
+<b>&#9888; Teachers only – not for learners</b>
+This page is not a test learners can sit on their own. Running it needs a teacher with a Claude account, signed in on the classroom machine, with the project open in voice mode.
+<ul>
+<li>Learners must never open the interview themselves – they would see the questions, the levels and other learners' results.</li>
+<li>Results and feedback are released only to the teacher, on asking.</li>
+<li>Vary nothing by hand: the interview changes itself between learners so the next one in the room can't copy answers.</li>
+</ul>
+</div>
+
+<div class="card" id="gate">
+<label for="pin">Teacher PIN</label>
+<div class="pinrow">
+<input type="password" id="pin" inputmode="numeric" pattern="[0-9]*" maxlength="8" autocomplete="off" aria-describedby="pinhelp">
+<button type="button" id="go">Show instructions</button>
+</div>
+<p class="sub" id="pinhelp" style="margin:12px 0 0">Four digits. Ask Atin if you don't have it.</p>
+<p class="err" id="err" hidden>Wrong PIN. Try again.</p>
+</div>
+
+<div id="content" hidden>
+
+<h2>How to run it</h2>
+<ol>
+<li>Open the ESOL project in Claude on the classroom machine and turn on voice mode.<br>
+<a class="go" href="https://claude.ai/project/01a05cae-6649-70d7-b99f-bcedefaa4995" target="_blank" rel="noopener noreferrer">Open the ESOL project in Claude &#8599;</a></li>
+<li>Say or type: <span class="quote">run the speaking placement test</span></li>
+<li>Put headphones and a microphone on the first learner. Sit them where the rest of the class can't hear the questions.</li>
+<li>The learner says <span class="quote">Hello, I'm here</span> and the interview begins. It asks one question at a time and lasts about five minutes.</li>
+<li>It finishes with <span class="quote">Thank you, that's the end of the test</span> and asks the learner to fetch the next student. Then it stays quiet until the next learner says <span class="quote">Hello, I'm here</span>.</li>
+<li>No result is read out in front of the learner. To see the results table, say <span class="quote">This is the teacher</span>.</li>
+</ol>
+
+<h2>What it covers</h2>
+<table>
+<tr><th>Range</th><td>ESB ESOL Skills for Life, Entry 1 to Level 2+</td></tr>
+<tr><th>Length</th><td>About 5 minutes per learner; it stops early once the level is clear</td></tr>
+<tr><th>Skills</th><td>Speaking and listening. One listening text, returned to later with different questions, with a plain spoken explanation before the first listening item</td></tr>
+<tr><th>Result</th><td>An approximate level per learner, plus two or three sentences of feedback. Ask for the full breakdown if you want it</td></tr>
+<tr><th>Records</th><td>A results table per class, shown in the chat to the teacher on request</td></tr>
+</table>
+
+<h2>Before the first learner</h2>
+<ul>
+<li>Test the microphone and headphones. A room where others can overhear defeats the point.</li>
+<li>Have the class list to hand – each learner gives their name at the start.</li>
+<li>Give the rest of the class something to get on with: this runs one learner at a time.</li>
+</ul>
+
+<p class="sub">SMART targets can be generated from the same results in the project afterwards.</p>
+</div>
+
+<a class="back" href="../index.html#assessments">&#8592; Back to the ESOL Library</a>
+</div>
+
+<div class="atin-logo" aria-label="Made by Atin">
+<svg viewBox="104 28 172 134" width="64" height="50" role="img" aria-hidden="true">
+<text x="139" y="112" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="72" fill="currentColor">A</text>
+<rect x="177" y="83" width="24" height="6" rx="1" fill="currentColor"/>
+<path d="M216 66 L216 106 A25 7 0 0 0 266 106 L266 66" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+<ellipse cx="241" cy="66" rx="25" ry="7" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="216" y1="80" x2="266" y2="80" stroke="currentColor" stroke-width="1.5"/>
+<line x1="216" y1="94" x2="266" y2="94" stroke="currentColor" stroke-width="1.5"/>
+<ellipse cx="241" cy="47" rx="23" ry="5" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="114" y1="128" x2="266" y2="128" stroke="currentColor" stroke-width="1"/>
+<text x="190" y="152" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" letter-spacing="2" fill="currentColor">made by Atin</text>
+</svg>
+</div>
+
+<script>
+(function(){
+  var PIN="0000";
+  var pin=document.getElementById('pin'),go=document.getElementById('go'),
+      err=document.getElementById('err'),gate=document.getElementById('gate'),
+      content=document.getElementById('content');
+  function unlock(){
+    gate.hidden=true; content.hidden=false;
+    try{sessionStorage.setItem('spt','1');}catch(e){}
+    content.scrollIntoView({behavior:'smooth',block:'start'});
+  }
+  function check(){
+    if(pin.value.trim()===PIN){unlock();}
+    else{err.hidden=false;pin.value='';pin.focus();}
+  }
+  go.addEventListener('click',check);
+  pin.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();check();}});
+  pin.addEventListener('input',function(){err.hidden=true;});
+  try{if(sessionStorage.getItem('spt')==='1'){gate.hidden=true;content.hidden=false;}}catch(e){}
+})();
+</script>
+</body></html>
