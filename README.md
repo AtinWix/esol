@@ -63,6 +63,13 @@ Word documents:
 - [Task 4 Listening – recording transcripts (teacher)](e1/speaking-listening/docs/task4-listening-recording-transcripts-teacher.pdf) (PDF) · [Word](e1/speaking-listening/docs/task4-listening-recording-transcripts-teacher.docx)
 - [E1 Days, Times and Prices – Kahoot Quiz](e1/speaking-listening/listening-days-times-prices-kahoot.pdf) (PDF) · [Word](e1/speaking-listening/listening-days-times-prices-kahoot.xlsx)
 
+## e1/writing
+- [E1 Writing – Describe the Picture – Practice with Feedback](bank/writing/describing-a-picture/describe-the-picture/student/describe-the-picture-writing-practice.html) – Learners write 4–5 sentences about four pictures, with word help, a checklist and an example answer. Teacher PIN opens a version with live feedback.
+
+Word documents:
+- [About me – model texts, questions and capital letters – answers (teacher)](e1/writing/docs/about-me-model-texts-questions-and-capital-letters-answers.pdf) (PDF) · [Word](e1/writing/docs/about-me-model-texts-questions-and-capital-letters-answers.docx)
+- [About me – model texts, questions and capital letters](e1/writing/docs/about-me-model-texts-questions-and-capital-letters.pdf) (PDF) · [Word](e1/writing/docs/about-me-model-texts-questions-and-capital-letters.docx)
+
 ## e2/speaking-listening
 - [E2 Comparatives – Find the Error – Interactive Practice](e2/speaking-listening/comparatives-find-the-error-interactive-practice.html) – 20 sentences: tap the mistake, then write the sentence correctly. Works on phones and PCs.
 - [E2 Comparatives – Speaking Task 3 Two Pictures – Projector Lesson](e2/speaking-listening/comparatives-task3-two-pictures-projector-lesson.html)
