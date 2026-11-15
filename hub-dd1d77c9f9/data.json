@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-14T19:46:48Z",
+ "updatedAt": "2026-11-15T07:14:03Z",
  "upcoming": {
   "2026-11-02_e3": {
    "afternoon": "PC room: Too Cold to Learn – complaint emails",
@@ -99,8 +99,11 @@
   },
   "2026-11-09_e3": {
    "afternoon": "PC room: adjective or adverb? input and board choice task; Find the error (20, online); Google Maps check of the morning place; write 4–5 sentences and post in Teams General, reply to two posts; Millionaire, whole class, run by you on the projector – class votes, you click (slide 8 opens it with the questions loaded)",
+   "asTaught": "As taught: both lessons logged as planned (AM Hackney places reading and Kahoot; PM PC room adjectives and adverbs).",
    "cls": "E3 Reading",
    "date": "2026-11-09",
+   "lastAmended": "2026-11-14",
+   "lastAmendedNote": "Retired the Hangman read-aloud page – the Victoria Park paragraph is now in the Day Plan and Answers, and the game reads it aloud itself.",
    "links": [
     {
      "label": "PRINT EVERYTHING – class of 21 (print once, double-sided)",
@@ -143,12 +146,11 @@
    "prep": "Arrange four tables (A–D) before 9:30. Log PCs in before 12:30 and post the Find the error link in Teams. No cutting out. Learners need phones for the Vote card (QR on the voting slides). Last amended 6 Nov 2026 – replaces the earlier pronouns/ordering plan (moved to Wed 11 and Mon 16 Nov).",
    "print": "Print one file once, double-sided (43 sheets): your teacher script, then expert texts in group piles (A ×6, B ×5, C ×5, D ×5, each on its own sheet), then 21 question sheets (all four places, both sides). Nothing for the afternoon.",
    "title": "As taught: Hackney Places – adjectives, adverbs and jigsaw reading (observed lesson)",
-   "amended": "2026-11-14T19:34:46Z",
-   "lastAmended": "2026-11-14",
-   "lastAmendedNote": "Retired the Hangman read-aloud page – the Victoria Park paragraph is now in the Day Plan and Answers, and the game reads it aloud itself."
+   "amended": "2026-11-14T19:34:46Z"
   },
   "2026-11-10_e1": {
    "afternoon": "REPLANNED, learners on their own PCs for most of the lesson: one community-centre timetable, present simple only – timetable tasks and partner questions on the PC; Task 4 Scripts A–F answered on the PC as you play them; Partner A/B information gap; find the mistake; Hangman Paragraphs; Sara's talk gap-fill, then each learner's 'My week' talk on screen and given to a partner; Kahoot. Projector only for instructions and checking.",
+   "amended": "2026-11-14T08:20:57Z",
    "asTaught": "As taught: AM Task 4 days, times and prices with a gapfill added; PM (PC room) replanned community-centre timetable tasks, Scripts, information gap and present simple corrections. The Kahoot and the paired talk preparation were not finished and are carried to Tue 17 Nov.",
    "cls": "E1 Speaking & Listening",
    "date": "2026-11-10",
@@ -209,14 +211,16 @@
    "morning": "My week warm-up (present simple); Exam Prep Lesson 11 – days, prices, times; Task 4 texts 1–2 with Yes/No on phones (vote card); handout sections A–D; copy-and-complete dialogue from the board (AM slide 13, Script G)",
    "prep": "Post the PM learners' page link in Teams General. Check the projector sound for the scripts.",
    "print": "AM: Lesson 11 Handout E1-11A (1 side, one each). PM: nothing to print – all on the PCs. Nothing to cut out.",
-   "title": "As taught: Days, times and prices for Task 4 – community centre (PM replanned)",
-   "amended": "2026-11-14T08:20:57Z"
+   "title": "As taught: Days, times and prices for Task 4 – community centre (PM replanned)"
   },
   "2026-11-11_e3": {
    "afternoon": "Classroom, paper: time order with Hawa's Morning (3A); alphabetical order on the projector – learners come up and tap the words in order (slides 7–9), then 3B; then ESB Set L Tasks 1 and 2 (14 questions) under timed conditions, swap-and-mark with proof from the text",
+   "amended": "2026-11-14T19:34:46Z",
    "asTaught": "As taught: AM Exam Prep Lesson 2 as planned. PM time order (3A) and alphabetical order (3B) on the projector – the projector lesson was covered (slides 1–10). Only the ESB Set L paper (Tasks 1–2) was not sat; it moves to Mon 16 Nov.",
    "cls": "E3 Reading",
    "date": "2026-11-11",
+   "lastAmended": "2026-11-14",
+   "lastAmendedNote": "Print pack moved to _class/. Retired the Hangman read-aloud page – the cycling paragraph is now in the Day Plan and Answers, and the game reads it aloud itself.",
    "links": [
     {
      "label": "Print pack – print once, double-sided (94 pages)",
@@ -270,13 +274,11 @@
    "morning": "Exam Prep Lesson 2: Hangman Paragraphs settle-in; who is 'he'? what is 'it'? (2A); read Two Wheels and a New Start and track pronouns (2B, 2C A); guess words from context (2C B); find details (2C C); 20-question Kahoot; be the examiner – learners write two exam questions each pair",
    "prep": "Print the Set L handout (Tasks 1 and 2, link below). Have the Kahoot ready and the timer slide open before 12:30. No cutting out.",
    "print": "Print pack only (94 pages, double-sided) – day plan, What to say script, Lesson 2 handouts ×21, Lesson 3 page 1 ×21. Plus Set L handout – Tasks 1 and 2 (link below, 2 pages double-sided, one each).",
-   "title": "Pronouns, word meaning, ordering tasks and an ESB paper (Set L Tasks 1–2)",
-   "amended": "2026-11-14T19:34:46Z",
-   "lastAmended": "2026-11-14",
-   "lastAmendedNote": "Print pack moved to _class/. Retired the Hangman read-aloud page – the cycling paragraph is now in the Day Plan and Answers, and the game reads it aloud itself."
+   "title": "Pronouns, word meaning, ordering tasks and an ESB paper (Set L Tasks 1–2)"
   },
   "2026-11-12_e2": {
    "afternoon": "PC room, students on own PCs throughout: Hangman Paragraphs in pairs (p10); A going to or will? (p11); B build the question + ask a neighbour (p12); C find and correct the mistake (p13); D 4 sentences posted in Teams (p14); E Task 4b answers posted in Teams (p16); Kahoot on PCs (p15)",
+   "amended": "2026-11-14T08:20:57Z",
    "asTaught": "As taught: AM ESB Exam Practice worksheet Tasks 1–4 with new Task 3 images and a new Task 4a audio page, done up to section D (Task 3). PM (PC room) the Future Plans (going to and will) lesson page up to slide 8. Task 4a and 4b (worksheet sections E and F) and the remaining PC activities carry to Thu 19 Nov.",
    "cls": "E2 Speaking & Listening",
    "date": "2026-11-12",
@@ -285,6 +287,7 @@
     "xlsx": "https://atinwix.github.io/esol/e2/speaking-listening/docs/future-plans-going-to-will-speaking-tasks-2-and-4-kahoot.xlsx"
    },
    "lastAmended": "2026-11-14",
+   "lastAmendedNote": "Removed the \"Lesson audio – Scripts A, B, C\" link. It pointed at a Claude artifact whose three play buttons referenced MP3s (script-a-lina-and-sam.mp3 and two others) that were never created, so it had played nothing since 12 Nov. Script A's audio is embedded on page 7 of the lesson page and all three scripts are in that page and the day plan. Earlier note (12 Nov): will corrected (decide now incl. offers / promise / prediction; evidence = going to), page 5 answer 8 fixed, handout Task 2 updated; afternoon reworked for own PCs; replaced superlatives lesson.",
    "links": [
     {
      "label": "Lesson page – AM projector + PM PC room (one file)",
@@ -314,12 +317,11 @@
    "morning": "Weekend-plans warmer; Amina's busy week (reading, find going to); going to form drill; will for decide-now and offers with Vote Card; handout Tasks 1–2; Task 2 talk 'My plans for next weekend'; Task 4a-style listening (you read the script – in the day plan); find-the-mistake at the board; Task 4b discussion in threes",
    "prep": "Filed in the library on 13 Nov (this was the lesson taught on 12 Nov). The Kahoot is an import file only.",
    "print": "Student handout (2 sides, one each). Nothing for the afternoon.",
-   "title": "Future plans – going to and will – Speaking Tasks 2 and 4 (replaces superlatives)",
-   "lastAmendedNote": "Removed the \"Lesson audio – Scripts A, B, C\" link. It pointed at a Claude artifact whose three play buttons referenced MP3s (script-a-lina-and-sam.mp3 and two others) that were never created, so it had played nothing since 12 Nov. Script A’s audio is embedded on page 7 of the lesson page and all three scripts are in that page and the day plan. Earlier note (12 Nov): will corrected (decide now incl. offers / promise / prediction; evidence = going to), page 5 answer 8 fixed, handout Task 2 updated; afternoon reworked for own PCs; replaced superlatives lesson.",
-   "amended": "2026-11-14T08:20:57Z"
+   "title": "Future plans – going to and will – Speaking Tasks 2 and 4 (replaces superlatives)"
   },
   "2026-11-16_e3": {
    "afternoon": "PC room, one lesson page on projector and PCs: which do you prefer and why?; four linking words (because, so, although, however); Task A choose the word; Task B read an opinion text and answer; Task C main idea or detail; Task D join the sentences; Task E online dictionary; Task F opinion in Teams; find the mistake",
+   "amended": "2026-11-14T19:34:46Z",
    "cls": "E3 Reading",
    "created": "2026-11-11",
    "date": "2026-11-16",
@@ -463,8 +465,7 @@
     "note": "AM: the ESB Set L paper owed from Wed 11 Nov, now the whole paper (3 tasks, 60 minutes, as the real exam)",
     "wc": "2026-11-16"
    },
-   "title": "ESB Set L full paper, then linking words and main idea (because, so, although, however)",
-   "amended": "2026-11-14T19:34:46Z"
+   "title": "ESB Set L full paper, then linking words and main idea (because, so, although, however)"
   },
   "2026-11-17_e1": {
    "afternoon": "PC room: Kahoot (days, times, prices); Task 3 recap on the PC; Task 1 and Task 4 practice on the PC; the whole exam in pairs (Tasks 1–4, candidate and assessor, two rounds); True/False feedback on what is still difficult",
@@ -648,6 +649,7 @@
   },
   "2026-11-19_e2": {
    "afternoon": "PC room: online practice A–C (going to or will, build the question, find the correct sentence); handout Task 3 + five sentences in Teams (yesterday, now, tomorrow, opinion, offer); Task 4a-style listening (weekend plan, audio page); Referee Interviews wheels; Kahoot (20 Qs)",
+   "amended": "2026-11-14T19:34:46Z",
    "cls": "E2 Speaking & Listening",
    "created": "2026-11-12",
    "date": "2026-11-19",
@@ -819,33 +821,36 @@
     "note": "exam preparation (backfilled 13 Nov, not checked against the class scheme)",
     "wc": "2026-11-16"
    },
-   "title": "Finish Task 4 (4a and 4b), then Future plans – going to and will",
-   "amended": "2026-11-14T19:34:46Z"
+   "title": "Finish Task 4 (4a and 4b), then Future plans – going to and will"
   }
  },
  "status": {},
  "health": {
-  "checkedAt": "2026-11-13T08:10:00Z",
+  "checkedAt": "2026-11-15T07:25:00Z",
   "items": [
    {
     "ok": true,
-    "text": "Next teaching days: Mon 16 E3, Tue 17 E1 and Thu 19 E2 are built. Wed 18 E3 correctly waits for your Mon 16 log. No faults, no flags on any card."
+    "text": "Next teaching days: Mon 16 E3, Tue 17 E1 and Thu 19 E2 are built, no flags on any card. Wed 18 E3 correctly waits for your Mon 16 log."
    },
    {
     "ok": true,
-    "text": "Thu 9, Tue 10, Wed 11 and Thu 12 Nov are logged, with ROW snippets, Covered/Next and 'As taught' cards in place."
+    "text": "Logged lessons 2–12 Nov all have ROW snippets, Covered/Next and 'As taught'. Mon 9 Nov was missing 'As taught' on its card; added."
    },
    {
     "ok": true,
-    "text": "Kahoot: Mon 16 E3 is ready in Kahoot. Tue 17 E1 and Thu 19 E2 are not yet in Kahoot – each card has the import file and a quiz game with the same 20 questions."
+    "text": "Kahoot: Tue 17 E1 and Thu 19 E2 are not yet in Kahoot (import files ready). The evening import task has not run yet; first run is tonight at 8:41pm and needs your home PC on with Chrome signed in. Otherwise use the one-minute manual route on the card."
    },
    {
     "ok": true,
-    "text": "Google Drive is no longer used. The leftover inbox items are filed in the library (13 Nov); the old Drive folders can be deleted."
+    "text": "Library lists have no id or claude fields. Day check and past-card check: no faults."
    },
    {
-    "ok": true,
-    "text": "System rebuilt 13 Nov: one runbook, this page is pushed after every change. 'Weekly ESOL lesson build' failed on Thu 12 Nov (usage limit) but nothing was outstanding."
+    "ok": false,
+    "text": "Two tasks failed on the usage limit: 'Next teaching day's lesson summary' (Fri 13 Nov, so the Mon 16 email did not go; the Mon 16 calendar event exists) and 'Weekly ESOL lesson build' (Thu 12 Nov, nothing outstanding)."
+   },
+   {
+    "ok": false,
+    "text": "Lesson Log fixes still open from 12 Nov: E2 Vote Card on slide 4 (new), E2 handout link (new; the handout is in the 19 Nov pack), Hub page sync (needs you; now synced)."
    }
   ],
   "ok": true
