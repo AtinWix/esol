@@ -128,6 +128,8 @@ Word documents:
 - [E3 Reading – Purpose, Pronouns & Word Meaning – Projector Lesson](e3/reading/purpose-pronouns-word-meaning-projector-lesson.html)
 
 Word documents:
+- [E3 Reading – A Banana That Stays Yellow – Vocabulary and Grammar Extra Activities – Answers (teacher)](e3/reading/docs/banana-stays-yellow-extra-activities-answers.pdf) (PDF) · [Word](e3/reading/docs/banana-stays-yellow-extra-activities-answers.docx)
+- [E3 Reading – A Banana That Stays Yellow – Vocabulary and Grammar Extra Activities – Student Handout](e3/reading/docs/banana-stays-yellow-extra-activities.pdf) (PDF) · [Word](e3/reading/docs/banana-stays-yellow-extra-activities.docx)
 - [Wk 7 – Camping advice email – reading, writing and modal verbs – answers (teacher)](e3/reading/docs/camping-advice-email-modal-verbs-answers.pdf) (PDF) · [Word](e3/reading/docs/camping-advice-email-modal-verbs-answers.docx)
 - [Wk 7 – Camping advice email – reading, writing and modal verbs](e3/reading/docs/camping-advice-email-modal-verbs.pdf) (PDF) · [Word](e3/reading/docs/camping-advice-email-modal-verbs.docx)
 - [Wk 1 Exam question types – sort activity – answers (teacher)](e3/reading/docs/exam-question-types-sort-activity-answers.pdf) (PDF) · [Word](e3/reading/docs/exam-question-types-sort-activity-answers.docx)
@@ -142,8 +144,12 @@ Word documents:
 - [Extra – Picnic emails – exam practice (27 questions)](e3/reading/docs/extra-picnic-emails-exam-practice.pdf) (PDF) · [Word](e3/reading/docs/extra-picnic-emails-exam-practice.docx)
 - [Extra – Picnic emails – reading practice from learners' writing (21 questions) – answers (teacher)](e3/reading/docs/extra-picnic-emails-reading-practice-from-learners-writing-answers.pdf) (PDF) · [Word](e3/reading/docs/extra-picnic-emails-reading-practice-from-learners-writing-answers.docx)
 - [Extra – Picnic emails – reading practice from learners' writing (21 questions)](e3/reading/docs/extra-picnic-emails-reading-practice-from-learners-writing.pdf) (PDF) · [Word](e3/reading/docs/extra-picnic-emails-reading-practice-from-learners-writing.docx)
+- [E3 Reading – Freecycle – Reading Practice Questions – Answers (teacher)](e3/reading/docs/freecycle-reading-practice-questions-answers.pdf) (PDF) · [Word](e3/reading/docs/freecycle-reading-practice-questions-answers.docx)
+- [E3 Reading – Freecycle – Reading Practice Questions – Student Handout](e3/reading/docs/freecycle-reading-practice-questions.pdf) (PDF) · [Word](e3/reading/docs/freecycle-reading-practice-questions.docx)
 - [Wk 5 Fruit vocabulary and alphabetical order – worksheet – answers (teacher)](e3/reading/docs/fruit-vocabulary-alphabetical-order-worksheet-answers.pdf) (PDF) · [Word](e3/reading/docs/fruit-vocabulary-alphabetical-order-worksheet-answers.docx)
 - [Wk 5 Fruit vocabulary and alphabetical order – worksheet](e3/reading/docs/fruit-vocabulary-alphabetical-order-worksheet.pdf) (PDF) · [Word](e3/reading/docs/fruit-vocabulary-alphabetical-order-worksheet.docx)
+- [E3 Reading – A Good Ear for Languages – Practice Exam (3 texts, 19 questions) – Answers (teacher)](e3/reading/docs/good-ear-reading-practice-exam-answers.pdf) (PDF) · [Word](e3/reading/docs/good-ear-reading-practice-exam-answers.docx)
+- [E3 Reading – A Good Ear for Languages – Practice Exam (3 texts, 19 questions) – Student Handout](e3/reading/docs/good-ear-reading-practice-exam.pdf) (PDF) · [Word](e3/reading/docs/good-ear-reading-practice-exam.docx)
 - [Wk 8 – Graffiti News – error hunt and reading questions – student printout – answers (teacher)](e3/reading/docs/graffiti-news-error-hunt-student-printout-answers.pdf) (PDF) · [Word](e3/reading/docs/graffiti-news-error-hunt-student-printout-answers.docx)
 - [Wk 8 – Graffiti News – error hunt and reading questions – student printout](e3/reading/docs/graffiti-news-error-hunt-student-printout.pdf) (PDF) · [Word](e3/reading/docs/graffiti-news-error-hunt-student-printout.docx)
 - [Wk 7 Graffiti warning poster – teacher notes and answers](e3/reading/docs/graffiti-warning-poster-lesson-and-worksheet-answers.pdf) (PDF) · [Word](e3/reading/docs/graffiti-warning-poster-lesson-and-worksheet-answers.docx)
