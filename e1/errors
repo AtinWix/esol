@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Entry 1 ESOL Find the Mistake</title>
+
+<style>
+
+body{
+font-family:Arial,sans-serif;
+background:#eef3f8;
+margin:0;
+padding:20px;
+}
+
+.container{
+max-width:1000px;
+margin:auto;
+}
+
+h1{
+text-align:center;
+color:#003366;
+}
+
+.teacher{
+background:#fff3bf;
+padding:12px;
+border-left:6px solid orange;
+margin-bottom:15px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 2px 8px rgba(0,0,0,0.15);
+}
+
+.question{
+font-size:2em;
+margin:20px 0;
+line-height:1.4;
+}
+
+input{
+font-size:1.2em;
+padding:10px;
+width:250px;
+max-width:100%;
+}
+
+button{
+padding:12px 18px;
+margin:6px;
+border:none;
+border-radius:6px;
+cursor:pointer;
+font-size:1em;
+}
+
+.check{background:#2563eb;color:white;}
+.reveal{background:#d97706;color:white;}
+.next{background:#16a34a;color:white;}
+.fullscreen{background:#6b21a8;color:white;}
+
+#feedback{
+margin-top:15px;
+font-size:1.3em;
+font-weight:bold;
+}
+
+.stats{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+margin-top:15px;
+font-size:1.1em;
+}
+
+.footer{
+margin-top:25px;
+font-size:12px;
+color:#666;
+}
+
+.correct{
+color:green;
+}
+
+.incorrect{
+color:#cc0000;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Entry 1 ESOL - Find the Mistake</h1>
+
+<div class="teacher">
+Teacher note: Students discuss the mistake with a partner before entering the correction.
+</div>
+
+<div class="card">
+
+<div id="questionNumber"></div>
+
+<div class="question" id="question"></div>
+
+<input type="text" id="answer" placeholder="Type the correct word">
+
+<br><br>
+
+<button class="check" onclick="checkAnswer()">Check</button>
+<button class="reveal" onclick="showAnswer()">Reveal Answer</button>
+<button class="next" onclick="nextQuestion()">Next Question</button>
+<button class="fullscreen" onclick="goFullScreen()">Full Screen</button>
+
+<div id="feedback"></div>
+
+<div class="stats">
+<div>Correct: <span id="score">0</span></div>
+<div>Attempts: <span id="attempts">0</span></div>
+<div>Accuracy: <span id="percent">0</span>%</div>
+</div>
+
+</div>
+
+<div class="footer">
+A-🥫 made by Atin
+</div>
+
+</div>
+
+<script>
+
+let questions = [
+
+["She are 35 years old.","is"],
+["I has two children.","have"],
+["He come from Sudan.","comes"],
+["They lives in Hackney.","live"],
+["I like cook.","cooking"],
+["My brother live in London.","lives"],
+["She like football.","likes"],
+["We goes to college.","go"],
+["He have a bus pass.","has"],
+["I speak Spanishes.","Spanish"],
+["They is from Poland.","are"],
+["She work in a shop.","works"],
+["I am liking coffee.","like"],
+["He don't live in London.","doesn't"],
+["We walks to college.","walk"],
+["My friend have a phone.","has"],
+["She study English.","studies"],
+["I goes by bus.","go"],
+["He are married.","is"],
+["They likes music.","like"]
+
+];
+
+questions.sort(() => Math.random() - 0.5);
+
+let current=0;
+let score=0;
+let attempts=0;
+
+function loadQuestion(){
+
+document.getElementById("question").textContent=
+questions[current][0];
+
+document.getElementById("questionNumber").textContent=
+"Question "+(current+1)+" of "+questions.length;
+
+document.getElementById("answer").value="";
+document.getElementById("feedback").innerHTML="";
+
+}
+
+function checkAnswer(){
+
+let user=
+document.getElementById("answer")
+.value
+.trim()
+.toLowerCase();
+
+let correct=
+questions[current][1].toLowerCase();
+
+attempts++;
+
+if(user===correct){
+
+score++;
+
+document.getElementById("feedback").innerHTML=
+"<span class='correct'>✅ Correct</span>";
+
+}else{
+
+document.getElementById("feedback").innerHTML=
+"<span class='incorrect'>❌ Try again or reveal the answer.</span>";
+
+}
+
+updateStats();
+}
+
+function showAnswer(){
+
+document.getElementById("feedback").innerHTML=
+"Correct answer: <strong>"+questions[current][1]+"</strong>";
+
+}
+
+function nextQuestion(){
+
+current++;
+
+if(current>=questions.length){
+
+alert("Activity complete!");
+
+current=0;
+
+questions.sort(() => Math.random() - 0.5);
+
+}
+
+loadQuestion();
+
+}
+
+function updateStats(){
+
+document.getElementById("score").textContent=score;
+document.getElementById("attempts").textContent=attempts;
+
+let pct=0;
+
+if(attempts>0){
+pct=Math.round((score/attempts)*100);
+}
+
+document.getElementById("percent").textContent=pct;
+
+}
+
+function goFullScreen(){
+
+document.documentElement.requestFullscreen();
+
+}
+
+loadQuestion();
+
+</script>
+
+</body>
+</html>
