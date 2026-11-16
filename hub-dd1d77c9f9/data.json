@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-15T07:14:03Z",
+ "updatedAt": "2026-11-16T07:14:18Z",
  "upcoming": {
   "2026-11-02_e3": {
    "afternoon": "PC room: Too Cold to Learn – complaint emails",
@@ -826,7 +826,7 @@
  },
  "status": {},
  "health": {
-  "checkedAt": "2026-11-15T07:25:00Z",
+  "checkedAt": "2026-11-16T07:30:00Z",
   "items": [
    {
     "ok": true,
@@ -834,23 +834,27 @@
    },
    {
     "ok": true,
-    "text": "Logged lessons 2–12 Nov all have ROW snippets, Covered/Next and 'As taught'. Mon 9 Nov was missing 'As taught' on its card; added."
+    "text": "Logged lessons 9–12 Nov all have ROW snippets, Covered/Next and 'As taught'."
    },
    {
     "ok": true,
-    "text": "Kahoot: Tue 17 E1 and Thu 19 E2 are not yet in Kahoot (import files ready). The evening import task has not run yet; first run is tonight at 8:41pm and needs your home PC on with Chrome signed in. Otherwise use the one-minute manual route on the card."
+    "text": "Day check on upcoming cards and --past check on the last four weeks: no faults. Library lists have no id or claude fields; no public material is also a Claude artifact."
    },
    {
     "ok": true,
-    "text": "Library lists have no id or claude fields. Day check and past-card check: no faults."
+    "text": "Kahoot: E3 had one on 11 Nov and E2 on 5 Nov, so each class is within its week."
    },
    {
     "ok": false,
-    "text": "Two tasks failed on the usage limit: 'Next teaching day's lesson summary' (Fri 13 Nov, so the Mon 16 email did not go; the Mon 16 calendar event exists) and 'Weekly ESOL lesson build' (Thu 12 Nov, nothing outstanding)."
+    "text": "Kahoot for Tue 17 E1 and Thu 19 E2 is still 'not yet in Kahoot'. The evening import task did not update either card last night, and it is not in the scheduled task list so I can't see whether it ran. For tomorrow, use the one-minute manual import on the card."
    },
    {
     "ok": false,
-    "text": "Lesson Log fixes still open from 12 Nov: E2 Vote Card on slide 4 (new), E2 handout link (new; the handout is in the 19 Nov pack), Hub page sync (needs you; now synced)."
+    "text": "Two tasks last failed on the usage limit: 'Next teaching day's lesson summary' (Fri 13 Nov; its next run is 2:33pm today) and 'Weekly ESOL lesson build' (Thu 12 Nov, now switched off, nothing outstanding)."
+   },
+   {
+    "ok": false,
+    "text": "Lesson Log fixes still open from 12 Nov: E2 lesson page slide 4 Vote Card (new), E2 handout link (new), Hub page public link (needs you)."
    }
   ],
   "ok": true
