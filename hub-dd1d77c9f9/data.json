@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-16T14:29:52Z",
+ "updatedAt": "2026-11-16T14:35:34Z",
  "upcoming": {
   "2026-11-02_e3": {
    "afternoon": "PC room: Too Cold to Learn – complaint emails",
@@ -282,23 +282,24 @@
    "asTaught": "As taught: AM ESB Exam Practice worksheet Tasks 1–4 with new Task 3 images and a new Task 4a audio page, done up to section D (Task 3). PM (PC room) the Future Plans (going to and will) lesson page up to slide 8. Task 4a and 4b (worksheet sections E and F) and the remaining PC activities carry to Thu 19 Nov.",
    "cls": "E2 Speaking & Listening",
    "date": "2026-11-12",
+   "flags": [],
    "kahoot": {
     "status": "not yet in Kahoot",
     "xlsx": "https://atinwix.github.io/esol/e2/speaking-listening/docs/future-plans-going-to-will-speaking-tasks-2-and-4-kahoot.xlsx"
    },
-   "lastAmended": "2026-11-14",
-   "lastAmendedNote": "Removed the \"Lesson audio – Scripts A, B, C\" link. It pointed at a Claude artifact whose three play buttons referenced MP3s (script-a-lina-and-sam.mp3 and two others) that were never created, so it had played nothing since 12 Nov. Script A's audio is embedded on page 7 of the lesson page and all three scripts are in that page and the day plan. Earlier note (12 Nov): will corrected (decide now incl. offers / promise / prediction; evidence = going to), page 5 answer 8 fixed, handout Task 2 updated; afternoon reworked for own PCs; replaced superlatives lesson.",
+   "lastAmended": "2026-11-16",
+   "lastAmendedNote": "16 Nov fixes from your Log: page 4 Vote Card now shows each choice in full as A (going to) / B (will) with an A/B vote; the student handout is linked on lesson pages 5–7 and here. Earlier: Removed the \"Lesson audio – Scripts A, B, C\" link. It pointed at a Claude artifact whose three play buttons referenced MP3s (script-a-lina-and-sam.mp3 and two others) that were never created, so it had played nothing since 12 Nov. Script A's audio is embedded on page 7 of the lesson page and all three scripts are in that page and the day plan. Earlier note (12 Nov): will corrected (decide now incl. offers / promise / prediction; evidence = going to), page 5 answer 8 fixed, handout Task 2 updated; afternoon reworked for own PCs; replaced superlatives lesson.",
    "links": [
     {
      "label": "Lesson page – AM projector + PM PC room (one file)",
      "url": "https://atinwix.github.io/esol/e2/speaking-listening/future-plans-going-to-will-speaking-tasks-2-and-4-projector-and-pc-lesson.html"
     },
     {
-     "label": "Day plan and answers (teacher)",
+     "label": "Day plan and answers (teacher) · last amended 16 Nov 2026",
      "url": "https://atinwix.github.io/esol/e2/speaking-listening/docs/future-plans-going-to-will-speaking-tasks-2-and-4-day-plan-and-answers.pdf"
     },
     {
-     "label": "Student handout (2 sides)",
+     "label": "Student handout (2 sides) – also linked on lesson pages 5–7",
      "url": "https://atinwix.github.io/esol/e2/speaking-listening/docs/future-plans-going-to-will-speaking-tasks-2-and-4-student-handout.pdf"
     },
     {
@@ -310,8 +311,8 @@
      "url": "https://atinwix.github.io/Hangman-Paragraphs-Game/?p=TmV4dCB3ZWVrIGlzIGdvaW5nIHRvIGJlIGJ1c3kgZm9yIEFtaW5hLiBPbiBNb25kYXkgc2hlIGlzIGdvaW5nIHRvIHZpc2l0IHRoZSBsaWJyYXJ5IGluIERhbHN0b24gYW5kIGpvaW4gYSBmcmVlIEVuZ2xpc2ggY2x1Yi4gT24gV2VkbmVzZGF5IHNoZSBpcyBnb2luZyB0byBtZWV0IGhlciBmcmllbmQgUm9zYSBhdCBSaWRsZXkgUm9hZCBNYXJrZXQuIFRoZXkgYXJlIGdvaW5nIHRvIGJ1eSB2ZWdldGFibGVzIGFuZCBjb29rIGRpbm5lciB0b2dldGhlci4gU2hlIGlzIG5vdCBnb2luZyB0byBnbyB0byB0aGUgZ3ltIGJlY2F1c2Ugc2hlIGhhcyBhIGJhZCBiYWNrLiBPbiBTYXR1cmRheSBzaGUgaXMgZ29pbmcgdG8gd2FsayB0byBWaWN0b3JpYSBQYXJrIHdpdGggaGVyIHNvbi4gU2hlIHRoaW5rcyBoZSB3aWxsIGxvdmUgdGhlIG5ldyBwbGF5Z3JvdW5kLg"
     },
     {
-     "label": "Vote Card (A–D)",
-     "url": "https://atinwix.github.io/esol/all-levels/classroom-tool-vote-card.html?mode=abcd"
+     "label": "Vote Card (A / B)",
+     "url": "https://atinwix.github.io/esol/games/classroom-tool-vote-card.html?mode=ab"
     }
    ],
    "morning": "Weekend-plans warmer; Amina's busy week (reading, find going to); going to form drill; will for decide-now and offers with Vote Card; handout Tasks 1–2; Task 2 talk 'My plans for next weekend'; Task 4a-style listening (you read the script – in the day plan); find-the-mistake at the board; Task 4b discussion in threes",
@@ -411,11 +412,11 @@
      "url": "https://atinwix.github.io/esol/e3/reading/linking-words-because-so-although-however-main-idea-and-detail-projector-and-pc-lesson.html#p9"
     }
    ],
-   "lastAmended": "2026-11-14",
-   "lastAmendedNote": "replanned 14 Nov: no repeat of Wednesday's teaching; whole Set L paper (Tasks 1–3, 60 min); afternoon = scheme week 11. The Kahoot moves to Wed 18 Nov.",
+   "lastAmended": "2026-11-16",
+   "lastAmendedNote": "16 Nov fixes from your Log: AM projector page is now just exam rules + 60-minute timer and one answer slide (Prove it and Fix two/target removed); PM page opens at page 1, has learners’ page codes (in the teacher notes) and a ★ Early finishers word search; Task E has six harder words and opens the Cambridge Learner’s Dictionary. Day plan and packs remade (teacher pages only). Earlier: replanned 14 Nov: no repeat of Wednesday's teaching; whole Set L paper (Tasks 1–3, 60 min); afternoon = scheme week 11. The Kahoot moves to Wed 18 Nov.",
    "links": [
     {
-     "label": "Print pack top-up – print once, double-sided (48 pages): new day plan + 21 × Task 3 · last amended 14 Nov 2026",
+     "label": "Print pack top-up – print once, double-sided (48 pages): day plan + 21 × Task 3 · last amended 16 Nov 2026",
      "url": "https://atinwix.github.io/esol/_class/print-pack-2026-11-16-top-up.pdf"
     },
     {
@@ -427,25 +428,25 @@
      "url": "https://atinwix.github.io/esol/e3/reading/docs/set-l-tasks-1-2-student-handout.pdf"
     },
     {
-     "label": "Day plan and answers · last amended 14 Nov 2026",
+     "label": "Day plan and answers · last amended 16 Nov 2026",
      "url": "https://atinwix.github.io/esol/e3/reading/docs/set-l-full-paper-and-linking-words-main-idea-day-plan-and-answers.pdf"
     },
     {
-     "label": "AM projector lesson – Set L full paper (6 pages)",
+     "label": "AM projector lesson – Set L full paper (2 pages: exam rules + timer, then answers)",
      "url": "https://atinwix.github.io/esol/e3/reading/esb-set-l-full-paper-exam-routine-timer-and-prove-it-projector-lesson.html"
     },
     {
-     "label": "PM lesson page – projector and PCs (9 pages; post in Teams)",
+     "label": "PM lesson page – projector and PCs (9 pages; post in Teams; learners’ page codes and teacher PIN in the day plan)",
      "url": "https://atinwix.github.io/esol/e3/reading/linking-words-because-so-although-however-main-idea-and-detail-projector-and-pc-lesson.html"
     },
     {
-     "label": "Full print pack (90 pages) – only if you need to reprint everything",
+     "label": "Full print pack (90 pages) – only if you need to reprint everything · last amended 16 Nov 2026",
      "url": "https://atinwix.github.io/esol/_class/print-pack-2026-11-16.pdf"
     }
    ],
    "morning": "Exam routine; ESB Set L Tasks 1–3 timed, 60 minutes, 21 questions (held over from Wed 11 Nov – now the whole paper, as in the exam); prove it – Tasks 1, 2 and 3; fix two answers, score and target",
    "pack": {
-    "issued": "2026-11-14",
+    "issued": "2026-11-16",
     "pages": 48,
     "url": "https://atinwix.github.io/esol/_class/print-pack-2026-11-16-top-up.pdf"
    },
@@ -650,7 +651,7 @@
   },
   "2026-11-18_e3": {
    "afternoon": "Two opinion letters (for and against a Saturday market) in a jigsaw: finishing sentences with because, so, although, however; read one letter and answer six questions; share and compare the two writers' reasons; Kahoot (20 questions)",
-   "amended": "2026-11-14T08:34:20Z",
+   "amended": "2026-11-16T14:30:01Z",
    "cls": "E3 Reading",
    "created": "2026-11-16",
    "date": "2026-11-18",
@@ -884,15 +885,15 @@
     "status": "not yet in Kahoot",
     "xlsx": "https://atinwix.github.io/esol/e2/speaking-listening/docs/future-plans-going-to-will-kahoot.xlsx"
    },
-   "lastAmended": "2026-11-14",
-   "lastAmendedNote": "14 Nov: print pack moved to _class/. Retired the Hangman read-aloud page – Tariq's paragraph is now in the Day Plan and Answers, and the game reads it aloud itself. Earlier (13 Nov): header added to the handout copies in the print pack; quiz game added. Lesson content unchanged.",
+   "lastAmended": "2026-11-16",
+   "lastAmendedNote": "16 Nov: slide 8 Vote Card fixed – each sentence now shows A (going to) and B (will) in full and the QR opens an A/B vote; day plan and print pack remade (teacher pages only – the student handout is unchanged). Earlier: 14 Nov: print pack moved to _class/. Retired the Hangman read-aloud page – Tariq's paragraph is now in the Day Plan and Answers, and the game reads it aloud itself. Earlier (13 Nov): header added to the handout copies in the print pack; quiz game added. Lesson content unchanged.",
    "links": [
     {
      "label": "Print pack – print once, double-sided (50 pages: day plan + 21 × handout)",
      "url": "https://atinwix.github.io/esol/_class/print-pack-2026-11-19.pdf"
     },
     {
-     "label": "Day plan and answers (teacher; Hangman paragraph is in here) · last amended 14 Nov 2026",
+     "label": "Day plan and answers (teacher; Hangman paragraph is in here) · last amended 16 Nov 2026",
      "url": "https://atinwix.github.io/esol/e2/speaking-listening/docs/future-plans-going-to-will-day-plan.pdf"
     },
     {
@@ -920,8 +921,8 @@
      "url": "https://atinwix.github.io/Hangman-Paragraphs-Game/?p=TmV4dCB3ZWVrZW5kIGlzIGdvaW5nIHRvIGJlIGJ1c3kgZm9yIFRhcmlxLiBPbiBTYXR1cmRheSBtb3JuaW5nIGhlIGlzIGdvaW5nIHRvIHBsYXkgZm9vdGJhbGwgd2l0aCBoaXMgZnJpZW5kcyBpbiBIYWNrbmV5IE1hcnNoZXMuIEluIHRoZSBhZnRlcm5vb24gaGUgaXMgZ29pbmcgdG8gY2xlYW4gaGlzIHJvb20gYmVjYXVzZSBpdCBpcyB2ZXJ5IGRpcnR5LiBPbiBTdW5kYXkgaGUgaXMgbWVldGluZyBoaXMgc2lzdGVyIGF0IERhbHN0b24gSnVuY3Rpb24gYXQgZWxldmVuIG8nY2xvY2suIFRoZXkgYXJlIGdvaW5nIHRvIGhhdmUgbHVuY2ggaW4gYSBUdXJraXNoIHJlc3RhdXJhbnQuIEluIHRoZSBldmVuaW5nIGhlIGlzIGdvaW5nIHRvIHBob25lIGhpcyBtb3RoZXIgaW4gSXN0YW5idWwuIEhlIHRoaW5rcyBzaGUgd2lsbCBiZSB2ZXJ5IGhhcHB5Lg"
     },
     {
-     "label": "Vote Card (A–D)",
-     "url": "https://atinwix.github.io/esol/all-levels/classroom-tool-vote-card.html?mode=abcd"
+     "label": "Vote Card (A / B)",
+     "url": "https://atinwix.github.io/esol/games/classroom-tool-vote-card.html?mode=ab"
     },
     {
      "label": "Referee Interviews speaking wheels",
@@ -938,7 +939,7 @@
    ],
    "morning": "Hangman Paragraphs (Tariq's weekend); worksheet section E Task 4a (listen twice, audio page); section F Task 4b group discussion in threes (two topics); going to or will? rules; Vote Card A/B (QR); handout Task 1; Task 2 talk 'My plans for next weekend'",
    "pack": {
-    "issued": "2026-11-12",
+    "issued": "2026-11-16",
     "pages": 50,
     "url": "https://atinwix.github.io/esol/_class/print-pack-2026-11-19.pdf"
    },
