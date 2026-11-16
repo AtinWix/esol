@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-16T07:14:18Z",
+ "updatedAt": "2026-11-16T14:29:52Z",
  "upcoming": {
   "2026-11-02_e3": {
    "afternoon": "PC room: Too Cold to Learn – complaint emails",
@@ -322,6 +322,7 @@
   "2026-11-16_e3": {
    "afternoon": "PC room, one lesson page on projector and PCs: which do you prefer and why?; four linking words (because, so, although, however); Task A choose the word; Task B read an opinion text and answer; Task C main idea or detail; Task D join the sentences; Task E online dictionary; Task F opinion in Teams; find the mistake",
    "amended": "2026-11-14T19:34:46Z",
+   "asTaught": "As taught: AM the purpose, text type and audience handout only; the Set L paper, Prove it, fix-two and target were not taught (the Set L paper moves to Wed 18 Nov, as paper only). PM, PC room: all nine pages taught (linking words, Tasks A–F, find the mistake); the Task E dictionary words were too easy and need harder words.",
    "cls": "E3 Reading",
    "created": "2026-11-11",
    "date": "2026-11-16",
@@ -646,6 +647,137 @@
    },
    "title": "Task 4 short conversations, Task 1 questions and a full Tasks 1–4 run-through",
    "amended": "2026-11-14T19:34:46Z"
+  },
+  "2026-11-18_e3": {
+   "afternoon": "Two opinion letters (for and against a Saturday market) in a jigsaw: finishing sentences with because, so, although, however; read one letter and answer six questions; share and compare the two writers' reasons; Kahoot (20 questions)",
+   "amended": "2026-11-14T08:34:20Z",
+   "cls": "E3 Reading",
+   "created": "2026-11-16",
+   "date": "2026-11-18",
+   "flags": [],
+   "items": [
+    {
+     "id": "am1",
+     "lesson": 1,
+     "text": "Set L Tasks 1–3 on paper: exam rules and 60-minute timer",
+     "url": "https://atinwix.github.io/esol/bank/reading/exam-practice-and-papers/set-l-practice-paper/student/esb-set-l-practice-paper-timer-rules-and-answers-projector-lesson.html"
+    },
+    {
+     "id": "am2",
+     "lesson": 1,
+     "text": "Mark the paper with the answer page (21 marks)",
+     "url": "https://atinwix.github.io/esol/bank/reading/exam-practice-and-papers/set-l-practice-paper/student/esb-set-l-practice-paper-timer-rules-and-answers-projector-lesson.html"
+    },
+    {
+     "id": "am3",
+     "lesson": 1,
+     "text": "Feedback on the three most-missed questions",
+     "url": "https://atinwix.github.io/esol/bank/reading/exam-practice-and-papers/set-l-practice-paper/student/esb-set-l-practice-paper-timer-rules-and-answers-projector-lesson.html"
+    },
+    {
+     "id": "pm1",
+     "lesson": 2,
+     "text": "Finish eight sentences with because, so, although, however",
+     "url": "https://atinwix.github.io/esol/bank/reading/purpose-and-main-idea/saturday-market-letters/student/saturday-market-letters-linking-words-main-idea-projector-lesson.html"
+    },
+    {
+     "id": "pm2",
+     "lesson": 2,
+     "text": "Read Letter A or B and answer six questions (Handout 3A / 3B)",
+     "url": "https://atinwix.github.io/esol/bank/reading/purpose-and-main-idea/saturday-market-letters/student/saturday-market-letters-linking-words-main-idea-projector-lesson.html"
+    },
+    {
+     "id": "pm3",
+     "lesson": 2,
+     "text": "Check the answers for both letters",
+     "url": "https://atinwix.github.io/esol/bank/reading/purpose-and-main-idea/saturday-market-letters/student/saturday-market-letters-linking-words-main-idea-projector-lesson.html"
+    },
+    {
+     "id": "pm4",
+     "lesson": 2,
+     "text": "Share the two letters in pairs; table and four sentences (Handout 4)",
+     "url": "https://atinwix.github.io/esol/bank/reading/purpose-and-main-idea/saturday-market-letters/student/saturday-market-letters-linking-words-main-idea-projector-lesson.html"
+    },
+    {
+     "id": "pm5",
+     "lesson": 2,
+     "text": "Kahoot, 20 questions",
+     "url": "https://atinwix.github.io/esol/bank/reading/purpose-and-main-idea/saturday-market-letters/student/saturday-market-letters-linking-words-main-idea-projector-lesson.html"
+    }
+   ],
+   "kahoot": {
+    "details": "",
+    "note": "",
+    "status": "not yet in Kahoot",
+    "xlsx": "https://atinwix.github.io/esol/bank/reading/purpose-and-main-idea/saturday-market-letters/student/linking-words-main-idea-and-exam-skills-kahoot.xlsx"
+   },
+   "lastAmended": "2026-11-16",
+   "lastAmendedNote": "new day built after the Mon 16 Nov log",
+   "links": [
+    {
+     "label": "Print pack – print once, double-sided (184 pages) · last amended 16 Nov 2026",
+     "url": "https://atinwix.github.io/esol/_class/print-pack-2026-11-18.pdf"
+    },
+    {
+     "label": "Handout 1 – Set L Tasks 1–2 – one copy",
+     "url": "https://atinwix.github.io/esol/e3/reading/docs/set-l-tasks-1-2-student-handout.pdf"
+    },
+    {
+     "label": "Handout 2 – Set L Task 3 – one copy",
+     "url": "https://atinwix.github.io/esol/e3/reading/docs/set-l-task-3-student-handout.pdf"
+    },
+    {
+     "label": "Handout 3A – Letter A – one copy · last amended 16 Nov 2026",
+     "url": "https://atinwix.github.io/esol/bank/reading/purpose-and-main-idea/saturday-market-letters/student/saturday-market-letters-letter-a-student-handout.pdf"
+    },
+    {
+     "label": "Handout 3B – Letter B – one copy · last amended 16 Nov 2026",
+     "url": "https://atinwix.github.io/esol/bank/reading/purpose-and-main-idea/saturday-market-letters/student/saturday-market-letters-letter-b-student-handout.pdf"
+    },
+    {
+     "label": "Handout 4 – Compare the letters – one copy · last amended 16 Nov 2026",
+     "url": "https://atinwix.github.io/esol/bank/reading/purpose-and-main-idea/saturday-market-letters/student/saturday-market-letters-compare-the-letters-student-handout.pdf"
+    },
+    {
+     "label": "Handout 5 – Word search (fast finishers) – one copy · last amended 16 Nov 2026",
+     "url": "https://atinwix.github.io/esol/bank/reading/cover-and-quiet-tasks/reading-words/student/reading-words-word-search-student-handout.pdf"
+    },
+    {
+     "label": "Day plan and answers · last amended 16 Nov 2026",
+     "url": "https://atinwix.github.io/esol/bank/reading/purpose-and-main-idea/saturday-market-letters/teacher/set-l-practice-paper-and-opinion-letters-day-plan-and-answers.pdf"
+    },
+    {
+     "label": "AM projector page – Set L timer, rules and answers (2 pages)",
+     "url": "https://atinwix.github.io/esol/bank/reading/exam-practice-and-papers/set-l-practice-paper/student/esb-set-l-practice-paper-timer-rules-and-answers-projector-lesson.html"
+    },
+    {
+     "label": "PM projector page – Letters to the Local Voice (6 pages)",
+     "url": "https://atinwix.github.io/esol/bank/reading/purpose-and-main-idea/saturday-market-letters/student/saturday-market-letters-linking-words-main-idea-projector-lesson.html"
+    },
+    {
+     "label": "Kahoot import file (20 Qs)",
+     "url": "https://atinwix.github.io/esol/bank/reading/purpose-and-main-idea/saturday-market-letters/student/linking-words-main-idea-and-exam-skills-kahoot.xlsx"
+    }
+   ],
+   "morning": "Exam rules and 60-minute timer; ESB Set L Tasks 1–3 on paper (21 questions); mark with the answer page; feedback on the most-missed questions",
+   "pack": {
+    "issued": "2026-11-16",
+    "pages": 184,
+    "url": "https://atinwix.github.io/esol/_class/print-pack-2026-11-18.pdf"
+   },
+   "plan": {
+    "am": "AM: Learners sat the ESB sample paper Set L (three texts, 21 questions) in 60 minutes under exam conditions. They swapped papers and marked them with the answers, then found in the texts the words that give the answers to the questions most learners got wrong.",
+    "pm": "PM: Learners finished sentences with because, so, although and however, then each read one of two opinion letters about a Saturday street market and answered six questions on the main idea and details. They shared their letter with a partner, compared the two writers' reasons, wrote sentences with the four linking words and finished with a Kahoot on linking words, main idea and exam skills."
+   },
+   "prep": "None beyond printing. Open the AM and PM pages in teacher mode (add ?teacher to the link); the PINs are in the teacher notes. Nothing to cut out.",
+   "print": "Print the pack once, double-sided (184 pages): the day plan, 21 × Set L Tasks 1–2, 21 × Set L Task 3, Letters A and B, 21 × Handout 4 and 6 word searches. Pages 5–88 are the Set L papers – if you already have 21 unused copies of each from Monday, print only pages 1–4 and 89–184.",
+   "replaced": [],
+   "scheme": {
+    "focus": "because, so, although, however; opinion texts; main idea and supporting detail",
+    "note": "AM: the ESB Set L paper still owed from Mon 16 Nov (not sat), as the week's full practice paper with feedback. PM: scheme week 11 continued; the online dictionary task is not repeated.",
+    "wc": "2026-11-16"
+   },
+   "title": "ESB Set L practice paper with feedback, then opinion letters: main idea, reasons and because, so, although, however"
   },
   "2026-11-19_e2": {
    "afternoon": "PC room: online practice A–C (going to or will, build the question, find the correct sentence); handout Task 3 + five sentences in Teams (yesterday, now, tomorrow, opinion, offer); Task 4a-style listening (weekend plan, audio page); Referee Interviews wheels; Kahoot (20 Qs)",
