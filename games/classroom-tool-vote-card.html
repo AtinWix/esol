@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@500;800&display=swap">
 <style>
 /* One screen on a phone. Mode tabs on top, big answer tiles below; tapping a tile fills the whole screen
-   with that answer so the teacher can see it from the front. Open in a mode with ?mode=abcd|num|tf|yn. */
+   with that answer so the teacher can see it from the front. Open in a mode with ?mode=ab|abcd|num|tf|yn. */
 :root{
   color-scheme:dark;
   --ground:#15171d;--panel:#232733;--ink:#f4f5f7;--muted:#9aa0ad;
@@ -59,6 +59,7 @@ body{background:var(--ground);color:var(--ink);font-family:var(--font);-webkit-t
 <body>
 <main class="picker" id="picker">
   <div class="tabs" role="tablist" aria-label="Answer type">
+    <button class="tab" role="tab" data-mode="ab">A / B</button>
     <button class="tab" role="tab" data-mode="abcd">A–D</button>
     <button class="tab" role="tab" data-mode="num">1–4</button>
     <button class="tab" role="tab" data-mode="tf">True / False</button>
@@ -90,12 +91,13 @@ body{background:var(--ground);color:var(--ink);font-family:var(--font);-webkit-t
 <script>
 (function(){
   var MODES={
+    ab:[{v:'A',c:'bg-A'},{v:'B',c:'bg-B'}],
     abcd:[{v:'A',c:'bg-A'},{v:'B',c:'bg-B'},{v:'C',c:'bg-C dark'},{v:'D',c:'bg-D'}],
     num:[{v:'1',c:'bg-num'},{v:'2',c:'bg-num'},{v:'3',c:'bg-num'},{v:'4',c:'bg-num'}],
     tf:[{v:'TRUE',s:'✓',c:'bg-true'},{v:'FALSE',s:'✗',c:'bg-false dark'}],
     yn:[{v:'YES',s:'✓',c:'bg-yes'},{v:'NO',s:'✗',c:'bg-no'}]
   };
-  var KEYS={abcd:'ABCD',num:'1234',tf:'TF',yn:'YN'};
+  var KEYS={ab:'AB',abcd:'ABCD',num:'1234',tf:'TF',yn:'YN'};
   var picker=document.getElementById('picker'),tiles=document.getElementById('tiles'),
       show=document.getElementById('show'),big=document.getElementById('big'),sym=document.getElementById('sym'),
       tabs=[].slice.call(document.querySelectorAll('.tab')),mode='abcd',lock=null;

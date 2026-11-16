@@ -104,7 +104,7 @@ Word documents:
 
 ## e3/reading
 - [E3 Reading – Hostel Garden and Computer Classes – Timed Online Practice Paper](e3/reading/hostel-garden-and-computer-classes-timed-online-practice-paper.html) – Two texts, 16 ESB-style questions, 40-minute clock, marks itself and shows score by skill – PC or phone
-- [E3 Reading – ESB Set L Full Paper (Tasks 1–3) – Exam Routine, Timer and Prove It – Projector Lesson](e3/reading/esb-set-l-full-paper-exam-routine-timer-and-prove-it-projector-lesson.html) – 60-minute timer, then every answer with the words in the text that prove it, one per click
+- [E3 Reading – ESB Set L Full Paper (Tasks 1–3) – Exam Rules, Timer and Answers – Projector Lesson](e3/reading/esb-set-l-full-paper-exam-routine-timer-and-prove-it-projector-lesson.html) – Exam rules with a 60-minute timer, then all 21 answers on one slide, one per click; the paper stays on paper
 - [E3 Reading – ESB Exam Skills – Interactive Quiz](e3/reading/esb-exam-skills-interactive-quiz.html)
 - [E3 Reading – ESB Mock Exam – Set O](e3/reading/esb-mock-exam-set-o.html)
 - [E3 Reading – Too Cold to Learn – Exam Practice (PC Room)](e3/reading/too-cold-to-learn-exam-practice.html)
@@ -123,7 +123,7 @@ Word documents:
 - [E3 Reading Skills – Hackney Bugle](e3/reading/reading-skills-hackney-bugle.html)
 - [E3 Reading – Ordering Tasks and an ESB Paper – Projector Lesson](e3/reading/ordering-tasks-exam-paper-projector-lesson.html) – Time order, alphabetical order, a timed ESB paper (Set L Tasks 1–2) and answers with proof – projector, no PCs needed
 - [E3 Reading – Ordering Tasks and Practice Paper – Projector Lesson](e3/reading/ordering-tasks-practice-paper-projector-lesson.html) – Time order, alphabetical order, online practice, timed online paper and answers – all on screen (PC room)
-- [E3 Reading – Linking Words (because, so, although, however) – Main Idea and Detail – Projector and PC Lesson](e3/reading/linking-words-because-so-although-however-main-idea-and-detail-projector-and-pc-lesson.html) – One page for projector and PCs: linking words, an opinion text with 8 questions, main idea or detail, joining sentences, online dictionary, opinion in Teams
+- [E3 Reading – Linking Words (because, so, although, however) – Main Idea and Detail – Projector and PC Lesson](e3/reading/linking-words-because-so-although-however-main-idea-and-detail-projector-and-pc-lesson.html) – One page for projector and PCs: linking words, an opinion text with 8 questions, main idea or detail, joining sentences, learner's dictionary, opinion in Teams; teacher page codes stop learners jumping ahead; early-finishers word search
 - [E3 Reading – Purpose Clues – Drag and Sort Activity](e3/reading/purpose-clues-drag-sort-activity.html) – Drag each clue onto its purpose: warn, advise, instruct, advertise, inform, describe
 - [E3 Reading – Purpose, Pronouns & Word Meaning – Projector Lesson](e3/reading/purpose-pronouns-word-meaning-projector-lesson.html)
 

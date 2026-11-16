@@ -68,6 +68,8 @@ input[type=text],textarea{font:inherit;font-size:.9em;padding:.3em .5em;border:2
 .small{font-size:.75em;color:var(--muted)}
 a.btn{display:inline-block;text-decoration:none;font-weight:700;padding:.5em 1em;border-radius:10px;background:var(--accent);color:#fff}
 .phrase{font-size:1.15em;margin:.25em 0}
+.vt{border-collapse:collapse;width:100%;font-size:.66em;line-height:1.2}.vt td{padding:.12em .35em;border-bottom:1px solid #dde3ec;vertical-align:top}.vt td.n{font-weight:700}.vt .vl{display:inline-block;min-width:1.3em;text-align:center;background:#1F3A5F;color:#fff;border-radius:4px}.vt .ans{font-size:.95em;display:inline;visibility:hidden}.vt .ans.show{visibility:visible}.vgrid{grid-template-columns:5fr 1fr!important}.vgrid h2{margin:.1em 0 .2em;font-size:1em}.vgrid .card{padding:6px 10px}
+.hlink{display:inline-block;margin-left:.6em;font-size:.65em;font-weight:700;color:#1F3A5F;background:#fff;border:1px solid #1F3A5F;border-radius:8px;padding:.15em .6em;text-decoration:none;vertical-align:top}
 </style>
 </head>
 <body>
@@ -151,28 +153,28 @@ a.btn{display:inline-block;text-decoration:none;font-weight:700;padding:.5em 1em
    <div class="card"><b>3. Predict – your opinion</b> <span class="small">(I think… / probably)</span><br><b>I think it'll be cold tomorrow.</b><br><span class="small">But you can SEE it now (black clouds) → going to: <b>It's going to rain.</b></span></div>
   </div>
   <p class="small">I'll = I will · it'll = it will · I won't = I will not · will + verb (no -s): She will help.</p>
-  <div class="grid2" style="margin-top:8px">
+  <div class="grid2 vgrid" style="margin-top:8px">
    <div class="card">
-    <h2>Vote: A = going to &nbsp; B = will</h2>
-    <ol class="q">
-     <li>I have a ticket. I ___ visit Leeds on Friday. <span class="ans">A – going to (plan)<br><span class="full">I have a ticket. I'm going to visit Leeds on Friday.</span></span></li>
-     <li>"I'm cold." "I ___ close the window." <span class="ans">B – will (decide now – an offer)<br><span class="full">"I'm cold." "I'll close the window."</span></span></li>
-     <li>"Can you pay me back?" "Yes, I ___ pay you on Friday. I promise." <span class="ans">B – will (promise)<br><span class="full">"Can you pay me back?" "Yes, I'll pay you on Friday. I promise."</span></span></li>
-     <li>We ___ move flat next month. We signed the papers. <span class="ans">A – going to (plan)<br><span class="full">We're going to move flat next month. We signed the papers.</span></span></li>
-     <li>I think Ali ___ pass his exam. He works hard. <span class="ans">B – will (prediction – my opinion)<br><span class="full">I think Ali will pass his exam. He works hard.</span></span></li>
-     <li>Look at those black clouds! It ___ rain. <span class="ans">A – going to (I can see it now)<br><span class="full">Look at those black clouds! It's going to rain.</span></span></li>
-     <li>"The lift is broken." "OK, I ___ take the stairs." <span class="ans">B – will (decide now)<br><span class="full">"The lift is broken." "OK, I'll take the stairs."</span></span></li>
-     <li>She ___ start college in January. She has a place. <span class="ans">A – going to (plan)<br><span class="full">She's going to start college in January. She has a place.</span></span></li>
-    </ol>
+    <h2>Vote A or B: which is better here?</h2>
+    <table class="vt">
+<tr><td class="n">1.</td><td>I have a ticket.</td><td><b class="vl">A</b> I'm going to visit Leeds on Friday.</td><td><b class="vl">B</b> I'll visit Leeds on Friday.</td><td><span class="ans">A (plan)</span></td></tr>
+<tr><td class="n">2.</td><td>"I'm cold."</td><td><b class="vl">A</b> "I'm going to close the window."</td><td><b class="vl">B</b> "I'll close the window."</td><td><span class="ans">B (decide now – an offer)</span></td></tr>
+<tr><td class="n">3.</td><td>"Can you pay me back?"</td><td><b class="vl">A</b> "Yes, I'm going to pay you on Friday. I promise."</td><td><b class="vl">B</b> "Yes, I'll pay you on Friday. I promise."</td><td><span class="ans">B (promise)</span></td></tr>
+<tr><td class="n">4.</td><td>We signed the papers.</td><td><b class="vl">A</b> We're going to move flat next month.</td><td><b class="vl">B</b> We'll move flat next month.</td><td><span class="ans">A (plan)</span></td></tr>
+<tr><td class="n">5.</td><td>The phone is ringing.</td><td><b class="vl">A</b> "I'm going to get it."</td><td><b class="vl">B</b> "I'll get it."</td><td><span class="ans">B (decide now)</span></td></tr>
+<tr><td class="n">6.</td><td>Look at those black clouds!</td><td><b class="vl">A</b> It's going to rain.</td><td><b class="vl">B</b> It'll rain.</td><td><span class="ans">A (I can see it now)</span></td></tr>
+<tr><td class="n">7.</td><td>"The lift is broken."</td><td><b class="vl">A</b> "OK, I'm going to take the stairs."</td><td><b class="vl">B</b> "OK, I'll take the stairs."</td><td><span class="ans">B (decide now)</span></td></tr>
+<tr><td class="n">8.</td><td>She has a place at college.</td><td><b class="vl">A</b> She's going to start in January.</td><td><b class="vl">B</b> She'll start in January.</td><td><span class="ans">A (plan)</span></td></tr>
+</table>
     <button class="reveal" data-sel=".ans">Show next answer</button>
    </div>
    <div class="card" style="text-align:center">
     <p>Scan to vote on your phone</p>
-    <div class="qr" data-qr="https://atinwix.github.io/esol/games/classroom-tool-vote-card.html?mode=abcd"></div>
-    <p class="small">Vote Card – use A or B only</p>
+    <div class="qr" data-qr="https://atinwix.github.io/esol/games/classroom-tool-vote-card.html?mode=ab"></div>
+    <p class="small">Vote Card – A or B</p>
    </div>
   </div>
-  <div class="tn">SAY: "Sometimes we use will. Three uses. One: decide NOW – no plan before. The bus is late – I'll walk. Offers to help are decisions now too: This bag is heavy – I'll help you. Two: promise – I'll call you tonight. I won't be late. Three: predict – your opinion, with I think or probably: I think it'll be cold tomorrow. Careful: if you can SEE it now – black clouds – we say going to: It's going to rain." Drill: "I'll walk. I'll help you. I'll call you tonight. I won't be late. I think it'll be cold tomorrow. It's going to rain." Then: "Scan the QR code. A is going to, B is will. Read number 1… vote now." Read each sentence aloud, wait for votes, click Show next answer, ask WHY (plan? decide now? promise? opinion? can you see it now?).</div>
+  <div class="tn">SAY: "Sometimes we use will. Three uses. One: decide NOW – no plan before. The bus is late – I'll walk. Offers to help are decisions now too: This bag is heavy – I'll help you. Two: promise – I'll call you tonight. I won't be late. Three: predict – your opinion, with I think or probably: I think it'll be cold tomorrow. Careful: if you can SEE it now – black clouds – we say going to: It's going to rain." Drill: "I'll walk. I'll help you. I'll call you tonight. I won't be late. I think it'll be cold tomorrow. It's going to rain." Then: "Scan the QR code. Each sentence has two answers, A and B. Read number 1. Which is better, A or B? Vote now." Read each sentence aloud, wait for votes, click Show next answer, ask WHY (plan? decide now? promise? opinion? can you see it now?).</div>
  </div>
  <div class="lookboard"><p class="big">👀 Look at the board</p><p>Page <span class="num"></span></p></div>
 </section>
@@ -180,6 +182,7 @@ a.btn{display:inline-block;text-decoration:none;font-weight:700;padding:.5em 1em
 <!-- 5 -->
 <section class="page board" data-look="Students: handout side 1 (Tasks 1–2)">
  <span class="label">WHOLE CLASS – eyes on the board</span>
+ <a class="hlink" href="docs/future-plans-going-to-will-speaking-tasks-2-and-4-student-handout.pdf" target="_blank" rel="noopener">Student handout (PDF)</a>
  <div class="content">
   <h1>Handout – Tasks 1 and 2</h1>
   <div class="grid2">
@@ -219,6 +222,7 @@ a.btn{display:inline-block;text-decoration:none;font-weight:700;padding:.5em 1em
 <!-- 6 -->
 <section class="page board" data-look="Students: handout side 2 (Task 3), then partner">
  <span class="label">WHOLE CLASS – eyes on the board</span>
+ <a class="hlink" href="docs/future-plans-going-to-will-speaking-tasks-2-and-4-student-handout.pdf" target="_blank" rel="noopener">Student handout (PDF)</a>
  <div class="content">
   <h1>Speaking Task 2 – Talk: My plans for next weekend</h1>
   <div class="grid2">
@@ -244,6 +248,7 @@ a.btn{display:inline-block;text-decoration:none;font-weight:700;padding:.5em 1em
 <!-- 7 -->
 <section class="page board" data-look="Students: handout side 2 (Task 4) – listen to the teacher">
  <span class="label">WHOLE CLASS – eyes on the board</span>
+ <a class="hlink" href="docs/future-plans-going-to-will-speaking-tasks-2-and-4-student-handout.pdf" target="_blank" rel="noopener">Student handout (PDF)</a>
  <div class="content">
   <h1>Listening – Sam and Lina's Saturday</h1>
   <p>Listen. Answer the questions on your handout (Task 4). You will hear it two times.</p>
