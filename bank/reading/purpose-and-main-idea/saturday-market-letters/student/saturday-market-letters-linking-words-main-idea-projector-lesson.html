@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Saturday Market Letters – Linking Words and Main Idea – Projector Lesson</title>
+<style>
+:root{--bg:#fff;--ink:#1d2433;--muted:#5b6474;--board:#e6f5e6;--boardline:#7cc47c;--accent:#1f5fbf;--good:#1a7f37;--bad:#cf222e;--card:#f4f6fa;--hl:#fff3b0}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Verdana,Arial,Helvetica,sans-serif;font-size:clamp(15px,1.5vw,26px);line-height:1.35}
+header{display:flex;align-items:center;gap:12px;padding:6px 16px;border-bottom:2px solid #dde3ec}
+header .t{font-weight:700;flex:1;font-size:.72em;min-width:0}
+@media(max-width:700px){header .t{display:none}}
+nav{display:flex;align-items:center;gap:8px}
+button{font:inherit;font-size:.8em;padding:.4em .9em;border-radius:10px;border:2px solid var(--accent);background:#fff;color:var(--accent);cursor:pointer}
+button.p{background:var(--accent);color:#fff}
+button:disabled{opacity:.4;cursor:default}
+#pn{font-weight:700;min-width:6.5em;text-align:center;font-size:.8em}
+main{padding:8px 16px 40px;max-width:1700px;margin:0 auto}
+.page{display:none;border-radius:16px;padding:12px 20px 14px;position:relative}
+.page.on{display:block}
+.page.board{background:var(--board);border:3px solid var(--boardline)}
+.label{float:right;margin:.35em 0 0 .6em;display:inline-block;background:#2f7d32;color:#fff;font-weight:700;font-size:.62em;padding:.2em .7em;border-radius:8px}
+h1{font-size:1.45em;margin:.1em 0 .3em}
+h2{font-size:1.1em;margin:.3em 0}
+p{margin:.35em 0}
+.look{display:none;font-size:9px;color:#555;margin-top:8px}
+body.teacher .look{display:block}
+.tnb{display:none;font-size:11px;padding:.15em .6em;margin-top:2px}
+body.teacher .tnb{display:inline-block}
+.tn{display:none;font-size:11px;line-height:1.4;color:#333;background:#fffbe6;border:1px dashed #c9a400;padding:6px 9px;margin-top:6px;border-radius:6px}
+.tn.open{display:block}
+body:not(.teacher) .tn{display:none!important}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(max-width:900px){.grid2,.grid3{grid-template-columns:1fr}}
+.card{background:#fff;border-radius:12px;padding:10px 14px;border:1px solid #cfe3cf}
+.ans{visibility:hidden;color:var(--good);font-weight:700}
+.ans.show{visibility:visible}
+.row{padding:.25em 0;border-bottom:1px solid #e3e7ee;display:flex;gap:.5em;align-items:baseline}
+.row .n{font-weight:700;min-width:1.7em}
+.row .q{flex:1}
+.timer{font-size:5.4em;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.05;text-align:center}
+.timer.low{color:var(--bad)}
+.banner{min-height:1.6em;text-align:center;font-weight:700;font-size:1.1em;color:var(--accent)}
+.rules{font-size:1.2em;line-height:1.5;padding-left:1.3em;margin:.2em 0}
+.lookboard{display:none;text-align:center;padding:14vh 0}
+.lookboard .big{font-size:2.2em}
+body.student .page.board .content{display:none}
+body.student .page.board .lookboard{display:block}
+.tally{display:none;gap:3px;align-items:center;font-size:.7em}
+body.teacher .tally{display:inline-flex}
+.tally button{padding:0 .5em;font-size:1em}
+.tally b{min-width:1.2em;text-align:center}
+.top{background:#fff3b0;border-radius:6px}
+.foot{position:fixed;right:10px;bottom:6px;font-size:10px}
+.foot a{color:var(--muted)}
+.ef{background:#fff;color:var(--accent)}
+#efo{display:none;position:fixed;inset:0;background:rgba(20,30,50,.6);z-index:100;overflow:auto;padding:12px}
+#efo.on{display:block}
+#efo .box{background:#fff;border-radius:16px;max-width:760px;margin:0 auto;padding:12px 18px 16px}
+table.ws{border-collapse:collapse;margin:.3em auto;user-select:none}
+table.ws td{width:2.1em;height:2.1em;text-align:center;font-weight:700;font-size:.85em;border:1px solid #9ab;cursor:pointer;padding:0}
+table.ws td.sel{background:#ffd966}
+table.ws td.found{background:#b9e6c1}
+.wl{display:flex;flex-wrap:wrap;gap:.3em .9em;justify-content:center;font-weight:700;margin:.5em 0}
+.wl .f{text-decoration:line-through;color:var(--good)}
+#pinm{display:none;position:fixed;inset:0;background:rgba(20,30,50,.6);z-index:200;align-items:center;justify-content:center}
+#pinm.on{display:flex}
+#pinm .box{background:#fff;border-radius:16px;padding:20px 26px;text-align:center}
+#pinm input{font:inherit;font-size:1.4em;width:4.5em;text-align:center;padding:.2em;border:2px solid #9ab;border-radius:8px}
+#pinm .bad{color:var(--bad);min-height:1.4em;font-weight:700}
+.small{font-size:.72em;color:var(--muted)}
+ul.big{font-size:1.15em;line-height:1.55}
+.kw{background:var(--hl);font-weight:700;padding:0 .15em;border-radius:4px}
+.badge{display:inline-block;padding:.05em .5em;border-radius:8px;font-weight:700;font-size:.8em;color:#fff}
+.b-r{background:#1f5fbf}.b-s{background:#9a3fb5}.b-a{background:#c0551b}.b-h{background:#1a7f37}
+</style>
+</head>
+<body class="student" data-pin="2468">
+<header>
+<div class="atin-logo" aria-label="Made by Atin">
+<svg viewBox="104 28 172 134" width="64" height="50" role="img" aria-hidden="true">
+<text x="139" y="112" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="72" fill="currentColor">A</text>
+<rect x="177" y="83" width="24" height="6" rx="1" fill="currentColor"/>
+<path d="M216 66 L216 106 A25 7 0 0 0 266 106 L266 66" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+<ellipse cx="241" cy="66" rx="25" ry="7" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="216" y1="80" x2="266" y2="80" stroke="currentColor" stroke-width="1.5"/>
+<line x1="216" y1="94" x2="266" y2="94" stroke="currentColor" stroke-width="1.5"/>
+<ellipse cx="241" cy="47" rx="23" ry="5" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="114" y1="128" x2="266" y2="128" stroke="currentColor" stroke-width="1"/>
+<text x="190" y="152" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" letter-spacing="2" fill="currentColor">made by Atin</text>
+</svg>
+</div>
+<style>
+.atin-logo{position:fixed;left:calc(6px + env(safe-area-inset-left,0px));bottom:calc(6px + env(safe-area-inset-bottom,0px));z-index:2147483000;pointer-events:none;color:#1F3A5F;background:rgba(255,255,255,.92);border:1px solid #C9D3DF;border-radius:8px;padding:3px 5px;line-height:0}
+.atin-logo svg{display:block}
+@media print{.atin-logo{position:fixed;left:auto;right:6mm;bottom:5mm;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+
+  <div class="t">E3 Reading – Letters to the Local Voice · linking words · main idea</div>
+  <button type="button" class="ef" id="efb">Finished early? Word search</button>
+  <nav><button id="prev" type="button" aria-label="Previous page">◀</button><span id="pn"></span><button id="next" class="p" type="button" aria-label="Next page">▶</button></nav>
+</header>
+<main>
+<section class="page board"><span class="label">WHOLE CLASS – eyes on the board</span><div class="content"><h1>Finish the sentences – say them to your partner</h1><div class="grid2"><div class="card"><ol style="line-height:1.7;margin:.2em 0"><li>I like living in London because …</li><li>It was cold, so …</li><li>Although I was tired, …</li><li>Buses in London are cheap. However, …</li><li>I came to college today because …</li><li>The weather was bad, so …</li><li>Although English is difficult, …</li><li>My friend lives far away. However, …</li></ol></div><div class="card"><h2>Four small words</h2><p><span class="badge b-r">because</span> gives a <b>reason</b>.</p><p><span class="badge b-s">so</span> gives a <b>result</b>.</p><p><span class="badge b-a">although</span> and <span class="badge b-h">however</span> show a <b>different idea</b>.</p><p class="small">Although … (one sentence) · However, … (new sentence, comma after however)</p></div></div></div><div class="lookboard"><div class="big">👀 Look at the board</div></div><div class="look">Learners: projector, then their partner</div><button type="button" class="tnb">Teacher note</button><div class="tn">SAY: “Finish each sentence with your own idea. Say it to your partner, then swap.” Model number 1 (“I like living in London because there is a lot to do.”). DO: pairs say all eight aloud; take three answers. Listen for: a reason after because; a result after so; a comma after However. Learners: look at the board, talk to a partner. 15 minutes.<br><b>PIN to unlock the next page on learners' screens: 2468</b></div></section>
+<section class="page board"><span class="label">WHOLE CLASS – eyes on the board</span><div class="content"><h1>Two letters to the Local Voice</h1><div class="grid2"><div class="card"><h2>The newspaper asks: Should Cross Road have a Saturday street market?</h2><p>Amina Hassan says <b>yes</b>. Peter Green says <b>no</b>.</p><ol style="line-height:1.6"><li>Your teacher gives you Letter A <b>or</b> Letter B.</li><li>Read your letter once. Do not show it to anyone.</li><li>Answer the 6 questions on your sheet.</li><li>Then find a partner who read the <b>other</b> letter.</li></ol></div>
+<div class="card"><h2>Main idea and reasons</h2><p>The <span class="kw">main idea</span> is what the whole letter is about. It is often in the first sentence.</p><p>A <span class="kw">reason</span> tells you <b>why</b> the writer thinks this. Look for <b>because</b> and <b>so</b>.</p><p>Exam tip: the questions use different words from the text. Find the part of the text that means the same.</p></div></div></div><div class="lookboard"><div class="big">👀 Look at the board</div></div><div class="look">Learners: their own handout (3A or 3B); the board only for instructions</div><button type="button" class="tnb">Teacher note</button><div class="tn">SAY: “Today you read a letter to a newspaper. Some of you have Letter A, some have Letter B. Read your own letter and answer the six questions on your sheet. You have about 25 minutes.” DO: count off A and B round the room; give each learner only their own letter (Handout 3A or 3B). Walk round; do not explain words yet. Fast finishers: the word search (button at the top). Learners: look at their own handout.<br><b>PIN to unlock the next page on learners' screens: 2468</b></div></section>
+<section class="page board"><span class="label">WHOLE CLASS – eyes on the board</span><div class="content"><h1>Answers – Letter A (Amina Hassan)</h1><div class="card"><div class="row"><span class="n">1</span><span class="q">What is the main idea of this letter?<br><span class="ans">A  Cross Road needs a Saturday market.</span></span></div><div class="row"><span class="n">2</span><span class="q">Why is Saturday a good day for the market?<br><span class="ans">A  Many people are busy during the week.</span></span></div><div class="row"><span class="n">3</span><span class="q">Why is a market good for small businesses?<br><span class="ans">B  The sellers do not pay for a shop.</span></span></div><div class="row"><span class="n">4</span><span class="q">What time will the market close?<br><span class="ans">C  at 2pm</span></span></div><div class="row"><span class="n">5</span><span class="q">What do some people say about a market?<br><span class="ans">A  It is noisy.</span></span></div><div class="row"><span class="n">6</span><span class="q">What does a market help neighbours to do?<br><span class="ans">B  meet each other</span></span></div></div><p><button type="button" class="p" data-next-ans>Show next answer</button> <button type="button" data-all-ans>Show all</button></p></div><div class="lookboard"><div class="big">👀 Look at the board</div></div><div class="look">Learners: mark their own handout 3A</div><button type="button" class="tnb">Teacher note</button><div class="tn">SAY: “Check with your partner who read the same letter. I read the question; you tell me the answer; then I show it.” DO: Show next answer, one per click; after each, a learner reads the words in the letter that give the answer. Learners: look at the board, mark their own sheet.<br><b>PIN to unlock the next page on learners' screens: 2468</b></div></section>
+<section class="page board"><span class="label">WHOLE CLASS – eyes on the board</span><div class="content"><h1>Answers – Letter B (Peter Green)</h1><div class="card"><div class="row"><span class="n">1</span><span class="q">What is the main idea of this letter?<br><span class="ans">B  Peter does not want a market on Cross Road.</span></span></div><div class="row"><span class="n">2</span><span class="q">What is the problem with the street?<br><span class="ans">C  It is too narrow for stalls and cars.</span></span></div><div class="row"><span class="n">3</span><span class="q">What will happen to the buses?<br><span class="ans">A  They will be late.</span></span></div><div class="row"><span class="n">4</span><span class="q">What will the shops on the street lose?<br><span class="ans">B  customers</span></span></div><div class="row"><span class="n">5</span><span class="q">What will the market leave?<br><span class="ans">C  a lot of rubbish</span></span></div><div class="row"><span class="n">6</span><span class="q">Where does Peter think the market could go?<br><span class="ans">C  the empty car park near the station</span></span></div></div><p><button type="button" class="p" data-next-ans>Show next answer</button> <button type="button" data-all-ans>Show all</button></p></div><div class="lookboard"><div class="big">👀 Look at the board</div></div><div class="look">Learners: mark their own handout 3B</div><button type="button" class="tnb">Teacher note</button><div class="tn">SAY: the same as for Letter A. DO: Show next answer, one per click; a learner reads the proof from the letter each time.<br><b>PIN to unlock the next page on learners' screens: 2468</b></div></section>
+<section class="page board"><span class="label">WHOLE CLASS – eyes on the board</span><div class="content"><h1>Share your letter – then compare</h1><div class="grid2"><div class="card"><ol style="line-height:1.6"><li>Find a partner with the <b>other</b> letter.</li><li>Tell your partner: <i>What does the writer want? Why?</i> Do not read your letter aloud.</li><li>Fill in the table on Handout 4.</li><li>Write four sentences with <b>because, so, although, however</b>.</li><li>Tell your partner: <i>I agree with … because …</i></li></ol></div>
+<div class="card"><h2>Model – row 1</h2><p><b>Amina</b> wants a Saturday market on Cross Road.</p><p><b>Peter</b> does not want a market on Cross Road.</p><h2>Useful</h2><p>Amina thinks … <span class="badge b-r">because</span> …<br>Peter says … <span class="badge b-s">so</span> …<br><span class="badge b-a">Although</span> Amina …, Peter …<br>Peter says … <span class="badge b-h">However</span>, …</p></div></div></div><div class="lookboard"><div class="big">👀 Look at the board</div></div><div class="look">Learners: Handout 4 and a partner; the board for the model</div><button type="button" class="tnb">Teacher note</button><div class="tn">SAY: “Find someone with the other letter. Tell them in your own words what the writer wants and why – do not read it out. Then fill in the table.” DO: model row 1 above. Pairs of A and B (a group of three is fine). Walk round: listen for because/so/although/however used correctly; do not correct, ask “Reason, result or different idea?” Finish: hear three ‘I agree with … because …’. Check: table row 1 – Amina wants a Saturday market; Peter does not. Reasons: Amina – busy people can shop on Saturday; sellers do not pay for a shop; neighbours meet. Peter – street too narrow, buses late; shops lose customers; rubbish. Learners: look at Handout 4. 20 minutes.<br><b>PIN to unlock the next page on learners' screens: 2468</b></div></section>
+<section class="page board"><span class="label">WHOLE CLASS – eyes on the board</span><div class="content"><h1>Kahoot – 20 questions</h1><div class="card" style="font-size:1.1em"><p>Linking words · main idea and details · exam skills.</p><ul class="big"><li>Think first.</li><li>Talk to your partner for 10 seconds.</li><li>Then tap your answer.</li></ul></div></div><div class="lookboard"><div class="big">👀 Look at the board</div></div><div class="look">Learners: their phones for Kahoot</div><button type="button" class="tnb">Teacher note</button><div class="tn">DO: open the Kahoot from the link on the Teacher Hub card (or import the file) and host it. Do not click Play before the class has the code. After the results, note the questions most learners got wrong – these decide the recap on Monday. Close: “Today we used because, so, although and however to find the reasons in two opinion letters.”<br><b>PIN to unlock the next page on learners' screens: 2468</b></div></section>
+</main><div id="efo"><div class="box">
+<div style="display:flex;justify-content:space-between;align-items:center"><h1 style="margin:0">Word search – letters and markets</h1><button type="button" id="efx">Close</button></div>
+<p class="small">Optional – for fast finishers. Tap the first letter, then the last letter of a word. It is not part of the lesson.</p>
+<table class="ws" id="wst"></table>
+<div class="wl" id="wl"></div>
+<div style="text-align:center"><span id="wsc" style="font-weight:700"></span> <button type="button" id="wsr">Start again</button></div>
+</div></div>
+<script type="application/json" id="wsdata">{"g": ["ZCEDITORNEAJ", "TEERTSNYNDBT", "RETTELTYBMWS", "KRIQHBJACDTB", "RREMOTSUCBGE", "NJTIEWBKKLEC", "MMOQHSIBBURA", "MUTVRDTZQINU", "UXREVEWOHWHS", "ALTHOUGHJNIE", "QRUOBHGIENJR", "KTEKRAMAZNSK"], "w": ["BECAUSE", "ALTHOUGH", "HOWEVER", "MARKET", "LETTER", "EDITOR", "STREET", "NEIGHBOUR", "CUSTOMER", "RUBBISH"]}</script>
+<div id="pinm"><div class="box"><h2>Ask your teacher for the PIN</h2><input id="pini" inputmode="numeric" maxlength="4" autocomplete="off"><p class="bad" id="pinb"></p><button type="button" class="p" id="pinok">Open</button> <button type="button" id="pinx">Cancel</button></div></div><div class="foot"><a href="https://atinwix.github.io/esol/r.html?f=E3%20Reading%20Saturday%20Market%20Letters%20Projector%20Lesson" target="_blank" rel="noopener">Report a problem</a></div><script>
+(function(){
+var pages=[].slice.call(document.querySelectorAll('.page')),cur=0,unlocked=0,PIN=document.body.getAttribute('data-pin');
+var qs=new URLSearchParams(location.search);
+function teacher(){return document.body.classList.contains('teacher')}
+function setMode(t){document.body.classList.toggle('teacher',t);document.body.classList.toggle('student',!t);show(cur)}
+if(qs.has('teacher'))setMode(true);
+document.addEventListener('keydown',function(e){
+ if(e.target.tagName==='INPUT')return;
+ if(e.key==='t'||e.key==='T')setMode(!teacher());
+ if(e.key==='ArrowRight')go(cur+1);if(e.key==='ArrowLeft')go(cur-1);
+});
+function show(i){cur=i;pages.forEach(function(p,k){p.classList.toggle('on',k===i)});
+ document.getElementById('pn').textContent='Page '+(i+1)+' of '+pages.length;
+ document.getElementById('prev').disabled=i===0;document.getElementById('next').disabled=i===pages.length-1;
+ var n=pages[i].querySelector('[data-pagenum]');}
+function go(i){
+ if(i<0||i>=pages.length)return;
+ if(teacher()||i<=unlocked){show(i);return}
+ askpin(i);
+}
+function askpin(i){var m=document.getElementById('pinm'),inp=document.getElementById('pini');inp.value='';document.getElementById('pinb').textContent='';m.classList.add('on');inp.focus();m._t=i}
+document.getElementById('pinok').onclick=function(){var m=document.getElementById('pinm');
+ if(document.getElementById('pini').value===PIN){unlocked=Math.max(unlocked,m._t);m.classList.remove('on');show(m._t)}else document.getElementById('pinb').textContent='Not the PIN'};
+document.getElementById('pinx').onclick=function(){document.getElementById('pinm').classList.remove('on')};
+document.getElementById('pini').addEventListener('keydown',function(e){if(e.key==='Enter')document.getElementById('pinok').click()});
+document.getElementById('prev').onclick=function(){go(cur-1)};
+document.getElementById('next').onclick=function(){go(cur+1)};
+[].forEach.call(document.querySelectorAll('.tnb'),function(b){b.onclick=function(){b.nextElementSibling.classList.toggle('open')}});
+[].forEach.call(document.querySelectorAll('[data-next-ans]'),function(b){b.onclick=function(){
+ var pg=b.closest('.page'),a=pg.querySelector('.ans:not(.show)');if(a)a.classList.add('show')}});
+[].forEach.call(document.querySelectorAll('[data-all-ans]'),function(b){b.onclick=function(){
+ [].forEach.call(b.closest('.page').querySelectorAll('.ans'),function(a){a.classList.add('show')})}});
+[].forEach.call(document.querySelectorAll('[data-hide-ans]'),function(b){b.onclick=function(){
+ [].forEach.call(b.closest('.page').querySelectorAll('.ans'),function(a){a.classList.remove('show')})}});
+// word search
+var D=JSON.parse(document.getElementById('wsdata').textContent),G=D.g,N=G.length,found={},first=null,t=document.getElementById('wst');
+function build(){t.innerHTML='';found={};first=null;
+ for(var r=0;r<N;r++){var tr=document.createElement('tr');for(var c=0;c<N;c++){var td=document.createElement('td');td.textContent=G[r][c];td.dataset.r=r;td.dataset.c=c;td.onclick=pick;tr.appendChild(td)}t.appendChild(tr)}
+ words()}
+function words(){var wl=document.getElementById('wl');wl.innerHTML='';var n=0;D.w.forEach(function(w){var s=document.createElement('span');s.textContent=w;if(found[w]){s.className='f';n++}wl.appendChild(s)});
+ document.getElementById('wsc').textContent=n+' of '+D.w.length+' found'+(n===D.w.length?' – well done!':'')}
+function cell(r,c){return t.rows[r].cells[c]}
+function pick(e){var td=e.currentTarget,r=+td.dataset.r,c=+td.dataset.c;
+ if(!first){first=[r,c];td.classList.add('sel');return}
+ var r0=first[0],c0=first[1];cell(r0,c0).classList.remove('sel');first=null;
+ var dr=Math.sign(r-r0),dc=Math.sign(c-c0),len=Math.max(Math.abs(r-r0),Math.abs(c-c0))+1;
+ if(!(r===r0||c===c0||Math.abs(r-r0)===Math.abs(c-c0)))return;
+ var s='',cs=[];for(var i=0;i<len;i++){var rr=r0+dr*i,cc=c0+dc*i;s+=G[rr][cc];cs.push([rr,cc])}
+ var rev=s.split('').reverse().join('');
+ D.w.forEach(function(w){if(!found[w]&&(w===s||w===rev)){found[w]=1;cs.forEach(function(p){cell(p[0],p[1]).classList.add('found')})}});
+ words()}
+document.getElementById('wsr').onclick=build;
+document.getElementById('efb').onclick=function(){document.getElementById('efo').classList.add('on')};
+document.getElementById('efx').onclick=function(){document.getElementById('efo').classList.remove('on')};
+build();show(0);
+window.__go=go;window.__pages=pages;
+})();</script></body></html>
