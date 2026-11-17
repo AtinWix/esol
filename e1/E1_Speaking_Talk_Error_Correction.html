@@ -3,61 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E1 Present Simple - Error Correction Activity</title>
+    <title>E1 Present Simple - Error Correction - Projector</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
-        body { background: #f4f6f9; color: #333; display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
-        header { background: #1e293b; color: #fff; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; }
-        h1 { font-size: 1.1rem; font-weight: 600; }
-        .credit { font-size: 0.85rem; color: #94a3b8; }
-        main { flex: 1; padding: 12px 20px; max-width: 1200px; margin: 0 auto; width: 100%; display: flex; flex-direction: column; justify-content: space-between; }
-        .teacher-note { font-size: 9px; color: #64748b; background: #f8fafc; padding: 2px 6px; border: 1px solid #e2e8f0; border-radius: 3px; display: inline-block; margin-bottom: 4px; }
-        .instruction-box { background: #fff; padding: 10px 16px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); font-size: 0.95rem; border-left: 4px solid #3b82f6; margin-bottom: 8px; }
-        .task-container { display: flex; flex-direction: column; gap: 8px; flex: 1; justify-content: center; }
-        .sentence-row { background: #fff; padding: 10px 16px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: flex; align-items: center; justify-content: space-between; font-size: 1rem; }
+        body { background: #f4f6f9; color: #1e293b; display: flex; flex-direction: column; height: 100vh; width: 100vw; overflow: hidden; }
+        header { background: #1e293b; color: #fff; padding: 8px 24px; display: flex; justify-content: space-between; align-items: center; }
+        h1 { font-size: 1.2rem; font-weight: 600; }
+        .credit { font-size: 0.9rem; color: #cbd5e1; }
+        main { flex: 1; padding: 10px 24px; width: 100%; display: flex; flex-direction: column; justify-content: space-between; }
+        .top-bar { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 6px; }
+        .instruction-box { background: #fff; padding: 8px 14px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); font-size: 1rem; border-left: 4px solid #3b82f6; flex: 1; }
+        .teacher-note { font-size: 9px; color: #475569; background: #e2e8f0; padding: 4px 8px; border-radius: 4px; white-space: nowrap; }
+        .task-container { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 20px; flex: 1; align-content: center; }
+        .sentence-row { background: #fff; padding: 10px 14px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); display: flex; align-items: center; justify-content: space-between; font-size: 1.15rem; }
         .sentence-text { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }
-        .word { cursor: pointer; padding: 2px 5px; border-radius: 4px; transition: background 0.2s; display: inline-block; }
+        .word { cursor: pointer; padding: 3px 6px; border-radius: 4px; transition: background 0.15s; display: inline-block; }
         .word:hover { background: #e2e8f0; }
         .word.selected-error { background: #fee2e2; color: #991b1b; font-weight: bold; border: 1px dashed #ef4444; }
         .word.correct-word { background: #dcfce7; color: #166534; font-weight: bold; }
-        .input-area { display: none; align-items: center; gap: 8px; margin-left: 15px; }
-        .input-area input { padding: 4px 8px; font-size: 0.9rem; border: 1px solid #cbd5e1; border-radius: 4px; width: 120px; }
-        .input-area button { background: #3b82f6; color: white; border: none; padding: 4px 10px; font-size: 0.9rem; border-radius: 4px; cursor: pointer; font-weight: 600; }
+        .right-controls { display: flex; align-items: center; gap: 8px; }
+        .input-area { display: none; align-items: center; gap: 6px; }
+        .input-area input { padding: 5px 8px; font-size: 1rem; border: 1px solid #94a3b8; border-radius: 4px; width: 110px; }
+        .input-area button { background: #3b82f6; color: #fff; border: none; padding: 6px 10px; font-size: 0.9rem; border-radius: 4px; cursor: pointer; font-weight: 600; }
         .input-area button:hover { background: #2563eb; }
-        .feedback { font-size: 0.85rem; font-weight: bold; min-width: 130px; text-align: right; }
-        .controls { display: flex; gap: 12px; align-items: center; padding-top: 5px; }
-        .controls button { background: #1e293b; color: white; border: none; padding: 8px 16px; font-size: 0.9rem; border-radius: 6px; cursor: pointer; font-weight: 600; }
+        .feedback { font-size: 0.9rem; font-weight: bold; text-align: right; white-space: nowrap; }
+        .controls { display: flex; gap: 12px; align-items: center; padding-top: 6px; }
+        .controls button { background: #1e293b; color: #fff; border: none; padding: 8px 16px; font-size: 0.95rem; border-radius: 6px; cursor: pointer; font-weight: 600; }
         .controls button:hover { background: #334155; }
-        .score-board { font-size: 0.95rem; font-weight: bold; margin-left: auto; color: #1e293b; }
-        footer { background: #e2e8f0; padding: 4px 20px; font-size: 9px; color: #64748b; display: flex; justify-content: space-between; }
+        .score-board { font-size: 1.05rem; font-weight: bold; margin-left: auto; color: #1e293b; }
+        footer { background: #e2e8f0; padding: 4px 24px; font-size: 9px; color: #475569; display: flex; justify-content: space-between; }
+        @media (max-width: 900px) {
+            body { height: auto; overflow: auto; }
+            .task-container { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Entry 1 · Present Simple — Error Correction Activity</h1>
+    <h1>Entry 1 · Present Simple — Find the Error</h1>
     <div class="credit">A-🥫 made by Atin</div>
 </header>
 
 <main>
-    <div>
-        <div class="teacher-note">Teacher Note: Project on main whiteboard. Students tap the incorrect word, then type the corrected word in the box.</div>
+    <div class="top-bar">
         <div class="instruction-box">
-            <strong>Task:</strong> Tap the <em>incorrect</em> word in each sentence, then type the correct word and click Submit.
+            <strong>Task:</strong> Tap the wrong word in each sentence. Type the right word and press Submit.
         </div>
+        <div class="teacher-note">Look at: projector / online activity</div>
     </div>
 
     <div class="task-container" id="sentenceList"></div>
 
     <div class="controls">
-        <button id="showAnswerBtn">Show All Answers</button>
-        <div class="score-board" id="scoreBoard">Correct: 0 / 10</div>
+        <button id="showAnswerBtn">Show Next Answer</button>
+        <button id="resetBtn">Reset</button>
+        <div class="score-board" id="scoreBoard">Score: 0 / 20</div>
     </div>
 </main>
 
 <footer>
-    <span>Projector Activity — Interactive Board</span>
-    <span>Entry 1 Present Simple Practice</span>
+    <span>Entry 1 · Present Simple</span>
+    <span>A-🥫 made by Atin</span>
 </footer>
 
 <script>
@@ -70,14 +77,25 @@
         { id: 6, text: "They goes to the shop.", errorIndex: 1, correctWord: "go" },
         { id: 7, text: "It rain today.", errorIndex: 1, correctWord: "rains" },
         { id: 8, text: "I has a pen.", errorIndex: 1, correctWord: "have" },
-        { id: 9, text: "You student here.", errorIndex: 1, correctWord: "are" },
-        { id: 10, text: "He speak English.", errorIndex: 1, correctWord: "speaks" }
+        { id: 9, text: "You is a student here.", errorIndex: 1, correctWord: "are" },
+        { id: 10, text: "He speak English.", errorIndex: 1, correctWord: "speaks" },
+        { id: 11, text: "She have two children.", errorIndex: 1, correctWord: "has" },
+        { id: 12, text: "I does not like milk.", errorIndex: 1, correctWord: "do" },
+        { id: 13, text: "He do not work on Sunday.", errorIndex: 1, correctWord: "does" },
+        { id: 14, text: "Do you lives in Hackney?", errorIndex: 2, correctWord: "live" },
+        { id: 15, text: "Does she likes coffee?", errorIndex: 2, correctWord: "like" },
+        { id: 16, text: "We is from London.", errorIndex: 1, correctWord: "are" },
+        { id: 17, text: "They is happy today.", errorIndex: 1, correctWord: "are" },
+        { id: 18, text: "You has a nice bag.", errorIndex: 1, correctWord: "have" },
+        { id: 19, text: "It don't rain in summer.", errorIndex: 1, correctWord: "doesn't" },
+        { id: 20, text: "She don't speak Spanish.", errorIndex: 1, correctWord: "doesn't" }
     ];
 
     let score = 0;
     const container = document.getElementById('sentenceList');
 
     function renderSet() {
+        score = 0;
         container.innerHTML = '';
         allData.forEach((item, globalIdx) => {
             const row = document.createElement('div');
@@ -86,10 +104,10 @@
 
             const textDiv = document.createElement('div');
             textDiv.className = 'sentence-text';
-            
+
             const numSpan = document.createElement('span');
             numSpan.style.fontWeight = 'bold';
-            numSpan.style.marginRight = '8px';
+            numSpan.style.marginRight = '6px';
             numSpan.textContent = `${globalIdx + 1}.`;
             textDiv.appendChild(numSpan);
 
@@ -97,7 +115,7 @@
             words.forEach((w, wIdx) => {
                 const span = document.createElement('span');
                 span.className = 'word';
-                span.textContent = w + ' ';
+                span.textContent = w;
                 span.onclick = () => handleWordClick(item, wIdx, span, row);
                 textDiv.appendChild(span);
             });
@@ -105,11 +123,14 @@
             const inputArea = document.createElement('div');
             inputArea.className = 'input-area';
             inputArea.id = `input-area-${globalIdx}`;
-            
+
             const inputField = document.createElement('input');
             inputField.type = 'text';
-            inputField.placeholder = 'Type correction';
+            inputField.placeholder = 'Right word';
             inputField.id = `input-${globalIdx}`;
+            inputField.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') handleCorrectionSubmit(item, globalIdx, row);
+            });
 
             const submitBtn = document.createElement('button');
             submitBtn.textContent = 'Submit';
@@ -123,8 +144,7 @@
             feedback.id = `fb-${globalIdx}`;
 
             const rightSide = document.createElement('div');
-            rightSide.style.display = 'flex';
-            rightSide.style.alignItems = 'center';
+            rightSide.className = 'right-controls';
             rightSide.appendChild(inputArea);
             rightSide.appendChild(feedback);
 
@@ -136,6 +156,7 @@
     }
 
     function handleWordClick(item, wIdx, span, row) {
+        if (row.dataset.solved === "true") return;
         const globalIdx = parseInt(row.dataset.globalId);
         const inputArea = document.getElementById(`input-area-${globalIdx}`);
         const feedback = document.getElementById(`fb-${globalIdx}`);
@@ -147,14 +168,14 @@
             span.classList.add('selected-error');
             inputArea.style.display = 'flex';
             feedback.style.color = '#b45309';
-            feedback.textContent = 'Error found! Type fix.';
+            feedback.textContent = '';
             document.getElementById(`input-${globalIdx}`).focus();
         } else {
             span.classList.add('selected-error');
             feedback.style.color = '#991b1b';
-            feedback.textContent = 'Not the error. Try again.';
+            feedback.textContent = 'Try again';
             inputArea.style.display = 'none';
-            setTimeout(() => span.classList.remove('selected-error'), 1000);
+            setTimeout(() => span.classList.remove('selected-error'), 800);
         }
     }
 
@@ -167,11 +188,11 @@
         if (inputVal === item.correctWord.toLowerCase()) {
             words[item.errorIndex].classList.remove('selected-error');
             words[item.errorIndex].classList.add('correct-word');
-            words[item.errorIndex].textContent = item.correctWord + ' ';
+            words[item.errorIndex].textContent = item.correctWord;
             inputArea.style.display = 'none';
             feedback.style.color = '#166534';
-            feedback.textContent = `Correct! (${item.correctWord})`;
-            
+            feedback.textContent = 'Correct!';
+
             if (!row.dataset.solved) {
                 row.dataset.solved = "true";
                 score++;
@@ -179,33 +200,35 @@
             }
         } else {
             feedback.style.color = '#991b1b';
-            feedback.textContent = 'Incorrect correction.';
+            feedback.textContent = 'Try again';
         }
     }
 
     function updateScoreDisplay() {
-        document.getElementById('scoreBoard').textContent = `Correct: ${score} / 10`;
+        document.getElementById('scoreBoard').textContent = `Score: ${score} / 20`;
     }
 
     document.getElementById('showAnswerBtn').onclick = () => {
-        allData.forEach((item, globalIdx) => {
-            const row = container.children[globalIdx];
-            const words = row.querySelectorAll('.word');
-            const inputArea = document.getElementById(`input-area-${globalIdx}`);
-            
-            inputArea.style.display = 'none';
-            words[item.errorIndex].classList.add('correct-word');
-            words[item.errorIndex].textContent = item.correctWord + ' ';
-            document.getElementById(`fb-${globalIdx}`).style.color = '#166534';
-            document.getElementById(`fb-${globalIdx}`).textContent = `Fix: ${item.correctWord}`;
-            
+        for (let i = 0; i < allData.length; i++) {
+            const row = container.children[i];
             if (!row.dataset.solved) {
+                const item = allData[i];
+                const words = row.querySelectorAll('.word');
+                document.getElementById(`input-area-${i}`).style.display = 'none';
+                words[item.errorIndex].classList.remove('selected-error');
+                words[item.errorIndex].classList.add('correct-word');
+                words[item.errorIndex].textContent = item.correctWord;
+                document.getElementById(`fb-${i}`).style.color = '#166534';
+                document.getElementById(`fb-${i}`).textContent = `Answer: ${item.correctWord}`;
                 row.dataset.solved = "true";
                 score++;
+                updateScoreDisplay();
+                break;
             }
-        });
-        updateScoreDisplay();
+        }
     };
+
+    document.getElementById('resetBtn').onclick = renderSet;
 
     renderSet();
 </script>
