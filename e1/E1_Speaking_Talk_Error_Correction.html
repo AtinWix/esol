@@ -3,48 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E3 Speaking Talk - Error Correction</title>
+    <title>E3 Speaking Talk - 20 Error Correction Task</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
         body { background: #f4f6f9; color: #333; display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
-        header { background: #1e293b; color: #fff; padding: 12px 24px; display: flex; justify-content: space-between; align-items: center; }
-        h1 { font-size: 1.2rem; font-weight: 600; }
+        header { background: #1e293b; color: #fff; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; }
+        h1 { font-size: 1.1rem; font-weight: 600; }
         .credit { font-size: 0.85rem; color: #94a3b8; }
-        main { flex: 1; padding: 20px; max-width: 1200px; margin: 0 auto; width: 100%; display: flex; flex-direction: column; justify-content: center; }
-        .instruction-box { background: #fff; padding: 15px 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 20px; font-size: 1.05rem; border-left: 4px solid #3b82f6; }
-        .sentences-container { display: flex; flex-direction: column; gap: 12px; }
-        .sentence-row { background: #fff; padding: 14px 18px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); display: flex; align-items: center; justify-content: space-between; font-size: 1.1rem; }
-        .word { cursor: pointer; padding: 2px 6px; border-radius: 4px; transition: background 0.2s; display: inline-block; }
+        main { flex: 1; padding: 12px 20px; max-width: 1200px; margin: 0 auto; width: 100%; display: flex; flex-direction: column; justify-content: space-between; }
+        .instruction-box { background: #fff; padding: 10px 16px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); font-size: 0.95rem; border-left: 4px solid #3b82f6; margin-bottom: 8px; }
+        .task-container { display: flex; flex-direction: column; gap: 8px; flex: 1; justify-content: center; }
+        .sentence-row { background: #fff; padding: 10px 16px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: flex; align-items: center; justify-content: space-between; font-size: 1rem; }
+        .sentence-text { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }
+        .word { cursor: pointer; padding: 2px 5px; border-radius: 4px; transition: background 0.2s; display: inline-block; }
         .word:hover { background: #e2e8f0; }
-        .word.selected { background: #fee2e2; color: #991b1b; font-weight: bold; border: 1px dashed #ef4444; }
-        .word.correct { background: #dcfce7; color: #166534; font-weight: bold; }
-        .feedback { font-size: 0.95rem; font-weight: bold; min-width: 150px; text-align: right; }
-        .controls { margin-top: 20px; display: flex; gap: 12px; align-items: center; }
-        button { background: #3b82f6; color: white; border: none; padding: 10px 20px; font-size: 1rem; border-radius: 6px; cursor: pointer; font-weight: 600; }
-        button:hover { background: #2563eb; }
-        .score-board { font-size: 1rem; font-weight: bold; margin-left: auto; }
-        footer { background: #e2e8f0; padding: 6px 24px; font-size: 9px; color: #64748b; display: flex; justify-content: space-between; }
+        .word.selected-error { background: #fee2e2; color: #991b1b; font-weight: bold; border: 1px dashed #ef4444; }
+        .word.correct-word { background: #dcfce7; color: #166534; font-weight: bold; }
+        .input-area { display: none; align-items: center; gap: 8px; margin-left: 15px; }
+        .input-area input { padding: 4px 8px; font-size: 0.9rem; border: 1px solid #cbd5e1; border-radius: 4px; width: 120px; }
+        .input-area button { background: #3b82f6; color: white; border: none; padding: 4px 10px; font-size: 0.9rem; border-radius: 4px; cursor: pointer; font-weight: 600; }
+        .input-area button:hover { background: #2563eb; }
+        .feedback { font-size: 0.85rem; font-weight: bold; min-width: 130px; text-align: right; }
+        .controls { display: flex; gap: 12px; align-items: center; padding-top: 5px; }
+        .controls button { background: #1e293b; color: white; border: none; padding: 8px 16px; font-size: 0.9rem; border-radius: 6px; cursor: pointer; font-weight: 600; }
+        .controls button:hover { background: #334155; }
+        .score-board { font-size: 0.95rem; font-weight: bold; margin-left: auto; color: #1e293b; }
+        footer { background: #e2e8f0; padding: 4px 20px; font-size: 9px; color: #64748b; display: flex; justify-content: space-between; }
+        .teacher-note { font-size: 9px; color: #64748b; background: #f8fafc; padding: 2px 6px; border: 1px solid #e2e8f0; border-radius: 3px; display: inline-block; margin-bottom: 4px; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Entry 3 · Speaking Talk Review — Find the Error</h1>
+    <h1>Entry 3 · Speaking Talk Review — 20 Error Correction Tasks</h1>
     <div class="credit">A-🥫 made by Atin</div>
 </header>
 
 <main>
-    <div class="instruction-box">
-        <strong>Task:</strong> Tap the <em>incorrect</em> word in each sentence from the talk, then type the correction.
+    <div>
+        <div class="teacher-note">Teacher Note: Project on main whiteboard. Students tap the incorrect word, then type the corrected word in the box.</div>
+        <div class="instruction-box">
+            <strong>Task:</strong> Tap the <em>incorrect</em> word in each sentence, then type the correct replacement word and click Submit.
+        </div>
     </div>
 
-    <div class="sentences-container" id="sentenceList">
-        <!-- Dynamic rows inserted here -->
+    <div class="task-container" id="sentenceList">
+        <!-- Dynamically rendered rows -->
     </div>
 
     <div class="controls">
         <button id="showAnswerBtn">Show All Answers</button>
-        <div class="score-board" id="scoreBoard">Correct: 0 / 5</div>
+        <button id="prevBtn">Previous Set (1-10)</button>
+        <button id="nextBtn">Next Set (11-20)</button>
+        <div class="score-board" id="scoreBoard">Correct: 0 / 10</div>
     </div>
 </main>
 
@@ -54,80 +65,192 @@
 </footer>
 
 <script>
-    const data = [
-        { id: 1, text: "I likes to visit Victoria Park in Hackney.", errorIndex: 1, correctWord: "like", fullCorrect: "I like to visit Victoria Park in Hackney." },
-        { id: 2, text: "I go there on every Saturday morning.", errorIndex: 3, correctWord: "omit (on)", fullCorrect: "I go there every Saturday morning." },
-        { id: 3, text: "We walks around the big lake.", errorIndex: 1, correctWord: "walk", fullCorrect: "We walk around the big lake." },
-        { id: 4, text: "I like this park because it are quiet.", errorIndex: 5, correctWord: "is", fullCorrect: "I like this park because it is quiet." },
-        { id: 5, text: "In the afternoon, I walking back home.", errorIndex: 4, correctWord: "walk", fullCorrect: "In the afternoon, I walk back home." }
+    const allData = [
+        // Set 1 (Items 1 - 10)
+        { id: 1, text: "I likes to visit Victoria Park in Hackney.", errorIndex: 1, correctWord: "like" },
+        { id: 2, text: "I go there on every Saturday morning.", errorIndex: 3, correctWord: "every" },
+        { id: 3, text: "We walks around the big lake.", errorIndex: 1, correctWord: "walk" },
+        { id: 4, text: "Sometimes, we buys a coffee.", errorIndex: 2, correctWord: "buy" },
+        { id: 5, text: "I like this park because it are quiet.", errorIndex: 5, correctWord: "is" },
+        { id: 6, text: "It help me relax after a busy week.", errorIndex: 1, correctWord: "helps" },
+        { id: 7, text: "In the afternoon, I walking back home.", errorIndex: 4, correctWord: "walk" },
+        { id: 8, text: "I cook dinner for my family on past evening.", errorIndex: 8, correctWord: "this" },
+        { id: 9, text: "Yesterday, I visit my friend in the park.", errorIndex: 2, correctWord: "visited" },
+        { id: 10, text: "She live in a nice flat near the shop.", errorIndex: 1, correctWord: "lives" },
+        // Set 2 (Items 11 - 20)
+        { id: 11, text: "We was talking about our weekend plans.", errorIndex: 1, correctWord: "were" },
+        { id: 12, text: "He go to the market every Friday.", errorIndex: 1, correctWord: "goes" },
+        { id: 13, text: "They playing football in the local park.", errorIndex: 1, correctWord: "are" },
+        { id: 14, text: "I am study English at college.", errorIndex: 3, correctWord: "studying" },
+        { id: 15, text: "There is two parks near my house.", errorIndex: 2, correctWord: "are" },
+        { id: 16, text: "Do you has a pen to write with?", errorIndex: 2, correctWord: "have" },
+        { id: 17, text: "I didn't went to the shop yesterday.", errorIndex: 3, correctWord: "go" },
+        { id: 18, text: "My friend speak three languages fluently.", errorIndex: 2, correctWord: "speaks" },
+        { id: 19, text: "We are listen to the teacher now.", errorIndex: 2, correctWord: "listening" },
+        { id: 20, text: "The weather yesterday were very cold.", errorIndex: 3, correctWord: "was" }
     ];
 
+    let currentSet = 0; // 0 for items 1-10, 1 for items 11-20
     let score = 0;
     const container = document.getElementById('sentenceList');
 
-    function render() {
+    function renderSet() {
         container.innerHTML = '';
-        data.forEach((item, idx) => {
+        const start = currentSet * 10;
+        const slice = allData.slice(start, start + 10);
+
+        slice.forEach((item, localIdx) => {
+            const globalIdx = start + localIdx;
             const row = document.createElement('div');
             row.className = 'sentence-row';
+            row.dataset.globalId = globalIdx;
+
+            const textDiv = document.createElement('div');
+            textDiv.className = 'sentence-text';
             
-            const wordsDiv = document.createElement('div');
+            const numSpan = document.createElement('span');
+            numSpan.style.fontWeight = 'bold';
+            numSpan.style.marginRight = '8px';
+            numSpan.textContent = `${globalIdx + 1}.`;
+            textDiv.appendChild(numSpan);
+
             const words = item.text.split(' ');
-            
             words.forEach((w, wIdx) => {
                 const span = document.createElement('span');
                 span.className = 'word';
                 span.textContent = w + ' ';
                 span.onclick = () => handleWordClick(item, wIdx, span, row);
-                wordsDiv.appendChild(span);
+                textDiv.appendChild(span);
             });
+
+            const inputArea = document.createElement('div');
+            inputArea.className = 'input-area';
+            inputArea.id = `input-area-${globalIdx}`;
+            
+            const inputField = document.createElement('input');
+            inputField.type = 'text';
+            inputField.placeholder = 'Type correction';
+            inputField.id = `input-${globalIdx}`;
+
+            const submitBtn = document.createElement('button');
+            submitBtn.textContent = 'Submit';
+            submitBtn.onclick = () => handleCorrectionSubmit(item, globalIdx, row);
+
+            inputArea.appendChild(inputField);
+            inputArea.appendChild(submitBtn);
 
             const feedback = document.createElement('div');
             feedback.className = 'feedback';
-            feedback.id = `fb-${idx}`;
+            feedback.id = `fb-${globalIdx}`;
 
-            row.appendChild(wordsDiv);
-            row.appendChild(feedback);
+            const rightSide = document.createElement('div');
+            rightSide.style.display = 'flex';
+            rightSide.style.alignItems = 'center';
+            rightSide.rightSide = 'auto';
+            rightSide.appendChild(inputArea);
+            rightSide.appendChild(feedback);
+
+            row.appendChild(textDiv);
+            row.appendChild(rightSide);
             container.appendChild(row);
         });
+        updateScoreDisplay();
     }
 
     function handleWordClick(item, wIdx, span, row) {
-        const feedback = row.querySelector('.feedback');
+        const globalIdx = parseInt(row.dataset.globalId);
+        const inputArea = document.getElementById(`input-area-${globalIdx}`);
+        const feedback = document.getElementById(`fb-${globalIdx}`);
+        const words = row.querySelectorAll('.word');
+
+        words.forEach(w => w.classList.remove('selected-error'));
+
         if (wIdx === item.errorIndex) {
-            span.classList.add('correct');
-            feedback.style.color = '#166534';
-            feedback.textContent = `Correct! (${item.correctWord})`;
-            if (!row.dataset.solved) {
-                row.dataset.solved = "true";
-                score++;
-                updateScore();
-            }
+            span.classList.add('selected-error');
+            inputArea.style.display = 'flex';
+            feedback.style.color = '#b45309';
+            feedback.textContent = 'Error found! Type fix.';
+            document.getElementById(`input-${globalIdx}`).focus();
         } else {
-            span.classList.add('selected');
+            span.classList.add('selected-error');
             feedback.style.color = '#991b1b';
-            feedback.textContent = 'Try again!';
-            setTimeout(() => span.classList.remove('selected'), 1000);
+            feedback.textContent = 'Not the error. Try again.';
+            inputArea.style.display = 'none';
+            setTimeout(() => span.classList.remove('selected-error'), 1000);
         }
     }
 
-    function updateScore() {
-        document.getElementById('scoreBoard').textContent = `Correct: ${score} / ${data.length}`;
+    function handleCorrectionSubmit(item, globalIdx, row) {
+        const inputVal = document.getElementById(`input-${globalIdx}`).value.trim().toLowerCase();
+        const feedback = document.getElementById(`fb-${globalIdx}`);
+        const inputArea = document.getElementById(`input-area-${globalIdx}`);
+        const words = row.querySelectorAll('.word');
+
+        if (inputVal === item.correctWord.toLowerCase()) {
+            words[item.errorIndex].classList.remove('selected-error');
+            words[item.errorIndex].classList.add('correct-word');
+            words[item.errorIndex].textContent = item.correctWord + ' ';
+            inputArea.style.display = 'none';
+            feedback.style.color = '#166534';
+            feedback.textContent = `Correct! (${item.correctWord})`;
+            
+            if (!row.dataset.solved) {
+                row.dataset.solved = "true";
+                score++;
+                updateScoreDisplay();
+            }
+        } else {
+            feedback.style.color = '#991b1b';
+            feedback.textContent = 'Incorrect correction.';
+        }
     }
 
-    document.getElementById('showAnswerBtn').onclick = () => {
-        data.forEach((item, idx) => {
-            const row = container.children[idx];
-            const words = row.querySelectorAll('.word');
-            words[item.errorIndex].classList.add('correct');
-            row.querySelector('.feedback').style.color = '#166534';
-            row.querySelector('.feedback').textContent = item.fullCorrect;
-        });
-        score = data.length;
-        updateScore();
+    function updateScoreDisplay() {
+        document.getElementById('scoreBoard').textContent = `Correct in Set: ${score} / 10`;
+    }
+
+    document.getElementById('nextBtn').onclick = () => {
+        currentSet = 1;
+        score = 0;
+        document.getElementById('nextBtn').style.display = 'none';
+        document.getElementById('prevBtn').style.display = 'inline-block';
+        renderSet();
     };
 
-    render();
+    document.getElementById('prevBtn').onclick = () => {
+        currentSet = 0;
+        score = 0;
+        document.getElementById('prevBtn').style.display = 'none';
+        document.getElementById('nextBtn').style.display = 'inline-block';
+        renderSet();
+    };
+
+    document.getElementById('prevBtn').style.display = 'none';
+
+    document.getElementById('showAnswerBtn').onclick = () => {
+        const start = currentSet * 10;
+        const slice = allData.slice(start, start + 10);
+        slice.forEach((item, localIdx) => {
+            const globalIdx = start + localIdx;
+            const row = container.children[localIdx];
+            const words = row.querySelectorAll('.word');
+            const inputArea = document.getElementById(`input-area-${globalIdx}`);
+            
+            inputArea.style.display = 'none';
+            words[item.errorIndex].classList.add('correct-word');
+            words[item.errorIndex].textContent = item.correctWord + ' ';
+            document.getElementById(`fb-${globalIdx}`).style.color = '#166534';
+            document.getElementById(`fb-${globalIdx}`).textContent = `Fix: ${item.correctWord}`;
+            
+            if (!row.dataset.solved) {
+                row.dataset.solved = "true";
+                score++;
+            }
+        });
+        updateScoreDisplay();
+    };
+
+    renderSet();
 </script>
 </body>
 </html>
