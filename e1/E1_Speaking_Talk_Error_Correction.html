@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E3 Speaking Talk - 20 Error Correction Task</title>
+    <title>E1 Present Simple - Error Correction Activity</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
         body { background: #f4f6f9; color: #333; display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
@@ -11,6 +11,7 @@
         h1 { font-size: 1.1rem; font-weight: 600; }
         .credit { font-size: 0.85rem; color: #94a3b8; }
         main { flex: 1; padding: 12px 20px; max-width: 1200px; margin: 0 auto; width: 100%; display: flex; flex-direction: column; justify-content: space-between; }
+        .teacher-note { font-size: 9px; color: #64748b; background: #f8fafc; padding: 2px 6px; border: 1px solid #e2e8f0; border-radius: 3px; display: inline-block; margin-bottom: 4px; }
         .instruction-box { background: #fff; padding: 10px 16px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); font-size: 0.95rem; border-left: 4px solid #3b82f6; margin-bottom: 8px; }
         .task-container { display: flex; flex-direction: column; gap: 8px; flex: 1; justify-content: center; }
         .sentence-row { background: #fff; padding: 10px 16px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: flex; align-items: center; justify-content: space-between; font-size: 1rem; }
@@ -29,13 +30,12 @@
         .controls button:hover { background: #334155; }
         .score-board { font-size: 0.95rem; font-weight: bold; margin-left: auto; color: #1e293b; }
         footer { background: #e2e8f0; padding: 4px 20px; font-size: 9px; color: #64748b; display: flex; justify-content: space-between; }
-        .teacher-note { font-size: 9px; color: #64748b; background: #f8fafc; padding: 2px 6px; border: 1px solid #e2e8f0; border-radius: 3px; display: inline-block; margin-bottom: 4px; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Entry 3 · Speaking Talk Review — 20 Error Correction Tasks</h1>
+    <h1>Entry 1 · Present Simple — Error Correction Activity</h1>
     <div class="credit">A-🥫 made by Atin</div>
 </header>
 
@@ -43,64 +43,43 @@
     <div>
         <div class="teacher-note">Teacher Note: Project on main whiteboard. Students tap the incorrect word, then type the corrected word in the box.</div>
         <div class="instruction-box">
-            <strong>Task:</strong> Tap the <em>incorrect</em> word in each sentence, then type the correct replacement word and click Submit.
+            <strong>Task:</strong> Tap the <em>incorrect</em> word in each sentence, then type the correct word and click Submit.
         </div>
     </div>
 
-    <div class="task-container" id="sentenceList">
-        <!-- Dynamically rendered rows -->
-    </div>
+    <div class="task-container" id="sentenceList"></div>
 
     <div class="controls">
         <button id="showAnswerBtn">Show All Answers</button>
-        <button id="prevBtn">Previous Set (1-10)</button>
-        <button id="nextBtn">Next Set (11-20)</button>
         <div class="score-board" id="scoreBoard">Correct: 0 / 10</div>
     </div>
 </main>
 
 <footer>
     <span>Projector Activity — Interactive Board</span>
-    <span>Entry 3 Speaking Practice</span>
+    <span>Entry 1 Present Simple Practice</span>
 </footer>
 
 <script>
     const allData = [
-        // Set 1 (Items 1 - 10)
-        { id: 1, text: "I likes to visit Victoria Park in Hackney.", errorIndex: 1, correctWord: "like" },
-        { id: 2, text: "I go there on every Saturday morning.", errorIndex: 3, correctWord: "every" },
-        { id: 3, text: "We walks around the big lake.", errorIndex: 1, correctWord: "walk" },
-        { id: 4, text: "Sometimes, we buys a coffee.", errorIndex: 2, correctWord: "buy" },
-        { id: 5, text: "I like this park because it are quiet.", errorIndex: 5, correctWord: "is" },
-        { id: 6, text: "It help me relax after a busy week.", errorIndex: 1, correctWord: "helps" },
-        { id: 7, text: "In the afternoon, I walking back home.", errorIndex: 4, correctWord: "walk" },
-        { id: 8, text: "I cook dinner for my family on past evening.", errorIndex: 8, correctWord: "this" },
-        { id: 9, text: "Yesterday, I visit my friend in the park.", errorIndex: 2, correctWord: "visited" },
-        { id: 10, text: "She live in a nice flat near the shop.", errorIndex: 1, correctWord: "lives" },
-        // Set 2 (Items 11 - 20)
-        { id: 11, text: "We was talking about our weekend plans.", errorIndex: 1, correctWord: "were" },
-        { id: 12, text: "He go to the market every Friday.", errorIndex: 1, correctWord: "goes" },
-        { id: 13, text: "They playing football in the local park.", errorIndex: 1, correctWord: "are" },
-        { id: 14, text: "I am study English at college.", errorIndex: 3, correctWord: "studying" },
-        { id: 15, text: "There is two parks near my house.", errorIndex: 2, correctWord: "are" },
-        { id: 16, text: "Do you has a pen to write with?", errorIndex: 2, correctWord: "have" },
-        { id: 17, text: "I didn't went to the shop yesterday.", errorIndex: 3, correctWord: "go" },
-        { id: 18, text: "My friend speak three languages fluently.", errorIndex: 2, correctWord: "speaks" },
-        { id: 19, text: "We are listen to the teacher now.", errorIndex: 2, correctWord: "listening" },
-        { id: 20, text: "The weather yesterday were very cold.", errorIndex: 3, correctWord: "was" }
+        { id: 1, text: "I lives in London.", errorIndex: 1, correctWord: "live" },
+        { id: 2, text: "You likes tea.", errorIndex: 1, correctWord: "like" },
+        { id: 3, text: "He live in a flat.", errorIndex: 1, correctWord: "lives" },
+        { id: 4, text: "She work every day.", errorIndex: 1, correctWord: "works" },
+        { id: 5, text: "We walks to college.", errorIndex: 1, correctWord: "walk" },
+        { id: 6, text: "They goes to the shop.", errorIndex: 1, correctWord: "go" },
+        { id: 7, text: "It rain today.", errorIndex: 1, correctWord: "rains" },
+        { id: 8, text: "I has a pen.", errorIndex: 1, correctWord: "have" },
+        { id: 9, text: "You student here.", errorIndex: 1, correctWord: "are" },
+        { id: 10, text: "He speak English.", errorIndex: 1, correctWord: "speaks" }
     ];
 
-    let currentSet = 0; // 0 for items 1-10, 1 for items 11-20
     let score = 0;
     const container = document.getElementById('sentenceList');
 
     function renderSet() {
         container.innerHTML = '';
-        const start = currentSet * 10;
-        const slice = allData.slice(start, start + 10);
-
-        slice.forEach((item, localIdx) => {
-            const globalIdx = start + localIdx;
+        allData.forEach((item, globalIdx) => {
             const row = document.createElement('div');
             row.className = 'sentence-row';
             row.dataset.globalId = globalIdx;
@@ -146,7 +125,6 @@
             const rightSide = document.createElement('div');
             rightSide.style.display = 'flex';
             rightSide.style.alignItems = 'center';
-            rightSide.rightSide = 'auto';
             rightSide.appendChild(inputArea);
             rightSide.appendChild(feedback);
 
@@ -206,33 +184,12 @@
     }
 
     function updateScoreDisplay() {
-        document.getElementById('scoreBoard').textContent = `Correct in Set: ${score} / 10`;
+        document.getElementById('scoreBoard').textContent = `Correct: ${score} / 10`;
     }
 
-    document.getElementById('nextBtn').onclick = () => {
-        currentSet = 1;
-        score = 0;
-        document.getElementById('nextBtn').style.display = 'none';
-        document.getElementById('prevBtn').style.display = 'inline-block';
-        renderSet();
-    };
-
-    document.getElementById('prevBtn').onclick = () => {
-        currentSet = 0;
-        score = 0;
-        document.getElementById('prevBtn').style.display = 'none';
-        document.getElementById('nextBtn').style.display = 'inline-block';
-        renderSet();
-    };
-
-    document.getElementById('prevBtn').style.display = 'none';
-
     document.getElementById('showAnswerBtn').onclick = () => {
-        const start = currentSet * 10;
-        const slice = allData.slice(start, start + 10);
-        slice.forEach((item, localIdx) => {
-            const globalIdx = start + localIdx;
-            const row = container.children[localIdx];
+        allData.forEach((item, globalIdx) => {
+            const row = container.children[globalIdx];
             const words = row.querySelectorAll('.word');
             const inputArea = document.getElementById(`input-area-${globalIdx}`);
             
