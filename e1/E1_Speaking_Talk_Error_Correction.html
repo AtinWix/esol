@@ -27,9 +27,11 @@
         .input-area button { background: #3b82f6; color: #fff; border: none; padding: 6px 10px; font-size: 0.9rem; border-radius: 4px; cursor: pointer; font-weight: 600; }
         .input-area button:hover { background: #2563eb; }
         .feedback { font-size: 0.9rem; font-weight: bold; text-align: right; white-space: nowrap; }
-        .controls { display: flex; gap: 12px; align-items: center; padding-top: 6px; }
-        .controls button { background: #1e293b; color: #fff; border: none; padding: 8px 16px; font-size: 0.95rem; border-radius: 6px; cursor: pointer; font-weight: 600; }
+        .controls { display: flex; gap: 10px; align-items: center; padding-top: 6px; flex-wrap: wrap; }
+        .controls button { background: #1e293b; color: #fff; border: none; padding: 8px 14px; font-size: 0.95rem; border-radius: 6px; cursor: pointer; font-weight: 600; }
         .controls button:hover { background: #334155; }
+        .controls button.page-btn { background: #475569; }
+        .controls button.page-btn.active { background: #2563eb; }
         .score-board { font-size: 1.05rem; font-weight: bold; margin-left: auto; color: #1e293b; }
         footer { background: #e2e8f0; padding: 4px 24px; font-size: 9px; color: #475569; display: flex; justify-content: space-between; }
         @media (max-width: 900px) {
@@ -41,7 +43,7 @@
 <body>
 
 <header>
-    <h1>Entry 1 · Present Simple — Find the Error</h1>
+    <h1 id="pageTitle">Entry 1 · Present Simple — Find the Error (Page 1: Statements)</h1>
     <div class="credit">A-🥫 made by Atin</div>
 </header>
 
@@ -56,9 +58,11 @@
     <div class="task-container" id="sentenceList"></div>
 
     <div class="controls">
+        <button id="page1Btn" class="page-btn active">Page 1: Statements</button>
+        <button id="page2Btn" class="page-btn">Page 2: Questions</button>
         <button id="showAnswerBtn">Show Next Answer</button>
-        <button id="resetBtn">Reset</button>
-        <div class="score-board" id="scoreBoard">Score: 0 / 20</div>
+        <button id="resetBtn">Reset Page</button>
+        <div class="score-board" id="scoreBoard">Score: 0 / 10</div>
     </div>
 </main>
 
@@ -68,36 +72,50 @@
 </footer>
 
 <script>
-    const allData = [
-        { id: 1, text: "I lives in London.", errorIndex: 1, correctWord: "live" },
-        { id: 2, text: "You likes tea.", errorIndex: 1, correctWord: "like" },
-        { id: 3, text: "He live in a flat.", errorIndex: 1, correctWord: "lives" },
-        { id: 4, text: "She work every day.", errorIndex: 1, correctWord: "works" },
-        { id: 5, text: "We walks to college.", errorIndex: 1, correctWord: "walk" },
-        { id: 6, text: "They goes to the shop.", errorIndex: 1, correctWord: "go" },
-        { id: 7, text: "It rain today.", errorIndex: 1, correctWord: "rains" },
-        { id: 8, text: "I has a pen.", errorIndex: 1, correctWord: "have" },
-        { id: 9, text: "You is a student here.", errorIndex: 1, correctWord: "are" },
-        { id: 10, text: "He speak English.", errorIndex: 1, correctWord: "speaks" },
-        { id: 11, text: "She have two children.", errorIndex: 1, correctWord: "has" },
-        { id: 12, text: "I does not like milk.", errorIndex: 1, correctWord: "do" },
-        { id: 13, text: "He do not work on Sunday.", errorIndex: 1, correctWord: "does" },
-        { id: 14, text: "Do you lives in Hackney?", errorIndex: 2, correctWord: "live" },
-        { id: 15, text: "Does she likes coffee?", errorIndex: 2, correctWord: "like" },
-        { id: 16, text: "We is from London.", errorIndex: 1, correctWord: "are" },
-        { id: 17, text: "They is happy today.", errorIndex: 1, correctWord: "are" },
-        { id: 18, text: "You has a nice bag.", errorIndex: 1, correctWord: "have" },
-        { id: 19, text: "It don't rain in summer.", errorIndex: 1, correctWord: "doesn't" },
-        { id: 20, text: "She don't speak Spanish.", errorIndex: 1, correctWord: "doesn't" }
+    const pages = [
+        [
+            { id: 1, text: "I lives in London.", errorIndex: 1, correctWord: "live" },
+            { id: 2, text: "You likes tea.", errorIndex: 1, correctWord: "like" },
+            { id: 3, text: "He live in a flat.", errorIndex: 1, correctWord: "lives" },
+            { id: 4, text: "She work every day.", errorIndex: 1, correctWord: "works" },
+            { id: 5, text: "We walks to college.", errorIndex: 1, correctWord: "walk" },
+            { id: 6, text: "They goes to the shop.", errorIndex: 1, correctWord: "go" },
+            { id: 7, text: "It rain today.", errorIndex: 1, correctWord: "rains" },
+            { id: 8, text: "I has a pen.", errorIndex: 1, correctWord: "have" },
+            { id: 9, text: "You is a student here.", errorIndex: 1, correctWord: "are" },
+            { id: 10, text: "He speak English.", errorIndex: 1, correctWord: "speaks" }
+        ],
+        [
+            { id: 1, text: "Does you live in London?", errorIndex: 0, correctWord: "Do" },
+            { id: 2, text: "Do she work in a shop?", errorIndex: 0, correctWord: "Does" },
+            { id: 3, text: "Do he like coffee?", errorIndex: 0, correctWord: "Does" },
+            { id: 4, text: "Does they walk to college?", errorIndex: 0, correctWord: "Do" },
+            { id: 5, text: "Does we have class today?", errorIndex: 0, correctWord: "Do" },
+            { id: 6, text: "Do you lives in Hackney?", errorIndex: 2, correctWord: "live" },
+            { id: 7, text: "Does she likes tea?", errorIndex: 2, correctWord: "like" },
+            { id: 8, text: "Does he has a pen?", errorIndex: 2, correctWord: "have" },
+            { id: 9, text: "Is you a student?", errorIndex: 0, correctWord: "Are" },
+            { id: 10, text: "Are he from London?", errorIndex: 0, correctWord: "Is" }
+        ]
     ];
 
-    let score = 0;
+    let currentPage = 0;
+    let scores = [0, 0];
+    let solvedState = [Array(10).fill(false), Array(10).fill(false)];
     const container = document.getElementById('sentenceList');
 
     function renderSet() {
-        score = 0;
+        const data = pages[currentPage];
         container.innerHTML = '';
-        allData.forEach((item, globalIdx) => {
+
+        document.getElementById('pageTitle').textContent = currentPage === 0
+            ? 'Entry 1 · Present Simple — Find the Error (Page 1: Statements)'
+            : 'Entry 1 · Present Simple — Find the Error (Page 2: Questions)';
+
+        document.getElementById('page1Btn').classList.toggle('active', currentPage === 0);
+        document.getElementById('page2Btn').classList.toggle('active', currentPage === 1);
+
+        data.forEach((item, globalIdx) => {
             const row = document.createElement('div');
             row.className = 'sentence-row';
             row.dataset.globalId = globalIdx;
@@ -115,7 +133,12 @@
             words.forEach((w, wIdx) => {
                 const span = document.createElement('span');
                 span.className = 'word';
-                span.textContent = w;
+                if (solvedState[currentPage][globalIdx] && wIdx === item.errorIndex) {
+                    span.classList.add('correct-word');
+                    span.textContent = item.correctWord;
+                } else {
+                    span.textContent = w;
+                }
                 span.onclick = () => handleWordClick(item, wIdx, span, row);
                 textDiv.appendChild(span);
             });
@@ -142,6 +165,10 @@
             const feedback = document.createElement('div');
             feedback.className = 'feedback';
             feedback.id = `fb-${globalIdx}`;
+            if (solvedState[currentPage][globalIdx]) {
+                feedback.style.color = '#166534';
+                feedback.textContent = 'Correct!';
+            }
 
             const rightSide = document.createElement('div');
             rightSide.className = 'right-controls';
@@ -156,81 +183,8 @@
     }
 
     function handleWordClick(item, wIdx, span, row) {
-        if (row.dataset.solved === "true") return;
         const globalIdx = parseInt(row.dataset.globalId);
+        if (solvedState[currentPage][globalIdx]) return;
+
         const inputArea = document.getElementById(`input-area-${globalIdx}`);
-        const feedback = document.getElementById(`fb-${globalIdx}`);
-        const words = row.querySelectorAll('.word');
-
-        words.forEach(w => w.classList.remove('selected-error'));
-
-        if (wIdx === item.errorIndex) {
-            span.classList.add('selected-error');
-            inputArea.style.display = 'flex';
-            feedback.style.color = '#b45309';
-            feedback.textContent = '';
-            document.getElementById(`input-${globalIdx}`).focus();
-        } else {
-            span.classList.add('selected-error');
-            feedback.style.color = '#991b1b';
-            feedback.textContent = 'Try again';
-            inputArea.style.display = 'none';
-            setTimeout(() => span.classList.remove('selected-error'), 800);
-        }
-    }
-
-    function handleCorrectionSubmit(item, globalIdx, row) {
-        const inputVal = document.getElementById(`input-${globalIdx}`).value.trim().toLowerCase();
-        const feedback = document.getElementById(`fb-${globalIdx}`);
-        const inputArea = document.getElementById(`input-area-${globalIdx}`);
-        const words = row.querySelectorAll('.word');
-
-        if (inputVal === item.correctWord.toLowerCase()) {
-            words[item.errorIndex].classList.remove('selected-error');
-            words[item.errorIndex].classList.add('correct-word');
-            words[item.errorIndex].textContent = item.correctWord;
-            inputArea.style.display = 'none';
-            feedback.style.color = '#166534';
-            feedback.textContent = 'Correct!';
-
-            if (!row.dataset.solved) {
-                row.dataset.solved = "true";
-                score++;
-                updateScoreDisplay();
-            }
-        } else {
-            feedback.style.color = '#991b1b';
-            feedback.textContent = 'Try again';
-        }
-    }
-
-    function updateScoreDisplay() {
-        document.getElementById('scoreBoard').textContent = `Score: ${score} / 20`;
-    }
-
-    document.getElementById('showAnswerBtn').onclick = () => {
-        for (let i = 0; i < allData.length; i++) {
-            const row = container.children[i];
-            if (!row.dataset.solved) {
-                const item = allData[i];
-                const words = row.querySelectorAll('.word');
-                document.getElementById(`input-area-${i}`).style.display = 'none';
-                words[item.errorIndex].classList.remove('selected-error');
-                words[item.errorIndex].classList.add('correct-word');
-                words[item.errorIndex].textContent = item.correctWord;
-                document.getElementById(`fb-${i}`).style.color = '#166534';
-                document.getElementById(`fb-${i}`).textContent = `Answer: ${item.correctWord}`;
-                row.dataset.solved = "true";
-                score++;
-                updateScoreDisplay();
-                break;
-            }
-        }
-    };
-
-    document.getElementById('resetBtn').onclick = renderSet;
-
-    renderSet();
-</script>
-</body>
-</html>
+        const feedback =
