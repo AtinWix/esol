@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E3 Speaking Talk - Error Correction</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
+        body { background: #f4f6f9; color: #333; display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+        header { background: #1e293b; color: #fff; padding: 12px 24px; display: flex; justify-content: space-between; align-items: center; }
+        h1 { font-size: 1.2rem; font-weight: 600; }
+        .credit { font-size: 0.85rem; color: #94a3b8; }
+        main { flex: 1; padding: 20px; max-width: 1200px; margin: 0 auto; width: 100%; display: flex; flex-direction: column; justify-content: center; }
+        .instruction-box { background: #fff; padding: 15px 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 20px; font-size: 1.05rem; border-left: 4px solid #3b82f6; }
+        .sentences-container { display: flex; flex-direction: column; gap: 12px; }
+        .sentence-row { background: #fff; padding: 14px 18px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); display: flex; align-items: center; justify-content: space-between; font-size: 1.1rem; }
+        .word { cursor: pointer; padding: 2px 6px; border-radius: 4px; transition: background 0.2s; display: inline-block; }
+        .word:hover { background: #e2e8f0; }
+        .word.selected { background: #fee2e2; color: #991b1b; font-weight: bold; border: 1px dashed #ef4444; }
+        .word.correct { background: #dcfce7; color: #166534; font-weight: bold; }
+        .feedback { font-size: 0.95rem; font-weight: bold; min-width: 150px; text-align: right; }
+        .controls { margin-top: 20px; display: flex; gap: 12px; align-items: center; }
+        button { background: #3b82f6; color: white; border: none; padding: 10px 20px; font-size: 1rem; border-radius: 6px; cursor: pointer; font-weight: 600; }
+        button:hover { background: #2563eb; }
+        .score-board { font-size: 1rem; font-weight: bold; margin-left: auto; }
+        footer { background: #e2e8f0; padding: 6px 24px; font-size: 9px; color: #64748b; display: flex; justify-content: space-between; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Entry 3 · Speaking Talk Review — Find the Error</h1>
+    <div class="credit">A-🥫 made by Atin</div>
+</header>
+
+<main>
+    <div class="instruction-box">
+        <strong>Task:</strong> Tap the <em>incorrect</em> word in each sentence from the talk, then type the correction.
+    </div>
+
+    <div class="sentences-container" id="sentenceList">
+        <!-- Dynamic rows inserted here -->
+    </div>
+
+    <div class="controls">
+        <button id="showAnswerBtn">Show All Answers</button>
+        <div class="score-board" id="scoreBoard">Correct: 0 / 5</div>
+    </div>
+</main>
+
+<footer>
+    <span>Projector Activity — Interactive Board</span>
+    <span>Entry 3 Speaking Practice</span>
+</footer>
+
+<script>
+    const data = [
+        { id: 1, text: "I likes to visit Victoria Park in Hackney.", errorIndex: 1, correctWord: "like", fullCorrect: "I like to visit Victoria Park in Hackney." },
+        { id: 2, text: "I go there on every Saturday morning.", errorIndex: 3, correctWord: "omit (on)", fullCorrect: "I go there every Saturday morning." },
+        { id: 3, text: "We walks around the big lake.", errorIndex: 1, correctWord: "walk", fullCorrect: "We walk around the big lake." },
+        { id: 4, text: "I like this park because it are quiet.", errorIndex: 5, correctWord: "is", fullCorrect: "I like this park because it is quiet." },
+        { id: 5, text: "In the afternoon, I walking back home.", errorIndex: 4, correctWord: "walk", fullCorrect: "In the afternoon, I walk back home." }
+    ];
+
+    let score = 0;
+    const container = document.getElementById('sentenceList');
+
+    function render() {
+        container.innerHTML = '';
+        data.forEach((item, idx) => {
+            const row = document.createElement('div');
+            row.className = 'sentence-row';
+            
+            const wordsDiv = document.createElement('div');
+            const words = item.text.split(' ');
+            
+            words.forEach((w, wIdx) => {
+                const span = document.createElement('span');
+                span.className = 'word';
+                span.textContent = w + ' ';
+                span.onclick = () => handleWordClick(item, wIdx, span, row);
+                wordsDiv.appendChild(span);
+            });
+
+            const feedback = document.createElement('div');
+            feedback.className = 'feedback';
+            feedback.id = `fb-${idx}`;
+
+            row.appendChild(wordsDiv);
+            row.appendChild(feedback);
+            container.appendChild(row);
+        });
+    }
+
+    function handleWordClick(item, wIdx, span, row) {
+        const feedback = row.querySelector('.feedback');
+        if (wIdx === item.errorIndex) {
+            span.classList.add('correct');
+            feedback.style.color = '#166534';
+            feedback.textContent = `Correct! (${item.correctWord})`;
+            if (!row.dataset.solved) {
+                row.dataset.solved = "true";
+                score++;
+                updateScore();
+            }
+        } else {
+            span.classList.add('selected');
+            feedback.style.color = '#991b1b';
+            feedback.textContent = 'Try again!';
+            setTimeout(() => span.classList.remove('selected'), 1000);
+        }
+    }
+
+    function updateScore() {
+        document.getElementById('scoreBoard').textContent = `Correct: ${score} / ${data.length}`;
+    }
+
+    document.getElementById('showAnswerBtn').onclick = () => {
+        data.forEach((item, idx) => {
+            const row = container.children[idx];
+            const words = row.querySelectorAll('.word');
+            words[item.errorIndex].classList.add('correct');
+            row.querySelector('.feedback').style.color = '#166534';
+            row.querySelector('.feedback').textContent = item.fullCorrect;
+        });
+        score = data.length;
+        updateScore();
+    };
+
+    render();
+</script>
+</body>
+</html>
