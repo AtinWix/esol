@@ -6,16 +6,16 @@
     <title>E1 Present Simple - Error Correction - Projector</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
-        body { background: #f4f6f9; color: #1e293b; display: flex; flex-direction: column; height: 100vh; width: 100vw; overflow: hidden; }
-        header { background: #1e293b; color: #fff; padding: 8px 24px; display: flex; justify-content: space-between; align-items: center; }
+        body { background: #f4f6f9; color: #1e293b; display: flex; flex-direction: column; min-height: 100vh; width: 100vw; }
+        header { background: #1e293b; color: #fff; padding: 8px 24px; display: flex; justify-content: space-between; align-items: center; flex-shrink: 0; }
         h1 { font-size: 1.2rem; font-weight: 600; }
         .credit { font-size: 0.9rem; color: #cbd5e1; }
-        main { flex: 1; padding: 10px 24px; width: 100%; display: flex; flex-direction: column; justify-content: space-between; }
-        .top-bar { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 6px; }
+        main { flex: 1; padding: 10px 24px; width: 100%; display: flex; flex-direction: column; justify-content: space-between; max-width: 1400px; margin: 0 auto; }
+        .top-bar { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 8px; flex-shrink: 0; }
         .instruction-box { background: #fff; padding: 8px 14px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); font-size: 1rem; border-left: 4px solid #3b82f6; flex: 1; }
         .teacher-note { font-size: 9px; color: #475569; background: #e2e8f0; padding: 4px 8px; border-radius: 4px; white-space: nowrap; }
-        .task-container { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 20px; flex: 1; align-content: center; }
-        .sentence-row { background: #fff; padding: 10px 14px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); display: flex; align-items: center; justify-content: space-between; font-size: 1.15rem; }
+        .task-container { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 20px; margin-bottom: 8px; }
+        .sentence-row { background: #fff; padding: 8px 14px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); display: flex; align-items: center; justify-content: space-between; font-size: 1.05rem; }
         .sentence-text { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }
         .word { cursor: pointer; padding: 3px 6px; border-radius: 4px; transition: background 0.15s; display: inline-block; }
         .word:hover { background: #e2e8f0; }
@@ -23,19 +23,18 @@
         .word.correct-word { background: #dcfce7; color: #166534; font-weight: bold; }
         .right-controls { display: flex; align-items: center; gap: 8px; }
         .input-area { display: none; align-items: center; gap: 6px; }
-        .input-area input { padding: 5px 8px; font-size: 1rem; border: 1px solid #94a3b8; border-radius: 4px; width: 110px; }
-        .input-area button { background: #3b82f6; color: #fff; border: none; padding: 6px 10px; font-size: 0.9rem; border-radius: 4px; cursor: pointer; font-weight: 600; }
+        .input-area input { padding: 4px 8px; font-size: 0.95rem; border: 1px solid #94a3b8; border-radius: 4px; width: 100px; }
+        .input-area button { background: #3b82f6; color: #fff; border: none; padding: 5px 10px; font-size: 0.85rem; border-radius: 4px; cursor: pointer; font-weight: 600; }
         .input-area button:hover { background: #2563eb; }
-        .feedback { font-size: 0.9rem; font-weight: bold; text-align: right; white-space: nowrap; }
-        .controls { display: flex; gap: 10px; align-items: center; padding-top: 6px; flex-wrap: wrap; }
+        .feedback { font-size: 0.85rem; font-weight: bold; text-align: right; white-space: nowrap; }
+        .controls { display: flex; gap: 10px; align-items: center; padding-top: 6px; flex-wrap: wrap; flex-shrink: 0; }
         .controls button { background: #1e293b; color: #fff; border: none; padding: 8px 14px; font-size: 0.95rem; border-radius: 6px; cursor: pointer; font-weight: 600; }
         .controls button:hover { background: #334155; }
         .controls button.page-btn { background: #475569; }
         .controls button.page-btn.active { background: #2563eb; }
         .score-board { font-size: 1.05rem; font-weight: bold; margin-left: auto; color: #1e293b; }
-        footer { background: #e2e8f0; padding: 4px 24px; font-size: 9px; color: #475569; display: flex; justify-content: space-between; }
+        footer { background: #e2e8f0; padding: 4px 24px; font-size: 9px; color: #475569; display: flex; justify-content: space-between; flex-shrink: 0; }
         @media (max-width: 900px) {
-            body { height: auto; overflow: auto; }
             .task-container { grid-template-columns: 1fr; }
         }
     </style>
@@ -44,7 +43,7 @@
 
 <header>
     <h1 id="pageTitle">Entry 1 · Present Simple — Find the Error (Page 1: Statements)</h1>
-    <div class="credit">A-🥫 made by Atin</div>
+    <div class="credit">A-🥫 made by Atin[cite: 1]</div>
 </header>
 
 <main>
@@ -68,7 +67,7 @@
 
 <footer>
     <span>Entry 1 · Present Simple</span>
-    <span>A-🥫 made by Atin</span>
+    <span>A-🥫 made by Atin[cite: 1]</span>
 </footer>
 
 <script>
@@ -187,4 +186,93 @@
         if (solvedState[currentPage][globalIdx]) return;
 
         const inputArea = document.getElementById(`input-area-${globalIdx}`);
-        const feedback =
+        const feedback = document.getElementById(`fb-${globalIdx}`);
+        const words = row.querySelectorAll('.word');
+
+        words.forEach(w => w.classList.remove('selected-error'));
+
+        if (wIdx === item.errorIndex) {
+            span.classList.add('selected-error');
+            inputArea.style.display = 'flex';
+            feedback.style.color = '#b45309';
+            feedback.textContent = '';
+            document.getElementById(`input-${globalIdx}`).focus();
+        } else {
+            span.classList.add('selected-error');
+            feedback.style.color = '#991b1b';
+            feedback.textContent = 'Try again';
+            inputArea.style.display = 'none';
+            setTimeout(() => span.classList.remove('selected-error'), 800);
+        }
+    }
+
+    function handleCorrectionSubmit(item, globalIdx, row) {
+        const inputVal = document.getElementById(`input-${globalIdx}`).value.trim().toLowerCase();
+        const feedback = document.getElementById(`fb-${globalIdx}`);
+        const inputArea = document.getElementById(`input-area-${globalIdx}`);
+        const words = row.querySelectorAll('.word');
+
+        if (inputVal === item.correctWord.toLowerCase()) {
+            words[item.errorIndex].classList.remove('selected-error');
+            words[item.errorIndex].classList.add('correct-word');
+            words[item.errorIndex].textContent = item.correctWord;
+            inputArea.style.display = 'none';
+            feedback.style.color = '#166534';
+            feedback.textContent = 'Correct!';
+
+            if (!solvedState[currentPage][globalIdx]) {
+                solvedState[currentPage][globalIdx] = true;
+                scores[currentPage]++;
+                updateScoreDisplay();
+            }
+        } else {
+            feedback.style.color = '#991b1b';
+            feedback.textContent = 'Try again';
+        }
+    }
+
+    function updateScoreDisplay() {
+        document.getElementById('scoreBoard').textContent = `Score: ${scores[currentPage]} / 10`;
+    }
+
+    document.getElementById('page1Btn').onclick = () => {
+        currentPage = 0;
+        renderSet();
+    };
+
+    document.getElementById('page2Btn').onclick = () => {
+        currentPage = 1;
+        renderSet();
+    };
+
+    document.getElementById('showAnswerBtn').onclick = () => {
+        const data = pages[currentPage];
+        for (let i = 0; i < data.length; i++) {
+            if (!solvedState[currentPage][i]) {
+                const item = data[i];
+                const row = container.children[i];
+                const words = row.querySelectorAll('.word');
+                document.getElementById(`input-area-${i}`).style.display = 'none';
+                words[item.errorIndex].classList.remove('selected-error');
+                words[item.errorIndex].classList.add('correct-word');
+                words[item.errorIndex].textContent = item.correctWord;
+                document.getElementById(`fb-${i}`).style.color = '#166534';
+                document.getElementById(`fb-${i}`).textContent = `Answer: ${item.correctWord}`;
+                solvedState[currentPage][i] = true;
+                scores[currentPage]++;
+                updateScoreDisplay();
+                break;
+            }
+        }
+    };
+
+    document.getElementById('resetBtn').onclick = () => {
+        scores[currentPage] = 0;
+        solvedState[currentPage] = Array(10).fill(false);
+        renderSet();
+    };
+
+    renderSet();
+</script>
+</body>
+</html>
