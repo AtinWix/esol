@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-16T14:35:34Z",
+ "updatedAt": "2026-11-17T07:14:18Z",
  "upcoming": {
   "2026-11-02_e3": {
    "afternoon": "PC room: Too Cold to Learn – complaint emails",
@@ -278,7 +278,7 @@
   },
   "2026-11-12_e2": {
    "afternoon": "PC room, students on own PCs throughout: Hangman Paragraphs in pairs (p10); A going to or will? (p11); B build the question + ask a neighbour (p12); C find and correct the mistake (p13); D 4 sentences posted in Teams (p14); E Task 4b answers posted in Teams (p16); Kahoot on PCs (p15)",
-   "amended": "2026-11-14T08:20:57Z",
+   "amended": "2026-11-16T14:35:45Z",
    "asTaught": "As taught: AM ESB Exam Practice worksheet Tasks 1–4 with new Task 3 images and a new Task 4a audio page, done up to section D (Task 3). PM (PC room) the Future Plans (going to and will) lesson page up to slide 8. Task 4a and 4b (worksheet sections E and F) and the remaining PC activities carry to Thu 19 Nov.",
    "cls": "E2 Speaking & Listening",
    "date": "2026-11-12",
@@ -322,7 +322,7 @@
   },
   "2026-11-16_e3": {
    "afternoon": "PC room, one lesson page on projector and PCs: which do you prefer and why?; four linking words (because, so, although, however); Task A choose the word; Task B read an opinion text and answer; Task C main idea or detail; Task D join the sentences; Task E online dictionary; Task F opinion in Teams; find the mistake",
-   "amended": "2026-11-14T19:34:46Z",
+   "amended": "2026-11-16T14:35:45Z",
    "asTaught": "As taught: AM the purpose, text type and audience handout only; the Set L paper, Prove it, fix-two and target were not taught (the Set L paper moves to Wed 18 Nov, as paper only). PM, PC room: all nine pages taught (linking words, Tasks A–F, find the mistake); the Task E dictionary words were too easy and need harder words.",
    "cls": "E3 Reading",
    "created": "2026-11-11",
@@ -782,7 +782,7 @@
   },
   "2026-11-19_e2": {
    "afternoon": "PC room: online practice A–C (going to or will, build the question, find the correct sentence); handout Task 3 + five sentences in Teams (yesterday, now, tomorrow, opinion, offer); Task 4a-style listening (weekend plan, audio page); Referee Interviews wheels; Kahoot (20 Qs)",
-   "amended": "2026-11-14T19:34:46Z",
+   "amended": "2026-11-16T14:35:45Z",
    "cls": "E2 Speaking & Listening",
    "created": "2026-11-12",
    "date": "2026-11-19",
@@ -959,37 +959,33 @@
  },
  "status": {},
  "health": {
-  "checkedAt": "2026-11-16T07:30:00Z",
+  "ok": true,
+  "checkedAt": "2026-11-17T07:14:05Z",
   "items": [
    {
     "ok": true,
-    "text": "Next teaching days: Mon 16 E3, Tue 17 E1 and Thu 19 E2 are built, no flags on any card. Wed 18 E3 correctly waits for your Mon 16 log."
+    "text": "Next teaching days: Tue 17 E1, Wed 18 E3 and Thu 19 E2 are built with no flags. Mon 23 E3 and Tue 24 E1 correctly wait for logs."
    },
    {
     "ok": true,
-    "text": "Logged lessons 9–12 Nov all have ROW snippets, Covered/Next and 'As taught'."
+    "text": "Logged lessons 10–16 Nov all have ROW snippets, Covered/Next and 'As taught'. Day check and --past check on all cards: no faults."
    },
    {
     "ok": true,
-    "text": "Day check on upcoming cards and --past check on the last four weeks: no faults. Library lists have no id or claude fields; no public material is also a Claude artifact."
-   },
-   {
-    "ok": true,
-    "text": "Kahoot: E3 had one on 11 Nov and E2 on 5 Nov, so each class is within its week."
+    "text": "No public material is also a Claude artifact; the lists have no id or claude fields. Filing Inbox has nothing pending."
    },
    {
     "ok": false,
-    "text": "Kahoot for Tue 17 E1 and Thu 19 E2 is still 'not yet in Kahoot'. The evening import task did not update either card last night, and it is not in the scheduled task list so I can't see whether it ran. For tomorrow, use the one-minute manual import on the card."
+    "text": "Kahoots for Tue 17 E1, Wed 18 E3 and Thu 19 E2 are still 'not yet in Kahoot'. The evening import task is not in the scheduled task list I can see, so I can't tell whether it ran. Use the one-minute manual import on the card if needed."
    },
    {
     "ok": false,
-    "text": "Two tasks last failed on the usage limit: 'Next teaching day's lesson summary' (Fri 13 Nov; its next run is 2:33pm today) and 'Weekly ESOL lesson build' (Thu 12 Nov, now switched off, nothing outstanding)."
+    "text": "'Weekly ESOL lesson build' last failed on the usage limit (Thu 12 Nov) and is switched off, so nothing outstanding. All other ESOL tasks last succeeded."
    },
    {
     "ok": false,
-    "text": "Lesson Log fixes still open from 12 Nov: E2 lesson page slide 4 Vote Card (new), E2 handout link (new), Hub page public link (needs you)."
+    "text": "One Lesson Log fix still needs you: Teacher Hub public page (12 Nov)."
    }
-  ],
-  "ok": true
+  ]
  }
 }
