@@ -143,4 +143,144 @@ button.primary:hover{background:#0A6463}
     <section class="loop" aria-label="How to talk">
       <h2>Talk like this</h2>
       <div class="step"><div class="num">1</div><div class="who A">A</div>
-        <div
+        <div class="say"><span class="lab">Ask</span><span class="txt" id="s1"></span></div></div>
+      <div class="step"><div class="num">2</div><div class="who B">B</div>
+        <div class="say"><span class="lab">Answer</span><span class="txt" id="s2"></span></div></div>
+      <div class="step react"><div class="num">3</div><div class="who A">A</div>
+        <div class="say"><span class="lab">React</span><span class="txt" id="s3"></span></div></div>
+      <div class="step"><div class="num">4</div><div class="who B">B</div>
+        <div class="say"><span class="lab">Ask back</span><span class="txt">And you?</span></div></div>
+      <div class="reactions" aria-label="Useful words">
+        <span>Me too!</span><span>Really?</span><span>Nice!</span><span>Oh no!</span><span class="and">And you?</span>
+      </div>
+    </section>
+  </main>
+
+  <div class="controls">
+    <div class="btns">
+      <button id="prev" type="button">◀ Back</button>
+      <button id="next" type="button" class="primary">Next card ▶</button>
+      <button id="shuffle" type="button">Shuffle</button>
+      <button id="full" type="button">Full screen</button>
+    </div>
+    <div class="swap"><span>Change partner after 3 cards</span><div class="dots" id="dots"><i></i><i></i><i></i></div></div>
+  </div>
+  <div class="hint">Keys: → or Space = next · ← = back · S = shuffle</div>
+</div>
+
+<div class="overlay" id="overlay" hidden>
+  <div class="ov">
+    <div class="arrows" aria-hidden="true">⇄</div>
+    <div class="big">Change partner!</div>
+    <p>Stand up. Find a new partner.</p>
+    <button id="go" type="button" class="primary">Next card ▶</button>
+  </div>
+</div>
+
+<script>
+const CARDS = [
+  {pic:"🙂", q:"How are you today?", f:"I'm <b>good</b>. / I'm <b>tired</b>. / I'm <b>busy</b>.", ex:"I'm tired today.", r:"Oh no!"},
+  {pic:"🥶", q:"Is it cold today?", f:"Yes, it's <b>very cold</b>. / No, it's <b>OK</b>.", ex:"Yes, it's very cold!", r:"Really?"},
+  {pic:"🚌", q:"How do you come to college?", f:"I come <b>by bus</b>. / <b>By train</b>. / I <b>walk</b>.", ex:"I come by bus.", r:"Me too!"},
+  {pic:"⏰", q:"What time do you get up?", f:"I get up at <b>___</b>.", ex:"I get up at 6 o'clock.", r:"Really?"},
+  {pic:"🍳", q:"What do you eat for breakfast?", f:"I eat <b>___</b>. / I <b>don't</b> eat breakfast.", ex:"I eat bread and eggs.", r:"Nice!"},
+  {pic:"🍲", q:"Who cooks in your house?", f:"<b>I</b> cook. / My <b>___</b> cooks.", ex:"My husband cooks.", r:"Nice!"},
+  {pic:"👶", q:"Have you got children?", f:"Yes, I've got <b>___</b>. / No, I <b>haven't</b>.", ex:"Yes, I've got two children.", r:"Nice!"},
+  {pic:"💼", q:"Do you work?", f:"Yes, I work in a <b>___</b>. / No, I <b>don't</b>.", ex:"Yes, I work in a shop.", r:"Nice!"},
+  {pic:"🧹", q:"What do you do on Saturday?", f:"I go <b>shopping</b>. / I <b>clean</b> the house.", ex:"I clean the house.", r:"Me too!"},
+  {pic:"🛒", q:"Where do you go shopping?", f:"I go to <b>___</b>.", ex:"I go to the market.", r:"Me too!"},
+  {pic:"🏠", q:"What do you do after class?", f:"I go <b>home</b>. / I <b>pick up</b> my children.", ex:"I go home.", r:"Me too!"},
+  {pic:"🚗", q:"Can you drive?", f:"Yes, I <b>can</b>. / No, I <b>can't</b>.", ex:"Yes, I can.", r:"Nice!"},
+  {pic:"📺", q:"Do you watch TV in English?", f:"Yes, I <b>do</b>. / No, I <b>don't</b>.", ex:"Yes, I do.", r:"Nice!"},
+  {pic:"🍚", q:"Do you cook food from your country?", f:"Yes, I cook <b>___</b>. / No, I <b>don't</b>.", ex:"Yes, I cook rice and fish.", r:"Nice!"},
+  {pic:"🐱", q:"Have you got a pet?", f:"Yes, I've got a <b>___</b>. / No, I <b>haven't</b>.", ex:"Yes, I've got a cat.", r:"Really?"},
+  {pic:"🏡", q:"Is your house big or small?", f:"It's <b>big</b>. / It's <b>small</b>.", ex:"It's small.", r:"Me too!"}
+];
+
+let order = CARDS.map((_, i) => i);
+let pos = 0;
+let sinceSwap = 0;   // cards completed with current partner
+const $ = id => document.getElementById(id);
+const card = $("card"), overlay = $("overlay");
+
+function render(){
+  const c = CARDS[order[pos]];
+  $("pic").textContent = c.pic;
+  $("q").textContent = c.q;
+  $("frame").innerHTML = c.f;
+  $("s1").textContent = c.q;
+  $("s2").textContent = c.ex;
+  $("s3").textContent = c.r;
+  $("count").textContent = `Card ${pos + 1} of ${CARDS.length}`;
+  [...$("dots").children].forEach((d, i) => d.classList.toggle("on", i < sinceSwap));
+  card.classList.remove("flip"); void card.offsetWidth; card.classList.add("flip");
+}
+
+function step(){
+  pos = (pos + 1) % CARDS.length;
+  render();
+}
+
+function next(){
+  if (!overlay.hidden) { closeSwap(); return; }
+  sinceSwap++;
+  if (sinceSwap >= 3) {
+    sinceSwap = 3; render();
+    overlay.hidden = false;
+    $("go").focus();
+    return;
+  }
+  step();
+}
+
+function closeSwap(){
+  overlay.hidden = true;
+  sinceSwap = 0;
+  step();
+  $("next").focus();
+}
+
+function prev(){
+  if (!overlay.hidden) return;
+  pos = (pos - 1 + CARDS.length) % CARDS.length;
+  if (sinceSwap > 0) sinceSwap--;
+  render();
+}
+
+function shuffle(){
+  for (let i = order.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [order[i], order[j]] = [order[j], order[i]];
+  }
+  pos = 0; sinceSwap = 0;
+  overlay.hidden = true;
+  render();
+}
+
+function full(){
+  const el = document.documentElement;
+  try {
+    const p = document.fullscreenElement
+      ? document.exitFullscreen()
+      : (el.requestFullscreen ? el.requestFullscreen() : null);
+    if (p && p.catch) p.catch(() => {});
+  } catch (e) {}
+}
+
+$("next").addEventListener("click", next);
+$("prev").addEventListener("click", prev);
+$("shuffle").addEventListener("click", shuffle);
+$("full").addEventListener("click", full);
+$("go").addEventListener("click", closeSwap);
+
+document.addEventListener("keydown", e => {
+  if (e.target.tagName === "BUTTON" && (e.key === " " || e.key === "Enter")) return;
+  if (e.key === "ArrowRight" || e.key === " ") { e.preventDefault(); next(); }
+  else if (e.key === "ArrowLeft") { e.preventDefault(); prev(); }
+  else if (e.key.toLowerCase() === "s") shuffle();
+});
+
+render();
+</script>
+</body>
+</html>
