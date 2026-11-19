@@ -5,7 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>E2 Question Forms – Speaking &amp; Listening Exam Practice – Interactive</title>
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     :root {
       --bg-page: #f1f5f9;
       --bg-card: #ffffff;
@@ -27,6 +32,7 @@
       --radius: 10px;
       --shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
     }
+
     html, body {
       height: 100%;
       width: 100%;
@@ -37,6 +43,7 @@
       line-height: 1.35;
       overflow-x: hidden;
     }
+
     .app-shell {
       display: flex;
       flex-direction: column;
@@ -45,9 +52,14 @@
       margin: 0 auto;
       padding: 10px 18px 8px 18px;
     }
+
     @media (min-width: 1024px) {
-      .app-shell { height: 100vh; overflow: hidden; }
+      .app-shell {
+        height: 100vh;
+        overflow: hidden;
+      }
     }
+
     .top-bar {
       display: flex;
       flex-wrap: wrap;
@@ -61,7 +73,14 @@
       box-shadow: var(--shadow);
       flex-shrink: 0;
     }
-    .title-group { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+
+    .title-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
     .level-badge {
       background: var(--primary);
       color: #ffffff;
@@ -71,8 +90,19 @@
       border-radius: 6px;
       white-space: nowrap;
     }
-    .app-title { font-size: 1.15rem; font-weight: 700; }
-    .nav-tabs { display: flex; gap: 8px; flex-wrap: wrap; }
+
+    .app-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .nav-tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
     .tab-btn {
       background: var(--bg-page);
       color: var(--text-main);
@@ -87,15 +117,30 @@
       align-items: center;
       gap: 6px;
     }
-    .tab-btn:hover { background: var(--bg-hover); border-color: var(--primary); }
-    .tab-btn.active { background: var(--primary); color: #ffffff; border-color: var(--primary-dark); }
+
+    .tab-btn:hover {
+      background: var(--bg-hover);
+      border-color: var(--primary);
+    }
+
+    .tab-btn.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary-dark);
+    }
+
     .tab-score {
       background: rgba(255, 255, 255, 0.25);
       padding: 1px 7px;
       border-radius: 999px;
       font-size: 0.82rem;
     }
-    .tab-btn:not(.active) .tab-score { background: var(--bg-subtle); color: var(--text-main); }
+
+    .tab-btn:not(.active) .tab-score {
+      background: var(--bg-subtle);
+      color: var(--text-main);
+    }
+
     .control-bar {
       display: flex;
       flex-wrap: wrap;
@@ -109,8 +154,20 @@
       margin-top: 8px;
       flex-shrink: 0;
     }
-    .instruction-text { font-size: 1rem; font-weight: 700; color: var(--primary-dark); }
-    .action-buttons { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+
+    .instruction-text {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
     .btn {
       border: none;
       border-radius: 7px;
@@ -123,10 +180,26 @@
       align-items: center;
       gap: 5px;
     }
-    .btn-reveal { background: #0f766e; color: #ffffff; }
-    .btn-reveal:hover { background: #115e59; }
-    .btn-reset { background: #ffffff; color: var(--text-main); border: 1px solid var(--border); }
-    .btn-reset:hover { background: var(--bg-subtle); }
+
+    .btn-reveal {
+      background: #0f766e;
+      color: #ffffff;
+    }
+
+    .btn-reveal:hover {
+      background: #115e59;
+    }
+
+    .btn-reset {
+      background: #ffffff;
+      color: var(--text-main);
+      border: 1px solid var(--border);
+    }
+
+    .btn-reset:hover {
+      background: var(--bg-subtle);
+    }
+
     .score-pill {
       background: #ffffff;
       border: 1px solid #93c5fd;
@@ -136,12 +209,34 @@
       border-radius: 7px;
       font-size: 0.92rem;
     }
-    .task-panel { display: none; flex: 1; margin-top: 8px; min-height: 0; }
-    .task-panel.active { display: flex; flex-direction: column; }
-    .items-grid { display: grid; grid-template-columns: 1fr; gap: 9px; flex: 1; min-height: 0; }
-    @media (min-width: 900px) {
-      .items-grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(3, 1fr); }
+
+    .task-panel {
+      display: none;
+      flex: 1;
+      margin-top: 8px;
+      min-height: 0;
     }
+
+    .task-panel.active {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .items-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 9px;
+      flex: 1;
+      min-height: 0;
+    }
+
+    @media (min-width: 900px) {
+      .items-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+      }
+    }
+
     .item-card {
       background: var(--bg-card);
       border: 2px solid var(--border);
@@ -153,9 +248,23 @@
       justify-content: space-between;
       gap: 7px;
     }
-    .item-card.solved { border-color: var(--success-border); background: #f0fdf4; }
-    .item-card.wrong-attempt { border-color: var(--danger-border); }
-    .item-header { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+
+    .item-card.solved {
+      border-color: var(--success-border);
+      background: #f0fdf4;
+    }
+
+    .item-card.wrong-attempt {
+      border-color: var(--danger-border);
+    }
+
+    .item-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
     .item-num {
       display: inline-flex;
       align-items: center;
@@ -169,10 +278,33 @@
       font-size: 0.9rem;
       flex-shrink: 0;
     }
-    .item-status { font-size: 0.85rem; font-weight: 700; padding: 2px 8px; border-radius: 6px; }
-    .status-ok { background: var(--success-bg); color: var(--success); }
-    .status-err { background: var(--danger-bg); color: var(--danger); }
-    .sentence-tokens { display: flex; flex-wrap: wrap; align-items: center; gap: 5px; font-size: 1.12rem; font-weight: 600; }
+
+    .item-status {
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 6px;
+    }
+
+    .status-ok {
+      background: var(--success-bg);
+      color: var(--success);
+    }
+
+    .status-err {
+      background: var(--danger-bg);
+      color: var(--danger);
+    }
+
+    .sentence-tokens {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 5px;
+      font-size: 1.12rem;
+      font-weight: 600;
+    }
+
     .word-btn {
       background: #f8fafc;
       border: 1.5px solid #cbd5e1;
@@ -184,13 +316,48 @@
       color: var(--text-main);
       cursor: pointer;
     }
-    .word-btn:hover:not(:disabled) { background: var(--bg-hover); border-color: var(--primary); }
-    .word-btn.selected { background: var(--warn-bg); border-color: #d97706; color: #92400e; }
-    .word-btn.fixed-word { background: var(--success-bg); border-color: var(--success); color: var(--success); }
-    .word-btn:disabled { cursor: default; }
-    .punct-mark { font-size: 1.15rem; font-weight: 700; margin-left: -2px; }
-    .fix-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; min-height: 36px; }
-    .fix-prompt { font-size: 0.88rem; color: var(--text-muted); font-weight: 600; }
+
+    .word-btn:hover:not(:disabled) {
+      background: var(--bg-hover);
+      border-color: var(--primary);
+    }
+
+    .word-btn.selected {
+      background: var(--warn-bg);
+      border-color: #d97706;
+      color: #92400e;
+    }
+
+    .word-btn.fixed-word {
+      background: var(--success-bg);
+      border-color: var(--success);
+      color: var(--success);
+    }
+
+    .word-btn:disabled {
+      cursor: default;
+    }
+
+    .punct-mark {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-left: -2px;
+    }
+
+    .fix-controls {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 7px;
+      min-height: 36px;
+    }
+
+    .fix-prompt {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
     .fix-input {
       border: 2px solid var(--primary);
       border-radius: 6px;
@@ -202,8 +369,18 @@
       color: var(--text-main);
       background: #ffffff;
     }
-    .btn-check { background: var(--primary); color: #ffffff; padding: 6px 12px; font-size: 0.9rem; }
-    .btn-check:hover { background: var(--primary-dark); }
+
+    .btn-check {
+      background: var(--primary);
+      color: #ffffff;
+      padding: 6px 12px;
+      font-size: 0.9rem;
+    }
+
+    .btn-check:hover {
+      background: var(--primary-dark);
+    }
+
     .prompt-row {
       display: flex;
       align-items: center;
@@ -213,6 +390,7 @@
       border-radius: 7px;
       padding: 5px 10px;
     }
+
     .audio-btn {
       background: var(--primary);
       color: #ffffff;
@@ -228,9 +406,21 @@
       gap: 4px;
       flex-shrink: 0;
     }
-    .audio-btn:hover { background: var(--primary-dark); }
-    .audio-btn.speaking { background: #0f766e; }
-    .mcq-options { display: flex; flex-direction: column; gap: 5px; }
+
+    .audio-btn:hover {
+      background: var(--primary-dark);
+    }
+
+    .audio-btn.speaking {
+      background: #0f766e;
+    }
+
+    .mcq-options {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
     .mcq-btn {
       text-align: left;
       background: #ffffff;
@@ -243,10 +433,29 @@
       color: var(--text-main);
       cursor: pointer;
     }
-    .mcq-btn:hover:not(:disabled) { background: var(--bg-hover); border-color: var(--primary); }
-    .mcq-btn.correct-choice { background: var(--success-bg); border-color: var(--success); color: var(--success); font-weight: 700; }
-    .mcq-btn.wrong-choice { background: var(--danger-bg); border-color: var(--danger); color: var(--danger); }
-    .mcq-btn:disabled { cursor: default; }
+
+    .mcq-btn:hover:not(:disabled) {
+      background: var(--bg-hover);
+      border-color: var(--primary);
+    }
+
+    .mcq-btn.correct-choice {
+      background: var(--success-bg);
+      border-color: var(--success);
+      color: var(--success);
+      font-weight: 700;
+    }
+
+    .mcq-btn.wrong-choice {
+      background: var(--danger-bg);
+      border-color: var(--danger);
+      color: var(--danger);
+    }
+
+    .mcq-btn:disabled {
+      cursor: default;
+    }
+
     .speaker-tag {
       font-size: 0.8rem;
       font-weight: 700;
@@ -256,11 +465,38 @@
       background: #e0e7ff;
       color: #1e3a8a;
     }
-    .speaker-tag.examiner { background: #fef3c7; color: #92400e; }
-    .choice-pair { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
-    .btn-choice { background: #f8fafc; border: 1.5px solid var(--border); color: var(--text-main); padding: 5px 11px; font-size: 0.9rem; }
-    .btn-choice:hover:not(:disabled) { background: var(--bg-hover); border-color: var(--primary); }
-    .btn-choice.active-mistake { background: var(--warn-bg); border-color: #d97706; color: #92400e; }
+
+    .speaker-tag.examiner {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    .choice-pair {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-choice {
+      background: #f8fafc;
+      border: 1.5px solid var(--border);
+      color: var(--text-main);
+      padding: 5px 11px;
+      font-size: 0.9rem;
+    }
+
+    .btn-choice:hover:not(:disabled) {
+      background: var(--bg-hover);
+      border-color: var(--primary);
+    }
+
+    .btn-choice.active-mistake {
+      background: var(--warn-bg);
+      border-color: #d97706;
+      color: #92400e;
+    }
+
     .footer-bar {
       display: flex;
       align-items: center;
@@ -270,8 +506,18 @@
       padding: 3px 6px 0 6px;
       flex-shrink: 0;
     }
-    .teacher-note { font-size: 9px; color: #64748b; }
-    .credit-mark { font-size: 0.85rem; font-weight: 700; color: #334155; white-space: nowrap; }
+
+    .teacher-note {
+      font-size: 9px;
+      color: #64748b;
+    }
+
+    .credit-mark {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #334155;
+      white-space: nowrap;
+    }
   </style>
 </head>
 <body>
@@ -354,6 +600,7 @@
     ];
 
     let activeTab = "task1";
+
     const state = {
       task1: TASK1_DATA.map(() => ({ selectedWordIdx: null, solved: false, feedback: "", feedbackType: "" })),
       task2: TASK2_DATA.map(() => ({ selectedOptionIdx: null, solved: false, wrongClicks: [] })),
@@ -573,4 +820,269 @@
               st.selectedOptionIdx = oIdx;
               updateScores();
             } else if (!st.wrongClicks.includes(oIdx)) {
-              st.
+              st.wrongClicks.push(oIdx);
+            }
+            renderTask2();
+          });
+          optsWrap.appendChild(btn);
+        });
+
+        card.appendChild(optsWrap);
+        grid.appendChild(card);
+      });
+    }
+
+    function renderTask3() {
+      const grid = document.getElementById("grid-task3");
+      grid.innerHTML = "";
+      TASK3_DATA.forEach((item, idx) => {
+        const st = state.task3[idx];
+        const card = document.createElement("article");
+        card.className = "item-card" + (st.solved ? " solved" : st.feedbackType === "err" ? " wrong-attempt" : "");
+
+        const header = document.createElement("div");
+        header.className = "item-header";
+
+        const leftMeta = document.createElement("div");
+        leftMeta.style.display = "flex";
+        leftMeta.style.alignItems = "center";
+        leftMeta.style.gap = "8px";
+
+        const num = document.createElement("span");
+        num.className = "item-num";
+        num.textContent = idx + 1;
+
+        const spk = document.createElement("span");
+        spk.className = "speaker-tag " + item.roleClass;
+        spk.textContent = item.speaker;
+
+        leftMeta.appendChild(num);
+        leftMeta.appendChild(spk);
+        header.appendChild(leftMeta);
+
+        if (st.feedback) {
+          const status = document.createElement("span");
+          status.className = "item-status " + (st.feedbackType === "ok" ? "status-ok" : "status-err");
+          status.textContent = st.feedback;
+          header.appendChild(status);
+        }
+        card.appendChild(header);
+
+        const tokenRow = document.createElement("div");
+        tokenRow.className = "sentence-tokens";
+        item.words.forEach((word, wIdx) => {
+          const btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "word-btn";
+          if (st.solved && item.hasMistake && wIdx === item.wrongIndex) {
+            btn.textContent = item.correctWord;
+            btn.classList.add("fixed-word");
+          } else {
+            btn.textContent = word;
+            if (st.mode === "mistake" && st.selectedWordIdx === wIdx && !st.solved) btn.classList.add("selected");
+          }
+          btn.disabled = st.solved || st.mode !== "mistake";
+          btn.addEventListener("click", () => {
+            if (st.solved || st.mode !== "mistake") return;
+            st.selectedWordIdx = wIdx;
+            st.feedback = "";
+            st.feedbackType = "";
+            renderTask3();
+            const inputEl = document.getElementById(`input-t3-${idx}`);
+            if (inputEl) inputEl.focus();
+          });
+          tokenRow.appendChild(btn);
+        });
+
+        const punct = document.createElement("span");
+        punct.className = "punct-mark";
+        punct.textContent = item.punct;
+        tokenRow.appendChild(punct);
+        card.appendChild(tokenRow);
+
+        const controls = document.createElement("div");
+        controls.className = "fix-controls";
+
+        if (st.solved) {
+          const doneMsg = document.createElement("span");
+          doneMsg.className = "fix-prompt";
+          doneMsg.style.color = "#15803d";
+          doneMsg.textContent = item.hasMistake
+            ? `Fixed: "${item.words[item.wrongIndex]}" → "${item.correctWord}"`
+            : "No mistake — this line is correct.";
+          controls.appendChild(doneMsg);
+        } else {
+          const choicePair = document.createElement("div");
+          choicePair.className = "choice-pair";
+
+          const correctBtn = document.createElement("button");
+          correctBtn.type = "button";
+          correctBtn.className = "btn btn-choice";
+          correctBtn.textContent = "Correct";
+          correctBtn.addEventListener("click", () => {
+            if (!item.hasMistake) {
+              st.solved = true;
+              st.mode = "correct";
+              st.feedback = "Correct!";
+              st.feedbackType = "ok";
+              updateScores();
+            } else {
+              st.feedback = "There is 1 mistake here. Tap 'Has a mistake'.";
+              st.feedbackType = "err";
+            }
+            renderTask3();
+          });
+
+          const mistakeBtn = document.createElement("button");
+          mistakeBtn.type = "button";
+          mistakeBtn.className = "btn btn-choice" + (st.mode === "mistake" ? " active-mistake" : "");
+          mistakeBtn.textContent = "Has a mistake";
+          mistakeBtn.addEventListener("click", () => {
+            if (!item.hasMistake) {
+              st.feedback = "This line has no mistakes. Click 'Correct'.";
+              st.feedbackType = "err";
+              st.mode = null;
+            } else {
+              st.mode = "mistake";
+              st.feedback = "";
+              st.feedbackType = "";
+            }
+            renderTask3();
+          });
+
+          choicePair.appendChild(correctBtn);
+          choicePair.appendChild(mistakeBtn);
+          controls.appendChild(choicePair);
+
+          if (st.mode === "mistake" && item.hasMistake) {
+            if (st.selectedWordIdx === null) {
+              const hint = document.createElement("span");
+              hint.className = "fix-prompt";
+              hint.textContent = "Now tap the wrong word above.";
+              controls.appendChild(hint);
+            } else {
+              const chosenWord = item.words[st.selectedWordIdx];
+              const input = document.createElement("input");
+              input.type = "text";
+              input.className = "fix-input";
+              input.id = `input-t3-${idx}`;
+              input.placeholder = "fix word";
+              input.autocomplete = "off";
+              input.spellcheck = false;
+
+              const checkBtn = document.createElement("button");
+              checkBtn.type = "button";
+              checkBtn.className = "btn btn-check";
+              checkBtn.textContent = "Check";
+
+              const handleCheck = () => {
+                const val = input.value.trim().toLowerCase();
+                if (!val) {
+                  st.feedback = "Type the fix first.";
+                  st.feedbackType = "err";
+                  renderTask3();
+                  return;
+                }
+                if (st.selectedWordIdx !== item.wrongIndex) {
+                  st.feedback = `"${chosenWord}" is fine. Tap another word.`;
+                  st.feedbackType = "err";
+                  renderTask3();
+                  return;
+                }
+                if (val === item.correctWord.toLowerCase()) {
+                  st.solved = true;
+                  st.feedback = "Correct!";
+                  st.feedbackType = "ok";
+                  updateScores();
+                  renderTask3();
+                } else {
+                  st.feedback = "Not quite. Check the verb form.";
+                  st.feedbackType = "err";
+                  renderTask3();
+                }
+              };
+
+              checkBtn.addEventListener("click", handleCheck);
+              input.addEventListener("keydown", (e) => { if (e.key === "Enter") handleCheck(); });
+
+              controls.appendChild(input);
+              controls.appendChild(checkBtn);
+            }
+          }
+        }
+
+        card.appendChild(controls);
+        grid.appendChild(card);
+      });
+    }
+
+    document.getElementById("btn-show-next").addEventListener("click", () => {
+      if (activeTab === "task1") {
+        const nextIdx = state.task1.findIndex(i => !i.solved);
+        if (nextIdx !== -1) {
+          state.task1[nextIdx].solved = true;
+          state.task1[nextIdx].selectedWordIdx = TASK1_DATA[nextIdx].wrongIndex;
+          state.task1[nextIdx].feedback = "Shown";
+          state.task1[nextIdx].feedbackType = "ok";
+          updateScores();
+          renderTask1();
+        }
+      } else if (activeTab === "task2") {
+        const nextIdx = state.task2.findIndex(i => !i.solved);
+        if (nextIdx !== -1) {
+          state.task2[nextIdx].solved = true;
+          state.task2[nextIdx].selectedOptionIdx = TASK2_DATA[nextIdx].correctIndex;
+          updateScores();
+          renderTask2();
+        }
+      } else if (activeTab === "task3") {
+        const nextIdx = state.task3.findIndex(i => !i.solved);
+        if (nextIdx !== -1) {
+          const item = TASK3_DATA[nextIdx];
+          state.task3[nextIdx].solved = true;
+          state.task3[nextIdx].mode = item.hasMistake ? "mistake" : "correct";
+          state.task3[nextIdx].selectedWordIdx = item.wrongIndex;
+          state.task3[nextIdx].feedback = "Shown";
+          state.task3[nextIdx].feedbackType = "ok";
+          updateScores();
+          renderTask3();
+        }
+      }
+    });
+
+    document.getElementById("btn-reset-task").addEventListener("click", () => {
+      if (activeTab === "task1") {
+        state.task1 = TASK1_DATA.map(() => ({ selectedWordIdx: null, solved: false, feedback: "", feedbackType: "" }));
+        renderTask1();
+      } else if (activeTab === "task2") {
+        state.task2 = TASK2_DATA.map(() => ({ selectedOptionIdx: null, solved: false, wrongClicks: [] }));
+        renderTask2();
+      } else if (activeTab === "task3") {
+        state.task3 = TASK3_DATA.map(() => ({ mode: null, selectedWordIdx: null, solved: false, feedback: "", feedbackType: "" }));
+        renderTask3();
+      }
+      updateScores();
+    });
+
+    document.querySelectorAll(".tab-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const target = btn.getAttribute("data-tab");
+        activeTab = target;
+        document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        document.querySelectorAll(".task-panel").forEach(p => p.classList.remove("active"));
+        document.getElementById(`panel-${target}`).classList.add("active");
+        document.getElementById("instruction-box").textContent = INSTRUCTIONS[target];
+        document.getElementById("teacher-note-text").textContent = TEACHER_NOTES[target];
+      });
+    });
+
+    window.addEventListener("DOMContentLoaded", () => {
+      renderTask1();
+      renderTask2();
+      renderTask3();
+      updateScores();
+    });
+  </script>
+</body>
+</html>
