@@ -415,7 +415,7 @@
     }
 
     /* =====================================================================
-       TASK 2: LISTENING / READING PROMPT + 3-OPTION MCQ
+       TASK 2: LISTENING PROMPT + 3-OPTION MCQ
        ===================================================================== */
     .prompt-row {
       display: flex;
@@ -546,3 +546,638 @@
       justify-content: space-between;
       gap: 12px;
       margin-top: 6px;
+      padding: 3px 6px 0 6px;
+      flex-shrink: 0;
+    }
+
+    .teacher-note {
+      font-size: 9px;
+      color: #64748b;
+      letter-spacing: 0.01em;
+    }
+
+    .credit-mark {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #334155;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+    <!-- TOP HEADER & TASK SWITCHER -->
+    <header class="top-bar">
+      <div class="title-group">
+        <span class="level-badge">Entry 2 · Speaking &amp; Listening</span>
+        <h1 class="app-title">Question Forms: Exam Practice</h1>
+      </div>
+
+      <nav class="nav-tabs" aria-label="Activity Tasks">
+        <button class="tab-btn active" data-tab="task1" type="button">
+          1. Find the Mistake <span class="tab-score" id="badge-task1">0/6</span>
+        </button>
+        <button class="tab-btn" data-tab="task2" type="button">
+          2. Choose the Question <span class="tab-score" id="badge-task2">0/6</span>
+        </button>
+        <button class="tab-btn" data-tab="task3" type="button">
+          3. Check the Exam Dialogue <span class="tab-score" id="badge-task3">0/6</span>
+        </button>
+      </nav>
+    </header>
+
+    <!-- SUB-BAR: INSTRUCTIONS + PROJECTOR CONTROLS -->
+    <section class="control-bar" aria-label="Task Instructions and Controls">
+      <div class="instruction-text" id="instruction-box">
+        Task 1: Tap the wrong word in each question. Then type the correct word and click Check.
+      </div>
+      <div class="action-buttons">
+        <span class="score-pill" id="total-score-pill">Total Score: 0 / 18</span>
+        <button class="btn btn-reveal" id="btn-show-next" type="button">Show Next Answer</button>
+        <button class="btn btn-reset" id="btn-reset-task" type="button">Reset Task</button>
+      </div>
+    </section>
+
+    <!-- TASK 1: FIND THE MISTAKE (TAP & FIX) -->
+    <main class="task-panel active" id="panel-task1">
+      <div class="items-grid" id="grid-task1"></div>
+    </main>
+
+    <!-- TASK 2: CHOOSE THE RIGHT QUESTION (LISTENING & SPEAKING) -->
+    <main class="task-panel" id="panel-task2">
+      <div class="items-grid" id="grid-task2"></div>
+    </main>
+
+    <!-- TASK 3: SPOT & FIX THE EXAM DIALOGUE -->
+    <main class="task-panel" id="panel-task3">
+      <div class="items-grid" id="grid-task3"></div>
+    </main>
+
+    <!-- FOOTER: ALWAYS-VISIBLE 9PX TEACHER NOTE & CREDIT -->
+    <footer class="footer-bar">
+      <div class="teacher-note" id="teacher-note-text">
+        Teacher note: Students look at projector or online activity on their device (Task 1: Tap &amp; Fix).
+      </div>
+      <div class="credit-mark">A-🥫 made by Atin</div>
+    </footer>
+  </div>
+
+  <script>
+    const TASK1_DATA = [
+      { id: "t1-1", words: ["Where", "is", "you", "live", "in", "Hackney"], punct: "?", wrongIndex: 1, correctWord: "do" },
+      { id: "t1-2", words: ["Did", "you", "went", "to", "college", "yesterday"], punct: "?", wrongIndex: 2, correctWord: "go" },
+      { id: "t1-3", words: ["What", "do", "she", "want", "to", "study"], punct: "?", wrongIndex: 1, correctWord: "does" },
+      { id: "t1-4", words: ["Where", "are", "you", "yesterday", "morning"], punct: "?", wrongIndex: 1, correctWord: "were" },
+      { id: "t1-5", words: ["How", "many", "does", "the", "bus", "ticket", "cost"], punct: "?", wrongIndex: 1, correctWord: "much" },
+      { id: "t1-6", words: ["Why", "is", "they", "waiting", "outside", "the", "clinic"], punct: "?", wrongIndex: 1, correctWord: "are" }
+    ];
+
+    const TASK2_DATA = [
+      {
+        id: "t2-1",
+        spokenAnswer: "I take the number 38 bus to college.",
+        options: ["A) How do you travel to college?", "B) How you go to college?", "C) Where do you take the bus?"],
+        correctIndex: 0
+      },
+      {
+        id: "t2-2",
+        spokenAnswer: "The class starts at half past nine.",
+        options: ["A) What time the class starts?", "B) What time does the class start?", "C) When did the class started?"],
+        correctIndex: 1
+      },
+      {
+        id: "t2-3",
+        spokenAnswer: "I went to the library to read.",
+        options: ["A) Where did you go yesterday?", "B) Where did you went yesterday?", "C) Where you went yesterday?"],
+        correctIndex: 0
+      },
+      {
+        id: "t2-4",
+        spokenAnswer: "Yes, I can speak a little English.",
+        options: ["A) Do you can speak English?", "B) Can you speak English?", "C) Can you to speak English?"],
+        correctIndex: 1
+      },
+      {
+        id: "t2-5",
+        spokenAnswer: "I am going to visit my friend in Stratford.",
+        options: ["A) What are you going to do this weekend?", "B) What you are going to do this weekend?", "C) Where do you going this weekend?"],
+        correctIndex: 0
+      },
+      {
+        id: "t2-6",
+        spokenAnswer: "It costs two pounds fifty.",
+        options: ["A) How many does the coffee cost?", "B) How much does the coffee cost?", "C) How much the coffee costs?"],
+        correctIndex: 1
+      }
+    ];
+
+    const TASK3_DATA = [
+      { id: "t3-1", speaker: "Learner A", roleClass: "", words: ["Excuse", "me,", "can", "I", "join", "the", "library", "today"], punct: "?", hasMistake: false, wrongIndex: -1, correctWord: "" },
+      { id: "t3-2", speaker: "Staff B", roleClass: "examiner", words: ["Yes,", "you", "can.", "Where", "do", "you", "living", "now"], punct: "?", hasMistake: true, wrongIndex: 4, correctWord: "are" },
+      { id: "t3-3", speaker: "Learner A", roleClass: "", words: ["I", "live", "in", "a", "hostel", "on", "Mare", "Street"], punct: ".", hasMistake: false, wrongIndex: -1, correctWord: "" },
+      { id: "t3-4", speaker: "Staff B", roleClass: "examiner", words: ["Did", "you", "brought", "any", "ID", "with", "you"], punct: "?", hasMistake: true, wrongIndex: 2, correctWord: "bring" },
+      { id: "t3-5", speaker: "Learner A", roleClass: "", words: ["Yes,", "I", "have", "my", "college", "card", "here"], punct: ".", hasMistake: false, wrongIndex: -1, correctWord: "" },
+      { id: "t3-6", speaker: "Staff B", roleClass: "examiner", words: ["Great.", "Which", "books", "does", "you", "want", "today"], punct: "?", hasMistake: true, wrongIndex: 3, correctWord: "do" }
+    ];
+
+    let activeTab = "task1";
+
+    const state = {
+      task1: TASK1_DATA.map(() => ({ selectedWordIdx: null, solved: false, feedback: "", feedbackType: "" })),
+      task2: TASK2_DATA.map(() => ({ selectedOptionIdx: null, solved: false, wrongClicks: [] })),
+      task3: TASK3_DATA.map(() => ({ mode: null, selectedWordIdx: null, solved: false, feedback: "", feedbackType: "" }))
+    };
+
+    const INSTRUCTIONS = {
+      task1: "Task 1: Tap the wrong word in each question. Then type the correct word and click Check.",
+      task2: "Task 2: Listen to the partner's answer. Click the right question (A, B or C).",
+      task3: "Task 3: Check each line in the library roleplay. Click 'Correct' or 'Has a mistake' (then tap and fix it)."
+    };
+
+    const TEACHER_NOTES = {
+      task1: "Teacher note: Students look at projector or online activity on their device (Task 1: Find the Mistake – Tap & Fix).",
+      task2: "Teacher note: Students look at projector or online activity on their device (Task 2: Listen & Choose the Question).",
+      task3: "Teacher note: Students look at projector or online activity on their device (Task 3: Check the Speaking Exam Dialogue)."
+    };
+
+    function speakText(text, btnEl) {
+      if (!("speechSynthesis" in window)) return;
+      window.speechSynthesis.cancel();
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = "en-GB";
+      utterance.rate = 0.92;
+      const voices = window.speechSynthesis.getVoices();
+      const ukVoice = voices.find(v => v.lang && v.lang.toLowerCase().includes("en-gb"));
+      if (ukVoice) utterance.voice = ukVoice;
+      document.querySelectorAll(".audio-btn").forEach(b => b.classList.remove("speaking"));
+      if (btnEl) {
+        btnEl.classList.add("speaking");
+        utterance.onend = () => btnEl.classList.remove("speaking");
+        utterance.onerror = () => btnEl.classList.remove("speaking");
+      }
+      window.speechSynthesis.speak(utterance);
+    }
+
+    if ("speechSynthesis" in window) {
+      window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
+    }
+
+    function updateScores() {
+      const s1 = state.task1.filter(i => i.solved).length;
+      const s2 = state.task2.filter(i => i.solved).length;
+      const s3 = state.task3.filter(i => i.solved).length;
+      const total = s1 + s2 + s3;
+      document.getElementById("badge-task1").textContent = `${s1}/6`;
+      document.getElementById("badge-task2").textContent = `${s2}/6`;
+      document.getElementById("badge-task3").textContent = `${s3}/6`;
+      document.getElementById("total-score-pill").textContent = `Total Score: ${total} / 18`;
+    }
+
+    function renderTask1() {
+      const grid = document.getElementById("grid-task1");
+      grid.innerHTML = "";
+      TASK1_DATA.forEach((item, idx) => {
+        const st = state.task1[idx];
+        const card = document.createElement("article");
+        card.className = "item-card" + (st.solved ? " solved" : st.feedbackType === "err" ? " wrong-attempt" : "");
+
+        const header = document.createElement("div");
+        header.className = "item-header";
+        header.innerHTML = `<span class="item-num">${idx + 1}</span>`;
+        if (st.feedback) {
+          const status = document.createElement("span");
+          status.className = "item-status " + (st.feedbackType === "ok" ? "status-ok" : "status-err");
+          status.textContent = st.feedback;
+          header.appendChild(status);
+        }
+        card.appendChild(header);
+
+        const tokenRow = document.createElement("div");
+        tokenRow.className = "sentence-tokens";
+        item.words.forEach((word, wIdx) => {
+          const btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "word-btn";
+          if (st.solved && wIdx === item.wrongIndex) {
+            btn.textContent = item.correctWord;
+            btn.classList.add("fixed-word");
+          } else {
+            btn.textContent = word;
+            if (st.selectedWordIdx === wIdx && !st.solved) btn.classList.add("selected");
+          }
+          btn.disabled = st.solved;
+          btn.addEventListener("click", () => {
+            if (st.solved) return;
+            st.selectedWordIdx = wIdx;
+            st.feedback = "";
+            st.feedbackType = "";
+            renderTask1();
+            const inputEl = document.getElementById(`input-t1-${idx}`);
+            if (inputEl) inputEl.focus();
+          });
+          tokenRow.appendChild(btn);
+        });
+
+        const punct = document.createElement("span");
+        punct.className = "punct-mark";
+        punct.textContent = item.punct;
+        tokenRow.appendChild(punct);
+        card.appendChild(tokenRow);
+
+        const controls = document.createElement("div");
+        controls.className = "fix-controls";
+
+        if (st.solved) {
+          const doneMsg = document.createElement("span");
+          doneMsg.className = "fix-prompt";
+          doneMsg.style.color = "#15803d";
+          doneMsg.textContent = `Fixed: "${item.words[item.wrongIndex]}" → "${item.correctWord}"`;
+          controls.appendChild(doneMsg);
+        } else if (st.selectedWordIdx === null) {
+          const hint = document.createElement("span");
+          hint.className = "fix-prompt";
+          hint.textContent = "Step 1: Tap the wrong word above.";
+          controls.appendChild(hint);
+        } else {
+          const chosenWord = item.words[st.selectedWordIdx];
+          const lbl = document.createElement("span");
+          lbl.className = "fix-prompt";
+          lbl.textContent = `Change "${chosenWord}" to:`;
+
+          const input = document.createElement("input");
+          input.type = "text";
+          input.className = "fix-input";
+          input.id = `input-t1-${idx}`;
+          input.placeholder = "type here";
+          input.autocomplete = "off";
+          input.spellcheck = false;
+
+          const checkBtn = document.createElement("button");
+          checkBtn.type = "button";
+          checkBtn.className = "btn btn-check";
+          checkBtn.textContent = "Check";
+
+          const handleCheck = () => {
+            const val = input.value.trim().toLowerCase();
+            if (!val) {
+              st.feedback = "Type the correct word first.";
+              st.feedbackType = "err";
+              renderTask1();
+              return;
+            }
+            if (st.selectedWordIdx !== item.wrongIndex) {
+              st.feedback = `"${chosenWord}" is correct. Tap another word.`;
+              st.feedbackType = "err";
+              renderTask1();
+              return;
+            }
+            if (val === item.correctWord.toLowerCase()) {
+              st.solved = true;
+              st.feedback = "Correct!";
+              st.feedbackType = "ok";
+              updateScores();
+              renderTask1();
+            } else {
+              st.feedback = "Not quite. Check the verb/question word.";
+              st.feedbackType = "err";
+              renderTask1();
+            }
+          };
+
+          checkBtn.addEventListener("click", handleCheck);
+          input.addEventListener("keydown", (e) => { if (e.key === "Enter") handleCheck(); });
+
+          controls.appendChild(lbl);
+          controls.appendChild(input);
+          controls.appendChild(checkBtn);
+        }
+
+        card.appendChild(controls);
+        grid.appendChild(card);
+      });
+    }
+
+    function renderTask2() {
+      const grid = document.getElementById("grid-task2");
+      grid.innerHTML = "";
+
+      TASK2_DATA.forEach((item, idx) => {
+        const st = state.task2[idx];
+        const card = document.createElement("article");
+        card.className = "item-card" + (st.solved ? " solved" : "");
+
+        const topRow = document.createElement("div");
+        topRow.className = "prompt-row";
+
+        const num = document.createElement("span");
+        num.className = "item-num";
+        num.textContent = idx + 1;
+
+        const playBtn = document.createElement("button");
+        playBtn.type = "button";
+        playBtn.className = "audio-btn";
+        playBtn.textContent = "▶ Listen";
+        playBtn.title = "Listen to the answer";
+        playBtn.addEventListener("click", () => speakText(item.spokenAnswer, playBtn));
+
+        topRow.appendChild(num);
+        topRow.appendChild(playBtn);
+        card.appendChild(topRow);
+
+        const optsWrap = document.createElement("div");
+        optsWrap.className = "mcq-options";
+
+        item.options.forEach((optText, oIdx) => {
+          const btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "mcq-btn";
+          btn.textContent = optText;
+
+          if (st.solved && oIdx === item.correctIndex) {
+            btn.classList.add("correct-choice");
+          } else if (st.wrongClicks.includes(oIdx)) {
+            btn.classList.add("wrong-choice");
+          }
+
+          btn.disabled = st.solved;
+          btn.addEventListener("click", () => {
+            if (st.solved) return;
+            if (oIdx === item.correctIndex) {
+              st.solved = true;
+              st.selectedOptionIdx = oIdx;
+              updateScores();
+            } else if (!st.wrongClicks.includes(oIdx)) {
+              st.wrongClicks.push(oIdx);
+            }
+            renderTask2();
+          });
+
+          optsWrap.appendChild(btn);
+        });
+
+        card.appendChild(optsWrap);
+        grid.appendChild(card);
+      });
+    }
+
+    function renderTask3() {
+      const grid = document.getElementById("grid-task3");
+      grid.innerHTML = "";
+
+      TASK3_DATA.forEach((item, idx) => {
+        const st = state.task3[idx];
+        const card = document.createElement("article");
+        card.className = "item-card" + (st.solved ? " solved" : st.feedbackType === "err" ? " wrong-attempt" : "");
+
+        const header = document.createElement("div");
+        header.className = "item-header";
+
+        const leftMeta = document.createElement("div");
+        leftMeta.style.display = "flex";
+        leftMeta.style.alignItems = "center";
+        leftMeta.style.gap = "8px";
+
+        const num = document.createElement("span");
+        num.className = "item-num";
+        num.textContent = idx + 1;
+
+        const spk = document.createElement("span");
+        spk.className = "speaker-tag " + item.roleClass;
+        spk.textContent = item.speaker;
+
+        leftMeta.appendChild(num);
+        leftMeta.appendChild(spk);
+        header.appendChild(leftMeta);
+
+        if (st.feedback) {
+          const status = document.createElement("span");
+          status.className = "item-status " + (st.feedbackType === "ok" ? "status-ok" : "status-err");
+          status.textContent = st.feedback;
+          header.appendChild(status);
+        }
+        card.appendChild(header);
+
+        const tokenRow = document.createElement("div");
+        tokenRow.className = "sentence-tokens";
+
+        item.words.forEach((word, wIdx) => {
+          const btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "word-btn";
+
+          if (st.solved && item.hasMistake && wIdx === item.wrongIndex) {
+            btn.textContent = item.correctWord;
+            btn.classList.add("fixed-word");
+          } else {
+            btn.textContent = word;
+            if (st.mode === "mistake" && st.selectedWordIdx === wIdx && !st.solved) {
+              btn.classList.add("selected");
+            }
+          }
+
+          btn.disabled = st.solved || st.mode !== "mistake";
+          btn.addEventListener("click", () => {
+            if (st.solved || st.mode !== "mistake") return;
+            st.selectedWordIdx = wIdx;
+            st.feedback = "";
+            st.feedbackType = "";
+            renderTask3();
+            const inputEl = document.getElementById(`input-t3-${idx}`);
+            if (inputEl) inputEl.focus();
+          });
+
+          tokenRow.appendChild(btn);
+        });
+
+        const punct = document.createElement("span");
+        punct.className = "punct-mark";
+        punct.textContent = item.punct;
+        tokenRow.appendChild(punct);
+        card.appendChild(tokenRow);
+
+        const controls = document.createElement("div");
+        controls.className = "fix-controls";
+
+        if (st.solved) {
+          const doneMsg = document.createElement("span");
+          doneMsg.className = "fix-prompt";
+          doneMsg.style.color = "#15803d";
+          doneMsg.textContent = item.hasMistake
+            ? `Fixed: "${item.words[item.wrongIndex]}" → "${item.correctWord}"`
+            : "No mistake — this line is correct.";
+          controls.appendChild(doneMsg);
+        } else {
+          const choicePair = document.createElement("div");
+          choicePair.className = "choice-pair";
+
+          const correctBtn = document.createElement("button");
+          correctBtn.type = "button";
+          correctBtn.className = "btn btn-choice";
+          correctBtn.textContent = "Correct";
+          correctBtn.addEventListener("click", () => {
+            if (!item.hasMistake) {
+              st.solved = true;
+              st.mode = "correct";
+              st.feedback = "Correct!";
+              st.feedbackType = "ok";
+              updateScores();
+            } else {
+              st.feedback = "There is 1 mistake here. Tap 'Has a mistake'.";
+              st.feedbackType = "err";
+            }
+            renderTask3();
+          });
+
+          const mistakeBtn = document.createElement("button");
+          mistakeBtn.type = "button";
+          mistakeBtn.className = "btn btn-choice" + (st.mode === "mistake" ? " active-mistake" : "");
+          mistakeBtn.textContent = "Has a mistake";
+          mistakeBtn.addEventListener("click", () => {
+            if (!item.hasMistake) {
+              st.feedback = "This line has no mistakes. Click 'Correct'.";
+              st.feedbackType = "err";
+              st.mode = null;
+            } else {
+              st.mode = "mistake";
+              st.feedback = "";
+              st.feedbackType = "";
+            }
+            renderTask3();
+          });
+
+          choicePair.appendChild(correctBtn);
+          choicePair.appendChild(mistakeBtn);
+          controls.appendChild(choicePair);
+
+          if (st.mode === "mistake" && item.hasMistake) {
+            if (st.selectedWordIdx === null) {
+              const hint = document.createElement("span");
+              hint.className = "fix-prompt";
+              hint.textContent = "Now tap the wrong word above.";
+              controls.appendChild(hint);
+            } else {
+              const chosenWord = item.words[st.selectedWordIdx];
+              const input = document.createElement("input");
+              input.type = "text";
+              input.className = "fix-input";
+              input.id = `input-t3-${idx}`;
+              input.placeholder = "fix word";
+              input.autocomplete = "off";
+              input.spellcheck = false;
+
+              const checkBtn = document.createElement("button");
+              checkBtn.type = "button";
+              checkBtn.className = "btn btn-check";
+              checkBtn.textContent = "Check";
+
+              const handleCheck = () => {
+                const val = input.value.trim().toLowerCase();
+                if (!val) {
+                  st.feedback = "Type the fix first.";
+                  st.feedbackType = "err";
+                  renderTask3();
+                  return;
+                }
+                if (st.selectedWordIdx !== item.wrongIndex) {
+                  st.feedback = `"${chosenWord}" is fine. Tap another word.`;
+                  st.feedbackType = "err";
+                  renderTask3();
+                  return;
+                }
+                if (val === item.correctWord.toLowerCase()) {
+                  st.solved = true;
+                  st.feedback = "Correct!";
+                  st.feedbackType = "ok";
+                  updateScores();
+                  renderTask3();
+                } else {
+                  st.feedback = "Not quite. Check the verb form.";
+                  st.feedbackType = "err";
+                  renderTask3();
+                }
+              };
+
+              checkBtn.addEventListener("click", handleCheck);
+              input.addEventListener("keydown", (e) => { if (e.key === "Enter") handleCheck(); });
+
+              controls.appendChild(input);
+              controls.appendChild(checkBtn);
+            }
+          }
+        }
+
+        card.appendChild(controls);
+        grid.appendChild(card);
+      });
+    }
+
+    document.getElementById("btn-show-next").addEventListener("click", () => {
+      if (activeTab === "task1") {
+        const nextIdx = state.task1.findIndex(i => !i.solved);
+        if (nextIdx !== -1) {
+          state.task1[nextIdx].solved = true;
+          state.task1[nextIdx].selectedWordIdx = TASK1_DATA[nextIdx].wrongIndex;
+          state.task1[nextIdx].feedback = "Shown";
+          state.task1[nextIdx].feedbackType = "ok";
+          updateScores();
+          renderTask1();
+        }
+      } else if (activeTab === "task2") {
+        const nextIdx = state.task2.findIndex(i => !i.solved);
+        if (nextIdx !== -1) {
+          state.task2[nextIdx].solved = true;
+          state.task2[nextIdx].selectedOptionIdx = TASK2_DATA[nextIdx].correctIndex;
+          updateScores();
+          renderTask2();
+        }
+      } else if (activeTab === "task3") {
+        const nextIdx = state.task3.findIndex(i => !i.solved);
+        if (nextIdx !== -1) {
+          const item = TASK3_DATA[nextIdx];
+          state.task3[nextIdx].solved = true;
+          state.task3[nextIdx].mode = item.hasMistake ? "mistake" : "correct";
+          state.task3[nextIdx].selectedWordIdx = item.wrongIndex;
+          state.task3[nextIdx].feedback = "Shown";
+          state.task3[nextIdx].feedbackType = "ok";
+          updateScores();
+          renderTask3();
+        }
+      }
+    });
+
+    document.getElementById("btn-reset-task").addEventListener("click", () => {
+      if (activeTab === "task1") {
+        state.task1 = TASK1_DATA.map(() => ({ selectedWordIdx: null, solved: false, feedback: "", feedbackType: "" }));
+        renderTask1();
+      } else if (activeTab === "task2") {
+        state.task2 = TASK2_DATA.map(() => ({ selectedOptionIdx: null, solved: false, wrongClicks: [] }));
+        renderTask2();
+      } else if (activeTab === "task3") {
+        state.task3 = TASK3_DATA.map(() => ({ mode: null, selectedWordIdx: null, solved: false, feedback: "", feedbackType: "" }));
+        renderTask3();
+      }
+      updateScores();
+    });
+
+    document.querySelectorAll(".tab-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const target = btn.getAttribute("data-tab");
+        activeTab = target;
+        document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        document.querySelectorAll(".task-panel").forEach(p => p.classList.remove("active"));
+        document.getElementById(`panel-${target}`).classList.add("active");
+        document.getElementById("instruction-box").textContent = INSTRUCTIONS[target];
+        document.getElementById("teacher-note-text").textContent = TEACHER_NOTES[target];
+      });
+    });
+
+    window.addEventListener("DOMContentLoaded", () => {
+      renderTask1();
+      renderTask2();
+      renderTask3();
+      updateScores();
+    });
+  </script>
+</body>
+</html>
