@@ -262,4 +262,287 @@
       background: var(--bg-card);
       border: 2px solid var(--border);
       border-radius: var(--radius);
-      padding: 10
+      padding: 10px 14px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 7px;
+      transition: border-color 0.2s ease, background-color 0.2s ease;
+    }
+
+    .item-card.solved {
+      border-color: var(--success-border);
+      background: #f0fdf4;
+    }
+
+    .item-card.wrong-attempt {
+      border-color: var(--danger-border);
+    }
+
+    .item-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .item-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    .item-status {
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 6px;
+    }
+
+    .status-ok {
+      background: var(--success-bg);
+      color: var(--success);
+    }
+
+    .status-err {
+      background: var(--danger-bg);
+      color: var(--danger);
+    }
+
+    /* =====================================================================
+       TASK 1 & 3: CLICKABLE WORDS + FIX INPUT
+       ===================================================================== */
+    .sentence-tokens {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 5px;
+      font-size: 1.12rem;
+      font-weight: 600;
+    }
+
+    .word-btn {
+      background: #f8fafc;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 4px 8px;
+      font-family: inherit;
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--text-main);
+      cursor: pointer;
+      transition: all 0.12s ease;
+    }
+
+    .word-btn:hover:not(:disabled) {
+      background: var(--bg-hover);
+      border-color: var(--primary);
+    }
+
+    .word-btn.selected {
+      background: var(--warn-bg);
+      border-color: #d97706;
+      color: #92400e;
+      box-shadow: 0 0 0 2px rgba(217, 119, 6, 0.25);
+    }
+
+    .word-btn.fixed-word {
+      background: var(--success-bg);
+      border-color: var(--success);
+      color: var(--success);
+      text-decoration: none;
+    }
+
+    .word-btn:disabled {
+      cursor: default;
+    }
+
+    .punct-mark {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-left: -2px;
+    }
+
+    .fix-controls {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 7px;
+      min-height: 36px;
+    }
+
+    .fix-prompt {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .fix-input {
+      border: 2px solid var(--primary);
+      border-radius: 6px;
+      padding: 5px 9px;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 700;
+      width: 120px;
+      color: var(--text-main);
+      background: #ffffff;
+    }
+
+    .fix-input:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.2);
+    }
+
+    .btn-check {
+      background: var(--primary);
+      color: #ffffff;
+      padding: 6px 12px;
+      font-size: 0.9rem;
+    }
+
+    .btn-check:hover {
+      background: var(--primary-dark);
+    }
+
+    /* =====================================================================
+       TASK 2: LISTENING / READING PROMPT + 3-OPTION MCQ
+       ===================================================================== */
+    .prompt-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      padding: 5px 10px;
+    }
+
+    .audio-btn {
+      background: var(--primary);
+      color: #ffffff;
+      border: none;
+      border-radius: 6px;
+      padding: 5px 10px;
+      font-family: inherit;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      flex-shrink: 0;
+    }
+
+    .audio-btn:hover {
+      background: var(--primary-dark);
+    }
+
+    .audio-btn.speaking {
+      background: #0f766e;
+    }
+
+    .mcq-options {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .mcq-btn {
+      text-align: left;
+      background: #ffffff;
+      border: 1.5px solid var(--border);
+      border-radius: 7px;
+      padding: 6px 10px;
+      font-family: inherit;
+      font-size: 0.96rem;
+      font-weight: 600;
+      color: var(--text-main);
+      cursor: pointer;
+      transition: all 0.12s ease;
+    }
+
+    .mcq-btn:hover:not(:disabled) {
+      background: var(--bg-hover);
+      border-color: var(--primary);
+    }
+
+    .mcq-btn.correct-choice {
+      background: var(--success-bg);
+      border-color: var(--success);
+      color: var(--success);
+      font-weight: 700;
+    }
+
+    .mcq-btn.wrong-choice {
+      background: var(--danger-bg);
+      border-color: var(--danger);
+      color: var(--danger);
+    }
+
+    .mcq-btn:disabled {
+      cursor: default;
+    }
+
+    /* =====================================================================
+       TASK 3: EXAM DIALOGUE SPOTTER (CORRECT VS HAS A MISTAKE)
+       ===================================================================== */
+    .speaker-tag {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 2px 7px;
+      border-radius: 5px;
+      background: #e0e7ff;
+      color: #1e3a8a;
+    }
+
+    .speaker-tag.examiner {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    .choice-pair {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-choice {
+      background: #f8fafc;
+      border: 1.5px solid var(--border);
+      color: var(--text-main);
+      padding: 5px 11px;
+      font-size: 0.9rem;
+    }
+
+    .btn-choice:hover:not(:disabled) {
+      background: var(--bg-hover);
+      border-color: var(--primary);
+    }
+
+    .btn-choice.active-mistake {
+      background: var(--warn-bg);
+      border-color: #d97706;
+      color: #92400e;
+    }
+
+    /* =====================================================================
+       FOOTER: TEACHER NOTE (9PX) & ATIN CREDIT
+       ===================================================================== */
+    .footer-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 6px;
