@@ -451,12 +451,6 @@
       background: #0f766e;
     }
 
-    .answer-quote {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--text-main);
-    }
-
     .mcq-options {
       display: flex;
       flex-direction: column;
@@ -834,13 +828,13 @@
 
     const INSTRUCTIONS = {
       task1: "Task 1: Tap the wrong word in each question. Then type the correct word and click Check.",
-      task2: "Task 2: Read or listen to the partner's answer. Click the right question (A, B or C).",
+      task2: "Task 2: Listen to the partner's answer. Click the right question (A, B or C).",
       task3: "Task 3: Check each line in the library roleplay. Click 'Correct' or 'Has a mistake' (then tap and fix it)."
     };
 
     const TEACHER_NOTES = {
       task1: "Teacher note: Students look at projector or online activity on their device (Task 1: Find the Mistake – Tap & Fix).",
-      task2: "Teacher note: Students look at projector or online activity on their device (Task 2: Listen/Read & Choose the Question).",
+      task2: "Teacher note: Students look at projector or online activity on their device (Task 2: Listen & Choose the Question).",
       task3: "Teacher note: Students look at projector or online activity on their device (Task 3: Check the Speaking Exam Dialogue)."
     };
 
@@ -1056,13 +1050,8 @@
         playBtn.title = "Listen to the answer";
         playBtn.addEventListener("click", () => speakText(item.spokenAnswer, playBtn));
 
-        const quote = document.createElement("span");
-        quote.className = "answer-quote";
-        quote.textContent = `"${item.spokenAnswer}"`;
-
         topRow.appendChild(num);
         topRow.appendChild(playBtn);
-        topRow.appendChild(quote);
         card.appendChild(topRow);
 
         // 3 MCQ Options
