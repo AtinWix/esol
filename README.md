@@ -110,6 +110,7 @@ Word documents:
 - [E3 Reading – ESB Set L Full Paper (Tasks 1–3) – Exam Rules, Timer and Answers – Projector Lesson](e3/reading/esb-set-l-full-paper-exam-routine-timer-and-prove-it-projector-lesson.html) – Exam rules with a 60-minute timer, then all 21 answers on one slide, one per click; the paper stays on paper
 - [E3 Reading – ESB Exam Skills – Interactive Quiz](e3/reading/esb-exam-skills-interactive-quiz.html)
 - [E3 Reading – ESB Mock Exam – Set O](e3/reading/esb-mock-exam-set-o.html)
+- [E3 Reading – ESB Sample Set F Practice Paper (Tasks 1–3) – Online Practice Exam](bank/reading/exam-practice-and-papers/esb-sample-set-f-online-practice-paper/student/esb-sample-set-f-online-practice-paper.html) – All 21 questions online: tap or type answers, then a score out of 21 with the correct answers. Works on PCs and phones.
 - [E3 Reading – Too Cold to Learn – Exam Practice (PC Room)](e3/reading/too-cold-to-learn-exam-practice.html)
 - [E3 Reading – Time Order, Alphabetical Order, Pronouns and Word Meaning – Online Practice](e3/reading/time-order-alphabetical-order-practice.html) – What happened first?, eight time-order texts, 14 alphabetical sets, 18 pronoun / word meaning / purpose questions – PC or phone
 - [E3 Mixed Tenses – Graffiti Notice – Answer Key (teacher)](e3/reading/graffiti-notice-multiple-choice-answer-key-teacher.html)
