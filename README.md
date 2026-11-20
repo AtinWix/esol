@@ -45,6 +45,7 @@ Word documents:
 - [E1 Speaking – Task 3 Describe the Picture – Interactive Worksheets](e1/speaking-listening/task3-describe-the-picture-interactive-worksheets.html)
 - [E1 Speaking – Task 3 Describe the Picture – Pair Practice](e1/speaking-listening/task3-describe-the-picture-pair-practice.html)
 - [E1 Speaking – Task 3 In the Kitchen – Drag Match](e1/speaking-listening/task3-in-the-kitchen-drag-match.html)
+- [E1–E2 Describing a Painting – Prepositions of Place, Past Simple and Used To – Projector Activity](bank/writing/describing-a-picture/peasant-wedding-bruegel-picture-activities.html) – Online activity on Bruegel's Peasant Wedding: prepositions of place with numbered pins, Bruegel's life in the Past Simple, and used to. Tap or drag word banks, speaking and writing steps, teacher notes.
 - [E1 Present Simple – Error Correction – Projector Activity](e1/speaking-listening/present-simple-error-correction-projector.html)
 
 Word documents:
