@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>E2 ESB Speaking Tasks 1–4 – Mock Exam, Going to and Will – PC Room Projector Lesson</title>
+<style>
+:root{--bg:#fff;--ink:#1d2433;--muted:#5b6474;--board:#e6f5e6;--boardline:#7cc47c;--accent:#1f5fbf;--good:#1a7f37;--bad:#cf222e;--card:#f4f6fa;--hl:#fff3b0}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Verdana,Arial,Helvetica,sans-serif;font-size:clamp(15px,1.5vw,26px);line-height:1.35}
+header{display:flex;align-items:center;gap:12px;padding:6px 16px;border-bottom:2px solid #dde3ec}
+header .t{font-weight:700;flex:1;font-size:.72em;min-width:0}
+@media(max-width:700px){header .t{display:none}}
+nav{display:flex;align-items:center;gap:8px}
+button{font:inherit;font-size:.8em;padding:.4em .9em;border-radius:10px;border:2px solid var(--accent);background:#fff;color:var(--accent);cursor:pointer}
+button.p{background:var(--accent);color:#fff}
+button:disabled{opacity:.4;cursor:default}
+#pn{font-weight:700;min-width:6.5em;text-align:center;font-size:.8em}
+main{padding:8px 16px 40px;max-width:1700px;margin:0 auto}
+.page{display:none;border-radius:16px;padding:12px 20px 14px;position:relative}
+.page.on{display:block}
+.page.board{background:var(--board);border:3px solid var(--boardline)}
+.label{float:right;margin:.35em 0 0 .6em;display:inline-block;background:#2f7d32;color:#fff;font-weight:700;font-size:.62em;padding:.2em .7em;border-radius:8px}
+h1{font-size:1.45em;margin:.1em 0 .3em}
+h2{font-size:1.1em;margin:.3em 0}
+p{margin:.35em 0}
+.look{display:none;font-size:9px;color:#555;margin-top:8px}
+body.teacher .look{display:block}
+.tnb{display:none;font-size:11px;padding:.15em .6em;margin-top:2px}
+body.teacher .tnb{display:inline-block}
+.tn{display:none;font-size:11px;line-height:1.4;color:#333;background:#fffbe6;border:1px dashed #c9a400;padding:6px 9px;margin-top:6px;border-radius:6px}
+.tn.open{display:block}
+body:not(.teacher) .tn{display:none!important}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(max-width:900px){.grid2,.grid3{grid-template-columns:1fr}}
+.card{background:#fff;border-radius:12px;padding:10px 14px;border:1px solid #cfe3cf}
+.ans{visibility:hidden;color:var(--good);font-weight:700}
+.ans.show{visibility:visible}
+.row{padding:.25em 0;border-bottom:1px solid #e3e7ee;display:flex;gap:.5em;align-items:baseline}
+.row .n{font-weight:700;min-width:1.7em}
+.row .q{flex:1}
+.timer{font-size:5.4em;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.05;text-align:center}
+.timer.low{color:var(--bad)}
+.banner{min-height:1.6em;text-align:center;font-weight:700;font-size:1.1em;color:var(--accent)}
+.rules{font-size:1.2em;line-height:1.5;padding-left:1.3em;margin:.2em 0}
+.lookboard{display:none;text-align:center;padding:14vh 0}
+.lookboard .big{font-size:2.2em}
+body.student .page.board .content{display:none}
+body.student .page.board .lookboard{display:block}
+.tally{display:none;gap:3px;align-items:center;font-size:.7em}
+body.teacher .tally{display:inline-flex}
+.tally button{padding:0 .5em;font-size:1em}
+.tally b{min-width:1.2em;text-align:center}
+.top{background:#fff3b0;border-radius:6px}
+.foot{position:fixed;right:10px;bottom:6px;font-size:10px}
+.foot a{color:var(--muted)}
+.ef{background:#fff;color:var(--accent)}
+#efo{display:none;position:fixed;inset:0;background:rgba(20,30,50,.6);z-index:100;overflow:auto;padding:12px}
+#efo.on{display:block}
+#efo .box{background:#fff;border-radius:16px;max-width:760px;margin:0 auto;padding:12px 18px 16px}
+table.ws{border-collapse:collapse;margin:.3em auto;user-select:none}
+table.ws td{width:2.1em;height:2.1em;text-align:center;font-weight:700;font-size:.85em;border:1px solid #9ab;cursor:pointer;padding:0}
+table.ws td.sel{background:#ffd966}
+table.ws td.found{background:#b9e6c1}
+.wl{display:flex;flex-wrap:wrap;gap:.3em .9em;justify-content:center;font-weight:700;margin:.5em 0}
+.wl .f{text-decoration:line-through;color:var(--good)}
+#pinm{display:none;position:fixed;inset:0;background:rgba(20,30,50,.6);z-index:200;align-items:center;justify-content:center}
+#pinm.on{display:flex}
+#pinm .box{background:#fff;border-radius:16px;padding:20px 26px;text-align:center}
+#pinm input{font:inherit;font-size:1.4em;width:4.5em;text-align:center;padding:.2em;border:2px solid #9ab;border-radius:8px}
+#pinm .bad{color:var(--bad);min-height:1.4em;font-weight:700}
+.small{font-size:.72em;color:var(--muted)}
+ul.big{font-size:1.15em;line-height:1.55}
+.kw{background:var(--hl);font-weight:700;padding:0 .15em;border-radius:4px}
+.badge{display:inline-block;padding:.05em .5em;border-radius:8px;font-weight:700;font-size:.8em;color:#fff}
+.b-r{background:#1f5fbf}.b-s{background:#9a3fb5}.b-a{background:#c0551b}.b-h{background:#1a7f37}
+
+.tonly{display:none}body.teacher .tonly{display:inline-block}
+.clk{display:none;font-size:2.2em;font-weight:700;font-variant-numeric:tabular-nums;text-align:center}
+body.teacher .clk{display:block}
+.clk.low{color:var(--bad)}
+.pic{border:2px solid #cfd8e3;border-radius:10px;overflow:hidden;background:#fff}
+.pic svg{display:block;width:100%;height:auto}
+.cap{text-align:center;font-weight:700}
+.big{font-size:1.1em}
+a.go{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;padding:.5em 1em;border-radius:10px}
+.ans.inl{visibility:hidden}
+.ans.show{visibility:visible}
+.col3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.col3 .box{border:2px dashed #9ab;border-radius:10px;padding:6px 10px;min-height:5em}
+.page.learn{background:#fff;border:3px solid #dde3ec}
+</style>
+</head>
+<body class="student" data-pin="7351">
+<header>
+<div class="atin-logo" aria-label="Made by Atin">
+<svg viewBox="104 28 172 134" width="64" height="50" role="img" aria-hidden="true">
+<text x="139" y="112" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="72" fill="currentColor">A</text>
+<rect x="177" y="83" width="24" height="6" rx="1" fill="currentColor"/>
+<path d="M216 66 L216 106 A25 7 0 0 0 266 106 L266 66" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+<ellipse cx="241" cy="66" rx="25" ry="7" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="216" y1="80" x2="266" y2="80" stroke="currentColor" stroke-width="1.5"/>
+<line x1="216" y1="94" x2="266" y2="94" stroke="currentColor" stroke-width="1.5"/>
+<ellipse cx="241" cy="47" rx="23" ry="5" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="114" y1="128" x2="266" y2="128" stroke="currentColor" stroke-width="1"/>
+<text x="190" y="152" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" letter-spacing="2" fill="currentColor">made by Atin</text>
+</svg>
+</div>
+<style>
+.atin-logo{position:fixed;left:calc(6px + env(safe-area-inset-left,0px));bottom:calc(6px + env(safe-area-inset-bottom,0px));z-index:2147483000;pointer-events:none;color:#1F3A5F;background:rgba(255,255,255,.92);border:1px solid #C9D3DF;border-radius:8px;padding:3px 5px;line-height:0}
+.atin-logo svg{display:block}
+@media print{.atin-logo{position:fixed;left:auto;right:6mm;bottom:5mm;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+  <div class="t">E2 Speaking &amp; Listening – mock exam, going to and will (PC room)</div>
+  <button type="button" class="ef" id="efb">★ Early finishers</button>
+  <nav><button id="prev" type="button" aria-label="Previous page">◀</button><span id="pn"></span><button id="next" class="p" type="button" aria-label="Next page">▶</button></nav>
+</header>
+<main>
+<section class="page learn"><div class="content"><h1>This afternoon: practise, write, listen, speak</h1><div class="grid3"><div class="card"><h2>1 Online practice</h2><p>going to or will? Parts A, B and C.</p></div><div class="card"><h2>2 Write in Teams</h2><p>Time words, then five sentences.</p></div><div class="card"><h2>3 Listen</h2><p>Task 4a-style listening: a weekend plan.</p></div><div class="card"><h2>4 Mock exam, round two</h2><p>New jobs, new card, new pictures.</p></div><div class="card"><h2>5 Kahoot</h2><p>20 questions.</p></div><div class="card"><h2>6 Exam day</h2><p>Feedback and tips.</p></div></div><p class="big">Log in. Open <b>Teams</b>, then <b>General</b>. Wait for the teacher before you open the next page.</p></div><div class="look">Learners: own screens. Teacher: projector.</div><button type="button" class="tnb">Teacher note</button><div class="tn">Post this lesson page link and the Online practice link in Teams General before the lesson. Have Handout 1 (side 2), Handout 2 (side 2) and Handout 3 (side 2) ready. Say: "Log in. Open Teams, then General." Open pages with the teacher view (add ?teacher to the link). Learners cannot open the next page until you give them the PIN. If a learner finishes early, they can use the star button (Referee Interviews).<br><b>PIN to unlock the next page on learners' screens: 7351</b></div></section>
+<section class="page learn"><div class="content"><h1>Online practice: going to or will?</h1><div class="grid2"><div class="card"><p><b>Part A</b> choose going to or will (12).</p><p><b>Part B</b> put the words in order to make a question (6).</p><p><b>Part C</b> choose the correct sentence (8).</p><p class="small">Try to get every one right the first time. Ask a partner if you are stuck.</p></div><div class="card" style="text-align:center"><p><a class="go" href="https://atinwix.github.io/esol/e2/speaking-listening/future-plans-going-to-will-choose-build-find-interactive-practice.html" target="_blank" rel="noopener">Open the online practice</a></p><p class="small">Phone or PC. Open it in a new tab.</p></div></div></div><div class="look">Learners: own screens (the practice page).</div><div class="clk" data-t="1200">20:00</div><button type="button" class="tonly tm">Start timer</button><button type="button" class="tnb">Teacher note</button><div class="tn">Say: "There are three parts. Part A: choose going to or will. Part B: tap the words to make a question. Part C: choose the correct sentence." Start the 20-minute timer. Walk round. At the end ask which question was hardest and do it together on the projector. Answers are in the Day Plan.<br><b>PIN to unlock the next page on learners' screens: 7351</b></div></section>
+<section class="page learn"><div class="content"><h1>Handout 1, side 2, Task 3 – then write in Teams</h1><div class="grid2"><div class="card"><h2>Write each time word in the right column</h2><p><b>tomorrow · last week · now · next year · yesterday · at the moment · tonight · two days ago · right now</b></p><div class="col3"><div class="box"><b>Past</b><div class="ans">last week · yesterday · two days ago</div></div><div class="box"><b>Now</b><div class="ans">now · at the moment · right now</div></div><div class="box"><b>Future</b><div class="ans">tomorrow · next year · tonight</div></div></div><p style="margin-top:.5em"><button type="button" class="tonly" data-all-ans>Show answers</button></p></div><div class="card"><h2>Then write five sentences in Teams General</h2><ol style="line-height:1.55"><li>Yesterday (past simple): Yesterday I …</li><li>Now (present continuous): Now I'm …</li><li>Tomorrow (a plan): Tomorrow I'm going to …</li><li>Your opinion: I think … will …</li><li>An offer to a friend: I'll …</li></ol><p class="small">Example: Yesterday I went to the market. Now I'm sitting in the PC room. Tomorrow I'm going to visit my cousin. I think it will be cold at the weekend. I'll help my friend carry her shopping.</p></div></div></div><div class="look">Learners: Handout 1 side 2, then Teams.</div><div class="clk" data-t="1200">20:00</div><button type="button" class="tonly tm">Start timer</button><button type="button" class="tnb">Teacher note</button><div class="tn">Say: "Handout 1, side 2, Task 3. Write each time word in the correct column: past, now or future." Five minutes, then Show answers. Then: "Open Teams, General. Write five sentences, one for each line on the screen." Start the 20-minute timer. Pick four or five posts for the next page.<br><b>PIN to unlock the next page on learners' screens: 7351</b></div></section>
+<section class="page board"><span class="label">WHOLE CLASS – eyes on the board</span><div class="content"><h1>Read one sentence. Which kind is it?</h1><div class="card"><p class="big">The class says: <b>past</b>, <b>now</b>, <b>plan</b>, <b>opinion</b> or <b>offer</b>.</p><p>Look at the posts the teacher shows on the screen. Correct the mistakes together.</p><p class="small">Common mistakes: <b>I going to</b> → <b>I'm going to</b> · <b>I'll to help</b> → <b>I'll help</b></p></div></div><div class="lookboard"><div class="big" style="font-size:2.2em">Look at the board</div></div><div class="look">Learners: projector.</div><button type="button" class="tnb">Teacher note</button><div class="tn">Show four or five Teams posts on the projector. Say: "Read one sentence. Class, is it past, now, a plan, an opinion or an offer?" Correct mistakes on the board. Ten minutes at most.<br><b>PIN to unlock the next page on learners' screens: 7351</b></div></section>
+<section class="page board"><span class="label">WHOLE CLASS – eyes on the board</span><div class="content"><h1>Handout 1, side 2, Task 4: A weekend plan</h1><p><button type="button" class="p" id="play">Play ▶</button> <span class="small">Play / pause</span></p><div class="card"><p>First listening: <b>What is it about?</b> A a plan for Saturday · B a problem at work · C a new shop <span class="ans" id="a0"> → A</span></p><div class="row"><span class="n">1</span><span class="q">Where are Joe and Ben going to meet?</span><span class="ans">At Hackney Central station</span></div><div class="row"><span class="n">2</span><span class="q">What time are they going to meet?</span><span class="ans">Ten o'clock</span></div><div class="row"><span class="n">3</span><span class="q">How are they going to get to the park?</span><span class="ans">By bus</span></div><div class="row"><span class="n">4</span><span class="q">What is Joe going to bring?</span><span class="ans">The sandwiches and the drinks</span></div><div class="row"><span class="n">5</span><span class="q">What does Joe ask Marta to bring?</span><span class="ans">Some fruit</span></div><div class="row"><span class="n">6</span><span class="q">When must Marta call Joe back?</span><span class="ans">Before nine o'clock tonight</span></div></div><p><button type="button" class="tonly" data-next-ans>Show next answer</button> <button type="button" class="tonly" data-hide-ans>Hide answers</button></p><audio id="aud" src="https://atinwix.github.io/esol/e2/speaking-listening/audio/future-plans-listening/script-a.mp3" preload="none"></audio></div><div class="lookboard"><div class="big" style="font-size:2.2em">Look at the board</div></div><div class="look">Learners: Handout 1 side 2, Task 4; the teacher plays the audio.</div><div class="clk" data-t="60">1:00</div><button type="button" class="tonly tm">Start timer</button><button type="button" class="tnb">Teacher note</button><div class="tn">Say: "Handout 1, side 2, Task 4. Read the questions first. One minute." Then: "First listening. What is it about? Circle A, B or C." Press Play. "Second listening. Answer the six questions." Play again. Check with Show next answer, one at a time; ask for full sentences ("They are going to meet at Hackney Central station."). The script is in the Day Plan if you prefer to read it.<br><b>PIN to unlock the next page on learners' screens: 7351</b></div></section>
+<section class="page learn"><div class="content"><h1>Mock exam: round two</h1><ol class="rules"><li>Swap jobs. The two candidates from round one are now the assessor and the observer.</li><li>The assessor reads Handout 3, <b>Set B</b> (side 2). Keep to the times.</li><li>The observer ticks Handout 2, <b>round two</b> (side 2).</li><li>Task 3: open the next page for your pictures.</li><li>At the end the observer tells each candidate one strength and one target.</li></ol><p class="small">About 20 minutes for the tasks, then 5 minutes for feedback.</p></div><div class="look">Learners: own screens, Handout 2 and Handout 3.</div><div class="clk" data-t="1800">30:00</div><button type="button" class="tonly tm">Start timer</button><button type="button" class="tnb">Teacher note</button><div class="tn">Say: "Round two. Swap jobs. Assessor, Set B, the other side of Handout 3." Start the 30-minute timer. Circulate; do not interrupt; note errors for the feedback page. Join a group for Task 4 if the assessor is not a confident reader.<br><b>PIN to unlock the next page on learners' screens: 7351</b></div></section>
+<section class="page learn"><div class="content"><h1>Task 3 pictures: round two</h1><div class="grid2"><div class="card"><h2>Pair 3</h2><div class="grid2"><div><div class="pic"><svg viewBox="0 0 400 260" role="img" aria-label="An old house with a garden and trees" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="400" height="260" fill="#bfe3f5" rx="0"/><circle cx="60" cy="45" r="22" fill="#ffd23f"/><circle cx="250" cy="50" r="14" fill="#fff"/><circle cx="266" cy="54" r="12" fill="#fff"/><circle cx="236" cy="55" r="11" fill="#fff"/><rect x="0" y="170" width="400" height="90" fill="#7cc576" rx="0"/><rect x="130" y="95" width="140" height="75" fill="#e9c9a0" rx="0"/><polygon points="122,95 200.0,57 278,95" fill="#a0522d"/><rect x="151.0" y="113.75" width="30.8" height="21.000000000000004" fill="#fbe38e" rx="0"/><rect x="216.8" y="113.75" width="30.8" height="21.000000000000004" fill="#fbe38e" rx="0"/><rect x="188.8" y="132.5" width="22.400000000000002" height="37.5" fill="#7a4b25" rx="0"/><rect x="55.2" y="139.0" width="9.6" height="36.0" fill="#7a4b25" rx="0"/><circle cx="60" cy="121.0" r="28.799999999999997" fill="#2e8b4f"/><circle cx="43.2" cy="136.6" r="18.0" fill="#37a05c"/><rect x="345.6" y="142.0" width="8.8" height="33.0" fill="#7a4b25" rx="0"/><circle cx="350" cy="125.5" r="26.400000000000002" fill="#2e8b4f"/><circle cx="334.6" cy="139.8" r="16.5" fill="#37a05c"/><circle cx="110" cy="175" r="14" fill="#2f8f4e"/><circle cx="124" cy="178" r="11" fill="#3aa35b"/><circle cx="290" cy="178" r="14" fill="#2f8f4e"/><circle cx="304" cy="181" r="11" fill="#3aa35b"/><rect x="190" y="170" width="20" height="90" fill="#e8dcc0" rx="0"/><circle cx="330" cy="187" r="7" fill="#e0b48a"/><rect x="323" y="194" width="14" height="22" fill="#3b6ea5" rx="4"/><rect x="324" y="216" width="5" height="14" fill="#34495e" rx="0"/><rect x="331" y="216" width="5" height="14" fill="#34495e" rx="0"/><circle cx="40" cy="190" r="5" fill="#e74c3c"/><circle cx="55" cy="190" r="5" fill="#f1c40f"/><circle cx="70" cy="190" r="5" fill="#e84393"/></svg></div><div class="cap">3A</div></div><div><div class="pic"><svg viewBox="0 0 400 260" role="img" aria-label="Tall modern blocks of flats in a city street" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="400" height="260" fill="#c9d9e8" rx="0"/><circle cx="300" cy="35" r="14" fill="#fff"/><circle cx="316" cy="39" r="12" fill="#fff"/><circle cx="286" cy="40" r="11" fill="#fff"/><rect x="0" y="200" width="400" height="60" fill="#8d949b" rx="0"/><rect x="30" y="40" width="90" height="160" fill="#8fa4b8" rx="0"/><rect x="38" y="48" width="16" height="18" fill="#dff3ff" rx="0"/><rect x="64" y="48" width="16" height="18" fill="#dff3ff" rx="0"/><rect x="90" y="48" width="16" height="18" fill="#dff3ff" rx="0"/><rect x="38" y="76" width="16" height="18" fill="#dff3ff" rx="0"/><rect x="64" y="76" width="16" height="18" fill="#dff3ff" rx="0"/><rect x="90" y="76" width="16" height="18" fill="#dff3ff" rx="0"/><rect x="38" y="104" width="16" height="18" fill="#dff3ff" rx="0"/><rect x="64" y="104" width="16" height="18" fill="#dff3ff" rx="0"/><rect x="90" y="104" width="16" height="18" fill="#dff3ff" rx="0"/><rect x="38" y="132" width="16" height="18" fill="#dff3ff" rx="0"/><rect x="64" y="132" width="16" height="18" fill="#dff3ff" rx="0"/><rect x="90" y="132" width="16" height="18" fill="#dff3ff" rx="0"/><rect x="38" y="160" width="16" height="18" fill="#dff3ff" rx="0"/><rect x="64" y="160" width="16" height="18" fill="#dff3ff" rx="0"/><rect x="90" y="160" width="16" height="18" fill="#dff3ff" rx="0"/><rect x="135" y="15" width="100" height="185" fill="#a3b3c2" rx="0"/><rect x="143" y="23" width="16" height="18" fill="#dff3ff" rx="0"/><rect x="169" y="23" width="16" height="18" fill="#dff3ff" rx="0"/><rect x="195" y="23" width="16" height="18" fill="#dff3ff" rx="0"/><rect x="143" y="51" width="16" height="18" fill="#dff3ff" rx="0"/><rect x="169" y="51" width="16" height="18" fill="#dff3ff" rx="0"/><rect x="195" y="51" width="16" height="18" fill="#dff3ff" rx="0"/><rect x="143" y="79" width="16" height="18" fill="#dff3ff" rx="0"/><rect x="169" y="79" width="16" height="18" fill="#dff3ff" rx="0"/><rect x="195" y="79" width="16" height="18" fill="#dff3ff" rx="0"/><rect x="143" y="107" width="16" height="18" fill="#dff3ff" rx="0"/><rect x="169" y="107" width="16" height="18" fill="#dff3ff" rx="0"/><rect x="195" y="107" width="16" height="18" fill="#dff3ff" rx="0"/><rect x="143" y="135" width="16" height="18" fill="#dff3ff" rx="0"/><rect x="169" y="135" width="16" height="18" fill="#dff3ff" rx="0"/><rect x="195" y="135" width="16" height="18" fill="#dff3ff" rx="0"/><rect x="143" y="163" width="16" height="18" fill="#dff3ff" rx="0"/><rect x="169" y="163" width="16" height="18" fill="#dff3ff" rx="0"/><rect x="195" y="163" width="16" height="18" fill="#dff3ff" rx="0"/><rect x="250" y="55" width="100" height="145" fill="#8fa4b8" rx="0"/><rect x="258" y="63" width="16" height="18" fill="#dff3ff" rx="0"/><rect x="284" y="63" width="16" height="18" fill="#dff3ff" rx="0"/><rect x="310" y="63" width="16" height="18" fill="#dff3ff" rx="0"/><rect x="258" y="91" width="16" height="18" fill="#dff3ff" rx="0"/><rect x="284" y="91" width="16" height="18" fill="#dff3ff" rx="0"/><rect x="310" y="91" width="16" height="18" fill="#dff3ff" rx="0"/><rect x="258" y="119" width="16" height="18" fill="#dff3ff" rx="0"/><rect x="284" y="119" width="16" height="18" fill="#dff3ff" rx="0"/><rect x="310" y="119" width="16" height="18" fill="#dff3ff" rx="0"/><rect x="258" y="147" width="16" height="18" fill="#dff3ff" rx="0"/><rect x="284" y="147" width="16" height="18" fill="#dff3ff" rx="0"/><rect x="310" y="147" width="16" height="18" fill="#dff3ff" rx="0"/><rect x="258" y="175" width="16" height="18" fill="#dff3ff" rx="0"/><rect x="284" y="175" width="16" height="18" fill="#dff3ff" rx="0"/><rect x="310" y="175" width="16" height="18" fill="#dff3ff" rx="0"/><rect x="0" y="235" width="400" height="25" fill="#6f767c" rx="0"/><circle cx="70" cy="197.8" r="6.3" fill="#e0b48a"/><rect x="63.7" y="204.1" width="12.6" height="19.8" fill="#c0392b" rx="3.6"/><rect x="64.6" y="223.9" width="4.5" height="12.6" fill="#34495e" rx="0"/><rect x="70.9" y="223.9" width="4.5" height="12.6" fill="#34495e" rx="0"/><circle cx="330" cy="197.8" r="6.3" fill="#e0b48a"/><rect x="323.7" y="204.1" width="12.6" height="19.8" fill="#2c3e50" rx="3.6"/><rect x="324.6" y="223.9" width="4.5" height="12.6" fill="#34495e" rx="0"/><rect x="330.9" y="223.9" width="4.5" height="12.6" fill="#34495e" rx="0"/></svg></div><div class="cap">3B</div></div></div></div><div class="card"><h2>Pair 4</h2><div class="grid2"><div><div class="pic"><svg viewBox="0 0 400 260" role="img" aria-label="A quiet train platform with one person and a bench" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="400" height="260" fill="#e6eef5" rx="0"/><rect x="0" y="150" width="400" height="110" fill="#9aa0a6" rx="0"/><rect x="0" y="150" width="400" height="10" fill="#6f767c" rx="0"/><rect x="40" y="60" width="320" height="50" fill="#c9d3dc" rx="0"/><rect x="40" y="50" width="320" height="12" fill="#7a8794" rx="0"/><rect x="60" y="70" width="60" height="30" fill="#dff3ff" rx="0"/><rect x="160" y="70" width="60" height="30" fill="#dff3ff" rx="0"/><rect x="260" y="70" width="60" height="30" fill="#dff3ff" rx="0"/><rect x="0" y="225" width="400" height="6" fill="#555" rx="0"/><rect x="0" y="240" width="400" height="6" fill="#555" rx="0"/><circle cx="120" cy="167" r="7" fill="#e0b48a"/><rect x="113" y="174" width="14" height="22" fill="#2980b9" rx="4"/><rect x="114" y="196" width="5" height="14" fill="#34495e" rx="0"/><rect x="121" y="196" width="5" height="14" fill="#34495e" rx="0"/><rect x="250" y="200" width="50" height="6" fill="#7a4b25" rx="0"/><rect x="254" y="206" width="5" height="14" fill="#5b3a1c" rx="0"/><rect x="291" y="206" width="5" height="14" fill="#5b3a1c" rx="0"/><rect x="250" y="186" width="50" height="5" fill="#7a4b25" rx="0"/><rect x="180" y="110" width="40" height="22" fill="#fff" rx="0"/><circle cx="200" cy="121" r="7" fill="#d62828"/></svg></div><div class="cap">4A</div></div><div><div class="pic"><svg viewBox="0 0 400 260" role="img" aria-label="A bus stop in the rain with three people under umbrellas" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="400" height="260" fill="#b8c4cf" rx="0"/><line x1="20" y1="10" x2="14" y2="24" stroke="#4a6fa5" stroke-width="2"/><line x1="20" y1="70" x2="14" y2="84" stroke="#4a6fa5" stroke-width="2"/><line x1="20" y1="130" x2="14" y2="144" stroke="#4a6fa5" stroke-width="2"/><line x1="20" y1="190" x2="14" y2="204" stroke="#4a6fa5" stroke-width="2"/><line x1="54" y1="10" x2="48" y2="24" stroke="#4a6fa5" stroke-width="2"/><line x1="54" y1="70" x2="48" y2="84" stroke="#4a6fa5" stroke-width="2"/><line x1="54" y1="130" x2="48" y2="144" stroke="#4a6fa5" stroke-width="2"/><line x1="54" y1="190" x2="48" y2="204" stroke="#4a6fa5" stroke-width="2"/><line x1="88" y1="10" x2="82" y2="24" stroke="#4a6fa5" stroke-width="2"/><line x1="88" y1="70" x2="82" y2="84" stroke="#4a6fa5" stroke-width="2"/><line x1="88" y1="130" x2="82" y2="144" stroke="#4a6fa5" stroke-width="2"/><line x1="88" y1="190" x2="82" y2="204" stroke="#4a6fa5" stroke-width="2"/><line x1="122" y1="10" x2="116" y2="24" stroke="#4a6fa5" stroke-width="2"/><line x1="122" y1="70" x2="116" y2="84" stroke="#4a6fa5" stroke-width="2"/><line x1="122" y1="130" x2="116" y2="144" stroke="#4a6fa5" stroke-width="2"/><line x1="122" y1="190" x2="116" y2="204" stroke="#4a6fa5" stroke-width="2"/><line x1="156" y1="10" x2="150" y2="24" stroke="#4a6fa5" stroke-width="2"/><line x1="156" y1="70" x2="150" y2="84" stroke="#4a6fa5" stroke-width="2"/><line x1="156" y1="130" x2="150" y2="144" stroke="#4a6fa5" stroke-width="2"/><line x1="156" y1="190" x2="150" y2="204" stroke="#4a6fa5" stroke-width="2"/><line x1="190" y1="10" x2="184" y2="24" stroke="#4a6fa5" stroke-width="2"/><line x1="190" y1="70" x2="184" y2="84" stroke="#4a6fa5" stroke-width="2"/><line x1="190" y1="130" x2="184" y2="144" stroke="#4a6fa5" stroke-width="2"/><line x1="190" y1="190" x2="184" y2="204" stroke="#4a6fa5" stroke-width="2"/><line x1="224" y1="10" x2="218" y2="24" stroke="#4a6fa5" stroke-width="2"/><line x1="224" y1="70" x2="218" y2="84" stroke="#4a6fa5" stroke-width="2"/><line x1="224" y1="130" x2="218" y2="144" stroke="#4a6fa5" stroke-width="2"/><line x1="224" y1="190" x2="218" y2="204" stroke="#4a6fa5" stroke-width="2"/><line x1="258" y1="10" x2="252" y2="24" stroke="#4a6fa5" stroke-width="2"/><line x1="258" y1="70" x2="252" y2="84" stroke="#4a6fa5" stroke-width="2"/><line x1="258" y1="130" x2="252" y2="144" stroke="#4a6fa5" stroke-width="2"/><line x1="258" y1="190" x2="252" y2="204" stroke="#4a6fa5" stroke-width="2"/><line x1="292" y1="10" x2="286" y2="24" stroke="#4a6fa5" stroke-width="2"/><line x1="292" y1="70" x2="286" y2="84" stroke="#4a6fa5" stroke-width="2"/><line x1="292" y1="130" x2="286" y2="144" stroke="#4a6fa5" stroke-width="2"/><line x1="292" y1="190" x2="286" y2="204" stroke="#4a6fa5" stroke-width="2"/><line x1="326" y1="10" x2="320" y2="24" stroke="#4a6fa5" stroke-width="2"/><line x1="326" y1="70" x2="320" y2="84" stroke="#4a6fa5" stroke-width="2"/><line x1="326" y1="130" x2="320" y2="144" stroke="#4a6fa5" stroke-width="2"/><line x1="326" y1="190" x2="320" y2="204" stroke="#4a6fa5" stroke-width="2"/><line x1="360" y1="10" x2="354" y2="24" stroke="#4a6fa5" stroke-width="2"/><line x1="360" y1="70" x2="354" y2="84" stroke="#4a6fa5" stroke-width="2"/><line x1="360" y1="130" x2="354" y2="144" stroke="#4a6fa5" stroke-width="2"/><line x1="360" y1="190" x2="354" y2="204" stroke="#4a6fa5" stroke-width="2"/><line x1="394" y1="10" x2="388" y2="24" stroke="#4a6fa5" stroke-width="2"/><line x1="394" y1="70" x2="388" y2="84" stroke="#4a6fa5" stroke-width="2"/><line x1="394" y1="130" x2="388" y2="144" stroke="#4a6fa5" stroke-width="2"/><line x1="394" y1="190" x2="388" y2="204" stroke="#4a6fa5" stroke-width="2"/><rect x="0" y="190" width="400" height="70" fill="#7f868c" rx="0"/><rect x="250" y="70" width="8" height="120" fill="#555" rx="0"/><rect x="220" y="60" width="70" height="22" fill="#d62828" rx="4"/><rect x="60" y="110" width="110" height="80" fill="#7a8794" rx="4"/><rect x="66" y="116" width="98" height="58" fill="#dff3ff" rx="2"/><circle cx="80" cy="187" r="7" fill="#e0b48a"/><rect x="73" y="194" width="14" height="22" fill="#c0392b" rx="4"/><rect x="74" y="216" width="5" height="14" fill="#34495e" rx="0"/><rect x="81" y="216" width="5" height="14" fill="#34495e" rx="0"/><path d="M62 181 Q80 155 98 181 Z" fill="#2c3e50"/><circle cx="140" cy="187" r="7" fill="#e0b48a"/><rect x="133" y="194" width="14" height="22" fill="#16a085" rx="4"/><rect x="134" y="216" width="5" height="14" fill="#34495e" rx="0"/><rect x="141" y="216" width="5" height="14" fill="#34495e" rx="0"/><path d="M122 181 Q140 155 158 181 Z" fill="#8e44ad"/><circle cx="310" cy="187" r="7" fill="#e0b48a"/><rect x="303" y="194" width="14" height="22" fill="#2980b9" rx="4"/><rect x="304" y="216" width="5" height="14" fill="#34495e" rx="0"/><rect x="311" y="216" width="5" height="14" fill="#34495e" rx="0"/><path d="M292 181 Q310 155 328 181 Z" fill="#f39c12"/></svg></div><div class="cap">4B</div></div></div></div></div><p class="small">Say what you can see. Say how the pictures are different. Say which one you prefer and why.</p></div><div class="look">Learners: own screens (candidates look at their pair).</div><button type="button" class="tnb">Teacher note</button><div class="tn">The assessor's card tells each candidate which pair to describe (Candidate 1: Pair 3, Candidate 2: Pair 4). Learners open this page on their own screens when the assessor reaches Task 3.<br><b>PIN to unlock the next page on learners' screens: 7351</b></div></section>
+<section class="page board"><span class="label">WHOLE CLASS – eyes on the board</span><div class="content"><h1>Kahoot – 20 questions</h1><div class="card" style="font-size:1.1em"><p>going to · will · mixed tenses · exam skills.</p><ul class="big"><li>Use your PC or your phone.</li><li>Put in the game PIN and a name you can recognise.</li></ul></div></div><div class="lookboard"><div class="big" style="font-size:2.2em">Look at the board</div></div><div class="look">Learners: projector, then their own screens.</div><button type="button" class="tnb">Teacher note</button><div class="tn">Open the Kahoot from your Kahoot library (or import the Kahoot import file listed in the Day Plan) and start Classic. Go back over any question most people got wrong. If short of time, leave the Kahoot out.<br><b>PIN to unlock the next page on learners' screens: 7351</b></div></section>
+<section class="page board"><span class="label">WHOLE CLASS – eyes on the board</span><div class="content"><h1>Feedback and exam day</h1><div class="grid2"><div class="card"><h2>Your observer sheet</h2><p>Which task has the fewest ticks? Hands up: Task 1? Task 2? Task 3? Task 4?</p></div><div class="card"><h2>On exam day</h2><ul class="big"><li>Listen carefully to the assessor.</li><li>You can ask: <b>Can you say that again, please?</b></li><li>Speak to your partner as well as the assessor.</li><li>Write notes, not sentences, in your planning minute.</li><li>Task 4: read the options first; main idea first, then the detail.</li></ul></div></div></div><div class="lookboard"><div class="big" style="font-size:2.2em">Look at the board</div></div><div class="look">Learners: projector, then their observer sheet.</div><button type="button" class="tnb">Teacher note</button><div class="tn">Say: "Look at your observer sheet. Which task had the fewest ticks?" Take a show of hands for each task. Board eight sentences you noted, without names; pairs correct them. Finish with the exam-day tips. Remind learners to keep Handout 1 and the worksheet.</div></section>
+</main>
+<div id="efo"><div class="box">
+<div style="display:flex;justify-content:space-between;align-items:center"><h1 style="margin:0">★ Referee Interviews</h1><button type="button" id="efx">Close</button></div>
+<p class="small">Optional – for fast finishers (about 10 minutes). The lesson does not depend on it.</p>
+<p>Groups of three: A asks, B answers in a full sentence, C is the referee. Change roles every three minutes. The referee listens for a missing helper verb, a, an or the, or a plural ending.</p>
+<p style="text-align:center"><a class="go" href="https://atinwix.github.io/esol/e2/speaking-listening/questions-articles-plurals-referee-interviews-speaking-wheels.html" target="_blank" rel="noopener">Open the speaking wheels</a></p>
+</div></div>
+<div id="pinm"><div class="box"><h2>Ask your teacher for the PIN</h2><input id="pini" inputmode="numeric" maxlength="4" autocomplete="off"><p class="bad" id="pinb"></p><button type="button" class="p" id="pinok">Open</button> <button type="button" id="pinx">Cancel</button></div></div><div class="foot"><a href="https://atinwix.github.io/esol/r.html?f=E2%20Mock%20Exam%20Going%20to%20and%20Will%20PC%20Room%20Projector%20Lesson" target="_blank" rel="noopener">Report a problem</a></div>
+<script>
+(function(){
+var pages=[].slice.call(document.querySelectorAll('.page')),cur=0,unlocked=0,PIN=document.body.getAttribute('data-pin');
+var qs=new URLSearchParams(location.search);
+function teacher(){return document.body.classList.contains('teacher')}
+function setMode(t){document.body.classList.toggle('teacher',t);document.body.classList.toggle('student',!t);show(cur)}
+if(qs.has('teacher'))setMode(true);
+document.addEventListener('keydown',function(e){
+ if(e.target.tagName==='INPUT')return;
+ if(e.key==='t'||e.key==='T')setMode(!teacher());
+ if(e.key==='ArrowRight')go(cur+1);if(e.key==='ArrowLeft')go(cur-1);
+});
+function show(i){cur=i;pages.forEach(function(p,k){p.classList.toggle('on',k===i)});
+ document.getElementById('pn').textContent='Page '+(i+1)+' of '+pages.length;
+ document.getElementById('prev').disabled=i===0;document.getElementById('next').disabled=i===pages.length-1;}
+function go(i){
+ if(i<0||i>=pages.length)return;
+ if(teacher()||i<=unlocked){show(i);return}
+ askpin(i);
+}
+function askpin(i){var m=document.getElementById('pinm'),inp=document.getElementById('pini');inp.value='';document.getElementById('pinb').textContent='';m.classList.add('on');inp.focus();m._t=i}
+document.getElementById('pinok').onclick=function(){var m=document.getElementById('pinm');
+ if(document.getElementById('pini').value===PIN){unlocked=Math.max(unlocked,m._t);m.classList.remove('on');show(m._t)}else document.getElementById('pinb').textContent='Not the PIN'};
+document.getElementById('pinx').onclick=function(){document.getElementById('pinm').classList.remove('on')};
+document.getElementById('pini').addEventListener('keydown',function(e){if(e.key==='Enter')document.getElementById('pinok').click()});
+document.getElementById('prev').onclick=function(){go(cur-1)};
+document.getElementById('next').onclick=function(){go(cur+1)};
+[].forEach.call(document.querySelectorAll('.tnb'),function(b){b.onclick=function(){b.nextElementSibling.classList.toggle('open')}});
+[].forEach.call(document.querySelectorAll('[data-next-ans]'),function(b){b.onclick=function(){
+ var pg=b.closest('.page'),a=pg.querySelector('.ans:not(.show)');if(a)a.classList.add('show')}});
+[].forEach.call(document.querySelectorAll('[data-all-ans]'),function(b){b.onclick=function(){
+ [].forEach.call(b.closest('.page').querySelectorAll('.ans'),function(a){a.classList.add('show')})}});
+[].forEach.call(document.querySelectorAll('[data-hide-ans]'),function(b){b.onclick=function(){
+ [].forEach.call(b.closest('.page').querySelectorAll('.ans'),function(a){a.classList.remove('show')})}});
+// timers
+[].forEach.call(document.querySelectorAll('.page'),function(pg){var c=pg.querySelector('.clk'),b=pg.querySelector('.tm');if(!c||!b)return;
+ var total=parseInt(c.getAttribute('data-t'),10),left=total,iv=null;
+ function f(){c.textContent=Math.floor(left/60)+':'+String(left%60).padStart(2,'0');c.classList.toggle('low',left<=60)}
+ b.onclick=function(){if(iv){clearInterval(iv);iv=null;b.textContent='Start timer';return}if(left<=0)left=total;b.textContent='Pause';
+  iv=setInterval(function(){left--;f();if(left<=0){clearInterval(iv);iv=null;b.textContent='Start timer'}},1000)};f()});
+// audio: one play/pause button
+var au=document.getElementById('aud'),pb=document.getElementById('play');
+pb.onclick=function(){if(au.paused){au.play();pb.textContent='Pause ⏸'}else{au.pause();pb.textContent='Play ▶'}};
+au.onended=function(){pb.textContent='Play ▶'};
+// early finishers
+document.getElementById('efb').onclick=function(){document.getElementById('efo').classList.add('on')};
+document.getElementById('efx').onclick=function(){document.getElementById('efo').classList.remove('on')};
+show(0);
+})();
+</script>
+</body>
+</html>
