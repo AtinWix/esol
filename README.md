@@ -45,7 +45,7 @@ Word documents:
 - [E1 Speaking – Task 3 Describe the Picture – Interactive Worksheets](e1/speaking-listening/task3-describe-the-picture-interactive-worksheets.html)
 - [E1 Speaking – Task 3 Describe the Picture – Pair Practice](e1/speaking-listening/task3-describe-the-picture-pair-practice.html)
 - [E1 Speaking – Task 3 In the Kitchen – Drag Match](e1/speaking-listening/task3-in-the-kitchen-drag-match.html)
-- [E1 Present Simple – Error Correction – Projector Lesson](e1/speaking-listening/present-simple-error-correction-projector.html)
+- [E1 Present Simple – Error Correction – Projector Activity](e1/speaking-listening/present-simple-error-correction-projector.html)
 
 Word documents:
 - [E1 Days, Times and Prices – Community Centre Timetable – Task 4 Listening and Task 2 Talk – Day Plan and Answers](e1/speaking-listening/docs/community-centre-days-times-prices-day-plan-and-answers.pdf) (PDF) · [Word](e1/speaking-listening/docs/community-centre-days-times-prices-day-plan-and-answers.docx)
