@@ -125,6 +125,17 @@ footer{font-size:11px;color:#667;text-align:center;padding:2px;display:flex;just
  <h2 id="rname"></h2>
  <div class="score" id="rscore"></div>
  <p id="rmsg"></p>
+ <div id="mailbox" style="background:#eef5ff;border:2px solid #9db6d6;border-radius:12px;padding:14px 18px;margin:14px 0">
+  <h3 style="margin:0 0 8px;color:#1f3a5f">Send your result to your teacher</h3>
+  <label for="tf" style="display:block;font-weight:700;margin:6px 0 2px">What is your teacher’s first name?</label>
+  <input type="text" id="tf" autocomplete="off" autocapitalize="off" spellcheck="false" style="font:inherit;padding:8px 10px;width:100%;max-width:360px;border:2px solid #b8c4d4;border-radius:8px">
+  <label for="ts" style="display:block;font-weight:700;margin:10px 0 2px">What is your teacher’s surname?</label>
+  <input type="text" id="ts" autocomplete="off" autocapitalize="off" spellcheck="false" style="font:inherit;padding:8px 10px;width:100%;max-width:360px;border:2px solid #b8c4d4;border-radius:8px">
+  <p style="margin:12px 0 4px">Email address: <b id="addr" style="font-size:18px;color:#1f3a5f"><span style="opacity:.55">firstname.surname</span>@ncclondon.ac.uk</b></p>
+  <a class="big" id="sendmail" href="#" style="display:inline-block;text-decoration:none;font-size:17px;padding:10px 22px;margin-top:6px">Email my result</a>
+  <button class="big" id="copyres" style="background:#1f3a5f;font-size:17px;padding:10px 22px;margin-left:8px">Copy my result</button>
+  <div id="mailnote" class="res" style="margin-top:8px"></div>
+ </div>
  <table class="rt" id="rt"></table>
  <button class="big" id="again">Try again</button>
  <div class="made"><svg><use href="#logo"/></svg></div>
@@ -343,10 +354,31 @@ function finish(){
  $("rscore").innerHTML=snap?('<div style="font-size:30px">Score at 60 minutes: '+s60+' / 21</div><div style="font-size:30px;color:#1f7a46">Final score: '+sc+' / 21</div>'):sc+" / 21";
  $("rmsg").textContent="Time: "+$("timer").textContent+". "+(sc>=17?"Excellent work.":sc>=12?"Good work. Look at the answers you missed.":"Look at the answers and try again.");
  $("rt").innerHTML=rows;
+ var dt=new Date().toLocaleDateString("en-GB",{day:"numeric",month:"long",year:"numeric"});
+ var nm=$("nm").value.trim()||"(no name)";
+ var body="Name: "+nm+"\nExam: E3 Reading practice exam (Set F)\nDate: "+dt+"\n"+(snap?"Score at 60 minutes: "+s60+" / 21\nFinal score: "+sc+" / 21":"Score: "+sc+" / 21")+"\nTime: "+$("timer").textContent+"\n\nQuestions:\n";
+ for(var k=1;k<=21;k++){body+=k+". "+(correct(k)?"correct":"wrong")+(snap?" (at 60 minutes: "+(correct(k,snap)?"correct":"wrong")+")":"")+"\n"}
+ RES={subject:"E3 Reading exam result "+dt,body:body};
+ setupMail();
  $("exam").className="";$("tabs").style.display="none";$("result").style.display="flex";
  window.scrollTo(0,0);
 }
 
+var RES=null;
+function slug(v){return v.toLowerCase().replace(/[^a-z\-]/g,"")}
+function teacherAddr(){var f=slug($("tf").value.trim()),l=slug($("ts").value.trim());return(f&&l)?f+"."+l+"@ncclondon.ac.uk":""}
+function setupMail(){
+ var upd=function(){var a=teacherAddr();
+  $("addr").innerHTML=a?a:'<span style="opacity:.55">firstname.surname</span>@ncclondon.ac.uk';
+  $("sendmail").href=a?"mailto:"+a+"?subject="+encodeURIComponent(RES.subject)+"&body="+encodeURIComponent(RES.body):"#"};
+ $("tf").oninput=upd;$("ts").oninput=upd;upd();
+ $("sendmail").onclick=function(e){if(!teacherAddr()){e.preventDefault();$("mailnote").className="res r";$("mailnote").textContent="Type your teacher\u2019s first name and surname first.";return}
+  $("mailnote").className="res g";$("mailnote").textContent="Your email program should open. If it does not, tap \u201cCopy my result\u201d and paste it into an email."};
+ $("copyres").onclick=function(){var t="To: "+(teacherAddr()||"(your teacher)")+"\nSubject: "+RES.subject+"\n\n"+RES.body;
+  var done=function(){$("mailnote").className="res g";$("mailnote").textContent="Copied. Paste it into a new email."};
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){fb(t,done)})}else fb(t,done)};
+ function fb(t,done){var x=document.createElement("textarea");x.value=t;document.body.appendChild(x);x.select();try{document.execCommand("copy");done()}catch(e){$("mailnote").className="res r";$("mailnote").textContent="Could not copy. Take a photo of your score."}document.body.removeChild(x)}
+}
 function begin(){
  $("start").style.display="none";$("exam").className="on";
  $("tabs").style.display="flex";$("timer").style.display="block";
