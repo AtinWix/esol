@@ -335,7 +335,7 @@ function mark(n,quiet){
 
 function finish(){
  var un=[];for(var n=1;n<=21;n++){var a=ans[n];var empty=a==null||(Array.isArray(a)&&a.every(function(x){return !x}));if(empty&&!(Q[n].k=="table"&&false))un.push(n)}
- if(un.length&&!confirm("You have not answered question"+(un.length>1?"s ":" ")+un.join(", ")+". Finish anyway?"))return;
+ if(un.length&&!finish.warned){finish.warned=1;var f=$("fin");if(f)f.textContent="Not answered: "+un.join(", ")+". Tap again to finish anyway";return}
  finished=true;clearInterval(tick);
  var s60=0,sc=0,rows="<tr><th>Q</th><th>Final</th>"+(snap?"<th>At 60:00</th>":"")+"<th>Correct answer</th></tr>";
  for(var n=1;n<=21;n++){var ok=correct(n),o6=snap?correct(n,snap):false;if(ok)sc++;if(o6)s60++;rows+='<tr class="'+(ok?'ok':'bad')+'"><td>'+n+'</td><td>'+(ok?'✔':'✘')+'</td>'+(snap?'<td>'+(o6?'✔':'✘')+'</td>':'')+'<td>'+answerText(n)+'</td></tr>'}
