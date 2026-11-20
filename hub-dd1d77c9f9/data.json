@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-20T10:08:52Z",
+ "updatedAt": "2026-11-20T10:09:13Z",
  "upcoming": {
   "2026-11-02_e3": {
    "afternoon": "PC room: Too Cold to Learn – complaint emails",
@@ -1482,16 +1482,10 @@
     "wc": "2026-11-23"
    },
    "title": "Going to and will, Task 4, then a full mock exam of Tasks 1–4 (two rounds)",
-   "amended": "2026-11-16T14:35:45Z"
+   "amended": "2026-11-20T10:09:01Z"
   }
  },
- "status": {
-  "2026-11-23_e3": {
-   "at": "2026-11-20T10:05:00Z",
-   "note": "building after the Wed 18 Nov log",
-   "state": "building"
-  }
- },
+ "status": {},
  "health": {
   "checkedAt": "2026-11-17T07:14:05Z",
   "items": [
