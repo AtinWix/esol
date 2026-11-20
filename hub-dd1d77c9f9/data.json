@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-17T07:14:18Z",
+ "updatedAt": "2026-11-20T10:03:32Z",
  "upcoming": {
   "2026-11-02_e3": {
    "afternoon": "PC room: Too Cold to Learn – complaint emails",
@@ -471,6 +471,11 @@
   },
   "2026-11-17_e1": {
    "afternoon": "PC room: Kahoot (days, times, prices); Task 3 recap on the PC; Task 1 and Task 4 practice on the PC; the whole exam in pairs (Tasks 1–4, candidate and assessor, two rounds); True/False feedback on what is still difficult",
+   "asTaught": {
+    "am": "Used the worksheets e1 My Talk and E1 English Worksheet Find the Mistake. Planned items not taught; carried to 24 Nov.",
+    "at": "2026-11-20T10:45:00Z",
+    "pm": "Online RARPA resource. Planned items not taught; carried to 24 Nov."
+   },
    "cls": "E1 Speaking & Listening",
    "created": "2026-11-10",
    "date": "2026-11-17",
@@ -955,11 +960,198 @@
     "wc": "2026-11-16"
    },
    "title": "Finish Task 4 (4a and 4b), then Future plans – going to and will"
+  },
+  "2026-11-24_e1": {
+   "afternoon": "PC room: Task 3 recap; plan a Task 2 talk; the whole exam in pairs (Tasks 1–4, candidate and assessor, two rounds); True/False feedback on what is still difficult",
+   "cls": "E1 Speaking & Listening",
+   "created": "2026-11-20",
+   "date": "2026-11-24",
+   "flags": [],
+   "items": [
+    {
+     "id": "amp",
+     "lesson": 1,
+     "pages": [
+      1,
+      13
+     ],
+     "text": "AM projector lesson – Task 4 short conversations and Task 1 questions",
+     "url": "https://atinwix.github.io/esol/bank/speaking-listening/esb-speaking-tasks/task4-task1-exam-mock/student/task4-and-task1-skills-projector-lesson.html"
+    },
+    {
+     "id": "am1",
+     "lesson": 1,
+     "text": "Where are they? (Vote Card A–D)",
+     "url": ""
+    },
+    {
+     "id": "am2",
+     "lesson": 1,
+     "text": "Two short conversations with yes/no and detail questions (Handout 1)",
+     "url": ""
+    },
+    {
+     "id": "am3",
+     "lesson": 1,
+     "text": "Say the dialogues in pairs",
+     "url": ""
+    },
+    {
+     "id": "am4",
+     "lesson": 1,
+     "text": "Task 1 questions: word order on the board and question words",
+     "url": ""
+    },
+    {
+     "id": "am5",
+     "lesson": 1,
+     "text": "Spelling and phone numbers from dictation",
+     "url": ""
+    },
+    {
+     "id": "am6",
+     "lesson": 1,
+     "text": "Task 1 in pairs",
+     "url": ""
+    },
+    {
+     "id": "am7",
+     "lesson": 1,
+     "text": "20-question Kahoot",
+     "url": ""
+    },
+    {
+     "id": "pmp",
+     "lesson": 2,
+     "pages": [
+      1,
+      7
+     ],
+     "text": "PM projector lesson – Tasks 1–4 exam mock (PC room)",
+     "url": "https://atinwix.github.io/esol/bank/speaking-listening/esb-speaking-tasks/task4-task1-exam-mock/student/tasks-1-to-4-exam-mock-pc-room-projector-lesson.html"
+    },
+    {
+     "id": "pm1",
+     "lesson": 2,
+     "text": "Task 3 recap on the PC",
+     "url": ""
+    },
+    {
+     "id": "pm2",
+     "lesson": 2,
+     "text": "Plan and give a one-minute Task 2 talk",
+     "url": ""
+    },
+    {
+     "id": "pm3",
+     "lesson": 2,
+     "text": "The whole exam in pairs: round 1 (Tasks 1–4, candidate A)",
+     "url": ""
+    },
+    {
+     "id": "pm4",
+     "lesson": 2,
+     "text": "The whole exam in pairs: round 2 (Tasks 1–4, candidate B)",
+     "url": ""
+    },
+    {
+     "id": "pm5",
+     "lesson": 2,
+     "text": "True/False feedback on what is still difficult",
+     "url": ""
+    }
+   ],
+   "kahoot": {
+    "status": "not yet in Kahoot",
+    "xlsx": "https://atinwix.github.io/esol/bank/speaking-listening/esb-speaking-tasks/task4-task1-exam-mock/student/task4-and-task1-skills-kahoot.xlsx"
+   },
+   "lastAmended": "2026-11-20",
+   "lastAmendedNote": "built 20 Nov after the 17 Nov log",
+   "links": [
+    {
+     "label": "Print pack – print once, double-sided (50 pages)",
+     "url": "https://atinwix.github.io/esol/_class/print-pack-2026-11-24.pdf"
+    },
+    {
+     "label": "Handout 1 – Short conversations (single page, last amended 20 Nov 2026)",
+     "url": "https://atinwix.github.io/esol/bank/speaking-listening/esb-speaking-tasks/task4-task1-exam-mock/student/short-conversations-task4-handout.pdf"
+    },
+    {
+     "label": "Day plan and answers (teach from this)",
+     "url": "https://atinwix.github.io/esol/bank/speaking-listening/esb-speaking-tasks/task4-task1-exam-mock/teacher/task4-task1-and-exam-mock-day-plan-and-answers.pdf"
+    },
+    {
+     "label": "AM projector lesson",
+     "url": "https://atinwix.github.io/esol/bank/speaking-listening/esb-speaking-tasks/task4-task1-exam-mock/student/task4-and-task1-skills-projector-lesson.html"
+    },
+    {
+     "label": "PM projector lesson",
+     "url": "https://atinwix.github.io/esol/bank/speaking-listening/esb-speaking-tasks/task4-task1-exam-mock/student/tasks-1-to-4-exam-mock-pc-room-projector-lesson.html"
+    },
+    {
+     "label": "Learners' page (PC / phone)",
+     "url": "https://atinwix.github.io/esol/bank/speaking-listening/esb-speaking-tasks/task4-task1-exam-mock/student/tasks-1-to-4-exam-mock-interactive-practice.html"
+    },
+    {
+     "label": "Lesson audio – Scripts A–J",
+     "url": "https://atinwix.github.io/esol/e1/speaking-listening/audio/short-conversations/"
+    },
+    {
+     "label": "Kahoot import file (20 Qs)",
+     "url": "https://atinwix.github.io/esol/bank/speaking-listening/esb-speaking-tasks/task4-task1-exam-mock/student/task4-and-task1-skills-kahoot.xlsx"
+    },
+    {
+     "label": "Vote card – Yes/No (phones)",
+     "url": "https://atinwix.github.io/esol/all-levels/classroom-tool-vote-card.html?mode=yn"
+    },
+    {
+     "label": "Vote card – A–D (phones)",
+     "url": "https://atinwix.github.io/esol/all-levels/classroom-tool-vote-card.html?mode=abcd"
+    },
+    {
+     "label": "Vote card – True/False (phones)",
+     "url": "https://atinwix.github.io/esol/all-levels/classroom-tool-vote-card.html?mode=tf"
+    },
+    {
+     "label": "Task 3 pair practice (PC)",
+     "url": "https://atinwix.github.io/esol/e1/speaking-listening/task3-describe-the-picture-pair-practice.html"
+    }
+   ],
+   "morning": "Where are they? (Vote Card A–D); two short conversations with yes/no and detail questions (Handout 1); say the dialogues in pairs; Task 1 questions: word order, question words, spelling and phone numbers; Task 1 in pairs; 20-question Kahoot",
+   "pack": {
+    "issued": "2026-11-20",
+    "pages": 50,
+    "url": "https://atinwix.github.io/esol/_class/print-pack-2026-11-24.pdf"
+   },
+   "plan": {
+    "am": "AM: Exam skills lesson on Task 4 short conversations and Task 1 questions. Learners vote on where short sentences are said, answer a yes/no and a detail question about two short conversations and say them in pairs. They then put Task 1 questions in order, choose question words, write spellings and a phone number from dictation and ask and answer in pairs, finishing with a Kahoot.",
+    "pm": "PM, PC room: Learners recap Task 3 by describing a picture with a partner and plan a one-minute Task 2 talk. They then do the whole speaking and listening exam in pairs, taking turns as candidate and assessor for Tasks 1 to 4, and say which parts are still difficult."
+   },
+   "prep": "None beyond printing. Post the learners' page link in Teams General before the PM lesson. Check the projector sound.",
+   "print": "Print pack only (50 pages, double-sided)",
+   "replaced": [],
+   "scheme": {
+    "focus": "Speaking & Listening exam: Task 4 short conversations and Task 1 questions, then a full Tasks 1–4 mock",
+    "note": "exam preparation. Carries over the Task 4 short-conversation and Task 1 question content and the Tasks 1–4 run-through planned for 17 Nov (nothing ticked in the 17 Nov log)",
+    "wc": "2026-11-23"
+   },
+   "title": "Task 4 short conversations, Task 1 questions and a Tasks 1–4 exam mock",
+   "amended": "2026-11-14T08:20:57Z"
   }
  },
- "status": {},
+ "status": {
+  "2026-11-23_e3": {
+   "at": "2026-11-20T10:05:00Z",
+   "note": "building after the Wed 18 Nov log",
+   "state": "building"
+  },
+  "2026-11-26_e2": {
+   "at": "2026-11-20T10:00:00Z",
+   "note": "building Thu 26 Nov E2 after the 19 Nov log",
+   "state": "building"
+  }
+ },
  "health": {
-  "ok": true,
   "checkedAt": "2026-11-17T07:14:05Z",
   "items": [
    {
@@ -986,6 +1178,7 @@
     "ok": false,
     "text": "One Lesson Log fix still needs you: Teacher Hub public page (12 Nov)."
    }
-  ]
+  ],
+  "ok": true
  }
 }
