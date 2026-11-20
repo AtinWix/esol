@@ -28,6 +28,7 @@ Word documents:
 - [ESOL Writing Level Check – Typed Placement Assessment (E1–L2)](https://atinwix.github.io/WRITING_TEST/) – Typed writing check for learners who can use a keyboard; free writing and answers go to a Microsoft Form.
 
 ## e1/speaking-listening
+- [E1 Find the Mistake – Interactive Practice](e1/speaking-listening/find-the-mistake-interactive-practice.html)
 - [E1 Small Talk – Talk Before Class – Projector Warmer](e1/speaking-listening/small-talk-talk-before-class-projector-warmer.html) – Rolling warmer for staggered arrivals: 16 question cards (present simple, be, have got, can), ask – answer – react – ask back, change partner every 3 cards
 - [E1 Days, Times and Prices – Community Centre Timetable – Listening, Partner A/B, Find the Mistake and My Talk – Interactive Practice](e1/speaking-listening/community-centre-days-times-prices-interactive-practice.html) – Learners' PC/phone page: Task 4 answers for Scripts C–F with script gap-fills, a Partner A / Partner B information gap, ten present simple mistakes to find and correct, and a 'My week' talk frame that checks days, times and prices.
 - [E1 Days, Times and Prices – Community Centre Timetable – Task 4 Listening and Task 2 Talk – Projector Lesson](e1/speaking-listening/community-centre-days-times-prices-projector-lesson.html) – One community-centre timetable all lesson: Vote Card yes/no, asking about days, times and prices, six Task 4 scripts (audio built in), information gap, find the mistake, building a one-minute 'My week' talk together, Kahoot.
@@ -44,6 +45,7 @@ Word documents:
 - [E1 Speaking – Task 3 Describe the Picture – Interactive Worksheets](e1/speaking-listening/task3-describe-the-picture-interactive-worksheets.html)
 - [E1 Speaking – Task 3 Describe the Picture – Pair Practice](e1/speaking-listening/task3-describe-the-picture-pair-practice.html)
 - [E1 Speaking – Task 3 In the Kitchen – Drag Match](e1/speaking-listening/task3-in-the-kitchen-drag-match.html)
+- [E1 Present Simple – Error Correction – Projector Lesson](e1/speaking-listening/present-simple-error-correction-projector.html)
 
 Word documents:
 - [E1 Days, Times and Prices – Community Centre Timetable – Task 4 Listening and Task 2 Talk – Day Plan and Answers](e1/speaking-listening/docs/community-centre-days-times-prices-day-plan-and-answers.pdf) (PDF) · [Word](e1/speaking-listening/docs/community-centre-days-times-prices-day-plan-and-answers.docx)
@@ -76,6 +78,7 @@ Word documents:
 - [E2 Future Plans – going to and will – Speaking Tasks 2 and 4 – Projector and PC Lesson](e2/speaking-listening/future-plans-going-to-will-speaking-tasks-2-and-4-projector-and-pc-lesson.html) – One page: morning projector slides (going to, will, Vote Card, Task 2 plans talk, Task 4a-style listening) and PC-room activities (Hangman Paragraphs, going to or will?, build the question, find the mistake, Teams writing, Kahoot).
 - [E2 Future Plans – going to and will – Task 4 Listening and Discussion – Projector Lesson](e2/speaking-listening/future-plans-going-to-will-task4-projector-lesson.html) – Morning: Task 4a and 4b, going to or will? rules, Vote Card, Task 2 plans talk. Afternoon (PC room): online practice, Teams writing, Task 4a-style listening, Referee Interviews wheels, Kahoot.
 - [E2 Future Plans – going to or will? Choose, Build, Find the Mistake – Interactive Practice](e2/speaking-listening/future-plans-going-to-will-choose-build-find-interactive-practice.html) – 12 choose-going-to-or-will, 6 build-the-question and 8 find-the-correct-sentence questions. Works on phones and PCs.
+- [E2 Question Forms – Speaking & Listening Exam Practice – Interactive](e2/speaking-listening/question-forms-speaking-listening-exam-practice-interactive.html)
 - [E2 Questions, Articles & Plurals – Build, Say, Check – Speaking Wheels](e2/speaking-listening/questions-articles-plurals-referee-interviews-speaking-wheels.html) – Pairs spin, build a sentence from word cues, say it, then press Check: helper verbs, a/an/the and plural endings are coloured. Warm-up with audio. Phone version via QR.
 - [E2 Past Simple – Introducing the Past and Regular -ed Verbs – Projector Lesson](e2/speaking-listening/past-simple-tasks1-2-projector-lesson-1.html)
 - [E2 Past Simple – Irregular Verbs, -ed Sounds and Story Order – Interactive Practice](e2/speaking-listening/past-simple-tasks1-2-interactive-practice-1.html)
