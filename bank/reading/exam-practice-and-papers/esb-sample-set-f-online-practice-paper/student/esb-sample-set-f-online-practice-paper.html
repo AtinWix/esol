@@ -115,6 +115,7 @@ footer{font-size:11px;color:#667;text-align:center;padding:2px;display:flex;just
 </div>
 </div>
 
+<div id="limit" style="display:none;position:fixed;top:70px;left:50%;transform:translateX(-50%);z-index:20;background:#b02a2a;color:#fff;padding:12px 22px;border-radius:10px;font-weight:700;box-shadow:0 4px 14px #0006;text-align:center">60 minutes are up. Your score at 60:00 is saved.<br>You can keep answering. You will see both scores at the end.</div>
 <div id="exam"><div class="split">
  <div class="pane" id="textPane"></div>
  <div class="pane" id="qPane"></div>
@@ -195,7 +196,7 @@ var Q={
 21:{k:"mc",p:"Which list is in the correct alphabetical order?",o:["new, notepad, number, national","national, new, notepad, number","number, notepad, new, national"],a:1,lists:true}
 };
 
-var ans={}, cur=0, finished=false, startT=0, tick=null;
+var ans={}, snap=null, LIMIT=3600, cur=0, finished=false, startT=0, tick=null;
 var L="ABCD";
 function $(i){return document.getElementById(i)}
 function norm(s){return (s||"").toLowerCase().replace(/[^a-z0-9 ]/g," ").replace(/\s+/g," ").trim()}
@@ -291,8 +292,8 @@ function bind(){
  if($("fin"))$("fin").onclick=finish;
 }
 
-function correct(n){
- var q=Q[n],a=ans[n];if(a==null)return false;
+function correct(n,src){
+ var q=Q[n],a=(src||ans)[n];if(a==null)return false;
  if(q.k=="mc")return a===q.a;
  if(q.k=="between")return norm(a[0])==q.a[0]&&norm(a[1])==q.a[1];
  if(q.k=="two"){
@@ -336,10 +337,10 @@ function finish(){
  var un=[];for(var n=1;n<=21;n++){var a=ans[n];var empty=a==null||(Array.isArray(a)&&a.every(function(x){return !x}));if(empty&&!(Q[n].k=="table"&&false))un.push(n)}
  if(un.length&&!confirm("You have not answered question"+(un.length>1?"s ":" ")+un.join(", ")+". Finish anyway?"))return;
  finished=true;clearInterval(tick);
- var sc=0,rows="<tr><th>Q</th><th>Result</th><th>Correct answer</th></tr>";
- for(var n=1;n<=21;n++){var ok=correct(n);if(ok)sc++;rows+='<tr class="'+(ok?'ok':'bad')+'"><td>'+n+'</td><td>'+(ok?'✔':'✘')+'</td><td>'+answerText(n)+'</td></tr>'}
+ var s60=0,sc=0,rows="<tr><th>Q</th><th>Final</th>"+(snap?"<th>At 60:00</th>":"")+"<th>Correct answer</th></tr>";
+ for(var n=1;n<=21;n++){var ok=correct(n),o6=snap?correct(n,snap):false;if(ok)sc++;if(o6)s60++;rows+='<tr class="'+(ok?'ok':'bad')+'"><td>'+n+'</td><td>'+(ok?'✔':'✘')+'</td>'+(snap?'<td>'+(o6?'✔':'✘')+'</td>':'')+'<td>'+answerText(n)+'</td></tr>'}
  $("rname").textContent=($("nm").value.trim()||"Your result");
- $("rscore").textContent=sc+" / 21";
+ $("rscore").innerHTML=snap?('<div style="font-size:30px">Score at 60 minutes: '+s60+' / 21</div><div style="font-size:30px;color:#1f7a46">Final score: '+sc+' / 21</div>'):sc+" / 21";
  $("rmsg").textContent="Time: "+$("timer").textContent+". "+(sc>=17?"Excellent work.":sc>=12?"Good work. Look at the answers you missed.":"Look at the answers and try again.");
  $("rt").innerHTML=rows;
  $("exam").className="";$("tabs").style.display="none";$("result").style.display="flex";
@@ -350,7 +351,8 @@ function begin(){
  $("start").style.display="none";$("exam").className="on";
  $("tabs").style.display="flex";$("timer").style.display="block";
  startT=Date.now();
- tick=setInterval(function(){var s=Math.floor((Date.now()-startT)/1000);$("timer").textContent=("0"+Math.floor(s/60)).slice(-2)+":"+("0"+s%60).slice(-2)},1000);
+ tick=setInterval(function(){var s=Math.floor((Date.now()-startT)/1000);
+  if(s>=LIMIT&&!snap){snap=JSON.parse(JSON.stringify(ans));$('timer').style.background='#b02a2a';var b=$('limit');b.style.display='block';setTimeout(function(){b.style.display='none'},12000)}$("timer").textContent=("0"+Math.floor(s/60)).slice(-2)+":"+("0"+s%60).slice(-2)},1000);
  show(0);
 }
 $("go").onclick=begin;
