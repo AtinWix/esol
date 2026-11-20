@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-20T10:03:32Z",
+ "updatedAt": "2026-11-20T10:08:52Z",
  "upcoming": {
   "2026-11-02_e3": {
    "afternoon": "PC room: Too Cold to Learn – complaint emails",
@@ -657,6 +657,7 @@
   "2026-11-18_e3": {
    "afternoon": "Two opinion letters (for and against a Saturday market) in a jigsaw: finishing sentences with because, so, although, however; read one letter and answer six questions; share and compare the two writers' reasons; Kahoot (20 questions)",
    "amended": "2026-11-16T14:30:01Z",
+   "asTaught": "As logged: no lesson took place (AM and PM skipped). The Set L paper had already been sat on Mon 16 Nov. The opinion-letters jigsaw moves to Mon 23 Nov.",
    "cls": "E3 Reading",
    "created": "2026-11-16",
    "date": "2026-11-18",
@@ -713,8 +714,8 @@
    ],
    "kahoot": {
     "details": "",
-    "note": "",
-    "status": "not yet in Kahoot",
+    "note": "not used – the linking-words Kahoot was not played; Mon 23 Nov has a new Kahoot",
+    "status": "not needed",
     "xlsx": "https://atinwix.github.io/esol/bank/reading/purpose-and-main-idea/saturday-market-letters/student/linking-words-main-idea-and-exam-skills-kahoot.xlsx"
    },
    "lastAmended": "2026-11-16",
@@ -788,6 +789,7 @@
   "2026-11-19_e2": {
    "afternoon": "PC room: online practice A–C (going to or will, build the question, find the correct sentence); handout Task 3 + five sentences in Teams (yesterday, now, tomorrow, opinion, offer); Task 4a-style listening (weekend plan, audio page); Referee Interviews wheels; Kahoot (20 Qs)",
    "amended": "2026-11-16T14:35:45Z",
+   "asTaught": "As taught: nothing – the Lesson Log has the day skipped and no activity ticked. The whole plan (going to and will, Task 4a and 4b, Handout 1, the online practice, Teams writing, the weekend-plan listening and the Kahoot) moves to Thu 26 Nov, rebuilt as a new day with the full mock exam.",
    "cls": "E2 Speaking & Listening",
    "created": "2026-11-12",
    "date": "2026-11-19",
@@ -960,6 +962,165 @@
     "wc": "2026-11-16"
    },
    "title": "Finish Task 4 (4a and 4b), then Future plans – going to and will"
+  },
+  "2026-11-23_e3": {
+   "afternoon": "PC room, one page on projector and PCs: a what-will-happen-if chain; join with if and rewrite with unless; read an advice page and a library notice and answer questions on results; condition or result; advice in Teams; find the mistake; Kahoot (20 questions)",
+   "amended": "2026-11-20T10:08:04Z",
+   "cls": "E3 Reading",
+   "created": "2026-11-20",
+   "date": "2026-11-23",
+   "flags": [],
+   "items": [
+    {
+     "id": "am1",
+     "lesson": 1,
+     "text": "Read Letter A or B and answer six questions (Handout 3A / 3B)",
+     "url": "https://atinwix.github.io/esol/bank/reading/conditionals/first-conditional-if-unless/student/first-conditional-if-unless-with-market-letters-projector-lesson.html"
+    },
+    {
+     "id": "am2",
+     "lesson": 1,
+     "text": "Check the answers for both letters",
+     "url": "https://atinwix.github.io/esol/bank/reading/conditionals/first-conditional-if-unless/student/first-conditional-if-unless-with-market-letters-projector-lesson.html"
+    },
+    {
+     "id": "am3",
+     "lesson": 1,
+     "text": "Share the two letters in pairs; table and four sentences (Handout 4)",
+     "url": "https://atinwix.github.io/esol/bank/reading/conditionals/first-conditional-if-unless/student/first-conditional-if-unless-with-market-letters-projector-lesson.html"
+    },
+    {
+     "id": "am4",
+     "lesson": 1,
+     "text": "Cross Road: what will happen if …? and the rule: if … will …, unless",
+     "url": "https://atinwix.github.io/esol/bank/reading/conditionals/first-conditional-if-unless/student/first-conditional-if-unless-with-market-letters-projector-lesson.html"
+    },
+    {
+     "id": "am5",
+     "lesson": 1,
+     "text": "Tasks A and B on the board: choose the form; if or unless?",
+     "url": "https://atinwix.github.io/esol/bank/reading/conditionals/first-conditional-if-unless/student/first-conditional-if-unless-with-market-letters-projector-lesson.html"
+    },
+    {
+     "id": "am6",
+     "lesson": 1,
+     "text": "Write six sentences and two true sentences (Handout 5)",
+     "url": "https://atinwix.github.io/esol/bank/reading/conditionals/first-conditional-if-unless/student/first-conditional-if-unless-with-market-letters-projector-lesson.html"
+    },
+    {
+     "id": "pm1",
+     "lesson": 2,
+     "text": "Warm-up chain: what will happen if …?",
+     "url": "https://atinwix.github.io/esol/bank/reading/conditionals/first-conditional-if-unless/student/first-conditional-if-unless-advice-texts-projector-and-pc-lesson.html"
+    },
+    {
+     "id": "pm2",
+     "lesson": 2,
+     "text": "Task A – join with if, rewrite with unless (typed)",
+     "url": "https://atinwix.github.io/esol/bank/reading/conditionals/first-conditional-if-unless/student/first-conditional-if-unless-advice-texts-projector-and-pc-lesson.html"
+    },
+    {
+     "id": "pm3",
+     "lesson": 2,
+     "text": "Task B – read the advice page and answer ten questions",
+     "url": "https://atinwix.github.io/esol/bank/reading/conditionals/first-conditional-if-unless/student/first-conditional-if-unless-advice-texts-projector-and-pc-lesson.html"
+    },
+    {
+     "id": "pm4",
+     "lesson": 2,
+     "text": "Task C – condition or result?",
+     "url": "https://atinwix.github.io/esol/bank/reading/conditionals/first-conditional-if-unless/student/first-conditional-if-unless-advice-texts-projector-and-pc-lesson.html"
+    },
+    {
+     "id": "pm5",
+     "lesson": 2,
+     "text": "Task D – read the library notice and answer eight questions",
+     "url": "https://atinwix.github.io/esol/bank/reading/conditionals/first-conditional-if-unless/student/first-conditional-if-unless-advice-texts-projector-and-pc-lesson.html"
+    },
+    {
+     "id": "pm6",
+     "lesson": 2,
+     "text": "Task E – give advice in Teams",
+     "url": "https://atinwix.github.io/esol/bank/reading/conditionals/first-conditional-if-unless/student/first-conditional-if-unless-advice-texts-projector-and-pc-lesson.html"
+    },
+    {
+     "id": "pm7",
+     "lesson": 2,
+     "text": "Find the mistake (6 sentences)",
+     "url": "https://atinwix.github.io/esol/bank/reading/conditionals/first-conditional-if-unless/student/first-conditional-if-unless-advice-texts-projector-and-pc-lesson.html"
+    },
+    {
+     "id": "pm8",
+     "lesson": 2,
+     "text": "Kahoot, 20 questions",
+     "url": "https://atinwix.github.io/esol/bank/reading/conditionals/first-conditional-if-unless/student/first-conditional-if-unless-advice-texts-projector-and-pc-lesson.html"
+    }
+   ],
+   "kahoot": {
+    "details": "",
+    "note": "",
+    "status": "not yet in Kahoot",
+    "xlsx": "https://atinwix.github.io/esol/bank/reading/conditionals/first-conditional-if-unless/student/first-conditional-if-unless-and-cause-and-result-kahoot.xlsx"
+   },
+   "lastAmended": "2026-11-20",
+   "lastAmendedNote": "new day built after the Wed 18 Nov log",
+   "links": [
+    {
+     "label": "Print pack – print once, double-sided (130 pages) · last amended 20 Nov 2026",
+     "url": "https://atinwix.github.io/esol/_class/print-pack-2026-11-23.pdf"
+    },
+    {
+     "label": "Handout 3A – Letter A – one copy · last amended 16 Nov 2026",
+     "url": "https://atinwix.github.io/esol/bank/reading/purpose-and-main-idea/saturday-market-letters/student/saturday-market-letters-letter-a-student-handout.pdf"
+    },
+    {
+     "label": "Handout 3B – Letter B – one copy · last amended 16 Nov 2026",
+     "url": "https://atinwix.github.io/esol/bank/reading/purpose-and-main-idea/saturday-market-letters/student/saturday-market-letters-letter-b-student-handout.pdf"
+    },
+    {
+     "label": "Handout 4 – Compare the letters – one copy · last amended 16 Nov 2026",
+     "url": "https://atinwix.github.io/esol/bank/reading/purpose-and-main-idea/saturday-market-letters/student/saturday-market-letters-compare-the-letters-student-handout.pdf"
+    },
+    {
+     "label": "Handout 5 – If … will … notes and practice – one copy · last amended 20 Nov 2026",
+     "url": "https://atinwix.github.io/esol/bank/reading/conditionals/first-conditional-if-unless/student/first-conditional-if-unless-notes-and-practice-student-handout.pdf"
+    },
+    {
+     "label": "Day plan and answers · last amended 20 Nov 2026",
+     "url": "https://atinwix.github.io/esol/bank/reading/conditionals/first-conditional-if-unless/teacher/first-conditional-if-unless-day-plan-and-answers.pdf"
+    },
+    {
+     "label": "AM projector page – letters and the first conditional (10 pages)",
+     "url": "https://atinwix.github.io/esol/bank/reading/conditionals/first-conditional-if-unless/student/first-conditional-if-unless-with-market-letters-projector-lesson.html"
+    },
+    {
+     "label": "PM lesson page – projector and PCs (8 pages; post in Teams; learners' page codes and teacher PIN in the day plan)",
+     "url": "https://atinwix.github.io/esol/bank/reading/conditionals/first-conditional-if-unless/student/first-conditional-if-unless-advice-texts-projector-and-pc-lesson.html"
+    },
+    {
+     "label": "Kahoot import file (20 Qs)",
+     "url": "https://atinwix.github.io/esol/bank/reading/conditionals/first-conditional-if-unless/student/first-conditional-if-unless-and-cause-and-result-kahoot.xlsx"
+    }
+   ],
+   "morning": "Opinion letters about a Saturday market: read Letter A or B, check, share and compare the writers' reasons; Cross Road – what will happen if …?; the first conditional (if + present simple, will + verb) and unless; tap practice; write own sentences (Handout 5)",
+   "pack": {
+    "issued": "2026-11-20",
+    "pages": 130,
+    "url": "https://atinwix.github.io/esol/_class/print-pack-2026-11-23.pdf"
+   },
+   "plan": {
+    "am": "AM: Learners read one of two opinion letters about a Saturday street market and answered six questions on the main idea and details. They shared their letter with a partner and compared the writers' reasons. They then noticed and practised the first conditional (if + present simple, will + verb) and unless, and wrote their own sentences about Cross Road and about next week.",
+    "pm": "PM, PC room: Learners joined ideas with if and rewrote sentences with unless. They read an advice page and a library notice and answered questions about results, sorted sentence halves into condition and result, and wrote advice in Teams using if and unless. They corrected typical mistakes and finished with a 20-question Kahoot."
+   },
+   "prep": "None beyond printing. Before 12:30 log the PCs in and post the PM page link in Teams General. Open both pages with ?teacher on the projector. Nothing to cut out.",
+   "print": "Print the pack once, double-sided (130 pages): the day plan, 11 × Letter A, 10 × Letter B, 21 × Handout 4 and 21 × Handout 5.",
+   "replaced": [],
+   "scheme": {
+    "focus": "first conditional; if / unless; consequences; problem-solving and advice texts; cause and effect",
+    "note": "Carry-over from Wed 18 Nov, which was logged as not taught: the Saturday market letters jigsaw (Handouts 3A, 3B and 4) opens the AM lesson. The Set L paper was already sat on Mon 16 Nov and the linking-words sentence task repeats Mon 16 PM, so neither is repeated. This week's full practice paper is planned for Wed 25 Nov. The Kahoot is new, on this week's content.",
+    "wc": "2026-11-23"
+   },
+   "title": "First conditional (if / unless) with opinion letters, then advice texts and results"
   },
   "2026-11-24_e1": {
    "afternoon": "PC room: Task 3 recap; plan a Task 2 talk; the whole exam in pairs (Tasks 1–4, candidate and assessor, two rounds); True/False feedback on what is still difficult",
@@ -1136,18 +1297,198 @@
     "wc": "2026-11-23"
    },
    "title": "Task 4 short conversations, Task 1 questions and a Tasks 1–4 exam mock",
-   "amended": "2026-11-14T08:20:57Z"
+   "amended": "2026-11-20T10:03:33Z"
+  },
+  "2026-11-26_e2": {
+   "afternoon": "PC room: online practice A–C; time words and five sentences in Teams; Task 4a-style listening (weekend plan); mock exam round two with swapped roles (Set B); Kahoot (20 Qs); feedback and exam-day tips",
+   "cls": "E2 Speaking & Listening",
+   "created": "2026-11-20",
+   "date": "2026-11-26",
+   "flags": [],
+   "items": [
+    {
+     "id": "amp",
+     "lesson": 1,
+     "pages": [
+      1,
+      13
+     ],
+     "text": "Projector lesson – morning",
+     "url": "https://atinwix.github.io/esol/bank/speaking-listening/esb-speaking-tasks/mock-exam-tasks-1-4/student/mock-exam-tasks-1-4-morning-projector-lesson.html"
+    },
+    {
+     "id": "am1",
+     "lesson": 1,
+     "text": "going to or will? rules and Vote Card A/B",
+     "url": ""
+    },
+    {
+     "id": "am2",
+     "lesson": 1,
+     "text": "Handout 1 Task 1 and Task 2 talk 'My plans for next weekend'",
+     "url": ""
+    },
+    {
+     "id": "am3",
+     "lesson": 1,
+     "text": "Task 4a listening (worksheet section E, audio page)",
+     "url": ""
+    },
+    {
+     "id": "am4",
+     "lesson": 1,
+     "text": "Task 4b group discussion in threes (worksheet section F)",
+     "url": ""
+    },
+    {
+     "id": "am5",
+     "lesson": 1,
+     "text": "Mock exam round one in groups of four (Set A)",
+     "url": ""
+    },
+    {
+     "id": "am6",
+     "lesson": 1,
+     "text": "Feedback: weakest task",
+     "url": ""
+    },
+    {
+     "id": "pmp",
+     "lesson": 2,
+     "pages": [
+      1,
+      9
+     ],
+     "text": "PC room lesson page",
+     "url": "https://atinwix.github.io/esol/bank/speaking-listening/esb-speaking-tasks/mock-exam-tasks-1-4/student/mock-exam-tasks-1-4-pc-room-projector-lesson.html"
+    },
+    {
+     "id": "pm1",
+     "lesson": 2,
+     "text": "Online practice A–C (going to or will, build the question, find the correct sentence)",
+     "url": ""
+    },
+    {
+     "id": "pm2",
+     "lesson": 2,
+     "text": "Handout 1 Task 3 + five sentences in Teams (yesterday, now, tomorrow, opinion, offer)",
+     "url": ""
+    },
+    {
+     "id": "pm3",
+     "lesson": 2,
+     "text": "Task 4a-style listening (weekend plan, Handout 1 Task 4)",
+     "url": ""
+    },
+    {
+     "id": "pm4",
+     "lesson": 2,
+     "text": "Mock exam round two, swapped roles (Set B)",
+     "url": ""
+    },
+    {
+     "id": "pm5",
+     "lesson": 2,
+     "text": "Kahoot (20 Qs)",
+     "url": ""
+    },
+    {
+     "id": "pm6",
+     "lesson": 2,
+     "text": "Feedback and exam-day tips",
+     "url": ""
+    }
+   ],
+   "kahoot": {
+    "status": "not yet in Kahoot",
+    "xlsx": "https://atinwix.github.io/esol/bank/speaking-listening/esb-speaking-tasks/mock-exam-tasks-1-4/student/going-to-will-and-exam-skills-kahoot.xlsx"
+   },
+   "lastAmended": "2026-11-20",
+   "lastAmendedNote": "new day built after the Thu 19 Nov log (nothing from 19 Nov was taught, so its content comes in first)",
+   "links": [
+    {
+     "label": "Print pack – print once, double-sided (114 pages)",
+     "url": "https://atinwix.github.io/esol/_class/print-pack-2026-11-26.pdf"
+    },
+    {
+     "label": "Handout 1 – Future Plans (2 sides) – one copy",
+     "url": "https://atinwix.github.io/esol/e2/speaking-listening/docs/future-plans-going-to-will-student-handout.pdf"
+    },
+    {
+     "label": "Handout 2 – Observer sheets (2 sides) – one copy",
+     "url": "https://atinwix.github.io/esol/bank/speaking-listening/esb-speaking-tasks/mock-exam-tasks-1-4/student/mock-exam-tasks-1-4-observer-sheets-student-handout.pdf"
+    },
+    {
+     "label": "Handout 3 – Assessor's cards, Sets A and B (2 sides) – one copy",
+     "url": "https://atinwix.github.io/esol/bank/speaking-listening/esb-speaking-tasks/mock-exam-tasks-1-4/student/mock-exam-tasks-1-4-assessor-cards-student-handout.pdf"
+    },
+    {
+     "label": "Exam Practice worksheet Tasks 1–4 (spare copies are in the pack)",
+     "url": "https://atinwix.github.io/esol/e2/speaking-listening/docs/esb-exam-tasks-1-4-practice-student-worksheet.pdf"
+    },
+    {
+     "label": "Day plan and answers (teach from this) · last amended 20 Nov 2026",
+     "url": "https://atinwix.github.io/esol/bank/speaking-listening/esb-speaking-tasks/mock-exam-tasks-1-4/teacher/mock-exam-tasks-1-4-going-to-will-day-plan-and-answers.pdf"
+    },
+    {
+     "label": "Morning projector lesson – slides 1–13",
+     "url": "https://atinwix.github.io/esol/bank/speaking-listening/esb-speaking-tasks/mock-exam-tasks-1-4/student/mock-exam-tasks-1-4-morning-projector-lesson.html"
+    },
+    {
+     "label": "PC room lesson page – pages 1–9 (open with ?teacher; learners' PIN 7351)",
+     "url": "https://atinwix.github.io/esol/bank/speaking-listening/esb-speaking-tasks/mock-exam-tasks-1-4/student/mock-exam-tasks-1-4-pc-room-projector-lesson.html"
+    },
+    {
+     "label": "Kahoot import file (20 Qs)",
+     "url": "https://atinwix.github.io/esol/bank/speaking-listening/esb-speaking-tasks/mock-exam-tasks-1-4/student/going-to-will-and-exam-skills-kahoot.xlsx"
+    },
+    {
+     "label": "Vote Card (A / B)",
+     "url": "https://atinwix.github.io/esol/games/classroom-tool-vote-card.html?mode=ab"
+    },
+    {
+     "label": "Online practice – going to or will, build, find (learners open from the PC room page)",
+     "url": "https://atinwix.github.io/esol/e2/speaking-listening/future-plans-going-to-will-choose-build-find-interactive-practice.html"
+    },
+    {
+     "label": "Lesson audio – Task 4a library announcement (morning, Script A)",
+     "url": "https://atinwix.github.io/esol/e2/speaking-listening/audio/superlatives-task4/index.html"
+    },
+    {
+     "label": "Lesson audio – Task 4a-style listening, weekend plan (afternoon, Script B)",
+     "url": "https://atinwix.github.io/esol/e2/speaking-listening/audio/future-plans-listening/index.html"
+    },
+    {
+     "label": "Referee Interviews speaking wheels (★ early finishers)",
+     "url": "https://atinwix.github.io/esol/e2/speaking-listening/questions-articles-plurals-referee-interviews-speaking-wheels.html"
+    }
+   ],
+   "morning": "going to or will? rules and Vote Card; handout Task 1 and Task 2 talk on plans for next weekend; Task 4a listening (library); Task 4b discussion; mock exam round one in groups of four (Set A); feedback",
+   "pack": {
+    "issued": "2026-11-20",
+    "pages": 114,
+    "url": "https://atinwix.github.io/esol/_class/print-pack-2026-11-26.pdf"
+   },
+   "plan": {
+    "am": "AM: Learners voted on their phones for going to or will, circled the right form on the handout and gave a one-minute talk about their plans for next weekend. They listened twice to a library announcement (Task 4a), discussed free things to do in London in threes (Task 4b), then sat a mock exam of Tasks 1–4 in groups of four, with an assessor and an observer, and gave each other feedback.",
+    "pm": "PM, PC room: Learners practised choosing going to or will, building questions and finding the correct sentence online, sorted time words by tense and wrote five sentences in Teams. They did a Task 4a-style listening about a weekend plan, swapped roles for the second round of the mock exam, and finished with a 20-question Kahoot and exam-day tips."
+   },
+   "prep": "None beyond printing. Before 12:30 post the PC room page link and the online practice link in Teams General. Open the pages with ?teacher; the learners' PIN is 7351. Seat the class in groups of four. Nothing to cut out.",
+   "print": "Print pack only (114 pages, double-sided: day plan, 21 × Handout 1, 21 × Handout 2, 6 × Handout 3, 6 spare Exam Practice worksheets)",
+   "replaced": [],
+   "scheme": {
+    "focus": "Speaking & Listening exam Tasks 1–4: full mock exam; going to and will for the Task 2 talk",
+    "note": "exam preparation; the previous Thursday was not taught, so its content (going to and will, Task 4a and 4b) comes in first",
+    "wc": "2026-11-23"
+   },
+   "title": "Going to and will, Task 4, then a full mock exam of Tasks 1–4 (two rounds)",
+   "amended": "2026-11-16T14:35:45Z"
   }
  },
  "status": {
   "2026-11-23_e3": {
    "at": "2026-11-20T10:05:00Z",
    "note": "building after the Wed 18 Nov log",
-   "state": "building"
-  },
-  "2026-11-26_e2": {
-   "at": "2026-11-20T10:00:00Z",
-   "note": "building Thu 26 Nov E2 after the 19 Nov log",
    "state": "building"
   }
  },
