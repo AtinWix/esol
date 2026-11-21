@@ -190,6 +190,17 @@ def build_index(repo_root):
 
 OLD_SCRIPT_MARKER = '(function(){var f={lvl:"",skill:[],g:"",t:"",e:"",r:"",type:"",coll:""},q="",browse=false;'
 NEW_SCRIPT_MARKER = "/*content-search-v1*/"
+HL_MARKER = "/*content-search-hl*/"
+
+# Shared helper functions that escape the matched text and wrap each query
+# word in <mark>, used for the "Found in text: ..." snippet. Appended once,
+# either as part of a fresh v1 build or as an upgrade to an already-patched
+# page (see add_highlighting below) so both paths end up byte-identical.
+HL_HELPERS = r"""%s
+function escHtml(s){return s.replace(/[&<>]/g,function(c){return c==="&"?"&amp;":c==="<"?"&lt;":"&gt;"})}
+function hi(text,words){var s=escHtml(text);words.forEach(function(w){if(!w)return;
+var re=new RegExp("("+w.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+")","gi");s=s.replace(re,"<mark>$1</mark>")});return s}
+""" % HL_MARKER
 
 
 def build_new_script(old_script):
@@ -217,6 +228,7 @@ function contentMatch(li){var w=qWords();if(!w.length||!contentIdx)return null;
 var a=li.querySelector("a.t");if(!a)return null;var text=contentIdx[a.getAttribute("href")];if(!text)return null;
 var low=text.toLowerCase();if(!w.every(function(x){return low.indexOf(x)>=0}))return null;return text}
 """ % NEW_SCRIPT_MARKER
+    addition += HL_HELPERS
 
     new_ok = '''function ok(el){var d=el.dataset;
 if(f.lvl&&d.lvl.split(" ").indexOf(f.lvl)<0)return false;
@@ -244,7 +256,7 @@ var show=filterOk&&(tMatch||cText!==null);
 li.hidden=!show;li.classList.toggle("content-match",!!(show&&!tMatch&&cText));
 var snip=li.querySelector(".search-snippet");
 if(show&&!tMatch&&cText){if(!snip){snip=document.createElement("span");snip.className="search-snippet";snip.style.cssText="display:block;font-size:.85em;color:var(--muted);margin-top:.3em";var main=li.querySelector(".main");if(main)main.appendChild(snip)}
-snip.textContent="Found in text: "+snippet(cText,qWords())}else if(snip){snip.remove()}
+snip.innerHTML="Found in text: "+hi(snippet(cText,qWords()),qWords())}else if(snip){snip.remove()}
 if(show)n++});
 rows.sort(function(a,b){function rank(li){if(li.hidden)return 2;return li.classList.contains("content-match")?1:0}
 var ra=rank(a),rb=rank(b);if(ra!==rb)return ra-rb;return (+a.dataset.idx)-(+b.dataset.idx)});
@@ -258,6 +270,45 @@ s.hidden=!n;if(n)any=true});'''
     return script
 
 
+OLD_SNIPPET_LINE = 'snip.textContent="Found in text: "+snippet(cText,qWords())'
+NEW_SNIPPET_LINE = 'snip.innerHTML="Found in text: "+hi(snippet(cText,qWords()),qWords())'
+CONTENT_MATCH_END = (
+    'var low=text.toLowerCase();if(!w.every(function(x){return low.indexOf(x)>=0}))'
+    'return null;return text}'
+)
+MARK_CSS = "mark{background:var(--soft);color:var(--accent);font-weight:bold;border-radius:3px;padding:0 2px}"
+
+
+def add_highlighting(script):
+    """Upgrades a page that already has the v1 content-search patch (but not
+    the <mark> highlighting) in place, without redoing the v1 diff — the
+    v1-patched script no longer contains the original pre-patch anchors
+    build_new_script() matches against. Returns the upgraded script, or None
+    if already upgraded or the v1 patch isn't there to upgrade."""
+    if HL_MARKER in script:
+        return None  # already upgraded
+    if NEW_SCRIPT_MARKER not in script or CONTENT_MATCH_END not in script:
+        raise SystemExit(
+            "index.html has the v1 content-search patch but not in the expected "
+            "shape — re-check this upgrade by hand."
+        )
+    script = script.replace(CONTENT_MATCH_END, CONTENT_MATCH_END + "\n" + HL_HELPERS, 1)
+    if OLD_SNIPPET_LINE not in script:
+        raise SystemExit("snippet-rendering line didn't match expected template — re-check by hand.")
+    script = script.replace(OLD_SNIPPET_LINE, NEW_SNIPPET_LINE)
+    return script
+
+
+def patch_style(html):
+    """Adds the <mark> highlight colour rule to the page's inline <style>,
+    idempotently. Returns the patched html, or None if already present."""
+    if MARK_CSS in html:
+        return None
+    marker = "</style>"
+    idx = html.index(marker)
+    return html[:idx] + MARK_CSS + "\n" + html[idx:]
+
+
 def patch_index_html(repo_root):
     index_path = os.path.join(repo_root, "index.html")
     with open(index_path, encoding="utf-8") as f:
@@ -266,13 +317,23 @@ def patch_index_html(repo_root):
     end = html.index("</script>", start)
     old_script = html[start:end]
     new_script = build_new_script(old_script)
-    if new_script is None:
+    if new_script is None and HL_MARKER not in old_script:
+        new_script = add_highlighting(old_script)
+    changed = False
+    if new_script is not None:
+        html = html[:start] + new_script + html[end:]
+        changed = True
+        print("Patched index.html's inline script.")
+    new_html = patch_style(html)
+    if new_html is not None:
+        html = new_html
+        changed = True
+        print("Added <mark> highlight style.")
+    if not changed:
         print("index.html already has the content-search patch — leaving it as is.")
         return False
-    patched = html[:start] + new_script + html[end:]
     with open(index_path, "w", encoding="utf-8") as f:
-        f.write(patched)
-    print("Patched index.html's inline script.")
+        f.write(html)
     return True
 
 

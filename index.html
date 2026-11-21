@@ -51,6 +51,7 @@ a.tag.fb{color:#a2600d;border-color:#e3b981}
 .browse li{padding:2px 0;font-size:.9rem} .browse .bl{display:inline-block;min-width:3.6rem;font-weight:bold;color:var(--muted)} .browse .bt{color:var(--muted);font-size:.8rem} .browse a{color:var(--accent)}
 #none{color:var(--muted);font-style:italic;margin-top:20px}
 .sub.door{background:#fff;border:1px solid var(--line);border-left:5px solid var(--accent);border-radius:10px;padding:10px 14px;margin-top:10px}
+mark{background:var(--soft);color:var(--accent);font-weight:bold;border-radius:3px;padding:0 2px}
 </style></head><body><div class="wrap">
 <header class="top"><div class="atin-logo" aria-label="Made by Atin">
 <svg viewBox="104 28 172 134" width="64" height="50" role="img" aria-hidden="true">
@@ -100,6 +101,11 @@ return (start>0?"…":"")+text.slice(start,end).trim()+(end<text.length?"…":""
 function contentMatch(li){var w=qWords();if(!w.length||!contentIdx)return null;
 var a=li.querySelector("a.t");if(!a)return null;var text=contentIdx[a.getAttribute("href")];if(!text)return null;
 var low=text.toLowerCase();if(!w.every(function(x){return low.indexOf(x)>=0}))return null;return text}
+/*content-search-hl*/
+function escHtml(s){return s.replace(/[&<>]/g,function(c){return c==="&"?"&amp;":c==="<"?"&lt;":"&gt;"})}
+function hi(text,words){var s=escHtml(text);words.forEach(function(w){if(!w)return;
+var re=new RegExp("("+w.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+")","gi");s=s.replace(re,"<mark>$1</mark>")});return s}
+
 
 var $=function(i){return document.getElementById(i)};
 function has(attr,v){return !v||(attr||"").split("|").indexOf(v)>=0}
@@ -121,7 +127,7 @@ var show=filterOk&&(tMatch||cText!==null);
 li.hidden=!show;li.classList.toggle("content-match",!!(show&&!tMatch&&cText));
 var snip=li.querySelector(".search-snippet");
 if(show&&!tMatch&&cText){if(!snip){snip=document.createElement("span");snip.className="search-snippet";snip.style.cssText="display:block;font-size:.85em;color:var(--muted);margin-top:.3em";var main=li.querySelector(".main");if(main)main.appendChild(snip)}
-snip.textContent="Found in text: "+snippet(cText,qWords())}else if(snip){snip.remove()}
+snip.innerHTML="Found in text: "+hi(snippet(cText,qWords()),qWords())}else if(snip){snip.remove()}
 if(show)n++});
 rows.sort(function(a,b){function rank(li){if(li.hidden)return 2;return li.classList.contains("content-match")?1:0}
 var ra=rank(a),rb=rank(b);if(ra!==rb)return ra-rb;return (+a.dataset.idx)-(+b.dataset.idx)});
