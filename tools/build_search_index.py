@@ -309,6 +309,34 @@ def patch_style(html):
     return html[:idx] + MARK_CSS + "\n" + html[idx:]
 
 
+# home.py shows the full curated results list (and the "nothing matches"
+# message) as soon as the page loads, with no search or filter active.
+# Atin wants that list hidden until a search/filter is actually applied,
+# or "Browse everything" is clicked — these two lines are home.py's own
+# template (not something build_search_index.py added), so patch them too.
+OLD_VIS_LINE = '$("results").hidden=browse;$("browsebox").hidden=!browse;$("cwrap").hidden=browse;'
+NEW_VIS_LINE = '$("results").hidden=browse||!filtering;$("browsebox").hidden=!browse;$("cwrap").hidden=browse;'
+OLD_NONE_LINE = '$("none").hidden=any||browse;'
+NEW_NONE_LINE = '$("none").hidden=any||browse||!filtering;'
+
+
+def patch_initial_hide(html):
+    """Hides the results list (and the "nothing matches" message) until a
+    search or filter is active, or "Browse everything" is clicked.
+    Idempotent. Returns the patched html, or None if already present."""
+    if NEW_VIS_LINE in html:
+        return None
+    if OLD_VIS_LINE not in html or OLD_NONE_LINE not in html:
+        raise SystemExit(
+            "results-visibility lines in index.html's script didn't match the "
+            "expected template (home.py's JS output may have changed) — "
+            "re-check this patch by hand."
+        )
+    html = html.replace(OLD_VIS_LINE, NEW_VIS_LINE, 1)
+    html = html.replace(OLD_NONE_LINE, NEW_NONE_LINE, 1)
+    return html
+
+
 def patch_index_html(repo_root):
     index_path = os.path.join(repo_root, "index.html")
     with open(index_path, encoding="utf-8") as f:
@@ -329,8 +357,13 @@ def patch_index_html(repo_root):
         html = new_html
         changed = True
         print("Added <mark> highlight style.")
+    new_html = patch_initial_hide(html)
+    if new_html is not None:
+        html = new_html
+        changed = True
+        print("Hid the results list until a search/filter or Browse everything is active.")
     if not changed:
-        print("index.html already has the content-search patch — leaving it as is.")
+        print("index.html already has all patches applied — leaving it as is.")
         return False
     with open(index_path, "w", encoding="utf-8") as f:
         f.write(html)
