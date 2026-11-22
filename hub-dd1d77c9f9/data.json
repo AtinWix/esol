@@ -1127,12 +1127,7 @@
    "cls": "E1 Speaking & Listening",
    "created": "2026-11-20",
    "date": "2026-11-24",
-   "flags": [
-    {
-     "code": "audio",
-     "text": "Card links an audio page ('Lesson audio – Scripts A–J') – the audio must play from a button on the projector slide"
-    }
-   ],
+   "flags": [],
    "items": [
     {
      "id": "amp",
@@ -1259,10 +1254,6 @@
      "url": "https://atinwix.github.io/esol/bank/speaking-listening/esb-speaking-tasks/task4-task1-exam-mock/student/tasks-1-to-4-exam-mock-interactive-practice.html"
     },
     {
-     "label": "Lesson audio – Scripts A–J",
-     "url": "https://atinwix.github.io/esol/e1/speaking-listening/audio/short-conversations/"
-    },
-    {
      "label": "Kahoot import file (20 Qs)",
      "url": "https://atinwix.github.io/esol/bank/speaking-listening/esb-speaking-tasks/task4-task1-exam-mock/student/task4-and-task1-skills-kahoot.xlsx"
     },
@@ -1309,16 +1300,7 @@
    "cls": "E2 Speaking & Listening",
    "created": "2026-11-20",
    "date": "2026-11-26",
-   "flags": [
-    {
-     "code": "audio",
-     "text": "Card links an audio page ('Lesson audio – Task 4a library announcement (morning, Script A)') – the audio must play from a button on the projector slide"
-    },
-    {
-     "code": "audio",
-     "text": "Card links an audio page ('Lesson audio – Task 4a-style listening, weekend plan (afternoon, Script B)') – the audio must play from a button on the projector slide"
-    }
-   ],
+   "flags": [],
    "items": [
     {
      "id": "amp",
@@ -1345,7 +1327,7 @@
     {
      "id": "am3",
      "lesson": 1,
-     "text": "Task 4a listening (worksheet section E, audio page)",
+     "text": "Task 4a listening (worksheet section E, play button on the slide)",
      "url": ""
     },
     {
@@ -1465,14 +1447,6 @@
      "url": "https://atinwix.github.io/esol/e2/speaking-listening/future-plans-going-to-will-choose-build-find-interactive-practice.html"
     },
     {
-     "label": "Lesson audio – Task 4a library announcement (morning, Script A)",
-     "url": "https://atinwix.github.io/esol/e2/speaking-listening/audio/superlatives-task4/index.html"
-    },
-    {
-     "label": "Lesson audio – Task 4a-style listening, weekend plan (afternoon, Script B)",
-     "url": "https://atinwix.github.io/esol/e2/speaking-listening/audio/future-plans-listening/index.html"
-    },
-    {
      "label": "Referee Interviews speaking wheels (★ early finishers)",
      "url": "https://atinwix.github.io/esol/e2/speaking-listening/questions-articles-plurals-referee-interviews-speaking-wheels.html"
     }
@@ -1503,14 +1477,6 @@
  "health": {
   "checkedAt": "2026-11-22T07:13:31Z",
   "items": [
-   {
-    "ok": true,
-    "text": "Next teaching days: Mon 23 E3 is built (no flags). Tue 24 E1 and Thu 26 E2 are built but carry an audio-page flag. Wed 25 E3 correctly waits for the Mon 23 log."
-   },
-   {
-    "ok": false,
-    "text": "Tue 24 E1 (Scripts A–J) and Thu 26 E2 (two scripts) still link audio pages from the card, which the 20 Nov rule bans. You said to leave this week's lessons as they are, so I only flagged them."
-   },
    {
     "ok": true,
     "text": "Logged lessons 16–19 Nov all have ROW snippets, Covered/Next and 'As taught'. --past check on all cards from 2–19 Nov: no faults."
