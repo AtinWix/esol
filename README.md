@@ -4,7 +4,7 @@ Online ESOL activities, projector lessons and games, Entry 1 to Level 2. Made by
 
 Live site: https://atinwix.github.io/esol/
 
-Each level has three strands: Reading, Writing, Speaking & Listening.
+Each level has three skills: Reading, Writing, Speaking & Listening.
 
 ## all-levels
 - [E1–L2 Speaking & Listening – ESB Exam Tasks 1–4 – Interactive Quiz](all-levels/speaking-listening-esb-exam-tasks-1-4-quiz.html)
