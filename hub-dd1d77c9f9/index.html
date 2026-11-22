@@ -148,7 +148,13 @@ header{display:flex;justify-content:space-between;align-items:flex-start;gap:12p
     if(kx&&!klive&&x.date>=today){
       var fname=kx.url.split("/").pop(), ktitle=(x.cls||"")+" – "+(x.title||"Kahoot");
       var msg="Make a Kahoot in my Kahoot account (I'm signed in). Title: \""+ktitle+"\". Don't use the file picker: on create.kahoot.it start a new Kahoot, then Add question → Import → Import spreadsheet. Then use javascript to fetch "+kx.url+" as a blob, make a File named "+fname+" (type application/vnd.openxmlformats-officedocument.spreadsheetml.sheet), put it into the dialog's <input type=\"file\"> with a DataTransfer and dispatch a change event. Delete the empty slide 1 left from the blank Kahoot, check that exactly 20 questions came in, set the title, save, then give me the Kahoot's page address (create.kahoot.it/details/…). Don't change any questions.";
-      var kb=el("div","kbox");
+      var kkey="kahootMade:"+kx.url;
+      var kget=function(){try{return localStorage.getItem(kkey)==="1"}catch(_){return false}};
+      var kset=function(v){try{if(v)localStorage.setItem(kkey,"1");else localStorage.removeItem(kkey)}catch(_){}};
+      var kb=el("div","kbox"), kdone=el("div","prep");
+      var kundo=el("label");kundo.style.cursor="pointer";
+      var kuc=el("input");kuc.type="checkbox";kuc.checked=true;kundo.append(kuc,document.createTextNode(" Kahoot made ✓"));kdone.append(kundo);
+      var kshow=function(){var m=kget();kb.style.display=m?"none":"";kdone.style.display=m?"":"none"};
       kb.append(el("b",null,"Kahoot: not yet in Kahoot."+(K.note?" ("+K.note+")":"")));
       kb.append(el("p",null,"It is added automatically in the evening when your home PC is on. To do it now (1 minute): download the file below → Kahoot → Add question → Import → Import spreadsheet → pick the file."));
       var dl=el("a",null,"Download the Kahoot file");dl.href=kx.url;dl.target="_blank";dl.rel="noopener";kb.append(dl);
@@ -157,7 +163,13 @@ header{display:flex;justify-content:space-between;align-items:flex-start;gap:12p
       var cb=el("button",null,"Copy message");cb.type="button";
       cb.onclick=function(){var done=function(){cb.textContent="Copied ✓";setTimeout(function(){cb.textContent="Copy message"},2000)};
         try{navigator.clipboard.writeText(msg).then(done,function(){ta.select();cb.textContent="Selected – press Ctrl+C"})}catch(_){ta.select();cb.textContent="Selected – press Ctrl+C"}};
-      kb.append(cb);c.append(kb)}
+      kb.append(cb);
+      var kl=el("label");kl.style.cssText="display:block;margin-top:10px;font-weight:bold;cursor:pointer";
+      var kc=el("input");kc.type="checkbox";kc.style.cssText="width:20px;height:20px;vertical-align:middle;margin-right:6px";
+      kl.append(kc,document.createTextNode("I've made this Kahoot"));kb.append(kl);
+      kc.onchange=function(){if(kc.checked){kset(true);kshow()}};
+      kuc.onchange=function(){if(!kuc.checked){kset(false);kc.checked=false;kshow()}};
+      c.append(kb);c.append(kdone);kshow()}
     var LK=(x.links||[]).slice();
     if(K.details&&!LK.some(function(k){return k&&k.url===K.details}))LK.push({label:"Kahoot – ready to play",url:K.details});
     if(LK.length){var l=el("div","links");LK.forEach(function(k){if(!k||!/^https:\/\//.test(k.url||""))return;var a=el("a",null,k.label||"Link");a.href=k.url;a.target="_blank";a.rel="noopener";l.append(a)});c.append(l)}
