@@ -78,7 +78,6 @@ Word documents:
 - [About me – model texts, questions and capital letters](e1/writing/docs/about-me-model-texts-questions-and-capital-letters.pdf) (PDF) · [Word](e1/writing/docs/about-me-model-texts-questions-and-capital-letters.docx)
 
 ## e2/speaking-listening
-- [E2 Comparatives and Superlatives – Kahoot](https://create.kahoot.it/details/e2-comparatives-and-superlatives/ad7a0988-4bf8-43cf-bbbb-ae5ab24a76fc) – 20 questions, play live on Kahoot.
 - [E2 Comparatives – Find the Error – Interactive Practice](e2/speaking-listening/comparatives-find-the-error-interactive-practice.html) – 20 sentences: tap the mistake, then write the sentence correctly. Works on phones and PCs.
 - [E2 Comparatives – Short Kahoot](https://create.kahoot.it/details/comparatives-in-english-e2/e36b8ae0-4e58-4a8b-aa30-d712524fdaca) – 10 questions, play live on Kahoot.
 - [E2 Comparatives – Speaking Task 3 Two Pictures – Projector Lesson](e2/speaking-listening/comparatives-task3-two-pictures-projector-lesson.html)
@@ -192,6 +191,9 @@ Word documents:
 - [Student Services email](e3/reading/docs/student-services-email.pdf) (PDF) · [Word](e3/reading/docs/student-services-email.docx)
 - [Text types – reference sheet](e3/reading/docs/text-types-reference-sheet.pdf) (PDF) · [Word](e3/reading/docs/text-types-reference-sheet.docx)
 - [Too Cold to Learn – exam practice – teacher notes and answers (teacher)](e3/reading/docs/too-cold-to-learn-exam-practice-answers.pdf) (PDF) · [Word](e3/reading/docs/too-cold-to-learn-exam-practice-answers.docx)
+
+## e3/speaking-listening
+- [E3 Speaking & Listening – Comparatives and Superlatives – Kahoot](https://create.kahoot.it/details/e2-comparatives-and-superlatives/ad7a0988-4bf8-43cf-bbbb-ae5ab24a76fc) – 20 questions, play live on Kahoot.
 
 ## e3/writing
 - [E3 Writing – Complaint Email: Too Cold to Learn – Kahoot](https://create.kahoot.it/details/too-cold-to/bec650b2-79fa-4654-ba06-02f06e06aaaa) – 14 questions, play live on Kahoot.
