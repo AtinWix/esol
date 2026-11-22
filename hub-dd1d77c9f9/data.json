@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-20T10:09:13Z",
+ "updatedAt": "2026-11-22T07:13:46Z",
  "upcoming": {
   "2026-11-02_e3": {
    "afternoon": "PC room: Too Cold to Learn – complaint emails",
@@ -1127,7 +1127,12 @@
    "cls": "E1 Speaking & Listening",
    "created": "2026-11-20",
    "date": "2026-11-24",
-   "flags": [],
+   "flags": [
+    {
+     "code": "audio",
+     "text": "Card links an audio page ('Lesson audio – Scripts A–J') – the audio must play from a button on the projector slide"
+    }
+   ],
    "items": [
     {
      "id": "amp",
@@ -1304,7 +1309,16 @@
    "cls": "E2 Speaking & Listening",
    "created": "2026-11-20",
    "date": "2026-11-26",
-   "flags": [],
+   "flags": [
+    {
+     "code": "audio",
+     "text": "Card links an audio page ('Lesson audio – Task 4a library announcement (morning, Script A)') – the audio must play from a button on the projector slide"
+    },
+    {
+     "code": "audio",
+     "text": "Card links an audio page ('Lesson audio – Task 4a-style listening, weekend plan (afternoon, Script B)') – the audio must play from a button on the projector slide"
+    }
+   ],
    "items": [
     {
      "id": "amp",
@@ -1482,38 +1496,38 @@
     "wc": "2026-11-23"
    },
    "title": "Going to and will, Task 4, then a full mock exam of Tasks 1–4 (two rounds)",
-   "amended": "2026-11-20T10:09:01Z"
+   "amended": "2026-11-20T11:06:33Z"
   }
  },
  "status": {},
  "health": {
-  "checkedAt": "2026-11-17T07:14:05Z",
+  "checkedAt": "2026-11-22T07:13:31Z",
   "items": [
    {
     "ok": true,
-    "text": "Next teaching days: Tue 17 E1, Wed 18 E3 and Thu 19 E2 are built with no flags. Mon 23 E3 and Tue 24 E1 correctly wait for logs."
-   },
-   {
-    "ok": true,
-    "text": "Logged lessons 10–16 Nov all have ROW snippets, Covered/Next and 'As taught'. Day check and --past check on all cards: no faults."
-   },
-   {
-    "ok": true,
-    "text": "No public material is also a Claude artifact; the lists have no id or claude fields. Filing Inbox has nothing pending."
+    "text": "Next teaching days: Mon 23 E3 is built (no flags). Tue 24 E1 and Thu 26 E2 are built but carry an audio-page flag. Wed 25 E3 correctly waits for the Mon 23 log."
    },
    {
     "ok": false,
-    "text": "Kahoots for Tue 17 E1, Wed 18 E3 and Thu 19 E2 are still 'not yet in Kahoot'. The evening import task is not in the scheduled task list I can see, so I can't tell whether it ran. Use the one-minute manual import on the card if needed."
+    "text": "Tue 24 E1 (Scripts A–J) and Thu 26 E2 (two scripts) still link audio pages from the card, which the 20 Nov rule bans. You said to leave this week's lessons as they are, so I only flagged them."
+   },
+   {
+    "ok": true,
+    "text": "Logged lessons 16–19 Nov all have ROW snippets, Covered/Next and 'As taught'. --past check on all cards from 2–19 Nov: no faults."
    },
    {
     "ok": false,
-    "text": "'Weekly ESOL lesson build' last failed on the usage limit (Thu 12 Nov) and is switched off, so nothing outstanding. All other ESOL tasks last succeeded."
+    "text": "Kahoots for Mon 23 E3, Tue 24 E1 and Thu 26 E2 are still 'not yet in Kahoot'. The evening import task isn't in the task list I can see, so use the one-minute manual import on the card if needed."
+   },
+   {
+    "ok": true,
+    "text": "No public material is also a Claude artifact. Filing Inbox has nothing pending. All ESOL tasks last succeeded; 'Weekly ESOL lesson build' is switched off after its 12 Nov usage-limit failure."
    },
    {
     "ok": false,
     "text": "One Lesson Log fix still needs you: Teacher Hub public page (12 Nov)."
    }
   ],
-  "ok": true
+  "ok": false
  }
 }
