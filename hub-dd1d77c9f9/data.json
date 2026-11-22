@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-22T22:08:37Z",
+ "updatedAt": "2026-11-22T22:10:38Z",
  "upcoming": {
   "2026-11-02_e3": {
    "afternoon": "PC room: Too Cold to Learn – complaint emails",
@@ -1409,11 +1409,11 @@
     "xlsx": "https://atinwix.github.io/esol/bank/speaking-listening/esb-speaking-tasks/mock-exam-tasks-1-4/student/going-to-will-and-exam-skills-kahoot.xlsx",
     "details": "https://create.kahoot.it/details/e2-speaking-listening-finish-task-4-4a-and-4b-then-future-plans-going-to-and-will/a0d14941-b878-4321-aed9-6518156542ed"
    },
-   "lastAmended": "2026-11-20",
-   "lastAmendedNote": "new day built after the Thu 19 Nov log (nothing from 19 Nov was taught, so its content comes in first)",
+   "lastAmended": "2026-11-22",
+   "lastAmendedNote": "PIN in the day plan, card and page now 0000 (the day plan said 7351); day plan and print pack re-made",
    "links": [
     {
-     "label": "Print pack – print once, double-sided (114 pages)",
+     "label": "Print pack – print once, double-sided (114 pages) · last amended 22 Nov 2026",
      "url": "https://atinwix.github.io/esol/_class/print-pack-2026-11-26.pdf"
     },
     {
@@ -1433,7 +1433,7 @@
      "url": "https://atinwix.github.io/esol/e2/speaking-listening/docs/esb-exam-tasks-1-4-practice-student-worksheet.pdf"
     },
     {
-     "label": "Day plan and answers (teach from this) · last amended 20 Nov 2026",
+     "label": "Day plan and answers (teach from this) · last amended 22 Nov 2026",
      "url": "https://atinwix.github.io/esol/bank/speaking-listening/esb-speaking-tasks/mock-exam-tasks-1-4/teacher/mock-exam-tasks-1-4-going-to-will-day-plan-and-answers.pdf"
     },
     {
@@ -1467,7 +1467,7 @@
    ],
    "morning": "going to or will? rules and Vote Card; handout Task 1 and Task 2 talk on plans for next weekend; Task 4a listening (library); Task 4b discussion; mock exam round one in groups of four (Set A); feedback",
    "pack": {
-    "issued": "2026-11-20",
+    "issued": "2026-11-22",
     "pages": 114,
     "url": "https://atinwix.github.io/esol/_class/print-pack-2026-11-26.pdf"
    },
