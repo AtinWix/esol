@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-22T07:13:46Z",
+ "updatedAt": "2026-11-22T21:42:04Z",
  "upcoming": {
   "2026-11-02_e3": {
    "afternoon": "PC room: Too Cold to Learn – complaint emails",
@@ -1223,8 +1223,9 @@
     }
    ],
    "kahoot": {
-    "status": "not yet in Kahoot",
-    "xlsx": "https://atinwix.github.io/esol/bank/speaking-listening/esb-speaking-tasks/task4-task1-exam-mock/student/task4-and-task1-skills-kahoot.xlsx"
+    "status": "ready",
+    "xlsx": "https://atinwix.github.io/esol/bank/speaking-listening/esb-speaking-tasks/task4-task1-exam-mock/student/task4-and-task1-skills-kahoot.xlsx",
+    "details": "https://create.kahoot.it/details/e1-speaking-listening-task-4-short-conversations-task-1-questions-tasks-14-run-through/aed3db51-8866-43b6-a82d-3933a6414c7d"
    },
    "lastAmended": "2026-11-20",
    "lastAmendedNote": "built 20 Nov after the 17 Nov log",
@@ -1252,6 +1253,10 @@
     {
      "label": "Learners' page (PC / phone)",
      "url": "https://atinwix.github.io/esol/bank/speaking-listening/esb-speaking-tasks/task4-task1-exam-mock/student/tasks-1-to-4-exam-mock-interactive-practice.html"
+    },
+    {
+     "label": "Kahoot – ready to play",
+     "url": "https://create.kahoot.it/details/e1-speaking-listening-task-4-short-conversations-task-1-questions-tasks-14-run-through/aed3db51-8866-43b6-a82d-3933a6414c7d"
     },
     {
      "label": "Kahoot import file (20 Qs)",
@@ -1396,8 +1401,9 @@
     }
    ],
    "kahoot": {
-    "status": "not yet in Kahoot",
-    "xlsx": "https://atinwix.github.io/esol/bank/speaking-listening/esb-speaking-tasks/mock-exam-tasks-1-4/student/going-to-will-and-exam-skills-kahoot.xlsx"
+    "status": "ready",
+    "xlsx": "https://atinwix.github.io/esol/bank/speaking-listening/esb-speaking-tasks/mock-exam-tasks-1-4/student/going-to-will-and-exam-skills-kahoot.xlsx",
+    "details": "https://create.kahoot.it/details/e2-speaking-listening-finish-task-4-4a-and-4b-then-future-plans-going-to-and-will/a0d14941-b878-4321-aed9-6518156542ed"
    },
    "lastAmended": "2026-11-20",
    "lastAmendedNote": "new day built after the Thu 19 Nov log (nothing from 19 Nov was taught, so its content comes in first)",
@@ -1433,6 +1439,10 @@
     {
      "label": "PC room lesson page – pages 1–9 (open with ?teacher; learners' PIN 7351)",
      "url": "https://atinwix.github.io/esol/bank/speaking-listening/esb-speaking-tasks/mock-exam-tasks-1-4/student/mock-exam-tasks-1-4-pc-room-projector-lesson.html"
+    },
+    {
+     "label": "Kahoot – ready to play",
+     "url": "https://create.kahoot.it/details/e2-speaking-listening-finish-task-4-4a-and-4b-then-future-plans-going-to-and-will/a0d14941-b878-4321-aed9-6518156542ed"
     },
     {
      "label": "Kahoot import file (20 Qs)",
