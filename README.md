@@ -25,6 +25,8 @@ Word documents:
 
 ## assessments
 - [ESOL Digital Skills – Computer Skills Assessment (E1–L2)](https://atinwix.github.io/new-digital-skills-test/) – Self-access check of basic computer skills; results go to a Microsoft Form with the level the learner is working at.
+- [ESOL ICT Skills Check – Computer Skills Self-Access Assessment (E1–L2)](https://atinwix.github.io/ict-test/) – Seven short on-screen tasks: mouse, keyboard, search, links, email, uploading a file and online safety. Learners get a score and email the result to the teacher. Use before a PC-room course to see who needs help with the computer.
+- [ESOL My Story – Learners' Life Stories Writing Form (E1–L2)](https://atinwix.github.io/StudentBio/) – Learners write short answers about their own life (home country, family, work, life in London). Answers go to the teacher's Microsoft Form and can be used to write class reading texts about real learners.
 - [ESOL RARPA Progress Tasks – My English Check (E1–L2)](https://atinwix.github.io/RARPA/) – Learners do the tasks, practise, then take the check; results go to a Microsoft Form. Teacher view and learner report: add ?teacher to the address.
 - [ESOL Reading Level Check – Placement Assessment (E1–L2)](https://atinwix.github.io/reading_test/) – ESB-style reading only, clicking and ordering – no typing, so learners with few IT skills can still show their English. Results go to a Microsoft Form.
 - [ESOL Speaking & Listening Placement Interview (E1–L2) – Teachers Only](assessments/speaking-placement-test.html) – Spoken placement interview run by Claude in voice mode: learner wears headphones, about 5 minutes, ends with an approximate level. Teachers only – PIN-protected. Needs a teacher Claude account on the classroom machine.
