@@ -619,20 +619,37 @@
       task3: "Teacher note: Students look at projector or online activity on their device (Task 3: Check the Speaking Exam Dialogue)."
     };
 
+    let curSpeakBtn = null, speakPaused = false;
+    function bestVoice() {
+      const v = window.speechSynthesis.getVoices().filter(x => x.lang && /^en[-_]gb/i.test(x.lang));
+      const all = v.length ? v : window.speechSynthesis.getVoices().filter(x => /^en/i.test(x.lang));
+      const sc = x => (/natural|neural/i.test(x.name) ? 6 : 0) + (/online/i.test(x.name) ? 4 : 0) + (/google uk/i.test(x.name) ? 3 : 0) + (x.localService ? 0 : 1) + (/en[-_]gb/i.test(x.lang) ? 2 : 0);
+      return all.sort((a, b) => sc(b) - sc(a))[0];
+    }
+    function resetSpeakBtns() {
+      document.querySelectorAll(".audio-btn").forEach(b => { b.classList.remove("speaking"); b.textContent = "▶ Listen"; });
+      curSpeakBtn = null; speakPaused = false;
+    }
     function speakText(text, btnEl) {
       if (!("speechSynthesis" in window)) return;
+      if (btnEl && btnEl === curSpeakBtn && window.speechSynthesis.speaking) {
+        if (speakPaused) { window.speechSynthesis.resume(); speakPaused = false; btnEl.textContent = "⏸ Pause"; }
+        else { window.speechSynthesis.pause(); speakPaused = true; btnEl.textContent = "▶ Carry on"; }
+        return;
+      }
       window.speechSynthesis.cancel();
+      resetSpeakBtns();
       const utterance = new SpeechSynthesisUtterance(text);
       utterance.lang = "en-GB";
       utterance.rate = 0.92;
-      const voices = window.speechSynthesis.getVoices();
-      const ukVoice = voices.find(v => v.lang && v.lang.toLowerCase().includes("en-gb"));
-      if (ukVoice) utterance.voice = ukVoice;
-      document.querySelectorAll(".audio-btn").forEach(b => b.classList.remove("speaking"));
+      const voice = bestVoice();
+      if (voice) utterance.voice = voice;
       if (btnEl) {
+        curSpeakBtn = btnEl;
         btnEl.classList.add("speaking");
-        utterance.onend = () => btnEl.classList.remove("speaking");
-        utterance.onerror = () => btnEl.classList.remove("speaking");
+        btnEl.textContent = "⏸ Pause";
+        utterance.onend = () => { if (curSpeakBtn === btnEl) resetSpeakBtns(); };
+        utterance.onerror = () => { if (curSpeakBtn === btnEl) resetSpeakBtns(); };
       }
       window.speechSynthesis.speak(utterance);
     }
