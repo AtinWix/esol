@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-22T22:03:58Z",
+ "updatedAt": "2026-11-22T22:08:37Z",
  "upcoming": {
   "2026-11-02_e3": {
    "afternoon": "PC room: Too Cold to Learn – complaint emails",
@@ -322,7 +322,7 @@
   },
   "2026-11-16_e3": {
    "afternoon": "PC room, one lesson page on projector and PCs: which do you prefer and why?; four linking words (because, so, although, however); Task A choose the word; Task B read an opinion text and answer; Task C main idea or detail; Task D join the sentences; Task E online dictionary; Task F opinion in Teams; find the mistake",
-   "amended": "2026-11-22T21:56:22Z",
+   "amended": "2026-11-22T22:08:14Z",
    "asTaught": "As taught: AM the purpose, text type and audience handout only; the Set L paper, Prove it, fix-two and target were not taught (the Set L paper moves to Wed 18 Nov, as paper only). PM, PC room: all nine pages taught (linking words, Tasks A–F, find the mistake); the Task E dictionary words were too easy and need harder words.",
    "cls": "E3 Reading",
    "created": "2026-11-11",
@@ -656,7 +656,7 @@
   },
   "2026-11-18_e3": {
    "afternoon": "Two opinion letters (for and against a Saturday market) in a jigsaw: finishing sentences with because, so, although, however; read one letter and answer six questions; share and compare the two writers' reasons; Kahoot (20 questions)",
-   "amended": "2026-11-22T21:56:22Z",
+   "amended": "2026-11-22T22:08:14Z",
    "asTaught": "As logged: no lesson took place (AM and PM skipped). The Set L paper had already been sat on Mon 16 Nov. The opinion-letters jigsaw moves to Mon 23 Nov.",
    "cls": "E3 Reading",
    "created": "2026-11-16",
@@ -696,7 +696,7 @@
     {
      "id": "pm3",
      "lesson": 2,
-     "text": "Check the answers for both letters",
+     "text": "Check your own letter's answers privately on your phone (QR), then find the proof",
      "url": "https://atinwix.github.io/esol/bank/reading/purpose-and-main-idea/saturday-market-letters/student/saturday-market-letters-linking-words-main-idea-projector-lesson.html"
     },
     {
@@ -718,8 +718,8 @@
     "status": "not needed",
     "xlsx": "https://atinwix.github.io/esol/bank/reading/purpose-and-main-idea/saturday-market-letters/student/linking-words-main-idea-and-exam-skills-kahoot.xlsx"
    },
-   "lastAmended": "2026-11-16",
-   "lastAmendedNote": "new day built after the Mon 16 Nov log",
+   "lastAmended": "2026-11-22",
+   "lastAmendedNote": "answers for the two letters moved off the board to a private phone check (QR); page 4 now find the proof; PINs 0000; day plan re-made (print pack not rebuilt – this day did not take place)",
    "links": [
     {
      "label": "Print pack – print once, double-sided (184 pages) · last amended 16 Nov 2026",
@@ -965,7 +965,7 @@
   },
   "2026-11-23_e3": {
    "afternoon": "PC room, one page on projector and PCs: a what-will-happen-if chain; join with if and rewrite with unless; read an advice page and a library notice and answer questions on results; condition or result; advice in Teams; find the mistake; Kahoot (20 questions)",
-   "amended": "2026-11-22T22:03:31Z",
+   "amended": "2026-11-22T22:08:14Z",
    "cls": "E3 Reading",
    "created": "2026-11-20",
    "date": "2026-11-23",
