@@ -156,7 +156,7 @@ header{display:flex;justify-content:space-between;align-items:flex-start;gap:12p
       var kuc=el("input");kuc.type="checkbox";kuc.checked=true;kundo.append(kuc,document.createTextNode(" Kahoot made ✓"));kdone.append(kundo);
       var kshow=function(){var m=kget();kb.style.display=m?"none":"";kdone.style.display=m?"":"none"};
       kb.append(el("b",null,"Kahoot: not yet in Kahoot."+(K.note?" ("+K.note+")":"")));
-      kb.append(el("p",null,"It is added automatically in the evening when your home PC is on. To do it now (1 minute): download the file below → Kahoot → Add question → Import → Import spreadsheet → pick the file."));
+      kb.append(el("p",null,"To do it (1 minute): download the file below → Kahoot → Add question → Import → Import spreadsheet → pick the file."));
       var dl=el("a",null,"Download the Kahoot file");dl.href=kx.url;dl.target="_blank";dl.rel="noopener";kb.append(dl);
       kb.append(el("p",null,"Or open Claude in Chrome (signed in to Kahoot) and paste this message:"));
       var ta=el("textarea");ta.readOnly=true;ta.value=msg;ta.rows=4;kb.append(ta);
