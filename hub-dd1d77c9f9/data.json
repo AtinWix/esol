@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-23T10:30:32Z",
+ "updatedAt": "2026-11-23T10:40:02Z",
  "upcoming": {
   "2026-11-02_e3": {
    "afternoon": "PC room: Too Cold to Learn – complaint emails",
@@ -656,7 +656,7 @@
   },
   "2026-11-18_e3": {
    "afternoon": "Two opinion letters (for and against a Saturday market) in a jigsaw: finishing sentences with because, so, although, however; read one letter and answer six questions; share and compare the two writers' reasons; Kahoot (20 questions)",
-   "amended": "2026-11-22T22:08:14Z",
+   "amended": "2026-11-23T10:39:45Z",
    "asTaught": "As logged: no lesson took place (AM and PM skipped). The Set L paper had already been sat on Mon 16 Nov. The opinion-letters jigsaw moves to Mon 23 Nov.",
    "cls": "E3 Reading",
    "created": "2026-11-16",
@@ -965,14 +965,18 @@
   },
   "2026-11-23_e3": {
    "afternoon": "PC room, one page on projector and PCs: a what-will-happen-if chain; join with if and rewrite with unless; read an advice page and a library notice and answer questions on results; condition or result; advice in Teams; find the mistake; Kahoot (20 questions)",
-   "amended": "2026-11-22T22:08:14Z",
+   "amended": "2026-11-23T10:39:45Z",
    "cls": "E3 Reading",
    "created": "2026-11-20",
    "date": "2026-11-23",
    "flags": [
     {
+     "code": "kahoot",
+     "text": "Kahoot marked ready but there is no create.kahoot.it link"
+    },
+    {
      "code": "reprint",
-     "text": "Handout changed since the print pack was made – reprint? Only the task labels on Handouts 3A, 3B, 4 and 5 changed (no questions or answers), so copies already printed are fine to use."
+     "text": "Only the teacher's day plan changed in the print pack (AM page numbers; new page 5 for the Handout 4 check). Handouts are unchanged – reprint the 5-page day plan only, if you need it."
     }
    ],
    "items": [
@@ -991,7 +995,7 @@
     {
      "id": "am3",
      "lesson": 1,
-     "text": "Handout 4 – Task C – Share the two letters in pairs; table and four sentences",
+     "text": "Handout 4 – Task C – Share the two letters in pairs; table and four sentences; check together (AM pages 4–5)",
      "url": "https://atinwix.github.io/esol/bank/reading/conditionals/first-conditional-if-unless/student/first-conditional-if-unless-with-market-letters-projector-lesson.html"
     },
     {
@@ -1003,7 +1007,7 @@
     {
      "id": "am5",
      "lesson": 1,
-     "text": "AM pages 7–8 – Tasks E and F – choose the form; if or unless?",
+     "text": "AM pages 8–9 – Tasks E and F – choose the form; if or unless?",
      "url": "https://atinwix.github.io/esol/bank/reading/conditionals/first-conditional-if-unless/student/first-conditional-if-unless-with-market-letters-projector-lesson.html"
     },
     {
@@ -1068,7 +1072,7 @@
     "xlsx": "https://atinwix.github.io/esol/bank/reading/conditionals/first-conditional-if-unless/student/first-conditional-if-unless-and-cause-and-result-kahoot.xlsx"
    },
    "lastAmended": "2026-11-23",
-   "lastAmendedNote": "PM Tasks B and D questions rewritten so questions and answers paraphrase the texts (no copied wording, less easy); Kahoot Q11 reworded; every activity now carries one label (Handout n / page – Task X) on the handouts, projector/PC pages, day plan and tick list; PM page codes in the day plan set to 0000; day plan, handouts and print pack re-made",
+   "lastAmendedNote": "AM projector page 5 added: whole-class check of Handout 4 Task C (the table and four sentences, one answer per click); later AM pages renumbered 6–11; day plan and print pack re-made (only the day plan changed). Earlier today: PM Tasks B and D questions paraphrased; one label per activity.",
    "links": [
     {
      "label": "Print pack – print once, double-sided (132 pages) · last amended 23 Nov 2026",
@@ -1095,7 +1099,7 @@
      "url": "https://atinwix.github.io/esol/bank/reading/conditionals/first-conditional-if-unless/teacher/first-conditional-if-unless-day-plan-and-answers.pdf"
     },
     {
-     "label": "AM projector page – letters and the first conditional (10 pages)",
+     "label": "AM projector page – letters and the first conditional (11 pages) · last amended 23 Nov 2026",
      "url": "https://atinwix.github.io/esol/bank/reading/conditionals/first-conditional-if-unless/student/first-conditional-if-unless-with-market-letters-projector-lesson.html"
     },
     {
