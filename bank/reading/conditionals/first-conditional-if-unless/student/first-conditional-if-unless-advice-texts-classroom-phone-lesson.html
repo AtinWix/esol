@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>E3 Reading – If and Unless: Advice Texts and Results – Classroom Phone Lesson</title>
+<style>
+:root{--bg:#fff;--ink:#1d2433;--muted:#5b6474;--board:#e6f5e6;--boardline:#7cc47c;--accent:#1f5fbf;--good:#1a7f37;--bad:#cf222e;--card:#f4f6fa;--hl:#fff3b0}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Verdana,Arial,Helvetica,sans-serif;font-size:clamp(15px,1.45vw,25px);line-height:1.35}
+header{display:flex;align-items:center;gap:12px;padding:6px 16px;border-bottom:2px solid #dde3ec}
+header .t{font-weight:700;flex:1;font-size:.72em;min-width:0}
+@media(max-width:700px){header .t{display:none}}
+nav{display:flex;align-items:center;gap:8px}
+button{font:inherit;font-size:.8em;padding:.4em .9em;border-radius:10px;border:2px solid var(--accent);background:#fff;color:var(--accent);cursor:pointer}
+button.p{background:var(--accent);color:#fff}
+button:disabled{opacity:.4;cursor:default}
+#pn{font-weight:700;min-width:6.5em;text-align:center;font-size:.8em}
+.tt{display:none;align-items:center;gap:6px;font-size:.7em;font-variant-numeric:tabular-nums}
+body.teacher .tt{display:flex}
+.tt b{min-width:3.2em;text-align:right}.tt.low b{color:var(--bad)}
+main{padding:8px 16px 30px;max-width:1700px;margin:0 auto}
+.page{display:none;border-radius:16px;padding:12px 20px 14px;position:relative}
+.page.on{display:block}
+.page.board{background:var(--board);border:3px solid var(--boardline)}
+.page>.label{float:right;margin:.35em 0 0 .6em}
+.label{display:inline-block;background:#2f7d32;color:#fff;font-weight:700;font-size:.62em;padding:.2em .7em;border-radius:8px;margin-bottom:4px}
+.label.stu{background:var(--accent)}
+h1{font-size:1.45em;margin:.1em 0 .3em}
+h2{font-size:1.1em;margin:.3em 0}
+p{margin:.35em 0}
+.look{display:none;position:absolute;right:14px;bottom:3px;font-size:9px;color:#555}
+body.teacher .look{display:block}
+.tnb{display:none;font-size:11px;padding:.15em .6em;margin-top:6px}
+body.teacher .tnb{display:inline-block}
+.tn{display:none;font-size:11px;line-height:1.4;color:#333;background:#fffbe6;border:1px dashed #c9a400;padding:6px 9px;margin-top:6px;border-radius:6px}
+.tn.open{display:block}
+body:not(.teacher) .tn{display:none!important}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.g46{display:grid;grid-template-columns:5fr 6fr;gap:16px}
+@media(max-width:900px){.grid2,.grid3,.g46{grid-template-columns:1fr}}
+.card{background:var(--card);border-radius:12px;padding:10px 14px}
+.board .card{background:#fff}
+table.w{border-collapse:collapse;width:100%;font-size:.9em;background:#fff}
+table.w td,table.w th{border:2px solid #9ab;padding:.3em .55em;text-align:left;vertical-align:top}
+table.w th{background:#dfe9f5}
+.ans{visibility:hidden;color:var(--good);font-weight:700}
+.ans.show{visibility:visible}
+ol.q{margin:.2em 0;padding-left:1.5em}
+ol.q li{margin:.28em 0}
+.timer{font-size:5.2em;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.05}
+.timer.low{color:var(--bad)}
+.lookboard{display:none;text-align:center;padding:14vh 0}
+.lookboard .big{font-size:2.2em}
+body.student .page.board .content{display:none}
+body.student .page.board .lookboard{display:block}
+.tonly{display:none}body.teacher .tonly{display:inline-block}
+.page:not(.board){font-size:.9em}
+.item{padding:.22em 0;border-bottom:1px solid #e3e7ee;display:flex;flex-wrap:wrap;align-items:center;gap:.15em .45em;break-inside:avoid}
+.task.cols{display:grid;grid-template-columns:1fr 1fr;column-gap:26px;align-items:start}
+.task.cols>p{grid-column:1/-1}
+.mcq .item{align-items:baseline;row-gap:.1em}
+.mcq .item .n{flex:0 0 auto}
+.mcq .item .s{flex:1 1 calc(100% - 2.4em)}
+.mcq .item>span:last-child{padding-left:1.95em}
+.mcq .opt{font-size:.8em;padding:.05em .5em}
+.mcq .item{padding:.12em 0}
+.txt.two{font-size:.86em;line-height:1.33;padding:6px 12px}
+.txt.two p{margin:.25em 0}
+.txt.two h2{margin:0 0 .2em;font-size:1.05em}
+header .atin-logo{position:static;border:0;padding:0;background:none;line-height:0}
+header .atin-logo svg{width:52px;height:40px}
+.txt.two{column-count:2;column-gap:26px}
+.txt.two h2{column-span:all}
+@media(max-width:900px){.task.cols{grid-template-columns:1fr}.txt.two{column-count:1}}
+.item .n{font-weight:700;min-width:1.6em}
+.item .s{flex:1 1 20em;min-width:0}
+.opt{display:inline-block;padding:.18em .7em;border:2px solid #9ab;border-radius:10px;background:#fff;cursor:pointer;user-select:none;font-size:.9em}
+.opt.ok{background:#dafbe1;border-color:var(--good);font-weight:700}
+.opt.no{background:#ffebe9;border-color:var(--bad)}
+.item.done .opt{pointer-events:none}
+.gap{display:inline-block;min-width:5em;border-bottom:3px solid var(--accent);text-align:center;font-weight:700;color:var(--good)}
+input[type=text],textarea{font:inherit;font-size:.9em;padding:.25em .5em;border:2px solid #9ab;border-radius:8px;width:100%}
+.fb{font-weight:700;font-size:.85em}.fb.ok{color:var(--good)}.fb.no{color:var(--bad)}
+.score{font-weight:700;color:var(--accent);font-size:.85em}
+.small{font-size:.72em;color:var(--muted)}
+a.btn{display:inline-block;text-decoration:none;font-weight:700;padding:.4em 1em;border-radius:10px;background:var(--accent);color:#fff;font-size:.85em}
+.txt{line-height:1.5;font-size:.95em}
+.txt p{margin:.4em 0}
+.kw{background:var(--hl);font-weight:700;padding:0 .15em;border-radius:4px}
+.steps{font-size:1.35em;line-height:1.5;margin:.2em 0;padding-left:1.3em}
+.mark{background:var(--hl);font-weight:700}
+.foot{position:fixed;right:10px;bottom:6px;font-size:10px}
+.foot a{color:var(--muted)}
+body.student .foot{display:none}
+
+.ef{border-color:#8a5a00;color:#8a5a00;font-size:.72em}
+.tn .pin{background:#ffe08a;padding:0 .3em;border-radius:3px}
+#lockbox,#efbox{position:fixed;inset:0;background:rgba(20,30,50,.55);display:none;align-items:center;justify-content:center;z-index:50;padding:16px}
+#lockbox.on,#efbox.on{display:flex}
+#lockbox .in{background:#fff;border-radius:16px;padding:18px 22px;max-width:30em;width:100%;text-align:center}
+#lockbox input{font-size:1.4em;text-align:center;letter-spacing:.3em;max-width:7em;margin:.3em 0}
+#efbox .in{background:#fff;border-radius:16px;padding:12px 16px;max-width:1100px;width:100%;max-height:96vh;overflow:auto}
+.ws{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-start}
+.wsg{display:grid;grid-template-columns:repeat(13,1fr);gap:2px;width:min(92vw,60vh,560px);user-select:none;touch-action:manipulation}
+.wsg span{aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:clamp(12px,2.6vmin,22px);background:#f4f6fa;border-radius:4px;cursor:pointer}
+.wsg span.sel{background:#ffe08a}.wsg span.got{background:#c8f0d0}
+.wsl{columns:2;font-size:.85em;min-width:14em}.wsl li{list-style:none;margin:.1em 0}.wsl li.got{text-decoration:line-through;color:var(--good)}
+.lw{background:var(--hl);font-weight:700;padding:0 .1em;border-radius:3px}
+.qrrow{display:flex;gap:16px;align-items:center}.qrrow>div{flex:1;min-width:0}.qrmini{flex:0 0 auto!important;width:19em;text-align:center;color:var(--ink);font-size:.62em;font-weight:700;background:#fff;border-radius:10px;padding:6px}@media(max-width:700px){.qrmini{display:none}}body.phone{font-size:max(23px,5.9vw);line-height:1.45}
+body.phone header{font-size:max(15px,4vw)}
+body.phone header .t{display:none}
+body.phone header button{font-size:1em}
+body.phone .page:not(.board){font-size:1em;padding:10px 12px}
+body.phone h1{font-size:1.25em}
+body.phone .small{font-size:.85em}
+body.phone .task.cols{grid-template-columns:1fr}
+body.phone .txt,body.phone .txt.two{font-size:1em;column-count:auto;column-width:auto;columns:auto;overflow-x:hidden;padding-bottom:0;line-height:1.5;position:sticky;top:0;z-index:3;max-height:45vh;overflow:auto;border:2px solid #9ab;box-shadow:0 4px 8px rgba(0,0,0,.15)}
+body.phone .mcq .item>span:last-child{padding-left:0;display:flex;flex-direction:column;gap:.4em;width:100%}
+body.phone .opt,body.phone .mcq .opt{font-size:1em;padding:.45em .7em;display:block}
+body.phone .item{padding:.5em 0}
+body.phone input[type=text]{font-size:1em;padding:.45em .6em}
+body.phone button{font-size:.85em}
+body.phone .score{font-size:1em}
+body.phone .tt,body.phone #ef{display:none}
+body.phone .txt::after{content:"▼  Scroll down to read more  ▼";position:sticky;bottom:0;display:block;margin:0 -12px;padding:1.4em 0 .35em;text-align:center;font-weight:700;font-size:.8em;color:#1f5fbf;background:linear-gradient(rgba(244,246,250,0),#f4f6fa 55%)}
+body.phone .txt.end::after{content:"✓ End of the text";color:#1a7f37}
+@media(max-width:700px){body{font-size:max(23px,5.9vw);line-height:1.45}
+body header{font-size:max(15px,4vw)}
+body header .t{display:none}
+body header button{font-size:1em}
+body .page:not(.board){font-size:1em;padding:10px 12px}
+body h1{font-size:1.25em}
+body .small{font-size:.85em}
+body .task.cols{grid-template-columns:1fr}
+body .txt,body .txt.two{font-size:1em;column-count:auto;column-width:auto;columns:auto;overflow-x:hidden;padding-bottom:0;line-height:1.5;position:sticky;top:0;z-index:3;max-height:45vh;overflow:auto;border:2px solid #9ab;box-shadow:0 4px 8px rgba(0,0,0,.15)}
+body .mcq .item>span:last-child{padding-left:0;display:flex;flex-direction:column;gap:.4em;width:100%}
+body .opt,body .mcq .opt{font-size:1em;padding:.45em .7em;display:block}
+body .item{padding:.5em 0}
+body input[type=text]{font-size:1em;padding:.45em .6em}
+body button{font-size:.85em}
+body .score{font-size:1em}
+body .tt,body #ef{display:none}
+body .txt::after{content:"▼  Scroll down to read more  ▼";position:sticky;bottom:0;display:block;margin:0 -12px;padding:1.4em 0 .35em;text-align:center;font-weight:700;font-size:.8em;color:#1f5fbf;background:linear-gradient(rgba(244,246,250,0),#f4f6fa 55%)}
+body .txt.end::after{content:"✓ End of the text";color:#1a7f37}
+}</style>
+</head>
+<body data-default="student">
+<header>
+  <div class="atin-logo" aria-label="Made by Atin">
+<svg viewBox="104 28 172 134" width="64" height="50" role="img" aria-hidden="true">
+<text x="139" y="112" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="72" fill="currentColor">A</text>
+<rect x="177" y="83" width="24" height="6" rx="1" fill="currentColor"/>
+<path d="M216 66 L216 106 A25 7 0 0 0 266 106 L266 66" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+<ellipse cx="241" cy="66" rx="25" ry="7" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="216" y1="80" x2="266" y2="80" stroke="currentColor" stroke-width="1.5"/>
+<line x1="216" y1="94" x2="266" y2="94" stroke="currentColor" stroke-width="1.5"/>
+<ellipse cx="241" cy="47" rx="23" ry="5" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="114" y1="128" x2="266" y2="128" stroke="currentColor" stroke-width="1"/>
+<text x="190" y="152" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" letter-spacing="2" fill="currentColor">made by Atin</text>
+</svg>
+</div>
+<style>
+.atin-logo{position:fixed;left:calc(6px + env(safe-area-inset-left,0px));bottom:calc(6px + env(safe-area-inset-bottom,0px));z-index:2147483000;pointer-events:none;color:#1F3A5F;background:rgba(255,255,255,.92);border:1px solid #C9D3DF;border-radius:8px;padding:3px 5px;line-height:0}
+.atin-logo svg{display:block}
+@media print{.atin-logo{position:fixed;left:auto;right:6mm;bottom:5mm;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+
+  <div class="t">E3 Reading – If and unless · advice texts · results</div>
+  <div class="tt" id="tt"><span>⏱</span><b>0:00</b><button type="button">Start</button></div>
+  <button id="ef" type="button" class="ef">★ Early finishers</button>
+  <nav><button id="prev" type="button" aria-label="Previous page">◀</button><span id="pn"></span><button id="next" class="p" type="button" aria-label="Next page">▶</button></nav>
+</header>
+<main>
+<section class="page board" data-look="Learners: the projector, then their partner" data-min="10">
+ <span class="label">WHOLE CLASS – eyes on the board</span>
+ <div class="content">
+  <div class="qrrow"><div>
+  <h1>Warm-up · What will happen if …? – a chain</h1>
+  <div class="grid3"><div class="card">If I miss the bus, …</div><div class="card">If I do not eat breakfast, …</div><div class="card">If it snows tomorrow, …</div></div>
+  <div class="card" style="margin-top:.6em;font-size:1.1em"><p>A: If I miss the bus, I <b>will</b> be late.</p><p>B: If you are late, the teacher <b>will</b> …</p><p>A: If the teacher …, you <b>will</b> …</p></div>
+  </div><div class="qrmini"><svg viewBox="0 0 53 53" role="img" aria-label="QR code: this lesson on your phone" style="width:100%;height:auto;background:#fff" xmlns="http://www.w3.org/2000/svg"><path shape-rendering="crispEdges" stroke="#000" d="M2 2.5h7M13 2.5h1M17 2.5h2M21 2.5h5M27 2.5h3M31 2.5h3M35 2.5h2M38 2.5h1M42 2.5h1M44 2.5h7M2 3.5h1M8 3.5h1M10 3.5h1M13 3.5h1M18 3.5h2M21 3.5h1M23 3.5h1M26 3.5h10M39 3.5h4M44 3.5h1M50 3.5h1M2 4.5h1M4 4.5h3M8 4.5h1M10 4.5h1M12 4.5h1M15 4.5h1M17 4.5h2M20 4.5h1M22 4.5h2M27 4.5h2M31 4.5h2M34 4.5h1M36 4.5h2M41 4.5h2M44 4.5h1M46 4.5h3M50 4.5h1M2 5.5h1M4 5.5h3M8 5.5h1M12 5.5h4M17 5.5h1M19 5.5h1M21 5.5h1M24 5.5h2M28 5.5h2M32 5.5h1M41 5.5h1M44 5.5h1M46 5.5h3M50 5.5h1M2 6.5h1M4 6.5h3M8 6.5h1M10 6.5h2M16 6.5h5M24 6.5h9M35 6.5h1M44 6.5h1M46 6.5h3M50 6.5h1M2 7.5h1M8 7.5h1M10 7.5h1M12 7.5h1M16 7.5h4M21 7.5h1M24 7.5h1M28 7.5h2M32 7.5h1M35 7.5h2M39 7.5h2M44 7.5h1M50 7.5h1M2 8.5h7M10 8.5h1M12 8.5h1M14 8.5h1M16 8.5h1M18 8.5h1M20 8.5h1M22 8.5h1M24 8.5h1M26 8.5h1M28 8.5h1M30 8.5h1M32 8.5h1M34 8.5h1M36 8.5h1M38 8.5h1M40 8.5h1M42 8.5h1M44 8.5h7M10 9.5h2M13 9.5h1M19 9.5h4M24 9.5h1M28 9.5h1M32 9.5h1M34 9.5h1M36 9.5h1M38 9.5h2M42 9.5h1M2 10.5h2M5 10.5h1M8 10.5h2M11 10.5h2M15 10.5h1M17 10.5h1M19 10.5h2M22 10.5h9M33 10.5h1M35 10.5h2M38 10.5h2M44 10.5h3M48 10.5h2M5 11.5h2M15 11.5h2M19 11.5h2M24 11.5h2M33 11.5h2M47 11.5h1M49 11.5h2M3 12.5h2M6 12.5h4M11 12.5h4M19 12.5h1M22 12.5h1M24 12.5h2M27 12.5h1M29 12.5h1M33 12.5h5M45 12.5h2M49 12.5h2M3 13.5h1M5 13.5h1M10 13.5h1M14 13.5h2M20 13.5h1M26 13.5h3M30 13.5h4M36 13.5h1M38 13.5h3M42 13.5h2M49 13.5h2M2 14.5h1M7 14.5h2M10 14.5h6M17 14.5h3M21 14.5h2M25 14.5h3M29 14.5h3M34 14.5h1M37 14.5h2M41 14.5h1M43 14.5h1M45 14.5h3M50 14.5h1M6 15.5h1M10 15.5h1M13 15.5h1M17 15.5h3M23 15.5h2M26 15.5h2M29 15.5h2M33 15.5h2M36 15.5h1M38 15.5h1M42 15.5h1M46 15.5h1M50 15.5h1M2 16.5h1M4 16.5h3M8 16.5h1M10 16.5h1M12 16.5h4M17 16.5h2M21 16.5h1M24 16.5h3M28 16.5h2M31 16.5h1M33 16.5h1M40 16.5h1M42 16.5h2M45 16.5h3M50 16.5h1M2 17.5h1M6 17.5h1M9 17.5h1M11 17.5h3M17 17.5h1M21 17.5h1M25 17.5h2M29 17.5h2M32 17.5h1M34 17.5h6M41 17.5h2M44 17.5h3M49 17.5h1M2 18.5h2M5 18.5h2M8 18.5h1M11 18.5h2M16 18.5h6M24 18.5h4M29 18.5h1M31 18.5h2M34 18.5h1M38 18.5h1M42 18.5h1M44 18.5h1M46 18.5h1M48 18.5h3M3 19.5h5M10 19.5h1M13 19.5h3M19 19.5h4M25 19.5h1M28 19.5h2M37 19.5h1M40 19.5h1M45 19.5h1M47 19.5h1M50 19.5h1M7 20.5h3M11 20.5h1M13 20.5h1M16 20.5h2M20 20.5h1M22 20.5h1M24 20.5h2M29 20.5h1M34 20.5h2M37 20.5h3M45 20.5h1M47 20.5h1M49 20.5h2M6 21.5h1M9 21.5h1M15 21.5h1M17 21.5h2M21 21.5h2M24 21.5h6M32 21.5h1M34 21.5h2M37 21.5h4M43 21.5h2M46 21.5h3M5 22.5h2M8 22.5h1M14 22.5h1M18 22.5h3M26 22.5h6M33 22.5h1M35 22.5h1M37 22.5h2M40 22.5h1M44 22.5h2M47 22.5h1M3 23.5h3M7 23.5h1M10 23.5h1M12 23.5h3M18 23.5h1M22 23.5h3M33 23.5h3M37 23.5h1M48 23.5h1M50 23.5h1M3 24.5h2M6 24.5h6M18 24.5h4M24 24.5h5M36 24.5h2M39 24.5h1M42 24.5h5M48 24.5h3M2 25.5h1M4 25.5h1M6 25.5h1M10 25.5h6M18 25.5h2M23 25.5h2M28 25.5h5M38 25.5h5M46 25.5h1M2 26.5h1M5 26.5h2M8 26.5h1M10 26.5h1M12 26.5h1M14 26.5h4M19 26.5h2M24 26.5h1M26 26.5h1M28 26.5h7M36 26.5h4M41 26.5h2M44 26.5h1M46 26.5h1M49 26.5h2M6 27.5h1M10 27.5h3M15 27.5h2M18 27.5h4M24 27.5h1M28 27.5h1M30 27.5h1M33 27.5h2M36 27.5h1M38 27.5h1M41 27.5h2M46 27.5h2M49 27.5h2M2 28.5h1M4 28.5h7M12 28.5h6M21 28.5h1M23 28.5h7M35 28.5h1M37 28.5h2M40 28.5h1M42 28.5h5M49 28.5h2M3 29.5h2M6 29.5h1M9 29.5h3M13 29.5h1M15 29.5h2M18 29.5h4M26 29.5h5M33 29.5h2M36 29.5h5M42 29.5h1M44 29.5h4M49 29.5h1M4 30.5h3M8 30.5h1M10 30.5h4M17 30.5h1M19 30.5h1M22 30.5h1M27 30.5h1M29 30.5h1M32 30.5h1M34 30.5h5M40 30.5h1M42 30.5h2M45 30.5h1M48 30.5h3M2 31.5h1M5 31.5h1M7 31.5h1M11 31.5h1M14 31.5h4M21 31.5h5M28 31.5h4M34 31.5h1M37 31.5h2M40 31.5h4M46 31.5h1M49 31.5h2M4 32.5h1M7 32.5h2M10 32.5h1M15 32.5h5M21 32.5h3M26 32.5h4M35 32.5h1M37 32.5h1M43 32.5h3M48 32.5h3M3 33.5h1M5 33.5h3M9 33.5h1M11 33.5h2M14 33.5h1M17 33.5h4M27 33.5h3M31 33.5h1M33 33.5h8M43 33.5h4M48 33.5h2M7 34.5h2M10 34.5h1M12 34.5h3M20 34.5h1M22 34.5h2M25 34.5h1M27 34.5h2M30 34.5h4M35 34.5h1M38 34.5h2M43 34.5h1M46 34.5h1M49 34.5h1M2 35.5h1M4 35.5h1M6 35.5h1M9 35.5h1M11 35.5h1M15 35.5h3M19 35.5h2M23 35.5h3M27 35.5h2M35 35.5h1M41 35.5h1M43 35.5h1M48 35.5h1M50 35.5h1M2 36.5h1M6 36.5h1M8 36.5h5M15 36.5h4M20 36.5h2M23 36.5h2M26 36.5h4M33 36.5h2M36 36.5h1M39 36.5h1M41 36.5h2M44 36.5h7M6 37.5h2M11 37.5h1M14 37.5h1M16 37.5h2M19 37.5h1M23 37.5h1M25 37.5h1M27 37.5h1M29 37.5h2M32 37.5h2M35 37.5h1M38 37.5h1M42 37.5h1M44 37.5h1M46 37.5h2M49 37.5h2M4 38.5h1M6 38.5h1M8 38.5h1M10 38.5h1M14 38.5h1M16 38.5h1M18 38.5h1M20 38.5h1M22 38.5h1M25 38.5h1M28 38.5h7M37 38.5h3M50 38.5h1M2 39.5h1M4 39.5h1M9 39.5h1M11 39.5h1M14 39.5h2M21 39.5h4M28 39.5h1M36 39.5h1M38 39.5h1M41 39.5h1M45 39.5h1M47 39.5h1M49 39.5h2M3 40.5h1M7 40.5h5M13 40.5h1M15 40.5h2M22 40.5h2M25 40.5h3M29 40.5h1M33 40.5h1M37 40.5h2M40 40.5h3M44 40.5h2M47 40.5h2M50 40.5h1M3 41.5h3M9 41.5h1M11 41.5h2M14 41.5h1M16 41.5h1M18 41.5h2M22 41.5h1M25 41.5h2M28 41.5h7M36 41.5h4M42 41.5h5M50 41.5h1M2 42.5h3M8 42.5h1M11 42.5h1M13 42.5h1M16 42.5h6M23 42.5h7M32 42.5h1M34 42.5h2M37 42.5h2M40 42.5h1M42 42.5h9M10 43.5h1M12 43.5h2M15 43.5h1M20 43.5h1M22 43.5h1M24 43.5h1M28 43.5h4M33 43.5h2M38 43.5h1M40 43.5h1M42 43.5h1M46 43.5h1M48 43.5h3M2 44.5h7M10 44.5h2M13 44.5h3M17 44.5h1M19 44.5h1M21 44.5h1M24 44.5h1M26 44.5h1M28 44.5h2M33 44.5h1M37 44.5h2M41 44.5h2M44 44.5h1M46 44.5h2M49 44.5h2M2 45.5h1M8 45.5h1M13 45.5h2M16 45.5h9M28 45.5h2M34 45.5h1M36 45.5h1M38 45.5h3M42 45.5h1M46 45.5h1M48 45.5h3M2 46.5h1M4 46.5h3M8 46.5h1M11 46.5h2M14 46.5h5M23 46.5h11M35 46.5h2M38 46.5h3M42 46.5h5M49 46.5h2M2 47.5h1M4 47.5h3M8 47.5h1M10 47.5h4M15 47.5h1M17 47.5h1M19 47.5h1M21 47.5h1M23 47.5h2M26 47.5h1M28 47.5h1M41 47.5h2M44 47.5h1M46 47.5h1M49 47.5h2M2 48.5h1M4 48.5h3M8 48.5h1M11 48.5h4M16 48.5h2M19 48.5h2M22 48.5h1M24 48.5h4M30 48.5h1M33 48.5h2M36 48.5h4M46 48.5h1M2 49.5h1M8 49.5h1M10 49.5h3M15 49.5h1M17 49.5h1M19 49.5h1M22 49.5h1M25 49.5h2M28 49.5h6M35 49.5h1M37 49.5h2M40 49.5h4M46 49.5h1M2 50.5h7M10 50.5h1M15 50.5h3M19 50.5h2M23 50.5h2M26 50.5h1M29 50.5h3M33 50.5h3M37 50.5h2M40 50.5h3M46 50.5h1M49 50.5h2"/></svg><div>Scan now: today's lesson on your phone (pages 2–5)</div></div></div>
+  <button type="button" class="tnb">Teacher note</button><div class="tn">BEFORE: leave this page up as learners arrive so they scan the QR and open this page on their phones (they need it for pages 2–5); check that everyone has a phone with data or college Wi-Fi – anyone without shares with a partner. SAY: “Welcome back. Look at the board. We have used if and will before. Let us make a chain: each person uses the result of the last sentence as the next if.” DO: model the chain on the board with one learner; then pairs make a chain of six sentences from any of the three starters (6 minutes); hear two chains. Late arrivals join a pair. Learners look at: the projector, then their partner. 10 minutes.</div>
+ </div>
+ <div class="lookboard"><p class="big">👀 Look at the board</p><p>Page <span class="num"></span></p></div>
+</section>
+<section class="page" data-look="Learners: their own phone, this page (Task A)" data-min="15">
+ <span class="label stu">ON YOUR PHONE – work on this page</span>
+ <div class="content">
+  <h1>Task A · Join and rewrite</h1>
+  <p>Items 1–4: join the two ideas with <b>if</b>, and use <b>will</b> in the result. Items 5–8: rewrite with <b>unless</b>. Type your sentence, then click Check. You have two tries.</p>
+  <div class="task cols"><script type="application/json">{"type": "join", "items": [{"s": "It rains tomorrow. We stay at home.", "w": "if", "a": ["If it rains tomorrow, we will stay at home.", "We will stay at home if it rains tomorrow."]}, {"s": "You study hard. You pass the test.", "w": "if", "a": ["If you study hard, you will pass the test.", "You will pass the test if you study hard."]}, {"s": "The bus is late. I miss my class.", "w": "if", "a": ["If the bus is late, I will miss my class.", "I will miss my class if the bus is late."]}, {"s": "I have time. I help you.", "w": "if", "a": ["If I have time, I will help you.", "I will help you if I have time."]}, {"s": "Rewrite: If you do not study, you will not pass the test.", "w": "unless", "a": ["Unless you study, you will not pass the test.", "You will not pass the test unless you study."]}, {"s": "Rewrite: If you do not save money, you will not buy a car.", "w": "unless", "a": ["Unless you save money, you will not buy a car.", "You will not buy a car unless you save money."]}, {"s": "Rewrite: If I do not hear from you, I will phone you tomorrow.", "w": "unless", "a": ["Unless I hear from you, I will phone you tomorrow.", "I will phone you tomorrow unless I hear from you."]}, {"s": "Rewrite: If the shop does not open, we will go home.", "w": "unless", "a": ["Unless the shop opens, we will go home.", "We will go home unless the shop opens."]}]}</script></div>
+  <button type="button" class="tnb">Teacher note</button><div class="tn"><b class="pin">Learners’ code for page 2: 0000</b> – say it or write it on the board when the class moves on. SAY: “Open page 2 on your phone. Task A. Items 1 to 4: join the ideas with if – put will in the result. Items 5 to 8: rewrite with unless. Type, then click Check. You have two tries. 12 minutes.” MODEL number 1 on the board: “If it rains tomorrow, we will stay at home.” DO: walk round; look for ‘If it will rain’ and ‘Unless you do not …’. ASK: “Which part is the condition? Is it now or the future?” Both orders are accepted (with or without ‘we’ll’). CHECK: Show next answer, one per click; a learner reads the full sentence. Answers: 1 If it rains tomorrow, we will stay at home. 2 If you study hard, you will pass the test. 3 If the bus is late, I will miss my class. 4 If I have time, I will help you. 5 Unless you study, you will not pass the test. 6 Unless you save money, you will not buy a car. 7 Unless I hear from you, I will phone you tomorrow. 8 Unless the shop opens, we will go home. Learners look at: page 2 on their own phone.</div>
+ </div>
+ 
+</section>
+<section class="page" data-look="Learners: their own phone, this page (Task B)" data-min="20">
+ <span class="label stu">ON YOUR PHONE – work on this page</span>
+ <div class="content">
+<h1>Task B · Read the advice page and answer <span class="small">– the point counts only if your first click is right</span></h1><p class="small"><b>The questions and answers use different words from the text.</b> Find the part of the text with the same meaning.</p><div class="card txt two"><h2>Ask Aisha – advice for readers</h2>
+<p><b>1</b> Every week readers send us a problem. Aisha, our advice writer, answers.</p>
+<p><b>2</b> <i>Dear Aisha, I live in a flat in Dalston. My neighbour plays loud music every night after 11pm. I start work at 6am, so I cannot sleep. I do not want to make trouble. What should I do? – Sam</i></p>
+<p><b>3</b> Dear Sam, talk to your neighbour first. Knock on the door and explain that you start work early. <span class="lw">If</span> you are friendly, your neighbour will probably listen. <span class="lw">If</span> the noise continues, write to your landlord. The landlord will visit the flat <span class="lw">if</span> three neighbours complain, so ask the other people in your building to write too. <span class="lw">Unless</span> the problem is very serious, do not call the police.</p>
+<p><b>4</b> <i>Dear Aisha, I want to learn to drive, but one lesson costs £40. I have a part-time job and I also look after my little sister, so I do not have much money or time. Will I ever pass my test? – Dina</i></p>
+<p><b>5</b> Dear Dina, yes, you will! Start by getting your provisional licence (the licence for learner drivers), because you cannot practise <span class="lw">unless</span> you have one. <span class="lw">If</span> you practise with a family member, you will need fewer lessons with a teacher. Also, make a plan. <span class="lw">If</span> you save £20 every week, you will have £80 after four weeks, and that will pay for two lessons. Be patient – <span class="lw">if</span> you keep trying, you will pass.</p></div><div class="task cols mcq"><script type="application/json">{"type": "mcq", "items": [{"q": "What is the purpose of this page?", "o": ["to advertise a driving school", "to help people who write in with a difficulty", "to tell people about events in Dalston"], "c": 1}, {"q": "What is Sam unhappy about?", "o": ["His neighbours will not talk to him.", "The landlord never visits the building.", "The person next door is noisy late at night."], "c": 2}, {"q": "According to Aisha, what should Sam do before anything else?", "o": ["go and speak to the person next door", "send a letter to the landlord", "phone the police"], "c": 0}, {"q": "What has to happen before the landlord comes to the flat?", "o": ["Sam has to knock on his neighbour’s door.", "Three people living there must report the problem.", "The music has to go on after 11pm."], "c": 1}, {"q": "What does Aisha think will happen if Sam is polite to his neighbour?", "o": ["The neighbour will most likely take notice.", "The neighbour will move to another flat.", "The landlord will come round."], "c": 0}, {"q": "When does Aisha say Sam should contact the police?", "o": ["straight away", "after he writes to the landlord", "only if things get really bad"], "c": 2}, {"q": "Why is learning to drive difficult for Dina?", "o": ["She is short of money and free time.", "She has failed her driving test before.", "Nobody in her family can drive."], "c": 0}, {"q": "What must Dina get before she can start driving practice?", "o": ["her own car", "a special licence for people who are learning", "two lessons with a teacher"], "c": 1}, {"q": "How will practising with a relative help Dina?", "o": ["She will pass the test the first time.", "She will get her licence sooner.", "She will not have to pay for so many lessons."], "c": 2}, {"q": "If Dina puts £20 aside each week, how many lessons can she pay for after four weeks?", "o": ["four", "two", "eight"], "c": 1}]}</script></div>
+  <button type="button" class="tnb">Teacher note</button><div class="tn"><b class="pin">Learners’ code for page 3: 0000</b> – say it or write it on the board when the class moves on. SAY: “Page 3. First read the title and the first sentence of each paragraph – our exam routine. Then read the whole text once. Then answer the ten questions. The words in the questions are different from the words in the text. 20 minutes.” DO: do not explain words yet; ‘provisional licence’ is explained in the text. Fast finishers: find the six if / unless sentences in the text. CHECK: Show next answer one per click; for each, a learner reads the words in the text that prove it. Answers: 1 to help people who write in with a difficulty 2 The person next door is noisy late at night. 3 go and speak to the person next door 4 Three people living there must report the problem. 5 The neighbour will most likely take notice. 6 only if things get really bad 7 She is short of money and free time. 8 a special licence for people who are learning 9 She will not have to pay for so many lessons. 10 two Learners look at: page 3 on their own phone.</div>
+ </div>
+ 
+</section>
+<section class="page" data-look="Learners: their own phone, this page (Task C) – the text is on page 3" data-min="10">
+ <span class="label stu">ON YOUR PHONE – work on this page</span>
+ <div class="content">
+<h1>Task C · Condition or result?</h1><p>The <b>condition</b> is the “if” part: what might happen. The <b>result</b> is the “will” part: what happens next. Look at the advice page on page 3 if you need to.</p><div class="task cols"><script type="application/json">{"type": "sort", "items": [{"s": "three neighbours complain", "c": 0}, {"s": "you will pass", "c": 1}, {"s": "your neighbour will probably listen", "c": 1}, {"s": "you practise with a family member", "c": 0}, {"s": "the noise continues", "c": 0}, {"s": "the landlord will visit the flat", "c": 1}, {"s": "you save £20 every week", "c": 0}, {"s": "you will have £80 after four weeks", "c": 1}, {"s": "you will need fewer lessons", "c": 1}, {"s": "you keep trying", "c": 0}], "opts": ["Condition (if …)", "Result (will …)"]}</script></div>
+  <button type="button" class="tnb">Teacher note</button><div class="tn"><b class="pin">Learners’ code for page 4: 0000</b> – say it or write it on the board when the class moves on. SAY: “Page 4. Each piece is half of a sentence from Aisha’s advice. Is it the condition – the if part – or the result – the will part? You can go back to page 3.” MODEL number 1: “three neighbours complain – that is what might happen: condition.” DO: pairs may talk. CHECK: Show next answer one per click; ASK “What is the other half?” (e.g. 1: the landlord will visit the flat). SAY: “In the exam, questions like ‘What will happen if …?’ ask for the result – look for will.” Answers: 1 condition 2 result 3 result 4 condition 5 condition 6 result 7 condition 8 result 9 result 10 condition. Learners look at: page 4 on their own phone.</div>
+ </div>
+ 
+</section>
+<section class="page" data-look="Learners: their own phone, this page (Task D)" data-min="15">
+ <span class="label stu">ON YOUR PHONE – work on this page</span>
+ <div class="content">
+<h1>Task D · Read the notice and answer</h1><p class="small"><b>The questions and answers use different words from the notice.</b> Find the part with the same meaning.</p><div class="card txt"><h2>Eastfield Community Library – borrowing rules</h2>
+<p>You can borrow six books for three weeks. You need a library card. <span class="lw">Unless</span> you have a card, you cannot borrow books.</p>
+<p><span class="lw">If</span> you return a book late, you will pay 20p a day. <span class="lw">If</span> you lose a book, you will pay for a new one.</p>
+<p>You can renew a book online <span class="lw">if</span> nobody else is waiting for it. <span class="lw">If</span> you renew a book, you will have three more weeks.</p>
+<p>The library is closed on Sundays, but you can return books through the box in the wall.</p></div><div class="task cols mcq"><script type="application/json">{"type": "mcq", "items": [{"q": "What is the main purpose of the notice?", "o": ["to tell people when the library is open", "to explain how taking books home works", "to ask people to join the library"], "c": 1}, {"q": "What is the largest number of books you can take out at one time?", "o": ["three", "as many as you like", "six"], "c": 2}, {"q": "How long can you keep books before you bring them back or renew them?", "o": ["one week", "three weeks", "six weeks"], "c": 1}, {"q": "What happens if you bring a book back after the date?", "o": ["You pay a small amount for each extra day.", "You cannot take out any more books.", "You pay for a new copy."], "c": 0}, {"q": "What do you have to do if a book goes missing?", "o": ["pay 20p a day", "pay what a new copy costs", "renew it online"], "c": 1}, {"q": "When can you keep a book for longer by using the website?", "o": ["when you pay 20p", "when the library is closed", "when no other reader has asked for it"], "c": 2}, {"q": "What can you do on the day the library is shut?", "o": ["drop books into the box outside", "take out new books", "renew books at the desk"], "c": 0}, {"q": "Who cannot take books home?", "o": ["people who bring books back late", "people without a library card", "people who renew online"], "c": 1}]}</script></div>
+  <button type="button" class="tnb">Teacher note</button><div class="tn"><b class="pin">Learners’ code for page 5: 0000</b> – say it or write it on the board when the class moves on. SAY: “Page 5. A notice from a library. Read it once, then answer the eight questions. Remember: the questions use different words from the notice.” DO: walk round; fast finishers write one more question for a partner. CHECK: Show next answer one per click; a learner reads the words in the notice that prove it. Answers: 1 to explain how taking books home works 2 six 3 three weeks 4 You pay a small amount for each extra day. 5 pay what a new copy costs 6 when no other reader has asked for it 7 drop books into the box outside 8 people without a library card Learners look at: page 5 on their own phone.</div>
+ </div>
+ 
+</section>
+<section class="page" data-look="Learners: their notebook, then their partner (Task E)" data-min="15">
+ <span class="label stu">IN YOUR NOTEBOOK – write, then swap</span>
+ <div class="content">
+  <h1>Task E · Give advice</h1>
+  <div class="grid2">
+   <div class="card"><h2>Choose one problem</h2><ol class="q"><li>“I am always tired in class.”</li><li>“My phone bill is too high.”</li><li>“I want a job, but my English is not good enough yet.”</li><li>“My friend never answers my messages.”</li></ol><p>Write <b>four sentences</b> of advice in your notebook.</p></div>
+   <div class="card"><h2>Use</h2><p><b>If you …, you will …</b></p><p><b>Unless you …, you will …</b></p><p>Use <span class="kw">if</span> three times and <span class="kw">unless</span> once.</p><p class="small">Check before you swap: capital letter · full stop · comma after the if part · no will after if.</p></div>
+  </div>
+  <p>Swap notebooks with your partner. Read their advice and tell them one thing that is good: <b>That is good advice because …</b></p>
+  <button type="button" class="tnb">Teacher note</button><div class="tn"><b class="pin">Learners’ code for page 6: 0000</b> – say it or write it on the board when the class moves on. SAY: “Page 6. Look at the board. Choose one problem and give advice – four sentences in your notebook. Use if three times and unless once. Then swap with your partner and say one thing that is good.” DO: walk round; point at a wrong form and ask “Condition or result? Which verb form after if?” – do not correct it for them. Collect two good pieces of advice to read aloud on the next page. If short of time: three sentences, no swap. Learners look at: their notebook, then their partner.</div>
+ </div>
+ 
+</section>
+<section class="page board" data-look="Students: projector" data-min="10">
+ <span class="label">WHOLE CLASS – eyes on the board</span>
+ <div class="content">
+<h1>Task F · Find the mistake</h1><p>One mistake in each sentence. Tell your partner – then tell the class.</p><ol class="q"><li>If it rain tomorrow, we will stay at home.<br><span class="ans">If it rain<b>s</b> tomorrow, we will stay at home.</span></li><li>If you study hard, you would pass the test.<br><span class="ans">If you study hard, you <b>will</b> pass the test.</span></li><li>Unless you do not hurry, you will miss the train.<br><span class="ans"><b>Unless you hurry</b>, you will miss the train. <span class='small'>(unless = if … not)</span></span></li><li>She will phone you if she will have time.<br><span class="ans">She will phone you if she <b>has</b> time.</span></li><li>If the shop is closed, we go to the market tomorrow.<br><span class="ans">If the shop is closed, we <b>will go</b> to the market tomorrow.</span></li><li>I will not go to the party unless you will come.<br><span class="ans">I will not go to the party unless you <b>come</b>.</span></li></ol><p><button class="reveal p" data-sel=".ans" type="button">Show next answer</button></p><button type="button" class="tnb">Teacher note</button><div class="tn"><b class="pin">Learners’ code for page 7: 0000</b> – say it or write it on the board when the class moves on. SAY: “Eyes on the board. Each sentence has one mistake. Number 1 – talk to your partner for 20 seconds.” DO: a learner says the correct sentence; THEN click (one per click). Read two good pieces of advice aloud. Answers: 1 rains 2 will pass 3 Unless you hurry 4 if she has time 5 we will go 6 unless you come. Learners look at: the projector.</div>
+ </div>
+ <div class="lookboard"><p class="big">👀 Look at the board</p><p>Page <span class="num"></span></p></div>
+</section>
+<section class="page board" data-look="Students: projector and phones" data-min="25">
+ <span class="label">WHOLE CLASS – eyes on the board</span>
+ <div class="content">
+  <h1>Task G · Kahoot – 20 questions</h1>
+  <div class="card" style="font-size:1.1em"><p>if · unless · will · cause and result · linking words.</p><ul style="font-size:1.1em;line-height:1.6"><li>Think first.</li><li>Talk to your partner for 10 seconds.</li><li>Then tap your answer on your phone.</li></ul></div>
+  <p style="font-size:1.1em"><b>Before you go:</b> tell your partner one piece of advice with <span class="kw">if</span> or <span class="kw">unless</span>.</p>
+  <button type="button" class="tnb">Teacher note</button><div class="tn"><b class="pin">Learners’ code for page 8: 0000</b> – say it or write it on the board when the class moves on. DO: open the Kahoot from the link on the Teacher Hub card (or import the file) and host it. Do not click Play before the class has the code. After each answer ASK: “Why is that the right form?” Note the questions most learners got wrong – they decide the next recap. CLOSE: “Today we used if and unless to give advice and to say what will happen. Tell your partner one piece of advice.” Hear three. Learners look at: the projector and their phones. 25 minutes.</div>
+ </div>
+ <div class="lookboard"><p class="big">👀 Look at the board</p><p>Page <span class="num"></span></p></div>
+</section>
+
+</main>
+<div id="lockbox" role="dialog" aria-modal="true" aria-label="Page code"><div class="in"><h2>Wait for your teacher</h2><p>The next page is not open yet. When your teacher gives you the code, type it here.</p><p><input id="lockin" type="text" inputmode="numeric" autocomplete="off" maxlength="4" aria-label="Code"></p><p class="fb no" id="lockfb"></p><p><button class="p" id="lockgo" type="button">Open</button> <button id="lockx" type="button">Close</button></p><p class="small">Finished early? Try the ★ Early finishers word search.</p></div></div>
+<div id="efbox" role="dialog" aria-modal="true" aria-label="Early finishers"><div class="in"><div style="display:flex;justify-content:space-between;align-items:center;gap:1em"><h2 style="margin:0">★ Early finishers · Word search</h2><button id="efx" type="button">Back to the lesson</button></div><p class="small">Find 14 words from today’s lesson. Click the first letter, then the last letter. Words go → ↓ or ↘. When you finish, choose four words and write a sentence with each one.</p><div class="ws"><div class="wsg" id="wsg"></div><div><ul class="wsl" id="wsl"></ul><p class="score" id="wss"></p></div></div></div></div>
+<div class="foot"><a href="https://atinwix.github.io/esol/r.html?f=E3%20Reading%20–%20If%20and%20Unless:%20Advice%20Texts%20and%20Results%20–%20Classroom%20Phone%20Lesson" target="_blank" rel="noopener">⚠ Report a problem (teachers)</a></div>
+<script>
+(function(){
+var qs=new URLSearchParams(location.search), D=document, B=D.body;
+var teacher=qs.has('teacher')||(B.dataset.default==='teacher'&&!qs.has('student'));
+var phone=qs.has('phone')&&!qs.has('teacher');if(phone){B.classList.add('phone');var upTxt=function(){[].forEach.call(D.querySelectorAll('.txt'),function(t){if(t.clientHeight)t.classList.toggle('end',t.scrollTop+t.clientHeight>=t.scrollHeight-4)})};setTimeout(function(){[].forEach.call(D.querySelectorAll('.txt'),function(t){t.addEventListener('scroll',upTxt)});upTxt()},0);D.addEventListener('click',function(){setTimeout(upTxt,50)})}
+function mode(){B.classList.toggle('teacher',teacher);B.classList.toggle('student',!teacher)}
+mode();
+var pages=[].slice.call(D.querySelectorAll('.page')), cur=0;
+pages.forEach(function(p,i){
+  var lk=D.createElement('div');lk.className='look';lk.textContent='Page '+(i+1)+' · '+(p.dataset.look||'');p.appendChild(lk);
+  [].forEach.call(p.querySelectorAll('.num'),function(n){n.textContent=i+1});p.dataset.n=i+1;
+});
+if(phone){pages=pages.filter(function(p){if(p.classList.contains('board')){p.remove();return false}return true})}
+var CODES={"2": "0000", "3": "0000", "4": "0000", "5": "0000", "6": "0000", "7": "0000", "8": "0000"}, want=1, LK='cl-lock-'+location.pathname, opened=1;
+try{opened=Math.max(1,parseInt(localStorage.getItem(LK)||'1',10)||1)}catch(x){}
+if(phone)opened=99;
+function allow(i){return teacher||i<opened}
+function ask(){var b=D.getElementById('lockbox');b.classList.add('on');D.getElementById('lockfb').textContent='';var inp=D.getElementById('lockin');inp.value='';inp.focus()}
+D.getElementById('lockgo').onclick=function(){var v=D.getElementById('lockin').value.trim(),hit=0;for(var k in CODES)if(CODES[k]===v&&parseInt(k,10)===want+1)hit=parseInt(k,10);
+  if(hit){opened=Math.max(opened,hit);try{localStorage.setItem(LK,opened)}catch(x){}D.getElementById('lockbox').classList.remove('on');go(hit-1)}
+  else D.getElementById('lockfb').textContent='That code is not right. Ask your teacher.'};
+D.getElementById('lockin').onkeydown=function(e){if(e.key==='Enter')D.getElementById('lockgo').click()};
+D.getElementById('lockx').onclick=function(){D.getElementById('lockbox').classList.remove('on')};
+function go(i){if(!allow(Math.max(0,Math.min(pages.length-1,i)))){want=Math.max(0,Math.min(pages.length-1,i));ask();return}cur=Math.max(0,Math.min(pages.length-1,i));pages.forEach(function(p,k){p.classList.toggle('on',k===cur)});
+  D.getElementById('pn').textContent=phone?'Page '+pages[cur].dataset.n:'Page '+(cur+1)+' of '+pages.length;D.getElementById('prev').disabled=cur===0;D.getElementById('next').disabled=cur===pages.length-1;
+  history.replaceState(null,'',location.pathname+location.search);setMin(parseInt(pages[cur].dataset.min||'0',10));window.scrollTo(0,0)}
+D.getElementById('prev').onclick=function(){go(cur-1)};D.getElementById('next').onclick=function(){go(cur+1)};
+D.addEventListener('keydown',function(e){var t=e.target.tagName;if(t==='INPUT'||t==='TEXTAREA')return;
+  if(e.key==='ArrowRight'||e.key==='PageDown')go(cur+1);else if(e.key==='ArrowLeft'||e.key==='PageUp')go(cur-1);
+  else if(e.key==='t'||e.key==='T'){if(teacher){teacher=false;mode();go(Math.min(cur,opened-1))}else{teacher=true;mode()}}});
+// small teacher timer in the header (minutes come from each page)
+var tt=D.getElementById('tt'), tl=0, tk=null;
+function fmt(s){return Math.floor(s/60)+':'+('0'+s%60).slice(-2)}
+function show(){tt.querySelector('b').textContent=fmt(tl);tt.classList.toggle('low',tl<=60&&tl>0)}
+function setMin(m){clearInterval(tk);tk=null;tl=m*60;show();tt.style.visibility=m?'visible':'hidden';tt.querySelector('button').textContent='Start'}
+tt.querySelector('button').onclick=function(){if(tk){clearInterval(tk);tk=null;this.textContent='Start'}else{var b=this;b.textContent='Pause';tk=setInterval(function(){tl=Math.max(0,tl-1);show();if(!tl){clearInterval(tk);tk=null;b.textContent='Start'}},1000)}};
+// one answer per click
+[].forEach.call(D.querySelectorAll('button.reveal'),function(b){
+  var pg=b.closest('.page'), label=b.textContent;
+  function left(){return pg.querySelectorAll(b.dataset.sel+':not(.show)').length}
+  function total(){return pg.querySelectorAll(b.dataset.sel).length}
+  function upd(){var l=left();b.textContent=l?label+' ('+(total()-l+1)+' of '+total()+')':'All shown';b.disabled=!l}
+  b.onclick=function(){var n=pg.querySelector(b.dataset.sel+':not(.show)');if(n)n.classList.add('show');upd()};upd();
+});
+// big exam timer
+[].forEach.call(D.querySelectorAll('.bigtimer'),function(box){
+  var total=parseInt(box.dataset.min,10)*60, l=total, iv=null, out=box.querySelector('.timer'), st=box.querySelector('.start');
+  function sh(){out.textContent=fmt(l);out.classList.toggle('low',l<=300)}
+  st.onclick=function(){if(iv){clearInterval(iv);iv=null;st.textContent='Resume'}else{st.textContent='Pause';iv=setInterval(function(){l=Math.max(0,l-1);sh();if(!l){clearInterval(iv);iv=null;st.textContent='Time is up'}},1000)}};
+  box.querySelector('.reset').onclick=function(){clearInterval(iv);iv=null;l=total;sh();st.textContent='Start '+box.dataset.min+' minutes'};sh();
+});
+// ---- self-marking tasks ----
+function el(t,c,x){var e=D.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+function norm(s){s=s.replace(/won['’]t/gi,'will not').replace(/['’]ll/gi,' will').replace(/can['’]t/gi,'cannot').replace(/don['’]t/gi,'do not').replace(/doesn['’]t/gi,'does not');return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9 ]+/g,' ').replace(/\s+/g,' ').trim()}
+[].forEach.call(D.querySelectorAll('.task'),function(box){
+  var T=JSON.parse(box.querySelector('script').textContent), right=0, tried=0, rows=[];
+  var sc=el('div','score');
+  function upd(){sc.textContent='Score: '+right+' of '+T.items.length+(tried===T.items.length?(right===T.items.length?' – excellent!':' – finished. Check the red ones with your partner.'):'')}
+  T.items.forEach(function(it,i){
+    var row=el('div','item'), ok=false, fin=false;
+    row.appendChild(el('span','n',(i+1)+'.'));
+    var s=el('span','s'), gap=null;
+    if(T.type==='choose'){var parts=it.s.split('___');s.appendChild(D.createTextNode(parts[0]));gap=el('span','gap',' ');s.appendChild(gap);s.appendChild(D.createTextNode(parts[1]||''))}
+    else s.textContent=it.s||it.q;
+    row.appendChild(s);
+    function finish(good){if(fin)return;fin=true;tried++;if(good)right++;row.classList.add('done');upd()}
+    if(T.type==='join'){
+      var hint=el('span','small','Use: '+it.w);row.appendChild(hint);
+      var inp=el('input');inp.type='text';inp.setAttribute('aria-label','Your sentence for number '+(i+1));inp.autocomplete='off';inp.spellcheck=false;
+      var ck=el('button',null,'Check'), fb=el('span','fb'), n=0;
+      var wrap=el('div');wrap.style.cssText='flex:1 1 100%;display:flex;gap:.5em;align-items:center;flex-wrap:wrap';inp.style.flex='1 1 18em';
+      wrap.appendChild(inp);wrap.appendChild(ck);wrap.appendChild(fb);row.appendChild(wrap);
+      var acc=it.a.map(norm);
+      ck.onclick=function(){if(fin||!inp.value.trim())return;n++;
+        if(acc.indexOf(norm(inp.value))>=0){fb.textContent='✓ Correct';fb.className='fb ok';inp.disabled=ck.disabled=true;finish(true)}
+        else if(n>=2){fb.textContent='Answer: '+it.a[0];fb.className='fb no';inp.disabled=ck.disabled=true;finish(false)}
+        else{fb.textContent='Not yet – check the word order and the linking word. One more try.';fb.className='fb no'}};
+      inp.onkeydown=function(e){if(e.key==='Enter')ck.click()};
+      row.reveal=function(){if(fin)return false;fb.textContent='Answer: '+it.a[0];fb.className='fb ok';inp.disabled=ck.disabled=true;finish(false);return true};
+    } else {
+      var opts=T.opts||it.o, first=true;
+      var ow=el('span');ow.style.cssText='display:inline-flex;gap:.3em;flex-wrap:wrap';
+      opts.forEach(function(o,k){var b=el('span','opt',o);b.tabIndex=0;b.setAttribute('role','button');
+        function pick(){if(fin)return;var good=(k===it.c);
+          if(good){b.classList.add('ok');if(gap){gap.textContent=it.fill||o}finish(first)}
+          else{b.classList.add('no');first=false}}
+        b.onclick=pick;b.onkeydown=function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();pick()}};ow.appendChild(b)});
+      row.appendChild(ow);
+      row.reveal=function(){if(fin)return false;ow.children[it.c].classList.add('ok');if(gap)gap.textContent=it.fill||opts[it.c];finish(false);return true};
+    }
+    rows.push(row);box.appendChild(row);
+  });
+  var bar=el('p');bar.appendChild(sc);
+  var sh=el('button','tonly','Show next answer');sh.style.marginLeft='1em';sh.onclick=function(){for(var i=0;i<rows.length;i++){if(rows[i].reveal())return}};bar.appendChild(sh);
+  box.appendChild(bar);upd();
+});
+[].forEach.call(D.querySelectorAll('[data-qr]'),function(e){try{new QRCode(e,{text:e.dataset.qr,width:150,height:150})}catch(x){e.textContent=e.dataset.qr}});
+[].forEach.call(D.querySelectorAll('.tnb'),function(b){b.onclick=function(){b.nextElementSibling.classList.toggle('open')}});
+// always opens at page 1 (a #pN in the link is ignored)
+go(0);
+// ---- early finishers word search ----
+(function(){
+  var W=["ADVICE", "PROBLEM", "RESULT", "UNLESS", "NEIGHBOUR", "LICENCE", "COMPLAIN", "LANDLORD", "CAUSE", "EFFECT", "CONSEQUENCE", "SAVINGS", "CONTINUE", "LIBRARY"];
+  var N=13,G,pos,seed;
+  function rnd(){seed=(seed*1103515245+12345)%2147483648;return seed/2147483648}
+  function build(sd){seed=sd;G=[];for(var r=0;r<N;r++){G.push([]);for(var c=0;c<N;c++)G[r].push('')}pos={};
+    var dirs=[[0,1],[1,0],[1,1]];
+    for(var w=0;w<W.length;w++){var word=W[w],ok=false;
+      for(var t=0;t<400&&!ok;t++){var d=dirs[Math.floor(rnd()*3)],r0=Math.floor(rnd()*N),c0=Math.floor(rnd()*N),r1=r0+d[0]*(word.length-1),c1=c0+d[1]*(word.length-1);
+        if(r1>=N||c1>=N)continue;var fit=true;
+        for(var k=0;k<word.length;k++){var ch=G[r0+d[0]*k][c0+d[1]*k];if(ch&&ch!==word[k]){fit=false;break}}
+        if(!fit)continue;for(k=0;k<word.length;k++)G[r0+d[0]*k][c0+d[1]*k]=word[k];pos[word]=[r0,c0,r1,c1];ok=true}
+      if(!ok)return false}
+    var AZ='ABCDEFGHIKLMNOPRSTUWY';for(r=0;r<N;r++)for(c=0;c<N;c++)if(!G[r][c])G[r][c]=AZ[Math.floor(rnd()*AZ.length)];return true}
+  var sd=7;while(!build(sd))sd++;
+  var g=D.getElementById('wsg'),l=D.getElementById('wsl'),sc=D.getElementById('wss'),cells=[],first=null,found={},nf=0;
+  for(var r=0;r<N;r++)for(var c=0;c<N;c++){(function(r,c){var e=D.createElement('span');e.textContent=G[r][c];e.onclick=function(){pick(r,c)};g.appendChild(e);cells.push(e)})(r,c)}
+  W.slice().sort().forEach(function(w){var li=D.createElement('li');li.textContent=w.toLowerCase();li.id='ws-'+w;l.appendChild(li)});
+  function cell(r,c){return cells[r*N+c]}
+  function upd(){sc.textContent='Found: '+nf+' of '+W.length+(nf===W.length?' – well done! Now write your four sentences.':'')}
+  function pick(r,c){if(!first){first=[r,c];cell(r,c).classList.add('sel');return}
+    var a=first;first=null;cell(a[0],a[1]).classList.remove('sel');
+    for(var w in pos){var q=pos[w];if(found[w])continue;
+      if((q[0]===a[0]&&q[1]===a[1]&&q[2]===r&&q[3]===c)||(q[2]===a[0]&&q[3]===a[1]&&q[0]===r&&q[1]===c)){
+        found[w]=1;nf++;var dr=Math.sign(q[2]-q[0]),dc=Math.sign(q[3]-q[1]);
+        for(var k=0;k<w.length;k++)cell(q[0]+dr*k,q[1]+dc*k).classList.add('got');D.getElementById('ws-'+w).classList.add('got');upd();return}}
+    if(a[0]!==r||a[1]!==c){first=[r,c];cell(r,c).classList.add('sel')}}
+  upd();
+  D.getElementById('ef').onclick=function(){D.getElementById('efbox').classList.add('on')};
+  D.getElementById('efx').onclick=function(){D.getElementById('efbox').classList.remove('on')};
+})();
+})();
+</script>
+</body>
+</html>

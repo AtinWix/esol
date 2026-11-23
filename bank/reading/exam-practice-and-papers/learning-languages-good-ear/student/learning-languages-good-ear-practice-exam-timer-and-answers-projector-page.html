@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>E3 Reading – Practice Exam: A Good Ear – Timer, Rules and Answers – Projector Page</title>
+<style>
+:root{--bg:#fff;--ink:#1d2433;--muted:#5b6474;--board:#e6f5e6;--boardline:#7cc47c;--accent:#1f5fbf;--good:#1a7f37;--bad:#cf222e;--card:#f4f6fa;--hl:#fff3b0}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Verdana,Arial,Helvetica,sans-serif;font-size:clamp(15px,1.45vw,25px);line-height:1.35}
+header{display:flex;align-items:center;gap:12px;padding:6px 16px;border-bottom:2px solid #dde3ec}
+header .t{font-weight:700;flex:1;font-size:.72em;min-width:0}
+@media(max-width:700px){header .t{display:none}}
+nav{display:flex;align-items:center;gap:8px}
+button{font:inherit;font-size:.8em;padding:.4em .9em;border-radius:10px;border:2px solid var(--accent);background:#fff;color:var(--accent);cursor:pointer}
+button.p{background:var(--accent);color:#fff}
+button:disabled{opacity:.4;cursor:default}
+#pn{font-weight:700;min-width:6.5em;text-align:center;font-size:.8em}
+.tt{display:none;align-items:center;gap:6px;font-size:.7em;font-variant-numeric:tabular-nums}
+body.teacher .tt{display:flex}
+.tt b{min-width:3.2em;text-align:right}.tt.low b{color:var(--bad)}
+main{padding:8px 16px 30px;max-width:1700px;margin:0 auto}
+.page{display:none;border-radius:16px;padding:12px 20px 14px;position:relative}
+.page.on{display:block}
+.page.board{background:var(--board);border:3px solid var(--boardline)}
+.page>.label{float:right;margin:.35em 0 0 .6em}
+.label{display:inline-block;background:#2f7d32;color:#fff;font-weight:700;font-size:.62em;padding:.2em .7em;border-radius:8px;margin-bottom:4px}
+.label.stu{background:var(--accent)}
+h1{font-size:1.45em;margin:.1em 0 .3em}
+h2{font-size:1.1em;margin:.3em 0}
+p{margin:.35em 0}
+.look{display:none;position:absolute;right:14px;bottom:3px;font-size:9px;color:#555}
+body.teacher .look{display:block}
+.tnb{display:none;font-size:11px;padding:.15em .6em;margin-top:6px}
+body.teacher .tnb{display:inline-block}
+.tn{display:none;font-size:11px;line-height:1.4;color:#333;background:#fffbe6;border:1px dashed #c9a400;padding:6px 9px;margin-top:6px;border-radius:6px}
+.tn.open{display:block}
+body:not(.teacher) .tn{display:none!important}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.g46{display:grid;grid-template-columns:5fr 6fr;gap:16px}
+@media(max-width:900px){.grid2,.grid3,.g46{grid-template-columns:1fr}}
+.card{background:var(--card);border-radius:12px;padding:10px 14px}
+.board .card{background:#fff}
+table.w{border-collapse:collapse;width:100%;font-size:.9em;background:#fff}
+table.w td,table.w th{border:2px solid #9ab;padding:.3em .55em;text-align:left;vertical-align:top}
+table.w th{background:#dfe9f5}
+.ans{visibility:hidden;color:var(--good);font-weight:700}
+.ans.show{visibility:visible}
+ol.q{margin:.2em 0;padding-left:1.5em}
+ol.q li{margin:.28em 0}
+.timer{font-size:5.2em;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.05}
+.timer.low{color:var(--bad)}
+.lookboard{display:none;text-align:center;padding:14vh 0}
+.lookboard .big{font-size:2.2em}
+body.student .page.board .content{display:none}
+body.student .page.board .lookboard{display:block}
+.tonly{display:none}body.teacher .tonly{display:inline-block}
+.page:not(.board){font-size:.9em}
+.item{padding:.22em 0;border-bottom:1px solid #e3e7ee;display:flex;flex-wrap:wrap;align-items:center;gap:.15em .45em;break-inside:avoid}
+.task.cols{display:grid;grid-template-columns:1fr 1fr;column-gap:26px;align-items:start}
+.task.cols>p{grid-column:1/-1}
+.mcq .item{align-items:baseline;row-gap:.1em}
+.mcq .item .n{flex:0 0 auto}
+.mcq .item .s{flex:1 1 calc(100% - 2.4em)}
+.mcq .item>span:last-child{padding-left:1.95em}
+.mcq .opt{font-size:.8em;padding:.05em .5em}
+.mcq .item{padding:.12em 0}
+.txt.two{font-size:.86em;line-height:1.33;padding:6px 12px}
+.txt.two p{margin:.25em 0}
+.txt.two h2{margin:0 0 .2em;font-size:1.05em}
+header .atin-logo{position:static;border:0;padding:0;background:none;line-height:0}
+header .atin-logo svg{width:52px;height:40px}
+.txt.two{column-count:2;column-gap:26px}
+.txt.two h2{column-span:all}
+@media(max-width:900px){.task.cols{grid-template-columns:1fr}.txt.two{column-count:1}}
+.item .n{font-weight:700;min-width:1.6em}
+.item .s{flex:1 1 20em;min-width:0}
+.opt{display:inline-block;padding:.18em .7em;border:2px solid #9ab;border-radius:10px;background:#fff;cursor:pointer;user-select:none;font-size:.9em}
+.opt.ok{background:#dafbe1;border-color:var(--good);font-weight:700}
+.opt.no{background:#ffebe9;border-color:var(--bad)}
+.item.done .opt{pointer-events:none}
+.gap{display:inline-block;min-width:5em;border-bottom:3px solid var(--accent);text-align:center;font-weight:700;color:var(--good)}
+input[type=text],textarea{font:inherit;font-size:.9em;padding:.25em .5em;border:2px solid #9ab;border-radius:8px;width:100%}
+.fb{font-weight:700;font-size:.85em}.fb.ok{color:var(--good)}.fb.no{color:var(--bad)}
+.score{font-weight:700;color:var(--accent);font-size:.85em}
+.small{font-size:.72em;color:var(--muted)}
+a.btn{display:inline-block;text-decoration:none;font-weight:700;padding:.4em 1em;border-radius:10px;background:var(--accent);color:#fff;font-size:.85em}
+.txt{line-height:1.5;font-size:.95em}
+.txt p{margin:.4em 0}
+.kw{background:var(--hl);font-weight:700;padding:0 .15em;border-radius:4px}
+.steps{font-size:1.35em;line-height:1.5;margin:.2em 0;padding-left:1.3em}
+.mark{background:var(--hl);font-weight:700}
+.foot{position:fixed;right:10px;bottom:6px;font-size:10px}
+.foot a{color:var(--muted)}
+body.student .foot{display:none}
+
+.ef{border-color:#8a5a00;color:#8a5a00;font-size:.72em}
+.tn .pin{background:#ffe08a;padding:0 .3em;border-radius:3px}
+#lockbox,#efbox{position:fixed;inset:0;background:rgba(20,30,50,.55);display:none;align-items:center;justify-content:center;z-index:50;padding:16px}
+#lockbox.on,#efbox.on{display:flex}
+#lockbox .in{background:#fff;border-radius:16px;padding:18px 22px;max-width:30em;width:100%;text-align:center}
+#lockbox input{font-size:1.4em;text-align:center;letter-spacing:.3em;max-width:7em;margin:.3em 0}
+#efbox .in{background:#fff;border-radius:16px;padding:12px 16px;max-width:1100px;width:100%;max-height:96vh;overflow:auto}
+.ws{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-start}
+.wsg{display:grid;grid-template-columns:repeat(13,1fr);gap:2px;width:min(92vw,60vh,560px);user-select:none;touch-action:manipulation}
+.wsg span{aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:clamp(12px,2.6vmin,22px);background:#f4f6fa;border-radius:4px;cursor:pointer}
+.wsg span.sel{background:#ffe08a}.wsg span.got{background:#c8f0d0}
+.wsl{columns:2;font-size:.85em;min-width:14em}.wsl li{list-style:none;margin:.1em 0}.wsl li.got{text-decoration:line-through;color:var(--good)}
+.lw{background:var(--hl);font-weight:700;padding:0 .1em;border-radius:3px}
+</style>
+</head>
+<body data-default="student">
+<header>
+  <div class="atin-logo" aria-label="Made by Atin">
+<svg viewBox="104 28 172 134" width="64" height="50" role="img" aria-hidden="true">
+<text x="139" y="112" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="72" fill="currentColor">A</text>
+<rect x="177" y="83" width="24" height="6" rx="1" fill="currentColor"/>
+<path d="M216 66 L216 106 A25 7 0 0 0 266 106 L266 66" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+<ellipse cx="241" cy="66" rx="25" ry="7" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="216" y1="80" x2="266" y2="80" stroke="currentColor" stroke-width="1.5"/>
+<line x1="216" y1="94" x2="266" y2="94" stroke="currentColor" stroke-width="1.5"/>
+<ellipse cx="241" cy="47" rx="23" ry="5" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="114" y1="128" x2="266" y2="128" stroke="currentColor" stroke-width="1"/>
+<text x="190" y="152" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" letter-spacing="2" fill="currentColor">made by Atin</text>
+</svg>
+</div>
+<style>
+.atin-logo{position:fixed;left:calc(6px + env(safe-area-inset-left,0px));bottom:calc(6px + env(safe-area-inset-bottom,0px));z-index:2147483000;pointer-events:none;color:#1F3A5F;background:rgba(255,255,255,.92);border:1px solid #C9D3DF;border-radius:8px;padding:3px 5px;line-height:0}
+.atin-logo svg{display:block}
+@media print{.atin-logo{position:fixed;left:auto;right:6mm;bottom:5mm;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+
+  <div class="t">E3 Reading · A Good Ear practice exam</div>
+  <div class="tt" id="tt"><span>⏱</span><b>0:00</b><button type="button">Start</button></div>
+  
+  <nav><button id="prev" type="button" aria-label="Previous page">◀</button><span id="pn"></span><button id="next" class="p" type="button" aria-label="Next page">▶</button></nav>
+</header>
+<main>
+<section class="page board" data-look="Learners: their paper, the clock" data-min="0">
+ <span class="label">WHOLE CLASS – eyes on the board</span>
+ <div class="content">
+  <h1>Entry 3 Reading · Practice Exam – A Good Ear</h1>
+  <div class="grid2">
+   <div class="card"><h2>Rules</h2><ol class="q"><li>Write your name and the date.</li><li>Phones away. No dictionaries. No talking.</li><li>Read each text first, then answer the questions.</li><li>Answer every question.</li><li>If you finish early, read your answers again.</li></ol><p><b>1 hour · 19 marks</b></p></div>
+   <div class="card bigtimer" data-min="60" style="text-align:center"><h2>Time left</h2><div class="timer">60:00</div><p><button class="p start" type="button">Start 60 minutes</button> <button class="reset" type="button">Reset</button></p></div>
+  </div>
+  <button type="button" class="tnb">Teacher note</button><div class="tn">BEFORE: give out the printed paper face down (one each, in the pack). SAY: “This is a full practice paper, the same as the exam: one hour, 19 marks. Phones away, no dictionaries, no talking. Read each text first, then the questions. Turn over and begin.” DO: click Start when everyone has begun. Walk round quietly; do not help. At 5 minutes left say the time aloud. Learners look at: their paper and the clock. 60 minutes. If the class finishes early, move on to marking.</div>
+ </div>
+ <div class="lookboard"><p class="big">👀 Look at the board</p><p>Page <span class="num"></span></p></div>
+</section>
+<section class="page board" data-look="Learners: the projector, their own paper" data-min="0">
+ <span class="label">WHOLE CLASS – eyes on the board</span>
+ <div class="content">
+  <h1>Answers · Text 1 · A Good Ear – article <span class="small">– 6 marks</span></h1><p><b>Mark in pen.</b> Swap papers with your partner. Tick each correct answer and write the marks in the margin.</p>
+  <ul class="q" style="list-style:none;padding-left:0;font-size:1.05em"><li><b>Q1</b> <span class="small">(1 mark)</span> &nbsp; <span class="ans">B – to report on research about language learning</span></li><li><b>Q2</b> <span class="small">(1 mark)</span> &nbsp; <span class="ans">practice</span></li><li><b>Q3</b> <span class="small">(1 mark)</span> &nbsp; <span class="ans">3a True · 3b False (university students) · 3c Not given – all three for the mark</span></li><li><b>Q4</b> <span class="small">(1 mark)</span> &nbsp; <span class="ans">B – Japanese has nothing similar to these two sounds</span></li><li><b>Q5</b> <span class="small">(1 mark)</span> &nbsp; <span class="ans">cup and cap</span></li><li><b>Q6</b> <span class="small">(1 mark)</span> &nbsp; <span class="ans">B – being able to notice tiny differences in sounds</span></li></ul>
+  <p><button class="reveal p" data-sel=".ans" type="button">Show next answer</button></p>
+  <button type="button" class="tnb">Teacher note</button><div class="tn">SAY: “Now we mark. Swap papers with your partner. Use a pen. I will show each answer – tick it if it is right.” DO: one answer per click, say the question number first; where learners disagree, let them point to the place in the text, then click. Do NOT go through every answer for proof – only the ones a group disagrees about or got wrong. Count the Text 1 marks (out of 6) and write them at the top of Text 1. A question with parts (3a–3c) gets its mark only if every part is right. Learners look at: the projector and their paper.</div>
+ </div>
+ <div class="lookboard"><p class="big">👀 Look at the board</p><p>Page <span class="num"></span></p></div>
+</section>
+<section class="page board" data-look="Learners: the projector, their own paper" data-min="0">
+ <span class="label">WHOLE CLASS – eyes on the board</span>
+ <div class="content">
+  <h1>Answers · Text 2 · How the study worked – report <span class="small">– 7 marks</span></h1>
+  <ul class="q" style="list-style:none;padding-left:0;font-size:1.05em"><li><b>Q7</b> <span class="small">(1 mark)</span> &nbsp; <span class="ans">140</span></li><li><b>Q8</b> <span class="small">(1 mark)</span> &nbsp; <span class="ans">B – pick out the tone that was slightly higher</span></li><li><b>Q9</b> <span class="small">(1 mark)</span> &nbsp; <span class="ans">B – It became more difficult to hear the difference.</span></li><li><b>Q10</b> <span class="small">(1 mark)</span> &nbsp; <span class="ans">10a True · 10b False (some did much better than others) – both for the mark</span></li><li><b>Q11</b> <span class="small">(1 mark)</span> &nbsp; <span class="ans">studying abroad · pronunciation lessons (both needed)</span></li><li><b>Q12</b> <span class="small">(1 mark)</span> &nbsp; <span class="ans">Sendai</span></li><li><b>Q13</b> <span class="small">(1 mark)</span> &nbsp; <span class="ans">B – They imagine pronouncing it the Japanese way.</span></li></ul>
+  <p><button class="reveal p" data-sel=".ans" type="button">Show next answer</button></p>
+  <button type="button" class="tnb">Teacher note</button><div class="tn">DO: same routine. Count the Text 2 marks (out of 7). Q10 and Q11: both parts must be right for the mark; accept any wording with the same meaning. Learners look at: the projector and their paper.</div>
+ </div>
+ <div class="lookboard"><p class="big">👀 Look at the board</p><p>Page <span class="num"></span></p></div>
+</section>
+<section class="page board" data-look="Learners: the projector, their own paper" data-min="0">
+ <span class="label">WHOLE CLASS – eyes on the board</span>
+ <div class="content">
+  <h1>Answers · Text 3 · Train your ears! – email <span class="small">– 6 marks</span></h1>
+  <ul class="q" style="list-style:none;padding-left:0;font-size:1.05em"><li><b>Q14</b> <span class="small">(1 mark)</span> &nbsp; <span class="ans">B – to share some news and give him advice</span></li><li><b>Q15</b> <span class="small">(1 mark)</span> &nbsp; <span class="ans">UCL Institute of Education (London)</span></li><li><b>Q16</b> <span class="small">(1 mark)</span> &nbsp; <span class="ans">16a False · 16b False (music lessons on their own did not help) · 16c Not given – all three for the mark</span></li><li><b>Q17</b> <span class="small">(1 mark)</span> &nbsp; <span class="ans">Any one: it only tested listening, not speaking / all the students were Japanese</span></li><li><b>Q18</b> <span class="small">(1 mark)</span> &nbsp; <span class="ans">the sounds (not the meaning)</span></li><li><b>Q19</b> <span class="small">(1 mark)</span> &nbsp; <span class="ans">Wednesday at 4pm (both needed)</span></li></ul>
+  <p><button class="reveal p" data-sel=".ans" type="button">Show next answer</button></p>
+  <button type="button" class="tnb">Teacher note</button><div class="tn">DO: same routine. Count the Text 3 marks (out of 6). Q16: all three parts for the mark. Q17: either reason gets the mark. Q19: both the day and the time are needed. Then learners add the three scores: total out of 19. Ask: “Hands up – who got 15 or more? 12 or more?” Do not name individual scores. Learners look at: the projector and their paper.</div>
+ </div>
+ <div class="lookboard"><p class="big">👀 Look at the board</p><p>Page <span class="num"></span></p></div>
+</section>
+
+</main>
+<div id="lockbox" role="dialog" aria-modal="true" aria-label="Page code"><div class="in"><h2>Wait for your teacher</h2><p>The next page is not open yet. When your teacher gives you the code, type it here.</p><p><input id="lockin" type="text" inputmode="numeric" autocomplete="off" maxlength="4" aria-label="Code"></p><p class="fb no" id="lockfb"></p><p><button class="p" id="lockgo" type="button">Open</button> <button id="lockx" type="button">Close</button></p><p class="small">Finished early? Try the ★ Early finishers word search.</p></div></div>
+<div class="foot"><a href="https://atinwix.github.io/esol/r.html?f=E3%20Reading%20–%20Practice%20Exam:%20A%20Good%20Ear%20–%20Timer,%20Rules%20and%20Answers%20–%20Projector%20Page" target="_blank" rel="noopener">⚠ Report a problem (teachers)</a></div>
+<script>
+(function(){
+var qs=new URLSearchParams(location.search), D=document, B=D.body;
+var teacher=qs.has('teacher')||(B.dataset.default==='teacher'&&!qs.has('student'));
+function mode(){B.classList.toggle('teacher',teacher);B.classList.toggle('student',!teacher)}
+mode();
+var pages=[].slice.call(D.querySelectorAll('.page')), cur=0;
+pages.forEach(function(p,i){
+  var lk=D.createElement('div');lk.className='look';lk.textContent='Page '+(i+1)+' · '+(p.dataset.look||'');p.appendChild(lk);
+  [].forEach.call(p.querySelectorAll('.num'),function(n){n.textContent=i+1});
+});
+var CODES={}, want=1, LK='cl-lock-'+location.pathname, opened=99;
+
+function allow(i){return teacher||i<opened}
+function ask(){var b=D.getElementById('lockbox');b.classList.add('on');D.getElementById('lockfb').textContent='';var inp=D.getElementById('lockin');inp.value='';inp.focus()}
+D.getElementById('lockgo').onclick=function(){var v=D.getElementById('lockin').value.trim(),hit=0;for(var k in CODES)if(CODES[k]===v&&parseInt(k,10)===want+1)hit=parseInt(k,10);
+  if(hit){opened=Math.max(opened,hit);try{localStorage.setItem(LK,opened)}catch(x){}D.getElementById('lockbox').classList.remove('on');go(hit-1)}
+  else D.getElementById('lockfb').textContent='That code is not right. Ask your teacher.'};
+D.getElementById('lockin').onkeydown=function(e){if(e.key==='Enter')D.getElementById('lockgo').click()};
+D.getElementById('lockx').onclick=function(){D.getElementById('lockbox').classList.remove('on')};
+function go(i){if(!allow(Math.max(0,Math.min(pages.length-1,i)))){want=Math.max(0,Math.min(pages.length-1,i));ask();return}cur=Math.max(0,Math.min(pages.length-1,i));pages.forEach(function(p,k){p.classList.toggle('on',k===cur)});
+  D.getElementById('pn').textContent='Page '+(cur+1)+' of '+pages.length;D.getElementById('prev').disabled=cur===0;D.getElementById('next').disabled=cur===pages.length-1;
+  history.replaceState(null,'',location.pathname+location.search);setMin(parseInt(pages[cur].dataset.min||'0',10));window.scrollTo(0,0)}
+D.getElementById('prev').onclick=function(){go(cur-1)};D.getElementById('next').onclick=function(){go(cur+1)};
+D.addEventListener('keydown',function(e){var t=e.target.tagName;if(t==='INPUT'||t==='TEXTAREA')return;
+  if(e.key==='ArrowRight'||e.key==='PageDown')go(cur+1);else if(e.key==='ArrowLeft'||e.key==='PageUp')go(cur-1);
+  else if(e.key==='t'||e.key==='T'){if(teacher){teacher=false;mode();go(Math.min(cur,opened-1))}else{teacher=true;mode()}}});
+// small teacher timer in the header (minutes come from each page)
+var tt=D.getElementById('tt'), tl=0, tk=null;
+function fmt(s){return Math.floor(s/60)+':'+('0'+s%60).slice(-2)}
+function show(){tt.querySelector('b').textContent=fmt(tl);tt.classList.toggle('low',tl<=60&&tl>0)}
+function setMin(m){clearInterval(tk);tk=null;tl=m*60;show();tt.style.visibility=m?'visible':'hidden';tt.querySelector('button').textContent='Start'}
+tt.querySelector('button').onclick=function(){if(tk){clearInterval(tk);tk=null;this.textContent='Start'}else{var b=this;b.textContent='Pause';tk=setInterval(function(){tl=Math.max(0,tl-1);show();if(!tl){clearInterval(tk);tk=null;b.textContent='Start'}},1000)}};
+// one answer per click
+[].forEach.call(D.querySelectorAll('button.reveal'),function(b){
+  var pg=b.closest('.page'), label=b.textContent;
+  function left(){return pg.querySelectorAll(b.dataset.sel+':not(.show)').length}
+  function total(){return pg.querySelectorAll(b.dataset.sel).length}
+  function upd(){var l=left();b.textContent=l?label+' ('+(total()-l+1)+' of '+total()+')':'All shown';b.disabled=!l}
+  b.onclick=function(){var n=pg.querySelector(b.dataset.sel+':not(.show)');if(n)n.classList.add('show');upd()};upd();
+});
+// big exam timer
+[].forEach.call(D.querySelectorAll('.bigtimer'),function(box){
+  var total=parseInt(box.dataset.min,10)*60, l=total, iv=null, out=box.querySelector('.timer'), st=box.querySelector('.start');
+  function sh(){out.textContent=fmt(l);out.classList.toggle('low',l<=300)}
+  st.onclick=function(){if(iv){clearInterval(iv);iv=null;st.textContent='Resume'}else{st.textContent='Pause';iv=setInterval(function(){l=Math.max(0,l-1);sh();if(!l){clearInterval(iv);iv=null;st.textContent='Time is up'}},1000)}};
+  box.querySelector('.reset').onclick=function(){clearInterval(iv);iv=null;l=total;sh();st.textContent='Start '+box.dataset.min+' minutes'};sh();
+});
+// ---- self-marking tasks ----
+function el(t,c,x){var e=D.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+function norm(s){s=s.replace(/won['’]t/gi,'will not').replace(/['’]ll/gi,' will').replace(/can['’]t/gi,'cannot').replace(/don['’]t/gi,'do not').replace(/doesn['’]t/gi,'does not');return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9 ]+/g,' ').replace(/\s+/g,' ').trim()}
+[].forEach.call(D.querySelectorAll('.task'),function(box){
+  var T=JSON.parse(box.querySelector('script').textContent), right=0, tried=0, rows=[];
+  var sc=el('div','score');
+  function upd(){sc.textContent='Score: '+right+' of '+T.items.length+(tried===T.items.length?(right===T.items.length?' – excellent!':' – finished. Check the red ones with your partner.'):'')}
+  T.items.forEach(function(it,i){
+    var row=el('div','item'), ok=false, fin=false;
+    row.appendChild(el('span','n',(i+1)+'.'));
+    var s=el('span','s'), gap=null;
+    if(T.type==='choose'){var parts=it.s.split('___');s.appendChild(D.createTextNode(parts[0]));gap=el('span','gap',' ');s.appendChild(gap);s.appendChild(D.createTextNode(parts[1]||''))}
+    else s.textContent=it.s||it.q;
+    row.appendChild(s);
+    function finish(good){if(fin)return;fin=true;tried++;if(good)right++;row.classList.add('done');upd()}
+    if(T.type==='join'){
+      var hint=el('span','small','Use: '+it.w);row.appendChild(hint);
+      var inp=el('input');inp.type='text';inp.setAttribute('aria-label','Your sentence for number '+(i+1));inp.autocomplete='off';inp.spellcheck=false;
+      var ck=el('button',null,'Check'), fb=el('span','fb'), n=0;
+      var wrap=el('div');wrap.style.cssText='flex:1 1 100%;display:flex;gap:.5em;align-items:center;flex-wrap:wrap';inp.style.flex='1 1 18em';
+      wrap.appendChild(inp);wrap.appendChild(ck);wrap.appendChild(fb);row.appendChild(wrap);
+      var acc=it.a.map(norm);
+      ck.onclick=function(){if(fin||!inp.value.trim())return;n++;
+        if(acc.indexOf(norm(inp.value))>=0){fb.textContent='✓ Correct';fb.className='fb ok';inp.disabled=ck.disabled=true;finish(true)}
+        else if(n>=2){fb.textContent='Answer: '+it.a[0];fb.className='fb no';inp.disabled=ck.disabled=true;finish(false)}
+        else{fb.textContent='Not yet – check the word order and the linking word. One more try.';fb.className='fb no'}};
+      inp.onkeydown=function(e){if(e.key==='Enter')ck.click()};
+      row.reveal=function(){if(fin)return false;fb.textContent='Answer: '+it.a[0];fb.className='fb ok';inp.disabled=ck.disabled=true;finish(false);return true};
+    } else {
+      var opts=T.opts||it.o, first=true;
+      var ow=el('span');ow.style.cssText='display:inline-flex;gap:.3em;flex-wrap:wrap';
+      opts.forEach(function(o,k){var b=el('span','opt',o);b.tabIndex=0;b.setAttribute('role','button');
+        function pick(){if(fin)return;var good=(k===it.c);
+          if(good){b.classList.add('ok');if(gap){gap.textContent=it.fill||o}finish(first)}
+          else{b.classList.add('no');first=false}}
+        b.onclick=pick;b.onkeydown=function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();pick()}};ow.appendChild(b)});
+      row.appendChild(ow);
+      row.reveal=function(){if(fin)return false;ow.children[it.c].classList.add('ok');if(gap)gap.textContent=it.fill||opts[it.c];finish(false);return true};
+    }
+    rows.push(row);box.appendChild(row);
+  });
+  var bar=el('p');bar.appendChild(sc);
+  var sh=el('button','tonly','Show next answer');sh.style.marginLeft='1em';sh.onclick=function(){for(var i=0;i<rows.length;i++){if(rows[i].reveal())return}};bar.appendChild(sh);
+  box.appendChild(bar);upd();
+});
+[].forEach.call(D.querySelectorAll('[data-qr]'),function(e){try{new QRCode(e,{text:e.dataset.qr,width:150,height:150})}catch(x){e.textContent=e.dataset.qr}});
+[].forEach.call(D.querySelectorAll('.tnb'),function(b){b.onclick=function(){b.nextElementSibling.classList.toggle('open')}});
+// always opens at page 1 (a #pN in the link is ignored)
+go(0);
+})();
+</script>
+</body>
+</html>
