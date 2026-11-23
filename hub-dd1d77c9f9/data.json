@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-23T11:13:53Z",
+ "updatedAt": "2026-11-23T16:14:50Z",
  "upcoming": {
   "2026-11-02_e3": {
    "afternoon": "PC room: Too Cold to Learn – complaint emails",
@@ -322,7 +322,7 @@
   },
   "2026-11-16_e3": {
    "afternoon": "PC room, one lesson page on projector and PCs: which do you prefer and why?; four linking words (because, so, although, however); Task A choose the word; Task B read an opinion text and answer; Task C main idea or detail; Task D join the sentences; Task E online dictionary; Task F opinion in Teams; find the mistake",
-   "amended": "2026-11-22T22:08:14Z",
+   "amended": "2026-11-23T11:16:42Z",
    "asTaught": "As taught: AM the purpose, text type and audience handout only; the Set L paper, Prove it, fix-two and target were not taught (the Set L paper moves to Wed 18 Nov, as paper only). PM, PC room: all nine pages taught (linking words, Tasks A–F, find the mistake); the Task E dictionary words were too easy and need harder words.",
    "cls": "E3 Reading",
    "created": "2026-11-11",
@@ -965,7 +965,8 @@
   },
   "2026-11-23_e3": {
    "afternoon": "PC room, one page on projector and PCs: a what-will-happen-if chain; join with if and rewrite with unless; read an advice page and a library notice and answer questions on results; condition or result; advice in Teams; find the mistake; Kahoot (20 questions)",
-   "amended": "2026-11-23T11:12:48Z",
+   "amended": "2026-11-23T11:16:42Z",
+   "asTaught": "As taught: AM all six activities ticked (opinion letters 3A/3B and 4, Cross Road and the rule, Tasks E and F on phones, Handout 5 sentences). PM, PC room: skipped, nothing ticked; the whole PM plan moves to Wed 25 Nov, rebuilt as a classroom lesson (Wednesday is not a PC day).",
    "cls": "E3 Reading",
    "created": "2026-11-20",
    "date": "2026-11-23",
@@ -1500,7 +1501,14 @@
    "amended": "2026-11-23T07:56:40Z"
   }
  },
- "status": {},
+ "status": {
+  "2026-11-25_e3": {
+   "at": "2026-11-23T17:10:00Z",
+   "link": "https://claude.ai/artifact/XzFRZdesRARAsUC7dA5QbR",
+   "note": "awaiting Atin's review",
+   "state": "review"
+  }
+ },
  "health": {
   "checkedAt": "2026-11-23T07:40:50Z",
   "items": [
