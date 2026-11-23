@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-23T18:31:38Z",
+ "updatedAt": "2026-11-23T18:54:57Z",
  "upcoming": {
   "2026-11-02_e3": {
    "afternoon": "PC room: Too Cold to Learn – complaint emails",
@@ -965,7 +965,7 @@
   },
   "2026-11-23_e3": {
    "afternoon": "PC room, one page on projector and PCs: a what-will-happen-if chain; join with if and rewrite with unless; read an advice page and a library notice and answer questions on results; condition or result; advice in Teams; find the mistake; Kahoot (20 questions)",
-   "amended": "2026-11-23T11:16:42Z",
+   "amended": "2026-11-23T18:30:03Z",
    "asTaught": "As taught: AM all six activities ticked (opinion letters 3A/3B and 4, Cross Road and the rule, Tasks E and F on phones, Handout 5 sentences). PM, PC room: skipped, nothing ticked; the whole PM plan moves to Wed 25 Nov, rebuilt as a classroom lesson (Wednesday is not a PC day).",
    "cls": "E3 Reading",
    "created": "2026-11-20",
@@ -1142,6 +1142,7 @@
   },
   "2026-11-24_e1": {
    "afternoon": "PC room: Task 3 recap; plan a Task 2 talk; the whole exam in pairs (Tasks 1–4, candidate and assessor, two rounds); True/False feedback on what is still difficult",
+   "asTaught": "As logged: no lesson took place (AM and PM) – Atin not at work. Nothing ticked. The whole plan (Task 4 short conversations, Task 1 questions, Tasks 1–4 exam mock, Kahoot) carries to Tue 1 Dec, the last lesson before the E1 exam.",
    "cls": "E1 Speaking & Listening",
    "created": "2026-11-20",
    "date": "2026-11-24",
@@ -1316,8 +1317,136 @@
     "wc": "2026-11-23"
    },
    "title": "Task 4 short conversations, Task 1 questions and a Tasks 1–4 exam mock",
-   "amended": "2026-11-23T07:56:40Z",
-   "asTaught": "As logged: no lesson took place (AM and PM) – Atin not at work. Nothing ticked. The whole plan (Task 4 short conversations, Task 1 questions, Tasks 1–4 exam mock, Kahoot) carries to Tue 1 Dec, the last lesson before the E1 exam."
+   "amended": "2026-11-23T07:56:40Z"
+  },
+  "2026-11-25_e3": {
+   "afternoon": "Classroom, learners on phones via the QR: what-will-happen-if chain; join with if / rewrite with unless; advice page and library notice (results); condition or result; write advice in notebooks; find the mistake; Kahoot (20 questions)",
+   "cls": "E3 Reading",
+   "created": "2026-11-23",
+   "date": "2026-11-25",
+   "flags": [],
+   "items": [
+    {
+     "id": "am1",
+     "lesson": 1,
+     "text": "Handout 1 – Practice paper – A Good Ear: sit the whole paper (60 minutes, 19 marks)",
+     "url": "https://atinwix.github.io/esol/bank/reading/exam-practice-and-papers/learning-languages-good-ear/student/learning-languages-good-ear-practice-exam-timer-and-answers-projector-page.html"
+    },
+    {
+     "id": "am2",
+     "lesson": 1,
+     "text": "AM pages 2–4 – Mark the paper: answers one per click; total out of 19",
+     "url": "https://atinwix.github.io/esol/bank/reading/exam-practice-and-papers/learning-languages-good-ear/student/learning-languages-good-ear-practice-exam-timer-and-answers-projector-page.html"
+    },
+    {
+     "id": "am3",
+     "lesson": 1,
+     "text": "Feedback – the questions most of the class got wrong",
+     "url": "https://atinwix.github.io/esol/bank/reading/exam-practice-and-papers/learning-languages-good-ear/student/learning-languages-good-ear-practice-exam-timer-and-answers-projector-page.html"
+    },
+    {
+     "id": "pm1",
+     "lesson": 2,
+     "text": "PM page 1 – Warm-up – chain: what will happen if …? (learners scan the QR)",
+     "url": "https://atinwix.github.io/esol/bank/reading/conditionals/first-conditional-if-unless/student/first-conditional-if-unless-advice-texts-classroom-phone-lesson.html"
+    },
+    {
+     "id": "pm2",
+     "lesson": 2,
+     "text": "PM page 2 – Task A – join with if, rewrite with unless (phones)",
+     "url": "https://atinwix.github.io/esol/bank/reading/conditionals/first-conditional-if-unless/student/first-conditional-if-unless-advice-texts-classroom-phone-lesson.html"
+    },
+    {
+     "id": "pm3",
+     "lesson": 2,
+     "text": "PM page 3 – Task B – read the advice page and answer ten questions (phones)",
+     "url": "https://atinwix.github.io/esol/bank/reading/conditionals/first-conditional-if-unless/student/first-conditional-if-unless-advice-texts-classroom-phone-lesson.html"
+    },
+    {
+     "id": "pm4",
+     "lesson": 2,
+     "text": "PM page 4 – Task C – condition or result? (phones)",
+     "url": "https://atinwix.github.io/esol/bank/reading/conditionals/first-conditional-if-unless/student/first-conditional-if-unless-advice-texts-classroom-phone-lesson.html"
+    },
+    {
+     "id": "pm5",
+     "lesson": 2,
+     "text": "PM page 5 – Task D – read the library notice and answer eight questions (phones)",
+     "url": "https://atinwix.github.io/esol/bank/reading/conditionals/first-conditional-if-unless/student/first-conditional-if-unless-advice-texts-classroom-phone-lesson.html"
+    },
+    {
+     "id": "pm6",
+     "lesson": 2,
+     "text": "PM page 6 – Task E – give advice: four sentences in notebooks, then swap",
+     "url": "https://atinwix.github.io/esol/bank/reading/conditionals/first-conditional-if-unless/student/first-conditional-if-unless-advice-texts-classroom-phone-lesson.html"
+    },
+    {
+     "id": "pm7",
+     "lesson": 2,
+     "text": "PM page 7 – Task F – find the mistake (6 sentences)",
+     "url": "https://atinwix.github.io/esol/bank/reading/conditionals/first-conditional-if-unless/student/first-conditional-if-unless-advice-texts-classroom-phone-lesson.html"
+    },
+    {
+     "id": "pm8",
+     "lesson": 2,
+     "text": "PM page 8 – Task G – Kahoot, 20 questions",
+     "url": "https://atinwix.github.io/esol/bank/reading/conditionals/first-conditional-if-unless/student/first-conditional-if-unless-advice-texts-classroom-phone-lesson.html"
+    }
+   ],
+   "kahoot": {
+    "details": "",
+    "note": "Same file as Mon 23 Nov (not played), questions 8 and 9 corrected 23 Nov. If you already imported it, fix those two questions in Kahoot or re-import.",
+    "status": "not yet in Kahoot",
+    "xlsx": "https://atinwix.github.io/esol/bank/reading/conditionals/first-conditional-if-unless/student/first-conditional-if-unless-and-cause-and-result-kahoot.xlsx"
+   },
+   "lastAmended": "2026-11-23",
+   "lastAmendedNote": "Built 23 Nov after Monday's log; reviewed and approved by Atin.",
+   "links": [
+    {
+     "label": "Print pack – print once, double-sided (88 pages) · last amended 23 Nov 2026",
+     "url": "https://atinwix.github.io/esol/_class/print-pack-2026-11-25.pdf"
+    },
+    {
+     "label": "Handout 1 – Practice paper, A Good Ear – one copy · last amended 23 Nov 2026",
+     "url": "https://atinwix.github.io/esol/e3/reading/docs/good-ear-reading-practice-exam.pdf"
+    },
+    {
+     "label": "Day Plan and Answers · last amended 23 Nov 2026",
+     "url": "https://atinwix.github.io/esol/bank/reading/exam-practice-and-papers/learning-languages-good-ear/teacher/good-ear-practice-exam-and-if-unless-advice-texts-day-plan-and-answers.pdf"
+    },
+    {
+     "label": "AM projector page – rules, timer, answers",
+     "url": "https://atinwix.github.io/esol/bank/reading/exam-practice-and-papers/learning-languages-good-ear/student/learning-languages-good-ear-practice-exam-timer-and-answers-projector-page.html"
+    },
+    {
+     "label": "PM projector page – advice texts (learners scan the QR on page 1)",
+     "url": "https://atinwix.github.io/esol/bank/reading/conditionals/first-conditional-if-unless/student/first-conditional-if-unless-advice-texts-classroom-phone-lesson.html"
+    },
+    {
+     "label": "Kahoot import file (20 Qs)",
+     "url": "https://atinwix.github.io/esol/bank/reading/conditionals/first-conditional-if-unless/student/first-conditional-if-unless-and-cause-and-result-kahoot.xlsx"
+    }
+   ],
+   "morning": "Full practice paper A Good Ear (60 minutes, 19 marks, Handout 1), marking with the answer pages, feedback on the most-missed questions",
+   "pack": {
+    "issued": "2026-11-23",
+    "pages": 88,
+    "url": "https://atinwix.github.io/esol/_class/print-pack-2026-11-25.pdf"
+   },
+   "plan": {
+    "am": "AM: Learners sat a full Entry 3 reading practice paper on how a good ear helps language learning (three texts, 19 questions, one hour). They marked a partner's paper with the answers on the projector, added up their scores and went over the questions most of the class got wrong, finding the answers in the texts.",
+    "pm": "PM: Learners made what-will-happen-if chains, then worked on their phones: they joined ideas with if and rewrote sentences with unless, read an advice page and a library notice and answered questions about results, and sorted sentence halves into condition and result. They wrote four sentences of advice in their notebooks and checked a partner's, corrected typical mistakes and finished with a 20-question Kahoot."
+   },
+   "prep": "None beyond printing. Open both projector pages with ?teacher (or press T). PM: put page 1 up as learners arrive so they scan the QR. Nothing to cut out.",
+   "print": "Print the pack once, double-sided (88 pages): the day plan and 21 × Handout 1 (practice paper).",
+   "replaced": [],
+   "scheme": {
+    "focus": "first conditional; if / unless; consequences; problem-solving and advice texts; cause and effect",
+    "note": "AM: the week's full practice paper (exam Mon 7 Dec). PM: Mon 23 Nov PM was skipped, so its advice-texts lesson is carried here, rebuilt for the classroom (Wednesday is not a PC day). Atin reviewed the repeat of Monday's grammar and kept the lesson. The Kahoot is Monday's file (never played).",
+    "wc": "2026-11-23"
+   },
+   "title": "Practice exam (A Good Ear), then if / unless advice texts and results",
+   "amended": "2026-11-23T18:54:24Z"
   },
   "2026-11-26_e2": {
    "afternoon": "PC room: online practice A–C; time words and five sentences in Teams; Task 4a-style listening (weekend plan); mock exam round two with swapped roles (Set B); Kahoot (20 Qs); feedback and exam-day tips",
@@ -1502,14 +1631,7 @@
    "amended": "2026-11-23T07:56:40Z"
   }
  },
- "status": {
-  "2026-11-25_e3": {
-   "at": "2026-11-23T17:10:00Z",
-   "link": "https://claude.ai/artifact/XzFRZdesRARAsUC7dA5QbR",
-   "note": "awaiting Atin's review",
-   "state": "review"
-  }
- },
+ "status": {},
  "health": {
   "checkedAt": "2026-11-23T07:40:50Z",
   "items": [
