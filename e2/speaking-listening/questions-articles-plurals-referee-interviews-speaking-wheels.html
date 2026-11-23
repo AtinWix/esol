@@ -51,6 +51,8 @@ h2{margin:0;font-size:2em;line-height:1.1;text-wrap:balance}
 .slip .play{flex:0 0 auto;width:3em;font-size:1.1em;font-weight:800;background:var(--accent);color:var(--panel);border-color:var(--accent)}
 .slip .play.on{background:var(--red);border-color:var(--red)}
 .playall{align-self:flex-start;font-weight:800}
+/* No individual listening on learner PCs (Atin, 22 Nov 2026): play buttons only in teacher mode */
+body:not(.teacher) .slip .play,body:not(.teacher) .playall{display:none!important}
 .slip .n{font-weight:800;color:var(--muted);min-width:1.6em}
 .slip .hid{color:var(--muted);font-style:italic}
 .slip.done .rev{border-width:3px}
@@ -237,7 +239,7 @@ const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const body=document.body;
 const PHONE=location.hash==="#phone";
 if(PHONE) body.classList.add("phone");
-if(location.hash==="#teacher") body.classList.add("teacher");
+if(location.hash==="#teacher"||/[?&]teacher\b/.test(location.search)) body.classList.add("teacher");
 
 /* ---------- warm-up slips ---------- */
 const SLIPS=[
@@ -516,7 +518,7 @@ function go(n){
 }
 $("#prev").addEventListener("click",()=>go(cur-1));
 $("#next").addEventListener("click",()=>go(cur+1));
-function toggleTeacher(){body.classList.toggle("teacher");$("#tbtn").setAttribute("aria-pressed",body.classList.contains("teacher"));$$(".slip .rev").forEach(b=>b._redraw&&b._redraw())}
+function toggleTeacher(){body.classList.toggle("teacher");if(!body.classList.contains("teacher")){queue=[];stopAll();}$("#tbtn").setAttribute("aria-pressed",body.classList.contains("teacher"));$$(".slip .rev").forEach(b=>b._redraw&&b._redraw())}
 $("#tbtn").addEventListener("click",toggleTeacher);
 addEventListener("keydown",e=>{
   if(e.target.closest("input,textarea")) return;

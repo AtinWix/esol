@@ -76,7 +76,11 @@ footer{border-top:1px solid var(--line);background:var(--surface);padding-block:
 .keys{color:var(--muted);font-size:.6em}
 @media (prefers-reduced-motion:reduce){.clock.end{animation:none}.rv{transition:none}}
 @media (max-width:820px){.split,.g3,.g4{grid-template-columns:1fr}.g2{grid-template-columns:1fr}.side-qr{position:static}.keys,.dots,.phoneqr{display:none}}
-.ord{background:var(--surface);border:2px solid var(--line);border-radius:14px;padding:.5em .8em}.ord .ol{min-height:1.6em;font:700 1em var(--display);border-bottom:3px solid var(--line);margin-bottom:.4em}.ord .ow{display:flex;gap:.4em;flex-wrap:wrap}.ord button{font:700 .8em var(--display);padding:.45em .8em;border-radius:10px;border:2px solid var(--accent);background:var(--accent-soft);color:var(--ink);cursor:pointer;min-height:44px}.ord button:disabled{opacity:.3}.ord .ores{font-weight:700;min-height:1.3em}.ord .ores.ok{color:var(--ok)}.ord .ores.no{color:var(--bad)}.ord .oa{display:flex;gap:.4em;margin-top:.3em}</style></head><body>
+.ord{background:var(--surface);border:2px solid var(--line);border-radius:14px;padding:.5em .8em}.ord .ol{min-height:1.6em;font:700 1em var(--display);border-bottom:3px solid var(--line);margin-bottom:.4em}.ord .ow{display:flex;gap:.4em;flex-wrap:wrap}.ord button{font:700 .8em var(--display);padding:.45em .8em;border-radius:10px;border:2px solid var(--accent);background:var(--accent-soft);color:var(--ink);cursor:pointer;min-height:44px}.ord button:disabled{opacity:.3}.ord .ores{font-weight:700;min-height:1.3em}.ord .ores.ok{color:var(--ok)}.ord .ores.no{color:var(--bad)}.ord .oa{display:flex;gap:.4em;margin-top:.3em}
+/* No individual listening on learner PCs (Atin, 22 Nov 2026): play buttons only in teacher mode */
+body:not(.teacher) [data-play],body:not(.teacher) #hgRead{display:none!important}
+.tmode{min-height:0;padding:.3em .5em;font-size:.6em;opacity:.35;border-color:var(--line);color:var(--muted)}body.teacher .tmode{opacity:1;border-color:var(--accent);color:var(--accent)}
+</style></head><body>
 <div class="app">
 <header class="pad"><div class="hrow"><div class="where"><div class="atin-logo" aria-label="Made by Atin"><svg viewBox="104 28 172 134" width="64" height="50" role="img" aria-hidden="true">
 <text x="139" y="112" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="72" fill="currentColor">A</text>
@@ -93,7 +97,7 @@ footer{border-top:1px solid var(--line);background:var(--surface);padding-block:
 <main class="pad"><div class="stage" id="stage"></div></main>
 <footer class="pad"><div class="frow">
 <div class="fgroup"><button class="btn ghost" id="back" type="button">← Back</button><button class="btn mark" id="show" type="button">Show answer</button><button class="btn ghost" id="snext" type="button" hidden>Next sentence →</button></div>
-<div class="fgroup"><span class="clock" id="clock" hidden>0:00</span><button class="btn ghost" id="tbtn" type="button" hidden>Start timer</button><button class="btn ghost" id="note" type="button">Teacher note</button><span class="keys">Space = next · ← back · A answer · T timer</span></div>
+<div class="fgroup"><span class="clock" id="clock" hidden>0:00</span><button class="btn ghost" id="tbtn" type="button" hidden>Start timer</button><button class="btn ghost" id="note" type="button">Teacher note</button><button class="btn ghost tmode" id="tmode" type="button" title="Teacher mode (M)" aria-pressed="false">T</button><span class="keys">Space = next · ← back · A answer · T timer</span></div>
 <div class="fgroup"><button class="btn" id="next" type="button">Next →</button></div>
 </div></footer></div>
 <div class="timeup" id="timeup" hidden><span>Time's up!</span></div>
@@ -148,7 +152,7 @@ function wire(){wireOrder();$('stage').querySelectorAll('[data-play]').forEach(b
 $('next').onclick=()=>go(i+1);$('back').onclick=()=>go(i-1);$('show').onclick=reveal;$('tbtn').onclick=timer;
 $('snext').onclick=()=>{const st=S[i].steps;if(st&&si<st.length-1){si++;showStep();}};
 $('note').onclick=()=>{const n=$('tn');if(n)n.hidden=!n.hidden;};
-document.addEventListener('keydown',e=>{if(e.target.closest('input,textarea,button'))return;if(e.key===' '||e.key==='ArrowRight'||e.key==='PageDown'){e.preventDefault();go(i+1);}else if(e.key==='ArrowLeft'||e.key==='PageUp')go(i-1);else if(e.key==='t'||e.key==='T'){if(S[i].timer)timer();}else if(e.key==='a'||e.key==='A'){if(S[i].reveal)reveal();}});
+function setT(t){document.body.classList.toggle('teacher',t);$('tmode').setAttribute('aria-pressed',t);if(!t)stopAudio();} if(/[?&]teacher\b/.test(location.search)||location.hash==='#teacher')setT(true); $('tmode').onclick=()=>setT(!document.body.classList.contains('teacher')); document.addEventListener('keydown',e=>{if(e.target.closest('input,textarea,button'))return;if(e.key==='m'||e.key==='M'){setT(!document.body.classList.contains('teacher'));return;}if(e.key===' '||e.key==='ArrowRight'||e.key==='PageDown'){e.preventDefault();go(i+1);}else if(e.key==='ArrowLeft'||e.key==='PageUp')go(i-1);else if(e.key==='t'||e.key==='T'){if(S[i].timer)timer();}else if(e.key==='a'||e.key==='A'){if(S[i].reveal)reveal();}});
 if('speechSynthesis' in window)speechSynthesis.getVoices();
 qrs(document.querySelector('header'));go(0);})();
 </script>
