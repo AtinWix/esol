@@ -143,7 +143,7 @@ header{display:flex;justify-content:space-between;align-items:flex-start;gap:12p
     if(x.prep)c.append(el("div","prep","Prep: "+x.prep));
     var K=x.kahoot||{};
     var kx=K.xlsx?{url:K.xlsx}:(x.links||[]).filter(function(k){return k&&/kahoot/i.test(k.label||"")&&/\.xlsx$/i.test(k.url||"")})[0];
-    var klive=K.status?K.status==="ready":(x.links||[]).some(function(k){return k&&/ready to play/i.test(k.label||"")});
+    var klive=K.status?(K.status==="ready"||K.status==="not needed"):(x.links||[]).some(function(k){return k&&/ready to play/i.test(k.label||"")});
     if(Array.isArray(x.todo))x.todo.forEach(function(t){if(t&&!(kx&&/kahoot/i.test(t)))c.append(el("div","prep","To do: "+t))});
     if(kx&&!klive&&x.date>=today){
       var fname=kx.url.split("/").pop(), ktitle=(x.cls||"")+" – "+(x.title||"Kahoot");
@@ -153,7 +153,7 @@ header{display:flex;justify-content:space-between;align-items:flex-start;gap:12p
       var kset=function(v){try{if(v)localStorage.setItem(kkey,"1");else localStorage.removeItem(kkey)}catch(_){}};
       var kb=el("div","kbox"), kdone=el("div","prep");
       var kundo=el("label");kundo.style.cursor="pointer";
-      var kuc=el("input");kuc.type="checkbox";kuc.checked=true;kundo.append(kuc,document.createTextNode(" Kahoot made ✓"));kdone.append(kundo);
+      var kuc=el("input");kuc.type="checkbox";kuc.checked=true;kundo.append(kuc,document.createTextNode(" Kahoot made ✓"));kdone.append(kundo);kdone.append(el("div",null,"Saved on this computer. Other devices clear it at the next sync."));kdone.lastChild.style.cssText="font-weight:normal;font-size:.85rem";
       var kshow=function(){var m=kget();kb.style.display=m?"none":"";kdone.style.display=m?"":"none"};
       kb.append(el("b",null,"Kahoot: not yet in Kahoot."+(K.note?" ("+K.note+")":"")));
       kb.append(el("p",null,"To do it (1 minute): download the file below → Kahoot → Add question → Import → Import spreadsheet → pick the file."));
@@ -167,7 +167,11 @@ header{display:flex;justify-content:space-between;align-items:flex-start;gap:12p
       var kl=el("label");kl.style.cssText="display:block;margin-top:10px;font-weight:bold;cursor:pointer";
       var kc=el("input");kc.type="checkbox";kc.style.cssText="width:20px;height:20px;vertical-align:middle;margin-right:6px";
       kl.append(kc,document.createTextNode("I've made this Kahoot"));kb.append(kl);
-      kc.onchange=function(){if(kc.checked){kset(true);kshow()}};
+      var kid=x.id||(x.date+"_"+((/^E([123])/i.exec(x.cls||"")||[])[1]?"e"+/^E([123])/i.exec(x.cls)[1]:""));
+      var kart="https://claude.ai/artifact/Ko1Xu9t4cmaH4Hc9kYWa4q#kahoot-"+kid.replace("_","-");
+      kl.append(el("div",null,"Ticking it saves it for good: it opens your Claude Hub in a new tab, which marks the card as made."));
+      kl.lastChild.style.cssText="font-weight:normal;font-size:.85rem;margin-top:2px";
+      kc.onchange=function(){if(kc.checked){kset(true);kshow();try{var w=window.open(kart,"_blank","noopener");if(!w)location.href=kart}catch(_){location.href=kart}}};
       kuc.onchange=function(){if(!kuc.checked){kset(false);kc.checked=false;kshow()}};
       c.append(kb);c.append(kdone);kshow()}
     var LK=(x.links||[]).slice();
