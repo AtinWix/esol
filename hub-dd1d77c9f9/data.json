@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-22T22:10:38Z",
+ "updatedAt": "2026-11-23T07:41:05Z",
  "upcoming": {
   "2026-11-02_e3": {
    "afternoon": "PC room: Too Cold to Learn – complaint emails",
@@ -969,6 +969,7 @@
    "cls": "E3 Reading",
    "created": "2026-11-20",
    "date": "2026-11-23",
+   "flags": [],
    "items": [
     {
      "id": "am1",
@@ -1123,8 +1124,7 @@
     "note": "Carry-over from Wed 18 Nov, which was logged as not taught: the Saturday market letters jigsaw (Handouts 3A, 3B and 4) opens the AM lesson. The Set L paper was already sat on Mon 16 Nov and the linking-words sentence task repeats Mon 16 PM, so neither is repeated. This week's full practice paper is planned for Wed 25 Nov. The Kahoot is new, on this week's content.",
     "wc": "2026-11-23"
    },
-   "title": "First conditional (if / unless) with opinion letters, then advice texts and results",
-   "flags": []
+   "title": "First conditional (if / unless) with opinion letters, then advice texts and results"
   },
   "2026-11-24_e1": {
    "afternoon": "PC room: Task 3 recap; plan a Task 2 talk; the whole exam in pairs (Tasks 1–4, candidate and assessor, two rounds); True/False feedback on what is still difficult",
@@ -1227,9 +1227,9 @@
     }
    ],
    "kahoot": {
+    "details": "https://create.kahoot.it/details/e1-speaking-listening-task-4-short-conversations-task-1-questions-tasks-14-run-through/aed3db51-8866-43b6-a82d-3933a6414c7d",
     "status": "ready",
-    "xlsx": "https://atinwix.github.io/esol/bank/speaking-listening/esb-speaking-tasks/task4-task1-exam-mock/student/task4-and-task1-skills-kahoot.xlsx",
-    "details": "https://create.kahoot.it/details/e1-speaking-listening-task-4-short-conversations-task-1-questions-tasks-14-run-through/aed3db51-8866-43b6-a82d-3933a6414c7d"
+    "xlsx": "https://atinwix.github.io/esol/bank/speaking-listening/esb-speaking-tasks/task4-task1-exam-mock/student/task4-and-task1-skills-kahoot.xlsx"
    },
    "lastAmended": "2026-11-20",
    "lastAmendedNote": "built 20 Nov after the 17 Nov log",
@@ -1405,9 +1405,9 @@
     }
    ],
    "kahoot": {
+    "details": "https://create.kahoot.it/details/e2-speaking-listening-finish-task-4-4a-and-4b-then-future-plans-going-to-and-will/a0d14941-b878-4321-aed9-6518156542ed",
     "status": "ready",
-    "xlsx": "https://atinwix.github.io/esol/bank/speaking-listening/esb-speaking-tasks/mock-exam-tasks-1-4/student/going-to-will-and-exam-skills-kahoot.xlsx",
-    "details": "https://create.kahoot.it/details/e2-speaking-listening-finish-task-4-4a-and-4b-then-future-plans-going-to-and-will/a0d14941-b878-4321-aed9-6518156542ed"
+    "xlsx": "https://atinwix.github.io/esol/bank/speaking-listening/esb-speaking-tasks/mock-exam-tasks-1-4/student/going-to-will-and-exam-skills-kahoot.xlsx"
    },
    "lastAmended": "2026-11-22",
    "lastAmendedNote": "PIN in the day plan, card and page now 0000 (the day plan said 7351); day plan and print pack re-made",
@@ -1484,9 +1484,38 @@
     "wc": "2026-11-23"
    },
    "title": "Going to and will, Task 4, then a full mock exam of Tasks 1–4 (two rounds)",
-   "amended": "2026-11-22T21:56:22Z"
+   "amended": "2026-11-22T22:10:40Z"
   }
  },
  "status": {},
- "health": null
+ "health": {
+  "ok": false,
+  "checkedAt": "2026-11-23T07:40:50Z",
+  "items": [
+   {
+    "ok": true,
+    "text": "Mon 23 E3, Tue 24 E1 and Thu 26 E2 are built with no flags. Wed 25 E3 correctly waits for the Mon 23 log."
+   },
+   {
+    "ok": true,
+    "text": "Logged lessons 16-19 Nov all have ROW snippets, Covered/Next and 'As taught'. --past check on 16-19 Nov cards: no faults."
+   },
+   {
+    "ok": true,
+    "text": "Kahoots: Tue 24 E1 and Thu 26 E2 ready. Mon 23 E3 is 'not yet in Kahoot' (import file on the card)."
+   },
+   {
+    "ok": false,
+    "text": "One Lesson Log fix is new: no individual listening on learner PCs (22 Nov). Needs a chat with GitHub: add the rule to runbook A §4 and §7, and hide play buttons on the E1 exam-mock PC page and E2 Referee Interviews page."
+   },
+   {
+    "ok": true,
+    "text": "No public material is also a Claude artifact; no id/claude fields in esol.json or docs.json. Filing Inbox has nothing pending."
+   },
+   {
+    "ok": true,
+    "text": "ESOL tasks last succeeded (file and sync, build next lesson). Daily check ran this morning. Weekly build and other retired tasks are off. Note: file and sync is scheduled only at 3:20pm, not 8:20/12:20/3:20 as the runbook says."
+   }
+  ]
+ }
 }
