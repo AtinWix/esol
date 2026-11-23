@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-23T10:40:02Z",
+ "updatedAt": "2026-11-23T11:13:53Z",
  "upcoming": {
   "2026-11-02_e3": {
    "afternoon": "PC room: Too Cold to Learn – complaint emails",
@@ -965,7 +965,7 @@
   },
   "2026-11-23_e3": {
    "afternoon": "PC room, one page on projector and PCs: a what-will-happen-if chain; join with if and rewrite with unless; read an advice page and a library notice and answer questions on results; condition or result; advice in Teams; find the mistake; Kahoot (20 questions)",
-   "amended": "2026-11-23T10:39:45Z",
+   "amended": "2026-11-23T11:12:48Z",
    "cls": "E3 Reading",
    "created": "2026-11-20",
    "date": "2026-11-23",
@@ -976,7 +976,7 @@
     },
     {
      "code": "reprint",
-     "text": "Only the teacher's day plan changed in the print pack (AM page numbers; new page 5 for the Handout 4 check). Handouts are unchanged – reprint the 5-page day plan only, if you need it."
+     "text": "Only the teacher's day plan changed in the print pack (new AM page 5; Tasks E and F now done on phones first). Handouts are unchanged – reprint the 5-page day plan only, if you need it."
     }
    ],
    "items": [
@@ -1007,7 +1007,7 @@
     {
      "id": "am5",
      "lesson": 1,
-     "text": "AM pages 8–9 – Tasks E and F – choose the form; if or unless?",
+     "text": "AM pages 8–9 – Tasks E and F – choose the form; if or unless? (alone on phones via QR, then class check)",
      "url": "https://atinwix.github.io/esol/bank/reading/conditionals/first-conditional-if-unless/student/first-conditional-if-unless-with-market-letters-projector-lesson.html"
     },
     {
@@ -1072,7 +1072,7 @@
     "xlsx": "https://atinwix.github.io/esol/bank/reading/conditionals/first-conditional-if-unless/student/first-conditional-if-unless-and-cause-and-result-kahoot.xlsx"
    },
    "lastAmended": "2026-11-23",
-   "lastAmendedNote": "AM projector page 5 added: whole-class check of Handout 4 Task C (the table and four sentences, one answer per click); later AM pages renumbered 6–11; day plan and print pack re-made (only the day plan changed). Earlier today: PM Tasks B and D questions paraphrased; one label per activity.",
+   "lastAmendedNote": "Tasks E and F (AM pages 8–9) now also on learners' phones: QR on each page opens a self-marking phone page; learners do all 8 alone, then the class check. Day plan and print pack re-made (only the day plan changed). Earlier today: AM page 5 added for the Handout 4 Task C check; PM Tasks B and D questions paraphrased; one label per activity.",
    "links": [
     {
      "label": "Print pack – print once, double-sided (132 pages) · last amended 23 Nov 2026",
@@ -1105,6 +1105,10 @@
     {
      "label": "AM phone page – private answer check for Letters A and B (QR on projector page 2)",
      "url": "https://atinwix.github.io/esol/bank/reading/conditionals/first-conditional-if-unless/student/first-conditional-if-unless-market-letters-answer-check-phone-activity.html"
+    },
+    {
+     "label": "AM phone page – Tasks E and F on your own (QR on projector pages 8–9)",
+     "url": "https://atinwix.github.io/esol/bank/reading/conditionals/first-conditional-if-unless/student/first-conditional-if-unless-choose-the-form-and-if-or-unless-phone-practice.html"
     },
     {
      "label": "PM lesson page – projector and PCs (8 pages; post in Teams; learners' page codes and teacher PIN in the day plan)",
