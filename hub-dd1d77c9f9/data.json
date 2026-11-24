@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-24T07:40:57Z",
+ "updatedAt": "2026-11-24T16:15:06Z",
  "upcoming": {
   "2026-11-02_e3": {
    "afternoon": "PC room: Too Cold to Learn – complaint emails",
@@ -1631,7 +1631,14 @@
    "amended": "2026-11-23T07:56:40Z"
   }
  },
- "status": {},
+ "status": {
+  "2026-12-01_e1": {
+   "at": "2026-11-24T17:10:00Z",
+   "link": "https://claude.ai/artifact/5mivShJDJ1mS7z6NcjH94D",
+   "note": "awaiting Atin's review",
+   "state": "review"
+  }
+ },
  "health": {
   "checkedAt": "2026-11-24T07:45:00Z",
   "items": [
