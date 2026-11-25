@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>E3 Reading – Passive Voice: How Things Are Made – Projector and PC Lesson</title>
+<style>
+:root{--bg:#fff;--ink:#1d2433;--muted:#5b6474;--board:#e6f5e6;--boardline:#7cc47c;--accent:#1f5fbf;--good:#1a7f37;--bad:#cf222e;--card:#f4f6fa;--hl:#fff3b0}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Verdana,Arial,Helvetica,sans-serif;font-size:clamp(15px,1.45vw,25px);line-height:1.35}
+header{display:flex;align-items:center;gap:12px;padding:6px 16px;border-bottom:2px solid #dde3ec}
+header .t{font-weight:700;flex:1;font-size:.72em;min-width:0}
+@media(max-width:700px){header .t{display:none}}
+nav{display:flex;align-items:center;gap:8px}
+button{font:inherit;font-size:.8em;padding:.4em .9em;border-radius:10px;border:2px solid var(--accent);background:#fff;color:var(--accent);cursor:pointer}
+button.p{background:var(--accent);color:#fff}
+button:disabled{opacity:.4;cursor:default}
+#pn{font-weight:700;min-width:6.5em;text-align:center;font-size:.8em}
+.tt{display:none;align-items:center;gap:6px;font-size:.7em;font-variant-numeric:tabular-nums}
+body.teacher .tt{display:flex}
+.tt b{min-width:3.2em;text-align:right}.tt.low b{color:var(--bad)}
+main{padding:8px 16px 30px;max-width:1700px;margin:0 auto}
+.page{display:none;border-radius:16px;padding:12px 20px 14px;position:relative}
+.page.on{display:block}
+.page.board{background:var(--board);border:3px solid var(--boardline)}
+.page>.label{float:right;margin:.35em 0 0 .6em}
+.label{display:inline-block;background:#2f7d32;color:#fff;font-weight:700;font-size:.62em;padding:.2em .7em;border-radius:8px;margin-bottom:4px}
+.label.stu{background:var(--accent)}
+h1{font-size:1.45em;margin:.1em 0 .3em}
+h2{font-size:1.1em;margin:.3em 0}
+p{margin:.35em 0}
+.look{display:none;position:absolute;right:14px;bottom:3px;font-size:9px;color:#555}
+body.teacher .look{display:block}
+.tnb{display:none;font-size:11px;padding:.15em .6em;margin-top:6px}
+body.teacher .tnb{display:inline-block}
+.tn{display:none;font-size:11px;line-height:1.4;color:#333;background:#fffbe6;border:1px dashed #c9a400;padding:6px 9px;margin-top:6px;border-radius:6px}
+.tn.open{display:block}
+body:not(.teacher) .tn{display:none!important}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.g46{display:grid;grid-template-columns:5fr 6fr;gap:16px}
+@media(max-width:900px){.grid2,.grid3,.g46{grid-template-columns:1fr}}
+.card{background:var(--card);border-radius:12px;padding:10px 14px}
+.board .card{background:#fff}
+table.w{border-collapse:collapse;width:100%;font-size:.9em;background:#fff}
+table.w td,table.w th{border:2px solid #9ab;padding:.3em .55em;text-align:left;vertical-align:top}
+table.w th{background:#dfe9f5}
+.ans{visibility:hidden;color:var(--good);font-weight:700}
+.ans.show{visibility:visible}
+ol.q{margin:.2em 0;padding-left:1.5em}
+ol.q li{margin:.28em 0}
+.timer{font-size:5.2em;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.05}
+.timer.low{color:var(--bad)}
+.lookboard{display:none;text-align:center;padding:14vh 0}
+.lookboard .big{font-size:2.2em}
+body.student .page.board .content{display:none}
+body.student .page.board .lookboard{display:block}
+.tonly{display:none}body.teacher .tonly{display:inline-block}
+.page:not(.board){font-size:.9em}
+.item{padding:.22em 0;border-bottom:1px solid #e3e7ee;display:flex;flex-wrap:wrap;align-items:center;gap:.15em .45em;break-inside:avoid}
+.task.cols{display:grid;grid-template-columns:1fr 1fr;column-gap:26px;align-items:start}
+.task.cols>p{grid-column:1/-1}
+.mcq .item{align-items:baseline;row-gap:.1em}
+.mcq .item .n{flex:0 0 auto}
+.mcq .item .s{flex:1 1 calc(100% - 2.4em)}
+.mcq .item>span:last-child{padding-left:1.95em}
+.mcq .opt{font-size:.8em;padding:.05em .5em}
+.mcq .item{padding:.12em 0}
+.txt.two{font-size:.86em;line-height:1.33;padding:6px 12px}
+.txt.two p{margin:.25em 0}
+.txt.two h2{margin:0 0 .2em;font-size:1.05em}
+header .atin-logo{position:static;border:0;padding:0;background:none;line-height:0}
+header .atin-logo svg{width:52px;height:40px}
+.txt.two{column-count:2;column-gap:26px}
+.txt.two h2{column-span:all}
+@media(max-width:900px){.task.cols{grid-template-columns:1fr}.txt.two{column-count:1}}
+.item .n{font-weight:700;min-width:1.6em}
+.item .s{flex:1 1 20em;min-width:0}
+.opt{display:inline-block;padding:.18em .7em;border:2px solid #9ab;border-radius:10px;background:#fff;cursor:pointer;user-select:none;font-size:.9em}
+.opt.ok{background:#dafbe1;border-color:var(--good);font-weight:700}
+.opt.no{background:#ffebe9;border-color:var(--bad)}
+.item.done .opt{pointer-events:none}
+.gap{display:inline-block;min-width:5em;border-bottom:3px solid var(--accent);text-align:center;font-weight:700;color:var(--good)}
+input[type=text],textarea{font:inherit;font-size:.9em;padding:.25em .5em;border:2px solid #9ab;border-radius:8px;width:100%}
+.fb{font-weight:700;font-size:.85em}.fb.ok{color:var(--good)}.fb.no{color:var(--bad)}
+.score{font-weight:700;color:var(--accent);font-size:.85em}
+.small{font-size:.72em;color:var(--muted)}
+a.btn{display:inline-block;text-decoration:none;font-weight:700;padding:.4em 1em;border-radius:10px;background:var(--accent);color:#fff;font-size:.85em}
+.txt{line-height:1.5;font-size:.95em}
+.txt p{margin:.4em 0}
+.kw{background:var(--hl);font-weight:700;padding:0 .15em;border-radius:4px}
+.steps{font-size:1.35em;line-height:1.5;margin:.2em 0;padding-left:1.3em}
+.mark{background:var(--hl);font-weight:700}
+.foot{position:fixed;right:10px;bottom:6px;font-size:10px}
+.foot a{color:var(--muted)}
+body.student .foot{display:none}
+
+.ef{border-color:#8a5a00;color:#8a5a00;font-size:.72em}
+.tn .pin{background:#ffe08a;padding:0 .3em;border-radius:3px}
+#lockbox,#efbox{position:fixed;inset:0;background:rgba(20,30,50,.55);display:none;align-items:center;justify-content:center;z-index:50;padding:16px}
+#lockbox.on,#efbox.on{display:flex}
+#lockbox .in{background:#fff;border-radius:16px;padding:18px 22px;max-width:30em;width:100%;text-align:center}
+#lockbox input{font-size:1.4em;text-align:center;letter-spacing:.3em;max-width:7em;margin:.3em 0}
+#efbox .in{background:#fff;border-radius:16px;padding:12px 16px;max-width:1100px;width:100%;max-height:96vh;overflow:auto}
+.ws{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-start}
+.wsg{display:grid;grid-template-columns:repeat(13,1fr);gap:2px;width:min(92vw,60vh,560px);user-select:none;touch-action:manipulation}
+.wsg span{aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:clamp(12px,2.6vmin,22px);background:#f4f6fa;border-radius:4px;cursor:pointer}
+.wsg span.sel{background:#ffe08a}.wsg span.got{background:#c8f0d0}
+.wsl{columns:2;font-size:.85em;min-width:14em}.wsl li{list-style:none;margin:.1em 0}.wsl li.got{text-decoration:line-through;color:var(--good)}
+.lw{background:var(--hl);font-weight:700;padding:0 .1em;border-radius:3px}
+</style>
+</head>
+<body data-default="student">
+<header>
+  <div class="atin-logo" aria-label="Made by Atin">
+<svg viewBox="104 28 172 134" width="64" height="50" role="img" aria-hidden="true">
+<text x="139" y="112" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-weight="700" font-size="72" fill="currentColor">A</text>
+<rect x="177" y="83" width="24" height="6" rx="1" fill="currentColor"/>
+<path d="M216 66 L216 106 A25 7 0 0 0 266 106 L266 66" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+<ellipse cx="241" cy="66" rx="25" ry="7" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="216" y1="80" x2="266" y2="80" stroke="currentColor" stroke-width="1.5"/>
+<line x1="216" y1="94" x2="266" y2="94" stroke="currentColor" stroke-width="1.5"/>
+<ellipse cx="241" cy="47" rx="23" ry="5" fill="none" stroke="currentColor" stroke-width="3"/>
+<line x1="114" y1="128" x2="266" y2="128" stroke="currentColor" stroke-width="1"/>
+<text x="190" y="152" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="18" letter-spacing="2" fill="currentColor">made by Atin</text>
+</svg>
+</div>
+<style>
+.atin-logo{position:fixed;left:calc(6px + env(safe-area-inset-left,0px));bottom:calc(6px + env(safe-area-inset-bottom,0px));z-index:2147483000;pointer-events:none;color:#1F3A5F;background:rgba(255,255,255,.92);border:1px solid #C9D3DF;border-radius:8px;padding:3px 5px;line-height:0}
+.atin-logo svg{display:block}
+@media print{.atin-logo{position:fixed;left:auto;right:6mm;bottom:5mm;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+</style>
+
+  <div class="t">E3 Reading – Passive voice · processes · instructions</div>
+  <div class="tt" id="tt"><span>⏱</span><b>0:00</b><button type="button">Start</button></div>
+  <button id="ef" type="button" class="ef">★ Early finishers</button>
+  <nav><button id="prev" type="button" aria-label="Previous page">◀</button><span id="pn"></span><button id="next" class="p" type="button" aria-label="Next page">▶</button></nav>
+</header>
+<main>
+<section class="page board" data-look="Learners: the projector, then their partner" data-min="10">
+ <span class="label">WHOLE CLASS – eyes on the board</span>
+ <div class="content">
+  <h1>Warm-up · How is a cup of tea made?</h1>
+  <div class="grid2">
+   <div class="card"><h2>Active</h2><p>A person <b>makes</b> tea.</p><p>The baker <b>makes</b> the bread.</p><p>Someone <b>delivers</b> the letters.</p></div>
+   <div class="card"><h2>Passive</h2><p>Tea <b>is made</b>.</p><p>The bread <b>is made</b> by the baker.</p><p>The letters <b>are delivered</b>.</p></div>
+  </div>
+  <div class="card" style="margin-top:.6em;font-size:1.05em"><p><b>is / are + a past participle</b> (made, delivered, cleaned) for now · <b>was / were + a past participle</b> for the past</p><p>Tell your partner how tea is made. Use: <span class="kw">First</span> · <span class="kw">Next</span> · <span class="kw">Then</span> · <span class="kw">Finally</span><br><span class="small">the water is boiled · the tea bag is put in a cup · the water is poured · the tea bag is taken out</span></p></div>
+  <button type="button" class="tnb">Teacher note</button><div class="tn">BEFORE: post this page’s link in Teams General and log the PCs in. SAY: “Log in. While we wait, look at the board. In the left box a person does the action. In the right box we do not say who. We say what happens to the thing: Tea is made.” POINT: is / are + made, delivered. ASK: “What is the same in the right box?” (is or are, then a word like made). SAY: “How is a cup of tea made? Tell your partner. Start with First. The water is boiled …” MODEL the first two steps. DO: pairs say the whole process (4 minutes); hear two pairs. Late arrivals join a pair. Learners look at: the projector, then their partner. 10 minutes.</div>
+ </div>
+ <div class="lookboard"><p class="big">👀 Look at the board</p><p>Page <span class="num"></span></p></div>
+</section>
+<section class="page" data-look="Students: their own PC, this page (Task A)" data-min="12">
+ <span class="label stu">ON YOUR PC – work on this page</span>
+ <div class="content">
+  <h1>Task A · Choose the correct form</h1>
+  <p>Click the correct words. Items 1–5 are <b>now</b> (is / are + past participle). Items 6–10 are the <b>past</b> (was / were + past participle). Your point counts only if your first click is right.</p>
+  <div class="task cols"><script type="application/json">{"type": "choose", "items": [{"s": "Bread ___ in a bakery every morning.", "o": ["makes", "is made", "are made"], "c": 1}, {"s": "Letters ___ to our homes every day.", "o": ["are delivered", "is delivered", "deliver"], "c": 0}, {"s": "The classroom ___ every evening.", "o": ["cleans", "are cleaned", "is cleaned"], "c": 2}, {"s": "English ___ in many countries.", "o": ["is spoken", "speaks", "are spoken"], "c": 0}, {"s": "Tickets ___ at the station.", "o": ["is sold", "sold", "are sold"], "c": 2}, {"s": "The windows ___ yesterday.", "o": ["was cleaned", "were cleaned", "cleaned"], "c": 1}, {"s": "A wallet ___ in the park last week.", "o": ["were found", "found", "was found"], "c": 2}, {"s": "The letters ___ last Friday.", "o": ["were posted", "was posted", "posted"], "c": 0}, {"s": "This photo ___ in Hackney last year.", "o": ["were taken", "was taken", "took"], "c": 1}, {"s": "The exam papers ___ at ten o’clock.", "o": ["was collected", "collected", "were collected"], "c": 2}]}</script></div>
+  <button type="button" class="tnb">Teacher note</button><div class="tn"><b class="pin">Learners’ code for page 2: 0000</b> – say it or write it on the board when the class moves on. SAY: “Go to page 2 on your computer. Task A. Click the correct words. Numbers 1 to 5 are now. Numbers 6 to 10 are the past. Think before you click: your point counts only if your first click is right. 12 minutes.” MODEL number 1: “Bread … in a bakery. Bread does not make itself – so passive: is made.” DO: walk round; look for ‘is make’, ‘was’ with a plural noun, and a missing is/are. ASK: “Singular or plural? Now or past?” CHECK: Show next answer, one per click; a learner reads the full sentence. Answers: 1 is made 2 are delivered 3 is cleaned 4 is spoken 5 are sold 6 were cleaned 7 was found 8 were posted 9 was taken 10 were collected. Learners look at: page 2 on their own PC.</div>
+ </div>
+ 
+</section>
+<section class="page" data-look="Students: their own PC, this page (Task B)" data-min="20">
+ <span class="label stu">ON YOUR PC – work on this page</span>
+ <div class="content">
+<h1>Task B · Read the process and answer <span class="small">– the point counts only if your first click is right</span></h1><p class="small"><b>The questions and answers use different words from the text.</b> Find the part of the text with the same meaning.</p><div class="card txt two"><h2>How bread is made at the Broadway Bakery</h2>
+<p><b>1</b> Every morning at 4 o’clock, the bakers start work. First, flour, water, salt and yeast are put into a big machine, and the mixture is mixed for ten minutes. The mixture is called dough.</p>
+<p><b>2</b> Next, the dough is left in a warm place for one hour. During this time, it rises and becomes much bigger.</p>
+<p><b>3</b> After that, the dough is cut into pieces, and each piece is shaped by hand. The shaped pieces are placed in metal tins.</p>
+<p><b>4</b> Then the tins are put into a very hot oven. The bread is baked for about thirty minutes, until it is brown.</p>
+<p><b>5</b> Finally, the bread is taken out of the oven and left to cool. At 7 o’clock it is delivered to cafés and shops in Hackney by bicycle, so customers can buy it fresh.</p></div><div class="task mcq"><script type="application/json">{"type": "mcq", "items": [{"q": "What is the text mainly about?", "o": ["the steps for making bread in a bakery", "the best bakeries in Hackney", "how to start your own bakery"], "c": 0}, {"q": "What goes into the machine at the beginning?", "o": ["flour, water, salt and yeast", "flour, sugar, eggs and milk", "dough, water, salt and oil"], "c": 0}, {"q": "How long is the dough left in a warm place?", "o": ["about thirty minutes", "about sixty minutes", "about ten minutes"], "c": 1}, {"q": "What happens to the dough in the warm place?", "o": ["It gets hotter.", "It is cut into pieces.", "It gets bigger."], "c": 2}, {"q": "What is done to the pieces of dough after they are cut?", "o": ["They are mixed in a machine.", "They are shaped by hand.", "They are baked."], "c": 1}, {"q": "Which step comes just before the bread is baked?", "o": ["The tins are put into the oven.", "The bread is delivered.", "The dough is mixed in a machine."], "c": 0}, {"q": "When is the bread ready to come out of the oven?", "o": ["when it is cold", "when it is brown", "when it is bigger"], "c": 1}, {"q": "How does the bread travel to the cafés and shops?", "o": ["by van", "by bus", "by bicycle"], "c": 2}]}</script></div>
+  <button type="button" class="tnb">Teacher note</button><div class="tn"><b class="pin">Learners’ code for page 3: 0000</b> – say it or write it on the board when the class moves on. SAY: “Page 3. First read the title and the first word of each paragraph – First, Next, After that, Then, Finally. Then read the whole text once. Then answer the eight questions. The words in the questions are different from the words in the text. 20 minutes.” DO: do not explain words yet; ‘dough’ is explained in paragraph 1 and ‘rises’ in paragraph 2. Fast finishers: find all the passive verbs (is mixed, are put …) and write them in a notebook. CHECK: Show next answer one per click; for each, a learner reads the words in the text that prove it. Answers: 1 the steps for making bread in a bakery 2 flour, water, salt and yeast 3 about sixty minutes 4 It gets bigger. 5 They are shaped by hand. 6 The tins are put into the oven. 7 when it is brown 8 by bicycle. Learners look at: page 3 on their own PC.</div>
+ </div>
+ 
+</section>
+<section class="page" data-look="Students: their own PC, this page (Task C)" data-min="10">
+ <span class="label stu">ON YOUR PC – work on this page</span>
+ <div class="content">
+<h1>Task C · Active or passive?</h1><p>In an <b>active</b> sentence the person or thing that does the action comes first. In a <b>passive</b> sentence the action happens <i>to</i> the thing: <b>is / are / was / were + past participle</b>. Click the answer. Exam skill: recognising passives.</p><div class="task cols"><script type="application/json">{"type": "sort", "items": [{"s": "The baker makes the bread.", "c": 0}, {"s": "The bread is made every day.", "c": 1}, {"s": "The oven is turned on at five o’clock.", "c": 1}, {"s": "The driver delivers the boxes.", "c": 0}, {"s": "The boxes are delivered by bicycle.", "c": 1}, {"s": "The teacher marked the tests.", "c": 0}, {"s": "The tests were marked on Friday.", "c": 1}, {"s": "We cleaned the room.", "c": 0}, {"s": "The room was cleaned by the students.", "c": 1}, {"s": "The students wrote the letters.", "c": 0}], "opts": ["Active", "Passive"]}</script></div>
+  <button type="button" class="tnb">Teacher note</button><div class="tn"><b class="pin">Learners’ code for page 4: 0000</b> – say it or write it on the board when the class moves on. SAY: “Page 4. Is the sentence active or passive? Look for is, are, was or were and a past participle.” MODEL number 1: “The baker makes the bread. The baker does the action – active.” DO: pairs may talk. CHECK: Show next answer one per click; ASK: “What are the two parts of the passive?” (be + past participle). For each passive ask: “Who did it?” – not always said. Answers: 1 active 2 passive 3 passive 4 active 5 passive 6 active 7 passive 8 active 9 passive 10 active. Learners look at: page 4 on their own PC.</div>
+ </div>
+ 
+</section>
+<section class="page" data-look="Students: their own PC, this page (Task D)" data-min="15">
+ <span class="label stu">ON YOUR PC – work on this page</span>
+ <div class="content">
+<h1>Task D · Read the instructions and answer <span class="small">– the point counts only if your first click is right</span></h1><p class="small">Instructions are in order: step 1, step 2, step 3 … Read them in the same order, and look at the words <b>before</b>, <b>then</b> and <b>after</b>.</p><div class="card txt two"><h2>Renew your library book online</h2>
+<p><b>Before you start</b> you need your library card number and your PIN.</p>
+<p><b>1</b> Go to the library website and click “My account”.</p>
+<p><b>2</b> Type your card number and your PIN. Then click “Log in”.</p>
+<p><b>3</b> Click “My loans”. A list of your books is shown.</p>
+<p><b>4</b> Tick the book you want to keep. Then click “Renew”.</p>
+<p><b>5</b> An email is sent to you. It shows the new date for returning the book. Keep it.</p>
+<p><b>Notes</b> A book can be renewed up to three times. A book cannot be renewed if another reader has asked for it. A small charge is made for late books.</p></div><div class="task mcq"><script type="application/json">{"type": "mcq", "items": [{"q": "Which two things must you have ready before you start?", "o": ["your email and your address", "your card number and your PIN", "your PIN and your passport"], "c": 1}, {"q": "Which button do you click first?", "o": ["My loans", "Renew", "My account"], "c": 2}, {"q": "What do you do after you type your card number and PIN?", "o": ["click “Log in”", "tick a book", "click “Renew”"], "c": 0}, {"q": "What is shown on the “My loans” page?", "o": ["a message from the library", "a list of your books", "your card number and PIN"], "c": 1}, {"q": "What must you do before you click “Renew”?", "o": ["send an email to the library", "type your PIN again", "tick the book you want to keep"], "c": 2}, {"q": "What does the email show?", "o": ["the new date for returning the book", "the cost of the book", "the name of the library"], "c": 0}, {"q": "How many times can a book be renewed?", "o": ["only once", "up to three times", "as many times as you like"], "c": 1}, {"q": "In which case can a book not be renewed?", "o": ["Another reader has asked for it.", "It is a new book.", "It is already late."], "c": 0}]}</script></div>
+  <button type="button" class="tnb">Teacher note</button><div class="tn"><b class="pin">Learners’ code for page 5: 0000</b> – say it or write it on the board when the class moves on. SAY: “Page 5. This is a notice from a library: instructions. Read the steps in order. Then answer the eight questions. 15 minutes.” DO: ‘PIN’ is a secret number; ‘renew’ means keep the book for a longer time – say this only if a learner asks. Instructions use commands (Click, Tick, Type). The passives are in the sentences about what the website does (is shown, is sent, is made). CHECK: Show next answer one per click; a learner reads the words that prove it. ASK once: “Which sentences are passive?” (A list of your books is shown. An email is sent to you. A small charge is made …). Answers: 1 your card number and your PIN 2 My account 3 click “Log in” 4 a list of your books 5 tick the book you want to keep 6 the new date for returning the book 7 up to three times 8 Another reader has asked for it. Learners look at: page 5 on their own PC.</div>
+ </div>
+ 
+</section>
+<section class="page" data-look="Students: Teams General on their own PC" data-min="20">
+ <span class="label stu">ON YOUR PC – work on this page</span>
+ <div class="content">
+  <h1>Task E · Describe a process in Teams</h1>
+  <div class="grid2">
+   <div class="card"><h2>Choose one process</h2><ol class="q"><li>How rice is cooked</li><li>How a letter is posted and delivered</li><li>How a cup of tea or coffee is made</li><li>How something is made in your country (food, clothes, …)</li></ol><p>Write your answer in Teams (General): <b>five sentences</b>.</p></div>
+   <div class="card"><h2>Use</h2><p><span class="kw">First</span>, … <span class="kw">Next</span>, … <span class="kw">Then</span>, … <span class="kw">Finally</span>, …</p><p>Use <b>is / are + past participle</b> at least four times.</p><p class="small">Help: washed · boiled · put · poured · cooked · cut · posted · collected · delivered · left · served</p><p class="small">Check before you post: capital letter · full stop · is / are + a past participle (made, not make)</p></div>
+  </div>
+  <p>Then read two classmates’ posts and reply to one: <b>I like your process because …</b></p>
+  <button type="button" class="tnb">Teacher note</button><div class="tn"><b class="pin">Learners’ code for page 6: 0000</b> – say it or write it on the board when the class moves on. SAY: “Page 6. Open Teams, General. Choose one process and describe it in five sentences. Use First, Next, Then and Finally. Use the passive – is or are and a past participle – at least four times. Then read two posts and reply to one.” DO: walk round; point at a wrong form and ask “Is the thing doing the action, or is it happening to the thing? Which verb form?” – do not correct it for them. Collect two good posts to read aloud on the next page. If short of time: four sentences, no reply. Learners look at: Teams General on their own PC. 20 minutes.</div>
+ </div>
+ 
+</section>
+<section class="page board" data-look="Students: projector" data-min="10">
+ <span class="label">WHOLE CLASS – eyes on the board</span>
+ <div class="content">
+<h1>Task F · Find the mistake</h1><p>One mistake in each sentence. Tell your partner – then tell the class.</p><ol class="q"><li>The bread is make in the bakery every morning.<br><span class="ans">The bread is <b>made</b> in the bakery every morning.</span></li><li>The letters was delivered yesterday.<br><span class="ans">The letters <b>were</b> delivered yesterday.</span></li><li>The tickets sold at the station.<br><span class="ans">The tickets <b>are sold</b> at the station.</span></li><li>The windows are clean every Friday.<br><span class="ans">The windows are <b>cleaned</b> every Friday.</span></li><li>The photo was took last year.<br><span class="ans">The photo was <b>taken</b> last year.</span></li><li>The parcel was send last Monday.<br><span class="ans">The parcel was <b>sent</b> last Monday.</span></li></ol><p><button class="reveal p" data-sel=".ans" type="button">Show next answer</button></p>
+  <button type="button" class="tnb">Teacher note</button><div class="tn"><b class="pin">Learners’ code for page 7: 0000</b> – say it or write it on the board when the class moves on. SAY: “Eyes on the board. Each sentence has one mistake. Number 1 – talk to your partner for 20 seconds.” DO: a learner says the correct sentence; THEN click (one per click). Read two good Teams posts aloud. Answers: 1 made 2 were delivered 3 are sold 4 cleaned 5 taken 6 sent. Learners look at: the projector.</div>
+ </div>
+ <div class="lookboard"><p class="big">👀 Look at the board</p><p>Page <span class="num"></span></p></div>
+</section>
+<section class="page board" data-look="Students: projector and phones" data-min="25">
+ <span class="label">WHOLE CLASS – eyes on the board</span>
+ <div class="content">
+  <h1>Task G · Kahoot – 20 questions</h1>
+  <div class="card" style="font-size:1.1em"><p>passive voice · active or passive · steps in order · instructions.</p><ul style="font-size:1.1em;line-height:1.6"><li>Think first.</li><li>Talk to your partner for 10 seconds.</li><li>Then tap your answer on your phone.</li></ul></div>
+  <p style="font-size:1.1em"><b>Before you go:</b> tell your partner one process you know. Use <span class="kw">First</span>, <span class="kw">Then</span> and <span class="kw">Finally</span>.</p>
+  <button type="button" class="tnb">Teacher note</button><div class="tn"><b class="pin">Learners’ code for page 8: 0000</b> – say it or write it on the board when the class moves on. DO: open the Kahoot from the link on the Teacher Hub card (or import the file) and host it. Do not click Play before the class has the code. After each answer ASK: “Why is that the right form?” Note the questions most learners got wrong – they decide the next recap. CLOSE: “Today we used the passive to describe how things are made and to read instructions. Tell your partner one process.” Hear three. Learners look at: the projector and their phones. 25 minutes.</div>
+ </div>
+ <div class="lookboard"><p class="big">👀 Look at the board</p><p>Page <span class="num"></span></p></div>
+</section>
+</main>
+<div id="lockbox" role="dialog" aria-modal="true" aria-label="Page code"><div class="in"><h2>Wait for your teacher</h2><p>The next page is not open yet. When your teacher gives you the code, type it here.</p><p><input id="lockin" type="text" inputmode="numeric" autocomplete="off" maxlength="4" aria-label="Code"></p><p class="fb no" id="lockfb"></p><p><button class="p" id="lockgo" type="button">Open</button> <button id="lockx" type="button">Close</button></p><p class="small">Finished early? Try the ★ Early finishers word search.</p></div></div>
+<div id="efbox" role="dialog" aria-modal="true" aria-label="Early finishers"><div class="in"><div style="display:flex;justify-content:space-between;align-items:center;gap:1em"><h2 style="margin:0">★ Early finishers · Word search</h2><button id="efx" type="button">Back to the lesson</button></div><p class="small">Find 14 words from today’s lesson. Click the first letter, then the last letter. Words go → ↓ or ↘. When you finish, choose four words and write a sentence with each one.</p><div class="ws"><div class="wsg" id="wsg"></div><div><ul class="wsl" id="wsl"></ul><p class="score" id="wss"></p></div></div></div></div>
+<div class="foot"><a href="https://atinwix.github.io/esol/r.html?f=E3%20Reading%20–%20Passive%20Voice:%20How%20Things%20Are%20Made%20–%20Projector%20and%20PC%20Lesson" target="_blank" rel="noopener">⚠ Report a problem (teachers)</a></div>
+<script>
+(function(){
+var qs=new URLSearchParams(location.search), D=document, B=D.body;
+var teacher=qs.has('teacher')||(B.dataset.default==='teacher'&&!qs.has('student'));
+function mode(){B.classList.toggle('teacher',teacher);B.classList.toggle('student',!teacher)}
+mode();
+var pages=[].slice.call(D.querySelectorAll('.page')), cur=0;
+pages.forEach(function(p,i){
+  var lk=D.createElement('div');lk.className='look';lk.textContent='Page '+(i+1)+' · '+(p.dataset.look||'');p.appendChild(lk);
+  [].forEach.call(p.querySelectorAll('.num'),function(n){n.textContent=i+1});
+});
+var CODES={"2": "0000", "3": "0000", "4": "0000", "5": "0000", "6": "0000", "7": "0000", "8": "0000"}, want=1, LK='cl-lock-'+location.pathname, opened=1;
+try{opened=Math.max(1,parseInt(localStorage.getItem(LK)||'1',10)||1)}catch(x){}
+function allow(i){return teacher||i<opened}
+function ask(){var b=D.getElementById('lockbox');b.classList.add('on');D.getElementById('lockfb').textContent='';var inp=D.getElementById('lockin');inp.value='';inp.focus()}
+D.getElementById('lockgo').onclick=function(){var v=D.getElementById('lockin').value.trim(),hit=0;for(var k in CODES)if(CODES[k]===v&&parseInt(k,10)===want+1)hit=parseInt(k,10);
+  if(hit){opened=Math.max(opened,hit);try{localStorage.setItem(LK,opened)}catch(x){}D.getElementById('lockbox').classList.remove('on');go(hit-1)}
+  else D.getElementById('lockfb').textContent='That code is not right. Ask your teacher.'};
+D.getElementById('lockin').onkeydown=function(e){if(e.key==='Enter')D.getElementById('lockgo').click()};
+D.getElementById('lockx').onclick=function(){D.getElementById('lockbox').classList.remove('on')};
+function go(i){if(!allow(Math.max(0,Math.min(pages.length-1,i)))){want=Math.max(0,Math.min(pages.length-1,i));ask();return}cur=Math.max(0,Math.min(pages.length-1,i));pages.forEach(function(p,k){p.classList.toggle('on',k===cur)});
+  D.getElementById('pn').textContent='Page '+(cur+1)+' of '+pages.length;D.getElementById('prev').disabled=cur===0;D.getElementById('next').disabled=cur===pages.length-1;
+  history.replaceState(null,'',location.pathname+location.search);setMin(parseInt(pages[cur].dataset.min||'0',10));window.scrollTo(0,0)}
+D.getElementById('prev').onclick=function(){go(cur-1)};D.getElementById('next').onclick=function(){go(cur+1)};
+D.addEventListener('keydown',function(e){var t=e.target.tagName;if(t==='INPUT'||t==='TEXTAREA')return;
+  if(e.key==='ArrowRight'||e.key==='PageDown')go(cur+1);else if(e.key==='ArrowLeft'||e.key==='PageUp')go(cur-1);
+  else if(e.key==='t'||e.key==='T'){if(teacher){teacher=false;mode();go(Math.min(cur,opened-1))}else{teacher=true;mode()}}});
+// small teacher timer in the header (minutes come from each page)
+var tt=D.getElementById('tt'), tl=0, tk=null;
+function fmt(s){return Math.floor(s/60)+':'+('0'+s%60).slice(-2)}
+function show(){tt.querySelector('b').textContent=fmt(tl);tt.classList.toggle('low',tl<=60&&tl>0)}
+function setMin(m){clearInterval(tk);tk=null;tl=m*60;show();tt.style.visibility=m?'visible':'hidden';tt.querySelector('button').textContent='Start'}
+tt.querySelector('button').onclick=function(){if(tk){clearInterval(tk);tk=null;this.textContent='Start'}else{var b=this;b.textContent='Pause';tk=setInterval(function(){tl=Math.max(0,tl-1);show();if(!tl){clearInterval(tk);tk=null;b.textContent='Start'}},1000)}};
+// one answer per click
+[].forEach.call(D.querySelectorAll('button.reveal'),function(b){
+  var pg=b.closest('.page'), label=b.textContent;
+  function left(){return pg.querySelectorAll(b.dataset.sel+':not(.show)').length}
+  function total(){return pg.querySelectorAll(b.dataset.sel).length}
+  function upd(){var l=left();b.textContent=l?label+' ('+(total()-l+1)+' of '+total()+')':'All shown';b.disabled=!l}
+  b.onclick=function(){var n=pg.querySelector(b.dataset.sel+':not(.show)');if(n)n.classList.add('show');upd()};upd();
+});
+// big exam timer
+[].forEach.call(D.querySelectorAll('.bigtimer'),function(box){
+  var total=parseInt(box.dataset.min,10)*60, l=total, iv=null, out=box.querySelector('.timer'), st=box.querySelector('.start');
+  function sh(){out.textContent=fmt(l);out.classList.toggle('low',l<=300)}
+  st.onclick=function(){if(iv){clearInterval(iv);iv=null;st.textContent='Resume'}else{st.textContent='Pause';iv=setInterval(function(){l=Math.max(0,l-1);sh();if(!l){clearInterval(iv);iv=null;st.textContent='Time is up'}},1000)}};
+  box.querySelector('.reset').onclick=function(){clearInterval(iv);iv=null;l=total;sh();st.textContent='Start '+box.dataset.min+' minutes'};sh();
+});
+// ---- self-marking tasks ----
+function el(t,c,x){var e=D.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+function norm(s){s=s.replace(/won['’]t/gi,'will not').replace(/['’]ll/gi,' will').replace(/can['’]t/gi,'cannot').replace(/don['’]t/gi,'do not').replace(/doesn['’]t/gi,'does not');return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9 ]+/g,' ').replace(/\s+/g,' ').trim()}
+[].forEach.call(D.querySelectorAll('.task'),function(box){
+  var T=JSON.parse(box.querySelector('script').textContent), right=0, tried=0, rows=[];
+  var sc=el('div','score');
+  function upd(){sc.textContent='Score: '+right+' of '+T.items.length+(tried===T.items.length?(right===T.items.length?' – excellent!':' – finished. Check the red ones with your partner.'):'')}
+  T.items.forEach(function(it,i){
+    var row=el('div','item'), ok=false, fin=false;
+    row.appendChild(el('span','n',(i+1)+'.'));
+    var s=el('span','s'), gap=null;
+    if(T.type==='choose'){var parts=it.s.split('___');s.appendChild(D.createTextNode(parts[0]));gap=el('span','gap',' ');s.appendChild(gap);s.appendChild(D.createTextNode(parts[1]||''))}
+    else s.textContent=it.s||it.q;
+    row.appendChild(s);
+    function finish(good){if(fin)return;fin=true;tried++;if(good)right++;row.classList.add('done');upd()}
+    if(T.type==='join'){
+      var hint=el('span','small','Use: '+it.w);row.appendChild(hint);
+      var inp=el('input');inp.type='text';inp.setAttribute('aria-label','Your sentence for number '+(i+1));inp.autocomplete='off';inp.spellcheck=false;
+      var ck=el('button',null,'Check'), fb=el('span','fb'), n=0;
+      var wrap=el('div');wrap.style.cssText='flex:1 1 100%;display:flex;gap:.5em;align-items:center;flex-wrap:wrap';inp.style.flex='1 1 18em';
+      wrap.appendChild(inp);wrap.appendChild(ck);wrap.appendChild(fb);row.appendChild(wrap);
+      var acc=it.a.map(norm);
+      ck.onclick=function(){if(fin||!inp.value.trim())return;n++;
+        if(acc.indexOf(norm(inp.value))>=0){fb.textContent='✓ Correct';fb.className='fb ok';inp.disabled=ck.disabled=true;finish(true)}
+        else if(n>=2){fb.textContent='Answer: '+it.a[0];fb.className='fb no';inp.disabled=ck.disabled=true;finish(false)}
+        else{fb.textContent='Not yet – check the word order and the linking word. One more try.';fb.className='fb no'}};
+      inp.onkeydown=function(e){if(e.key==='Enter')ck.click()};
+      row.reveal=function(){if(fin)return false;fb.textContent='Answer: '+it.a[0];fb.className='fb ok';inp.disabled=ck.disabled=true;finish(false);return true};
+    } else {
+      var opts=T.opts||it.o, first=true;
+      var ow=el('span');ow.style.cssText='display:inline-flex;gap:.3em;flex-wrap:wrap';
+      opts.forEach(function(o,k){var b=el('span','opt',o);b.tabIndex=0;b.setAttribute('role','button');
+        function pick(){if(fin)return;var good=(k===it.c);
+          if(good){b.classList.add('ok');if(gap){gap.textContent=it.fill||o}finish(first)}
+          else{b.classList.add('no');first=false}}
+        b.onclick=pick;b.onkeydown=function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();pick()}};ow.appendChild(b)});
+      row.appendChild(ow);
+      row.reveal=function(){if(fin)return false;ow.children[it.c].classList.add('ok');if(gap)gap.textContent=it.fill||opts[it.c];finish(false);return true};
+    }
+    rows.push(row);box.appendChild(row);
+  });
+  var bar=el('p');bar.appendChild(sc);
+  var sh=el('button','tonly','Show next answer');sh.style.marginLeft='1em';sh.onclick=function(){for(var i=0;i<rows.length;i++){if(rows[i].reveal())return}};bar.appendChild(sh);
+  box.appendChild(bar);upd();
+});
+[].forEach.call(D.querySelectorAll('[data-qr]'),function(e){try{new QRCode(e,{text:e.dataset.qr,width:150,height:150})}catch(x){e.textContent=e.dataset.qr}});
+[].forEach.call(D.querySelectorAll('.tnb'),function(b){b.onclick=function(){b.nextElementSibling.classList.toggle('open')}});
+// always opens at page 1 (a #pN in the link is ignored)
+go(0);
+// ---- early finishers word search ----
+(function(){
+  var W=["BREAD","DOUGH","OVEN","FLOUR","YEAST","MIXED","BAKED","DELIVERED","FINALLY","PASSIVE","PROCESS","SHAPED","RENEW","INSTRUCTIONS"];
+  var N=13,G,pos,seed;
+  function rnd(){seed=(seed*1103515245+12345)%2147483648;return seed/2147483648}
+  function build(sd){seed=sd;G=[];for(var r=0;r<N;r++){G.push([]);for(var c=0;c<N;c++)G[r].push('')}pos={};
+    var dirs=[[0,1],[1,0],[1,1]];
+    for(var w=0;w<W.length;w++){var word=W[w],ok=false;
+      for(var t=0;t<400&&!ok;t++){var d=dirs[Math.floor(rnd()*3)],r0=Math.floor(rnd()*N),c0=Math.floor(rnd()*N),r1=r0+d[0]*(word.length-1),c1=c0+d[1]*(word.length-1);
+        if(r1>=N||c1>=N)continue;var fit=true;
+        for(var k=0;k<word.length;k++){var ch=G[r0+d[0]*k][c0+d[1]*k];if(ch&&ch!==word[k]){fit=false;break}}
+        if(!fit)continue;for(k=0;k<word.length;k++)G[r0+d[0]*k][c0+d[1]*k]=word[k];pos[word]=[r0,c0,r1,c1];ok=true}
+      if(!ok)return false}
+    var AZ='ABCDEFGHIKLMNOPRSTUWY';for(r=0;r<N;r++)for(c=0;c<N;c++)if(!G[r][c])G[r][c]=AZ[Math.floor(rnd()*AZ.length)];return true}
+  var sd=7;while(!build(sd))sd++;
+  var g=D.getElementById('wsg'),l=D.getElementById('wsl'),sc=D.getElementById('wss'),cells=[],first=null,found={},nf=0;
+  for(var r=0;r<N;r++)for(var c=0;c<N;c++){(function(r,c){var e=D.createElement('span');e.textContent=G[r][c];e.onclick=function(){pick(r,c)};g.appendChild(e);cells.push(e)})(r,c)}
+  W.slice().sort().forEach(function(w){var li=D.createElement('li');li.textContent=w.toLowerCase();li.id='ws-'+w;l.appendChild(li)});
+  function cell(r,c){return cells[r*N+c]}
+  function upd(){sc.textContent='Found: '+nf+' of '+W.length+(nf===W.length?' – well done! Now write your four sentences.':'')}
+  function pick(r,c){if(!first){first=[r,c];cell(r,c).classList.add('sel');return}
+    var a=first;first=null;cell(a[0],a[1]).classList.remove('sel');
+    for(var w in pos){var q=pos[w];if(found[w])continue;
+      if((q[0]===a[0]&&q[1]===a[1]&&q[2]===r&&q[3]===c)||(q[2]===a[0]&&q[3]===a[1]&&q[0]===r&&q[1]===c)){
+        found[w]=1;nf++;var dr=Math.sign(q[2]-q[0]),dc=Math.sign(q[3]-q[1]);
+        for(var k=0;k<w.length;k++)cell(q[0]+dr*k,q[1]+dc*k).classList.add('got');D.getElementById('ws-'+w).classList.add('got');upd();return}}
+    if(a[0]!==r||a[1]!==c){first=[r,c];cell(r,c).classList.add('sel')}}
+  upd();
+  D.getElementById('ef').onclick=function(){D.getElementById('efbox').classList.add('on')};
+  D.getElementById('efx').onclick=function(){D.getElementById('efbox').classList.remove('on')};
+})();
+})();
+</script>
+</body>
+</html>
