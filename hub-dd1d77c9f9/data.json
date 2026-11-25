@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-25T07:41:05Z",
+ "updatedAt": "2026-11-25T19:14:57Z",
  "upcoming": {
   "2026-11-02_e3": {
    "afternoon": "PC room: Too Cold to Learn – complaint emails",
@@ -1321,6 +1321,7 @@
   },
   "2026-11-25_e3": {
    "afternoon": "Classroom, learners on phones via the QR: what-will-happen-if chain; join with if / rewrite with unless; advice page and library notice (results); condition or result; write advice in notebooks; find the mistake; Kahoot (20 questions)",
+   "asTaught": "As logged in advance (Atin ill): no lesson took place, AM and PM, nothing ticked. The A Good Ear practice paper and the if / unless advice-texts lesson were not used; the practice paper goes to Mon 30 Nov and the advice texts to the next class.",
    "cls": "E3 Reading",
    "created": "2026-11-23",
    "date": "2026-11-25",
@@ -1632,6 +1633,12 @@
   }
  },
  "status": {
+  "2026-11-30_e3": {
+   "at": "2026-11-25T19:30:00Z",
+   "link": "https://claude.ai/artifact/BLDLxVu8QXqXW7bEM9ZbA7",
+   "note": "awaiting Atin's review",
+   "state": "review"
+  },
   "2026-12-01_e1": {
    "at": "2026-11-24T17:10:00Z",
    "link": "https://claude.ai/artifact/5mivShJDJ1mS7z6NcjH94D",
