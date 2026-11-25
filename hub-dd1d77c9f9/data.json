@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-25T19:14:57Z",
+ "updatedAt": "2026-11-25T22:50:52Z",
  "upcoming": {
   "2026-11-02_e3": {
    "afternoon": "PC room: Too Cold to Learn – complaint emails",
@@ -1630,15 +1630,138 @@
    },
    "title": "Going to and will, Task 4, then a full mock exam of Tasks 1–4 (two rounds)",
    "amended": "2026-11-23T07:56:40Z"
+  },
+  "2026-11-30_e3": {
+   "afternoon": "PC room, learners on the PCs (one page, projector and learners): passive voice warm-up (how tea is made); choose the correct form; bakery process text with eight questions; active or passive; library instructions with eight questions; describe a process in Teams; find the mistake; Kahoot (20 questions)",
+   "cls": "E3 Reading",
+   "created": "2026-11-25",
+   "date": "2026-11-30",
+   "flags": [],
+   "items": [
+    {
+     "id": "am1",
+     "lesson": 1,
+     "text": "Handout 1 – Practice paper – A Good Ear: sit the whole paper (60 minutes, 19 marks)",
+     "url": "https://atinwix.github.io/esol/bank/reading/exam-practice-and-papers/learning-languages-good-ear/student/learning-languages-good-ear-practice-exam-timer-and-answers-projector-page.html"
+    },
+    {
+     "id": "am2",
+     "lesson": 1,
+     "text": "AM pages 2–4 – Mark the paper: answers one per click; total out of 19",
+     "url": "https://atinwix.github.io/esol/bank/reading/exam-practice-and-papers/learning-languages-good-ear/student/learning-languages-good-ear-practice-exam-timer-and-answers-projector-page.html"
+    },
+    {
+     "id": "am3",
+     "lesson": 1,
+     "text": "Feedback – the questions most of the class got wrong",
+     "url": "https://atinwix.github.io/esol/bank/reading/exam-practice-and-papers/learning-languages-good-ear/student/learning-languages-good-ear-practice-exam-timer-and-answers-projector-page.html"
+    },
+    {
+     "id": "pm1",
+     "lesson": 2,
+     "text": "PM page 1 – Warm-up – How is a cup of tea made? (passive, First / Next / Then / Finally)",
+     "url": "https://atinwix.github.io/esol/bank/reading/passive-voice/processes-and-instructions/student/passive-voice-processes-and-instructions-projector-and-pc-lesson.html"
+    },
+    {
+     "id": "pm2",
+     "lesson": 2,
+     "text": "PM page 2 – Task A – choose the correct form (10 sentences)",
+     "url": "https://atinwix.github.io/esol/bank/reading/passive-voice/processes-and-instructions/student/passive-voice-processes-and-instructions-projector-and-pc-lesson.html"
+    },
+    {
+     "id": "pm3",
+     "lesson": 2,
+     "text": "PM page 3 – Task B – read the Broadway Bakery process and answer eight questions",
+     "url": "https://atinwix.github.io/esol/bank/reading/passive-voice/processes-and-instructions/student/passive-voice-processes-and-instructions-projector-and-pc-lesson.html"
+    },
+    {
+     "id": "pm4",
+     "lesson": 2,
+     "text": "PM page 4 – Task C – active or passive? (10 sentences)",
+     "url": "https://atinwix.github.io/esol/bank/reading/passive-voice/processes-and-instructions/student/passive-voice-processes-and-instructions-projector-and-pc-lesson.html"
+    },
+    {
+     "id": "pm5",
+     "lesson": 2,
+     "text": "PM page 5 – Task D – read the library instructions and answer eight questions",
+     "url": "https://atinwix.github.io/esol/bank/reading/passive-voice/processes-and-instructions/student/passive-voice-processes-and-instructions-projector-and-pc-lesson.html"
+    },
+    {
+     "id": "pm6",
+     "lesson": 2,
+     "text": "PM page 6 – Task E – describe a process in Teams (five sentences)",
+     "url": "https://atinwix.github.io/esol/bank/reading/passive-voice/processes-and-instructions/student/passive-voice-processes-and-instructions-projector-and-pc-lesson.html"
+    },
+    {
+     "id": "pm7",
+     "lesson": 2,
+     "text": "PM page 7 – Task F – find the mistake (6 sentences)",
+     "url": "https://atinwix.github.io/esol/bank/reading/passive-voice/processes-and-instructions/student/passive-voice-processes-and-instructions-projector-and-pc-lesson.html"
+    },
+    {
+     "id": "pm8",
+     "lesson": 2,
+     "text": "PM page 8 – Task G – Kahoot, 20 questions",
+     "url": "https://atinwix.github.io/esol/bank/reading/passive-voice/processes-and-instructions/student/passive-voice-processes-and-instructions-projector-and-pc-lesson.html"
+    }
+   ],
+   "kahoot": {
+    "details": "",
+    "note": "",
+    "status": "not yet in Kahoot",
+    "xlsx": "https://atinwix.github.io/esol/bank/reading/passive-voice/processes-and-instructions/student/passive-voice-and-processes-kahoot.xlsx"
+   },
+   "lastAmended": "2026-11-25",
+   "lastAmendedNote": "Built 25 Nov after the Wed 25 Nov log (not taught); reviewed and approved by Atin 25 Nov.",
+   "links": [
+    {
+     "label": "Print pack – print once, double-sided (86 pages) · last amended 25 Nov 2026",
+     "url": "https://atinwix.github.io/esol/_class/print-pack-2026-11-30.pdf"
+    },
+    {
+     "label": "Handout 1 – Practice paper, A Good Ear – one copy · last amended 23 Nov 2026",
+     "url": "https://atinwix.github.io/esol/e3/reading/docs/good-ear-reading-practice-exam.pdf"
+    },
+    {
+     "label": "Day Plan and Answers · last amended 25 Nov 2026",
+     "url": "https://atinwix.github.io/esol/bank/reading/passive-voice/processes-and-instructions/teacher/good-ear-practice-exam-and-passive-voice-day-plan-and-answers.pdf"
+    },
+    {
+     "label": "AM projector page – rules, timer, answers",
+     "url": "https://atinwix.github.io/esol/bank/reading/exam-practice-and-papers/learning-languages-good-ear/student/learning-languages-good-ear-practice-exam-timer-and-answers-projector-page.html"
+    },
+    {
+     "label": "PM lesson page – projector and PCs (T for teacher mode; learners' codes 0000)",
+     "url": "https://atinwix.github.io/esol/bank/reading/passive-voice/processes-and-instructions/student/passive-voice-processes-and-instructions-projector-and-pc-lesson.html"
+    },
+    {
+     "label": "Kahoot import file (20 Qs)",
+     "url": "https://atinwix.github.io/esol/bank/reading/passive-voice/processes-and-instructions/student/passive-voice-and-processes-kahoot.xlsx"
+    }
+   ],
+   "morning": "Full practice paper A Good Ear (60 minutes, 19 marks, Handout 1), marking with the answer pages, feedback on the most-missed questions",
+   "pack": {
+    "issued": "2026-11-25",
+    "pages": 86,
+    "url": "https://atinwix.github.io/esol/_class/print-pack-2026-11-30.pdf"
+   },
+   "plan": {
+    "am": "AM: Learners sat a full Entry 3 reading practice paper on how a good ear helps language learning (three texts, 19 questions, one hour). They marked a partner's paper with the answers on the projector, added up their scores and went over the questions most of the class got wrong, finding the answers in the texts.",
+    "pm": "PM, PC room: Learners met the passive by describing how a cup of tea is made, then chose the correct present and past passive forms, read a bakery process text and a library notice of instructions and answered questions, and sorted sentences into active and passive. They wrote a five-sentence description of a process in Teams and replied to a partner, corrected typical passive mistakes and finished with a 20-question Kahoot."
+   },
+   "prep": "None beyond printing. Before 12:30 log the PCs in and post the PM page link in Teams General. Open both pages with ?teacher (or press T). Nothing to cut out.",
+   "print": "Print the pack once, double-sided (86 pages): the day plan and 21 × Handout 1 (practice paper).",
+   "replaced": [],
+   "scheme": {
+    "focus": "passive voice; process vocabulary; texts explaining processes; reading instructions; recognising passives; sequencing information",
+    "note": "AM: the week's full practice paper (A Good Ear, never used – moved from Wed 25 Nov, exam Mon 7 Dec). PM: scheme week 12, rebuilt for the PC room. The if / unless advice-texts lesson carries to the next class.",
+    "wc": "2026-11-30"
+   },
+   "title": "Practice exam (A Good Ear), then passive voice: how things are made",
+   "amended": "2026-11-25T22:50:13Z"
   }
  },
  "status": {
-  "2026-11-30_e3": {
-   "at": "2026-11-25T19:30:00Z",
-   "link": "https://claude.ai/artifact/BLDLxVu8QXqXW7bEM9ZbA7",
-   "note": "awaiting Atin's review",
-   "state": "review"
-  },
   "2026-12-01_e1": {
    "at": "2026-11-24T17:10:00Z",
    "link": "https://claude.ai/artifact/5mivShJDJ1mS7z6NcjH94D",
