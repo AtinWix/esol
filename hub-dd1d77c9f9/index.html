@@ -51,6 +51,10 @@ h2{font-size:1.05rem;margin:0 0 10px;color:var(--muted);letter-spacing:.04em;tex
 .slot .when{color:var(--muted)}
 .slot p{margin:0;font-size:.95rem}
 .slot.wait{border-color:var(--line)}
+.lesson.rev{border:2px solid var(--warn);background:var(--warn-soft)}
+.lesson.rev .when{color:var(--warn)}
+.lesson.rev a.go{align-self:flex-start;font-weight:700;padding:8px 16px;border-radius:999px;background:var(--warn);color:#fff;text-decoration:none}
+.links a{font-size:.95rem;padding:8px 16px}
 .slot.bad{border:1px solid var(--bad);background:var(--bad-soft)}
 .slot.bad p{color:var(--bad);font-weight:600}
 .slot.off p{color:var(--muted)}
@@ -78,13 +82,19 @@ header{display:flex;justify-content:space-between;align-items:flex-start;gap:12p
     <div class="logo" aria-label="made by Atin"><svg viewBox="104 28 172 134" width="54" height="42" aria-hidden="true"><text x="139" y="112" text-anchor="middle" font-family="Arial" font-weight="700" font-size="72" fill="currentColor">A</text><rect x="177" y="83" width="24" height="6" fill="currentColor"/><path d="M216 66 L216 106 A25 7 0 0 0 266 106 L266 66" fill="none" stroke="currentColor" stroke-width="3"/><ellipse cx="241" cy="66" rx="25" ry="7" fill="none" stroke="currentColor" stroke-width="3"/><ellipse cx="241" cy="47" rx="23" ry="5" fill="none" stroke="currentColor" stroke-width="3"/><text x="190" y="152" text-anchor="middle" font-family="Arial" font-size="18" letter-spacing="2" fill="currentColor">made by Atin</text></svg></div>
   </header>
 
+  <section id="reviewBox" hidden>
+    <h2>Awaiting your review</h2>
+    <div class="cards" id="review"></div>
+  </section>
+
   <section>
     <h2>Quick links</h2>
-    <div class="grid">
-      <a class="tile" href="https://claude.ai/artifact/9hm8WZXWiu3U16Cxxq32NK" target="_blank" rel="noopener noreferrer"><b>Lesson Log</b><span>Fill in after each teaching day. The next lesson for that class is built from it.</span></a>
-      <a class="tile" href="https://atinwix.github.io/esol/" target="_blank" rel="noopener noreferrer"><b>ESOL Library</b><span>All materials, by level. Share this with colleagues.</span></a>
-      <a class="tile" href="https://claude.ai/artifact/FsxDCiz3xH2yRJynJhP2qu" target="_blank" rel="noopener noreferrer"><b>Lesson Ideas</b><span>Add notes, photos and files for future lessons.</span></a>
-      <a class="tile" href="https://atinwix.github.io/esol/games/phone-games-qr.html" target="_blank" rel="noopener noreferrer"><b>Phone games QR</b><span>Project for early finishers.</span></a>
+    <div class="links">
+      <a href="https://claude.ai/artifact/9hm8WZXWiu3U16Cxxq32NK" target="_blank" rel="noopener noreferrer">Lesson Log</a>
+      <a href="https://atinwix.github.io/esol/" target="_blank" rel="noopener noreferrer">ESOL Library</a>
+      <a href="https://claude.ai/artifact/FsxDCiz3xH2yRJynJhP2qu" target="_blank" rel="noopener noreferrer">Lesson Ideas</a>
+      <a href="https://atinwix.github.io/esol/games/phone-games-qr.html" target="_blank" rel="noopener noreferrer">Phone games QR</a>
+      <a href="https://create.kahoot.it/" target="_blank" rel="noopener noreferrer">Kahoot</a>
     </div>
   </section>
 
@@ -197,6 +207,14 @@ header{display:flex;justify-content:space-between;align-items:flex-start;gap:12p
     var keyOf=function(x){var m=/^E([123])/i.exec(x.cls||"");return x.date+"_"+(m?"e"+m[1]:"")};
     var byId={};cards.forEach(function(x){if(x&&x.date){byId[keyOf(x)]=x;if(x.id)byId[x.id]=x}});
     var stById={};status.forEach(function(x){stById[x.id]=x});
+    var rv=status.filter(function(x){return x&&x.state==="review"}).sort(function(a,b){return (a.id||"").localeCompare(b.id||"")});
+    var rb=document.getElementById("reviewBox"),rl=document.getElementById("review");rl.replaceChildren();rb.hidden=!rv.length;
+    rv.forEach(function(x){var m=/^(\d{4}-\d{2}-\d{2})_(e[1-3])/.exec(x.id||"");var c=el("article","lesson rev");
+      c.append(el("div","when",m?fmt(m[1])+" · "+clsName(m[2],m[1]):(x.id||"Lesson")));
+      c.append(el("h3",null,"Built – waiting for your review"));
+      if(x.at){c.append(el("div","upd","Built "+new Date(x.at).toLocaleString("en-GB",{weekday:"short",day:"numeric",month:"short",hour:"2-digit",minute:"2-digit"})))}
+      if(/^https:\/\/claude\.ai\//.test(x.link||"")){var a=el("a","go","Open to review");a.href=x.link;a.target="_blank";a.rel="noopener noreferrer";c.append(a)}
+      rl.append(c)});
     var nx=document.getElementById("next"),wk=document.getElementById("week");
     nx.replaceChildren();wk.replaceChildren();
     function note(t,cls){var s=el("div","slot "+(cls||"off"));s.append(el("p",null,t));return s}
