@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-25T22:51:37Z",
+ "updatedAt": "2026-11-26T07:41:42Z",
  "upcoming": {
   "2026-11-02_e3": {
    "afternoon": "PC room: Too Cold to Learn – complaint emails",
@@ -1770,19 +1770,27 @@
   }
  },
  "health": {
-  "checkedAt": "2026-11-25T07:50:00Z",
+  "checkedAt": "2026-11-26T07:55:00Z",
   "items": [
    {
     "ok": true,
-    "text": "Wed 25 E3 and Thu 26 E2 are built with no flags (day.py check); Tue 24 E1 was not taught and its plan carries to Tue 1 Dec. Tue 1 Dec E1 is waiting for your review (Review E1 Tue 1 Dec)."
+    "text": "Next 7 days: Mon 30 Nov E3 is built and approved (no flags). Tue 1 Dec E1 is waiting for your review again (Review E1 Tue 1 Dec). Wed 2 Dec E3 and Thu 3 Dec E2 are correctly waiting for the Lesson Log."
    },
    {
     "ok": true,
-    "text": "Logged lessons 17, 18, 19, 23 and 24 Nov all have ROW snippets, Covered/Next and 'As taught'. --past check on those cards: no faults."
+    "text": "Mon 30 Nov uses the same AM practice-paper page as Wed 25 Nov. The checker's 'reuse' note is expected: Wed 25 was not taught (Atin ill), so nothing is repeated."
    },
    {
     "ok": true,
-    "text": "Kahoots: Tue 24 E1 (live) and Thu 26 E2 ready. Wed 25 E3 is 'not yet in Kahoot': import the file on the card (same file as Mon 23, never played)."
+    "text": "Last 7 days: 19, 23, 24 and 25 Nov all have ROW snippets and Covered/Next. Thu 26 E2 is logged as skipped in advance; its ROW snippet still holds the planned text and the 4pm build run will correct it. --past check on the last four weeks: no faults."
+   },
+   {
+    "ok": true,
+    "text": "Filing Inbox: nothing pending."
+   },
+   {
+    "ok": true,
+    "text": "Kahoots: Mon 30 Nov E3 is 'not yet in Kahoot' - import the file on the card. E3's Mon 23 and Wed 25 Kahoots were never played. Thu 26 E2 Kahoot is live."
    },
    {
     "ok": true,
@@ -1790,11 +1798,15 @@
    },
    {
     "ok": true,
-    "text": "No public material is also a Claude artifact; no id/claude fields in esol.json or docs.json."
+    "text": "No public material is also a Claude artifact; no id/claude fields in esol.json or docs.json. Review drafts only otherwise."
    },
    {
     "ok": true,
-    "text": "ESOL tasks last succeeded (file and sync 24 Nov 3:20pm, build next lesson 24 Nov 7pm). Retired tasks are off. File and sync is scheduled only at 3:20pm, not 8:20/12:20/3:20 as the runbook says."
+    "text": "ESOL tasks last run fine: file and sync 25 Nov 3:20pm, build next lesson 25 Nov 11pm. The Thu-night build task shows a usage-limit failure on 12 Nov but it is retired. File and sync runs once a day (3:20pm), not 8:20/12:20/3:20 as the runbook says."
+   },
+   {
+    "ok": true,
+    "text": "Project doc 'ESOL Lesson Runbook' matches the master core."
    }
   ],
   "ok": true
