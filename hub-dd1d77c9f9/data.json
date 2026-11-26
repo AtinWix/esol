@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-26T09:24:29Z",
+ "updatedAt": "2026-11-26T09:56:34Z",
  "upcoming": {
   "2026-11-02_e3": {
    "afternoon": "PC room: Too Cold to Learn – complaint emails",
@@ -965,7 +965,7 @@
   },
   "2026-11-23_e3": {
    "afternoon": "PC room, one page on projector and PCs: a what-will-happen-if chain; join with if and rewrite with unless; read an advice page and a library notice and answer questions on results; condition or result; advice in Teams; find the mistake; Kahoot (20 questions)",
-   "amended": "2026-11-23T18:30:03Z",
+   "amended": "2026-11-26T09:24:30Z",
    "asTaught": "As taught: AM all six activities ticked (opinion letters 3A/3B and 4, Cross Road and the rule, Tasks E and F on phones, Handout 5 sentences). PM, PC room: skipped, nothing ticked; the whole PM plan moves to Wed 25 Nov, rebuilt as a classroom lesson (Wednesday is not a PC day).",
    "cls": "E3 Reading",
    "created": "2026-11-20",
@@ -1451,6 +1451,7 @@
   },
   "2026-11-26_e2": {
    "afternoon": "PC room: online practice A–C; time words and five sentences in Teams; Task 4a-style listening (weekend plan); mock exam round two with swapped roles (Set B); Kahoot (20 Qs); feedback and exam-day tips",
+   "asTaught": "As logged in advance: no lesson took place (AM and PM) – Atin ill. Nothing ticked. The whole built plan (going to or will, Task 4a/4b, mock exam rounds, Kahoot) was not taught; its going to / will content carries to Thu 3 Dec, reshaped (the exam has passed by then).",
    "cls": "E2 Speaking & Listening",
    "created": "2026-11-20",
    "date": "2026-11-26",
@@ -1766,6 +1767,12 @@
    "at": "2026-11-25T23:00:00Z",
    "link": "https://claude.ai/artifact/5mivShJDJ1mS7z6NcjH94D",
    "note": "changed after your review – awaiting Atin's review again",
+   "state": "review"
+  },
+  "2026-12-03_e2": {
+   "at": "2026-11-26T10:20:00Z",
+   "link": "https://claude.ai/artifact/7xUw4qgCtURMztxHbfGpYq",
+   "note": "awaiting Atin's review",
    "state": "review"
   }
  },
