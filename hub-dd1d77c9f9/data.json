@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-11-26T09:56:34Z",
+ "updatedAt": "2026-11-26T10:01:47Z",
  "upcoming": {
   "2026-11-02_e3": {
    "afternoon": "PC room: Too Cold to Learn – complaint emails",
@@ -1760,15 +1760,166 @@
    },
    "title": "Practice exam (A Good Ear), then passive voice: how things are made",
    "amended": "2026-11-25T22:50:13Z"
+  },
+  "2026-12-01_e1": {
+   "afternoon": "PC room: Task 3 describe a place; right or wrong sentences; plan a one-minute Task 2 talk; Task 1 dealt questions; Task 4 four short texts; exam tips",
+   "cls": "E1 Speaking & Listening",
+   "created": "2026-11-25",
+   "date": "2026-12-01",
+   "flags": [],
+   "items": [
+    {
+     "id": "amp",
+     "lesson": 1,
+     "pages": [
+      1,
+      7
+     ],
+     "text": "AM projector lesson – Task 4 short texts and Task 1 questions",
+     "url": "https://atinwix.github.io/esol/bank/speaking-listening/esb-speaking-tasks/last-practice-tasks-1-to-4/student/task4-short-texts-and-task1-questions-projector-lesson.html"
+    },
+    {
+     "id": "am1",
+     "lesson": 1,
+     "text": "Today – say what we do",
+     "url": ""
+    },
+    {
+     "id": "am2",
+     "lesson": 1,
+     "text": "Task 4: four short texts (1) – yes/no, then one detail",
+     "url": ""
+    },
+    {
+     "id": "am3",
+     "lesson": 1,
+     "text": "Task 4: four short texts (2) – new texts",
+     "url": ""
+    },
+    {
+     "id": "am4",
+     "lesson": 1,
+     "text": "Task 1: build the question from the answer",
+     "url": ""
+    },
+    {
+     "id": "am5",
+     "lesson": 1,
+     "text": "Listen and choose: two names and a phone number; spell your name",
+     "url": ""
+    },
+    {
+     "id": "am6",
+     "lesson": 1,
+     "text": "Task 1: answer the teacher (learners are candidates)",
+     "url": ""
+    },
+    {
+     "id": "am7",
+     "lesson": 1,
+     "text": "20-question Kahoot",
+     "url": ""
+    },
+    {
+     "id": "pmp",
+     "lesson": 2,
+     "pages": [
+      1,
+      7
+     ],
+     "text": "PM projector lesson – Tasks 3, 2, 1 and 4 final practice (PC room)",
+     "url": "https://atinwix.github.io/esol/bank/speaking-listening/esb-speaking-tasks/last-practice-tasks-1-to-4/student/tasks-3-2-1-and-4-practice-pc-room-projector-lesson.html"
+    },
+    {
+     "id": "pm1",
+     "lesson": 2,
+     "text": "Log in and open the page",
+     "url": ""
+    },
+    {
+     "id": "pm2",
+     "lesson": 2,
+     "text": "Task 3: describe a place – five sentences from a card",
+     "url": ""
+    },
+    {
+     "id": "pm3",
+     "lesson": 2,
+     "text": "Right or wrong? – correct eight sentences together",
+     "url": ""
+    },
+    {
+     "id": "pm4",
+     "lesson": 2,
+     "text": "Task 2: plan and give a one-minute talk",
+     "url": ""
+    },
+    {
+     "id": "pm5",
+     "lesson": 2,
+     "text": "Task 1: ask and answer dealt questions",
+     "url": ""
+    },
+    {
+     "id": "pm6",
+     "lesson": 2,
+     "text": "Task 4: four short texts – yes/no, then one detail",
+     "url": ""
+    },
+    {
+     "id": "pm7",
+     "lesson": 2,
+     "text": "Exam tips – last advice",
+     "url": ""
+    }
+   ],
+   "kahoot": {
+    "details": "https://create.kahoot.it/details/e1-speaking-listening-task-4-short-conversations-task-1-questions-tasks-14-run-through/aed3db51-8866-43b6-a82d-3933a6414c7d",
+    "status": "ready",
+    "xlsx": "https://atinwix.github.io/esol/bank/speaking-listening/esb-speaking-tasks/task4-task1-exam-mock/student/task4-and-task1-skills-kahoot.xlsx"
+   },
+   "lastAmended": "2026-11-26",
+   "lastAmendedNote": "built 25 Nov, amended after review 26 Nov",
+   "links": [
+    {
+     "label": "Day plan and answers (teach from this)",
+     "url": "https://atinwix.github.io/esol/bank/speaking-listening/esb-speaking-tasks/last-practice-tasks-1-to-4/teacher/last-practice-tasks-1-to-4-day-plan-and-answers.pdf"
+    },
+    {
+     "label": "AM projector lesson",
+     "url": "https://atinwix.github.io/esol/bank/speaking-listening/esb-speaking-tasks/last-practice-tasks-1-to-4/student/task4-short-texts-and-task1-questions-projector-lesson.html"
+    },
+    {
+     "label": "PM projector lesson",
+     "url": "https://atinwix.github.io/esol/bank/speaking-listening/esb-speaking-tasks/last-practice-tasks-1-to-4/student/tasks-3-2-1-and-4-practice-pc-room-projector-lesson.html"
+    },
+    {
+     "label": "Kahoot – ready to play",
+     "url": "https://create.kahoot.it/details/e1-speaking-listening-task-4-short-conversations-task-1-questions-tasks-14-run-through/aed3db51-8866-43b6-a82d-3933a6414c7d"
+    },
+    {
+     "label": "Kahoot import file (20 Qs)",
+     "url": "https://atinwix.github.io/esol/bank/speaking-listening/esb-speaking-tasks/task4-task1-exam-mock/student/task4-and-task1-skills-kahoot.xlsx"
+    }
+   ],
+   "morning": "Task 4: four short texts (yes/no, then one detail); build Task 1 questions from answers; listen and choose names and a phone number; answer the teacher; 20-question Kahoot",
+   "plan": {
+    "am": "AM: Learners listen to four short texts and answer a yes/no and a detail question for each, build Task 1 questions from answers, choose names and a phone number they hear, and answer the teacher's questions as candidates. They finish with a Kahoot.",
+    "pm": "PM, PC room: Learners practise the last exam tasks on their own screens. They describe a place in five sentences, correct sentences together, plan and give a one-minute talk, ask and answer dealt questions and answer questions about four short listening texts. The lesson ends with exam tips."
+   },
+   "prep": "None. Check the projector sound. Open the 20-question Kahoot (already in your Kahoot library) before lesson 1. Post the PM lesson page link in Teams General before lesson 2.",
+   "print": "Nothing to print",
+   "replaced": [],
+   "scheme": {
+    "focus": "Speaking & Listening exam final practice: Task 4 short texts, Task 1 questions, then Tasks 3, 2, 1 and 4",
+    "note": "last lesson before the E1 exam; uses new content (the 24 Nov plan was not taught)",
+    "wc": "2026-11-30"
+   },
+   "title": "Task 4 short texts, Task 1 questions and Tasks 3, 2, 1 and 4 final practice",
+   "amended": "2026-11-22T21:36:55Z"
   }
  },
  "status": {
-  "2026-12-01_e1": {
-   "at": "2026-11-25T23:00:00Z",
-   "link": "https://claude.ai/artifact/5mivShJDJ1mS7z6NcjH94D",
-   "note": "changed after your review – awaiting Atin's review again",
-   "state": "review"
-  },
   "2026-12-03_e2": {
    "at": "2026-11-26T10:20:00Z",
    "link": "https://claude.ai/artifact/7xUw4qgCtURMztxHbfGpYq",

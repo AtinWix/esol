@@ -1,0 +1,86 @@
+{
+ "title": "E1 Exam Practice Tasks 1–4 – Lesson Audio",
+ "plan": "../../../../bank/speaking-listening/esb-speaking-tasks/last-practice-tasks-1-to-4/teacher/last-practice-tasks-1-to-4-day-plan-and-answers.pdf",
+ "voices": {
+  "Ann": "Kore",
+  "Ben": "Puck"
+ },
+ "scripts": [
+  {
+   "id": "script-a",
+   "label": "Script A – Café (PM page 5)",
+   "lines": [
+    [
+     "Ann",
+     "Good morning. Can I have a tea, please?"
+    ],
+    [
+     "Ben",
+     "Sure. Milk and sugar?"
+    ],
+    [
+     "Ann",
+     "Milk, no sugar, thank you."
+    ],
+    [
+     "Ben",
+     "That’s one pound eighty."
+    ]
+   ]
+  },
+  {
+   "id": "script-b",
+   "label": "Script B – Library (PM page 5)",
+   "lines": [
+    [
+     "Ann",
+     "Hello. I want to join the library. Do you have a form?"
+    ],
+    [
+     "Ben",
+     "Yes, here you are. Write your name and address."
+    ],
+    [
+     "Ann",
+     "Can I take books today?"
+    ],
+    [
+     "Ben",
+     "Yes, you can. You can take three books."
+    ]
+   ]
+  },
+  {
+   "id": "script-c",
+   "label": "Script C – Phone message (PM page 5)",
+   "lines": [
+    [
+     "Ann",
+     "Hi Tom, it’s Leila. The film starts at seven o’clock. We meet at the cinema at half past six. Don’t be late!"
+    ]
+   ]
+  },
+  {
+   "id": "script-d",
+   "label": "Script D – Street (PM page 5)",
+   "lines": [
+    [
+     "Ann",
+     "Excuse me, is there a bank near here?"
+    ],
+    [
+     "Ben",
+     "Yes, it’s next to the post office."
+    ],
+    [
+     "Ann",
+     "Is it far?"
+    ],
+    [
+     "Ben",
+     "No, it’s two minutes. Turn left at the shop."
+    ]
+   ]
+  }
+ ]
+}
