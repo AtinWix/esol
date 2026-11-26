@@ -49,17 +49,14 @@ Word documents:
 - [Life is a Destiny (E3) – Second conditional – student worksheet](child-migrant-stories/life-is-a-destiny/e3-second-conditional-worksheet.pdf) (PDF) · [Word](child-migrant-stories/life-is-a-destiny/e3-second-conditional-worksheet.docx)
 - [Passing Tides (E2–E3) – Past simple and sequencing – Kahoot quiz (import into Kahoot)](child-migrant-stories/passing-tides/e2-e3-past-simple-sequencing-kahoot.xlsx)
 - [Passing Tides (E2–E3) – Past Simple and Sequencing – SMART Notebook](child-migrant-stories/passing-tides/e2-e3-past-simple-sequencing-projector-lesson.notebook)
-- [Passing Tides (E2–E3) – Past simple and sequencing – projector slides](child-migrant-stories/passing-tides/e2-e3-past-simple-sequencing-projector-slides.pptx)
 - [Passing Tides (E2–E3) – Past simple and sequencing – teacher notes and answers](child-migrant-stories/passing-tides/e2-e3-past-simple-sequencing-teacher-notes-answers.pdf) (PDF) · [Word](child-migrant-stories/passing-tides/e2-e3-past-simple-sequencing-teacher-notes-answers.docx)
 - [Passing Tides (E2–E3) – Past simple and sequencing – student worksheet](child-migrant-stories/passing-tides/e2-e3-past-simple-sequencing-worksheet.pdf) (PDF) · [Word](child-migrant-stories/passing-tides/e2-e3-past-simple-sequencing-worksheet.docx)
 - [Ugwumpiti (E2–E3) – Comparatives – Kahoot quiz (import into Kahoot)](child-migrant-stories/ugwumpiti/e2-e3-comparatives-kahoot.xlsx)
 - [Ugwumpiti (E2–E3) – Comparatives – SMART Notebook](child-migrant-stories/ugwumpiti/e2-e3-comparatives-projector-lesson.notebook)
-- [Ugwumpiti (E2–E3) – Comparatives – projector slides](child-migrant-stories/ugwumpiti/e2-e3-comparatives-projector-slides.pptx)
 - [Ugwumpiti (E2–E3) – Comparatives – teacher notes and answers](child-migrant-stories/ugwumpiti/e2-e3-comparatives-teacher-notes-answers.pdf) (PDF) · [Word](child-migrant-stories/ugwumpiti/e2-e3-comparatives-teacher-notes-answers.docx)
 - [Ugwumpiti (E2–E3) – Comparatives – student worksheet](child-migrant-stories/ugwumpiti/e2-e3-comparatives-worksheet.pdf) (PDF) · [Word](child-migrant-stories/ugwumpiti/e2-e3-comparatives-worksheet.docx)
 - [Voices Past and Present (E2–E3) – Adjectives – Kahoot quiz (import into Kahoot)](child-migrant-stories/voices-past-and-present/e2-e3-adjectives-kahoot.xlsx)
 - [Voices Past and Present (E2–E3) – Adjectives – SMART Notebook](child-migrant-stories/voices-past-and-present/e2-e3-adjectives-projector-lesson.notebook)
-- [Voices Past and Present (E2–E3) – Adjectives – projector slides](child-migrant-stories/voices-past-and-present/e2-e3-adjectives-projector-slides.pptx)
 - [Voices Past and Present (E2–E3) – Adjectives – teacher notes and answers](child-migrant-stories/voices-past-and-present/e2-e3-adjectives-teacher-notes-answers.pdf) (PDF) · [Word](child-migrant-stories/voices-past-and-present/e2-e3-adjectives-teacher-notes-answers.docx)
 - [Voices Past and Present (E2–E3) – Adjectives – student worksheet](child-migrant-stories/voices-past-and-present/e2-e3-adjectives-worksheet.pdf) (PDF) · [Word](child-migrant-stories/voices-past-and-present/e2-e3-adjectives-worksheet.docx)
 
@@ -128,7 +125,6 @@ Word documents:
 - [E2 Speaking & Listening – Task 4 and Future Plans: going to and will – Kahoot](https://create.kahoot.it/details/e2-speaking-listening-finish-task-4-4a-and-4b-then-future-plans-going-to-and-will/a0d14941-b878-4321-aed9-6518156542ed) – 20 questions, play live on Kahoot.
 
 Word documents:
-- [E2 Comparatives – Speaking – Projector Slides](e2/speaking-listening/comparatives-speaking-projector-slides.pptx)
 - [E2 Comparatives – Speaking – Student Worksheet](e2/speaking-listening/docs/comparatives-speaking-student-worksheet.pdf) (PDF) · [Word](e2/speaking-listening/docs/comparatives-speaking-student-worksheet.docx)
 - [E2 Comparatives – Speaking – Teacher Plan](e2/speaking-listening/docs/comparatives-speaking-teacher-plan.pdf) (PDF) · [Word](e2/speaking-listening/docs/comparatives-speaking-teacher-plan.docx)
 - [ESB exam prep, all tasks – lesson plan and answers](e2/speaking-listening/docs/esb-exam-prep-all-tasks-lesson-plan-and-answers.pdf) (PDF) · [Word](e2/speaking-listening/docs/esb-exam-prep-all-tasks-lesson-plan-and-answers.docx)
