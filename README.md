@@ -235,13 +235,13 @@ Word documents:
 - [E3 Writing – Complaint Email: Too Cold to Learn – Kahoot](https://create.kahoot.it/details/too-cold-to/bec650b2-79fa-4654-ba06-02f06e06aaaa) – 14 questions, play live on Kahoot.
 
 ## games
+- [All Levels – Who Wants to Be a Millionaire – Whole-Class Projector Game](games/millionaire-quiz.html) – Whole-class projector game, teacher-led: graded E1–E3 question sets, three lifelines, and a copy-and-paste prompt for any AI to make a new question set for every player
 - [Block Drop](games/block-drop.html)
 - [Blockbusters ABC Quiz](games/blockbusters-abc-quiz.html) – Projector team game
 - [E2–L1 Family Fortunes Game](games/family-fortunes.html) – Projector team game
 - [ESOL All Levels – Classroom Tool – A–D / 1–4 Vote Card](games/classroom-tool-vote-card.html)
 - [ESOL All Levels – Classroom Tool – Memory Challenge Timer](games/memory-challenge-timer.html) – Show a picture for a set time, blank it automatically, then reveal it to check.
 - [ESOL All Levels – Classroom Wheel and Picker – Projector Tool](games/classroom-wheel-and-picker.html) – Wheel, tap-to-order and random picker, with presets for days, superlative questions, alphabetical order and Leila's day. Replaces the paper cut-out sheets.
-- [ESOL All Levels – Who Wants to Be a Millionaire – Projector Quiz Game](games/millionaire-quiz.html) – E1–E3 question sets; Ask the Audience uses the Vote Card
 - [Grammar Blast](games/grammar-blast.html)
 - [Phone Games – Scan and Play (QR codes for early finishers)](games/phone-games-qr.html)
 - [Verb Catcher](games/verb-catcher.html)

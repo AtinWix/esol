@@ -164,10 +164,21 @@ textarea{min-height:150px;resize:vertical;font-family:ui-monospace,Consolas,mono
           <div class="row"><button class="btn" id="genGo">Make 15 questions</button><button class="btn ghost" id="genStop" hidden>Stop</button></div>
           <p class="status" id="genStatus"></p>
         </div>
-        <p class="hint" id="genOff" hidden>Making questions automatically only works when the game is opened from your Claude link. Here you can paste or type questions.</p>
+        <p class="hint" id="genOff" hidden>Automatic questions only work from your Claude link. Use the prompt below with any AI instead.</p>
+        <div id="ai" style="display:flex;flex-direction:column;gap:8px;border:1px solid var(--line);border-radius:12px;padding:12px">
+          <label>New questions from any AI – copy this prompt</label>
+          <div class="row">
+            <select id="aiLevel" style="width:auto" aria-label="Level"><option>Pre-Entry</option><option>Entry 1</option><option selected>Entry 2</option><option>Entry 3</option><option>Level 1</option><option>Level 2</option></select>
+            <select id="aiSets" style="width:auto" aria-label="How many players"><option value="1">1 player</option><option value="2">2 players</option><option value="3">3 players</option><option value="4">4 players</option><option value="5" selected>5 players</option><option value="6">6 players</option><option value="8">8 players</option></select>
+            <input type="text" id="aiTopic" placeholder="Topic (optional), e.g. food, past simple" style="flex:1;width:auto;min-width:140px">
+          </div>
+          <textarea id="aiPrompt" readonly spellcheck="false" style="min-height:90px;font-size:.8rem" aria-label="Prompt to copy"></textarea>
+          <div class="row"><button class="btn" id="aiCopy">Copy prompt</button><span class="status" id="aiStatus"></span></div>
+          <p class="hint">1. Copy the prompt. 2. Paste it into any AI (Claude, ChatGPT, Copilot, Gemini) and confirm the level and topic when it asks. 3. Copy the AI's whole answer and paste it into <b>My questions</b> – each player gets a new set.</p>
+        </div>
         <label for="names">Class names for Ask a Friend (optional, one per line or commas)</label>
         <textarea id="names" style="min-height:90px" placeholder="Amina, Yusuf, Maria…"></textarea>
-        <p class="hint">Easiest questions first. 15 questions = £1 million. Safe amounts: £1,000 and £32,000.</p>
+        <p class="hint">Questions go from very easy to very hard. 15 questions = £1 million. Safe amounts: £1,000 and £32,000.</p>
       </div>
     </div>
     <div class="row" style="justify-content:flex-end"><button class="btn" id="startBtn">Start game</button></div>
@@ -221,63 +232,63 @@ const SAFE = [4,9]; // indexes of £1,000 and £32,000
 const fmt = n => "£" + n.toLocaleString("en-GB");
 
 const SETS = {
-E1:`# Entry 1 – everyday English
+E1:`# Entry 1 – everyday English (very easy → very hard)
 What colour is a banana? | red | yellow | blue | black | B
-"I ___ from Syria." | am | is | are | be | A
 Which day comes after Monday? | Sunday | Friday | Tuesday | Thursday | C
-How many days are there in a week? | five | six | seven | eight | C
-Where do you buy medicine? | a chemist | a library | a cinema | a park | A
+"I ___ from Syria." | am | is | are | be | A
+Where do you buy medicine? | a library | a cinema | a park | a chemist | D
 "She ___ two children." | have | has | having | haves | B
-What do you say when you meet someone at 9 in the morning? | Good night | Good morning | Goodbye | See you later | B
-Which one is a fruit? | a carrot | a potato | an apple | an onion | C
-What is the opposite of "hot"? | cold | big | wet | old | A
-"___ is your name?" | Who | Where | What | When | C
-Which word is the number 15? | fifty | fifteen | five | fifty-five | B
-You feel ill. Who do you see? | a teacher | a GP | a bus driver | a chef | B
+Which month comes before May? | April | March | June | July | A
+You feel ill. Who do you see? | a teacher | a bus driver | a chef | a GP | D
 "There ___ three chairs in the room." | is | am | are | be | C
-Which month comes before May? | June | March | April | July | C
-What time is 7:30? | half past seven | half past six | quarter to eight | seven o'clock | A`,
-E2:`# Entry 2 – everyday English
-What is the plural of "child"? | childs | children | childes | childrens | B
-"Yesterday I ___ to the market." | go | goes | went | going | C
-Where can you borrow books for free? | a bank | a library | a bakery | a gym | B
-"London is ___ than Hackney." | big | bigger | biggest | more big | B
-You want to see a doctor. What do you make? | an appointment | a ticket | a receipt | a menu | A
-What is the opposite of "cheap"? | expensive | small | easy | quiet | A
-"She is good ___ cooking." | in | on | at | for | C
+"___ do you live?" "In Hackney." | What | Where | Who | When | B
+Which word is the number 13? | three | third | thirty | thirteen | D
+What time is 7:45? | quarter past seven | half past seven | quarter to eight | quarter to seven | C
+"He ___ work on Sundays." | doesn't | don't | isn't | not | A
+"Is there ___ bank near here?" | an | some | a | any | C
+"What ___ you usually do at the weekend?" | are | does | is | do | D
+My sister's husband is my … | brother-in-law | uncle | cousin | nephew | A`,
+E2:`# Entry 2 – everyday English (very easy → very hard)
 Which one is a job? | a kitchen | a plumber | a hammer | a bathroom | B
-"Did you ___ the bus this morning?" | took | take | taking | takes | B
-How do you pay on a London bus? | with a stamp | with an Oyster or bank card | with your passport | with cash only | B
-"There isn't ___ milk in the fridge." | some | many | any | a | C
-What is the past simple of "buy"? | buyed | bought | brought | buys | B
-"I have lived in London ___ 2023." | for | since | at | in | B
+"Yesterday I ___ to the market." | go | goes | went | going | C
+Where can you borrow books for free? | a library | a bank | a bakery | a gym | A
+"London is ___ than Brighton." | big | more big | biggest | bigger | D
+You want to see a doctor. What do you make? | a ticket | a receipt | a menu | an appointment | D
+"She is good ___ cooking." | in | at | on | for | B
+"There isn't ___ milk in the fridge." | some | many | a | any | D
+What is the past simple of "buy"? | buyed | brought | bought | buys | C
 What does "rent" mean? | money you pay to live in a home | money you get for your work | money you keep in a bank | money you spend on food | A
-Which is the most polite? | Give me water. | I want water. | Could I have some water, please? | Water now. | C`,
-E3:`# Entry 3 – grammar, vocabulary and reading
-"If it rains tomorrow, we ___ stay at home." | will | would | are | did | A
+"I have lived in London ___ 2023." | for | since | at | in | B
+"How ___ money do you need?" | much | many | lot | more | A
+"This is the ___ day of my life!" | better | goodest | best | most good | C
+"When I was a child, I ___ swim." | can | can to | could | could to | C
+A hotel sign says "Fully booked". What does it mean? | There are no free rooms. | The rooms are cheap. | You can borrow books here. | The hotel is new. | A
+"He has ___ finished his homework, so he can go out." | yet | still | ever | already | D`,
+E3:`# Entry 3 – grammar, vocabulary and reading (very easy → very hard)
 "I've been waiting ___ two hours." | since | for | during | ago | B
-Which word means "very tired"? | exhausted | excited | annoyed | relaxed | A
-A sign at a hotel says "No vacancies". What does it mean? | There are no free rooms. | You can't smoke here. | It is closed for the holidays. | Entry is free. | A
-"She asked me where I ___." | live | lived | living | am living | B
-A leaflet says "Join our free English club every Tuesday!" What is it for? | to complain | to advertise | to apologise | to warn | B
-"The letter ___ yesterday." | was sent | sent | is send | has sent | A
+What does "look after" mean? | search for | look behind | take care of | visit | C
+Which word is an adverb? | quick | quicker | quickness | quickly | D
+"If it rains tomorrow, we ___ stay at home." | will | would | are | did | A
 How do you start a formal email to a person you don't know? | Hi mate | Dear Sir or Madam | Hey there | Hello friend | B
-What does "look after" mean? | search for | take care of | look behind | visit | B
-"You ___ wear a seatbelt in a car. It's the law." | must | might | could | would | A
-Which word is an adverb? | quick | quickly | quicker | quickness | B
-What is a "deadline"? | the last day to do something | a long queue | an emergency | a bus route | A
-"I wish I ___ more free time." | have | had | has | having | B
-"Tom left before the meeting started." What happened first? | The meeting started. | Tom left. | Both at the same time. | The text doesn't say. | B
-"Despite ___ tired, she went to work." | be | being | was | been | B`,
+A sign at a hotel says "No vacancies". What does it mean? | You can't smoke here. | It is closed for the holidays. | There are no free rooms. | Entry is free. | C
+"You ___ wear a seatbelt in a car. It's the law." | might | could | would | must | D
+"The letter ___ yesterday." | was sent | sent | is send | has sent | A
+"She told me ___ the door." | close | to close | closing | closed | B
+"The man ___ lives next door is a nurse." | which | what | who | whose | C
+"I'm looking forward ___ you." | to see | seeing | for seeing | to seeing | D
+"Despite ___ tired, she went to work." | being | be | was | been | A
+"By the time we arrived, the film ___." | started | had started | has started | was start | B
+"You ___ have told me! I would have helped." | must | can | should | will | C
+What does "put up with" mean? | let someone stay at your home | put something on a high shelf | make prices higher | accept something bad without complaining | D`,
 /* Child Migrant Stories film sets – open with ?set=film-liad, film-ugw, film-pt or film-vpp */
-"film-liad":`# Life is a Destiny – Argun's story (E3, 2nd conditional)
+"film-liad":`# Life is a Destiny – Argun's story (E2–E3, 2nd conditional)
 Where was Argun born? | Turkey | Cyprus | Greece | Italy | B
 What did Argun save? | his phone | his photo album | his money | his school bag | B
 Where did he hide it? | under his bed | in the garden | behind a cupboard | in a tent | C
 Where did the family live after they left home? | in a hotel | in tents | on a boat | in a school | B
 How old was Argun when he came to London? | 3 | 13 | 23 | 33 | B
-Where was Argun's first job in London? | a school | a Wimpy burger bar | a bank | a hospital | B
-Argun's printing shop is in … | Brick Lane | Hackney | Oxford Street | Cyprus | B
+Who did he travel to London with? | his brother | his grandfather | his wife | his teacher | A
+Today Argun has a printing shop in … | Brick Lane | Mare Street, Hackney | Oxford Street | Cyprus | B
 What would Alara take if she had to leave? | her photos | her dog | her phone and charger | her clothes | C
 Why would she take it? | for social media | to play games | to keep in contact with her family | to take photos | C
 "If I ___ to leave, I would take my photos." | have | had | will have | having | B
@@ -285,14 +296,14 @@ Why would she take it? | for social media | to play games | to keep in contact w
 I would = ? | I'll | I'd | I'm | I've | B
 "What ___ you take if you had to leave?" | do | did | would | will | C
 Which sentence is correct? | If I would have time, I help. | If I had time, I would help. | If I have time, I would helped. | If I had time, I helped. | B
-"If I ___ a car, I would drive to college." | have | had | will have | would have | B`,
+"If my mother hadn't left my father, I ___ here." | won't be | wouldn't be | am not | wasn't | B`,
 "film-ugw":`# Ugwumpiti – Maurice's story (E2–E3, comparatives)
 Where was Maurice born? | Biafra (now Nigeria) | Jamaica | Ghana | Somalia | A
 Who did Maurice live with in the war? | his parents | his grandma | his teacher | his uncle | B
 Who gave the children one meal a day? | the army | the Red Cross | the school | his parents | B
-How old was Maurice when he came to London? | 2 | 9 | 16 | 19 | B
+Which animal did Maurice NOT talk about eating? | snakes | rats | lizards | fish | D
 What is in Ugwumpiti? | rice and meat | corn meal and powdered milk | bread and jam | fish and chips | B
-Who came to London with Maurice? | his little brother | his grandma | his cousin | his uncle | A
+What was Ugwumpiti served from? | a big oil drum | a pot | a plastic bag | a fridge | A
 What did Maurice think of chocolate at first? | delicious | horrible | healthy | cheap | B
 Where did the boys hide the chocolate? | behind the car seat | in the fridge | at school | in a cupboard | A
 Where did the boys hide bread and jam at night? | in the garden | under the mattress | in their bags | in the kitchen | B
@@ -301,7 +312,7 @@ sweet → ? | more sweet | sweeter | sweetter | sweetest | B
 hot → ? | hoter | more hot | hotter | hotest | C
 tasty → ? | tastyer | tastier | more tasty | tastyier | B
 "Fruit is healthier ___ chocolate." | that | then | than | as | C
-Which sentence is correct? | Chocolate was more sweet. | Chocolate was sweeter. | Chocolate was sweetter. | Chocolate was most sweet. | B`,
+"For Maurice, Ugwumpiti is the ___ food." | most amazing | more amazing | amazinger | amazingest | A`,
 "film-pt":`# Passing Tides – Linh's journey (E2–E3, past simple)
 Where was Linh born? | China | Vietnam | Singapore | Thailand | B
 How old was Linh when she left? | 3 | 7 | 12 | 17 | B
@@ -316,7 +327,7 @@ leave → ? | leaved | left | lefted | leaving | B
 find → ? | finded | found | fond | founded | B
 throw → ? | throwed | threw | thrown | throwd | B
 "They ___ any food." | didn't had | didn't have | not had | don't had | B
-"___, they waited in the water." (the start of the story) | Finally | First | After that | Then | B
+"___, they waited in the water." | Finally | First | After that | Then | B
 "I ___ ride my bike everywhere when I was a child." | use to | used to | using to | was use | B`,
 "film-vpp":`# Voices Past and Present – first impressions (E2–E3, adjectives)
 Many people in the film call ___ home. | Hackney | Camden | Croydon | Brent | A
@@ -352,28 +363,43 @@ At Broadway Market, a coffee and a cake can cost… | £1 or £2 | £3 or £4 | 
 Which sentence is correct? | She sings beautiful. | She sings beautifully. | She beautiful sings. | She sings beautifuly. | B`
 };
 
-let S = {set:"E1", my:"", names:""};
+let S = {set:"E1", my:"", names:"", round:0};
 try{ const s = JSON.parse(localStorage.getItem("wwtbam-esol") || "null"); if (s) S = Object.assign(S, s); }catch(e){}
 { const u = new URLSearchParams(location.search).get("set"); if (u && SETS[u]) S.set = u; }
 function save(){ try{ const o = Object.assign({}, S); if (String(o.set).startsWith("film-")) o.set = "E1"; localStorage.setItem("wwtbam-esol", JSON.stringify(o)); }catch(e){} }
 
-function parse(text){
-  return text.split(/\r?\n/).map(l => l.trim()).filter(l => l && !l.startsWith("#")).map(l => {
-    const p = l.split("|").map(x => x.trim());
-    if (p.length < 6) return null;
-    const c = p[5].toUpperCase().charAt(0);
-    if (!"ABCD".includes(c) || !p[0]) return null;
-    return {q:p[0], A:p[1], B:p[2], C:p[3], D:p[4], c};
-  }).filter(Boolean);
+function parseLine(l){
+  l = l.replace(/^`+|`+$/g, "").trim();
+  if (l.startsWith("|")) l = l.slice(1);
+  if (l.endsWith("|")) l = l.slice(0, -1);
+  l = l.replace(/^(?:[-*•]\s*|(?:Q(?:uestion)?\s*)?\d{1,2}\s*[.):\-]\s+)/i, "");
+  const p = l.split("|").map(x => x.trim().replace(/^\*\*|\*\*$/g, ""));
+  if (p.length < 6 || !p[0]) return null;
+  const c = p[5].replace(/^(?:answer|correct)\s*[:=\-]?\s*/i, "").replace(/[^A-Za-z]/g, "").toUpperCase();
+  if (c.length !== 1 || !"ABCD".includes(c)) return null;
+  return {q:p[0], A:p[1], B:p[2], C:p[3], D:p[4], c};
 }
+const isHead = l => l.startsWith("#") || /^\W*(?:set|player|round|game)\s*\d+\W*$/i.test(l);
+/* Split text into sets: a line starting with # (or "Set 2", "Player 3") starts a new set */
+function groups(text){
+  const out = []; let cur = {t:"", q:[]};
+  text.split(/\r?\n/).map(l => l.trim()).filter(Boolean).forEach(l => {
+    if (isHead(l)){ if (cur.q.length) out.push(cur); cur = {t:l.replace(/^[#\W]+|\W+$/g, ""), q:[]}; return; }
+    const r = parseLine(l); if (r) cur.q.push(r);
+  });
+  if (cur.q.length) out.push(cur);
+  return out.filter(g => g.q.length >= 3);
+}
+function parse(text){ return groups(text).reduce((a, g) => a.concat(g.q), []); }
 
 /* ---------- state ---------- */
+let setLabel = "";
 let Q = [], i = 0, picked = null, locked = false, used = {f:false, a:false, r:false}, removed = [], votes = {A:0,B:0,C:0,D:0};
 const ansEls = {A:$("ansA"), B:$("ansB"), C:$("ansC"), D:$("ansD")};
 
 function ladder(){
   $("ladder").innerHTML = MONEY.map((m, k) => `<li class="${SAFE.includes(k) ? "safe" : ""} ${k < i ? "done" : ""} ${k === i ? "cur" : ""}"><span class="n">${k + 1}</span><span>${fmt(m)}</span></li>`).join("");
-  $("now").textContent = Q.length ? `Question ${i + 1} of ${Q.length} · for ${fmt(MONEY[i])}` : "";
+  $("now").textContent = Q.length ? `${setLabel}Question ${i + 1} of ${Q.length} · for ${fmt(MONEY[i])}` : "";
 }
 function show(){
   const it = Q[i];
@@ -391,7 +417,7 @@ function choose(L){
   "ABCD".split("").forEach(k => ansEls[k].classList.toggle("pick", k === L));
   $("bar").innerHTML = `<p>Is ${L} your final answer?</p><button class="btn" id="finalYes">Yes, final answer</button><button class="btn ghost" id="finalNo">No, change it</button>`;
   $("finalYes").onclick = final; $("finalNo").onclick = unpick;
-  tone(440, .12);
+  FX.pick();
 }
 function unpick(){ picked = null; "ABCD".split("").forEach(k => ansEls[k].classList.remove("pick")); $("bar").innerHTML = ""; }
 function final(){
@@ -399,20 +425,20 @@ function final(){
   locked = true;
   "ABCD".split("").forEach(k => ansEls[k].disabled = true);
   $("walkBtn").disabled = true; ["l50","lAud","lFr"].forEach(id => $(id).disabled = true);
-  $("bar").innerHTML = `<p>Let's see…</p>`;
+  $("bar").innerHTML = `<p>Let's see…</p>`; FX.lock();
   setTimeout(() => {
     const c = Q[i].c;
     ansEls[picked].classList.remove("pick");
     ansEls[c].classList.add("right");
     if (picked === c){
-      tune([523,659,784,1047]);
+      if (i === Q.length - 1) FX.win(); else FX.right();
       if (i === Q.length - 1){ setTimeout(() => end("win"), 1400); return; }
       $("bar").innerHTML = `<p>Correct! You have ${fmt(MONEY[i])}.</p><button class="btn" id="nextBtn">Next question</button>`;
       $("nextBtn").onclick = () => { i++; show(); };
       $("nextBtn").focus();
     } else {
       ansEls[picked].classList.add("wrong");
-      tune([330,262,196]);
+      FX.wrong();
       $("bar").innerHTML = `<p>Sorry! The answer is ${c}.</p><button class="btn" id="endBtn">See your money</button>`;
       $("endBtn").onclick = () => end("lose");
     }
@@ -428,7 +454,12 @@ function end(kind){
 }
 function startGame(){
   const text = S.set === "MY" ? S.my : SETS[S.set];
-  Q = parse(text).slice(0, 15);
+  const G = groups(text);
+  if (G.length > 1){
+    const k = (S.round || 0) % G.length;
+    Q = G[k].q.slice(0, 15); setLabel = `Set ${k + 1} of ${G.length} · `;
+    S.round = k + 1; save();
+  } else { Q = G.length ? G[0].q.slice(0, 15) : []; setLabel = ""; }
   if (Q.length < 3){ $("bankInfo").textContent = "Add at least 3 questions in the right format first."; $("bankInfo").style.color = "#ff9a9a"; return false; }
   i = 0; used = {f:false, a:false, r:false};
   $("setup").hidden = true; $("endOv").hidden = true;
@@ -444,7 +475,7 @@ $("l50").onclick = () => {
   const wrong = "ABCD".split("").filter(L => L !== c).sort(() => Math.random() - .5).slice(0, 2);
   removed = wrong;
   wrong.forEach(L => { ansEls[L].classList.add("gone"); ansEls[L].disabled = true; if (picked === L) unpick(); });
-  tone(660, .2);
+  FX.fifty();
 };
 let qrDone = false;
 $("lAud").onclick = () => {
@@ -455,7 +486,7 @@ $("lAud").onclick = () => {
     try{ new QRCode($("qr"), {text: VOTE_URL, width: 180, height: 180, correctLevel: QRCode.CorrectLevel.M}); qrDone = true; }
     catch(e){ $("qr").innerHTML = '<span style="color:#000;text-align:center;font-size:.9rem">Use the link</span>'; }
   }
-  drawChart(); $("audOv").hidden = false; $("audClose").focus();
+  FX.lifeline(); drawChart(); $("audOv").hidden = false; $("audClose").focus();
 };
 function drawChart(){
   const total = Object.values(votes).reduce((a, b) => a + b, 0);
@@ -472,7 +503,7 @@ $("audReset").onclick = () => { votes = {A:0,B:0,C:0,D:0}; drawChart(); };
 $("audClose").onclick = () => { $("audOv").hidden = true; };
 
 let clockT = null;
-$("lFr").onclick = () => {
+$("lFr").onclick = () => { if (!locked && !used.r) FX.lifeline();
   if (locked || used.r || !Q.length) return;
   used.r = true; $("lFr").disabled = true;
   clearInterval(clockT); $("clock").textContent = "30"; $("friendName").textContent = "";
@@ -493,7 +524,7 @@ $("clockGo").onclick = () => {
   clockT = setInterval(() => {
     t--; $("clock").textContent = t;
     if (t <= 5 && t > 0) tone(880, .08);
-    if (t <= 0){ clearInterval(clockT); $("clock").textContent = "Time!"; tune([392,262]); }
+    if (t <= 0){ clearInterval(clockT); $("clock").textContent = "Time!"; FX.time(); }
   }, 1000);
 };
 $("frClose").onclick = () => { clearInterval(clockT); $("frOv").hidden = true; };
@@ -503,7 +534,7 @@ $("frClose").onclick = () => { clearInterval(clockT); $("frOv").hidden = true; }
 $("walkBtn").onclick = () => {
   if (locked || !Q.length) return;
   $("bar").innerHTML = `<p>Walk away with ${fmt(i ? MONEY[i - 1] : 0)}?</p><button class="btn" id="walkYes">Yes, walk away</button><button class="btn ghost" id="walkNo">No, keep playing</button>`;
-  $("walkYes").onclick = () => { locked = true; ansEls[Q[i].c].classList.add("right"); setTimeout(() => end("walk"), 1500); };
+  $("walkYes").onclick = () => { locked = true; ansEls[Q[i].c].classList.add("right"); FX.walk(); setTimeout(() => end("walk"), 1500); };
   $("walkNo").onclick = () => { $("bar").innerHTML = ""; if (picked) choose(picked); };
 };
 document.addEventListener("keydown", e => {
@@ -523,8 +554,45 @@ $("startBtn").onclick = () => { readSetup(); startGame(); };
 
 /* ---------- sound ---------- */
 let ac = null, sound = true;
-function tone(f, d){ if (!sound) return; try{ ac = ac || new (window.AudioContext || window.webkitAudioContext)(); const o = ac.createOscillator(), g = ac.createGain(); o.type = "triangle"; o.frequency.value = f; g.gain.setValueAtTime(.16, ac.currentTime); g.gain.exponentialRampToValueAtTime(.001, ac.currentTime + d); o.connect(g).connect(ac.destination); o.start(); o.stop(ac.currentTime + d); }catch(e){} }
+function ctx(){ ac = ac || new (window.AudioContext || window.webkitAudioContext)(); if (ac.state === "suspended") ac.resume(); return ac; }
+/* one voice: type, freq, length, volume, start delay, optional glide-to freq; low-pass for a rounder, bigger sound */
+function voice(f, d, o){ o = o || {}; if (!sound) return; try{
+  const c = ctx(), t0 = c.currentTime + (o.at || 0), osc = c.createOscillator(), g = c.createGain(), lp = c.createBiquadFilter();
+  osc.type = o.type || "triangle"; osc.frequency.setValueAtTime(f, t0);
+  if (o.to) osc.frequency.exponentialRampToValueAtTime(o.to, t0 + d);
+  lp.type = "lowpass"; lp.frequency.value = o.lp || 3200;
+  const v = o.vol || .16;
+  g.gain.setValueAtTime(.0001, t0); g.gain.exponentialRampToValueAtTime(v, t0 + (o.atk || .02));
+  g.gain.setValueAtTime(v, t0 + d * (o.hold || .5)); g.gain.exponentialRampToValueAtTime(.0001, t0 + d);
+  osc.connect(lp).connect(g).connect(c.destination); osc.start(t0); osc.stop(t0 + d + .05);
+}catch(e){} }
+function tone(f, d){ voice(f, d); }
+function chord(fs, d, o){ fs.forEach(f => voice(f, d, o)); }
 function tune(fs){ fs.forEach((f, k) => setTimeout(() => tone(f, .3), 170 * k)); }
+/* dramatic effects */
+const FX = {
+  pick(){ voice(220, .35, {type:"sawtooth", vol:.07, lp:900}); voice(330, .25, {type:"triangle", vol:.12}); },
+  lock(){ voice(110, .9, {type:"sawtooth", vol:.09, lp:500, atk:.05}); [0, .35, .7].forEach(a => voice(165, .25, {type:"square", vol:.05, lp:700, at:a})); },
+  fifty(){ voice(1500, .5, {type:"sine", vol:.1, to:300}); voice(900, .5, {type:"triangle", vol:.08, at:.12, to:200}); },
+  lifeline(){ [392,523,659].forEach((f, k) => voice(f, .4, {type:"triangle", vol:.12, at:k * .09})); },
+  right(){
+    chord([262,330,392], .5, {type:"sawtooth", vol:.07, lp:1600});
+    chord([392,494,587], .5, {type:"sawtooth", vol:.07, lp:1800, at:.18});
+    chord([523,659,784,1047], 1.3, {type:"sawtooth", vol:.07, lp:2400, at:.36, hold:.7});
+    voice(131, 1.5, {type:"sine", vol:.18, at:.36});
+  },
+  wrong(){
+    voice(220, 1.1, {type:"sawtooth", vol:.14, lp:900, to:55, hold:.2});
+    voice(233, 1.1, {type:"sawtooth", vol:.12, lp:900, to:58, hold:.2});
+    voice(65, 1.4, {type:"sine", vol:.25, to:40, hold:.3});
+  },
+  win(){
+    [523,659,784,1047,784,1047,1319].forEach((f, k) => chord([f, f * 1.5], k === 6 ? 1.8 : .3, {type:"sawtooth", vol:.06, lp:2600, at:k * .17, hold:.8}));
+    voice(131, 2.6, {type:"sine", vol:.2}); voice(196, 2.6, {type:"sine", vol:.14});
+  },
+  walk(){ [523,440,392].forEach((f, k) => voice(f, .45, {type:"triangle", vol:.14, at:k * .22})); },
+  time(){ voice(180, .9, {type:"square", vol:.1, lp:600, to:90}); }
+};
 $("soundBtn").onclick = () => { sound = !sound; $("soundBtn").textContent = sound ? "Sound on" : "Sound off"; $("soundBtn").setAttribute("aria-pressed", sound); };
 
 /* ---------- setup ---------- */
@@ -536,10 +604,12 @@ function fillSetup(){
   info();
 }
 function info(){
-  const n = parse($("bank").value).length;
+  const G = groups($("bank").value), n = G.reduce((a, g) => a + g.q.length, 0);
   $("bankInfo").style.color = "";
   $("bankInfo").textContent = S.set === "MY"
-    ? `${n} question${n === 1 ? "" : "s"} ready (the game uses the first 15). Example: Where do you buy bread? | a bakery | a bank | a garage | a library | A`
+    ? (G.length > 1
+      ? `${G.length} sets ready – one per player. Next game uses set ${((S.round || 0) % G.length) + 1}, then the next set each time you press Play again.`
+      : `${n} question${n === 1 ? "" : "s"} ready (the game uses the first 15). Example: Where do you buy bread? | a bakery | a bank | a garage | a library | A`)
     : `${n} questions ready. To edit them, choose "My questions" – these will be copied in for you to change.`;
 }
 function readSetup(){ if (S.set === "MY") S.my = $("bank").value; S.names = $("names").value; save(); }
@@ -549,7 +619,7 @@ $("sets").addEventListener("click", e => {
   if (b.dataset.s === "MY" && !S.my.trim() && S.set !== "MY") S.my = SETS[S.set];
   S.set = b.dataset.s; save(); fillSetup();
 });
-$("bank").addEventListener("input", () => { if (S.set === "MY"){ S.my = $("bank").value; save(); } info(); });
+$("bank").addEventListener("input", () => { if (S.set === "MY"){ S.my = $("bank").value; S.round = 0; save(); } info(); });
 $("names").addEventListener("input", () => { S.names = $("names").value; save(); });
 
 /* ---------- Claude question maker ---------- */
@@ -573,7 +643,9 @@ $("genGo").onclick = async () => {
 Level: ${LEVELS[level]}
 Topic: ${topic}
 
-Write exactly 15 multiple-choice questions, from easiest (question 1) to hardest (question 15), all within the level.
+Write exactly 15 multiple-choice questions. They must get harder one step at a time, like the real TV show:
+${BANDS}
+Make them harder with less common words, harder grammar and closer wrong answers – never with trick questions.
 Rules:
 - Each question has four options A–D and exactly ONE correct answer. Wrong options must be plausible but clearly wrong. No "all of the above".
 - Question and option vocabulary at or below the level. British English spelling and UK life (GP, chemist, pounds, Oyster card).
@@ -601,6 +673,70 @@ Reply with only a JSON array: [{"q":"...","A":"...","B":"...","C":"...","D":"...
     else gs("That didn't work. Try again, or change the topic.", "err");
   }finally{ $("genGo").disabled = false; $("genStop").hidden = true; genCtl = null; }
 };
+
+/* ---------- copyable prompt for any AI ---------- */
+const BANDS = `Questions 1–3 (£100–£300): very easy – almost every learner gets them right.
+Questions 4–5 (£500–£1,000): easy.
+Questions 6–9 (£2,000–£16,000): medium.
+Questions 10–12 (£32,000–£125,000): hard.
+Questions 13–15 (£250,000–£1 million): very hard – only the strongest learners at this level get them right. These may stretch slightly above the level.`;
+function aiPrompt(){
+  const level = $("aiLevel").value, n = +$("aiSets").value, topic = $("aiTopic").value.trim();
+  const sets = n > 1
+    ? `Write ${n} separate sets of 15 questions – one set for each player. Every set follows the same difficulty steps. No question may appear in more than one set.`
+    : `Write one set of 15 questions.`;
+  const head = n > 1 ? `Start each set with its own heading line: # Set 1, # Set 2 … up to # Set ${n}.
+` : `Start with one heading line: # Set 1
+`;
+  return `You are an experienced UK ESOL teacher. Write new questions for a classroom "Who Wants to Be a Millionaire?" quiz.
+
+FIRST – before you write any questions, ask me to confirm two things, then wait for my answer:
+1. The class level. Suggested: ${level}.
+2. The subject or topic for the quiz. Suggested: ${topic || "mixed everyday English – grammar, vocabulary and life in the UK"}.
+Use what I confirm (or change) below. Only write the questions after I reply.
+
+LEARNERS: adult ESOL learners in London. Level: ${LEVELS[level]}
+TOPIC: ${topic || "mixed everyday English – grammar, vocabulary and life in the UK"}
+
+${sets}
+
+DIFFICULTY – the most important rule. In every set the questions get harder one step at a time, like the real TV show, from very easy (question 1) to very hard (question 15):
+${BANDS}
+Make questions harder with less common words, harder grammar points and closer wrong answers – not with long or confusing questions, and never with trick questions.
+
+RULES
+- Four options A, B, C, D. Exactly ONE correct answer. Wrong options must be believable but clearly wrong. No "all of the above" or "none of the above".
+- Short questions (one line) and short options.
+- Question and option language at or below the level (except the stretch in questions 13–15).
+- British English spelling and UK life (GP, chemist, pounds, Oyster card).
+- Only use facts you are sure are true. Check every answer.
+- Mix the correct letters across A, B, C and D.
+- Suitable for adults from many cultures: no alcohol, religion, politics or adult topics.
+- Never use the | character inside a question or an option.
+- If I ask you again, write completely new questions – do not repeat any.
+
+FORMAT – reply with ONLY the lines below inside one code block. No numbers, no notes, no explanations.
+${head}Then one question per line, easiest first, in this exact format:
+question | option A | option B | option C | option D | correct letter
+
+Example line:
+Where do you buy bread? | a bakery | a bank | a garage | a library | A`;
+}
+function aiRefresh(){ $("aiPrompt").value = aiPrompt(); }
+["aiLevel","aiSets"].forEach(id => $(id).addEventListener("change", aiRefresh));
+$("aiTopic").addEventListener("input", aiRefresh);
+$("aiCopy").onclick = async () => {
+  const t = aiPrompt(); let ok = false;
+  try{ await navigator.clipboard.writeText(t); ok = true; }catch(e){}
+  if (!ok){ const a = $("aiPrompt"); a.focus(); a.select(); try{ ok = document.execCommand("copy"); }catch(e){} }
+  $("aiStatus").textContent = ok ? "Copied! Paste it into the AI, then confirm the level and topic." : "Select the prompt above and press Ctrl+C.";
+  $("aiStatus").className = "status " + (ok ? "ok" : "err");
+  if (ok){
+    if (S.set !== "MY"){ S.set = "MY"; save(); fillSetup(); }
+    $("bankInfo").textContent = "When the AI answers, copy its whole reply, click in this box, press Ctrl+A then Ctrl+V.";
+  }
+};
+aiRefresh();
 
 fillSetup(); ladder();
 })();
