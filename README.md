@@ -32,6 +32,34 @@ Word documents:
 - [ESOL Speaking & Listening Placement Interview (E1–L2) – Teachers Only](assessments/speaking-placement-test.html) – Spoken placement interview run by Claude in voice mode: learner wears headphones, about 5 minutes, ends with an approximate level. Teachers only – PIN-protected. Needs a teacher Claude account on the classroom machine.
 - [ESOL Writing Level Check – Typed Placement Assessment (E1–L2)](https://atinwix.github.io/WRITING_TEST/) – Typed writing check for learners who can use a keyboard; free writing and answers go to a Microsoft Form.
 
+## child-migrant-stories
+- [Argun’s Shop – Hackney Today (E3) – Reading, Listening and Second Conditional – Projector Lesson](child-migrant-stories/life-is-a-destiny/e3-argun-shop-hackney-today-projector-lesson.html) – Follow-up to Life is a Destiny; works on its own.
+- [Life is a Destiny (E3) – Second Conditional – Projector Lesson](child-migrant-stories/life-is-a-destiny/e3-second-conditional-projector-lesson.html) – Whole-class, 13 pages; clips play on the page; answers one per click.
+- [Passing Tides (E2–E3) – Past Simple and Sequencing – Projector Lesson](child-migrant-stories/passing-tides/e2-e3-past-simple-sequencing-projector-lesson.html) – Whole-class, 13 pages; clips play on the page; answers one per click.
+- [Ugwumpiti (E2–E3) – Comparatives – Projector Lesson](child-migrant-stories/ugwumpiti/e2-e3-comparatives-projector-lesson.html) – Whole-class, 13 pages; clips play on the page; answers one per click.
+- [Voices Past and Present (E2–E3) – Adjectives – Projector Lesson](child-migrant-stories/voices-past-and-present/e2-e3-adjectives-projector-lesson.html) – Whole-class, 13 pages; clips play on the page; answers one per click.
+
+Word documents:
+- [Argun’s Shop – Hackney Today (E3) – SMART Notebook](child-migrant-stories/life-is-a-destiny/e3-argun-shop-hackney-today-projector-lesson.notebook)
+- [Argun’s Shop – Hackney Today (E3) – Teacher Notes and Answers](child-migrant-stories/life-is-a-destiny/e3-argun-shop-hackney-today-teacher-notes-answers.pdf) (PDF) · [Word](child-migrant-stories/life-is-a-destiny/e3-argun-shop-hackney-today-teacher-notes-answers.docx)
+- [Argun’s Shop – Hackney Today (E3) – Reading, Listening and Second Conditional – Student Worksheet](child-migrant-stories/life-is-a-destiny/e3-argun-shop-hackney-today-worksheet.pdf) (PDF) · [Word](child-migrant-stories/life-is-a-destiny/e3-argun-shop-hackney-today-worksheet.docx)
+- [Life is a Destiny (E3) – Second conditional – Kahoot quiz (import into Kahoot)](child-migrant-stories/life-is-a-destiny/e3-second-conditional-kahoot.xlsx)
+- [Life is a Destiny (E3) – Second Conditional – SMART Notebook](child-migrant-stories/life-is-a-destiny/e3-second-conditional-projector-lesson.notebook)
+- [Life is a Destiny (E3) – Second conditional – teacher notes and answers](child-migrant-stories/life-is-a-destiny/e3-second-conditional-teacher-notes-answers.pdf) (PDF) · [Word](child-migrant-stories/life-is-a-destiny/e3-second-conditional-teacher-notes-answers.docx)
+- [Life is a Destiny (E3) – Second conditional – student worksheet](child-migrant-stories/life-is-a-destiny/e3-second-conditional-worksheet.pdf) (PDF) · [Word](child-migrant-stories/life-is-a-destiny/e3-second-conditional-worksheet.docx)
+- [Passing Tides (E2–E3) – Past simple and sequencing – Kahoot quiz (import into Kahoot)](child-migrant-stories/passing-tides/e2-e3-past-simple-sequencing-kahoot.xlsx)
+- [Passing Tides (E2–E3) – Past Simple and Sequencing – SMART Notebook](child-migrant-stories/passing-tides/e2-e3-past-simple-sequencing-projector-lesson.notebook)
+- [Passing Tides (E2–E3) – Past simple and sequencing – teacher notes and answers](child-migrant-stories/passing-tides/e2-e3-past-simple-sequencing-teacher-notes-answers.pdf) (PDF) · [Word](child-migrant-stories/passing-tides/e2-e3-past-simple-sequencing-teacher-notes-answers.docx)
+- [Passing Tides (E2–E3) – Past simple and sequencing – student worksheet](child-migrant-stories/passing-tides/e2-e3-past-simple-sequencing-worksheet.pdf) (PDF) · [Word](child-migrant-stories/passing-tides/e2-e3-past-simple-sequencing-worksheet.docx)
+- [Ugwumpiti (E2–E3) – Comparatives – Kahoot quiz (import into Kahoot)](child-migrant-stories/ugwumpiti/e2-e3-comparatives-kahoot.xlsx)
+- [Ugwumpiti (E2–E3) – Comparatives – SMART Notebook](child-migrant-stories/ugwumpiti/e2-e3-comparatives-projector-lesson.notebook)
+- [Ugwumpiti (E2–E3) – Comparatives – teacher notes and answers](child-migrant-stories/ugwumpiti/e2-e3-comparatives-teacher-notes-answers.pdf) (PDF) · [Word](child-migrant-stories/ugwumpiti/e2-e3-comparatives-teacher-notes-answers.docx)
+- [Ugwumpiti (E2–E3) – Comparatives – student worksheet](child-migrant-stories/ugwumpiti/e2-e3-comparatives-worksheet.pdf) (PDF) · [Word](child-migrant-stories/ugwumpiti/e2-e3-comparatives-worksheet.docx)
+- [Voices Past and Present (E2–E3) – Adjectives – Kahoot quiz (import into Kahoot)](child-migrant-stories/voices-past-and-present/e2-e3-adjectives-kahoot.xlsx)
+- [Voices Past and Present (E2–E3) – Adjectives – SMART Notebook](child-migrant-stories/voices-past-and-present/e2-e3-adjectives-projector-lesson.notebook)
+- [Voices Past and Present (E2–E3) – Adjectives – teacher notes and answers](child-migrant-stories/voices-past-and-present/e2-e3-adjectives-teacher-notes-answers.pdf) (PDF) · [Word](child-migrant-stories/voices-past-and-present/e2-e3-adjectives-teacher-notes-answers.docx)
+- [Voices Past and Present (E2–E3) – Adjectives – student worksheet](child-migrant-stories/voices-past-and-present/e2-e3-adjectives-worksheet.pdf) (PDF) · [Word](child-migrant-stories/voices-past-and-present/e2-e3-adjectives-worksheet.docx)
+
 ## e1/speaking-listening
 - [E1 & E2 Listening – Task 4 – Put It in Order](e1/speaking-listening/task4-listening-put-it-in-order.html)
 - [E1 & E2 Speaking – Task 1 Talk About You – Put It in Order](e1/speaking-listening/task1-talk-about-you-put-it-in-order.html)
@@ -58,7 +86,7 @@ Word documents:
 
 Word documents:
 - [E1 Days, Times and Prices – Community Centre Timetable – Task 4 Listening and Task 2 Talk – Day Plan and Answers](e1/speaking-listening/docs/community-centre-days-times-prices-day-plan-and-answers.pdf) (PDF) · [Word](e1/speaking-listening/docs/community-centre-days-times-prices-day-plan-and-answers.docx)
-- [E1 Days, Times and Prices – Community Centre Timetable – Kahoot Quiz (20 Qs)](e1/speaking-listening/docs/community-centre-days-times-prices-kahoot.pdf) (PDF) · [Word](e1/speaking-listening/docs/community-centre-days-times-prices-kahoot.xlsx)
+- [E1 Days, Times and Prices – Community Centre Timetable – Kahoot Quiz (20 Qs)](e1/speaking-listening/docs/community-centre-days-times-prices-kahoot.xlsx)
 - [E1 Task 2 Talk – My Week – Community Centre Timetable and Talk Frame – Handout](e1/speaking-listening/docs/community-centre-days-times-prices-talk-frame-handout.pdf) (PDF) · [Word](e1/speaking-listening/docs/community-centre-days-times-prices-talk-frame-handout.docx)
 - [Induction – timetable, classroom and safety words – preteaching (before the RARPA form)](e1/speaking-listening/docs/induction-timetable-classroom-and-safety-words-preteaching.pdf) (PDF) · [Word](e1/speaking-listening/docs/induction-timetable-classroom-and-safety-words-preteaching.docx)
 - [E1 Days, Times and Prices – Task 4 Listening and Task 2 Talk – Day Plan and Answers](e1/speaking-listening/docs/listening-days-times-prices-day-plan.pdf) (PDF) · [Word](e1/speaking-listening/docs/listening-days-times-prices-day-plan.docx)
@@ -97,7 +125,7 @@ Word documents:
 - [E2 Speaking & Listening – Task 4 and Future Plans: going to and will – Kahoot](https://create.kahoot.it/details/e2-speaking-listening-finish-task-4-4a-and-4b-then-future-plans-going-to-and-will/a0d14941-b878-4321-aed9-6518156542ed) – 20 questions, play live on Kahoot.
 
 Word documents:
-- [E2 Comparatives – Speaking – Projector Slides](e2/speaking-listening/comparatives-speaking-projector-slides.pdf) (PDF) · [Word](e2/speaking-listening/comparatives-speaking-projector-slides.pptx)
+- [E2 Comparatives – Speaking – Projector Slides](e2/speaking-listening/comparatives-speaking-projector-slides.pptx)
 - [E2 Comparatives – Speaking – Student Worksheet](e2/speaking-listening/docs/comparatives-speaking-student-worksheet.pdf) (PDF) · [Word](e2/speaking-listening/docs/comparatives-speaking-student-worksheet.docx)
 - [E2 Comparatives – Speaking – Teacher Plan](e2/speaking-listening/docs/comparatives-speaking-teacher-plan.pdf) (PDF) · [Word](e2/speaking-listening/docs/comparatives-speaking-teacher-plan.docx)
 - [ESB exam prep, all tasks – lesson plan and answers](e2/speaking-listening/docs/esb-exam-prep-all-tasks-lesson-plan-and-answers.pdf) (PDF) · [Word](e2/speaking-listening/docs/esb-exam-prep-all-tasks-lesson-plan-and-answers.docx)
@@ -106,7 +134,7 @@ Word documents:
 - [ESB exam Tasks 1–4 – practice worksheet](e2/speaking-listening/docs/esb-exam-tasks-1-4-practice-student-worksheet.pdf) (PDF) · [Word](e2/speaking-listening/docs/esb-exam-tasks-1-4-practice-student-worksheet.docx)
 - [E2 Future Plans – going to and will, Finish Task 4 – Day Plan and Answers](e2/speaking-listening/docs/future-plans-going-to-will-day-plan.pdf) (PDF) · [Word](e2/speaking-listening/docs/future-plans-going-to-will-day-plan.docx)
 - [E2 Future Plans – going to and will – Speaking Tasks 2 and 4 – Day Plan and Answers](e2/speaking-listening/docs/future-plans-going-to-will-speaking-tasks-2-and-4-day-plan-and-answers.pdf) (PDF) · [Word](e2/speaking-listening/docs/future-plans-going-to-will-speaking-tasks-2-and-4-day-plan-and-answers.docx)
-- [E2 Future Plans – going to and will – Speaking Tasks 2 and 4 – Kahoot Quiz](e2/speaking-listening/docs/future-plans-going-to-will-speaking-tasks-2-and-4-kahoot.pdf) (PDF) · [Word](e2/speaking-listening/docs/future-plans-going-to-will-speaking-tasks-2-and-4-kahoot.xlsx)
+- [E2 Future Plans – going to and will – Speaking Tasks 2 and 4 – Kahoot Quiz](e2/speaking-listening/docs/future-plans-going-to-will-speaking-tasks-2-and-4-kahoot.xlsx)
 - [E2 Future Plans – going to and will – Speaking Tasks 2 and 4 – Student Handout](e2/speaking-listening/docs/future-plans-going-to-will-speaking-tasks-2-and-4-student-handout.pdf) (PDF) · [Word](e2/speaking-listening/docs/future-plans-going-to-will-speaking-tasks-2-and-4-student-handout.docx)
 - [E2 Future Plans – going to and will, Plans, Past and Now – Student Handout](e2/speaking-listening/docs/future-plans-going-to-will-student-handout.pdf) (PDF) · [Word](e2/speaking-listening/docs/future-plans-going-to-will-student-handout.docx)
 - [Past simple – more practice (irregular verbs, negatives, time words, questions, mistake hunt) – answers (teacher)](e2/speaking-listening/docs/past-simple-more-practice-verbs-negatives-time-words-questions-answers.pdf) (PDF) · [Word](e2/speaking-listening/docs/past-simple-more-practice-verbs-negatives-time-words-questions-answers.docx)
@@ -151,7 +179,7 @@ Word documents:
 - [E2 Reading, Grammar, Speaking and Writing – Elvis Presley Life Story (Past Simple) – Student Handout](bank/reading/biography-and-life-stories/elvis-presley-life-story/student/elvis-presley-life-story-entry-2-student-handout.pdf) (PDF) · [Word](bank/reading/biography-and-life-stories/elvis-presley-life-story/student/elvis-presley-life-story-entry-2-student-handout.docx)
 - [E3 Reading, Grammar, Speaking and Writing – Elvis Presley Life Story (Past Simple and Past Continuous) – Student Handout](bank/reading/biography-and-life-stories/elvis-presley-life-story/student/elvis-presley-life-story-entry-3-student-handout.pdf) (PDF) · [Word](bank/reading/biography-and-life-stories/elvis-presley-life-story/student/elvis-presley-life-story-entry-3-student-handout.docx)
 - [L1 Reading, Grammar, Speaking and Writing – Elvis Presley Life Story (Used to and the Passive) – Student Handout](bank/reading/biography-and-life-stories/elvis-presley-life-story/student/elvis-presley-life-story-level-1-student-handout.pdf) (PDF) · [Word](bank/reading/biography-and-life-stories/elvis-presley-life-story/student/elvis-presley-life-story-level-1-student-handout.docx)
-- [E2–L1 Reading – Elvis Presley Life Story – Kahoot](bank/reading/biography-and-life-stories/elvis-presley-life-story/student/elvis-presley-life-story-reading-grammar-kahoot.pdf) (PDF) · [Word](bank/reading/biography-and-life-stories/elvis-presley-life-story/student/elvis-presley-life-story-reading-grammar-kahoot.xlsx)
+- [E2–L1 Reading – Elvis Presley Life Story – Kahoot](bank/reading/biography-and-life-stories/elvis-presley-life-story/student/elvis-presley-life-story-reading-grammar-kahoot.xlsx)
 - [E2–L1 Reading, Grammar, Speaking and Writing – Elvis Presley Life Story – Day Plan and Answers (teacher)](bank/reading/biography-and-life-stories/elvis-presley-life-story/teacher/elvis-presley-life-story-day-plan-and-answers.pdf) (PDF) · [Word](bank/reading/biography-and-life-stories/elvis-presley-life-story/teacher/elvis-presley-life-story-day-plan-and-answers.docx)
 - [E3 Reading – A Banana That Stays Yellow – Vocabulary and Grammar Extra Activities – Answers (teacher)](e3/reading/docs/banana-stays-yellow-extra-activities-answers.pdf) (PDF) · [Word](e3/reading/docs/banana-stays-yellow-extra-activities-answers.docx)
 - [E3 Reading – A Banana That Stays Yellow – Vocabulary and Grammar Extra Activities – Student Handout](e3/reading/docs/banana-stays-yellow-extra-activities.pdf) (PDF) · [Word](e3/reading/docs/banana-stays-yellow-extra-activities.docx)
@@ -190,7 +218,7 @@ Word documents:
 - [E3 Reading – Purpose, Main Points, Pronouns and Word Meaning – Recap – Day Plan (teacher)](e3/reading/docs/purpose-pronouns-word-meaning-recap-day-plan.pdf) (PDF) · [Word](e3/reading/docs/purpose-pronouns-word-meaning-recap-day-plan.docx)
 - [E3 Reading – Purpose, Text Type and Audience – Six Short Texts and Vocabulary – Answers (teacher)](e3/reading/docs/purpose-text-type-audience-handout-answers.pdf) (PDF) · [Word](e3/reading/docs/purpose-text-type-audience-handout-answers.docx)
 - [E3 Reading – Purpose, Text Type and Audience – Six Short Texts and Vocabulary – Student Handout](e3/reading/docs/purpose-text-type-audience-handout.pdf) (PDF) · [Word](e3/reading/docs/purpose-text-type-audience-handout.docx)
-- [E3 Reading – Set L Exam Practice and Ordering – Kahoot Quiz](e3/reading/docs/set-l-exam-practice-kahoot.pdf) (PDF) · [Word](e3/reading/docs/set-l-exam-practice-kahoot.xlsx)
+- [E3 Reading – Set L Exam Practice and Ordering – Kahoot Quiz](e3/reading/docs/set-l-exam-practice-kahoot.xlsx)
 - [E3 Reading – ESB Set L Exam Practice, Ordering Tasks and a Timed Online Paper – Day Plan and Answers](e3/reading/docs/set-l-exam-practice-timed-papers-day-plan.pdf) (PDF) · [Word](e3/reading/docs/set-l-exam-practice-timed-papers-day-plan.docx)
 - [E3 Reading – ESB Set L Full Paper, then Linking Words and Main Idea – Day Plan and Answers](e3/reading/docs/set-l-full-paper-and-linking-words-main-idea-day-plan-and-answers.pdf) (PDF) · [Word](e3/reading/docs/set-l-full-paper-and-linking-words-main-idea-day-plan-and-answers.docx)
 - [E3 Reading – ESB Set L Task 3 (What is your favourite fruit?) – Student Handout](e3/reading/docs/set-l-task-3-student-handout.pdf) (PDF) · [Word](e3/reading/docs/set-l-task-3-student-handout.docx)

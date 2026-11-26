@@ -1,0 +1,71 @@
+{
+ "title": "Argun’s Shop – Hackney Today (E3) – Lesson Audio",
+ "voices": {
+  "Customer": "Kore",
+  "Worker": "Puck"
+ },
+ "scripts": [
+  {
+   "id": "script-a",
+   "label": "Script A – At the new shop (page 8)",
+   "lines": [
+    [
+     "Customer",
+     "Hello. Is this Argun? I used to go to the shop on Mare Street."
+    ],
+    [
+     "Worker",
+     "Yes, it’s us! We moved here this year."
+    ],
+    [
+     "Customer",
+     "Why did you move?"
+    ],
+    [
+     "Worker",
+     "The company that owns the arches wanted us to leave. They’re going to put bars and restaurants there."
+    ],
+    [
+     "Customer",
+     "Oh no. Did they offer you another shop?"
+    ],
+    [
+     "Worker",
+     "Yes, on Morning Lane. But nobody walks down that street. We thought we would lose half our customers there."
+    ],
+    [
+     "Customer",
+     "So you came here instead. Good! If you closed, I wouldn’t know where to print anything."
+    ],
+    [
+     "Worker",
+     "Don’t worry. We’re right opposite the station now, so lots of people walk past."
+    ],
+    [
+     "Worker",
+     "Exactly. What can I do for you today?"
+    ],
+    [
+     "Customer",
+     "I need fifty invitations for my daughter’s wedding."
+    ],
+    [
+     "Worker",
+     "No problem. If you order today, they’ll be ready on Friday."
+    ],
+    [
+     "Customer",
+     "Perfect. Are you open on Sundays?"
+    ],
+    [
+     "Worker",
+     "No, sorry. We’re open Monday to Saturday, nine to six."
+    ],
+    [
+     "Customer",
+     "Great. I’ll come back on Saturday to collect them."
+    ]
+   ]
+  }
+ ]
+}
